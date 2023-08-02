@@ -32,6 +32,9 @@
     <Filter Include="Engine\02_Components\ECS">
       <UniqueIdentifier>{edd6c0a4-ca86-420c-8e66-84d5ece500f2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\02_Components\AudioSource">
+      <UniqueIdentifier>{0896d9f5-4eb1-4007-a04c-034b6f3c738e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Binarys\c\glad.c">
@@ -70,6 +73,12 @@
     <ClCompile Include="source\Components\ECS\ComponentManager.cpp">
       <Filter>Engine\02_Components\ECS</Filter>
     </ClCompile>
+    <ClCompile Include="source\Components\AudioSource\AudioSource.cpp">
+      <Filter>Engine\02_Components\AudioSource</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\AudioSource\AudioManager.cpp">
+      <Filter>Engine\02_Components\AudioSource</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Components\ShaderCompiler\ShaderCompiler.h">
@@ -107,6 +116,12 @@
     </ClInclude>
     <ClInclude Include="source\Components\ECS\ComponentManager.h">
       <Filter>Engine\02_Components\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\AudioSource\AudioSource.h">
+      <Filter>Engine\02_Components\AudioSource</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\AudioSource\AudioManager.h">
+      <Filter>Engine\02_Components\AudioSource</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
