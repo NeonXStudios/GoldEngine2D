@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Recursos">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{5dc9c19e-cd17-44d0-ba33-b8d4c0f7157e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\01_StartGraphics">
+      <UniqueIdentifier>{a1060c6a-9ada-451e-b5fd-59e84bde9b72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\02_Components">
+      <UniqueIdentifier>{c12a2dfc-0884-4bf6-816e-5489357e9e97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\02_Components\ShaderCompiler">
+      <UniqueIdentifier>{52774bd4-037f-4eae-b0b7-48b8e58eb1cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\02_Components\Models">
+      <UniqueIdentifier>{3ff893b8-0117-4630-846b-a4927aaa5bef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\02_Components\Camera">
+      <UniqueIdentifier>{4cf6e46c-671a-489d-88ea-951d6b0039af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\02_Components\SpriteShape">
+      <UniqueIdentifier>{e10a7ba8-34a3-422c-8703-fbeeae7f3d0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\02_Components\SceneManager">
+      <UniqueIdentifier>{cb702976-b5e7-4028-84ff-49ee849f6986}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\02_Components\ECS">
+      <UniqueIdentifier>{edd6c0a4-ca86-420c-8e66-84d5ece500f2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Binarys\c\glad.c">
+      <Filter>Recursos</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Graphics\StartEngineGraphics.cpp">
+      <Filter>Engine\01_StartGraphics</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\ShaderCompiler\ShaderCompiler.cpp">
+      <Filter>Engine\02_Components\ShaderCompiler</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\Models\Cube2DModel.cpp">
+      <Filter>Engine\02_Components\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\Camera\Camera2D.cpp">
+      <Filter>Engine\02_Components\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Graphics\AppSettings.cpp">
+      <Filter>Engine\01_StartGraphics</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Graphics\RunEngine.cpp">
+      <Filter>Engine\01_StartGraphics</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\SceneManager\Scene.cpp">
+      <Filter>Engine\02_Components\SceneManager</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\SceneManager\SceneManager.cpp">
+      <Filter>Engine\02_Components\SceneManager</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\Sprite\SpriteComponent.cpp">
+      <Filter>Engine\02_Components\SpriteShape</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\ECS\ECS.cpp">
+      <Filter>Engine\02_Components\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\ECS\ComponentManager.cpp">
+      <Filter>Engine\02_Components\ECS</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\Components\ShaderCompiler\ShaderCompiler.h">
+      <Filter>Engine\02_Components\ShaderCompiler</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\Models\Cube2DModel.h">
+      <Filter>Engine\02_Components\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\Camera\Camera2D.h">
+      <Filter>Engine\02_Components\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Graphics\StartEngineGraphics.h">
+      <Filter>Engine\01_StartGraphics</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Graphics\AppSettings.h">
+      <Filter>Engine\01_StartGraphics</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Graphics\RunEngine.h">
+      <Filter>Engine\01_StartGraphics</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\SceneManager\Scene.h">
+      <Filter>Engine\02_Components\SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\SceneManager\SceneManager.h">
+      <Filter>Engine\02_Components\SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\Sprite\SpriteComponent.h">
+      <Filter>Engine\02_Components\SpriteShape</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\ECS\ECS.h">
+      <Filter>Engine\02_Components\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Recursos</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\ECS\ComponentManager.h">
+      <Filter>Engine\02_Components\ECS</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GoldEngine.rc">
+      <Filter>Recursos</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
