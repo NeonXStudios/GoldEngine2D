@@ -1,22 +1,91 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Archivos de origen">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Archivos de encabezado">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Archivos de recursos">
+    <Filter Include="Recursos">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Recursos\IMGUI">
+      <UniqueIdentifier>{f5ba0e0f-54d8-44f6-a414-db45cc2ebfea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GoldEditor.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Editor</Filter>
     </ClCompile>
+    <ClCompile Include="..\Binarys\c\glad.c">
+      <Filter>Recursos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Binarys\include\imgui\imgui.cpp">
+      <Filter>Recursos\IMGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Binarys\include\imgui\imgui_demo.cpp">
+      <Filter>Recursos\IMGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Binarys\include\imgui\imgui_draw.cpp">
+      <Filter>Recursos\IMGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Binarys\include\imgui\imgui_impl_glfw.cpp">
+      <Filter>Recursos\IMGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Binarys\include\imgui\imgui_impl_opengl3.cpp">
+      <Filter>Recursos\IMGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Binarys\include\imgui\imgui_tables.cpp">
+      <Filter>Recursos\IMGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Binarys\include\imgui\imgui_widgets.cpp">
+      <Filter>Recursos\IMGUI</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Binarys\include\imgui\imgui.h">
+      <Filter>Recursos\IMGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Binarys\include\imgui\imgui_impl_glfw.h">
+      <Filter>Recursos\IMGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Binarys\include\imgui\imgui_impl_opengl3.h">
+      <Filter>Recursos\IMGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Binarys\include\imgui\imgui_impl_opengl3_loader.h">
+      <Filter>Recursos\IMGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Binarys\include\imgui\imgui_internal.h">
+      <Filter>Recursos\IMGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Binarys\include\imgui\imstb_rectpack.h">
+      <Filter>Recursos\IMGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Binarys\include\imgui\imstb_textedit.h">
+      <Filter>Recursos\IMGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Binarys\include\imgui\imstb_truetype.h">
+      <Filter>Recursos\IMGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Binarys\include\imgui\imconfig.h">
+      <Filter>Recursos\IMGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\source\icons\Icon.ico">
+      <Filter>Recursos</Filter>
+    </Image>
+    <Image Include="..\source\icons\engineIcon.png">
+      <Filter>Recursos</Filter>
+    </Image>
+    <Image Include="..\source\icons\bitmap1.bmp">
+      <Filter>Recursos</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GoldEditor.rc">
+      <Filter>Recursos</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

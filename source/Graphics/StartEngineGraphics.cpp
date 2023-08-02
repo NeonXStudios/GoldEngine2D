@@ -2,9 +2,11 @@
 #include "../Graphics/AppSettings.h"
 #include "../Components/SceneManager/SceneManager.h"
 #include "../Components/Sprite/SpriteComponent.h"
+#include "../Components/UI/UIImplement.h"
 
 GLFWwindow* StartEngineGraphics::window = nullptr;
 StartEngineGraphics* StartEngineGraphics::instance = nullptr;
+UIImplement* UIIMPL = new UIImplement();
 
 void StartEngineGraphics::create() {
     if (StartEngineGraphics::instance) throw std::exception ("Graphics manager already exist");
@@ -30,7 +32,7 @@ int StartEngineGraphics::StartEngine () {
     glfwWindowHint (GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint (GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-    StartEngineGraphics::window = glfwCreateWindow(800, 600, "ES MI VENTANA :D", NULL, NULL);
+    StartEngineGraphics::window = glfwCreateWindow(800, 600, "GOLD ENGINE", NULL, NULL);
 
     if (StartEngineGraphics::window == NULL) {
         std::cout << "Failed to create GLFW window" << std::endl;
@@ -47,6 +49,7 @@ int StartEngineGraphics::StartEngine () {
 
     glfwGetFramebufferSize (StartEngineGraphics::window, &AppSettings::instance->ScreenWidth, &AppSettings::instance->ScreenHeight);
     SceneManager::GetSceneManager()->OpenScene->start();
+    UIIMPL->start();
     
     return 0;
 }
@@ -56,13 +59,17 @@ void StartEngineGraphics::update() {
     deltaTime = currentFrame - lastFrame;
     lastFrame = currentFrame;
     time += deltaTime;
+    UIIMPL->draw();
 
-    glfwPollEvents();
-
+    //CLEAN THE WINDOWS AND DRAW
     glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
     glfwSetFramebufferSizeCallback(StartEngineGraphics::window, framebuffer_size_callback);
+
+    //DRAW UI COMPONENTS
+    UIIMPL->DrawCanvas();
+
 
     // Update the projection matrix with zoom
     int screenWidth, screenHeight;
@@ -73,7 +80,12 @@ void StartEngineGraphics::update() {
     SceneManager::GetSceneManager()->OpenScene->update();
 
 
+    //DRAW CANVAS DATA
+    UIIMPL->DrawData();
+
+
     glfwSwapBuffers(StartEngineGraphics::window);
+    glfwPollEvents();
 }
 
 void StartEngineGraphics::releasewindow() {
