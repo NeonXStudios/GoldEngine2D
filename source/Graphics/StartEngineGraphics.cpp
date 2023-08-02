@@ -26,10 +26,10 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
     SceneManager::GetSceneManager()->OpenScene->worldCamera->projection = glm::ortho(-aspectRatio * SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom, aspectRatio * SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom, -SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom, SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom, -1000.0f, 1000.0f);
 }
 
-int StartEngineGraphics::StartEngine () {
+void StartEngineGraphics::StartEngine () {
     glfwInit();
     glfwWindowHint (GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint (GLFW_CONTEXT_VERSION_MINOR, 3);
+    glfwWindowHint (GLFW_CONTEXT_VERSION_MINOR, 2);
     glfwWindowHint (GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
     StartEngineGraphics::window = glfwCreateWindow(800, 600, "GOLD ENGINE", NULL, NULL);
@@ -37,39 +37,31 @@ int StartEngineGraphics::StartEngine () {
     if (StartEngineGraphics::window == NULL) {
         std::cout << "Failed to create GLFW window" << std::endl;
         glfwTerminate();
-        return -1;
     }
 
     glfwMakeContextCurrent(StartEngineGraphics::window);
 
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
         std::cout << "Failed to initialize GLAD" << std::endl;
-        return -1;
     }
 
     glfwGetFramebufferSize (StartEngineGraphics::window, &AppSettings::instance->ScreenWidth, &AppSettings::instance->ScreenHeight);
     SceneManager::GetSceneManager()->OpenScene->start();
     UIIMPL->start();
-    
-    return 0;
 }
 
 void StartEngineGraphics::update() {
+    glfwPollEvents();
     float currentFrame = glfwGetTime();
     deltaTime = currentFrame - lastFrame;
     lastFrame = currentFrame;
     time += deltaTime;
-    UIIMPL->draw();
 
     //CLEAN THE WINDOWS AND DRAW
     glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
     glfwSetFramebufferSizeCallback(StartEngineGraphics::window, framebuffer_size_callback);
-
-    //DRAW UI COMPONENTS
-    UIIMPL->DrawCanvas();
-
 
     // Update the projection matrix with zoom
     int screenWidth, screenHeight;
@@ -80,12 +72,13 @@ void StartEngineGraphics::update() {
     SceneManager::GetSceneManager()->OpenScene->update();
 
 
+ 
+    UIIMPL->draw();
+    //DRAW UI COMPONENTS
+    UIIMPL->DrawCanvas();
     //DRAW CANVAS DATA
     UIIMPL->DrawData();
-
-
     glfwSwapBuffers(StartEngineGraphics::window);
-    glfwPollEvents();
 }
 
 void StartEngineGraphics::releasewindow() {

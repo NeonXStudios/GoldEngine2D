@@ -16,7 +16,7 @@ public:
 	void release();
 	void update();
 	void releasewindow();
-	int StartEngine();
+	void StartEngine();
 
 	StartEngineGraphics* GetGraphics();
 };
