@@ -1,5 +1,5 @@
 #include "../UIDrawer.h"
-//#include "imgui.h"
+#include "imgui.h"
 #include "GLFW/glfw3.h"
 #include "glad/glad.h"
 #include "../../source/Graphics/AppSettings.h"
@@ -28,7 +28,7 @@ public:
 
 
 	void draw() override {
-        /*
+        
         ImVec2 windowSize = ImVec2(1920, 1080);
 
         // Dibujamos la imagen en la ventana de ImGui
@@ -49,7 +49,12 @@ public:
         ImGui::Image((void*)(intptr_t)texture, imageSize, ImVec2(0, 1), ImVec2(1, 0));
 
         ImGui::End();
-        */
+
+
+        ImGui::Begin ("ASSETS");
+        ImGui::Button ("LAKAKA");
+        ImGui::End();
+        
 	}
 
     void update() {

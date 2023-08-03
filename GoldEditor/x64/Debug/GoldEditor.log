@@ -2,6 +2,6 @@
 F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(9,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Editor\GoldEditor.cpp(11,11): error C2660: 'RunEngine::StartGameEngine': la función no acepta 1 argumentos
-F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(17,7): message : vea la declaración de 'RunEngine::StartGameEngine'
-F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Editor\GoldEditor.cpp(11,11): message : al hacer coincidir la lista de argumentos '(GoldEditor *)'
+  UIDrawer.cpp
+  Generando código...
+  GoldEditor.vcxproj -> F:\VISUAL STUDIO\GoldEngine2D\BuildEditor\GoldEditor.exe

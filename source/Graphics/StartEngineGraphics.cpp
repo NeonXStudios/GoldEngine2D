@@ -63,8 +63,7 @@ void StartEngineGraphics::StartEngine () {
 
 
     //START GAME FUNCTION
-    //StartEngineGraphics::engine->start();
-
+    StartEngineGraphics::engine->start();
 }
 
 void StartEngineGraphics::update() {
@@ -74,13 +73,13 @@ void StartEngineGraphics::update() {
     lastFrame = currentFrame;
     time += deltaTime;
 
-    //StartEngineGraphics::engine->lateupdate();
+    StartEngineGraphics::engine->lateupdate();
     glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
     SceneManager::GetSceneManager()->OpenScene->update();
-    //StartEngineGraphics::engine->draw();
-    //StartEngineGraphics::engine->update();
-    //StartEngineGraphics::engine->fixupdate();
+    StartEngineGraphics::engine->draw();
+    StartEngineGraphics::engine->update();
+    StartEngineGraphics::engine->fixupdate();
 
    
     UIIMPL->draw();                                                             
@@ -89,7 +88,7 @@ void StartEngineGraphics::update() {
     UIIMPL->DrawCanvas();
 
     //DRAW ENGINE CANVAS UI
-    //StartEngineGraphics::engine->drawUI();
+    StartEngineGraphics::engine->drawUI();
 
     //DRAW CANVAS DATA
     UIIMPL->DrawData();

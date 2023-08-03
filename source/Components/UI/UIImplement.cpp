@@ -7,7 +7,7 @@ void UIImplement::start() {
 	ImGui::CreateContext();
 
 	ImGuiIO& io = ImGui::GetIO(); (void)io;
-
+	io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 	ImGui::StyleColorsDark();
 
 	ImGui_ImplGlfw_InitForOpenGL(StartEngineGraphics::window, true);
@@ -19,15 +19,12 @@ void UIImplement::draw() {
 	ImGui_ImplOpenGL3_NewFrame();
 	ImGui_ImplGlfw_NewFrame();
 	ImGui::NewFrame();
+
+	ImGui::DockSpaceOverViewport();
 }
 
 void UIImplement::DrawCanvas() {
-	ImGui::ShowDemoWindow();
 
-
-	ImGui::Begin("test");
-	ImGui::Button("A");
-	ImGui::End();
 }
 
 

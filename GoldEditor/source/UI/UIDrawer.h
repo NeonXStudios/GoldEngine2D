@@ -7,4 +7,3 @@ class UIDrawer
 	virtual void lateupdate() = 0;
 	virtual void fixupdate() = 0;
 };
-

@@ -1,14 +1,14 @@
 #include <iostream>
 #include "../../../source/EngineBehaviour/GoldEngineLib.h"
-//#include "../UI/UIManager.h"
+#include "../UI/UIManager.h"
 
 class GoldEditor : public EngineBehaviour { 
 public:
     static GoldEditor* editor;
-    //UIManager* uiMaster = new UIManager();
+    UIManager* uiMaster = new UIManager();
 
     void start() override {
-        //uiMaster->start();
+        uiMaster->start();
         std::cout << "Starting editor" << endl;
     }
 
@@ -17,19 +17,19 @@ public:
     }
 
     void update() override {
-        //uiMaster->update();
+        uiMaster->update();
     }
 
     void lateupdate() override {
-        //uiMaster->lateupdate();
+        uiMaster->lateupdate();
     }
 
     void fixupdate() override {
-        //uiMaster->fixupdate();
+        uiMaster->fixupdate();
     }
 
     void drawUI() override {
-        //uiMaster->draw();
+        uiMaster->draw();
     }
 
     void release() override {
