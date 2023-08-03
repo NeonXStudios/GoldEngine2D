@@ -14,15 +14,66 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GoldEditor.cpp">
-      <Filter>Editor</Filter>
-    </ClCompile>
     <ClCompile Include="..\Binarys\c\glad.c">
       <Filter>Recursos</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Editor\GoldEditor.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Binarys\include\imgui\imgui_demo.cpp">
+      <Filter>Recursos\IMGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Binarys\include\imgui\imgui_draw.cpp">
+      <Filter>Recursos\IMGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Binarys\include\imgui\imgui_impl_glfw.cpp">
+      <Filter>Recursos\IMGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Binarys\include\imgui\imgui_impl_opengl3.cpp">
+      <Filter>Recursos\IMGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Binarys\include\imgui\imgui_tables.cpp">
+      <Filter>Recursos\IMGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Binarys\include\imgui\imgui_widgets.cpp">
+      <Filter>Recursos\IMGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Binarys\include\imgui\imgui.cpp">
+      <Filter>Recursos\IMGUI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />
+    <ClInclude Include="source\Editor\GoldEditor.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Binarys\include\imgui\imgui.h">
+      <Filter>Recursos\IMGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Binarys\include\imgui\imgui_impl_glfw.h">
+      <Filter>Recursos\IMGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Binarys\include\imgui\imgui_impl_opengl3.h">
+      <Filter>Recursos\IMGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Binarys\include\imgui\imgui_impl_opengl3_loader.h">
+      <Filter>Recursos\IMGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Binarys\include\imgui\imgui_internal.h">
+      <Filter>Recursos\IMGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Binarys\include\imgui\imstb_rectpack.h">
+      <Filter>Recursos\IMGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Binarys\include\imgui\imstb_textedit.h">
+      <Filter>Recursos\IMGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Binarys\include\imgui\imstb_truetype.h">
+      <Filter>Recursos\IMGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Binarys\include\imgui\imconfig.h">
+      <Filter>Recursos\IMGUI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\source\icons\Icon.ico">

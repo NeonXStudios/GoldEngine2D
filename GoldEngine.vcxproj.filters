@@ -41,6 +41,9 @@
     <Filter Include="Engine\02_Components\UI">
       <UniqueIdentifier>{29bda43a-fa35-4de6-9243-0f7a4302863a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\00_Behaviour">
+      <UniqueIdentifier>{31c64e0d-8af5-4b8a-ba6f-1e146d0c1b66}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Graphics\StartEngineGraphics.cpp">
@@ -109,6 +112,10 @@
     <ClCompile Include="Binarys\include\imgui\imgui_widgets.cpp">
       <Filter>Recursos\IMGUI</Filter>
     </ClCompile>
+    <ClCompile Include="source\EngineBehaviour\EngineBehaviour.cpp">
+      <Filter>Engine\00_Behaviour</Filter>
+    </ClCompile>
+    <ClCompile Include="source\EngineBehaviour\GoldEngineLib.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Components\ShaderCompiler\ShaderCompiler.h">
@@ -183,6 +190,10 @@
     <ClInclude Include="Binarys\include\imgui\imstb_textedit.h">
       <Filter>Recursos\IMGUI</Filter>
     </ClInclude>
+    <ClInclude Include="source\EngineBehaviour\EngineBehaviour.h">
+      <Filter>Engine\00_Behaviour</Filter>
+    </ClInclude>
+    <ClInclude Include="source\EngineBehaviour\GoldEngineLib.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GoldEngine.rc">

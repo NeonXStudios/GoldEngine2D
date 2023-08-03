@@ -5,8 +5,10 @@
 #include "../Components/UI/UIImplement.h"
 
 GLFWwindow* StartEngineGraphics::window = nullptr;
+EngineBehaviour* StartEngineGraphics::engine = nullptr;
 StartEngineGraphics* StartEngineGraphics::instance = nullptr;
 UIImplement* UIIMPL = new UIImplement();
+
 unsigned int framebuffer;
 unsigned int texture;
 
@@ -34,6 +36,7 @@ void StartEngineGraphics::StartEngine () {
     glfwWindowHint (GLFW_CONTEXT_VERSION_MINOR, 2);
     glfwWindowHint (GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
+
     StartEngineGraphics::window = glfwCreateWindow(800, 600, "GOLD ENGINE", NULL, NULL);
 
     if (StartEngineGraphics::window == NULL) {
@@ -49,6 +52,8 @@ void StartEngineGraphics::StartEngine () {
 
     glfwGetFramebufferSize (StartEngineGraphics::window, &AppSettings::instance->ScreenWidth, &AppSettings::instance->ScreenHeight);
     SceneManager::GetSceneManager()->OpenScene->start();
+
+
     glGenFramebuffers(1, &framebuffer);
     glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
 
@@ -63,7 +68,6 @@ void StartEngineGraphics::StartEngine () {
         std::cout << "Framebuffer is not complete!" << std::endl;
 
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
-
 
     UIIMPL->start();
 }
@@ -110,15 +114,34 @@ void StartEngineGraphics::update() {
     //DRAW UI COMPONENTS
     UIIMPL->DrawCanvas();
 
-    ImGui::Begin("Scene");
-    ImGui::Image((void*)(intptr_t)texture, ImVec2(1920, 1080));
+    ImVec2 windowSize = ImVec2(1920, 1080);
+
+    // Dibujamos la imagen en la ventana de ImGui
+    ImGui::SetNextWindowSize(windowSize);
+    ImGui::Begin("Scene", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize);
+
+    // Obtenemos el tamaño de la ventana de ImGui después de que se apliquen las restricciones de tamaño
+    ImVec2 actualWindowSize = ImGui::GetWindowSize();
+    float scaleFactor = std::min(actualWindowSize.x / windowSize.x, actualWindowSize.y / windowSize.y);
+    ImVec2 imageSize = ImVec2(1920.0f * scaleFactor, 1080.0f * scaleFactor);
+
+    // Calculamos la posición para centrar la imagen en la ventana
+    ImVec2 imagePosition = ImVec2((actualWindowSize.x - imageSize.x) * 0.5f, (actualWindowSize.y - imageSize.y) * 0.5f);
+
+    ImGui::SetCursorPos(imagePosition);
+
+    // Invertimos las coordenadas de textura en el eje Y antes de mostrar la imagen
+    ImGui::Image((void*)(intptr_t)texture, imageSize, ImVec2(0, 1), ImVec2(1, 0));
+
     ImGui::End();
+
 
 
     //DRAW CANVAS DATA
     UIIMPL->DrawData();
     glfwSwapBuffers(StartEngineGraphics::window);
 }
+
 
 void StartEngineGraphics::releasewindow() {
 

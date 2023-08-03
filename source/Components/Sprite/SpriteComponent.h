@@ -15,13 +15,13 @@ using namespace std;
 class SpriteComponent : public Component
 {
 public:
-    glm::vec3 cubePosition = glm::vec3(0.0f, 0.0f, 0.0f);
+    glm::vec3 cubePosition = glm::vec3(25, 0.0f, 0.0f);
     float Scale = 25.0f;
     unsigned int shaderProgram;
     unsigned int vertexShader;
     unsigned int fragmentShader;
 
-    string TexturePath = "assets/sprites/tile_0045.png";
+    string TexturePath = "assets/sprites/tree.png";
     unsigned int texture;
     unsigned int VBO, VAO, EBO;
 

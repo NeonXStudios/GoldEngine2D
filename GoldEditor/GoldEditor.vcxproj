@@ -88,7 +88,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Binarys/include/</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Binarys/include/;$(SolutionDir)Binarys/include/imgui</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -105,7 +105,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Binarys/include/</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Binarys/include/;$(SolutionDir)Binarys/include/imgui</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -122,7 +122,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Binarys/include/</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Binarys/include/;$(SolutionDir)Binarys/include/imgui</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,7 +139,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Binarys/include/</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Binarys/include/;$(SolutionDir)Binarys/include/imgui</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -152,7 +152,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Binarys\c\glad.c" />
-    <ClCompile Include="GoldEditor.cpp" />
+    <ClCompile Include="..\Binarys\include\imgui\imgui.cpp" />
+    <ClCompile Include="..\Binarys\include\imgui\imgui_demo.cpp" />
+    <ClCompile Include="..\Binarys\include\imgui\imgui_draw.cpp" />
+    <ClCompile Include="..\Binarys\include\imgui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="..\Binarys\include\imgui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="..\Binarys\include\imgui\imgui_tables.cpp" />
+    <ClCompile Include="..\Binarys\include\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="source\Editor\GoldEditor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GoldEngine.vcxproj">
@@ -160,7 +167,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Binarys\include\imgui\imconfig.h" />
+    <ClInclude Include="..\Binarys\include\imgui\imgui.h" />
+    <ClInclude Include="..\Binarys\include\imgui\imgui_impl_glfw.h" />
+    <ClInclude Include="..\Binarys\include\imgui\imgui_impl_opengl3.h" />
+    <ClInclude Include="..\Binarys\include\imgui\imgui_impl_opengl3_loader.h" />
+    <ClInclude Include="..\Binarys\include\imgui\imgui_internal.h" />
+    <ClInclude Include="..\Binarys\include\imgui\imstb_rectpack.h" />
+    <ClInclude Include="..\Binarys\include\imgui\imstb_textedit.h" />
+    <ClInclude Include="..\Binarys\include\imgui\imstb_truetype.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="source\Editor\GoldEditor.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\source\icons\bitmap1.bmp" />
