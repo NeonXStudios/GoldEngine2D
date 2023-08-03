@@ -27,17 +27,21 @@ void UIImplement::draw() {
 
 void UIImplement::DrawCanvas() {
 	ImGui::DockSpaceOverViewport();
-	ImGui::Begin("InvisibleWindow");
-	ImGui::Button("bru");
-	ImGui::End();
+	
+	if (ImGui::Begin("Assets")) {
 
-	ImGui::Begin("InvisibleWindow2");
-	ImGui::Button("bru");
-	ImGui::End();
+		ImGui::End();
+	}
 
-	ImGui::Begin("InvisibleWindow3");
-	ImGui::Button("bru");
-	ImGui::End();
+	if (ImGui::Begin("Hierarchy")) {
+
+		ImGui::End();
+	}
+
+	if (ImGui::Begin("Inspector")) {
+
+		ImGui::End();
+	}
 }
 
 
