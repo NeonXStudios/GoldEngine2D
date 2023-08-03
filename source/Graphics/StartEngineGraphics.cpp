@@ -1,4 +1,4 @@
-#include "StartEngineGraphics.h"
+ï»¿#include "StartEngineGraphics.h"
 #include "../Graphics/AppSettings.h"
 #include "../Components/SceneManager/SceneManager.h"
 #include "../Components/Sprite/SpriteComponent.h"
@@ -9,8 +9,7 @@ EngineBehaviour* StartEngineGraphics::engine = nullptr;
 StartEngineGraphics* StartEngineGraphics::instance = nullptr;
 UIImplement* UIIMPL = new UIImplement();
 
-unsigned int framebuffer;
-unsigned int texture;
+
 
 void StartEngineGraphics::create() {
     if (StartEngineGraphics::instance) throw std::exception ("Graphics manager already exist");
@@ -33,7 +32,7 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
 void StartEngineGraphics::StartEngine () {
     glfwInit();
     glfwWindowHint (GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint (GLFW_CONTEXT_VERSION_MINOR, 2);
+    glfwWindowHint (GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint (GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 
@@ -51,25 +50,21 @@ void StartEngineGraphics::StartEngine () {
     }
 
     glfwGetFramebufferSize (StartEngineGraphics::window, &AppSettings::instance->ScreenWidth, &AppSettings::instance->ScreenHeight);
+
+    //START GAME
     SceneManager::GetSceneManager()->OpenScene->start();
 
 
-    glGenFramebuffers(1, &framebuffer);
-    glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
 
-    glGenTextures(1, &texture);
-    glBindTexture(GL_TEXTURE_2D, texture);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, AppSettings::instance->ScreenWidth, AppSettings::instance->ScreenHeight, 0, GL_RGB, GL_UNSIGNED_BYTE, NULL);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, texture, 0);
-
-    if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
-        std::cout << "Framebuffer is not complete!" << std::endl;
-
-    glBindFramebuffer(GL_FRAMEBUFFER, 0);
-
+    //LOAD IMGUI IMPLEMENTATION
     UIIMPL->start();
+
+
+
+
+    //START GAME FUNCTION
+    //StartEngineGraphics::engine->start();
+
 }
 
 void StartEngineGraphics::update() {
@@ -79,71 +74,32 @@ void StartEngineGraphics::update() {
     lastFrame = currentFrame;
     time += deltaTime;
 
-
-    /*
-    glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
-    //CLEAN THE WINDOWS AND DRAW
-    glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT);
-
-    glfwSetFramebufferSizeCallback(StartEngineGraphics::window, framebuffer_size_callback);
-
-    // Update the projection matrix with zoom
-    int screenWidth, screenHeight;
-    glfwGetFramebufferSize(StartEngineGraphics::window, &screenWidth, &screenHeight);
-
-
-    //UPDATE SCENE AND DRAW
-    SceneManager::GetSceneManager()->OpenScene->update();
-    glBindFramebuffer(GL_FRAMEBUFFER, 0);
-*/
-
-    glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
+    //StartEngineGraphics::engine->lateupdate();
     glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
     SceneManager::GetSceneManager()->OpenScene->update();
-    glBindFramebuffer(GL_FRAMEBUFFER, 0);
+    //StartEngineGraphics::engine->draw();
+    //StartEngineGraphics::engine->update();
+    //StartEngineGraphics::engine->fixupdate();
 
-    // Copiar el contenido del framebuffer en la textura
-    glBindFramebuffer(GL_READ_FRAMEBUFFER, framebuffer);
-    glBindTexture(GL_TEXTURE_2D, texture);
-    glCopyTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, 0, 0, AppSettings::instance->ScreenWidth, AppSettings::instance->ScreenHeight, 0);
-    glBindFramebuffer(GL_READ_FRAMEBUFFER, 0);
- 
-    UIIMPL->draw();
+   
+    UIIMPL->draw();                                                             
+
     //DRAW UI COMPONENTS
     UIIMPL->DrawCanvas();
 
-    ImVec2 windowSize = ImVec2(1920, 1080);
-
-    // Dibujamos la imagen en la ventana de ImGui
-    ImGui::SetNextWindowSize(windowSize);
-    ImGui::Begin("Scene", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize);
-
-    // Obtenemos el tamaño de la ventana de ImGui después de que se apliquen las restricciones de tamaño
-    ImVec2 actualWindowSize = ImGui::GetWindowSize();
-    float scaleFactor = std::min(actualWindowSize.x / windowSize.x, actualWindowSize.y / windowSize.y);
-    ImVec2 imageSize = ImVec2(1920.0f * scaleFactor, 1080.0f * scaleFactor);
-
-    // Calculamos la posición para centrar la imagen en la ventana
-    ImVec2 imagePosition = ImVec2((actualWindowSize.x - imageSize.x) * 0.5f, (actualWindowSize.y - imageSize.y) * 0.5f);
-
-    ImGui::SetCursorPos(imagePosition);
-
-    // Invertimos las coordenadas de textura en el eje Y antes de mostrar la imagen
-    ImGui::Image((void*)(intptr_t)texture, imageSize, ImVec2(0, 1), ImVec2(1, 0));
-
-    ImGui::End();
-
-
+    //DRAW ENGINE CANVAS UI
+    //StartEngineGraphics::engine->drawUI();
 
     //DRAW CANVAS DATA
     UIIMPL->DrawData();
+
+    // Renderizar ImGUI
     glfwSwapBuffers(StartEngineGraphics::window);
 }
 
 
 void StartEngineGraphics::releasewindow() {
-
+    StartEngineGraphics::engine->release();
     glfwTerminate();
 }

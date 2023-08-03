@@ -6,42 +6,28 @@ void UIImplement::start() {
 	IMGUI_CHECKVERSION();
 	ImGui::CreateContext();
 
-	ImGui::StyleColorsDark();
-	ImGui_ImplGlfw_InitForOpenGL  (StartEngineGraphics::window, true);
-	ImGui_ImplOpenGL3_Init	      ("#version 330");
-	
-    ImGuiIO& io = ImGui::GetIO();
-    (void)io;
+	ImGuiIO& io = ImGui::GetIO(); (void)io;
 
-	io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
-	//io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
-	//io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
+	ImGui::StyleColorsDark();
+
+	ImGui_ImplGlfw_InitForOpenGL(StartEngineGraphics::window, true);
+	ImGui_ImplOpenGL3_Init("#version 330");
 }
 
 
 void UIImplement::draw() {
-    ImGui_ImplOpenGL3_NewFrame();
-    ImGui_ImplGlfw_NewFrame();
-    ImGui::NewFrame();
+	ImGui_ImplOpenGL3_NewFrame();
+	ImGui_ImplGlfw_NewFrame();
+	ImGui::NewFrame();
 }
 
 void UIImplement::DrawCanvas() {
-	ImGui::DockSpaceOverViewport();
-	
-	if (ImGui::Begin("Assets")) {
+	ImGui::ShowDemoWindow();
 
-		ImGui::End();
-	}
 
-	if (ImGui::Begin("Hierarchy")) {
-
-		ImGui::End();
-	}
-
-	if (ImGui::Begin("Inspector")) {
-
-		ImGui::End();
-	}
+	ImGui::Begin("test");
+	ImGui::Button("A");
+	ImGui::End();
 }
 
 

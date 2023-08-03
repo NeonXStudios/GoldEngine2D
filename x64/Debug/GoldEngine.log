@@ -1,14 +1,6 @@
 ﻿  UIImplement.cpp
-  GoldEngineLib.cpp
-F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(9,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
   StartEngineGraphics.cpp
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(9,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\StartEngineGraphics.cpp(77,24): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\StartEngineGraphics.cpp(72,24): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
   Generando código...
-GoldEngineLib.obj : warning LNK4006: "class StartEngineGraphics * engine" (?engine@@3PEAVStartEngineGraphics@@EA) ya se definió en RunEngine.obj; segunda definición omitida
-GoldEngineLib.obj : warning LNK4006: "class AppSettings * settings" (?settings@@3PEAVAppSettings@@EA) ya se definió en RunEngine.obj; segunda definición omitida
-GoldEngineLib.obj : warning LNK4006: "class SceneManager * sceneManager" (?sceneManager@@3PEAVSceneManager@@EA) ya se definió en RunEngine.obj; segunda definición omitida
-GoldEngineLib.obj : warning LNK4006: "class AudioManager * audioManager" (?audioManager@@3PEAVAudioManager@@EA) ya se definió en RunEngine.obj; segunda definición omitida
-  GoldEngine.vcxproj -> F:\VISUAL STUDIO\GoldEngine2D\BuildCore\GoldEngine.lib
+  GoldEngine.vcxproj -> F:\VISUAL STUDIO\GoldEngine2D\BuildCore\GoldEngine.exe

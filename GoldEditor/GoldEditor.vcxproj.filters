@@ -12,6 +12,15 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="Components">
+      <UniqueIdentifier>{4d79921c-d649-4625-94e6-6645ae1a90ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components\UI">
+      <UniqueIdentifier>{3d12b6d9-648a-4459-9608-98a8c4679df6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components\UI\Behaviour">
+      <UniqueIdentifier>{4ce65440-160b-4f3c-9c7a-9486323face9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Binarys\c\glad.c">
@@ -40,6 +49,9 @@
     </ClCompile>
     <ClCompile Include="..\Binarys\include\imgui\imgui.cpp">
       <Filter>Recursos\IMGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="source\UI\UIDrawer.cpp">
+      <Filter>Components\UI\Behaviour</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -73,6 +85,15 @@
     </ClInclude>
     <ClInclude Include="..\Binarys\include\imgui\imconfig.h">
       <Filter>Recursos\IMGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="source\UI\UIDrawer.h">
+      <Filter>Components\UI\Behaviour</Filter>
+    </ClInclude>
+    <ClInclude Include="source\UI\HUDS\SceneUI.h">
+      <Filter>Components\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="source\UI\UIManager.h">
+      <Filter>Components\UI\Behaviour</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
