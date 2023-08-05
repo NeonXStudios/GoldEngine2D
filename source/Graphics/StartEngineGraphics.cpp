@@ -36,7 +36,7 @@ void StartEngineGraphics::StartEngine () {
     glfwWindowHint (GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 
-    StartEngineGraphics::window = glfwCreateWindow(800, 600, "GOLD ENGINE", NULL, NULL);
+    StartEngineGraphics::window = glfwCreateWindow(1920, 1080, "GOLD ENGINE", NULL, NULL);
 
     if (StartEngineGraphics::window == NULL) {
         std::cout << "Failed to create GLFW window" << std::endl;
@@ -101,4 +101,9 @@ void StartEngineGraphics::update() {
 void StartEngineGraphics::releasewindow() {
     StartEngineGraphics::engine->release();
     glfwTerminate();
+}
+
+
+void StartEngineGraphics::closeWindow() {
+    glfwSetWindowShouldClose (StartEngineGraphics::window, GLFW_TRUE);
 }

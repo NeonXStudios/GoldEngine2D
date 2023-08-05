@@ -60,6 +60,7 @@ private:
 public:
 	std::string ObjectName = "New Entity";
 	std::string ObjectTag = "None";
+	int objectID = 1;
 
 	//Entity(Manager& mManager) : manager(mManager) {}
 

@@ -1,4 +1,8 @@
 #pragma once
+#include "imgui.h"
+#include "GLFW/glfw3.h"
+#include "../../source/Graphics/AppSettings.h"
+
 class UIDrawer
 {
 	virtual void start () = 0;

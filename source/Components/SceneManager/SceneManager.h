@@ -12,5 +12,7 @@ public:
 	static void release();
 
 	static SceneManager* GetSceneManager();
+	Entity* NewEntity	  ();
+	Entity* GetObjectByID (int id);
 };
 #endif

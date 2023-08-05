@@ -25,3 +25,24 @@ void SceneManager::release()
 SceneManager* SceneManager::GetSceneManager() {
 	return instance;
 }
+
+Entity* SceneManager::NewEntity() {
+	Entity* newObj = new Entity();
+	
+	OpenScene->objectsInScene.push_back(newObj);
+	return newObj;
+}
+
+
+Entity* SceneManager::GetObjectByID (int id) {
+	// Asegúrate de que OpenScene y objectsInScene no sean nulos
+	if (OpenScene && OpenScene->objectsInScene.size() > 0) {
+		// Busca el objeto con el ID deseado en el vector de objetos de la escena
+		for (Entity* obj : OpenScene->objectsInScene) {
+			if (obj->objectID == id) {
+				return obj; // Se encontró el objeto con el ID especificado
+			}
+		}
+	}
+	return nullptr; // No se encontró el objeto con el ID especificado o el vector estaba vacío
+}

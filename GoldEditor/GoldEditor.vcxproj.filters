@@ -95,6 +95,9 @@
     <ClInclude Include="source\UI\UIManager.h">
       <Filter>Components\UI\Behaviour</Filter>
     </ClInclude>
+    <ClInclude Include="source\UI\HUDS\BarMenuUI.h">
+      <Filter>Components\UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\source\icons\Icon.ico">

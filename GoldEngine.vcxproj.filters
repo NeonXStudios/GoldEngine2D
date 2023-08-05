@@ -44,6 +44,9 @@
     <Filter Include="Engine\00_Behaviour">
       <UniqueIdentifier>{31c64e0d-8af5-4b8a-ba6f-1e146d0c1b66}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\02_Components\InputSystem">
+      <UniqueIdentifier>{1b424a6b-0714-406c-965c-a6dd250cbb07}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Graphics\StartEngineGraphics.cpp">

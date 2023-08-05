@@ -15,8 +15,8 @@ class Camera {
 public:
     glm::mat4 projection;
     glm::mat4 view;
-    glm::vec3 cameraPosition = glm::vec3(0.0f, 0.0f, 50.0f);
-    float zoom = 1.0f;
+    glm::vec3 cameraPosition = glm::vec3(0.0f, 0.0f, 10.0f);
+    float zoom = 1;
 
     void processInput(GLFWwindow* window) {
         float cameraSpeed = 5.0f;
@@ -30,9 +30,9 @@ public:
         if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
             cameraPosition += glm::vec3(-cameraSpeed, 0.0f, 0.0f);
         if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
-            zoom -= 0.1f / 2;
+            zoom -= 0.01f / 2;
         if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS)
-            zoom += 0.1f / 2;
+            zoom += 0.01f / 2;
     }
 
     void start() {

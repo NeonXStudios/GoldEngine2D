@@ -4,6 +4,7 @@
 AppSettings* AppSettings::instance = nullptr;
 int AppSettings::ScreenWidth = 1920;
 int AppSettings::ScreenHeight = 1080;
+int AppSettings::TargetFPS = 30;
 
 
 void AppSettings::create() {
@@ -24,4 +25,16 @@ int AppSettings::GetWidthScreen() {
 
 int AppSettings::GetHeightScreen() {
     return ScreenHeight;
+}
+
+void AppSettings::setTargetFrame (int fps) {
+    TargetFPS = fps;
+}
+
+int AppSettings::getTargetFrame() {
+    return TargetFPS;
+}
+
+void AppSettings::setVsyncState (int active) {
+    glfwWindowHint(GLFW_DOUBLEBUFFER, active);
 }

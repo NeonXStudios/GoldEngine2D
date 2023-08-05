@@ -21,6 +21,5 @@ public:
 	void update();
 	void release();
 
-	Entity* NewEntity();
 };
 #endif

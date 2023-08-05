@@ -15,7 +15,7 @@ using namespace std;
 class SpriteComponent : public Component
 {
 public:
-    glm::vec3 cubePosition = glm::vec3(25, 0.0f, 0.0f);
+    glm::vec3 cubePosition = glm::vec3(0.0f, 0.0f, 0.0f);
     float Scale = 25.0f;
     unsigned int shaderProgram;
     unsigned int vertexShader;

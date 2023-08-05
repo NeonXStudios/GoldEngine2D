@@ -179,6 +179,7 @@
     <ClInclude Include="..\Binarys\include\imgui\imstb_truetype.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="source\Editor\GoldEditor.h" />
+    <ClInclude Include="source\UI\HUDS\BarMenuUI.h" />
     <ClInclude Include="source\UI\HUDS\SceneUI.h" />
     <ClInclude Include="source\UI\UIDrawer.h" />
     <ClInclude Include="source\UI\UIManager.h" />

@@ -20,6 +20,9 @@ public:
 	void update();
 	void releasewindow();
 	void StartEngine();
+	
+	//STATIC GLOBAL FUNCTIONS
+	static void closeWindow();
 
 	StartEngineGraphics* GetGraphics();
 };
