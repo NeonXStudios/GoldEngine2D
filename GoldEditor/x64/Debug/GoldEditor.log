@@ -10,6 +10,4 @@ F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.h(60,28): warnin
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.h(61,28): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.h(64,68): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.h(64,55): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-  UIDrawer.cpp
-  Generando código...
   GoldEditor.vcxproj -> F:\VISUAL STUDIO\GoldEngine2D\BuildEditor\GoldEditor.exe

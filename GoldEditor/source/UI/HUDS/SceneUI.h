@@ -98,12 +98,12 @@ public:
 
             // Ajustar las coordenadas del objeto para que estén centradas en el espacio de la cámaraf
             float objX = obj.x - objWidth * 0.5f;
-            float objY = obj.x - objHeight * 0.5f;
+            float objY = -obj.y - objHeight * 0.5f;
 
-            if (textureMousePosX >= objX && textureMousePosX <= objX + objWidth &&
-                textureMousePosY >= objY && textureMousePosY <= objY + objHeight) {
+            if (WorldPointX >= objX && WorldPointX <= objX + objWidth &&
+                WorldPointY >= objY && WorldPointY <= objY + objHeight) {
                 // Hacer clic en el objeto (realizar la acción deseada)
-                //std::cout << "Objeto cliqueado: " << objD->ObjectTag << std::endl;
+                std::cout << "Objeto cliqueado: " << objD->ObjectTag << std::endl;
                 // Agregar aquí la lógica para la acción deseada para el objeto clickeado
                 break; // Si solo quieres detectar un objeto clickeado, puedes agregar break aquí
             }
