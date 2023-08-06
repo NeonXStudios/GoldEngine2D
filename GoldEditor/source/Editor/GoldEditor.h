@@ -26,7 +26,7 @@ public:
         player2->ObjectTag = "OBJETO2";
         player2->addComponent<SpriteComponent>();
 
-        player2->getComponent<SpriteComponent>().cubePosition = glm::vec3 (-25, 25, 0);
+        player2->getComponent<SpriteComponent>().cubePosition = glm::vec3 (25, 25, 0);
     }
 
     void draw() override {

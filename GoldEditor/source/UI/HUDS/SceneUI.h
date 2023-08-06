@@ -14,6 +14,8 @@ public:
     unsigned int texture;
     ImVec2 imageSizeSCENE;
     ImVec2 TextureSize;
+    double textureMousePosX = 0;
+    double textureMousePosY = 0;
 
 	void start() override {
         glGenFramebuffers(1, &framebuffer);
@@ -44,8 +46,6 @@ public:
         // Dibujamos la imagen en la ventana de ImGui
         ImGui::SetNextWindowSize(windowSize);
         ImGui::Begin("Scene", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize);
-        glm::vec3 cameraPosition = SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition;
-
 
 
         // Obtenemos el tamaño de la ventana de ImGui después de que se apliquen las restricciones de tamaño
@@ -62,37 +62,76 @@ public:
         ImGui::SetCursorPos(imagePosition);
 
         // Invertimos las coordenadas de textura en el eje Y antes de mostrar la imagen
-        ImGui::Image((void*)(intptr_t)texture, imageSizeSCENE, ImVec2(0, 1), ImVec2(1, 0));
-        glBindTexture(GL_TEXTURE_2D, (intptr_t)texture);
+        ImGui::Image((void*)(intptr_t)texture, imageSizeSCENE, ImVec2(1, 1), ImVec2(0, 0));
+        //std::cout << "Nuevo tamaño de la textura: " << imageSizeSCENE.x << "x" << imageSizeSCENE.y << std::endl;
 
-        // Obtener el ancho de la textura
-        glGetTexLevelParameteriv(GL_TEXTURE_2D, 0, GL_TEXTURE_WIDTH, &textureWidth);
-
-        // Obtener el alto de la textura
-        glGetTexLevelParameteriv(GL_TEXTURE_2D, 0, GL_TEXTURE_HEIGHT, &textureHeight);
-
-        TextureSize.x = textureWidth;
-        TextureSize.y = textureHeight;
-        // Después de obtener el tamaño de la textura, puedes usarlo como lo necesites
-        //std::cout << "Tamaño de la textura: " << textureWidth << "x" << textureHeight << std::endl;
+        // Después de obtener el nuevo tamaño de la textura, puedes usarlo como lo necesites
 
         imagePosition.x += ImGui::GetWindowPos().x;
         imagePosition.y += ImGui::GetWindowPos().y;
 
+        double x, y;
+        glfwGetCursorPos(StartEngineGraphics::window, &x, &y);
 
-        if (ImGui::IsMouseClicked(ImGuiMouseButton_Left)) {
-            double x, y;
-            glfwGetCursorPos(StartEngineGraphics::window, &x, &y);
+        double windowMousePosX = x - imagePosition.x;
+        double windowMousePosY = y - imagePosition.y;
 
-            double windowMousePosX = x - imagePosition.x;
-            double windowMousePosY = y - imagePosition.y;
+        // Obtener el ancho y alto de la imagen o textura
+        double imageWidth = imageSizeSCENE.x; // Ancho de la imagen
+        double imageHeight = imageSizeSCENE.y; // Alto de la imagen
 
 
-            std::cout << "Texture Mouse PosX: " << windowMousePosX << " | Texture Mouse PosY: " << windowMousePosY << std::endl;
+        // Ajustar la posición para que el centro sea el punto de origen
+        double centeredMousePosX = windowMousePosX - (imageWidth * 0.5);
+        double centeredMousePosY = windowMousePosY - (imageHeight * 0.5);
+
+        // Obtener el tamaño actual de la ventana
+        ImVec2 actualWindowSize2 = ImGui::GetWindowSize();
+
+        // Obtener el factor de escala para convertir las coordenadas del mouse a las coordenadas en el espacio de la textura
+        float scaleFactor2 = std::min(actualWindowSize2.x / windowSize.x, actualWindowSize2.y / windowSize.y);
+        textureMousePosX = centeredMousePosX / scaleFactor2;
+        textureMousePosY = centeredMousePosY / scaleFactor2;
+
+
+
+        //if (ImGui::IsMouseClicked(ImGuiMouseButton_Left)) {
+        //
+        //}
+
+        ImGui::Begin("Picking Position");
+        ImGui::Text("Mouse X: %f", textureMousePosX);
+        ImGui::Text("Mouse Y: %f", textureMousePosY);
+        ImGui::End();
+
+        ImGui::Begin("OBJECTS IN SCENE");
+
+        for (Entity* objD : SceneManager::GetSceneManager()->OpenScene->objectsInScene) {
+            glm::vec3& obj = objD->getComponent<SpriteComponent>().cubePosition;
+
+            // Convertir las coordenadas del objeto al espacio de la cámara
+            glm::vec3 objPosCamSpace = obj - SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition;
+
+            float objWidth = 25;
+            float objHeight = 25;
+
+            // Ajustar las coordenadas del objeto para que estén centradas en el espacio de la cámara
+            int objX = objPosCamSpace.x - objWidth * 0.5f;
+            int objY = objPosCamSpace.y - objHeight * 0.5f;
+
+            ImGui::Text("Object tag: %f", objD->ObjectTag.c_str());
+            ImGui::Text("Pos x: : %f", objX);
+            ImGui::Text("Pos y: : %f", objY);
+
+            if (textureMousePosX >= objX && textureMousePosX <= objX + objWidth &&
+                textureMousePosY >= objY && textureMousePosY <= objY + objHeight) {
+                // Hacer clic en el objeto (realizar la acción deseada)
+                std::cout << "Objeto cliqueado: " << objD->ObjectTag << std::endl;
+                // Agregar aquí la lógica para la acción deseada para el objeto clickeado
+                break; // Si solo quieres detectar un objeto clickeado, puedes agregar break aquí
+            }
         }
-
-
-
+        ImGui::End();
 
 
         ImGui::End();
@@ -126,59 +165,75 @@ public:
 
 
 
-/*
+/* PICKING WORKING WITHOUT CAMERA POSITION
 
 
- if (ImGui::IsMouseClicked(ImGuiMouseButton_Left)) {
-            double x, y;
-            glfwGetCursorPos(StartEngineGraphics::window, &x, &y);
+ double x, y;
+        glfwGetCursorPos(StartEngineGraphics::window, &x, &y);
 
-            double windowMousePosX = x - imagePosition.x;
-            double windowMousePosY = y - imagePosition.y;
+        double windowMousePosX = x - imagePosition.x;
+        double windowMousePosY = y - imagePosition.y;
 
-            std::cout << "Window Mouse PosX: " << windowMousePosX << " | Window Mouse PosY: " << windowMousePosY << std::endl;
+        // Obtener el ancho y alto de la imagen o textura
+        double imageWidth = imageSizeSCENE.x; // Ancho de la imagen
+        double imageHeight = imageSizeSCENE.y; // Alto de la imagen
 
-            // Obtener el tamaño de la ventana de ImGui después de que se apliquen las restricciones de tamaño
-            ImVec2 actualWindowSize = ImGui::GetWindowSize();
-            float scaleFactor = std::min(actualWindowSize.x / windowSize.x, actualWindowSize.y / windowSize.y);
-            ImVec2 imageSize = ImVec2(1920.0f * scaleFactor, 1080.0f * scaleFactor);
 
-            // Coordenadas del centro de la textura
-            float textureCenterX = imageSize.x * 0.5f;
-            float textureCenterY = imageSize.y * 0.5f;
+        // Ajustar la posición para que el centro sea el punto de origen
+        double centeredMousePosX = windowMousePosX - (imageWidth * 0.5);
+        double centeredMousePosY = windowMousePosY - (imageHeight * 0.5);
 
-            // Ajustar las coordenadas del mouse para que estén en relación con el centro de la textura
-            float textureMousePosX = windowMousePosX - textureCenterX;
-            float textureMousePosY = windowMousePosY - textureCenterY;
+        // Obtener el tamaño actual de la ventana
+        ImVec2 actualWindowSize2 = ImGui::GetWindowSize();
 
-            // Ajustar las coordenadas del objeto para que estén centradas en la textura y considerar la distancia de la cámara
+        // Obtener el factor de escala para convertir las coordenadas del mouse a las coordenadas en el espacio de la textura
+        float scaleFactor2 = std::min(actualWindowSize2.x / windowSize.x, actualWindowSize2.y / windowSize.y);
+        textureMousePosX = centeredMousePosX / scaleFactor2;
+        textureMousePosY = centeredMousePosY / scaleFactor2;
+
+
+
+        //if (ImGui::IsMouseClicked(ImGuiMouseButton_Left)) {
+        //
+        //}
+
+        ImGui::Begin("Picking Position");
+        ImGui::Text("Mouse X: %f", textureMousePosX);
+        ImGui::Text("Mouse Y: %f", textureMousePosY);
+        ImGui::End();
+
+        ImGui::Begin("OBJECTS IN SCENE");
+
+        for (Entity* objD : SceneManager::GetSceneManager()->OpenScene->objectsInScene) {
+            glm::vec3& obj = objD->getComponent<SpriteComponent>().cubePosition;
+
+            // Convertir las coordenadas del objeto al espacio de la cámara
+            glm::vec3 objPosCamSpace = obj - SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition;
+
             float objWidth = 25;
             float objHeight = 25;
 
-            // Verificar si el clic se realizó dentro de alguno de los objetos
-            for (const auto& objD : SceneManager::GetSceneManager()->OpenScene->objectsInScene) {
-                glm::vec3& obj = objD->getComponent<SpriteComponent>().cubePosition;
+            // Ajustar las coordenadas del objeto para que estén centradas en el espacio de la cámara
+            float objX = objPosCamSpace.x - objWidth * 0.5f;
+            float objY = objPosCamSpace.y - objHeight * 0.5f;
 
-                // Convertir las coordenadas del objeto al espacio de la cámara
-                glm::vec4 objPosCamSpace = glm::vec4(obj, 1.0f) * SceneManager::GetSceneManager()->OpenScene->worldCamera->GetView();
+            ImGui::Text("Object tag: %f", objD->ObjectTag.c_str());
+            ImGui::Text("Pos x: : %f", objX);
+            ImGui::Text("Pos y: : %f", objY);
 
-                // Normalizar las coordenadas para considerar la distancia de la cámara
-                float normX = objPosCamSpace.x / objPosCamSpace.w;
-                float normY = objPosCamSpace.y / objPosCamSpace.w;
-
-                // Ajustar las coordenadas del objeto para que estén centradas en la textura
-                float objX = normX - objWidth * 0.5f;
-                float objY = -normY - objHeight * 0.5f;
-
-                if (textureMousePosX >= objX && textureMousePosX <= objX + objWidth &&
-                    textureMousePosY >= objY && textureMousePosY <= objY + objHeight) {
-                    // Hacer clic en el objeto (realizar la acción deseada)
-                    std::cout << "Objeto cliqueado: " << objD->ObjectTag << std::endl;
-                    // Agregar aquí la lógica para la acción deseada para el objeto clickeado
-                    break; // Si solo quieres detectar un objeto clickeado, puedes agregar break aquí
-                }
+            if (textureMousePosX >= objX && textureMousePosX <= objX + objWidth &&
+                textureMousePosY >= objY && textureMousePosY <= objY + objHeight) {
+                // Hacer clic en el objeto (realizar la acción deseada)
+                std::cout << "Objeto cliqueado: " << objD->ObjectTag << std::endl;
+                // Agregar aquí la lógica para la acción deseada para el objeto clickeado
+                break; // Si solo quieres detectar un objeto clickeado, puedes agregar break aquí
             }
         }
-        
-        
-        */
+        ImGui::End();
+
+
+if (ImGui::IsMouseClicked(ImGuiMouseButton_Left)) {
+            
+    }
+
+*/

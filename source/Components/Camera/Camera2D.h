@@ -19,20 +19,29 @@ public:
     float zoom = 1;
 
     void processInput(GLFWwindow* window) {
-        float cameraSpeed = 5.0f;
+        float cameraSpeed = 1;
 
         if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-            cameraPosition += glm::vec3(0.0f, 0.0f, cameraSpeed);
+            cameraPosition += glm::vec3(0.0f, 0.0f, cameraSpeed); 
         if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
             cameraPosition += glm::vec3(0.0f, 0.0f, -cameraSpeed);
         if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-            cameraPosition += glm::vec3(cameraSpeed, 0.0f, 0.0f);
-        if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
             cameraPosition += glm::vec3(-cameraSpeed, 0.0f, 0.0f);
+        if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+            cameraPosition += glm::vec3(cameraSpeed, 0.0f, 0.0f);
+        if (glfwGetKey(window, GLFW_KEY_E) == GLFW_PRESS)
+            cameraPosition += glm::vec3(0.0f, cameraSpeed, 0.0f);
+        if (glfwGetKey(window, GLFW_KEY_Q) == GLFW_PRESS)
+            cameraPosition += glm::vec3(0.0f, -cameraSpeed, 0.0f);
         if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
             zoom -= 0.01f / 2;
         if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS)
             zoom += 0.01f / 2;
+
+        if (glfwGetKey(window, GLFW_KEY_T) == GLFW_PRESS) {
+            cameraPosition = glm::vec3(0.0f, 0.0f, 0.0f);
+            zoom = 1;
+        }
     }
 
     void start() {
