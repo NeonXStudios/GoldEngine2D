@@ -19,7 +19,7 @@ public:
     float zoom = 1;
 
     void processInput(GLFWwindow* window) {
-        float cameraSpeed = 1;
+        float cameraSpeed = 0.3f;
 
         if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
             cameraPosition += glm::vec3(0.0f, 0.0f, cameraSpeed); 

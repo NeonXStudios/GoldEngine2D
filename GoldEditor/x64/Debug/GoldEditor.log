@@ -2,14 +2,6 @@
 F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(9,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.h(119,22): warning C4244: 'inicializando': conversión de 'T' a 'int'; posible pérdida de datos
-          with
-          [
-              T=float
-          ]
-F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.h(120,22): warning C4244: 'inicializando': conversión de 'T' a 'int'; posible pérdida de datos
-          with
-          [
-              T=float
-          ]
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.h(111,26): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.h(112,27): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
   GoldEditor.vcxproj -> F:\VISUAL STUDIO\GoldEngine2D\BuildEditor\GoldEditor.exe

@@ -76,6 +76,8 @@ public:
         double windowMousePosX = x - imagePosition.x;
         double windowMousePosY = y - imagePosition.y;
 
+        //std::cout << "POS X: " << windowMousePosX << " | POS Y: " << windowMousePosY << std::endl;
+
         // Obtener el ancho y alto de la imagen o textura
         double imageWidth = imageSizeSCENE.x; // Ancho de la imagen
         double imageHeight = imageSizeSCENE.y; // Alto de la imagen
@@ -104,7 +106,13 @@ public:
         ImGui::Text("Mouse Y: %f", textureMousePosY);
         ImGui::End();
 
-        ImGui::Begin("OBJECTS IN SCENE");
+
+        // Obtener el tamaño de la textura del render (por ejemplo, 1920x1080)
+        int textureWidth = imageSizeSCENE.y;
+        int textureHeight = imageSizeSCENE.x;
+
+        // Obtener la matriz de proyección de la cámara
+        glm::mat4 projectionMatrix = SceneManager::GetSceneManager()->OpenScene->worldCamera->GetProjectionMatrix();
 
         for (Entity* objD : SceneManager::GetSceneManager()->OpenScene->objectsInScene) {
             glm::vec3& obj = objD->getComponent<SpriteComponent>().cubePosition;
@@ -116,22 +124,30 @@ public:
             float objHeight = 25;
 
             // Ajustar las coordenadas del objeto para que estén centradas en el espacio de la cámara
-            int objX = objPosCamSpace.x - objWidth * 0.5f;
-            int objY = objPosCamSpace.y - objHeight * 0.5f;
+            float objX = objPosCamSpace.x - objWidth * 0.5f;
+            float objY = objPosCamSpace.y - objHeight * 0.5f;
 
-            ImGui::Text("Object tag: %f", objD->ObjectTag.c_str());
-            ImGui::Text("Pos x: : %f", objX);
-            ImGui::Text("Pos y: : %f", objY);
+            // Proyectar las coordenadas Y del objeto en el espacio de la cámara al espacio normalizado de la textura del render
+            // Para proyectar, multiplicamos las coordenadas Y del objeto por -1 para invertir la dirección del eje Y
+            glm::vec4 projectedObjPos = projectionMatrix * glm::vec4(objPosCamSpace.x, -objPosCamSpace.y, objPosCamSpace.z, 1.0f);
+            float normalizedObjY = (projectedObjPos.y + 1.0f) * 0.5f;
 
             if (textureMousePosX >= objX && textureMousePosX <= objX + objWidth &&
-                textureMousePosY >= objY && textureMousePosY <= objY + objHeight) {
+                textureMousePosY >= normalizedObjY * textureHeight && textureMousePosY <= (normalizedObjY + objHeight) * textureHeight) {
                 // Hacer clic en el objeto (realizar la acción deseada)
                 std::cout << "Objeto cliqueado: " << objD->ObjectTag << std::endl;
                 // Agregar aquí la lógica para la acción deseada para el objeto clickeado
                 break; // Si solo quieres detectar un objeto clickeado, puedes agregar break aquí
             }
         }
-        ImGui::End();
+
+
+        //ImGui::Begin("OBJECTS IN SCENE");
+        //ImGui::Text("Object tag: %f", objD->ObjectTag.c_str());
+        //ImGui::Text("Pos x: : %f", objX);
+        //ImGui::Text("Pos y: : %f", objY);
+        //
+        //ImGui::End();
 
 
         ImGui::End();
