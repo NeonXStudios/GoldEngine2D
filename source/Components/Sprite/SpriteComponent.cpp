@@ -1,8 +1,8 @@
 #include "SpriteComponent.h"
-#define STB_IMAGE_IMPLEMENTATION
+#define STB_IMAGE_IMPLEMENTATIONTEXTURE
 #include <stb_image.h>
 
-float vertices[] = {
+float vertices2[] = {
    -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
     0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
@@ -13,7 +13,7 @@ float vertices[] = {
    -0.5f,  0.5f,  0.5f,  0.0f, 1.0f
 };
 
-unsigned int indices[] = {
+unsigned int indices2[] = {
     0, 1, 2,
     2, 3, 0,
     4, 5, 6,
@@ -28,7 +28,7 @@ unsigned int indices[] = {
     4, 0, 3
 };
 
-const char* vertexShaderSource = R"(
+const char* vertexShaderSource2 = R"(
     #version 330 core
     layout (location = 0) in vec3 aPos;
     layout (location = 1) in vec2 aTexCoord;
@@ -45,7 +45,7 @@ const char* vertexShaderSource = R"(
     }
 )";
 
-const char* fragmentShaderSource = R"(
+const char* fragmentShaderSource2 = R"(
     #version 330 core
     in vec2 TexCoord;
     out vec4 FragColor;
@@ -59,11 +59,11 @@ const char* fragmentShaderSource = R"(
 
 void SpriteComponent::start()  {
     vertexShader = glCreateShader(GL_VERTEX_SHADER);
-    glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
+    glShaderSource(vertexShader, 1, &vertexShaderSource2, NULL);
     glCompileShader(vertexShader);
 
     fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-    glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
+    glShaderSource(fragmentShader, 1, &fragmentShaderSource2, NULL);
     glCompileShader(fragmentShader);
 
     shaderProgram = glCreateProgram();
@@ -81,10 +81,10 @@ void SpriteComponent::start()  {
     glBindVertexArray(VAO);
 
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices2), vertices2, GL_STATIC_DRAW);
 
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices2), indices2, GL_STATIC_DRAW);
 
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);

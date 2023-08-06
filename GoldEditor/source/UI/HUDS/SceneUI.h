@@ -6,6 +6,7 @@ unsigned int framebuffer;
 unsigned int texture;
 int textureWidth, textureHeight;
 ImVec2 imagePosition;
+DrawBox* box = new DrawBox();
 
 class SceneUI : public UIDrawer {
 
@@ -13,11 +14,10 @@ public:
     unsigned int framebuffer;
     unsigned int texture;
     ImVec2 imageSizeSCENE;
-    ImVec2 TextureSize;
     double textureMousePosX = 0;
     double textureMousePosY = 0;
 
-	void start() override {
+    void start() override {
         glGenFramebuffers(1, &framebuffer);
         glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
 
@@ -34,35 +34,35 @@ public:
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
     }
 
-    bool isMouseInsideRect(double xpos, double ypos, double rectX, double rectY, double rectWidth, double rectHeight) {
-        return (xpos >= rectX && xpos <= rectX + rectWidth &&
-            ypos >= rectY && ypos <= rectY + rectHeight);
-    }
 
-	void draw() override {
+    void draw() override {
 
-        ImVec2 windowSize = ImVec2(1920, 1080);
+        ImVec2 windowSize = ImVec2(AppSettings::ScreenWidth, AppSettings::ScreenHeight);
 
         // Dibujamos la imagen en la ventana de ImGui
         ImGui::SetNextWindowSize(windowSize);
         ImGui::Begin("Scene", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize);
-
+        //RenderSizeWindow = ImGui::GetWindowSize();
 
         // Obtenemos el tamaño de la ventana de ImGui después de que se apliquen las restricciones de tamaño
         ImVec2 actualWindowSize = ImGui::GetWindowSize();
         float scaleFactor = std::min(actualWindowSize.x / windowSize.x, actualWindowSize.y / windowSize.y);
-        imageSizeSCENE = ImVec2(1920.0f * scaleFactor, 1080.0f * scaleFactor);
+        imageSizeSCENE = ImVec2(AppSettings::ScreenWidth * scaleFactor, AppSettings::ScreenHeight * scaleFactor);
 
-        // Calculamos el tamaño final sin escalar
-        ImVec2 finalImageSize = ImVec2(1920.0f, 1080.0f);
 
         // Calculamos la posición para centrar la imagen en la ventana
         imagePosition = ImVec2((actualWindowSize.x - imageSizeSCENE.x) * 0.5f, (actualWindowSize.y - imageSizeSCENE.y) * 0.5f);
 
         ImGui::SetCursorPos(imagePosition);
 
+        int WindowXSize = imageSizeSCENE.x;
+        int WindowYSize = imageSizeSCENE.y;
+        imageSizeSCENE.x = WindowXSize;
+        imageSizeSCENE.y = WindowYSize;
+
         // Invertimos las coordenadas de textura en el eje Y antes de mostrar la imagen
-        ImGui::Image((void*)(intptr_t)texture, imageSizeSCENE, ImVec2(1, 1), ImVec2(0, 0));
+        ImGui::Image((void*)(intptr_t)texture, ImVec2(WindowXSize, WindowYSize), ImVec2(1, 1), ImVec2(0, 0));
+
         //std::cout << "Nuevo tamaño de la textura: " << imageSizeSCENE.x << "x" << imageSizeSCENE.y << std::endl;
 
         // Después de obtener el nuevo tamaño de la textura, puedes usarlo como lo necesites
@@ -76,71 +76,62 @@ public:
         double windowMousePosX = x - imagePosition.x;
         double windowMousePosY = y - imagePosition.y;
 
-        //std::cout << "POS X: " << windowMousePosX << " | POS Y: " << windowMousePosY << std::endl;
+        double NormalMousePosX = windowMousePosX / imageSizeSCENE.x;
+        double NormalMousePosY = -windowMousePosY / imageSizeSCENE.y;
 
-        // Obtener el ancho y alto de la imagen o textura
-        double imageWidth = imageSizeSCENE.x; // Ancho de la imagen
-        double imageHeight = imageSizeSCENE.y; // Alto de la imagen
+        // Calcular el centro de la textura en coordenadas de la ventana
+        double centeredMousePosX = (NormalMousePosX * 2.0f - 1.0f) * AppSettings::ScreenWidth / 2;
+        double centeredMousePosY = (NormalMousePosY * 2.0f + 1.0f) * AppSettings::ScreenHeight / 2;
 
+        Camera* cam = SceneManager::GetSceneManager()->OpenScene->worldCamera;
 
-        // Ajustar la posición para que el centro sea el punto de origen
-        double centeredMousePosX = windowMousePosX - (imageWidth * 0.5);
-        double centeredMousePosY = windowMousePosY - (imageHeight * 0.5);
+        double WorldPointX = centeredMousePosX + cam->cameraPosition.x;
+        double WorldPointY = centeredMousePosY - cam->cameraPosition.y;
 
-        // Obtener el tamaño actual de la ventana
-        ImVec2 actualWindowSize2 = ImGui::GetWindowSize();
-
-        // Obtener el factor de escala para convertir las coordenadas del mouse a las coordenadas en el espacio de la textura
-        float scaleFactor2 = std::min(actualWindowSize2.x / windowSize.x, actualWindowSize2.y / windowSize.y);
-        textureMousePosX = centeredMousePosX / scaleFactor2;
-        textureMousePosY = centeredMousePosY / scaleFactor2;
-
-
-
-        //if (ImGui::IsMouseClicked(ImGuiMouseButton_Left)) {
-        //
-        //}
-
-        ImGui::Begin("Picking Position");
-        ImGui::Text("Mouse X: %f", textureMousePosX);
-        ImGui::Text("Mouse Y: %f", textureMousePosY);
-        ImGui::End();
-
-
-        // Obtener el tamaño de la textura del render (por ejemplo, 1920x1080)
-        int textureWidth = imageSizeSCENE.y;
-        int textureHeight = imageSizeSCENE.x;
-
-        // Obtener la matriz de proyección de la cámara
-        glm::mat4 projectionMatrix = SceneManager::GetSceneManager()->OpenScene->worldCamera->GetProjectionMatrix();
 
         for (Entity* objD : SceneManager::GetSceneManager()->OpenScene->objectsInScene) {
             glm::vec3& obj = objD->getComponent<SpriteComponent>().cubePosition;
 
             // Convertir las coordenadas del objeto al espacio de la cámara
-            glm::vec3 objPosCamSpace = obj - SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition;
+            float objWidth = 25 * SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom;
+            float objHeight = 25 * SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom;
 
-            float objWidth = 25;
-            float objHeight = 25;
-
-            // Ajustar las coordenadas del objeto para que estén centradas en el espacio de la cámara
-            float objX = objPosCamSpace.x - objWidth * 0.5f;
-            float objY = objPosCamSpace.y - objHeight * 0.5f;
-
-            // Proyectar las coordenadas Y del objeto en el espacio de la cámara al espacio normalizado de la textura del render
-            // Para proyectar, multiplicamos las coordenadas Y del objeto por -1 para invertir la dirección del eje Y
-            glm::vec4 projectedObjPos = projectionMatrix * glm::vec4(objPosCamSpace.x, -objPosCamSpace.y, objPosCamSpace.z, 1.0f);
-            float normalizedObjY = (projectedObjPos.y + 1.0f) * 0.5f;
+            // Ajustar las coordenadas del objeto para que estén centradas en el espacio de la cámaraf
+            float objX = obj.x - objWidth * 0.5f;
+            float objY = obj.x - objHeight * 0.5f;
 
             if (textureMousePosX >= objX && textureMousePosX <= objX + objWidth &&
-                textureMousePosY >= normalizedObjY * textureHeight && textureMousePosY <= (normalizedObjY + objHeight) * textureHeight) {
+                textureMousePosY >= objY && textureMousePosY <= objY + objHeight) {
                 // Hacer clic en el objeto (realizar la acción deseada)
-                std::cout << "Objeto cliqueado: " << objD->ObjectTag << std::endl;
+                //std::cout << "Objeto cliqueado: " << objD->ObjectTag << std::endl;
                 // Agregar aquí la lógica para la acción deseada para el objeto clickeado
                 break; // Si solo quieres detectar un objeto clickeado, puedes agregar break aquí
             }
         }
 
+
+
+
+        ImGui::Begin("Picking Position");
+        ImGui::Text("Mouse Window X: %f", windowMousePosX);
+        ImGui::Text("Mouse Window Y: %f", windowMousePosY);
+        ImGui::Spacing();
+        ImGui::Text("Mouse Scene X: %f", WorldPointX);
+        ImGui::Text("Mouse Scene Y: %f", WorldPointY);
+        ImGui::Spacing();
+        ImGui::Text("Render Size X: %f", imageSizeSCENE.x);
+        ImGui::Text("Render Size Y: %f", imageSizeSCENE.y);
+        ImGui::End();
+
+        ImGui::Begin("OBJECTS IN SCENE");
+
+
+        /*
+        ImGui::Text("Object tag: %f", objD->ObjectTag.c_str());
+        ImGui::Text("Pos x: : %f", objX);
+        ImGui::Text("Pos y: : %f", objY);
+        */
+        ImGui::End();
 
         //ImGui::Begin("OBJECTS IN SCENE");
         //ImGui::Text("Object tag: %f", objD->ObjectTag.c_str());
@@ -153,10 +144,10 @@ public:
         ImGui::End();
 
 
-        ImGui::Begin ("ASSETS");
-        ImGui::Button ("LAKAKA");
+        ImGui::Begin("ASSETS");
+        ImGui::Button("LAKAKA");
         ImGui::End();
-	}
+    }
 
     void update() {
 
@@ -249,7 +240,7 @@ public:
 
 
 if (ImGui::IsMouseClicked(ImGuiMouseButton_Left)) {
-            
+
     }
 
 */

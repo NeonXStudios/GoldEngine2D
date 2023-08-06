@@ -4,6 +4,7 @@
 
 Entity* player;
 Entity* player2;
+Entity* player3;
 UIManager* uiMaster = new UIManager();
 
 
@@ -27,10 +28,17 @@ public:
         player2->addComponent<SpriteComponent>();
 
         player2->getComponent<SpriteComponent>().cubePosition = glm::vec3 (25, 25, 0);
+
+        player3 = SceneManager::GetSceneManager()->NewEntity();
+        player3->ObjectTag = "OBJETO3";
+        player3->addComponent<SpriteComponent>();
+
+        player3->getComponent<SpriteComponent>().cubePosition = glm::vec3(0, 500, 0);
+        box->start();
     }
 
     void draw() override {
-        
+        box->draw();
     }
 
     void update() override {

@@ -4,6 +4,9 @@
 AppSettings* AppSettings::instance = nullptr;
 int AppSettings::ScreenWidth = 1920;
 int AppSettings::ScreenHeight = 1080;
+int AppSettings::RenderWidth = 0;
+int AppSettings::RenderHeight = 0;
+
 int AppSettings::TargetFPS = 30;
 
 

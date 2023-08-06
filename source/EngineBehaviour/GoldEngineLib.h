@@ -17,7 +17,7 @@
 #include "../Components/SceneManager/SceneManager.h"
 #include "../Components/SceneManager/Scene.h"
 #include "../Components/ShaderCompiler/ShaderCompiler.h"
-#include "../Components/Sprite/SpriteComponent.h"
 #include "../Components/UI/UIImplement.h"
-
+#include "../Components/Debug/DrawBox.h"
+#include "../Components/Sprite/SpriteComponent.h"
 #endif

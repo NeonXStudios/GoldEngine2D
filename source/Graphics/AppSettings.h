@@ -12,6 +12,8 @@ public:
 	static int ScreenWidth;
 	static int ScreenHeight;
 	static int TargetFPS;
+	static int RenderWidth;
+	static int RenderHeight;
 
 	void create();
 	void release();

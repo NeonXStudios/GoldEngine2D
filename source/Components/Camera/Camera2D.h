@@ -19,7 +19,7 @@ public:
     float zoom = 1;
 
     void processInput(GLFWwindow* window) {
-        float cameraSpeed = 0.3f;
+        float cameraSpeed = 1;
 
         if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
             cameraPosition += glm::vec3(0.0f, 0.0f, cameraSpeed); 
@@ -50,7 +50,13 @@ public:
 
     void update() {
         processInput (StartEngineGraphics::window);
-        projection = glm::ortho(-static_cast<float>(AppSettings::instance->ScreenWidth) / 2.0f * zoom, static_cast<float>(AppSettings::instance->ScreenWidth) / 2.0f * zoom, -static_cast<float>(AppSettings::instance->ScreenHeight) / 2.0f * zoom, static_cast<float>(AppSettings::instance->ScreenHeight) / 2.0f * zoom, -1000.0f, 1000.0f);
+        projection = glm::ortho(-static_cast<float>(AppSettings::instance->ScreenWidth) / 
+                    2.0f * zoom, static_cast<float>(AppSettings::instance->ScreenWidth) / 2.0f * 
+                    zoom, -static_cast<float>(AppSettings::instance->ScreenHeight) / 2.0f * 
+                    zoom, static_cast<float>(AppSettings::instance->ScreenHeight) / 2.0f * 
+                    zoom, -1000.0f, 1000.0f);
+
+
         view = glm::lookAt(cameraPosition, cameraPosition + glm::vec3(0.0f, 0.0f, -1.0f), glm::vec3(0.0f, -1.0f, 0.0f));
     }
 

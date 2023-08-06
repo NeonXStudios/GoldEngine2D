@@ -44,8 +44,11 @@
     <Filter Include="Engine\00_Behaviour">
       <UniqueIdentifier>{31c64e0d-8af5-4b8a-ba6f-1e146d0c1b66}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\02_Components\InputSystem">
+    <Filter Include="Engine\02_Components\Debug">
       <UniqueIdentifier>{1b424a6b-0714-406c-965c-a6dd250cbb07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03_Implementaciones">
+      <UniqueIdentifier>{f06d7de1-7cbc-4f2b-8a9c-beeac44830eb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -118,7 +121,15 @@
     <ClCompile Include="source\EngineBehaviour\EngineBehaviour.cpp">
       <Filter>Engine\00_Behaviour</Filter>
     </ClCompile>
-    <ClCompile Include="source\EngineBehaviour\GoldEngineLib.cpp" />
+    <ClCompile Include="source\EngineBehaviour\GoldEngineLib.cpp">
+      <Filter>Engine\00_Behaviour</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\Debug\DrawBox.cpp">
+      <Filter>Engine\02_Components\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="source\STBimplement.cpp">
+      <Filter>Engine\03_Implementaciones</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Components\ShaderCompiler\ShaderCompiler.h">
@@ -196,7 +207,12 @@
     <ClInclude Include="source\EngineBehaviour\EngineBehaviour.h">
       <Filter>Engine\00_Behaviour</Filter>
     </ClInclude>
-    <ClInclude Include="source\EngineBehaviour\GoldEngineLib.h" />
+    <ClInclude Include="source\EngineBehaviour\GoldEngineLib.h">
+      <Filter>Engine\00_Behaviour</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\Debug\DrawBox.h">
+      <Filter>Engine\02_Components\Debug</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GoldEngine.rc">

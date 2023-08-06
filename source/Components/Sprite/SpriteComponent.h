@@ -10,6 +10,7 @@
 #include <glm/gtc/type_ptr.hpp>
 #include "../SceneManager/SceneManager.h"
 
+
 using namespace std;
 
 class SpriteComponent : public Component

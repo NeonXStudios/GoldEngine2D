@@ -9,6 +9,7 @@ F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\imgui\imgui_widgets.cpp;F:\VISUAL 
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\AudioSource\AudioManager.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\AudioManager.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\AudioSource\AudioSource.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\AudioSource.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Camera2D.obj
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Debug\DrawBox.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\DrawBox.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ComponentManager.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\ComponentManager.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ECS.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\ECS.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Models\Cube2DModel.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Cube2DModel.obj
@@ -22,3 +23,4 @@ F:\VISUAL STUDIO\GoldEngine2D\source\EngineBehaviour\GoldEngineLib.cpp;F:\VISUAL
 F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\AppSettings.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\AppSettings.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\RunEngine.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\StartEngineGraphics.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\StartEngineGraphics.obj
+F:\VISUAL STUDIO\GoldEngine2D\source\STBimplement.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\STBimplement.obj

@@ -7,6 +7,7 @@
 #include <bitset>
 #include <array>
 
+
 class Component;
 class Entity;
 class Manager;

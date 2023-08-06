@@ -67,6 +67,13 @@ void StartEngineGraphics::StartEngine () {
 }
 
 void StartEngineGraphics::update() {
+    int width, height;
+    glfwGetFramebufferSize (StartEngineGraphics::window, &width, &height);
+
+    AppSettings::RenderHeight = height;
+    AppSettings::RenderWidth = width;
+
+
     glfwPollEvents();
     float currentFrame = glfwGetTime();
     deltaTime = currentFrame - lastFrame;
