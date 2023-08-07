@@ -1,7 +1,7 @@
 #pragma once
 #include "imgui.h"
-#include "GLFW/glfw3.h"
-#include "../../source/Graphics/AppSettings.h"
+#include "../../source/RequireLibs.h"
+#include "../../source/Components/Systems/SystemsEvents.h"
 
 class UIDrawer
 {

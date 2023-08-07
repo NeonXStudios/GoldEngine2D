@@ -1,14 +1,11 @@
 #pragma once
 #include "../UIDrawer.h"
-#include "../Editor/GoldEditor.h"
-#include "../../source/Components/Systems/SystemsEvents.h"
 
-unsigned int framebuffer;
-unsigned int texture;
-int textureWidth, textureHeight;
-ImVec2 imagePosition;
+
 
 class SceneUI : public UIDrawer {
+    //unsigned int framebuffer;
+    //unsigned int texture;
 
 public:
     unsigned int framebuffer;
@@ -16,6 +13,9 @@ public:
     ImVec2 imageSizeSCENE;
     double textureMousePosX = 0;
     double textureMousePosY = 0;
+    int textureWidth, textureHeight;
+    ImVec2 imagePosition;
+
 
     void start() override {
         glGenFramebuffers(1, &framebuffer);
