@@ -53,6 +53,9 @@
     <ClCompile Include="source\UI\UIDrawer.cpp">
       <Filter>Components\UI\Behaviour</Filter>
     </ClCompile>
+    <ClCompile Include="source\UI\UIManager.cpp">
+      <Filter>Components\UI\Behaviour</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />
@@ -99,6 +102,12 @@
       <Filter>Components\UI</Filter>
     </ClInclude>
     <ClInclude Include="source\UI\HUDS\HierarchyUI.h">
+      <Filter>Components\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="source\UI\HUDS\Assets.h">
+      <Filter>Components\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="source\UI\HUDS\Inspector.h">
       <Filter>Components\UI</Filter>
     </ClInclude>
   </ItemGroup>

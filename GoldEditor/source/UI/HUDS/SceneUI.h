@@ -1,14 +1,11 @@
 #pragma once
 #include "../UIDrawer.h"
-#include "../Editor/GoldEditor.h"
-#include "../../source/Components/Render/RenderSystem.h"
 
-unsigned int framebuffer;
-unsigned int texture;
-int textureWidth, textureHeight;
-ImVec2 imagePosition;
+
 
 class SceneUI : public UIDrawer {
+    //unsigned int framebuffer;
+    //unsigned int texture;
 
 public:
     unsigned int framebuffer;
@@ -16,6 +13,9 @@ public:
     ImVec2 imageSizeSCENE;
     double textureMousePosX = 0;
     double textureMousePosY = 0;
+    int textureWidth, textureHeight;
+    ImVec2 imagePosition;
+
 
     void start() override {
         glGenFramebuffers(1, &framebuffer);
@@ -69,7 +69,7 @@ public:
         imagePosition.x += ImGui::GetWindowPos().x;
         imagePosition.y += ImGui::GetWindowPos().y;
 
-        glm::vec2 WorldPoint = RenderSystem::ScreenToViewPort (glm::vec2 (imagePosition.x, imagePosition.y), glm::vec2 (imageSizeSCENE.x, imageSizeSCENE.y));
+        glm::vec2 WorldPoint = RenderSystem::RenderSystem::ScreenToViewPort (glm::vec2 (imagePosition.x, imagePosition.y), glm::vec2 (imageSizeSCENE.x, imageSizeSCENE.y));
 
 
         for (Entity* objD : SceneManager::GetSceneManager()->OpenScene->objectsInScene) {

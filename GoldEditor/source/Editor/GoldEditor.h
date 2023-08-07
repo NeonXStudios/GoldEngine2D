@@ -53,24 +53,24 @@ public:
         Camera* cam = SceneManager::GetSceneManager()->OpenScene->worldCamera;
         float cameraSpeed = 1;
 
-        if (InputSystem::GetKey(GLFW_KEY_W))
+        if (InputSystem::InputSystem::GetKey(GLFW_KEY_W))
             cam->cameraPosition += glm::vec3(0.0f, 0.0f, cameraSpeed);
-        if (InputSystem::GetKey(GLFW_KEY_S))
+        if (InputSystem::InputSystem::GetKey(GLFW_KEY_S))
             cam->cameraPosition += glm::vec3(0.0f, 0.0f, -cameraSpeed);
-        if (InputSystem::GetKey(GLFW_KEY_A))
+        if (InputSystem::InputSystem::GetKey(GLFW_KEY_A))
             cam->cameraPosition += glm::vec3(-cameraSpeed, 0.0f, 0.0f);
-        if (InputSystem::GetKey(GLFW_KEY_D))
+        if (InputSystem::InputSystem::GetKey(GLFW_KEY_D))
             cam->cameraPosition += glm::vec3(cameraSpeed, 0.0f, 0.0f);
-        if (InputSystem::GetKey(GLFW_KEY_E))
+        if (InputSystem::InputSystem::GetKey(GLFW_KEY_E))
             cam->cameraPosition += glm::vec3(0.0f, cameraSpeed, 0.0f);
-        if (InputSystem::GetKey(GLFW_KEY_Q))
+        if (InputSystem::InputSystem::GetKey(GLFW_KEY_Q))
             cam->cameraPosition += glm::vec3(0.0f, -cameraSpeed, 0.0f);
-        if (InputSystem::GetKey(GLFW_KEY_UP))
+        if (InputSystem::InputSystem::GetKey(GLFW_KEY_UP))
             cam->zoom -= 0.01f / 2;
-        if (InputSystem::GetKey(GLFW_KEY_DOWN))
+        if (InputSystem::InputSystem::GetKey(GLFW_KEY_DOWN))
             cam->zoom += 0.01f / 2;
 
-        if (InputSystem::GetKey(GLFW_KEY_T)) {
+        if (InputSystem::InputSystem::GetKey(GLFW_KEY_T)) {
             cam->cameraPosition = glm::vec3(0.0f, 0.0f, 0.0f);
             cam->zoom = 1;
         }

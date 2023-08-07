@@ -142,7 +142,7 @@
     <ClCompile Include="source\Components\InputSystem\InputSystem.cpp">
       <Filter>Engine\02_Components\InputSystem</Filter>
     </ClCompile>
-    <ClCompile Include="source\Components\Render\RenderSystem.cpp">
+    <ClCompile Include="source\Components\Systems\RenderSystem.cpp">
       <Filter>Engine\02_Components\Events</Filter>
     </ClCompile>
   </ItemGroup>
@@ -237,7 +237,7 @@
     <ClInclude Include="source\Components\InputSystem\InputSystem.h">
       <Filter>Engine\02_Components\InputSystem</Filter>
     </ClInclude>
-    <ClInclude Include="source\Components\Render\RenderSystem.h">
+    <ClInclude Include="source\Components\Systems\SystemsEvents.h">
       <Filter>Engine\02_Components\Events</Filter>
     </ClInclude>
   </ItemGroup>
