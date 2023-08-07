@@ -35,7 +35,7 @@ public:
         player3->ObjectName = "OBJETO3";
         player3->addComponent<SpriteComponent>();
 
-        player3->getComponent<SpriteComponent>().cubePosition = glm::vec3(0, 500, 0);
+        player3->getComponent<SpriteComponent>().cubePosition = glm::vec3(0, 999900, 0);
         box->start();
     }
 

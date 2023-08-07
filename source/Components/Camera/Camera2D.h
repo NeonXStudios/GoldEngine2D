@@ -37,7 +37,7 @@ public:
             zoom -= 0.01f / 2;
         if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS)
             zoom += 0.01f / 2;
-
+        
         if (glfwGetKey(window, GLFW_KEY_T) == GLFW_PRESS) {
             cameraPosition = glm::vec3(0.0f, 0.0f, 0.0f);
             zoom = 1;
