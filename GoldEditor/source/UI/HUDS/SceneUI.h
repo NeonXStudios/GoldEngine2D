@@ -121,9 +121,6 @@ public:
         ImGui::Text("Render Size X: %f", imageSizeSCENE.x);
         ImGui::Text("Render Size Y: %f", imageSizeSCENE.y);
         ImGui::End();
-
-        ImGui::Begin("OBJECTS IN SCENE");
-        ImGui::End();
         ImGui::End();
     }
 
