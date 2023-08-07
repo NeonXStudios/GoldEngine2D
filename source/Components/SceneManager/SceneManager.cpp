@@ -1,5 +1,6 @@
 #include "SceneManager.h"
 #include <iostream>;
+#include <string>
 #include "../../EngineBehaviour/GoldEngineLib.h"
 
 using namespace std;
@@ -36,7 +37,7 @@ Entity* SceneManager::NewEntity() {
 
 
 	OpenScene->objectsInScene.push_back(newObj);
-	newObj->ObjectName = "New Entity ";
+	newObj->ObjectName = "New Entity " + std::to_string (OpenScene->objectsInScene.size() + 1);
 	return newObj;
 }
 

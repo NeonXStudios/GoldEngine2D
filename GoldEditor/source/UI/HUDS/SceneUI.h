@@ -1,6 +1,6 @@
+#pragma once
 #include "../UIDrawer.h"
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
+#include "../Editor/GoldEditor.h"
 
 unsigned int framebuffer;
 unsigned int texture;
@@ -35,7 +35,6 @@ public:
 
 
     void draw() override {
-
         ImVec2 windowSize = ImVec2(AppSettings::ScreenWidth, AppSettings::ScreenHeight);
 
         // Dibujamos la imagen en la ventana de ImGui
@@ -79,30 +78,31 @@ public:
         double NormalMousePosY = -windowMousePosY / imageSizeSCENE.y;
 
         // Calcular el centro de la textura en coordenadas de la ventana
-        double centeredMousePosX = (NormalMousePosX * 2.0f - 1.0f) * AppSettings::ScreenWidth / 2;
-        double centeredMousePosY = (NormalMousePosY * 2.0f + 1.0f) * AppSettings::ScreenHeight / 2;
+        double centeredMousePosX = (NormalMousePosX * 2.0f - 1.0f) * (AppSettings::ScreenWidth / 2) * SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom;
+        double centeredMousePosY = (NormalMousePosY * 2.0f + 1.0f) * (AppSettings::ScreenHeight / 2) * SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom;
 
         Camera* cam = SceneManager::GetSceneManager()->OpenScene->worldCamera;
 
-        double WorldPointX = centeredMousePosX + cam->cameraPosition.x;
-        double WorldPointY = centeredMousePosY - cam->cameraPosition.y;
+        double WorldPointX = (centeredMousePosX + cam->cameraPosition.x);
+        double WorldPointY = (centeredMousePosY - cam->cameraPosition.y);
 
 
         for (Entity* objD : SceneManager::GetSceneManager()->OpenScene->objectsInScene) {
             glm::vec3& obj = objD->getComponent<SpriteComponent>().cubePosition;
 
             // Convertir las coordenadas del objeto al espacio de la cámara
-            float objWidth = 25 / SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom;
-            float objHeight = 25 / SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom;
+            float objWidth = 25;
+            float objHeight = 25;
 
             // Ajustar las coordenadas del objeto para que estén centradas en el espacio de la cámaraf
-            float objX = obj.x - objWidth * 0.5f;
-            float objY = -obj.y - objHeight * 0.5f;
+            float objX = (obj.x - objWidth   * 0.5f);
+            float objY = (-obj.y - objHeight * 0.5f);
 
             if (WorldPointX >= objX && WorldPointX <= objX + objWidth &&
                 WorldPointY >= objY && WorldPointY <= objY + objHeight) {
                 // Hacer clic en el objeto (realizar la acción deseada)
-                std::cout << "Objeto cliqueado: " << objD->ObjectTag << std::endl;
+                std::cout << "Objeto cliqueado: " << objD->ObjectName << std::endl;
+                std::cout << "X: " << objX <<  " | Y: " << objY << std::endl;
                 // Agregar aquí la lógica para la acción deseada para el objeto clickeado
                 break; // Si solo quieres detectar un objeto clickeado, puedes agregar break aquí
             }
@@ -146,7 +146,6 @@ public:
         glBindFramebuffer(GL_READ_FRAMEBUFFER, 0);
     }
 };
-
 
 
 

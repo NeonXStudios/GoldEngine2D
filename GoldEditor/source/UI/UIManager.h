@@ -2,7 +2,6 @@
 #include "HUDS/BarMenuUI.h"
 #include "HUDS/HierarchyUI.h"
 
-
 class UIManager {
 public:
 	SceneUI* sceneui = new SceneUI();

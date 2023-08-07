@@ -1,16 +1,18 @@
+#pragma once
 #include <iostream>
 #include "../../../source/EngineBehaviour/GoldEngineLib.h"
 #include "../UI/UIManager.h"
-
-Entity* player;
-Entity* player2;
-Entity* player3;
-UIManager* uiMaster = new UIManager();
 
 
 class GoldEditor : public EngineBehaviour { 
 public:
     static GoldEditor* editor;
+    DrawBox* box = new DrawBox();
+    Entity* player;
+    Entity* player2;
+    Entity* player3;
+    UIManager* uiMaster = new UIManager();
+
 
     void start() override {
         uiMaster->start();
@@ -34,10 +36,12 @@ public:
         player3->addComponent<SpriteComponent>();
 
         player3->getComponent<SpriteComponent>().cubePosition = glm::vec3(0, 500, 0);
+        box->start();
     }
 
     void draw() override {
-
+        box->cubePosition = player2->getComponent <SpriteComponent>().cubePosition;
+        box->draw();
     }
 
     void update() override {
@@ -60,4 +64,3 @@ public:
        
     }
 };
-

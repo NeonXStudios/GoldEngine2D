@@ -9,4 +9,6 @@ public:
     virtual void fixupdate() = 0;
     virtual void release() = 0;
     virtual void drawUI() = 0;
+    //virtual void createInstance() = 0;
+    //virtual void releaseInstance() = 0;
 };
