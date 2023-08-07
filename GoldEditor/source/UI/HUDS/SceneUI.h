@@ -6,7 +6,6 @@ unsigned int framebuffer;
 unsigned int texture;
 int textureWidth, textureHeight;
 ImVec2 imagePosition;
-DrawBox* box = new DrawBox();
 
 class SceneUI : public UIDrawer {
 
@@ -93,8 +92,8 @@ public:
             glm::vec3& obj = objD->getComponent<SpriteComponent>().cubePosition;
 
             // Convertir las coordenadas del objeto al espacio de la cámara
-            float objWidth = 25 * SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom;
-            float objHeight = 25 * SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom;
+            float objWidth = 25 / SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom;
+            float objHeight = 25 / SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom;
 
             // Ajustar las coordenadas del objeto para que estén centradas en el espacio de la cámaraf
             float objX = obj.x - objWidth * 0.5f;
@@ -124,28 +123,7 @@ public:
         ImGui::End();
 
         ImGui::Begin("OBJECTS IN SCENE");
-
-
-        /*
-        ImGui::Text("Object tag: %f", objD->ObjectTag.c_str());
-        ImGui::Text("Pos x: : %f", objX);
-        ImGui::Text("Pos y: : %f", objY);
-        */
         ImGui::End();
-
-        //ImGui::Begin("OBJECTS IN SCENE");
-        //ImGui::Text("Object tag: %f", objD->ObjectTag.c_str());
-        //ImGui::Text("Pos x: : %f", objX);
-        //ImGui::Text("Pos y: : %f", objY);
-        //
-        //ImGui::End();
-
-
-        ImGui::End();
-
-
-        ImGui::Begin("ASSETS");
-        ImGui::Button("LAKAKA");
         ImGui::End();
     }
 

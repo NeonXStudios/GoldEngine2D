@@ -205,6 +205,7 @@
     <ClInclude Include="source\Components\ShaderCompiler\ShaderCompiler.h" />
     <ClInclude Include="source\Components\Sprite\SpriteComponent.h" />
     <ClInclude Include="source\Components\UI\UIImplement.h" />
+    <ClInclude Include="source\Components\UI\UIStyle.h" />
     <ClInclude Include="source\EngineBehaviour\EngineBehaviour.h" />
     <ClInclude Include="source\EngineBehaviour\GoldEngineLib.h" />
     <ClInclude Include="source\Graphics\AppSettings.h" />

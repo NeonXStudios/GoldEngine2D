@@ -19,26 +19,25 @@ public:
 
 
         player = SceneManager::GetSceneManager()->NewEntity();
-        player->ObjectTag = "OBJETO1";
+        player->ObjectName = "OBJETO1";
         player->addComponent<SpriteComponent>();
 
 
         player2 = SceneManager::GetSceneManager()->NewEntity();
-        player2->ObjectTag = "OBJETO2";
+        player2->ObjectName = "OBJETO2";
         player2->addComponent<SpriteComponent>();
 
         player2->getComponent<SpriteComponent>().cubePosition = glm::vec3 (25, 25, 0);
 
         player3 = SceneManager::GetSceneManager()->NewEntity();
-        player3->ObjectTag = "OBJETO3";
+        player3->ObjectName = "OBJETO3";
         player3->addComponent<SpriteComponent>();
 
         player3->getComponent<SpriteComponent>().cubePosition = glm::vec3(0, 500, 0);
-        box->start();
     }
 
     void draw() override {
-        box->draw();
+
     }
 
     void update() override {

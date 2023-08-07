@@ -1,5 +1,6 @@
 #include "SceneManager.h"
 #include <iostream>;
+#include "../../EngineBehaviour/GoldEngineLib.h"
 
 using namespace std;
 
@@ -28,8 +29,14 @@ SceneManager* SceneManager::GetSceneManager() {
 
 Entity* SceneManager::NewEntity() {
 	Entity* newObj = new Entity();
-	
+
+	if (&newObj->getComponent<SpriteComponent>() == nullptr) {
+		newObj->addComponent<SpriteComponent>();
+	}
+
+
 	OpenScene->objectsInScene.push_back(newObj);
+	newObj->ObjectName = "New Entity ";
 	return newObj;
 }
 

@@ -98,6 +98,9 @@
     <ClInclude Include="source\UI\HUDS\BarMenuUI.h">
       <Filter>Components\UI</Filter>
     </ClInclude>
+    <ClInclude Include="source\UI\HUDS\HierarchyUI.h">
+      <Filter>Components\UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\source\icons\Icon.ico">

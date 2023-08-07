@@ -50,6 +50,9 @@
     <Filter Include="Engine\03_Implementaciones">
       <UniqueIdentifier>{f06d7de1-7cbc-4f2b-8a9c-beeac44830eb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\02_Components\UI\Style">
+      <UniqueIdentifier>{424109f7-2446-481b-b850-a2435cf884ae}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Graphics\StartEngineGraphics.cpp">
@@ -212,6 +215,9 @@
     </ClInclude>
     <ClInclude Include="source\Components\Debug\DrawBox.h">
       <Filter>Engine\02_Components\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\UI\UIStyle.h">
+      <Filter>Engine\02_Components\UI\Style</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

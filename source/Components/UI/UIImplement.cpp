@@ -1,4 +1,5 @@
 #include "UIImplement.h"
+#include "UIStyle.h"
 
 //IMGUI DOCKING NOT WORKING
 
@@ -8,7 +9,10 @@ void UIImplement::start() {
 
 	ImGuiIO& io = ImGui::GetIO(); (void)io;
 	io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
-	ImGui::StyleColorsDark();
+
+	UIStyle::SetStyleUI (Dracula);
+
+//	ImGui::StyleColorsDark();
 
 	ImGui_ImplGlfw_InitForOpenGL(StartEngineGraphics::window, true);
 	ImGui_ImplOpenGL3_Init("#version 330");

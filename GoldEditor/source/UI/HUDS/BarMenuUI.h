@@ -26,6 +26,14 @@ public:
             ImGui::EndMenu();
         }
 
+        if (ImGui::BeginMenu("Assets")) {
+
+            if (ImGui::MenuItem("New Empty Object")) {
+                SceneManager::GetSceneManager()->NewEntity();
+            }
+
+            ImGui::EndMenu();
+        }
 
         if (ImGui::BeginMenu("Build")) {
 
