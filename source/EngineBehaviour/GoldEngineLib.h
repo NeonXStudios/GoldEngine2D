@@ -1,3 +1,4 @@
+#pragma once
 #ifndef GOLDENGINELIB_H
 #define GOLDENGINELIB_H
 
@@ -20,4 +21,7 @@
 #include "../Components/UI/UIImplement.h"
 #include "../Components/Debug/DrawBox.h"
 #include "../Components/Sprite/SpriteComponent.h"
+#include "../Components/Render/RenderSystem.h"
+#include "../Components/InputSystem/InputSystem.h"
+
 #endif

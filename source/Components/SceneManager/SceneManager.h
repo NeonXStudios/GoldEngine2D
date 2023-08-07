@@ -1,14 +1,13 @@
-#ifndef SCENEMANAGER_H
-#define SCENEMANAGER_H
-
+#pragma once
 #include "Scene.h"
+#include "../../Components/Sprite/SpriteComponent.h"
 
 
 class SceneManager
 {
 public:
+	Scene* OpenScene;
 	static SceneManager* instance;
-	Scene* OpenScene = new Scene();
 	static void create();
 	static void release();
 
@@ -16,4 +15,3 @@ public:
 	Entity* NewEntity	  ();
 	Entity* GetObjectByID (int id);
 };
-#endif

@@ -56,6 +56,9 @@
     <Filter Include="Engine\02_Components\InputSystem">
       <UniqueIdentifier>{a2ddda56-ed09-4509-aa25-8ccc1836a782}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\02_Components\Events">
+      <UniqueIdentifier>{9789d116-cd45-4ad0-ac3d-b42019ad3cfa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Graphics\StartEngineGraphics.cpp">
@@ -138,6 +141,9 @@
     </ClCompile>
     <ClCompile Include="source\Components\InputSystem\InputSystem.cpp">
       <Filter>Engine\02_Components\InputSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\Render\RenderSystem.cpp">
+      <Filter>Engine\02_Components\Events</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -230,6 +236,9 @@
     </ClInclude>
     <ClInclude Include="source\Components\InputSystem\InputSystem.h">
       <Filter>Engine\02_Components\InputSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\Render\RenderSystem.h">
+      <Filter>Engine\02_Components\Events</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
