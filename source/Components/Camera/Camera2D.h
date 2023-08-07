@@ -1,13 +1,9 @@
 #ifndef CAMERA2D_H
 #define CAMERA2D_H
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
-#include <iostream>
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtc/type_ptr.hpp>
+#include "../../RequireLibs.h"
 #include "../../Graphics/StartEngineGraphics.h";
 #include "../../Graphics/AppSettings.h"
+#include "../InputSystem/InputSystem.h"
 
 using namespace std;
 
@@ -21,24 +17,24 @@ public:
     void processInput(GLFWwindow* window) {
         float cameraSpeed = 1;
 
-        if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+        if (InputSystem::GetKey (GLFW_KEY_W))
             cameraPosition += glm::vec3(0.0f, 0.0f, cameraSpeed); 
-        if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+        if (InputSystem::GetKey(GLFW_KEY_S))
             cameraPosition += glm::vec3(0.0f, 0.0f, -cameraSpeed);
-        if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+        if (InputSystem::GetKey(GLFW_KEY_A))
             cameraPosition += glm::vec3(-cameraSpeed, 0.0f, 0.0f);
-        if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+        if (InputSystem::GetKey(GLFW_KEY_D))
             cameraPosition += glm::vec3(cameraSpeed, 0.0f, 0.0f);
-        if (glfwGetKey(window, GLFW_KEY_E) == GLFW_PRESS)
+        if (InputSystem::GetKey(GLFW_KEY_E))
             cameraPosition += glm::vec3(0.0f, cameraSpeed, 0.0f);
-        if (glfwGetKey(window, GLFW_KEY_Q) == GLFW_PRESS)
+        if (InputSystem::GetKey(GLFW_KEY_Q))
             cameraPosition += glm::vec3(0.0f, -cameraSpeed, 0.0f);
-        if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
+        if (InputSystem::GetKey(GLFW_KEY_UP))
             zoom -= 0.01f / 2;
-        if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS)
+        if (InputSystem::GetKey(GLFW_KEY_DOWN))
             zoom += 0.01f / 2;
         
-        if (glfwGetKey(window, GLFW_KEY_T) == GLFW_PRESS) {
+        if (InputSystem::GetKey(GLFW_KEY_T)){
             cameraPosition = glm::vec3(0.0f, 0.0f, 0.0f);
             zoom = 1;
         }

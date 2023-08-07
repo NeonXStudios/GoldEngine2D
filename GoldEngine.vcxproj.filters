@@ -53,6 +53,9 @@
     <Filter Include="Engine\02_Components\UI\Style">
       <UniqueIdentifier>{424109f7-2446-481b-b850-a2435cf884ae}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\02_Components\InputSystem">
+      <UniqueIdentifier>{a2ddda56-ed09-4509-aa25-8ccc1836a782}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Graphics\StartEngineGraphics.cpp">
@@ -132,6 +135,9 @@
     </ClCompile>
     <ClCompile Include="source\STBimplement.cpp">
       <Filter>Engine\03_Implementaciones</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\InputSystem\InputSystem.cpp">
+      <Filter>Engine\02_Components\InputSystem</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -218,6 +224,12 @@
     </ClInclude>
     <ClInclude Include="source\Components\UI\UIStyle.h">
       <Filter>Engine\02_Components\UI\Style</Filter>
+    </ClInclude>
+    <ClInclude Include="source\RequireLibs.h">
+      <Filter>Engine\03_Implementaciones</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\InputSystem\InputSystem.h">
+      <Filter>Engine\02_Components\InputSystem</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

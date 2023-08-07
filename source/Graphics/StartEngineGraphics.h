@@ -1,6 +1,5 @@
 #pragma once
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
+#include "../RequireLibs.h"
 #include "../EngineBehaviour/EngineBehaviour.h"
 
 class StartEngineGraphics
