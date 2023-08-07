@@ -1,5 +1,4 @@
-#ifndef APPSETTINGS_H
-#define APPSETTINGS_H
+#pragma once
 #include <iostream>
 #include <GLFW/glfw3.h>
 
@@ -26,4 +25,3 @@ public:
 	int GetWidthScreen();
 	int GetHeightScreen();
 };
-#endif

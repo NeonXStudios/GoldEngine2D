@@ -1,5 +1,4 @@
-#ifndef CAMERA2D_H
-#define CAMERA2D_H
+#pragma once
 #include "../../RequireLibs.h"
 #include "../../Graphics/StartEngineGraphics.h";
 #include "../../Graphics/AppSettings.h"
@@ -37,4 +36,3 @@ public:
         return view;
     }
 };
-#endif

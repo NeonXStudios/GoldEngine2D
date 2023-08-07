@@ -3,12 +3,14 @@ f:\visual studio\goldengine2d\buildcore\goldengine.idb
 f:\visual studio\goldengine2d\x64\debug\glad.obj
 f:\visual studio\goldengine2d\x64\debug\enginebehaviour.obj
 f:\visual studio\goldengine2d\x64\debug\uiimplement.obj
+f:\visual studio\goldengine2d\x64\debug\spritecomponent.obj
 f:\visual studio\goldengine2d\x64\debug\shadercompiler.obj
 f:\visual studio\goldengine2d\x64\debug\scenemanager.obj
 f:\visual studio\goldengine2d\x64\debug\scene.obj
 f:\visual studio\goldengine2d\x64\debug\cube2dmodel.obj
 f:\visual studio\goldengine2d\x64\debug\ecs.obj
 f:\visual studio\goldengine2d\x64\debug\componentmanager.obj
+f:\visual studio\goldengine2d\x64\debug\drawbox.obj
 f:\visual studio\goldengine2d\x64\debug\camera2d.obj
 f:\visual studio\goldengine2d\x64\debug\audiosource.obj
 f:\visual studio\goldengine2d\x64\debug\audiomanager.obj
@@ -24,8 +26,8 @@ f:\visual studio\goldengine2d\x64\debug\startenginegraphics.obj
 f:\visual studio\goldengine2d\x64\debug\runengine.obj
 f:\visual studio\goldengine2d\x64\debug\appsettings.obj
 f:\visual studio\goldengine2d\x64\debug\goldenginelib.obj
-f:\visual studio\goldengine2d\x64\debug\spritecomponent.obj
-f:\visual studio\goldengine2d\x64\debug\drawbox.obj
+f:\visual studio\goldengine2d\x64\debug\inputsystem.obj
+f:\visual studio\goldengine2d\x64\debug\rendersystem.obj
 f:\visual studio\goldengine2d\buildcore\goldengine.lib
 f:\visual studio\goldengine2d\x64\debug\goldengine.res
 f:\visual studio\goldengine2d\buildcore/goldengine.pdb

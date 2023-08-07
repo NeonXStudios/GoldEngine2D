@@ -1,6 +1,7 @@
 #pragma once
 #include "../UIDrawer.h"
 #include "../Editor/GoldEditor.h"
+#include "../../source/Components/Render/RenderSystem.h"
 
 unsigned int framebuffer;
 unsigned int texture;
@@ -68,23 +69,7 @@ public:
         imagePosition.x += ImGui::GetWindowPos().x;
         imagePosition.y += ImGui::GetWindowPos().y;
 
-        double x, y;
-        glfwGetCursorPos(StartEngineGraphics::window, &x, &y);
-
-        double windowMousePosX = x - imagePosition.x;
-        double windowMousePosY = y - imagePosition.y;
-
-        double NormalMousePosX = windowMousePosX / imageSizeSCENE.x;
-        double NormalMousePosY = -windowMousePosY / imageSizeSCENE.y;
-
-        // Calcular el centro de la textura en coordenadas de la ventana
-        double centeredMousePosX = (NormalMousePosX * 2.0f - 1.0f) * (AppSettings::ScreenWidth / 2) * SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom;
-        double centeredMousePosY = (NormalMousePosY * 2.0f + 1.0f) * (AppSettings::ScreenHeight / 2) * SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom;
-
-        Camera* cam = SceneManager::GetSceneManager()->OpenScene->worldCamera;
-
-        double WorldPointX = (centeredMousePosX + cam->cameraPosition.x);
-        double WorldPointY = (centeredMousePosY - cam->cameraPosition.y);
+        glm::vec2 WorldPoint = RenderSystem::ScreenToViewPort (glm::vec2 (imagePosition.x, imagePosition.y), glm::vec2 (imageSizeSCENE.x, imageSizeSCENE.y));
 
 
         for (Entity* objD : SceneManager::GetSceneManager()->OpenScene->objectsInScene) {
@@ -98,8 +83,8 @@ public:
             float objX = (obj.x - objWidth   * 0.5f);
             float objY = (-obj.y - objHeight * 0.5f);
 
-            if (WorldPointX >= objX && WorldPointX <= objX + objWidth &&
-                WorldPointY >= objY && WorldPointY <= objY + objHeight) {
+            if (WorldPoint.x >= objX && WorldPoint.x <= objX + objWidth &&
+                WorldPoint.y >= objY && WorldPoint.y <= objY + objHeight) {
                 // Hacer clic en el objeto (realizar la acción deseada)
                 std::cout << "Objeto cliqueado: " << objD->ObjectName << std::endl;
                 std::cout << "X: " << objX <<  " | Y: " << objY << std::endl;
@@ -110,17 +95,20 @@ public:
 
 
 
-
+        /*
         ImGui::Begin("Picking Position");
-        ImGui::Text("Mouse Window X: %f", windowMousePosX);
-        ImGui::Text("Mouse Window Y: %f", windowMousePosY);
+        ImGui::Text("Mouse Window X: %f", InputSystem::GetMousePositionGlobal().x);
+        ImGui::Text("Mouse Window Y: %f", InputSystem::GetMousePositionGlobal().y);
         ImGui::Spacing();
-        ImGui::Text("Mouse Scene X: %f", WorldPointX);
-        ImGui::Text("Mouse Scene Y: %f", WorldPointY);
+        ImGui::Text("Mouse Scene X: %f", InputSystem::GetMousePositionViewPort(glm::vec2(imagePosition.x, imagePosition.y), glm::vec2(imageSizeSCENE.x, imageSizeSCENE.y)).x);
+        ImGui::Text("Mouse Scene Y: %f", InputSystem::GetMousePositionViewPort(glm::vec2(imagePosition.x, imagePosition.y), glm::vec2(imageSizeSCENE.x, imageSizeSCENE.y)).y);
         ImGui::Spacing();
         ImGui::Text("Render Size X: %f", imageSizeSCENE.x);
         ImGui::Text("Render Size Y: %f", imageSizeSCENE.y);
         ImGui::End();
+
+        */
+
         ImGui::End();
     }
 

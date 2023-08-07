@@ -1,7 +1,4 @@
-#ifndef SCENE_H
-#define SCENE_H
-
-
+#pragma once
 #include "../Camera/Camera2D.h"
 #include "../ECS/ECS.h"
 #include <vector>
@@ -22,4 +19,3 @@ public:
 	void release();
 
 };
-#endif

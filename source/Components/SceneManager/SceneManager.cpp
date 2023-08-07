@@ -1,7 +1,6 @@
 #include "SceneManager.h"
 #include <iostream>;
 #include <string>
-#include "../../EngineBehaviour/GoldEngineLib.h"
 
 using namespace std;
 
@@ -13,6 +12,7 @@ void SceneManager::create()
 	if (SceneManager::instance) throw std::exception("SceneManager already created.");
 	SceneManager::instance = new SceneManager();
 	std::cout << "SceneManager Created" << endl;
+	SceneManager::GetSceneManager()->OpenScene = new Scene();
 }
 
 
