@@ -1,7 +1,7 @@
 #pragma once
 #include "../UIDrawer.h"
 #include "../Editor/GoldEditor.h"
-#include "../../source/Components/Render/RenderSystem.h"
+#include "../../source/Components/Systems/SystemsEvents.h"
 
 unsigned int framebuffer;
 unsigned int texture;
@@ -69,7 +69,7 @@ public:
         imagePosition.x += ImGui::GetWindowPos().x;
         imagePosition.y += ImGui::GetWindowPos().y;
 
-        glm::vec2 WorldPoint = RenderSystem::ScreenToViewPort (glm::vec2 (imagePosition.x, imagePosition.y), glm::vec2 (imageSizeSCENE.x, imageSizeSCENE.y));
+        glm::vec2 WorldPoint = RenderSystem::RenderSystem::ScreenToViewPort (glm::vec2 (imagePosition.x, imagePosition.y), glm::vec2 (imageSizeSCENE.x, imageSizeSCENE.y));
 
 
         for (Entity* objD : SceneManager::GetSceneManager()->OpenScene->objectsInScene) {

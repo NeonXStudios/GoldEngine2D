@@ -14,11 +14,11 @@ F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ComponentManager.cpp;F:\VISU
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ECS.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\ECS.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\InputSystem\InputSystem.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\InputSystem.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Models\Cube2DModel.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Cube2DModel.obj
-F:\VISUAL STUDIO\GoldEngine2D\source\Components\Render\RenderSystem.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\RenderSystem.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\SceneManager\Scene.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Scene.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\SceneManager\SceneManager.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\SceneManager.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\ShaderCompiler\ShaderCompiler.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\ShaderCompiler.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Sprite\SpriteComponent.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\SpriteComponent.obj
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Systems\RenderSystem.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\RenderSystem.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\UI\UIImplement.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\UIImplement.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\EngineBehaviour\EngineBehaviour.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\EngineBehaviour.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\EngineBehaviour\GoldEngineLib.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\GoldEngineLib.obj
