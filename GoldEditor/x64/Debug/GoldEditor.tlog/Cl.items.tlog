@@ -7,5 +7,7 @@ F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\imgui\imgui_impl_opengl3.cpp;F:\VI
 F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\imgui\imgui_tables.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\imgui_tables.obj
 F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\imgui\imgui_widgets.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\imgui_widgets.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Editor\GoldEditor.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\GoldEditor.obj
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Inspector.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\Inspector.obj
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\SceneUI.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\UIDrawer.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\UIDrawer.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\UIManager.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\UIManager.obj

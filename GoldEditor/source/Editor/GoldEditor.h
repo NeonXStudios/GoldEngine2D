@@ -15,6 +15,7 @@ public:
 
 
     void start() override {
+        uiMaster->create();
         uiMaster->start();
         std::cout << "Starting editor" << endl;
 

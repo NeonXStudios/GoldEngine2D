@@ -8,37 +8,23 @@
 class UIManager {
 public:
 	static UIManager* instance;
+	SceneUI* sceneui;
+	BarMenuUI* mainmenuui;
+	HierarchyUI* hierarhcyui;
+	InspectorUI* inspectorui;
+	AssetsUI* assetsui;
 
-	SceneUI* sceneui = new SceneUI();
-	BarMenuUI* mainmenuui = new BarMenuUI();
-	HierarchyUI* hierarhcyui = new HierarchyUI();
-	InspectorUI* inspectorui = new InspectorUI();
-	AssetsUI* assetsui = new AssetsUI();
 
 
-	void start() {
-		instance = new UIManager();
-		sceneui->start();
-		assetsui->start();
-	}
+	void start();
 
-	void draw() {
-		sceneui->draw();
-		mainmenuui->draw();
-		hierarhcyui->draw();
-		assetsui->draw();
-		inspectorui->draw();
-	}
+	void draw();
 
-	void update() {
-		sceneui->update();
-	}
+	void update();
 
-	void fixupdate() {
-		sceneui->fixupdate();
-	}
+	void fixupdate();
 
-	void lateupdate() {
-		sceneui->lateupdate();
-	}
+	void lateupdate();
+
+	~UIManager();
 };

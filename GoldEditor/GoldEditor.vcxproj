@@ -160,6 +160,8 @@
     <ClCompile Include="..\Binarys\include\imgui\imgui_tables.cpp" />
     <ClCompile Include="..\Binarys\include\imgui\imgui_widgets.cpp" />
     <ClCompile Include="source\Editor\GoldEditor.cpp" />
+    <ClCompile Include="source\UI\HUDS\Inspector.cpp" />
+    <ClCompile Include="source\UI\HUDS\SceneUI.cpp" />
     <ClCompile Include="source\UI\UIDrawer.cpp" />
     <ClCompile Include="source\UI\UIManager.cpp" />
   </ItemGroup>
