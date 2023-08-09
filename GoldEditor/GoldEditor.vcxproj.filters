@@ -24,13 +24,19 @@
     <Filter Include="RecursosEditor\IMGUI">
       <UniqueIdentifier>{f5ba0e0f-54d8-44f6-a414-db45cc2ebfea}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Editor\01_INTERFACE">
+      <UniqueIdentifier>{30a912bd-ae9a-45fa-96d2-1256e31f9470}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor\02_InspectorDrawer">
+      <UniqueIdentifier>{fa1f4ebd-6a25-4cc4-ae36-5e4b3c5a1af8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor\02_InspectorDrawer\Components">
+      <UniqueIdentifier>{de6d0e30-4fc6-4797-ad19-6d6fa7726378}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Binarys\c\glad.c">
       <Filter>RecursosEditor</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Editor\GoldEditor.cpp">
-      <Filter>Editor</Filter>
     </ClCompile>
     <ClCompile Include="..\Binarys\include\imgui\imgui_demo.cpp">
       <Filter>RecursosEditor\IMGUI</Filter>
@@ -71,12 +77,24 @@
     <ClCompile Include="source\UI\EditorUI\EditorGUI.cpp">
       <Filter>Components\UI\EditorGUI</Filter>
     </ClCompile>
+    <ClCompile Include="source\Editor\GoldEditor.cpp">
+      <Filter>Editor\01_INTERFACE</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Inspector\DrawComponents.cpp">
+      <Filter>Editor\02_InspectorDrawer</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Inspector\AComponent.cpp">
+      <Filter>Editor\02_InspectorDrawer</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Inspector\Components\CAudio.cpp">
+      <Filter>Editor\02_InspectorDrawer\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Inspector\Components\CSprite.cpp">
+      <Filter>Editor\02_InspectorDrawer\Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />
-    <ClInclude Include="source\Editor\GoldEditor.h">
-      <Filter>Editor</Filter>
-    </ClInclude>
     <ClInclude Include="..\Binarys\include\imgui\imgui.h">
       <Filter>RecursosEditor\IMGUI</Filter>
     </ClInclude>
@@ -127,6 +145,21 @@
     </ClInclude>
     <ClInclude Include="source\UI\EditorUI\EditorGUI.h">
       <Filter>Components\UI\EditorGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Editor\GoldEditor.h">
+      <Filter>Editor\01_INTERFACE</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Inspector\DrawComponents.h">
+      <Filter>Editor\02_InspectorDrawer</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Inspector\AComponent.h">
+      <Filter>Editor\02_InspectorDrawer</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Inspector\Components\CAudio.h">
+      <Filter>Editor\02_InspectorDrawer\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Inspector\Components\CSprite.h">
+      <Filter>Editor\02_InspectorDrawer\Components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -3,7 +3,6 @@
 #include "../../../source/EngineBehaviour/GoldEngineLib.h"
 #include "../UI/UIManager.h"
 
-
 class GoldEditor : public EngineBehaviour { 
 public:
     static GoldEditor* editor;
@@ -11,7 +10,6 @@ public:
     Entity* player2;
     Entity* player3;
     UIManager* uiMaster = new UIManager();
-
 
     void start() override {
         uiMaster->start();
@@ -36,7 +34,6 @@ public:
 
     void update() override {
         uiMaster->update();
-
         Camera* cam = SceneManager::GetSceneManager()->OpenScene->worldCamera;
         float cameraSpeed = 1;
 
