@@ -18,7 +18,7 @@ public:
     unsigned int vertexShader;
     unsigned int fragmentShader;
 
-    string TexturePath = "assets/sprites/tree.png";
+    string TexturePath = "game/assets/sprites/tile_0025.png";
     unsigned int texture;
     unsigned int VBO, VAO, EBO;
 

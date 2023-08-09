@@ -9,9 +9,18 @@ public:
 	virtual void start() = 0;
 
 	template <typename T> void update(Entity* owner) {
+
+		
+
 		if (owner->hasComponent <T>()) {
 			if (ImGui::Button("X")) {
-				owner->removeComponent<T>();
+				if (std::is_same<T, SpriteComponent>::value) {
+					std::cout << "El componente base no puede ser eliminado" << std::endl;
+					return;
+				}
+				else {
+					owner->removeComponent<T>();
+				}
 				return;
 			}
 			else {
