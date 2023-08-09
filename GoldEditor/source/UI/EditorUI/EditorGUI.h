@@ -9,10 +9,10 @@ using namespace std;
 class EditorGUI
 {
 public:
-	static string InputText(string Name, string* value) {
+	static string InputText(string Name, string value) {
 		char GetName[128];
-		strcpy_s(GetName, value->c_str());
-		ImGui::InputText(EditorGUI::_labelPrefix(Name.c_str()).c_str(), GetName, ImGuiInputTextFlags_AutoSelectAll);
+		strcpy_s(GetName, value.c_str());
+		ImGui::InputText(EditorGUI::_labelPrefix(Name.c_str()).c_str(), GetName, 50000, ImGuiInputTextFlags_AutoSelectAll);
 
 		return ((std::string)GetName);
 	}

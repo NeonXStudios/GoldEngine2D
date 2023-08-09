@@ -1,11 +1,14 @@
 #pragma once
 #include "../UIDrawer.h"
+#include "../../Inspector/DrawComponents.h"
 
 class InspectorUI : public UIDrawer {
 
 public:
     static InspectorUI* instance;
     Entity* ObjectSelectToInspector;
+    DrawComponents* drawerComponents;
+
     bool active;
 
     void start() override;

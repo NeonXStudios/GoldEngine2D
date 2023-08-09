@@ -12,6 +12,8 @@ void UIManager::start (){
 	inspectorui = new InspectorUI();
 	assetsui = new AssetsUI();
 
+
+	inspectorui->start();
 	sceneui->start();
 	assetsui->start();
 }
