@@ -2,11 +2,14 @@
 #include "../UI/UIManager.h"
 #include "InspectorComponents.h"
 
+
+
+//PROGRAMAR EL DIBUJADO DE COMPONENTES PARA EL MENU ADD COMPONENT
 InspectorComponents* components = new InspectorComponents();
 
 void DrawComponents::start() {
-	CAudio* audio = new CAudio();
-	componentsDraw.push_back (audio);
+
+
 }
 
 void DrawComponents::update() {
@@ -21,12 +24,35 @@ void DrawComponents::update() {
 	ImGui::PushID(9815);
 	ImGui::Spacing ();
 	ImGui::Separator();
- 	if (ImGui::Button("Add Component", buttonSize)) {
-		UIManager::instance->inspectorui->ObjectSelectToInspector->addComponent<AudioSource>();
+
+	MousePosition = ImGui::GetMousePos();
+	ImVec2 buttonPosMax = ImGui::GetItemRectMin();
+	ImGui::SetNextWindowPos(ImVec2(buttonPosMax.x, buttonPosMax.y + 30));
+	ImGui::SetNextWindowSize(ImVec2(ImGui::GetContentRegionAvail().x - 10, 500));
+
+
+	if (miniMenuOpen && ImGui::Begin("Components", &miniMenuOpen, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove)) {
+		DrawButtons();
+		ImGui::End();
 	}
 
-	//ImGui::Begin("Components", AddComponentOpen);
+	if (ImGui::Button("Add Component", buttonSize)) {
 
-	//ImGui::End();
+
+		miniMenuOpen = true;
+	}
+	else {
+		if (ImGui::IsMouseReleased(0)) {
+			miniMenuOpen = false;
+		}
+	}
 	ImGui::PopID();
+}
+
+
+
+
+void DrawComponents::DrawButtons() {
+	Entity* objectOwner = UIManager::instance->inspectorui->ObjectSelectToInspector;
+	ComponentList::createNewComponent <AudioSource> ("Audio Source", objectOwner);
 }

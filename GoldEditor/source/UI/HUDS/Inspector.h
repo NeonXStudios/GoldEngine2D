@@ -5,6 +5,8 @@
 class InspectorUI : public UIDrawer {
 
 public:
+
+
     static InspectorUI* instance;
     Entity* ObjectSelectToInspector;
     DrawComponents* drawerComponents;

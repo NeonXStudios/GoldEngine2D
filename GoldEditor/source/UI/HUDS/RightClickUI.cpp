@@ -1,6 +1,5 @@
 #include "RightClickUI.h"
-bool miniMenuOpen = false;
-ImVec2 MousePosition;
+
 
 void RightClickUI::draw() {
 
@@ -12,7 +11,7 @@ void RightClickUI::draw() {
 
         miniMenuOpen = true;
     }
-    if (miniMenuOpen && ImGui::Begin("Assets Menu", &miniMenuOpen, ImGuiWindowFlags_NoResize)) {
+    if (miniMenuOpen && ImGui::Begin("Assets Menu", &miniMenuOpen, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove)) {
         if (ImGui::BeginMenu("Create")) {
             if (ImGui::Button("New Entity")) {
                 SceneManager::GetSceneManager()->NewEntity();

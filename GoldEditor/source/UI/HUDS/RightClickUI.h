@@ -3,6 +3,8 @@
 
 class RightClickUI : public UIDrawer
 {
+    bool miniMenuOpen = false;
+    ImVec2 MousePosition;
 public:
     void start() override;
 

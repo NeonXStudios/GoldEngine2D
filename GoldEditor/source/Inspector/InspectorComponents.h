@@ -6,5 +6,6 @@
 class InspectorComponents
 {
 public:
+
 	void update (Entity* ownerActor);
 };

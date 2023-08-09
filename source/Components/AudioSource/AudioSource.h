@@ -11,7 +11,7 @@ class AudioSource : public Component
 	Channel* channel = nullptr;
 
 public:
-	std::string AudioPath = "assets/music/HideYourHeart-NCS.mp3";
+	std::string AudioPath = "game/assets/music/HideYourHeart-NCS.mp3";
 	void init () override {
 
 		if (AudioManager::GetManager()->result != FMOD_OK) {
