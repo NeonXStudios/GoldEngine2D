@@ -5,5 +5,5 @@ class CSprite : public AComponent
 {
 public:
 	void start() override;
-	void update (Entity* owner) override;
+	void draw(Entity* owner);
 };

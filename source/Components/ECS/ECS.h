@@ -88,10 +88,6 @@ public:
 		groupBitset[mGroup] = false;
 	}
 
-	template <typename T> bool hasComponent() const
-	{
-		return componentBitset[getComponentTypeID<T>()];
-	}
 
 	template <typename T, typename... TArgs>
 	T& addComponent(TArgs&&... mArgs)
@@ -112,62 +108,23 @@ public:
 		auto ptr(componentArray[getComponentTypeID<T>()]);
 		return *static_cast<T*>(ptr);
 	}
-};
 
-/*
-class Manager
-{
-public:
-	std::vector<std::unique_ptr<Entity>> entities;
-	std::array<std::vector<Entity*>, maxGroups> groupedEntities;
-public:
-	void update()
+	template <typename T> bool hasComponent() const
 	{
-		for (auto& e : entities) e->update();
+		return componentBitset[getComponentTypeID<T>()];
 	}
-	void draw()
+
+	template <typename T>
+	bool removeComponent()
 	{
-		for (auto& e : entities) e->draw();
-	}
-	void refresh()
-	{
-		for (auto i(0u); i < maxGroups; i++)
+		if (hasComponent<T>())
 		{
-			auto& v(groupedEntities[i]);
-			v.erase(
-				std::remove_if(std::begin(v), std::end(v),
-					[i](Entity* mEntity)
-					{
-						return !mEntity->isActive() || !mEntity->hasGroup(i);
-					}),
-				std::end(v));
+			auto& component = getComponent<T>();
+			componentBitset[getComponentTypeID<T>()] = false;
+			componentArray[getComponentTypeID<T>()] = nullptr;
+			return true;
 		}
-
-		entities.erase(std::remove_if(std::begin(entities), std::end(entities),
-			[](const std::unique_ptr<Entity>& mEntity)
-			{
-				return !mEntity->isActive();
-			}),
-			std::end(entities));
-	}
-
-	void AddToGroup(Entity* mEntity, Group mGroup)
-	{
-		groupedEntities[mGroup].emplace_back(mEntity);
-	}
-
-	std::vector<Entity*>& getGroup(Group mGroup)
-	{
-		return groupedEntities[mGroup];
-	}
-
-	Entity& addEntity()
-	{
-		Entity* e = new Entity(*this);
-		std::unique_ptr<Entity> uPtr { e };
-		entities.emplace_back(std::move(uPtr));
-		return *e;
+		return false;
 	}
 };
-*/
 #endif

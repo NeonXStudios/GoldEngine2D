@@ -7,7 +7,12 @@ void CAudio::start() {
 }
 
 
-void CAudio::update (Entity* owner) {
+void CAudio::draw (Entity* owner) {
 	EditorGUI::Text ("Audio Source");
-	string g = EditorGUI::InputText ("Audio Path", "HOLA");
+	string pathSound = EditorGUI::InputText("Audio Path", owner->getComponent<AudioSource>().AudioPath);
+
+	if (owner->getComponent<AudioSource>().AudioPath != pathSound) {
+		owner->getComponent<AudioSource>().AudioPath = pathSound;
+	}
+	std::cout << "AUDIO SOURCE INSPECTOR RUNNING" << std::endl;
 }
