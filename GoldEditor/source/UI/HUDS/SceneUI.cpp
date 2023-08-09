@@ -69,7 +69,7 @@
 
                 // Ajustar las coordenadas del objeto para que estén centradas en el espacio de la cámaraf
                 float objX = (obj.x - objWidth * 0.5f);
-                float objY = (-obj.y - objHeight * 0.5f);
+                float objY = (obj.y - objHeight * 0.5f);
 
                 if (WorldPoint.x >= objX && WorldPoint.x <= objX + objWidth && WorldPoint.y >= objY && WorldPoint.y <= objY + objHeight) {
                     UIManager::instance->inspectorui->SelectEntity (objD);

@@ -32,7 +32,7 @@ public:
 
     void start();
     void onupdate();
-    void LoadTexture (string LoadTexture);
+    void LoadTexture ();
 
     ~SpriteComponent();
 };
