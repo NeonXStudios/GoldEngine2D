@@ -6,6 +6,8 @@
 class DrawComponents
 {
 public:
+	std::vector<AComponent*> componentsDraw;
+
 	void start();
 	void update();
 

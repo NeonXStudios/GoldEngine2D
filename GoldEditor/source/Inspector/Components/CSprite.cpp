@@ -5,7 +5,11 @@ void CSprite::start() {
 
 }
 
-void CSprite::update (Entity* owner) {
+void CSprite::draw (Entity* owner) {
 	EditorGUI::Text("Sprite");
-	owner->getComponent<SpriteComponent>().TexturePath = EditorGUI::InputText ("File Path", owner->getComponent<SpriteComponent>().TexturePath);
+	string newPath = EditorGUI::InputText("File Path", owner->getComponent<SpriteComponent>().TexturePath);
+	if (owner->getComponent<SpriteComponent>().TexturePath != newPath) {
+		owner->getComponent<SpriteComponent>().TexturePath = newPath;
+		owner->getComponent<SpriteComponent>().LoadTexture();
+	}
 }

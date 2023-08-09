@@ -7,11 +7,11 @@ using namespace FMOD;
 
 class AudioSource : public Component
 {
-	std::string AudioPath = "assets/music/HideYourHeart-NCS.mp3";
 	Sound* sound = nullptr;
 	Channel* channel = nullptr;
 
 public:
+	std::string AudioPath = "assets/music/HideYourHeart-NCS.mp3";
 	void init () override {
 
 		if (AudioManager::GetManager()->result != FMOD_OK) {
@@ -74,7 +74,8 @@ public:
 
 	}
 
-	~AudioSource() {
+	void clean() override {
+		channel->stop();
 		AudioManager::GetManager()->result = sound->release();
 	}
 };

@@ -4,6 +4,7 @@
 #include "HUDS/HierarchyUI.h"
 #include "HUDS/Assets.h"
 #include "HUDS/Inspector.h"
+#include "HUDS/RightClickUI.h"
 
 class UIManager {
 public:
@@ -13,6 +14,7 @@ public:
 	HierarchyUI* hierarhcyui;
 	InspectorUI* inspectorui;
 	AssetsUI* assetsui;
+	RightClickUI* rightClickui;
 
 
 

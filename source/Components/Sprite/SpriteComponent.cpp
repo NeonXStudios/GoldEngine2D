@@ -152,7 +152,7 @@ void SpriteComponent::onupdate() {
 }
 
 
-SpriteComponent::~SpriteComponent() {
+void SpriteComponent::clean() {
     glDeleteVertexArrays(1, &VAO);
     glDeleteBuffers(1, &VBO);
     glDeleteBuffers(1, &EBO);
