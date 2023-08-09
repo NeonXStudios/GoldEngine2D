@@ -8,7 +8,6 @@ void Scene::start () {
 
 void Scene::update () {
 	worldCamera->update();
-
 	for (Entity* ents : objectsInScene) {
 		ents->update();
 	}
@@ -17,4 +16,3 @@ void Scene::update () {
 void Scene::release () {
 
 }
-

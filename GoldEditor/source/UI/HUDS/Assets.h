@@ -1,3 +1,4 @@
+#pragma once
 #include "../UIDrawer.h"
 #include <stb_image.h>
 

@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 #include "imgui.h"
 #include "../../source/RequireLibs.h"
 #include "../../source/Components/Systems/SystemsEvents.h"

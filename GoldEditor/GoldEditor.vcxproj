@@ -160,6 +160,10 @@
     <ClCompile Include="..\Binarys\include\imgui\imgui_tables.cpp" />
     <ClCompile Include="..\Binarys\include\imgui\imgui_widgets.cpp" />
     <ClCompile Include="source\Editor\GoldEditor.cpp" />
+    <ClCompile Include="source\UI\EditorUI\EditorGUI.cpp" />
+    <ClCompile Include="source\UI\HUDS\Hierarchy.cpp" />
+    <ClCompile Include="source\UI\HUDS\Inspector.cpp" />
+    <ClCompile Include="source\UI\HUDS\SceneUI.cpp" />
     <ClCompile Include="source\UI\UIDrawer.cpp" />
     <ClCompile Include="source\UI\UIManager.cpp" />
   </ItemGroup>
@@ -180,6 +184,7 @@
     <ClInclude Include="..\Binarys\include\imgui\imstb_truetype.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="source\Editor\GoldEditor.h" />
+    <ClInclude Include="source\UI\EditorUI\EditorGUI.h" />
     <ClInclude Include="source\UI\HUDS\Assets.h" />
     <ClInclude Include="source\UI\HUDS\BarMenuUI.h" />
     <ClInclude Include="source\UI\HUDS\HierarchyUI.h" />
