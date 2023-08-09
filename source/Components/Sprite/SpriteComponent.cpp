@@ -107,10 +107,10 @@ void SpriteComponent::start()  {
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-    LoadTexture(TexturePath);
+    LoadTexture ();
 }
 
-void SpriteComponent::LoadTexture (string TexturePath) {
+void SpriteComponent::LoadTexture () {
     int width, height, nrChannels;
     unsigned char* data = stbi_load(TexturePath.c_str(), &width, &height, &nrChannels, 0);
     if (data) {
@@ -142,7 +142,7 @@ void SpriteComponent::onupdate() {
     glBindTexture(GL_TEXTURE_2D, texture);
     glUniform1i(glGetUniformLocation(shaderProgram, "textureSampler"), 0);
 
-    glm::mat4 model = glm::translate(glm::mat4(1.0f), ObjectPosition);
+    glm::mat4 model = glm::translate(glm::mat4(1.0f), glm::vec3 (ObjectPosition.x, -ObjectPosition.y, ObjectPosition.z));
     model = glm::scale(model, glm::vec3(Scale.x * GlobalScale, Scale.y * GlobalScale, 25));
     glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
 
