@@ -1,7 +1,6 @@
 #pragma once
 #include "../UIDrawer.h"
 
-
 class InspectorUI : public UIDrawer {
 
 public:

@@ -10,7 +10,7 @@ using namespace std;
 class DrawBox
 {
 public:
-    glm::vec3 cubePosition = glm::vec3(0.0f, 0.0f, 0.0f);
+    glm::vec3 ObjectPosition = glm::vec3(0.0f, 0.0f, 0.0f);
     float Scale = 25.0f;
     unsigned int shaderProgram;
     unsigned int vertexShader;

@@ -137,8 +137,8 @@ void SpriteComponent::onupdate() {
     glBindTexture(GL_TEXTURE_2D, texture);
     glUniform1i(glGetUniformLocation(shaderProgram, "textureSampler"), 0);
 
-    glm::mat4 model = glm::translate(glm::mat4(1.0f), cubePosition);
-    model = glm::scale(model, glm::vec3(Scale));
+    glm::mat4 model = glm::translate(glm::mat4(1.0f), ObjectPosition);
+    model = glm::scale(model, glm::vec3(Scale.x * GlobalScale, Scale.y * GlobalScale, 25));
     glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
 
     glBindVertexArray(VAO);

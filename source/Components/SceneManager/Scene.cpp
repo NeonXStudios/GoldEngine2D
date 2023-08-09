@@ -3,7 +3,6 @@
 #include "../AudioSource/AudioSource.h"
 
 void Scene::start () {
-	objectsInScene = std::vector<Entity*>();
 	worldCamera->start();
 }
 
@@ -17,4 +16,3 @@ void Scene::update () {
 void Scene::release () {
 
 }
-

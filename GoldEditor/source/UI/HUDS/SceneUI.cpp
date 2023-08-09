@@ -61,11 +61,11 @@
         if (ImGui::IsMouseClicked (0)) {
             for (int i = 0; i < SceneManager::GetSceneManager()->OpenScene->objectsInScene.size(); i++) {
                 Entity* objD = SceneManager::GetSceneManager()->OpenScene->objectsInScene[i];
-                    glm::vec3 & obj = objD->getComponent<SpriteComponent>().cubePosition;
+                    glm::vec3 & obj = objD->getComponent<SpriteComponent>().ObjectPosition;
 
                 // Convertir las coordenadas del objeto al espacio de la cámara
-                float objWidth = 25;
-                float objHeight = 25;
+                float objWidth  = objD->getComponent<SpriteComponent>().Scale.x  * objD->getComponent<SpriteComponent>().GlobalScale;
+                float objHeight = objD->getComponent<SpriteComponent>().Scale.y  * objD->getComponent<SpriteComponent>().GlobalScale;
 
                 // Ajustar las coordenadas del objeto para que estén centradas en el espacio de la cámaraf
                 float objX = (obj.x - objWidth * 0.5f);
