@@ -9,6 +9,7 @@ class AudioSource : public Component
 {
 	Sound* sound = nullptr;
 	Channel* channel = nullptr;
+	float pan = 0;
 
 public:
 	std::string AudioPath = "game/assets/music/HideYourHeart-NCS.mp3";
@@ -47,7 +48,12 @@ public:
 
 
 	void SetPan (float panSide) {
-		channel->setPan (panSide);
+		pan = panSide;
+		channel->setPan (pan);
+	}
+
+	float GetPan() {
+		return pan;
 	}
 
 	void SetVolumen (float newVolumen) {
