@@ -34,6 +34,6 @@ public:
     void onupdate();
     void LoadTexture ();
 
-    ~SpriteComponent();
+    void clean() override;
 };
 #endif

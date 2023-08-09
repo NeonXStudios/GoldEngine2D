@@ -44,6 +44,7 @@ public:
 	virtual void init() {}
 	virtual void update() {}
 	virtual void draw() {}
+	virtual void clean() {}
 	virtual ~Component() {}
 };
 
@@ -119,7 +120,8 @@ public:
 	{
 		if (hasComponent<T>())
 		{
-			auto& component = getComponent<T>();
+			Component& component = getComponent<T>();
+			component.clean();
 			componentBitset[getComponentTypeID<T>()] = false;
 			componentArray[getComponentTypeID<T>()] = nullptr;
 			return true;

@@ -11,6 +11,5 @@ void CSprite::draw (Entity* owner) {
 	if (owner->getComponent<SpriteComponent>().TexturePath != newPath) {
 		owner->getComponent<SpriteComponent>().TexturePath = newPath;
 		owner->getComponent<SpriteComponent>().LoadTexture();
-		std::cout << "TEXTURE NEW LOADED" << std::endl;
 	}
 }

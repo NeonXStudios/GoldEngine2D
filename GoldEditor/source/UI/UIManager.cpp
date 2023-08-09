@@ -11,6 +11,7 @@ void UIManager::start (){
 	hierarhcyui = new HierarchyUI();
 	inspectorui = new InspectorUI();
 	assetsui = new AssetsUI();
+	rightClickui = new RightClickUI();
 
 
 	inspectorui->start();
@@ -24,6 +25,7 @@ void UIManager::draw() {
 	hierarhcyui->draw();
 	assetsui->draw();
 	inspectorui->draw();
+	rightClickui->draw();
 }
 
 void UIManager::update() {

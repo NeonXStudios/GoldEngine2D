@@ -74,7 +74,8 @@ public:
 
 	}
 
-	~AudioSource() {
+	void clean() override {
+		channel->stop();
 		AudioManager::GetManager()->result = sound->release();
 	}
 };

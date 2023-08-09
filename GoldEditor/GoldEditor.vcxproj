@@ -170,6 +170,7 @@
     <ClCompile Include="source\UI\EditorUI\EditorGUI.cpp" />
     <ClCompile Include="source\UI\HUDS\Hierarchy.cpp" />
     <ClCompile Include="source\UI\HUDS\Inspector.cpp" />
+    <ClCompile Include="source\UI\HUDS\RightClickUI.cpp" />
     <ClCompile Include="source\UI\HUDS\SceneUI.cpp" />
     <ClCompile Include="source\UI\UIDrawer.cpp" />
     <ClCompile Include="source\UI\UIManager.cpp" />
@@ -201,6 +202,7 @@
     <ClInclude Include="source\UI\HUDS\BarMenuUI.h" />
     <ClInclude Include="source\UI\HUDS\HierarchyUI.h" />
     <ClInclude Include="source\UI\HUDS\Inspector.h" />
+    <ClInclude Include="source\UI\HUDS\RightClickUI.h" />
     <ClInclude Include="source\UI\HUDS\SceneUI.h" />
     <ClInclude Include="source\UI\UIDrawer.h" />
     <ClInclude Include="source\UI\UIManager.h" />

@@ -1,6 +1,4 @@
 ﻿  AudioSource.cpp
-  ComponentManager.cpp
-  ECS.cpp
   Scene.cpp
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
   SceneManager.cpp

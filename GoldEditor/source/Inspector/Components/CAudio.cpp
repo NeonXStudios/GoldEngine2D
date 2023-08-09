@@ -14,5 +14,4 @@ void CAudio::draw (Entity* owner) {
 	if (owner->getComponent<AudioSource>().AudioPath != pathSound) {
 		owner->getComponent<AudioSource>().AudioPath = pathSound;
 	}
-	std::cout << "AUDIO SOURCE INSPECTOR RUNNING" << std::endl;
 }
