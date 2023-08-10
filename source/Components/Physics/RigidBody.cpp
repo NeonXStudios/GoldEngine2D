@@ -5,12 +5,8 @@
 void RigidBody::init() {
 	SpriteComponent* srp = &entity->getComponent <SpriteComponent>();
 
-	if (dynamicBox == nullptr) {
-		dynamicBox = new b2PolygonShape();
-	}
-	if (fixtureDef == nullptr) {
-		fixtureDef = new b2FixtureDef();
-	}
+	dynamicBox = new b2PolygonShape();
+	fixtureDef = new b2FixtureDef();
 
 	b2BodyDef bodyDef;
 
@@ -37,14 +33,17 @@ void RigidBody::update() {
 	if (!isStatic) {
 		position.x  = body->GetPosition().x;
 		position.y  = -body->GetPosition().y;
-		srp->ObjectPosition.x = position.x;
-		srp->ObjectPosition.y = position.y;
+
 		float radians = body->GetAngle();  // Obtén la rotación en radianes desde Box2D
 		float degrees = radians * (180.0f / b2_pi);  // Convertir a grados
 
 		if (degrees < 0.0f) {
 			degrees += 360.0f;  // Asegurar que el ángulo esté en el rango 0-360
 		}
+
+
+		srp->ObjectPosition.x = position.x;
+		srp->ObjectPosition.y = position.y;
 		srp->rotationAngle = degrees;
 	}
 	else {
@@ -53,7 +52,7 @@ void RigidBody::update() {
 
 		position.x = srp->ObjectPosition.x;
 		position.y = -srp->ObjectPosition.y;
-		body->SetTransform(b2Vec2(float(position.x), float(position.x)), radians);
+		body->SetTransform(b2Vec2(float(position.x), float(position.y)), radians);
 	}
 
 	UpdateCollisions();
@@ -63,10 +62,9 @@ void RigidBody::update() {
 void RigidBody::UpdateCollisions() {
 	SpriteComponent* srp = &entity->getComponent <SpriteComponent>();
 	b2Vec2 localCenter(0.0f, 0.0f);
-	localCenter.Set(0, 0);
+	localCenter.Set (0, 0);
 
 	body->DestroyFixture(body->GetFixtureList());
-
 	b2FixtureDef* fx = new b2FixtureDef();
 	float scaleX = (float)srp->GlobalScale;
 	float scaleY = (float)srp->GlobalScale;
@@ -98,6 +96,7 @@ void RigidBody::changeState(bool val) {
 	SpriteComponent* srp = &entity->getComponent<SpriteComponent>();
 	float degrees = srp->rotationAngle;
 	float radians = degrees * (b2_pi / 180.0f);
+
 	if (!isStatic) {
 		body->SetAwake(true);
 		b2Vec2 newPosition(float(position.x), float(position.y));
@@ -106,5 +105,7 @@ void RigidBody::changeState(bool val) {
 	}
 	else {
 		body->SetType(b2_staticBody);
+		b2Vec2 newPosition(float(position.x), float(position.y));
+		body->SetTransform(newPosition, radians);
 	}
 }
