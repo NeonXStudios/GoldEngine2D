@@ -21,6 +21,8 @@ public:
         player2 = SceneManager::GetSceneManager()->NewEntity();
         player3 = SceneManager::GetSceneManager()->NewEntity();
         player->addComponent <ScriptCompiler>();
+        player->addComponent <RigidBody>();
+
 
 
         player->ObjectName  = "OBJETO1";

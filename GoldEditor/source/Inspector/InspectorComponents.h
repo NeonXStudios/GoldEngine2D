@@ -3,6 +3,7 @@
 #include "Components/CAudio.h"
 #include "Components/CSprite.h"
 #include "Components/CScript.h"
+#include "Components/CRigidBody.h"
 
 class InspectorComponents
 {

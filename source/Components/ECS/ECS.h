@@ -40,7 +40,6 @@ class Component
 {
 public:
 	Entity* entity;
-
 	virtual void init() {}
 	virtual void update() {}
 	virtual void draw() {}
@@ -63,12 +62,17 @@ public:
 	std::string ObjectName = "New Entity";
 	std::string ObjectTag = "None";
 	int objectID = 1;
+	Entity* entity;
 
 	//Entity(Manager& mManager) : manager(mManager) {}
 
 	void update()
 	{
-		for (auto& c : components) c->update();
+		for (auto& c : components)
+		{
+			c->entity = entity;
+			c->update();
+		}
 	}
 	void draw()
 	{
