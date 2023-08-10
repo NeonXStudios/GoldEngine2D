@@ -21,6 +21,7 @@
 
           ObjectSelectToInspector->getComponent<SpriteComponent>().Scale = EditorGUI::Vector2("Size", ObjectSelectToInspector->getComponent<SpriteComponent>().Scale);
           ObjectSelectToInspector->getComponent<SpriteComponent>().GlobalScale = EditorGUI::Float("Size", ObjectSelectToInspector->getComponent<SpriteComponent>().GlobalScale);
+          ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngle = EditorGUI::Float("Rotation", ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngle);
        
           ImGui::Spacing();
           ImGui::Spacing();

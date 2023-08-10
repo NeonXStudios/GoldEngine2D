@@ -40,6 +40,11 @@ public:
 		return glm::vec2 (v[0], v[1]);
 	}
 
+	static bool Toggle (string Name, bool* valueB) {
+		bool g = ImGui::Checkbox(Name.c_str(), valueB);
+		return g;
+	}
+
 	static glm::vec3 Vector3 (string Name, glm::vec3 vector) {
 		float v[3] = {
 			vector.x,

@@ -23,5 +23,6 @@
 #include "../Components/Sprite/SpriteComponent.h"
 #include "../Components/Systems/SystemsEvents.h"
 #include "../Components/Script/ScriptCompiler.h"
+#include "../Components/Physics/RigidBody.h"
 
 #endif
