@@ -52,6 +52,9 @@ public:
 		return glm::vec3(v[0], v[1], v[3]);
 	}
 
+	static bool Button (string Name, glm::vec2 size) {
+		return ImGui::Button (Name.c_str(), ImVec2 (size.x, size.y));
+	}
 
 
 	static std::string _labelPrefix(const char* const label)

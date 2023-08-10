@@ -20,7 +20,7 @@ public:
         player = SceneManager::GetSceneManager()->NewEntity();
         player2 = SceneManager::GetSceneManager()->NewEntity();
         player3 = SceneManager::GetSceneManager()->NewEntity();
-
+        player->addComponent <ScriptCompiler>();
 
 
         player->ObjectName  = "OBJETO1";

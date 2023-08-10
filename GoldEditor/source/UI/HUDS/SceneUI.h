@@ -10,7 +10,8 @@ public:
     double textureMousePosY = 0;
     int textureWidth, textureHeight;
     ImVec2 imagePosition;
-
+    bool isdragging;
+    bool ObjectSelect;
 
     void start() override;
 

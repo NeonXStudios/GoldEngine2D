@@ -57,44 +57,47 @@
 
         glm::vec2 WorldPoint = RenderSystem::RenderSystem::ScreenToViewPort (glm::vec2 (imagePosition.x, imagePosition.y), glm::vec2 (imageSizeSCENE.x, imageSizeSCENE.y));
 
-
-        if (ImGui::IsMouseClicked (0)) {
+        if (ImGui::IsWindowHovered()) {
             for (int i = 0; i < SceneManager::GetSceneManager()->OpenScene->objectsInScene.size(); i++) {
                 Entity* objD = SceneManager::GetSceneManager()->OpenScene->objectsInScene[i];
-                    glm::vec3 & obj = objD->getComponent<SpriteComponent>().ObjectPosition;
+                glm::vec3& obj = objD->getComponent<SpriteComponent>().ObjectPosition;
 
                 // Convertir las coordenadas del objeto al espacio de la cámara
-                float objWidth  = objD->getComponent<SpriteComponent>().Scale.x  * objD->getComponent<SpriteComponent>().GlobalScale;
-                float objHeight = objD->getComponent<SpriteComponent>().Scale.y  * objD->getComponent<SpriteComponent>().GlobalScale;
+                float objWidth = objD->getComponent<SpriteComponent>().Scale.x * objD->getComponent<SpriteComponent>().GlobalScale;
+                float objHeight = objD->getComponent<SpriteComponent>().Scale.y * objD->getComponent<SpriteComponent>().GlobalScale;
 
                 // Ajustar las coordenadas del objeto para que estén centradas en el espacio de la cámaraf
                 float objX = (obj.x - objWidth * 0.5f);
                 float objY = (obj.y - objHeight * 0.5f);
 
                 if (WorldPoint.x >= objX && WorldPoint.x <= objX + objWidth && WorldPoint.y >= objY && WorldPoint.y <= objY + objHeight) {
-                    UIManager::instance->inspectorui->SelectEntity (objD);
-                    break;
+                    if (ImGui::IsMouseClicked(0)) {
+                        UIManager::instance->inspectorui->SelectEntity(objD);
+                        ObjectSelect = true;
+
+                        UIManager::instance->hierarhcyui->SelectInHierarchy = false;
+                        std::cout << "Clicked object" << std::endl;
+                        break;
+                    }
+                }
+                else {
+                    if (ImGui::IsMouseClicked (0)) {
+                        UIManager::instance->inspectorui->ObjectSelectToInspector = nullptr;
+                    }
+                }
+
+                
+                if (ImGui::IsMouseDragging (0) && ImGui::IsMouseDown(0) && UIManager::instance->inspectorui->ObjectSelectToInspector != nullptr) {
+                    UIManager::instance->inspectorui->ObjectSelectToInspector->getComponent<SpriteComponent>().ObjectPosition.x = WorldPoint.x;
+                    UIManager::instance->inspectorui->ObjectSelectToInspector->getComponent<SpriteComponent>().ObjectPosition.y = WorldPoint.y;
+                    isdragging = true;
+                }
+
+                if (!ImGui::IsMouseDragging (0)) {
+                    isdragging = false;
                 }
             }
-
-        }
-
-
-
-        /*
-        ImGui::Begin("Picking Position");
-        ImGui::Text("Mouse Window X: %f", InputSystem::GetMousePositionGlobal().x);
-        ImGui::Text("Mouse Window Y: %f", InputSystem::GetMousePositionGlobal().y);
-        ImGui::Spacing();
-        ImGui::Text("Mouse Scene X: %f", InputSystem::GetMousePositionViewPort(glm::vec2(imagePosition.x, imagePosition.y), glm::vec2(imageSizeSCENE.x, imageSizeSCENE.y)).x);
-        ImGui::Text("Mouse Scene Y: %f", InputSystem::GetMousePositionViewPort(glm::vec2(imagePosition.x, imagePosition.y), glm::vec2(imageSizeSCENE.x, imageSizeSCENE.y)).y);
-        ImGui::Spacing();
-        ImGui::Text("Render Size X: %f", imageSizeSCENE.x);
-        ImGui::Text("Render Size Y: %f", imageSizeSCENE.y);
-        ImGui::End();
-
-        */
-
+        }        
         ImGui::End();
     }
 

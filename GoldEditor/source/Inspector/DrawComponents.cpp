@@ -14,7 +14,7 @@ void DrawComponents::start() {
 
 void DrawComponents::update() {
 	if (UIManager::instance->inspectorui->ObjectSelectToInspector != nullptr) {
-		components->update (UIManager::instance->inspectorui->ObjectSelectToInspector);
+		components->update(UIManager::instance->inspectorui->ObjectSelectToInspector);
 	}
 
 	ImVec2 contentRegionAvailable = ImGui::GetContentRegionAvail();
@@ -22,13 +22,15 @@ void DrawComponents::update() {
 
 
 	ImGui::PushID(9815);
-	ImGui::Spacing ();
+	ImGui::Spacing();
 	ImGui::Separator();
 
-	MousePosition = ImGui::GetMousePos();
-	ImVec2 buttonPosMax = ImGui::GetItemRectMin();
-	ImGui::SetNextWindowPos(ImVec2(buttonPosMax.x, buttonPosMax.y + 30));
-	ImGui::SetNextWindowSize(ImVec2(ImGui::GetContentRegionAvail().x - 10, 500));
+	if (miniMenuOpen) {
+		MousePosition = ImGui::GetMousePos();
+		ImVec2 buttonPosMax = ImGui::GetItemRectMin();
+		ImGui::SetNextWindowPos(ImVec2(buttonPosMax.x, buttonPosMax.y + 30));
+		ImGui::SetNextWindowSize(ImVec2(ImGui::GetContentRegionAvail().x - 10, 500));
+	}
 
 
 	if (miniMenuOpen && ImGui::Begin("Components", &miniMenuOpen, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove)) {
@@ -36,16 +38,16 @@ void DrawComponents::update() {
 		ImGui::End();
 	}
 
+	if (ImGui::IsMouseReleased(0) && miniMenuOpen) {
+		miniMenuOpen = false;
+		std::cout << "Mouse soltado" << std::endl;
+	}
+
 	if (ImGui::Button("Add Component", buttonSize)) {
-
-
 		miniMenuOpen = true;
 	}
-	else {
-		if (ImGui::IsMouseReleased(0)) {
-			miniMenuOpen = false;
-		}
-	}
+
+
 	ImGui::PopID();
 }
 
@@ -54,5 +56,6 @@ void DrawComponents::update() {
 
 void DrawComponents::DrawButtons() {
 	Entity* objectOwner = UIManager::instance->inspectorui->ObjectSelectToInspector;
-	ComponentList::createNewComponent <AudioSource> ("Audio Source", objectOwner);
+	ComponentList::createNewComponent <AudioSource>    ("Audio Source", objectOwner);
+	ComponentList::createNewComponent <ScriptCompiler> ("Gold Behaviour", objectOwner);
 }

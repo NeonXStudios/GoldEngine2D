@@ -101,6 +101,12 @@
     <ClCompile Include="source\Inspector\ComponentList.cpp">
       <Filter>Editor</Filter>
     </ClCompile>
+    <ClCompile Include="source\Inspector\Components\CScript.cpp">
+      <Filter>Editor\02_InspectorDrawer\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Inspector\ScriptEditor.cpp">
+      <Filter>Editor\02_InspectorDrawer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />
@@ -177,6 +183,12 @@
       <Filter>Components\UI</Filter>
     </ClInclude>
     <ClInclude Include="source\Inspector\ComponentList.h" />
+    <ClInclude Include="source\Inspector\Components\CScript.h">
+      <Filter>Editor\02_InspectorDrawer\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Inspector\ScriptEditor.h">
+      <Filter>Editor\02_InspectorDrawer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\source\icons\Icon.ico">

@@ -25,6 +25,7 @@ public:
 			}
 			else {
 				draw(owner);
+				ImGui::Separator();
 			}
 		}
 	}

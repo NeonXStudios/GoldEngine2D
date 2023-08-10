@@ -6,6 +6,8 @@
 #include "HUDS/Inspector.h"
 #include "HUDS/RightClickUI.h"
 
+#include "../Inspector/ScriptEditor.h"
+
 class UIManager {
 public:
 	static UIManager* instance;
@@ -15,7 +17,7 @@ public:
 	InspectorUI* inspectorui;
 	AssetsUI* assetsui;
 	RightClickUI* rightClickui;
-
+	ScriptEditor* editorScript;
 
 
 	void start();
@@ -27,6 +29,8 @@ public:
 	void fixupdate();
 
 	void lateupdate();
+
+	void createScriptEditor (Entity* owner);
 
 	~UIManager();
 };

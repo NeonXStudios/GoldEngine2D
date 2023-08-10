@@ -26,6 +26,10 @@ void UIManager::draw() {
 	assetsui->draw();
 	inspectorui->draw();
 	rightClickui->draw();
+
+	if (editorScript != nullptr) {
+		editorScript->update();
+	}
 }
 
 void UIManager::update() {
@@ -39,6 +43,10 @@ void UIManager::fixupdate() {
 
 void UIManager::lateupdate() {
 	sceneui->lateupdate();
+}
+
+void UIManager::createScriptEditor (Entity* owner) {
+	editorScript = new ScriptEditor (owner);
 }
 
 UIManager::~UIManager() {

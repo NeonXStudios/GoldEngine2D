@@ -16,6 +16,8 @@ F:\VISUAL STUDIO\GoldEngine2D\source\Components\InputSystem\InputSystem.cpp;F:\V
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Models\Cube2DModel.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Cube2DModel.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\SceneManager\Scene.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Scene.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\SceneManager\SceneManager.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\SceneManager.obj
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Script\BinderFunctions.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\BinderFunctions.obj
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Script\ScriptCompiler.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\ScriptCompiler.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\ShaderCompiler\ShaderCompiler.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\ShaderCompiler.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Sprite\SpriteComponent.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\SpriteComponent.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Systems\RenderSystem.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\RenderSystem.obj
