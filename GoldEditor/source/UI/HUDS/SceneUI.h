@@ -22,4 +22,5 @@ public:
     void lateupdate() override;
 
     void fixupdate() override;
+    glm::vec2 RotatePoint(const glm::vec2& point, const glm::vec2& center, float angle);
 };

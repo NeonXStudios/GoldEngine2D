@@ -61,16 +61,23 @@
             for (int i = 0; i < SceneManager::GetSceneManager()->OpenScene->objectsInScene.size(); i++) {
                 Entity* objD = SceneManager::GetSceneManager()->OpenScene->objectsInScene[i];
                 glm::vec3& obj = objD->getComponent<SpriteComponent>().ObjectPosition;
-
-                // Convertir las coordenadas del objeto al espacio de la cámara
                 float objWidth = objD->getComponent<SpriteComponent>().Scale.x * objD->getComponent<SpriteComponent>().GlobalScale;
                 float objHeight = objD->getComponent<SpriteComponent>().Scale.y * objD->getComponent<SpriteComponent>().GlobalScale;
 
-                // Ajustar las coordenadas del objeto para que estén centradas en el espacio de la cámaraf
-                float objX = (obj.x - objWidth * 0.5f);
-                float objY = (obj.y - objHeight * 0.5f);
+                // Obtén la rotación en radianes desde Box2D
+                float radians = objD->getComponent<SpriteComponent>().rotationAngle * (b2_pi / 180.0f);
 
-                if (WorldPoint.x >= objX && WorldPoint.x <= objX + objWidth && WorldPoint.y >= objY && WorldPoint.y <= objY + objHeight) {
+                // Aplica la rotación inversa al punto del mundo
+                glm::vec2 localPoint = RotatePoint(WorldPoint, obj, radians);
+
+                // Calcula las coordenadas de la caja delimitadora del objeto rotado
+                glm::vec2 rotatedBoxMin(obj.x - objWidth * 0.5f, obj.y - objHeight * 0.5f);
+                glm::vec2 rotatedBoxMax(obj.x + objWidth * 0.5f, obj.y + objHeight * 0.5f);
+
+                // Comprueba si el punto rotado está dentro de la caja delimitadora rotada
+                if (localPoint.x >= rotatedBoxMin.x && localPoint.x <= rotatedBoxMax.x &&
+                    localPoint.y >= rotatedBoxMin.y && localPoint.y <= rotatedBoxMax.y) {
+
                     if (ImGui::IsMouseClicked(0)) {
                         UIManager::instance->inspectorui->SelectEntity(objD);
                         ObjectSelect = true;
@@ -118,4 +125,16 @@
         glBindTexture(GL_TEXTURE_2D, texture);
         glCopyTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, 0, 0, AppSettings::instance->ScreenWidth, AppSettings::instance->ScreenHeight, 0);
         glBindFramebuffer(GL_READ_FRAMEBUFFER, 0);
+    }
+
+
+    glm::vec2 SceneUI::RotatePoint(const glm::vec2& point, const glm::vec2& center, float angle) {
+        glm::vec2 rotatedPoint;
+        float cosTheta = cos(angle);
+        float sinTheta = sin(angle);
+
+        rotatedPoint.x = center.x + (point.x - center.x) * cosTheta - (point.y - center.y) * sinTheta;
+        rotatedPoint.y = center.y + (point.x - center.x) * sinTheta + (point.y - center.y) * cosTheta;
+
+        return rotatedPoint;
     }
