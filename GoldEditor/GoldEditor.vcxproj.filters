@@ -98,9 +98,6 @@
     <ClCompile Include="source\UI\HUDS\RightClickUI.cpp">
       <Filter>Components\UI</Filter>
     </ClCompile>
-    <ClCompile Include="source\Inspector\ComponentList.cpp">
-      <Filter>Editor</Filter>
-    </ClCompile>
     <ClCompile Include="source\Inspector\Components\CScript.cpp">
       <Filter>Editor\02_InspectorDrawer\Components</Filter>
     </ClCompile>
@@ -109,6 +106,9 @@
     </ClCompile>
     <ClCompile Include="source\Inspector\Components\CRigidBody.cpp">
       <Filter>Editor\02_InspectorDrawer\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Inspector\ComponentList.cpp">
+      <Filter>Editor</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -185,7 +185,6 @@
     <ClInclude Include="source\UI\HUDS\RightClickUI.h">
       <Filter>Components\UI</Filter>
     </ClInclude>
-    <ClInclude Include="source\Inspector\ComponentList.h" />
     <ClInclude Include="source\Inspector\Components\CScript.h">
       <Filter>Editor\02_InspectorDrawer\Components</Filter>
     </ClInclude>
@@ -194,6 +193,9 @@
     </ClInclude>
     <ClInclude Include="source\Inspector\Components\CRigidBody.h">
       <Filter>Editor\02_InspectorDrawer\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Inspector\ComponentList.h">
+      <Filter>Editor</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

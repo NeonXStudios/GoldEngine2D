@@ -88,7 +88,7 @@ void RigidBody::draw() {
 
 
 void RigidBody::clean() {
-
+	std::cout << "Componente rigidBody removido" << std::endl;
 }
 
 void RigidBody::changeState(bool val) {

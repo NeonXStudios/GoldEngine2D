@@ -56,6 +56,8 @@
         imagePosition.y += ImGui::GetWindowPos().y;
 
         glm::vec2 WorldPoint = RenderSystem::RenderSystem::ScreenToViewPort (glm::vec2 (imagePosition.x, imagePosition.y), glm::vec2 (imageSizeSCENE.x, imageSizeSCENE.y));
+        glm::vec2 initialMousePos;  // Posición del mouse cuando comenzó el arrastre
+        glm::vec2 initialObjectPos; // Posición inicial del objeto cuando comenzó el arrastre
 
         if (ImGui::IsWindowHovered()) {
             for (int i = 0; i < SceneManager::GetSceneManager()->OpenScene->objectsInScene.size(); i++) {
@@ -73,6 +75,8 @@
                 // Calcula las coordenadas de la caja delimitadora del objeto rotado
                 glm::vec2 rotatedBoxMin(obj.x - objWidth * 0.5f, obj.y - objHeight * 0.5f);
                 glm::vec2 rotatedBoxMax(obj.x + objWidth * 0.5f, obj.y + objHeight * 0.5f);
+                glm::vec2 dragOffset;
+
 
                 // Comprueba si el punto rotado está dentro de la caja delimitadora rotada
                 if (localPoint.x >= rotatedBoxMin.x && localPoint.x <= rotatedBoxMax.x &&

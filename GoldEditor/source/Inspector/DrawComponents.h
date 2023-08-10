@@ -11,7 +11,7 @@ public:
 	ImVec2 MousePosition;
 	std::vector<AComponent*> componentsDraw;
 
-	void start();
+	void start ();
 	void update();
 	void DrawButtons();
 };
