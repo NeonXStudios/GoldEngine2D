@@ -59,6 +59,12 @@
     <Filter Include="Engine\02_Components\Events">
       <UniqueIdentifier>{9789d116-cd45-4ad0-ac3d-b42019ad3cfa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\02_Components\Script">
+      <UniqueIdentifier>{5e002c16-d378-49de-8461-d1db8d7e688b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Recursos\lua">
+      <UniqueIdentifier>{f2c8624f-95b0-4475-ae68-f5e8f2c3256a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Graphics\StartEngineGraphics.cpp">
@@ -145,6 +151,10 @@
     <ClCompile Include="source\Components\Systems\RenderSystem.cpp">
       <Filter>Engine\02_Components\Events</Filter>
     </ClCompile>
+    <ClCompile Include="source\Components\Script\ScriptCompiler.cpp">
+      <Filter>Engine\02_Components\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\Script\BinderFunctions.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Components\ShaderCompiler\ShaderCompiler.h">
@@ -240,6 +250,10 @@
     <ClInclude Include="source\Components\Systems\SystemsEvents.h">
       <Filter>Engine\02_Components\Events</Filter>
     </ClInclude>
+    <ClInclude Include="source\Components\Script\ScriptCompiler.h">
+      <Filter>Engine\02_Components\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\Script\BinderFunctions.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GoldEngine.rc">

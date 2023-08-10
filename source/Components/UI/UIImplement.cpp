@@ -10,7 +10,7 @@ void UIImplement::start() {
 	ImGuiIO& io = ImGui::GetIO(); (void)io;
 	io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 
-	UIStyle::SetStyleUI (RedDark);
+	UIStyle::SetStyleUI (Dark);
 
 //	ImGui::StyleColorsDark();
 

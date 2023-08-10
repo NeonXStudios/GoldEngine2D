@@ -10,9 +10,11 @@ F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Editor\GoldEditor.cpp;F:\VISUAL 
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\AComponent.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\AComponent.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\ComponentList.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\ComponentList.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CAudio.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\CAudio.obj
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CScript.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\CScript.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CSprite.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\CSprite.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\DrawComponents.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\DrawComponents.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\InspectorComponents.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\InspectorComponents.obj
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\ScriptEditor.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\ScriptEditor.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\EditorUI\EditorGUI.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\EditorGUI.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Hierarchy.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\Hierarchy.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Inspector.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\Inspector.obj

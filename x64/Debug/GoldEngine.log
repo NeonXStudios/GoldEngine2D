@@ -1,9 +1,8 @@
-﻿  AudioSource.cpp
-  Scene.cpp
-F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-  GoldEngineLib.cpp
-F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-  Generando código...
+﻿  UIImplement.cpp
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\UI\UIStyle.h(9,2): warning C4091: 'static ': se ha omitido a la izquierda de 'STYLES' cuando no hay ninguna variable declarada
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\UI\UIStyle.h(34,52): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\UI\UIStyle.h(39,52): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\UI\UIStyle.h(52,52): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\UI\UIStyle.h(52,46): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\UI\UIStyle.h(58,42): warning C4305: 'argumento': truncamiento de 'double' a 'float'
   GoldEngine.vcxproj -> F:\VISUAL STUDIO\GoldEngine2D\BuildCore\GoldEngine.lib

@@ -125,13 +125,13 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)Binarys/include/;$(SolutionDir)Binarys/include/imgui</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Binarys/include/;$(SolutionDir)Binarys/include/imgui;$(SolutionDir)Binarys/include/lua</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)Binarys/lib/</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib; opengl32.lib; user32.lib; gdi32.lib; shell32.lib;fmodL_vc.lib;fmod_vc.lib</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib; opengl32.lib; user32.lib; gdi32.lib; shell32.lib;fmodL_vc.lib;fmod_vc.lib;lua54.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -142,7 +142,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Binarys/include/;$(SolutionDir)Binarys/include/imgui</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Binarys/include/;$(SolutionDir)Binarys/include/imgui;$(SolutionDir)Binarys/include/lua</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -151,7 +151,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)Binarys/lib/</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib; opengl32.lib; user32.lib; gdi32.lib; shell32.lib;fmodL_vc.lib;fmod_vc.lib</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib; opengl32.lib; user32.lib; gdi32.lib; shell32.lib;fmodL_vc.lib;fmod_vc.lib;lua54.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -173,6 +173,8 @@
     <ClCompile Include="source\Components\Models\Cube2DModel.cpp" />
     <ClCompile Include="source\Components\SceneManager\Scene.cpp" />
     <ClCompile Include="source\Components\SceneManager\SceneManager.cpp" />
+    <ClCompile Include="source\Components\Script\BinderFunctions.cpp" />
+    <ClCompile Include="source\Components\Script\ScriptCompiler.cpp" />
     <ClCompile Include="source\Components\ShaderCompiler\ShaderCompiler.cpp" />
     <ClCompile Include="source\Components\Sprite\SpriteComponent.cpp" />
     <ClCompile Include="source\Components\Systems\RenderSystem.cpp" />
@@ -205,6 +207,8 @@
     <ClInclude Include="source\Components\Models\Cube2DModel.h" />
     <ClInclude Include="source\Components\SceneManager\Scene.h" />
     <ClInclude Include="source\Components\SceneManager\SceneManager.h" />
+    <ClInclude Include="source\Components\Script\BinderFunctions.h" />
+    <ClInclude Include="source\Components\Script\ScriptCompiler.h" />
     <ClInclude Include="source\Components\ShaderCompiler\ShaderCompiler.h" />
     <ClInclude Include="source\Components\Sprite\SpriteComponent.h" />
     <ClInclude Include="source\Components\Systems\SystemsEvents.h" />

@@ -56,5 +56,6 @@ void DrawComponents::update() {
 
 void DrawComponents::DrawButtons() {
 	Entity* objectOwner = UIManager::instance->inspectorui->ObjectSelectToInspector;
-	ComponentList::createNewComponent <AudioSource> ("Audio Source", objectOwner);
+	ComponentList::createNewComponent <AudioSource>    ("Audio Source", objectOwner);
+	ComponentList::createNewComponent <ScriptCompiler> ("Gold Behaviour", objectOwner);
 }
