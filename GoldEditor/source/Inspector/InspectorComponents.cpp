@@ -8,8 +8,8 @@ void InspectorComponents::update(Entity* ownerActor) {
 	CScript csrp = CScript();
 	CRigidBody rgBody = CRigidBody();
 
-	au.update		<AudioSource>            (ownerActor);
-	ae.update		<SpriteComponent>	     (ownerActor);
-	csrp.update		<ScriptCompiler>		 (ownerActor);
-	rgBody.update		<RigidBody>		     (ownerActor);
+	ae.update			<SpriteComponent>	     (ownerActor, 3);
+	au.update			<AudioSource>            (ownerActor, 0);
+	csrp.update			<ScriptCompiler>		 (ownerActor, 1);
+	rgBody.update		<RigidBody>			     (ownerActor, 2);
 }
