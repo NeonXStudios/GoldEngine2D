@@ -110,6 +110,9 @@
     <ClCompile Include="source\Inspector\ComponentList.cpp">
       <Filter>Editor</Filter>
     </ClCompile>
+    <ClCompile Include="source\Inspector\ComponentUIDrawer.cpp">
+      <Filter>Editor\02_InspectorDrawer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />
@@ -196,6 +199,9 @@
     </ClInclude>
     <ClInclude Include="source\Inspector\ComponentList.h">
       <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Inspector\ComponentUIDrawer.h">
+      <Filter>Editor\02_InspectorDrawer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

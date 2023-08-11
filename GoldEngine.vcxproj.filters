@@ -59,14 +59,14 @@
     <Filter Include="Engine\02_Components\Events">
       <UniqueIdentifier>{9789d116-cd45-4ad0-ac3d-b42019ad3cfa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\02_Components\Script">
-      <UniqueIdentifier>{5e002c16-d378-49de-8461-d1db8d7e688b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Recursos\lua">
       <UniqueIdentifier>{f2c8624f-95b0-4475-ae68-f5e8f2c3256a}</UniqueIdentifier>
     </Filter>
     <Filter Include="Engine\02_Components\Physics">
       <UniqueIdentifier>{62479b6f-e795-4f07-8263-ee6f8c3cc808}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\02_Components\Scripting">
+      <UniqueIdentifier>{5e002c16-d378-49de-8461-d1db8d7e688b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -155,11 +155,16 @@
       <Filter>Engine\02_Components\Events</Filter>
     </ClCompile>
     <ClCompile Include="source\Components\Script\ScriptCompiler.cpp">
-      <Filter>Engine\02_Components\Script</Filter>
+      <Filter>Engine\02_Components\Scripting</Filter>
     </ClCompile>
-    <ClCompile Include="source\Components\Script\BinderFunctions.cpp" />
     <ClCompile Include="source\Components\Physics\RigidBody.cpp">
       <Filter>Engine\02_Components\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\Physics\TriggerModule.cpp">
+      <Filter>Engine\02_Components\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\Script\BinderFunctions.cpp">
+      <Filter>Engine\02_Components\Scripting</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -257,11 +262,16 @@
       <Filter>Engine\02_Components\Events</Filter>
     </ClInclude>
     <ClInclude Include="source\Components\Script\ScriptCompiler.h">
-      <Filter>Engine\02_Components\Script</Filter>
+      <Filter>Engine\02_Components\Scripting</Filter>
     </ClInclude>
-    <ClInclude Include="source\Components\Script\BinderFunctions.h" />
     <ClInclude Include="source\Components\Physics\RigidBody.h">
       <Filter>Engine\02_Components\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\Physics\TriggerModule.h">
+      <Filter>Engine\02_Components\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\Script\BinderFunctions.h">
+      <Filter>Engine\02_Components\Scripting</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

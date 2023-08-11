@@ -13,6 +13,7 @@ F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CAudio.cpp;
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidBody.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\CRigidBody.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CScript.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\CScript.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CSprite.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\CSprite.obj
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\ComponentUIDrawer.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\ComponentUIDrawer.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\DrawComponents.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\DrawComponents.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\InspectorComponents.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\InspectorComponents.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\ScriptEditor.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\ScriptEditor.obj

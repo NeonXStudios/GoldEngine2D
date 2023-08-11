@@ -21,11 +21,11 @@ void RigidBody::init() {
 	dynamicBox->SetAsBox(float(srp->Scale.x * srp->GlobalScale * 0.5f), float(srp->Scale.y * srp->GlobalScale * 0.5f));
 	fixtureDef->shape = dynamicBox;
 	body->CreateFixture(fixtureDef);
-	//Object::UpdateBody();
-	body->SetTransform(b2Vec2((float)0, (float)0), 0);
+
+	body->SetTransform(b2Vec2((float)srp->ObjectPosition.x, (float)-srp->ObjectPosition.y), 0);
+
+	UpdateCollisions();
 }
-
-
 
 
 void RigidBody::update() {
@@ -34,16 +34,27 @@ void RigidBody::update() {
 		position.x  = body->GetPosition().x;
 		position.y  = -body->GetPosition().y;
 
-		float radians = body->GetAngle();  // Obtén la rotación en radianes desde Box2D
-		float degrees = radians * (180.0f / b2_pi);  // Convertir a grados
+		float radians = body->GetAngle();
+		float degrees = radians * (180.0f / b2_pi);
 
 		if (degrees < 0.0f) {
-			degrees += 360.0f;  // Asegurar que el ángulo esté en el rango 0-360
+			degrees += 360.0f;
 		}
 
+		if (!FreezeX) {
+			srp->ObjectPosition.x = position.x;
+		}
+		else {
+			position.x = srp->ObjectPosition.x;
+		}
 
-		srp->ObjectPosition.x = position.x;
-		srp->ObjectPosition.y = position.y;
+		if (!FreezeY) {
+			srp->ObjectPosition.y = position.y;
+		}
+		else {
+			position.y = -srp->ObjectPosition.y;
+		}
+
 		srp->rotationAngle = degrees;
 	}
 	else {
@@ -55,14 +66,19 @@ void RigidBody::update() {
 		body->SetTransform(b2Vec2(float(position.x), float(position.y)), radians);
 	}
 
-	UpdateCollisions();
+	//UpdateCollisions();
+}
+
+
+void RigidBody::draw() {
+
 }
 
 
 void RigidBody::UpdateCollisions() {
-	SpriteComponent* srp = &entity->getComponent <SpriteComponent>();
+	SpriteComponent* srp = &entity->getComponent<SpriteComponent>();
 	b2Vec2 localCenter(0.0f, 0.0f);
-	localCenter.Set (0, 0);
+	localCenter.Set(0, 0);
 
 	body->DestroyFixture(body->GetFixtureList());
 	b2FixtureDef* fx = new b2FixtureDef();
@@ -77,13 +93,17 @@ void RigidBody::UpdateCollisions() {
 	fx->shape = dynamicBox;
 	fixtureDef = fx;
 	body->CreateFixture(fx);
+
+	b2MassData* mass = new b2MassData();
+	mass->mass = Mass;
+
+	body->SetMassData(mass);
+	fx->shape->ComputeMass(mass, density);
+
+	body->GetFixtureList()->SetSensor(isTrigger);
+
+	//std::cout << "LA MASA ES " << body->GetMassData().mass << std::endl;
 }
-
-
-void RigidBody::draw() {
-
-}
-
 
 
 
@@ -107,5 +127,21 @@ void RigidBody::changeState(bool val) {
 		body->SetType(b2_staticBody);
 		b2Vec2 newPosition(float(position.x), float(position.y));
 		body->SetTransform(newPosition, radians);
+	}
+}
+
+
+void RigidBody::triggerOn (Entity* enterEntity) {
+	if (!usedTrigger) {
+		std::cout << "MI OBJETO " << enterEntity->ObjectName << " ENTRO EN UNA COLISION" << std::endl;
+		usedTrigger = true;
+	}
+}
+
+
+void RigidBody::triggerOff (Entity* enterEntity) {
+	if (usedTrigger) {
+		std::cout << "MI OBJETO " << enterEntity->ObjectName << " SALIO DE UNA COLISION" << std::endl;
+		usedTrigger = false;
 	}
 }
