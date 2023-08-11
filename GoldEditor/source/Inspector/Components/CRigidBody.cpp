@@ -19,6 +19,7 @@ void CRigidBody::draw(Entity* owner) {
 
     if (val != rigidBody.isStatic) {
         rigidBody.changeState (val);
+        rigidBody.UpdateCollisions();
     }
     ImGui::Spacing();
 
@@ -27,6 +28,7 @@ void CRigidBody::draw(Entity* owner) {
 
     if (valFreezeX != rigidBody.FreezeX) {
         rigidBody.FreezeX = valFreezeX;
+        rigidBody.UpdateCollisions();
     }
 
     bool valFreezeY = rigidBody.FreezeY;
@@ -34,6 +36,7 @@ void CRigidBody::draw(Entity* owner) {
 
     if (valFreezeY != rigidBody.FreezeY) {
         rigidBody.FreezeY = valFreezeY;
+        rigidBody.UpdateCollisions();
     }
 
     ImGui::Spacing();
@@ -43,5 +46,6 @@ void CRigidBody::draw(Entity* owner) {
 
     if (valTrigger != rigidBody.isTrigger) {
         rigidBody.isTrigger = valTrigger;
+        rigidBody.UpdateCollisions();
     }
 }

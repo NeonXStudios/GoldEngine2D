@@ -21,11 +21,11 @@ void RigidBody::init() {
 	dynamicBox->SetAsBox(float(srp->Scale.x * srp->GlobalScale * 0.5f), float(srp->Scale.y * srp->GlobalScale * 0.5f));
 	fixtureDef->shape = dynamicBox;
 	body->CreateFixture(fixtureDef);
-	//Object::UpdateBody();
+
 	body->SetTransform(b2Vec2((float)srp->ObjectPosition.x, (float)-srp->ObjectPosition.y), 0);
+
+	UpdateCollisions();
 }
-
-
 
 
 void RigidBody::update() {
@@ -46,7 +46,6 @@ void RigidBody::update() {
 		}
 		else {
 			position.x = srp->ObjectPosition.x;
-			body->SetTransform(b2Vec2(float(position.x), float(position.y)), radians);
 		}
 
 		if (!FreezeY) {
@@ -54,7 +53,6 @@ void RigidBody::update() {
 		}
 		else {
 			position.y = -srp->ObjectPosition.y;
-			body->SetTransform(b2Vec2(float(position.x), float(position.y)), radians);
 		}
 
 		srp->rotationAngle = degrees;
@@ -68,7 +66,7 @@ void RigidBody::update() {
 		body->SetTransform(b2Vec2(float(position.x), float(position.y)), radians);
 	}
 
-	UpdateCollisions();
+	//UpdateCollisions();
 }
 
 
@@ -133,11 +131,17 @@ void RigidBody::changeState(bool val) {
 }
 
 
-void RigidBody::triggerOn() {
-	std::cout << "MI OBJETO " << entity->ObjectName << " ENTRO EN UNA COLISION" << std::endl;
+void RigidBody::triggerOn (Entity* enterEntity) {
+	if (!usedTrigger) {
+		std::cout << "MI OBJETO " << enterEntity->ObjectName << " ENTRO EN UNA COLISION" << std::endl;
+		usedTrigger = true;
+	}
 }
 
 
-void RigidBody::triggerOff() {
-	std::cout << "MI OBJETO " << entity->ObjectName << " SALIO DE UNA COLISION" << std::endl;
+void RigidBody::triggerOff (Entity* enterEntity) {
+	if (usedTrigger) {
+		std::cout << "MI OBJETO " << enterEntity->ObjectName << " SALIO DE UNA COLISION" << std::endl;
+		usedTrigger = false;
+	}
 }

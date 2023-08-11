@@ -30,6 +30,9 @@ public:
 	void changeState(bool val);
 	void UpdateCollisions();
 
-	void triggerOn();
-	void triggerOff();
+	void triggerOn  (Entity* enterEntity);
+	void triggerOff (Entity* enterEntity);
+
+	//LOCAL BODY CONFIG
+	bool usedTrigger;
 };

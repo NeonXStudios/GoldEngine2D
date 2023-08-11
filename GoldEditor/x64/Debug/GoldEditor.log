@@ -1,1 +1,9 @@
-﻿  GoldEditor.vcxproj -> F:\VISUAL STUDIO\GoldEngine2D\BuildEditor\GoldEditor.exe
+﻿  CRigidBody.cpp
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(5,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(6,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+  GoldEditor.vcxproj -> F:\VISUAL STUDIO\GoldEngine2D\BuildEditor\GoldEditor.exe

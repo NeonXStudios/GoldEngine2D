@@ -17,7 +17,7 @@ void TriggerModule::BeginContact(b2Contact* contact) {
 				for (Entity* entityB : SceneManager::GetSceneManager()->OpenScene->objectsInScene) {
 					RigidBody* rbB = &entityB->getComponent<RigidBody>();
 					if (rbB != nullptr && rbB->body == bodyB) {
-						rbB->triggerOn();
+						rbB->triggerOn (entityB);
 						//std::cout << "El objeto que colisionó es " << entityB->ObjectName << std::endl;
 						// entity->OnTriggerStart(entityB);
 					}
@@ -28,7 +28,7 @@ void TriggerModule::BeginContact(b2Contact* contact) {
 				for (Entity* entityA : SceneManager::GetSceneManager()->OpenScene->objectsInScene) {
 					RigidBody* rbA = &entityA->getComponent<RigidBody>();
 					if (rbA != nullptr && rbA->body == bodyA) {
-						rbA->triggerOn();
+						rbA->triggerOn (entityA);
 						//std::cout << "El objeto que colisionó es " << entityA->ObjectName << std::endl;
 						// entity->OnTriggerStart(entityA);
 					}
@@ -53,7 +53,7 @@ void TriggerModule::EndContact (b2Contact* contact) {
 				for (Entity* entityB : SceneManager::GetSceneManager()->OpenScene->objectsInScene) {
 					RigidBody* rbB = &entityB->getComponent<RigidBody>();
 					if (rbB != nullptr && rbB->body == bodyB) {
-						rbB->triggerOff();
+						rbB->triggerOff(entityB);
 						//std::cout << "El objeto que se fue es " << entityB->ObjectName << std::endl;
 						// entity->OnTriggerStart(entityB);
 					}
@@ -64,7 +64,7 @@ void TriggerModule::EndContact (b2Contact* contact) {
 				for (Entity* entityA : SceneManager::GetSceneManager()->OpenScene->objectsInScene) {
 					RigidBody* rbA = &entityA->getComponent<RigidBody>();
 					if (rbA != nullptr && rbA->body == bodyA) {
-						rbA->triggerOff();
+						rbA->triggerOff(entityA);
 						//std::cout << "El objeto que se fue es " << entityA->ObjectName << std::endl;
 						// entity->OnTriggerStart(entityA);
 					}

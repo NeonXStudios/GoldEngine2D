@@ -8,6 +8,6 @@ using namespace std;
 class TriggerModule : public b2ContactListener
 {
 public:
-	void BeginContact(b2Contact* contact);
-	void EndContact(b2Contact* contact);
+	void BeginContact (b2Contact* contact);
+	void EndContact   (b2Contact* contact);
 };

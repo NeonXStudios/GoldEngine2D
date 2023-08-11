@@ -15,6 +15,7 @@ public:
 	//Manager ObjectsScene;
 	std::vector<Entity*> objectsInScene = std::vector<Entity*>();
 	b2World* GravityWorld;
+	
 
 	void start();
 	void update();
