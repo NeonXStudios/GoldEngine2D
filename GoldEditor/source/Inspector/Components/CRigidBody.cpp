@@ -49,3 +49,4 @@ void CRigidBody::draw(Entity* owner) {
         rigidBody.UpdateCollisions();
     }
 }
+

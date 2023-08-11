@@ -3,6 +3,8 @@
 #include "../UI/EditorUI/EditorGUI.h"
 #include <iostream>
 
+
+//CREATE COMPONENT INSPECTOR UI
 class AComponent
 {
 public:
