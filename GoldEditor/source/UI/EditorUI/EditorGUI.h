@@ -40,9 +40,9 @@ public:
 		return glm::vec2 (v[0], v[1]);
 	}
 
-	static bool Toggle (string Name, bool* valueB) {
-		bool g = ImGui::Checkbox(Name.c_str(), valueB);
-		return g;
+	static bool Toggle (string Name, bool valueB) {
+		ImGui::Checkbox(Name.c_str(), &valueB);
+		return valueB;
 	}
 
 	static glm::vec3 Vector3 (string Name, glm::vec3 vector) {
@@ -76,5 +76,11 @@ public:
 		labelID += label;
 
 		return labelID;
+	}
+
+
+	static float Slider (string name, float value, float min, float max) {
+		ImGui::SliderFloat(_labelPrefix(name.c_str()).c_str(), &value, min, max);
+		return value;
 	}
 };

@@ -15,6 +15,7 @@ F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ECS.cpp;F:\VISUAL STUDIO\Gol
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\InputSystem\InputSystem.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\InputSystem.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Models\Cube2DModel.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Cube2DModel.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\RigidBody.obj
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\TriggerModule.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\TriggerModule.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\SceneManager\Scene.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Scene.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\SceneManager\SceneManager.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\SceneManager.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Script\BinderFunctions.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\BinderFunctions.obj

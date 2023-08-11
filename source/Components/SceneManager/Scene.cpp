@@ -1,7 +1,9 @@
 #include "Scene.h"
 #include "../Sprite/SpriteComponent.h"
 #include "../AudioSource/AudioSource.h"
+#include "../Physics/TriggerModule.h"
 
+TriggerModule* triggerData;
 
 void Scene::start () {
 	CreateGravity();
@@ -32,10 +34,11 @@ void Scene::release () {
 void Scene::CreateGravity() {
 	b2Vec2 gravity(0, 20);
 	GravityWorld = new b2World(gravity);
+	triggerData = new TriggerModule();
 
 	if (GravityWorld != nullptr) {
 		//TriggerData* data = new TriggerData();
-		//GravityWorld->SetContactListener(data);
+		GravityWorld->SetContactListener(triggerData);
 		std::cout << "Gravity created " << endl;
 	}
 }

@@ -4,6 +4,8 @@
 
 
 void InspectorComponents::update(Entity* ownerActor) {
+	//OLD COMPONENT FIND
+
 	//CAudio au = CAudio();
 	//CSprite ae = CSprite();
 	//CScript csrp = CScript();

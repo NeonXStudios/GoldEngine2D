@@ -16,7 +16,7 @@ void CAudio::draw (Entity* owner) {
 	}
 
 	AudioSource* sr = &owner->getComponent<AudioSource>();
-	
-	sr->SetVolumen (glm::abs (EditorGUI::Float("Volumen", *sr->GetVolumen())));
-	sr->SetPan (EditorGUI::Float("Pan", sr->GetPan()));
+
+	sr->SetVolumen(glm::abs(EditorGUI::Slider("Volumen", *sr->GetVolumen(), 0, 1)));
+    sr->SetPan (EditorGUI::Float("Pan", sr->GetPan()));
 }
