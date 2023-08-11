@@ -114,6 +114,23 @@ public:
 		return *static_cast<T*>(ptr);
 	}
 
+	
+	template <typename T>
+	std::vector<T*> getComponents() const
+	{
+		std::vector<T*> result;
+		for (auto& c : components)
+		{
+			T* component = dynamic_cast<T*>(c);
+			if (component)
+			{
+				result.push_back(component);
+			}
+		}
+		return result;
+	}
+
+
 	template <typename T> bool hasComponent() const
 	{
 		return componentBitset[getComponentTypeID<T>()];

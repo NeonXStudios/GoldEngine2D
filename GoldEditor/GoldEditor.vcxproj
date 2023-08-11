@@ -168,6 +168,7 @@
     <ClCompile Include="source\Inspector\Components\CRigidBody.cpp" />
     <ClCompile Include="source\Inspector\Components\CScript.cpp" />
     <ClCompile Include="source\Inspector\Components\CSprite.cpp" />
+    <ClCompile Include="source\Inspector\ComponentUIDrawer.cpp" />
     <ClCompile Include="source\Inspector\DrawComponents.cpp" />
     <ClCompile Include="source\Inspector\InspectorComponents.cpp" />
     <ClCompile Include="source\Inspector\ScriptEditor.cpp" />
@@ -202,6 +203,7 @@
     <ClInclude Include="source\Inspector\Components\CRigidBody.h" />
     <ClInclude Include="source\Inspector\Components\CScript.h" />
     <ClInclude Include="source\Inspector\Components\CSprite.h" />
+    <ClInclude Include="source\Inspector\ComponentUIDrawer.h" />
     <ClInclude Include="source\Inspector\DrawComponents.h" />
     <ClInclude Include="source\Inspector\InspectorComponents.h" />
     <ClInclude Include="source\Inspector\ScriptEditor.h" />
