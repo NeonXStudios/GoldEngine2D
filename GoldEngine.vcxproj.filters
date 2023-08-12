@@ -68,6 +68,9 @@
     <Filter Include="Engine\02_Components\Scripting">
       <UniqueIdentifier>{5e002c16-d378-49de-8461-d1db8d7e688b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\02_Components\SaveSystem">
+      <UniqueIdentifier>{a7bad7f3-b205-4ba6-980f-d9e4ec7f77b7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Graphics\StartEngineGraphics.cpp">
@@ -165,6 +168,9 @@
     </ClCompile>
     <ClCompile Include="source\Components\Script\BinderFunctions.cpp">
       <Filter>Engine\02_Components\Scripting</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\SaveSystem\SaveSystem.cpp">
+      <Filter>Engine\02_Components\SaveSystem</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -272,6 +278,9 @@
     </ClInclude>
     <ClInclude Include="source\Components\Script\BinderFunctions.h">
       <Filter>Engine\02_Components\Scripting</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\SaveSystem\SaveSystem.h">
+      <Filter>Engine\02_Components\SaveSystem</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
