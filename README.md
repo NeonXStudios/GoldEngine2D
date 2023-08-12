@@ -1,7 +1,8 @@
 # GoldEngine2D
 
-The motor is free to use but we are not responsible for any damage it may cause. If you manage to modify the code and there are errors or it corrupts your project or game, it will be your problem.
-The engine is especially 2D but maybe 3D will be implemented in the future but it will not be confirmed
+The engine is not yet complete.
+
+if you want to use the engine you can contact us at (support@ultrahstudios.com)
 
 
 LIBRARYS USED:
