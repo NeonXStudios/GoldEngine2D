@@ -173,6 +173,7 @@
     <ClCompile Include="source\Components\Models\Cube2DModel.cpp" />
     <ClCompile Include="source\Components\Physics\RigidBody.cpp" />
     <ClCompile Include="source\Components\Physics\TriggerModule.cpp" />
+    <ClCompile Include="source\Components\SaveSystem\SaveSystem.cpp" />
     <ClCompile Include="source\Components\SceneManager\Scene.cpp" />
     <ClCompile Include="source\Components\SceneManager\SceneManager.cpp" />
     <ClCompile Include="source\Components\Script\BinderFunctions.cpp" />
@@ -209,6 +210,7 @@
     <ClInclude Include="source\Components\Models\Cube2DModel.h" />
     <ClInclude Include="source\Components\Physics\RigidBody.h" />
     <ClInclude Include="source\Components\Physics\TriggerModule.h" />
+    <ClInclude Include="source\Components\SaveSystem\SaveSystem.h" />
     <ClInclude Include="source\Components\SceneManager\Scene.h" />
     <ClInclude Include="source\Components\SceneManager\SceneManager.h" />
     <ClInclude Include="source\Components\Script\BinderFunctions.h" />
