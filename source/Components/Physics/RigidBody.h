@@ -22,6 +22,8 @@ public:
 	bool FreezeX = false;
 	bool FreezeY = false;
 
+	bool ControlByParent;
+
 	void init	() override;
 	void update () override;
 	void draw	() override;

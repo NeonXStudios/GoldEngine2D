@@ -63,6 +63,7 @@ public:
 	std::string ObjectTag = "None";
 	int objectID = 1;
 	Entity* entity;
+	Entity* parent;
 
 	//Entity(Manager& mManager) : manager(mManager) {}
 
@@ -73,11 +74,17 @@ public:
 			c->entity = entity;
 			c->update();
 		}
+
+		entityUpdate();
 	}
+
+
 	void draw()
 	{
 		for (auto& c : components) c->draw();
 	}
+
+	void entityUpdate();
 
 	bool isActive() const { return active; }
 	void destroy() { active = false; }
@@ -148,6 +155,11 @@ public:
 			return true;
 		}
 		return false;
+	}
+
+
+	void setParent (Entity* newParent) {
+		parent = newParent;
 	}
 };
 #endif

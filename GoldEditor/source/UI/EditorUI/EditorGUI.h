@@ -62,6 +62,12 @@ public:
 	}
 
 
+	static float Slider (string name, float value, float min, float max) {
+		ImGui::SliderFloat(_labelPrefix(name.c_str()).c_str(), &value, min, max);
+		return value;
+	}
+
+
 	static std::string _labelPrefix(const char* const label)
 	{
 		float width = ImGui::CalcItemWidth();
@@ -76,11 +82,5 @@ public:
 		labelID += label;
 
 		return labelID;
-	}
-
-
-	static float Slider (string name, float value, float min, float max) {
-		ImGui::SliderFloat(_labelPrefix(name.c_str()).c_str(), &value, min, max);
-		return value;
 	}
 };

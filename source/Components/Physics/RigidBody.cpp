@@ -23,7 +23,6 @@ void RigidBody::init() {
 	body->CreateFixture(fixtureDef);
 
 	body->SetTransform(b2Vec2((float)srp->ObjectPosition.x, (float)-srp->ObjectPosition.y), 0);
-
 	UpdateCollisions();
 }
 
@@ -31,8 +30,8 @@ void RigidBody::init() {
 void RigidBody::update() {
 	SpriteComponent* srp = &entity->getComponent <SpriteComponent>();
 	if (!isStatic) {
-		position.x  = body->GetPosition().x;
-		position.y  = -body->GetPosition().y;
+		position.x = body->GetPosition().x;
+		position.y = -body->GetPosition().y;
 
 		float radians = body->GetAngle();
 		float degrees = radians * (180.0f / b2_pi);
@@ -45,6 +44,7 @@ void RigidBody::update() {
 			srp->ObjectPosition.x = position.x;
 		}
 		else {
+			body->SetLinearVelocity(b2Vec2_zero);
 			position.x = srp->ObjectPosition.x;
 		}
 
@@ -52,6 +52,7 @@ void RigidBody::update() {
 			srp->ObjectPosition.y = position.y;
 		}
 		else {
+			body->SetLinearVelocity (b2Vec2_zero);
 			position.y = -srp->ObjectPosition.y;
 		}
 
@@ -66,7 +67,7 @@ void RigidBody::update() {
 		body->SetTransform(b2Vec2(float(position.x), float(position.y)), radians);
 	}
 
-	//UpdateCollisions();
+	UpdateCollisions();
 }
 
 
@@ -92,18 +93,12 @@ void RigidBody::UpdateCollisions() {
 	dynamicBox->SetAsBox(boxWidth, boxHeight, localCenter, 0);
 	fx->shape = dynamicBox;
 	fixtureDef = fx;
+
 	body->CreateFixture(fx);
-
-	b2MassData* mass = new b2MassData();
-	mass->mass = Mass;
-
-	body->SetMassData(mass);
-	fx->shape->ComputeMass(mass, density);
-
 	body->GetFixtureList()->SetSensor(isTrigger);
-
-	//std::cout << "LA MASA ES " << body->GetMassData().mass << std::endl;
+	std::cout << "BODY UPDATE" << std::endl;
 }
+
 
 
 
@@ -131,7 +126,7 @@ void RigidBody::changeState(bool val) {
 }
 
 
-void RigidBody::triggerOn (Entity* enterEntity) {
+void RigidBody::triggerOn(Entity* enterEntity) {
 	if (!usedTrigger) {
 		std::cout << "MI OBJETO " << enterEntity->ObjectName << " ENTRO EN UNA COLISION" << std::endl;
 		usedTrigger = true;
@@ -139,7 +134,7 @@ void RigidBody::triggerOn (Entity* enterEntity) {
 }
 
 
-void RigidBody::triggerOff (Entity* enterEntity) {
+void RigidBody::triggerOff(Entity* enterEntity) {
 	if (usedTrigger) {
 		std::cout << "MI OBJETO " << enterEntity->ObjectName << " SALIO DE UNA COLISION" << std::endl;
 		usedTrigger = false;

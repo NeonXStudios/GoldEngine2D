@@ -279,4 +279,15 @@
       <Filter>Recursos</Filter>
     </ResourceCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon1.ico">
+      <Filter>Recursos</Filter>
+    </Image>
+    <Image Include="source\icons\engineIcon.png">
+      <Filter>Recursos</Filter>
+    </Image>
+    <Image Include="source\icons\Icon.ico">
+      <Filter>Recursos</Filter>
+    </Image>
+  </ItemGroup>
 </Project>

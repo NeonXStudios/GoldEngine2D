@@ -4,17 +4,17 @@
 #include "../Physics/TriggerModule.h"
 
 
-void Scene::start () {
+void Scene::start() {
 	CreateGravity();
 	worldCamera->start();
 }
 
-void Scene::update () {
+void Scene::update() {
 	worldCamera->update();
 
 	if (GravityWorld != nullptr && GravityWorld->GetBodyCount() > 0) {
 		b2Body* body = GravityWorld->GetBodyList();
-		float timeStep = 1.0f / AppSettings::getTargetFrame();
+		float timeStep = 1.0f / 60;
 		GravityWorld->Step(timeStep, 6, 2);
 		body->GetNext();
 	}
@@ -25,7 +25,7 @@ void Scene::update () {
 	}
 }
 
-void Scene::release () {
+void Scene::release() {
 
 }
 

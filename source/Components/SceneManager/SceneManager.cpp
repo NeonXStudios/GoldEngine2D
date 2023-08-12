@@ -34,7 +34,7 @@ Entity* SceneManager::NewEntity() {
 	if (&newObj->getComponent<SpriteComponent>() == nullptr) {
 		newObj->addComponent<SpriteComponent>();
 	}
-
+	newObj->entity = newObj;
 
 	OpenScene->objectsInScene.push_back(newObj);
 	newObj->ObjectName = "New Entity " + std::to_string (OpenScene->objectsInScene.size() + 1);
