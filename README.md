@@ -12,6 +12,7 @@ LIBRARYS USED:
 - box2d
 - GLM
 - lua
+- nlohmann (JSON)
 
 
 ![image](https://github.com/GrstudiosGamesPro/GoldEngine2D/assets/85538374/88ce4ffd-d4ef-4edb-bd57-2bd17e81a314)
