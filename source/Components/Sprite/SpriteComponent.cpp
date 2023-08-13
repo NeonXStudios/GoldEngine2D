@@ -2,6 +2,7 @@
 #define STB_IMAGE_IMPLEMENTATIONTEXTURE
 #include <stb_image.h>
 #include "nlohmann/json.hpp"
+#include "../SaveSystem/CheckVar.h"
 
 using namespace nlohmann;
 
@@ -181,11 +182,26 @@ std::string SpriteComponent::serialize() {
 
 void SpriteComponent::deserialize (std::string g) {
     json componentData = json::parse(g);
+
+
+    if (CheckVar::Has(componentData, "posx"))
     ObjectPosition.x = componentData["posx"];
+
+    if (CheckVar::Has (componentData, "posy"))
     ObjectPosition.y = componentData["posy"];
+
+    if (CheckVar::Has(componentData, "scalex"))
     Scale.x = componentData["scalex"];
+
+    if (CheckVar::Has(componentData, "scaley"))
     Scale.y = componentData["scaley"];
+
+    if (CheckVar::Has(componentData, "scaleglobal"))
     GlobalScale = componentData["scaleglobal"];
+
+    if (CheckVar::Has(componentData, "rotation"))
     rotationAngle = componentData["rotation"];
+
+    if (CheckVar::Has(componentData, "texturepath"))
     TexturePath = componentData["texturepath"];
 }

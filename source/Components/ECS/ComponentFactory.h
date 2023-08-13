@@ -21,5 +21,10 @@ public:
 			RigidBody* g = &owner->addComponent<RigidBody>();
 			g->deserialize (data);
 		}
+
+		if (componentName == "ScriptCompiler") {
+			ScriptCompiler* g = &owner->addComponent<ScriptCompiler>();
+			g->deserialize(data);
+		}
 	}
 };

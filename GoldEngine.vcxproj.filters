@@ -181,6 +181,9 @@
     <ClCompile Include="source\Components\ECS\ComponentFactory.cpp">
       <Filter>Engine\02_Components\ECS</Filter>
     </ClCompile>
+    <ClCompile Include="source\Components\SaveSystem\CheckVar.cpp">
+      <Filter>Engine\02_Components\SaveSystem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Components\ShaderCompiler\ShaderCompiler.h">
@@ -296,6 +299,9 @@
     </ClInclude>
     <ClInclude Include="source\Components\ECS\ComponentFactory.h">
       <Filter>Engine\02_Components\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\SaveSystem\CheckVar.h">
+      <Filter>Engine\02_Components\SaveSystem</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

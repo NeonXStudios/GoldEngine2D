@@ -5,11 +5,7 @@
                 {
                     "componentdata": {
                         "posx": 89.35560607910156,
-                        "posy": 364.56707763671875,
-                        "rotation": 204.9999542236328,
                         "scaleglobal": 1.0,
-                        "scalex": 320.0,
-                        "scaley": 25.0,
                         "texturepath": "game/assets/sprites/tile_0025.png"
                     },
                     "componenttype": "SpriteComponent"
@@ -17,9 +13,7 @@
                 {
                     "componentdata": {
                         "freezex": false,
-                        "freezey": false,
-                        "isTrigger": true,
-                        "static": true
+                        "isTrigger": true
                     },
                     "componenttype": "RigidBody"
                 },
