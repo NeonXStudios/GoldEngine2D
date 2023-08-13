@@ -1,6 +1,9 @@
 #pragma once
+#include <iostream>
 #include "box2d/box2d.h"
 #include "../../source/EngineBehaviour/GoldEngineLib.h"
+
+using namespace std;
 
 struct b2Body;
 struct b2PolygonShape;
@@ -37,4 +40,8 @@ public:
 
 	//LOCAL BODY CONFIG
 	bool usedTrigger;
+
+
+	string serialize() override;
+	void deserialize(std::string g) override;
 };

@@ -4,23 +4,62 @@
             "components": [
                 {
                     "componentdata": {
-                        "posx": -801.88232421875,
-                        "posy": 13.121781349182129,
+                        "posx": 89.35560607910156,
+                        "posy": 364.56707763671875,
+                        "rotation": 204.9999542236328,
                         "scaleglobal": 1.0,
-                        "scalex": 262.0,
-                        "scaley": 132.0
+                        "scalex": 320.0,
+                        "scaley": 25.0,
+                        "texturepath": "game/assets/sprites/tile_0025.png"
                     },
                     "componenttype": "SpriteComponent"
                 },
                 {
                     "componentdata": {
-                        "pan": 2.0,
+                        "freezex": false,
+                        "freezey": false,
+                        "isTrigger": true,
+                        "static": true
+                    },
+                    "componenttype": "RigidBody"
+                },
+                {
+                    "componentdata": {
+                        "pan": 0.0,
+                        "pathfile": "game/assets/music/HideYourHeart-NCS.mp3",
                         "volumen": 0.014000000432133675
                     },
                     "componenttype": "AudioSource"
                 }
             ],
             "name": "New Entity 2",
+            "tag": "None"
+        },
+        {
+            "components": [
+                {
+                    "componentdata": {
+                        "posx": 342.91168212890625,
+                        "posy": 37.95095443725586,
+                        "rotation": 65.0,
+                        "scaleglobal": 1.0,
+                        "scalex": 528.0,
+                        "scaley": 25.0,
+                        "texturepath": "game/assets/sprites/tile_0025.png"
+                    },
+                    "componenttype": "SpriteComponent"
+                },
+                {
+                    "componentdata": {
+                        "freezex": true,
+                        "freezey": true,
+                        "isTrigger": false,
+                        "static": false
+                    },
+                    "componenttype": "RigidBody"
+                }
+            ],
+            "name": "New Entity 3",
             "tag": "None"
         }
     ]

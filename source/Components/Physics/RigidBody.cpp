@@ -1,10 +1,19 @@
 #include "RigidBody.h"
+#include "nlohmann/json.hpp"
+#include <iostream>
+#include <string>
+#include <algorithm> 
 
 
+using namespace nlohmann;
+using namespace std;
+
+using namespace std;
 
 void RigidBody::init() {
 	SpriteComponent* srp = &entity->getComponent <SpriteComponent>();
-
+	float degrees = srp->rotationAngle;
+	float radians = degrees * (b2_pi / 180.0f);
 	dynamicBox = new b2PolygonShape();
 	fixtureDef = new b2FixtureDef();
 
@@ -22,7 +31,7 @@ void RigidBody::init() {
 	fixtureDef->shape = dynamicBox;
 	body->CreateFixture(fixtureDef);
 
-	body->SetTransform(b2Vec2((float)srp->ObjectPosition.x, (float)-srp->ObjectPosition.y), 0);
+	body->SetTransform(b2Vec2((float)srp->ObjectPosition.x, (float)-srp->ObjectPosition.y), radians);
 	UpdateCollisions();
 }
 
@@ -96,7 +105,6 @@ void RigidBody::UpdateCollisions() {
 
 	body->CreateFixture(fx);
 	body->GetFixtureList()->SetSensor(isTrigger);
-	std::cout << "BODY UPDATE" << std::endl;
 }
 
 
@@ -139,4 +147,23 @@ void RigidBody::triggerOff(Entity* enterEntity) {
 		std::cout << "MI OBJETO " << enterEntity->ObjectName << " SALIO DE UNA COLISION" << std::endl;
 		usedTrigger = false;
 	}
+}
+
+std::string RigidBody::serialize() {
+	json componentData;
+	componentData["static"]		= isStatic;
+	componentData["freezex"]	= FreezeX;
+	componentData["freezey"]	= FreezeY;
+	componentData["isTrigger"]  = isTrigger;
+
+	return componentData.dump();
+}
+
+void RigidBody::deserialize(std::string g) {
+	json componentData = json::parse(g);
+
+	isStatic  = (bool)componentData["static"];
+	FreezeX   = (bool)componentData["freezex"];
+	FreezeY   = (bool)componentData["freezey"];
+	isTrigger = (bool)componentData["isTrigger"];
 }

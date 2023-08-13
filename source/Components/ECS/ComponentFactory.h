@@ -18,8 +18,8 @@ public:
 		}
 
 		if (componentName == "RigidBody") {
-			//RigidBody g = owner->addComponent<RigidBody>();
-			//g.deserialize (data);
+			RigidBody* g = &owner->addComponent<RigidBody>();
+			g->deserialize (data);
 		}
 	}
 };
