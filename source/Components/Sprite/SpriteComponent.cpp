@@ -173,7 +173,8 @@ std::string SpriteComponent::serialize() {
     componentData["scalex"] = Scale.x;
     componentData["scaley"] = Scale.y;
     componentData["scaleglobal"] = GlobalScale;
-
+    componentData["rotation"] = rotationAngle;
+    componentData["texturepath"] = TexturePath;
 
     return componentData.dump();
 }
@@ -185,4 +186,6 @@ void SpriteComponent::deserialize (std::string g) {
     Scale.x = componentData["scalex"];
     Scale.y = componentData["scaley"];
     GlobalScale = componentData["scaleglobal"];
+    rotationAngle = componentData["rotation"];
+    TexturePath = componentData["texturepath"];
 }

@@ -10,6 +10,7 @@ std::string AudioSource::serialize () {
     float g;
     channel->getVolume(&g);
     componentData["volumen"] = g;
+    componentData["pathfile"] = AudioPath;
 
     return componentData.dump();
 }
@@ -18,4 +19,5 @@ void AudioSource::deserialize(std::string g) {
     json componentData = json::parse(g);
     SetPan  (componentData["pan"]);
     SetVolumen (componentData["volumen"]);
+    AudioPath = componentData["pathfile"];
 }
