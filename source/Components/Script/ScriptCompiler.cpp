@@ -2,6 +2,7 @@
 #include "BinderFunctions.h"
 #include "nlohmann/json.hpp"
 #include "../SaveSystem/CheckVar.h"
+#include "Libs/GMathf/GMathf.h"
 
 
 using namespace nlohmann;
@@ -28,6 +29,7 @@ void ScriptCompiler::init () {
 	std::string content = contenido;
 
 	BinderFunctions::RegisterFunctions(this);
+	GMathf::RegisterLib (this);
 
 	int result = luaL_loadstring(lua.lua_state(), content.c_str());
 

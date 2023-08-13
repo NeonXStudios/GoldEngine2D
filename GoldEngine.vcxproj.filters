@@ -74,6 +74,18 @@
     <Filter Include="Engine\02_Components\Serializer">
       <UniqueIdentifier>{a28dd952-71b0-4def-aedb-d41602f30e26}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\02_Components\Libs">
+      <UniqueIdentifier>{bc88a9b2-2ba7-4426-8372-7688b61c5904}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\02_Components\Libs\Mathf">
+      <UniqueIdentifier>{c47e7ac1-db22-4e32-9e33-509c34c750d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\02_Components\Scripting\Functions">
+      <UniqueIdentifier>{c7405d06-59d7-4d47-be91-52777dbd21a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\02_Components\Scripting\Functions\Gmathf">
+      <UniqueIdentifier>{8a7fdd04-4a79-4958-a977-42f65c15fec7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Graphics\StartEngineGraphics.cpp">
@@ -183,6 +195,12 @@
     </ClCompile>
     <ClCompile Include="source\Components\SaveSystem\CheckVar.cpp">
       <Filter>Engine\02_Components\SaveSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\Script\Libs\GMathf\GMathf.cpp">
+      <Filter>Engine\02_Components\Scripting\Functions\Gmathf</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\Lib\GoldMath\GoldMathf.cpp">
+      <Filter>Engine\02_Components\Libs\Mathf</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -302,6 +320,12 @@
     </ClInclude>
     <ClInclude Include="source\Components\SaveSystem\CheckVar.h">
       <Filter>Engine\02_Components\SaveSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\Script\Libs\GMathf\GMathf.h">
+      <Filter>Engine\02_Components\Scripting\Functions\Gmathf</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\Lib\GoldMath\GoldMathf.h">
+      <Filter>Engine\02_Components\Libs\Mathf</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
