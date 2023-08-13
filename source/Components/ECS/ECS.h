@@ -44,6 +44,8 @@ public:
 	virtual void update() {}
 	virtual void draw() {}
 	virtual void clean() {}
+	virtual std::string serialize() { return ""; }
+	virtual void deserialize(std::string g) {}
 	virtual ~Component() {}
 };
 
@@ -156,7 +158,6 @@ public:
 		}
 		return false;
 	}
-
 
 	void setParent (Entity* newParent) {
 		parent = newParent;

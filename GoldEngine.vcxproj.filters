@@ -71,6 +71,9 @@
     <Filter Include="Engine\02_Components\SaveSystem">
       <UniqueIdentifier>{a7bad7f3-b205-4ba6-980f-d9e4ec7f77b7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\02_Components\Serializer">
+      <UniqueIdentifier>{a28dd952-71b0-4def-aedb-d41602f30e26}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Graphics\StartEngineGraphics.cpp">
@@ -171,6 +174,12 @@
     </ClCompile>
     <ClCompile Include="source\Components\SaveSystem\SaveSystem.cpp">
       <Filter>Engine\02_Components\SaveSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\ECS\ComponentSerializer.cpp">
+      <Filter>Engine\02_Components\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\ECS\ComponentFactory.cpp">
+      <Filter>Engine\02_Components\ECS</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -281,6 +290,12 @@
     </ClInclude>
     <ClInclude Include="source\Components\SaveSystem\SaveSystem.h">
       <Filter>Engine\02_Components\SaveSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\ECS\ComponentSerializer.h">
+      <Filter>Engine\02_Components\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\ECS\ComponentFactory.h">
+      <Filter>Engine\02_Components\ECS</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
