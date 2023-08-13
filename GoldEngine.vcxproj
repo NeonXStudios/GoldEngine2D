@@ -172,6 +172,7 @@
     <ClCompile Include="source\Components\ECS\ComponentSerializer.cpp" />
     <ClCompile Include="source\Components\ECS\ECS.cpp" />
     <ClCompile Include="source\Components\InputSystem\InputSystem.cpp" />
+    <ClCompile Include="source\Components\Lib\GoldMath\GoldMathf.cpp" />
     <ClCompile Include="source\Components\Models\Cube2DModel.cpp" />
     <ClCompile Include="source\Components\Physics\RigidBody.cpp" />
     <ClCompile Include="source\Components\Physics\TriggerModule.cpp" />
@@ -180,6 +181,7 @@
     <ClCompile Include="source\Components\SceneManager\Scene.cpp" />
     <ClCompile Include="source\Components\SceneManager\SceneManager.cpp" />
     <ClCompile Include="source\Components\Script\BinderFunctions.cpp" />
+    <ClCompile Include="source\Components\Script\Libs\GMathf\GMathf.cpp" />
     <ClCompile Include="source\Components\Script\ScriptCompiler.cpp" />
     <ClCompile Include="source\Components\ShaderCompiler\ShaderCompiler.cpp" />
     <ClCompile Include="source\Components\Sprite\SpriteComponent.cpp" />
@@ -212,6 +214,7 @@
     <ClInclude Include="source\Components\ECS\ComponentSerializer.h" />
     <ClInclude Include="source\Components\ECS\ECS.h" />
     <ClInclude Include="source\Components\InputSystem\InputSystem.h" />
+    <ClInclude Include="source\Components\Lib\GoldMath\GoldMathf.h" />
     <ClInclude Include="source\Components\Models\Cube2DModel.h" />
     <ClInclude Include="source\Components\Physics\RigidBody.h" />
     <ClInclude Include="source\Components\Physics\TriggerModule.h" />
@@ -220,6 +223,7 @@
     <ClInclude Include="source\Components\SceneManager\Scene.h" />
     <ClInclude Include="source\Components\SceneManager\SceneManager.h" />
     <ClInclude Include="source\Components\Script\BinderFunctions.h" />
+    <ClInclude Include="source\Components\Script\Libs\GMathf\GMathf.h" />
     <ClInclude Include="source\Components\Script\ScriptCompiler.h" />
     <ClInclude Include="source\Components\ShaderCompiler\ShaderCompiler.h" />
     <ClInclude Include="source\Components\Sprite\SpriteComponent.h" />
