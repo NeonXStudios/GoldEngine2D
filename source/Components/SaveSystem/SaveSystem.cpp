@@ -33,8 +33,32 @@ bool GLD::SaveSystem::save (string path, string fileName, string content) {
 }
 
 
-bool GLD::SaveSystem::load(string path, string fileName) {
+string GLD::SaveSystem::load(string path, string fileName) {
+    string FileName = path + "/" + fileName;
+
+    if (fileExists(FileName)) {
+        std::cout << "El archivo existe." << std::endl;
+    }
+    else {
+        std::cout << "El archivo no existe." << std::endl;
+        return "";
+    }
 
 
-	return false;
+    ifstream arch (FileName);
+
+    if (arch.is_open()) {
+        std::string contenido((std::istreambuf_iterator<char>(arch)),
+            std::istreambuf_iterator<char>());
+
+        arch.close();
+
+        return contenido;
+    }
+
+    return "SAVE DATA IS NULL!";
+}
+bool GLD::SaveSystem::fileExists(const std::string& filename) {
+    std::ifstream file(filename);
+    return file.good();
 }

@@ -3,6 +3,8 @@
 #include "AudioManager.h"
 #include "../ECS/ECS.h"
 
+
+using namespace std;
 using namespace FMOD;
 
 class AudioSource : public Component
@@ -84,4 +86,9 @@ public:
 		channel->stop();
 		AudioManager::GetManager()->result = sound->release();
 	}
+
+
+	string serialize() override;
+	void deserialize(std::string g) override;
+
 };

@@ -12,6 +12,7 @@ namespace GLD {
 	{
 	public:
 		static bool save(string path, string fileName, string content);
-		static bool load(string path, string fileName);
+		static string load(string path, string fileName);
+		static bool fileExists(const std::string& filename);
 	};
 };

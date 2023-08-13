@@ -1,6 +1,9 @@
 #include "SpriteComponent.h"
 #define STB_IMAGE_IMPLEMENTATIONTEXTURE
 #include <stb_image.h>
+#include "nlohmann/json.hpp"
+
+using namespace nlohmann;
 
 float vertices2[] = {
    -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
@@ -159,4 +162,27 @@ void SpriteComponent::clean() {
     glDeleteBuffers(1, &EBO);
     glDeleteTextures(1, &texture);
     glDeleteProgram(shaderProgram);
+}
+
+
+
+std::string SpriteComponent::serialize() {
+    json componentData;
+    componentData["posx"] = ObjectPosition.x;
+    componentData["posy"] = ObjectPosition.y;
+    componentData["scalex"] = Scale.x;
+    componentData["scaley"] = Scale.y;
+    componentData["scaleglobal"] = GlobalScale;
+
+
+    return componentData.dump();
+}
+
+void SpriteComponent::deserialize (std::string g) {
+    json componentData = json::parse(g);
+    ObjectPosition.x = componentData["posx"];
+    ObjectPosition.y = componentData["posy"];
+    Scale.x = componentData["scalex"];
+    Scale.y = componentData["scaley"];
+    GlobalScale = componentData["scaleglobal"];
 }

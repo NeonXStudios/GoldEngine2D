@@ -5,7 +5,6 @@
 #include "../../RequireLibs.h"
 #include "../SceneManager/SceneManager.h"
 
-
 using namespace std;
 
 class SpriteComponent : public Component
@@ -37,5 +36,8 @@ public:
     void LoadTexture ();
 
     void clean() override;
+
+    string serialize() override;
+    void deserialize(std::string g) override;
 };
 #endif

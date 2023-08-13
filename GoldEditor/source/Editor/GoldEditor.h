@@ -1,32 +1,25 @@
 #pragma once
 #include <iostream>
+
 #include "../../../source/EngineBehaviour/GoldEngineLib.h"
 #include "../UI/UIManager.h"
+#include "../Components/Data/SaveData.h"
+
 
 class GoldEditor : public EngineBehaviour { 
 public:
     static GoldEditor* editor;
-    Entity* player;
-    Entity* player2;
-    Entity* player3;
     UIManager* uiMaster = new UIManager();
 
     void start() override {
         uiMaster->start();
         std::cout << "Starting editor" << endl;
+        SaveData::loadScene();
 
-
-
-        player = SceneManager::GetSceneManager()->NewEntity();
-        player2 = SceneManager::GetSceneManager()->NewEntity();
-        player3 = SceneManager::GetSceneManager()->NewEntity();
-
-        player2->ObjectName = "OBJETO2";
-        player3->ObjectName = "OBJETO3";
     }
 
     void draw() override {
-
+       
     }
 
     void update() override {

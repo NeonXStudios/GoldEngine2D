@@ -1,4 +1,6 @@
 #include "../UIDrawer.h"
+#include "../../Components/Data/SaveData.h"
+
 
 class BarMenuUI : public UIDrawer {
 
@@ -16,7 +18,7 @@ public:
             }
 
             if (ImGui::MenuItem ("Save")) {
-
+                SaveData::saveScene();
             }
 
             if (ImGui::MenuItem ("Exit")) {

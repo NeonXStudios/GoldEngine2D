@@ -1,6 +1,9 @@
 #include "GoldEditor.h"
 
+
 GoldEditor* GoldEditor::editor = nullptr;
+
+
 
 int main()
 {
@@ -12,15 +15,16 @@ int main()
     AppSettings::setTargetFrame (165);
 
 
-    GLD::SaveSystem* g = new GLD::SaveSystem();
+    //GLD::SaveSystem* g = new GLD::SaveSystem();
 
-    if (g->save("game/assets/saves", "scene.f", "intentando escribir un archivo GA")) {
-        std::cout << "ARCHIVO ESCRITO CON EXITO!" << endl;
-    }
-    else {
-        std::cout << "NO SE LOGRO ESCRIBIR EL ARCHIVO!" << endl;
-    }
+    //if (g->save("game/assets/saves", "scene.f", )) {
+    //    std::cout << "ARCHIVO ESCRITO CON EXITO!" << endl;
+    //}
+    //else {
+    //    std::cout << "NO SE LOGRO ESCRIBIR EL ARCHIVO!" << endl;
+    //}
 
+    //std::cout << "--------" << g->load("game/assets/saves", "scene.f") << std::endl;
 
     engine->StartGameEngine(GoldEditor::editor);
     std::cout << "Game finish" << endl;

@@ -10,7 +10,9 @@ F:\VISUAL STUDIO\GoldEngine2D\source\Components\AudioSource\AudioManager.cpp;F:\
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\AudioSource\AudioSource.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\AudioSource.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Camera2D.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Debug\DrawBox.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\DrawBox.obj
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ComponentFactory.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\ComponentFactory.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ComponentManager.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\ComponentManager.obj
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ComponentSerializer.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\ComponentSerializer.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ECS.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\ECS.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\InputSystem\InputSystem.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\InputSystem.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Models\Cube2DModel.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Cube2DModel.obj

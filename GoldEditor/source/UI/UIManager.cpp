@@ -1,8 +1,6 @@
 #include "UIManager.h"
 
-
 UIManager* UIManager::instance = nullptr;
-
 
 void UIManager::start (){
 	UIManager::instance = this;

@@ -1,0 +1,27 @@
+{
+    "objects": [
+        {
+            "components": [
+                {
+                    "componentdata": {
+                        "posx": -801.88232421875,
+                        "posy": 13.121781349182129,
+                        "scaleglobal": 1.0,
+                        "scalex": 262.0,
+                        "scaley": 132.0
+                    },
+                    "componenttype": "SpriteComponent"
+                },
+                {
+                    "componentdata": {
+                        "pan": 2.0,
+                        "volumen": 0.014000000432133675
+                    },
+                    "componenttype": "AudioSource"
+                }
+            ],
+            "name": "New Entity 2",
+            "tag": "None"
+        }
+    ]
+}

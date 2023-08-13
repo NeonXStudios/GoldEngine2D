@@ -5,18 +5,6 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Components">
-      <UniqueIdentifier>{4d79921c-d649-4625-94e6-6645ae1a90ff}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Components\UI">
-      <UniqueIdentifier>{3d12b6d9-648a-4459-9608-98a8c4679df6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Components\UI\Behaviour">
-      <UniqueIdentifier>{4ce65440-160b-4f3c-9c7a-9486323face9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Components\UI\EditorGUI">
-      <UniqueIdentifier>{342ce20b-ea34-4e58-a406-a0fb28daf849}</UniqueIdentifier>
-    </Filter>
     <Filter Include="RecursosEditor">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
@@ -32,6 +20,21 @@
     </Filter>
     <Filter Include="Editor\02_InspectorDrawer\Components">
       <UniqueIdentifier>{de6d0e30-4fc6-4797-ad19-6d6fa7726378}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor\03_EditorComponents">
+      <UniqueIdentifier>{6723af8d-0879-47cb-8e60-95ced42b9b7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor\03_EditorComponents\Save">
+      <UniqueIdentifier>{a76da2c2-0cb3-42b0-b5a4-5224ae210971}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor\04_UI">
+      <UniqueIdentifier>{3d12b6d9-648a-4459-9608-98a8c4679df6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor\04_UI\Behaviour">
+      <UniqueIdentifier>{4ce65440-160b-4f3c-9c7a-9486323face9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor\04_UI\EditorGUI">
+      <UniqueIdentifier>{342ce20b-ea34-4e58-a406-a0fb28daf849}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -60,22 +63,22 @@
       <Filter>RecursosEditor\IMGUI</Filter>
     </ClCompile>
     <ClCompile Include="source\UI\UIDrawer.cpp">
-      <Filter>Components\UI\Behaviour</Filter>
+      <Filter>Editor\04_UI\Behaviour</Filter>
     </ClCompile>
     <ClCompile Include="source\UI\UIManager.cpp">
-      <Filter>Components\UI\Behaviour</Filter>
+      <Filter>Editor\04_UI\Behaviour</Filter>
     </ClCompile>
     <ClCompile Include="source\UI\HUDS\SceneUI.cpp">
-      <Filter>Components\UI</Filter>
+      <Filter>Editor\04_UI</Filter>
     </ClCompile>
     <ClCompile Include="source\UI\HUDS\Inspector.cpp">
-      <Filter>Components\UI</Filter>
+      <Filter>Editor\04_UI</Filter>
     </ClCompile>
     <ClCompile Include="source\UI\HUDS\Hierarchy.cpp">
-      <Filter>Components\UI</Filter>
+      <Filter>Editor\04_UI</Filter>
     </ClCompile>
     <ClCompile Include="source\UI\EditorUI\EditorGUI.cpp">
-      <Filter>Components\UI\EditorGUI</Filter>
+      <Filter>Editor\04_UI\EditorGUI</Filter>
     </ClCompile>
     <ClCompile Include="source\Editor\GoldEditor.cpp">
       <Filter>Editor\01_INTERFACE</Filter>
@@ -96,7 +99,7 @@
       <Filter>Editor\02_InspectorDrawer</Filter>
     </ClCompile>
     <ClCompile Include="source\UI\HUDS\RightClickUI.cpp">
-      <Filter>Components\UI</Filter>
+      <Filter>Editor\04_UI</Filter>
     </ClCompile>
     <ClCompile Include="source\Inspector\Components\CScript.cpp">
       <Filter>Editor\02_InspectorDrawer\Components</Filter>
@@ -112,6 +115,9 @@
     </ClCompile>
     <ClCompile Include="source\Inspector\ComponentUIDrawer.cpp">
       <Filter>Editor\02_InspectorDrawer</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\Data\SaveData.cpp">
+      <Filter>Editor\03_EditorComponents\Save</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -144,28 +150,28 @@
       <Filter>RecursosEditor\IMGUI</Filter>
     </ClInclude>
     <ClInclude Include="source\UI\UIDrawer.h">
-      <Filter>Components\UI\Behaviour</Filter>
+      <Filter>Editor\04_UI\Behaviour</Filter>
     </ClInclude>
     <ClInclude Include="source\UI\HUDS\SceneUI.h">
-      <Filter>Components\UI</Filter>
+      <Filter>Editor\04_UI</Filter>
     </ClInclude>
     <ClInclude Include="source\UI\UIManager.h">
-      <Filter>Components\UI\Behaviour</Filter>
+      <Filter>Editor\04_UI\Behaviour</Filter>
     </ClInclude>
     <ClInclude Include="source\UI\HUDS\BarMenuUI.h">
-      <Filter>Components\UI</Filter>
+      <Filter>Editor\04_UI</Filter>
     </ClInclude>
     <ClInclude Include="source\UI\HUDS\HierarchyUI.h">
-      <Filter>Components\UI</Filter>
+      <Filter>Editor\04_UI</Filter>
     </ClInclude>
     <ClInclude Include="source\UI\HUDS\Assets.h">
-      <Filter>Components\UI</Filter>
+      <Filter>Editor\04_UI</Filter>
     </ClInclude>
     <ClInclude Include="source\UI\HUDS\Inspector.h">
-      <Filter>Components\UI</Filter>
+      <Filter>Editor\04_UI</Filter>
     </ClInclude>
     <ClInclude Include="source\UI\EditorUI\EditorGUI.h">
-      <Filter>Components\UI\EditorGUI</Filter>
+      <Filter>Editor\04_UI\EditorGUI</Filter>
     </ClInclude>
     <ClInclude Include="source\Editor\GoldEditor.h">
       <Filter>Editor\01_INTERFACE</Filter>
@@ -186,7 +192,7 @@
       <Filter>Editor\02_InspectorDrawer</Filter>
     </ClInclude>
     <ClInclude Include="source\UI\HUDS\RightClickUI.h">
-      <Filter>Components\UI</Filter>
+      <Filter>Editor\04_UI</Filter>
     </ClInclude>
     <ClInclude Include="source\Inspector\Components\CScript.h">
       <Filter>Editor\02_InspectorDrawer\Components</Filter>
@@ -202,6 +208,9 @@
     </ClInclude>
     <ClInclude Include="source\Inspector\ComponentUIDrawer.h">
       <Filter>Editor\02_InspectorDrawer</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\Data\SaveData.h">
+      <Filter>Editor\03_EditorComponents\Save</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
