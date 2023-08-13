@@ -1,6 +1,11 @@
 #include "ScriptCompiler.h"
 #include "BinderFunctions.h"
+#include "nlohmann/json.hpp"
+#include "../SaveSystem/CheckVar.h"
 
+
+using namespace nlohmann;
+using namespace std;
 using namespace sol;
 
 void ScriptCompiler::init () {
@@ -41,3 +46,18 @@ void ScriptCompiler::init () {
 void ScriptCompiler::update(){}
 void ScriptCompiler::draw(){}
 void ScriptCompiler::clean(){}
+
+
+std::string ScriptCompiler::serialize() {
+	json componentData;
+	componentData["scriptpath"] = pathScript;
+
+	return componentData.dump();
+}
+
+void ScriptCompiler::deserialize(std::string g) {
+	json componentData = json::parse(g);
+
+	if (CheckVar::Has(componentData, "scriptpath"))
+		pathScript = componentData["scriptpath"];
+}

@@ -1,13 +1,12 @@
 #include "RigidBody.h"
-#include "nlohmann/json.hpp"
 #include <iostream>
 #include <string>
 #include <algorithm> 
+#include "nlohmann/json.hpp"
+#include "../SaveSystem/CheckVar.h"
 
 
 using namespace nlohmann;
-using namespace std;
-
 using namespace std;
 
 void RigidBody::init() {
@@ -162,8 +161,15 @@ std::string RigidBody::serialize() {
 void RigidBody::deserialize(std::string g) {
 	json componentData = json::parse(g);
 
+	if (CheckVar::Has (componentData, "static"))
 	isStatic  = (bool)componentData["static"];
+
+	if (CheckVar::Has(componentData, "freezex"))
 	FreezeX   = (bool)componentData["freezex"];
+
+	if (CheckVar::Has(componentData, "freezey"))
 	FreezeY   = (bool)componentData["freezey"];
+
+	if (CheckVar::Has(componentData, "isTrigger"))
 	isTrigger = (bool)componentData["isTrigger"];
 }

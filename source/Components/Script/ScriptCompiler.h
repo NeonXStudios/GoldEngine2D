@@ -19,4 +19,7 @@ public:
 	void update() override;
 	void draw() override;
 	void clean() override;
+
+	string serialize() override;
+	void deserialize(std::string g) override;
 };
