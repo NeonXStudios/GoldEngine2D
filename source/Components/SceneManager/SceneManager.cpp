@@ -1,6 +1,7 @@
 #include "SceneManager.h"
 #include <iostream>;
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -53,4 +54,15 @@ Entity* SceneManager::GetObjectByID (int id) {
 		}
 	}
 	return nullptr; // No se encontró el objeto con el ID especificado o el vector estaba vacío
+}
+
+Entity* SceneManager::Destroy(Entity* obj) {
+	if (obj != nullptr) {
+		auto it = std::ranges::find(OpenScene->objectsInScene, obj);
+		if (it != OpenScene->objectsInScene.end()) {
+			delete obj;
+			OpenScene->objectsInScene.erase(it);
+		}
+	}
+	return nullptr;
 }

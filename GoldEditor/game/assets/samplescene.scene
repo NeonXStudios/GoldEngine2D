@@ -8,21 +8,23 @@
                         "posy": 0.0,
                         "posz": 0.0,
                         "rotation": 0.0,
-                        "scaleglobal": 1.0,
-                        "scalex": 1920.0,
-                        "scaley": 1080.0,
-                        "texturepath": "game/assets/sprites/bg.gif"
+                        "scaleglobal": 2.0,
+                        "scalex": 25.0,
+                        "scaley": 25.0,
+                        "texturepath": "game/assets/sprites\\objects\\rock_in_water_06.png"
                     },
                     "componenttype": "SpriteComponent"
                 },
                 {
                     "componentdata": {
-                        "scriptpath": "game/assets/scripts\\Cry.sr"
+                        "pan": 0.0,
+                        "pathfile": "game/assets/music\\battle\\sword-unsheathe2.wav",
+                        "volumen": 1.0
                     },
-                    "componenttype": "ScriptCompiler"
+                    "componenttype": "AudioSource"
                 }
             ],
-            "name": "Game",
+            "name": "New Entity 2",
             "tag": "None"
         }
     ]

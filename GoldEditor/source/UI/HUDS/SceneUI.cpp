@@ -48,6 +48,10 @@
 
         // Invertimos las coordenadas de textura en el eje Y antes de mostrar la imagen
         ImGui::Image((void*)(intptr_t)texture, ImVec2(WindowXSize, WindowYSize), ImVec2(1, 1), ImVec2(0, 0));
+        
+        if (!UIManager::instance->rightClickui->miniMenuOpen) {
+            UIManager::instance->rightClickui->SceneHover = ImGui::IsWindowHovered();
+        }
 
         //std::cout << "Nuevo tamaño de la textura: " << imageSizeSCENE.x << "x" << imageSizeSCENE.y << std::endl;
 
@@ -59,6 +63,30 @@
         glm::vec2 WorldPoint = RenderSystem::RenderSystem::ScreenToViewPort (glm::vec2 (imagePosition.x, imagePosition.y), glm::vec2 (imageSizeSCENE.x, imageSizeSCENE.y));
         glm::vec2 initialMousePos;  // Posición del mouse cuando comenzó el arrastre
         glm::vec2 initialObjectPos; // Posición inicial del objeto cuando comenzó el arrastre
+
+        if (ImGui::BeginDragDropTarget())
+        {
+            ImGuiDragDropFlags target_flags = 0;
+            target_flags |= ImGuiDragDropFlags_AcceptBeforeDelivery;
+            target_flags |= ImGuiDragDropFlags_AcceptNoDrawDefaultRect;
+
+
+            if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("TEXTUREDA_PATH", target_flags))
+            {
+                if (ImGui::IsMouseReleased(0)) {
+                    const char* receivedString = static_cast<const char*>(payload->Data);
+
+                    Entity* newOBJ = SceneManager::GetSceneManager()->NewEntity();
+                    newOBJ->getComponent<SpriteComponent>().TexturePath = receivedString;
+                    newOBJ->getComponent<SpriteComponent>().LoadTexture();
+
+                    newOBJ->getComponent <SpriteComponent>().ObjectPosition = glm::vec3(WorldPoint.x, WorldPoint.y, 0);
+                }
+            }
+
+
+            ImGui::EndDragDropTarget();
+        }
 
         if (ImGui::IsWindowHovered()) {
             for (int i = 0; i < SceneManager::GetSceneManager()->OpenScene->objectsInScene.size(); i++) {

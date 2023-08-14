@@ -7,7 +7,7 @@ void RightClickUI::draw() {
         miniMenuOpen = false;
     }
 
-    if (ImGui::IsMouseClicked(1)) {
+    if (SceneHover && ImGui::IsMouseClicked(1)) {
         MousePos = ImGui::GetMousePos();
         ImGui::SetNextWindowPos(ImVec2(MousePos.x, MousePos.y));
         ImGui::SetNextWindowSize(ImVec2(300, 500));
@@ -15,7 +15,7 @@ void RightClickUI::draw() {
         miniMenuOpen = true;
     }
 
-    if (miniMenuOpen && ImGui::Begin("Assets Menu", &miniMenuOpen, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove)) {
+    if (SceneHover && miniMenuOpen && ImGui::Begin("Assets Menu", &miniMenuOpen, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove)) {
         if (ImGui::BeginMenu("Create")) {
             if (ImGui::Button("New Entity")) {
                 SceneManager::GetSceneManager()->NewEntity();

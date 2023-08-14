@@ -8,29 +8,31 @@ void CScript::start() {
 
 
 void CScript::draw (Entity* owner) {
+    ImGui::PushID("ScriptDROP");
 	owner->getComponent<ScriptCompiler>().pathScript = EditorGUI::InputText ("Script Path", owner->getComponent<ScriptCompiler>().pathScript);
     if (ImGui::BeginDragDropTarget())
     {
         ImGuiDragDropFlags target_flags = 0;
-        target_flags |= ImGuiDragDropFlags_AcceptBeforeDelivery;    // Don't wait until the delivery (release mouse button on a target) to do something
-        target_flags |= ImGuiDragDropFlags_AcceptNoDrawDefaultRect; // Don't display the yellow rectangle
+        target_flags |= ImGuiDragDropFlags_AcceptBeforeDelivery;
+        target_flags |= ImGuiDragDropFlags_AcceptNoDrawDefaultRect;
 
 
         if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("SRSCRIPT_PATH", target_flags))
         {
-            const char* receivedString = static_cast<const char*>(payload->Data);
+            if (ImGui::IsMouseReleased(0)) {
+                const char* receivedString = static_cast<const char*>(payload->Data);
 
-            if (receivedString)
-            {
+
                 std::cout << "String recibido: " << receivedString << std::endl;
                 owner->getComponent<ScriptCompiler>().pathScript = receivedString;
             }
+
         }
 
 
         ImGui::EndDragDropTarget();
     }
-
+    ImGui::PopID();
 
 	if (EditorGUI::Button("Open script", vec2(100, 30))) {
 		if (editor == nullptr) {

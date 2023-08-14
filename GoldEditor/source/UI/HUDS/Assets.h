@@ -2,6 +2,7 @@
 #include <iostream>
 #include <filesystem>
 #include <string.h>
+#include "../../UI/DragAndDrop.h"
 
 #include "../UIDrawer.h"
 #include <stb_image.h>
@@ -108,16 +109,16 @@ public:
                                 }
                             }
 
-                            if (ImGui::BeginDragDropSource(src_flags))
-                            {
-                                const char* filePathN;
-                                string t = "Moving " + namePath;
-                                ImGui::Text(t.c_str());
+                            //if (ImGui::BeginDragDropSource(src_flags))
+                            //{
+                            //    const char* filePathN;
+                            //    string t = "Moving " + namePath;
+                            //    ImGui::Text(t.c_str());
 
-                                std::string pathToSend = entry.path().string();
-                                ImGui::SetDragDropPayload("SCENE_PATH", pathToSend.c_str(), pathToSend.size() + 1); // +1 para incluir el carácter nulo
-                                ImGui::EndDragDropSource();
-                            }
+                            //    std::string pathToSend = entry.path().string();
+                            //    ImGui::SetDragDropPayload("SCENE_PATH", pathToSend.c_str(), pathToSend.size() + 1); // +1 para incluir el carácter nulo
+                            //    ImGui::EndDragDropSource();
+                            //}
 
 
 
@@ -127,59 +128,61 @@ public:
                                 }
                             }
 
-                            if (ImGui::BeginDragDropSource(src_flags))
-                            {
-                                const char* filePathN;
-                                string t = "Moving " + namePath;
-                                ImGui::Text(t.c_str());
+                            ImGui::PushID("musicD");
 
-                                std::string pathToSend = entry.path().string();
-                                ImGui::SetDragDropPayload("SHADER_PATH", pathToSend.c_str(), pathToSend.size() + 1); // +1 para incluir el carácter nulo
-                                ImGui::EndDragDropSource();
-                            }
-
-
-                            if (extension == ".mp3") {
+                            if (extension == ".mp3" || extension == ".wav") {
                                 if (ImGui::ImageButton((void*)(intptr_t)musicTextureID, imageSize)) {
                                     //path_to_read = entry.path().string();
                                 }
+
+                                if (ImGui::BeginDragDropSource(src_flags))
+                                {
+                                    const char* filePathN;
+                                    string t = "File " + namePath;
+                                    ImGui::Text(t.c_str());
+
+                                    std::string pathToSend = entry.path().string();
+                                    ImGui::SetDragDropPayload("MUSICH_PATH", pathToSend.c_str(), pathToSend.size() + 1);
+                                    ImGui::EndDragDropSource();
+                                }
                             }
-
-                            if (ImGui::BeginDragDropSource(src_flags))
-                            {
-                                const char* filePathN;
-                                string t = "Moving " + namePath;
-                                ImGui::Text(t.c_str());
-
-                                std::string pathToSend = entry.path().string();
-                                ImGui::SetDragDropPayload("MUSICMP_PATH", pathToSend.c_str(), pathToSend.size() + 1); // +1 para incluir el carácter nulo
-                                ImGui::EndDragDropSource();
-                            }
+                            ImGui::PopID();
 
 
-
-
+                            ImGui::PushID ("png");
                             if (extension == ".png" || extension == ".gif") {
                                 if (ImGui::ImageButton((void*)(intptr_t)textureTextureID, imageSize)) {
                                     //path_to_read = entry.path().string();
                                 }
+
+                                if (ImGui::BeginDragDropSource(src_flags))
+                                {
+                                    const char* filePathN;
+                                    string t = "File " + namePath;
+                                    ImGui::Text(t.c_str());
+
+                                    std::string pathToSend = entry.path().string();
+                                    ImGui::SetDragDropPayload("TEXTUREDA_PATH", pathToSend.c_str(), pathToSend.size() + 1); // +1 para incluir el carácter nulo
+                                    ImGui::EndDragDropSource();
+                                }
                             }
+                                ImGui::PopID();
 
-                            if (ImGui::BeginDragDropSource(src_flags))
-                            {
-                                const char* filePathN;
-                                string t = "Moving " + namePath;
-                                ImGui::Text(t.c_str());
+                            //if (ImGui::BeginDragDropSource(src_flags))
+                            //{
+                            //    const char* filePathN;
+                            //    string t = "Moving " + namePath;
+                            //    ImGui::Text(t.c_str());
 
-                                std::string pathToSend = entry.path().string();
-                                ImGui::SetDragDropPayload("TXTTURE_PATH", pathToSend.c_str(), pathToSend.size() + 1); // +1 para incluir el carácter nulo
-                                ImGui::EndDragDropSource();
-                            }
-
-
-
+                            //    std::string pathToSend = entry.path().string();
+                            //    ImGui::SetDragDropPayload("TXTTURE_PATH", pathToSend.c_str(), pathToSend.size() + 1); // +1 para incluir el carácter nulo
+                            //    ImGui::EndDragDropSource();
+                            //}
 
 
+
+                            
+                                ImGui::PushID("sr");
                             if (extension == ".sr") {
                                 if (ImGui::ImageButton((void*)(intptr_t)scriptTextureID, imageSize)) {
                                     string path = entry.path().string();
@@ -200,23 +203,22 @@ public:
                                         printf("Error al abrir el archivo con VSCode.\n");
                                     }
                                 }
+                                if (ImGui::BeginDragDropSource(src_flags))
+                                {
+                                    const char* filePathN;
+                                    string t = "File " + namePath;
+                                    ImGui::Text(t.c_str());
+
+                                    std::string pathToSend = entry.path().string();
+                                    ImGui::SetDragDropPayload("SRSCRIPT_PATH", pathToSend.c_str(), pathToSend.size() + 1); // +1 para incluir el carácter nulo
+                                    ImGui::EndDragDropSource();
+                                }
                             }
+                                ImGui::PopID();
                         }
 
 
-
-                    //src_flags |= ImGuiDragDropFlags_SourceNoPreviewTooltip; // Hide the tooltip
-
-                    if (ImGui::BeginDragDropSource(src_flags))
-                    {
-                        const char* filePathN;
-                        string t = "Moving " + namePath;
-                        ImGui::Text(t.c_str());
-
-                        std::string pathToSend = entry.path().string();
-                        ImGui::SetDragDropPayload("SRSCRIPT_PATH", pathToSend.c_str(), pathToSend.size() + 1); // +1 para incluir el carácter nulo
-                        ImGui::EndDragDropSource();
-                    }
+                   
 
 
 
@@ -255,18 +257,12 @@ public:
                     }
                     else {
                         ImGui::NewLine();
-                    }
-
-                    
+                    } 
                 }
             }
             catch (const fs::filesystem_error& ex) {
                 std::cerr << "Error al acceder a la ruta: " << ex.what() << std::endl;
             }
-
-
-
-
 
             
             ImGui::EndChild();

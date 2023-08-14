@@ -3,10 +3,11 @@
 
 class RightClickUI : public UIDrawer
 {
-    bool miniMenuOpen = false;
     ImVec2 MousePos;
 
 public:
+    bool miniMenuOpen = false;
+    bool SceneHover;
     void start() override;
 
     void draw() override;

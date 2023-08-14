@@ -25,6 +25,12 @@ void InspectorUI::draw() {
         ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngle = EditorGUI::Float("Rotation", ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngle);
 
 
+        if (InputSystem::InputSystem::GetKey (GLFW_KEY_DELETE) && ObjectSelectToInspector != nullptr) {
+            SceneManager::GetSceneManager()->Destroy (ObjectSelectToInspector);
+            ObjectSelectToInspector = nullptr;
+        }
+
+
         /*
         glm::vec3 newPos = EditorGUI::Vector3("Position:", ObjectSelectToInspector->getComponent<SpriteComponent>().ObjectPosition);
         ObjectSelectToInspector->getComponent<SpriteComponent>().ObjectPosition = glm::vec3(newPos.x, newPos.y, ObjectSelectToInspector->getComponent<SpriteComponent>().ObjectPosition.z);

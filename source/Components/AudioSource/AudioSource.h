@@ -14,7 +14,7 @@ class AudioSource : public Component
 	float pan = 0;
 
 public:
-	std::string AudioPath = "game/assets/music/HideYourHeart-NCS.mp3";
+	std::string AudioPath = "";
 	void init () override {
 
 		if (AudioManager::GetManager()->result != FMOD_OK) {
@@ -46,6 +46,15 @@ public:
 			std::cout << "Audio component started successfully..." << std::endl;
 		}
 		SetVolumen (1.0f);
+	}
+
+	void Stop() {
+		channel->stop();
+	}
+
+	void Reset() {
+		channel->stop();
+		init();
 	}
 
 
@@ -86,7 +95,6 @@ public:
 		channel->stop();
 		AudioManager::GetManager()->result = sound->release();
 	}
-
 
 	string serialize() override;
 	void deserialize(std::string g) override;
