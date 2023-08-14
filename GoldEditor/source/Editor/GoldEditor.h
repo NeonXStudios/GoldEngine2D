@@ -4,22 +4,25 @@
 #include "../../../source/EngineBehaviour/GoldEngineLib.h"
 #include "../UI/UIManager.h"
 #include "../Components/Data/SaveData.h"
+#include <imguizmo/ImGuizmo.h>
+#include "../Gizmos/MoveGizmos.h"
 
 
 class GoldEditor : public EngineBehaviour { 
 public:
     static GoldEditor* editor;
     UIManager* uiMaster = new UIManager();
+    MoveGizmos* gizmos = new MoveGizmos();
 
     void start() override {
         uiMaster->start();
         std::cout << "Starting editor" << endl;
         SaveData::loadScene();
-
+        gizmos->start();
     }
 
     void draw() override {
-       
+        gizmos->draw();
     }
 
     void update() override {

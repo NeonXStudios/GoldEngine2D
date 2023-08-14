@@ -2,7 +2,6 @@
 #include "SceneUI.h"
 #include "../UIManager.h"
 
-
     void SceneUI::start () {
         glGenFramebuffers(1, &framebuffer);
         glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
@@ -18,10 +17,12 @@
             std::cout << "Framebuffer is not complete!" << std::endl;
 
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
+
     }
 
 
     void SceneUI::draw() {
+
         ImVec2 windowSize = ImVec2(AppSettings::ScreenWidth, AppSettings::ScreenHeight);
 
         // Dibujamos la imagen en la ventana de ImGui
@@ -92,15 +93,15 @@
                     }
                 }
                 else {
-                    if (ImGui::IsMouseClicked (0)) {
+                    if (ImGui::IsMouseClicked (0) && !LockWithGizmos) {
                         UIManager::instance->inspectorui->ObjectSelectToInspector = nullptr;
                     }
                 }
 
                 
                 if (ImGui::IsMouseDragging (0) && ImGui::IsMouseDown(0) && UIManager::instance->inspectorui->ObjectSelectToInspector != nullptr) {
-                        UIManager::instance->inspectorui->ObjectSelectToInspector->getComponent<SpriteComponent>().ObjectPosition.x = WorldPoint.x;
-                        UIManager::instance->inspectorui->ObjectSelectToInspector->getComponent<SpriteComponent>().ObjectPosition.y = WorldPoint.y;
+                        //UIManager::instance->inspectorui->ObjectSelectToInspector->getComponent<SpriteComponent>().ObjectPosition.x = WorldPoint.x;
+                        //UIManager::instance->inspectorui->ObjectSelectToInspector->getComponent<SpriteComponent>().ObjectPosition.y = WorldPoint.y;
                     isdragging = true;
                 }
 

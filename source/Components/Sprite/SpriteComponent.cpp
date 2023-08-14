@@ -171,6 +171,7 @@ std::string SpriteComponent::serialize() {
     json componentData;
     componentData["posx"] = ObjectPosition.x;
     componentData["posy"] = ObjectPosition.y;
+    componentData["posz"] = ObjectPosition.z;
     componentData["scalex"] = Scale.x;
     componentData["scaley"] = Scale.y;
     componentData["scaleglobal"] = GlobalScale;
@@ -189,6 +190,9 @@ void SpriteComponent::deserialize (std::string g) {
 
     if (CheckVar::Has (componentData, "posy"))
     ObjectPosition.y = componentData["posy"];
+
+    if (CheckVar::Has(componentData, "posz"))
+    ObjectPosition.y = componentData["posz"];
 
     if (CheckVar::Has(componentData, "scalex"))
     Scale.x = componentData["scalex"];

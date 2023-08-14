@@ -12,6 +12,7 @@ public:
     ImVec2 imagePosition;
     bool isdragging;
     bool ObjectSelect;
+    bool LockWithGizmos;
 
     void start() override;
 

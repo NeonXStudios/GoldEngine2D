@@ -172,4 +172,23 @@ void RigidBody::deserialize(std::string g) {
 
 	if (CheckVar::Has(componentData, "isTrigger"))
 	isTrigger = (bool)componentData["isTrigger"];
+
+
+	SpriteComponent* srp = &entity->getComponent<SpriteComponent>();
+	float degrees = srp->rotationAngle;
+	float radians = degrees * (b2_pi / 180.0f);
+
+	if (!isStatic) {
+		body->SetAwake(true);
+		b2Vec2 newPosition(float(position.x), float(position.y));
+		body->SetTransform(newPosition, radians);
+		body->SetType(b2_dynamicBody);
+	}
+	else {
+		body->SetType(b2_staticBody);
+		b2Vec2 newPosition(float(position.x), float(position.y));
+		body->SetTransform(newPosition, radians);
+	}
+
+	body->SetAwake(true);
 }

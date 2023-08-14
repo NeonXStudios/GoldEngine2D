@@ -36,6 +36,9 @@
     <Filter Include="Editor\04_UI\EditorGUI">
       <UniqueIdentifier>{342ce20b-ea34-4e58-a406-a0fb28daf849}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Editor\04_UI\Gizmos">
+      <UniqueIdentifier>{fada7000-4c4a-4129-9b23-11dfb4618648}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Binarys\c\glad.c">
@@ -118,6 +121,9 @@
     </ClCompile>
     <ClCompile Include="source\Components\Data\SaveData.cpp">
       <Filter>Editor\03_EditorComponents\Save</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Gizmos\MoveGizmos.cpp">
+      <Filter>Editor\04_UI\Gizmos</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -211,6 +217,9 @@
     </ClInclude>
     <ClInclude Include="source\Components\Data\SaveData.h">
       <Filter>Editor\03_EditorComponents\Save</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Gizmos\MoveGizmos.h">
+      <Filter>Editor\04_UI\Gizmos</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

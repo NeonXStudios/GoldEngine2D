@@ -12,7 +12,7 @@ int AppSettings::TargetFPS = 30;
 
 void AppSettings::create() {
     if (AppSettings::instance) throw std::exception("App Settings manager already exist");
-    AppSettings::instance = new AppSettings();
+    AppSettings::instance = this;
     std::cout << "APP SETTINGS CREATED..." << endl;
 }
 

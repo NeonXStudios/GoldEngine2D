@@ -12,7 +12,7 @@ int main()
     std::cout << "GoldEditor Created" << endl;
 
     RunEngine* engine = new RunEngine();
-    AppSettings::setTargetFrame (165);
+    AppSettings::setTargetFrame (1);
 
 
     //GLD::SaveSystem* g = new GLD::SaveSystem();

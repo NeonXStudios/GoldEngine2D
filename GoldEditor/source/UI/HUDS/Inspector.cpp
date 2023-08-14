@@ -15,9 +15,10 @@ void InspectorUI::draw() {
     ImGui::Begin("Inspector");
     if (ObjectSelectToInspector != nullptr) {
         ObjectSelectToInspector->ObjectName = EditorGUI::InputText("Name:", ObjectSelectToInspector->ObjectName);
+        ObjectSelectToInspector->ObjectTag = EditorGUI::InputText("Tag:", ObjectSelectToInspector->ObjectTag);
 
         glm::vec3 newPos = EditorGUI::Vector3("Position:", ObjectSelectToInspector->getComponent<SpriteComponent>().ObjectPosition);
-        ObjectSelectToInspector->getComponent<SpriteComponent>().ObjectPosition = glm::vec3 (newPos.x, newPos.y, 0);
+        ObjectSelectToInspector->getComponent<SpriteComponent>().ObjectPosition = glm::vec3 (newPos.x, newPos.y, newPos.z);
 
         ObjectSelectToInspector->getComponent<SpriteComponent>().Scale = EditorGUI::Vector2("Size", ObjectSelectToInspector->getComponent<SpriteComponent>().Scale);
         ObjectSelectToInspector->getComponent<SpriteComponent>().GlobalScale = EditorGUI::Float("Global Scale", ObjectSelectToInspector->getComponent<SpriteComponent>().GlobalScale);

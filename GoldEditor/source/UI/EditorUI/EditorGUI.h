@@ -54,7 +54,7 @@ public:
 
 		ImGui::DragFloat3(EditorGUI::_labelPrefix(Name.c_str()).c_str(), v);
 
-		return glm::vec3(v[0], v[1], v[3]);
+		return glm::vec3(v[0], v[1], v[2]);
 	}
 
 	static bool Button (string Name, glm::vec2 size) {

@@ -71,9 +71,6 @@
     <Filter Include="Engine\02_Components\SaveSystem">
       <UniqueIdentifier>{a7bad7f3-b205-4ba6-980f-d9e4ec7f77b7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\02_Components\Serializer">
-      <UniqueIdentifier>{a28dd952-71b0-4def-aedb-d41602f30e26}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\02_Components\Libs">
       <UniqueIdentifier>{bc88a9b2-2ba7-4426-8372-7688b61c5904}</UniqueIdentifier>
     </Filter>

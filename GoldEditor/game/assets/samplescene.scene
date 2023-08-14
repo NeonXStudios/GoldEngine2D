@@ -4,9 +4,10 @@
             "components": [
                 {
                     "componentdata": {
-                        "posx": -400.5633850097656,
-                        "posy": -152.79409790039063,
-                        "rotation": 0.0,
+                        "posx": -505.35211181640625,
+                        "posy": 0.0,
+                        "posz": 0.0,
+                        "rotation": 352.4764099121094,
                         "scaleglobal": 1.0,
                         "scalex": 671.0,
                         "scaley": 25.0,
@@ -40,8 +41,9 @@
                 {
                     "componentdata": {
                         "posx": 342.91168212890625,
-                        "posy": 26.85790252685547,
-                        "rotation": 65.0,
+                        "posy": 0.0,
+                        "posz": 0.0,
+                        "rotation": 70.3311767578125,
                         "scaleglobal": 1.0,
                         "scalex": 528.0,
                         "scaley": 25.0,
@@ -51,10 +53,10 @@
                 },
                 {
                     "componentdata": {
-                        "freezex": true,
-                        "freezey": true,
+                        "freezex": false,
+                        "freezey": false,
                         "isTrigger": false,
-                        "static": false
+                        "static": true
                     },
                     "componenttype": "RigidBody"
                 }
@@ -66,9 +68,10 @@
             "components": [
                 {
                     "componentdata": {
-                        "posx": -334.81689453125,
-                        "posy": -127.77914428710938,
-                        "rotation": 3.373425715835765e-05,
+                        "posx": -496.3221130371094,
+                        "posy": 261.0,
+                        "posz": 0.0,
+                        "rotation": 352.4764099121094,
                         "scaleglobal": 1.0,
                         "scalex": 25.0,
                         "scaley": 25.0,
@@ -81,7 +84,7 @@
                         "freezex": false,
                         "freezey": false,
                         "isTrigger": false,
-                        "static": false
+                        "static": true
                     },
                     "componenttype": "RigidBody"
                 }

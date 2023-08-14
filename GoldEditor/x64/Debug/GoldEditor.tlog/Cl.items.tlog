@@ -8,6 +8,7 @@ F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\imgui\imgui_tables.cpp;F:\VISUAL S
 F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\imgui\imgui_widgets.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\imgui_widgets.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Components\Data\SaveData.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\SaveData.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Editor\GoldEditor.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\GoldEditor.obj
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Gizmos\MoveGizmos.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\MoveGizmos.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\AComponent.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\AComponent.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\ComponentList.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\ComponentList.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CAudio.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\CAudio.obj

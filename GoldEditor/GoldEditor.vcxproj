@@ -163,6 +163,7 @@
     <ClCompile Include="..\Binarys\include\imgui\imgui_widgets.cpp" />
     <ClCompile Include="source\Components\Data\SaveData.cpp" />
     <ClCompile Include="source\Editor\GoldEditor.cpp" />
+    <ClCompile Include="source\Gizmos\MoveGizmos.cpp" />
     <ClCompile Include="source\Inspector\AComponent.cpp" />
     <ClCompile Include="source\Inspector\ComponentList.cpp" />
     <ClCompile Include="source\Inspector\Components\CAudio.cpp" />
@@ -199,6 +200,7 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="source\Components\Data\SaveData.h" />
     <ClInclude Include="source\Editor\GoldEditor.h" />
+    <ClInclude Include="source\Gizmos\MoveGizmos.h" />
     <ClInclude Include="source\Inspector\AComponent.h" />
     <ClInclude Include="source\Inspector\ComponentList.h" />
     <ClInclude Include="source\Inspector\Components\CAudio.h" />
