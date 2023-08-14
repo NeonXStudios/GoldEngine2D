@@ -4,98 +4,19 @@
             "components": [
                 {
                     "componentdata": {
-                        "posx": -363.0986022949219,
-                        "posy": 17.493999481201172,
+                        "posx": 0.0,
+                        "posy": 0.0,
                         "posz": 0.0,
-                        "rotation": 352.4764099121094,
+                        "rotation": 0.0,
                         "scaleglobal": 1.0,
-                        "scalex": 500.0,
-                        "scaley": 25.0,
-                        "texturepath": "game/assets/sprites/tile_0025.png"
+                        "scalex": 1920.0,
+                        "scaley": 1080.0,
+                        "texturepath": "game/assets/sprites/bg.gif"
                     },
                     "componenttype": "SpriteComponent"
-                },
-                {
-                    "componentdata": {
-                        "freezex": false,
-                        "freezey": false,
-                        "isTrigger": false,
-                        "posx": -363.0986022949219,
-                        "posy": -17.493999481201172,
-                        "static": true
-                    },
-                    "componenttype": "RigidBody"
-                },
-                {
-                    "componentdata": {
-                        "pan": 0.0,
-                        "pathfile": "game/assets/music/HideYourHeart-NCS.mp3",
-                        "volumen": 0.014000000432133675
-                    },
-                    "componenttype": "AudioSource"
                 }
             ],
-            "name": "New Entity 2",
-            "tag": "None"
-        },
-        {
-            "components": [
-                {
-                    "componentdata": {
-                        "posx": 342.91168212890625,
-                        "posy": 360.8901062011719,
-                        "posz": 0.0,
-                        "rotation": -3.6689999103546143,
-                        "scaleglobal": 1.0,
-                        "scalex": 528.0,
-                        "scaley": 25.0,
-                        "texturepath": "game/assets/sprites/tile_0025.png"
-                    },
-                    "componenttype": "SpriteComponent"
-                },
-                {
-                    "componentdata": {
-                        "freezex": false,
-                        "freezey": false,
-                        "isTrigger": false,
-                        "posx": 342.91168212890625,
-                        "posy": -360.8901062011719,
-                        "static": true
-                    },
-                    "componenttype": "RigidBody"
-                }
-            ],
-            "name": "New Entity 3",
-            "tag": "None"
-        },
-        {
-            "components": [
-                {
-                    "componentdata": {
-                        "posx": -368.16900634765625,
-                        "posy": 236.3525848388672,
-                        "posz": 0.0,
-                        "rotation": 20216.009765625,
-                        "scaleglobal": 1.0,
-                        "scalex": 25.0,
-                        "scaley": 25.0,
-                        "texturepath": "game/assets/sprites/tile_0025.png"
-                    },
-                    "componenttype": "SpriteComponent"
-                },
-                {
-                    "componentdata": {
-                        "freezex": false,
-                        "freezey": false,
-                        "isTrigger": false,
-                        "posx": -368.16900634765625,
-                        "posy": -236.3525848388672,
-                        "static": false
-                    },
-                    "componenttype": "RigidBody"
-                }
-            ],
-            "name": "Player",
+            "name": "Game",
             "tag": "None"
         }
     ]

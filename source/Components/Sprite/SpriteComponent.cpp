@@ -208,4 +208,6 @@ void SpriteComponent::deserialize (std::string g) {
 
     if (CheckVar::Has(componentData, "texturepath"))
     TexturePath = componentData["texturepath"];
+
+    LoadTexture();
 }

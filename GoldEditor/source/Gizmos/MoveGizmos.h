@@ -27,11 +27,6 @@ public:
 		left->getComponent <SpriteComponent>().LoadTexture();
 		top->getComponent  <SpriteComponent>().LoadTexture();
 
-		//left->setParent(parent);
-		//top->setParent (parent);
-
-		//left->getComponent <SpriteComponent>().LocalPosition.x = -100;
-		//top->getComponent <SpriteComponent>().LocalPosition.y = 100;
 		top->getComponent <SpriteComponent>().rotationAngle = 90;
 
 		left->getComponent <SpriteComponent>().GlobalScale *= 2;
@@ -128,8 +123,11 @@ public:
 
 		if (dragEntity != nullptr && dragEntity == left) {
 			if (dragging) {
+
+
 				SpriteComponent* sprite = &left->getComponent<SpriteComponent>();
 				SpriteComponent* parentSprite = &UIManager::instance->inspectorui->ObjectSelectToInspector->getComponent<SpriteComponent>();
+				float getDistance = glm::distance (glm::vec3 (WorldPoint.x, WorldPoint.y, 0), sprite->ObjectPosition);
 
 				float distanceOffset = glm::distance(sprite->ObjectPosition, parentSprite->ObjectPosition);
 

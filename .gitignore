@@ -1,3 +1,5 @@
 .vs/*
 .BuildEditor/*
 .BuildCore/*
+.x64/*
+.GoldEditor/x64/*
