@@ -4,7 +4,7 @@
             "components": [
                 {
                     "componentdata": {
-                        "posx": -505.35211181640625,
+                        "posx": -363.0986022949219,
                         "posy": 0.0,
                         "posz": 0.0,
                         "rotation": 352.4764099121094,
@@ -69,7 +69,7 @@
                 {
                     "componentdata": {
                         "posx": -496.3221130371094,
-                        "posy": 261.0,
+                        "posy": 413.29840087890625,
                         "posz": 0.0,
                         "rotation": 352.4764099121094,
                         "scaleglobal": 1.0,
