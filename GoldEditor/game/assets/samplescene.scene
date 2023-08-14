@@ -9,7 +9,7 @@
                         "posz": 0.0,
                         "rotation": 352.4764099121094,
                         "scaleglobal": 1.0,
-                        "scalex": 671.0,
+                        "scalex": 500.0,
                         "scaley": 25.0,
                         "texturepath": "game/assets/sprites/tile_0025.png"
                     },
@@ -41,9 +41,9 @@
                 {
                     "componentdata": {
                         "posx": 342.91168212890625,
-                        "posy": 0.0,
+                        "posy": 360.8901062011719,
                         "posz": 0.0,
-                        "rotation": 70.3311767578125,
+                        "rotation": -3.6689999103546143,
                         "scaleglobal": 1.0,
                         "scalex": 528.0,
                         "scaley": 25.0,
@@ -69,7 +69,7 @@
                 {
                     "componentdata": {
                         "posx": -496.3221130371094,
-                        "posy": 413.29840087890625,
+                        "posy": 220.46255493164063,
                         "posz": 0.0,
                         "rotation": 352.4764099121094,
                         "scaleglobal": 1.0,
@@ -84,7 +84,7 @@
                         "freezex": false,
                         "freezey": false,
                         "isTrigger": false,
-                        "static": true
+                        "static": false
                     },
                     "componenttype": "RigidBody"
                 }

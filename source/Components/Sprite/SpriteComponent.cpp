@@ -192,7 +192,7 @@ void SpriteComponent::deserialize (std::string g) {
     ObjectPosition.y = componentData["posy"];
 
     if (CheckVar::Has(componentData, "posz"))
-    ObjectPosition.y = componentData["posz"];
+    ObjectPosition.z = componentData["posz"];
 
     if (CheckVar::Has(componentData, "scalex"))
     Scale.x = componentData["scalex"];

@@ -31,6 +31,11 @@ void RigidBody::init() {
 	body->CreateFixture(fixtureDef);
 
 	body->SetTransform(b2Vec2((float)srp->ObjectPosition.x, (float)-srp->ObjectPosition.y), radians);
+	body->SetType(b2_staticBody);
+	b2Vec2 newPosition(float(position.x), float(position.y));
+	body->SetTransform(newPosition, radians);
+
+
 	UpdateCollisions();
 }
 
