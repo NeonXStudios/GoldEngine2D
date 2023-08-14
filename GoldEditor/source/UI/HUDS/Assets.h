@@ -28,6 +28,7 @@ public:
         }
     };
 
+    string assetPath;
     bool isDragging = false;
     std::string path_to_read = "game/assets/";
 
@@ -36,6 +37,7 @@ public:
     GLuint folderTextureID;
     GLuint shaderTextureID;
     GLuint textureTextureID;
+    GLuint musicTextureID;
 
     void start() override {
         folderTextureID = assetIcon::start("folderpath.png");
@@ -43,19 +45,34 @@ public:
         sceneTextureID = assetIcon::start("scene.png");
         shaderTextureID = assetIcon::start("shader.png");
         textureTextureID = assetIcon::start("texture.png");
+        musicTextureID = assetIcon::start("music.png");
+    }
+
+    void HandleDroppedAsset()
+    {
+        if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("ASSET_PATH"))
+        {
+            assetPath = static_cast<const char*>(payload->Data);
+        }
     }
 
     void draw() override {
         string pathallName = "Assets";
 
         ImGui::Begin (pathallName.c_str());
+
         if (path_to_read != "game/assets/") {
             if (ImGui::Button ("<")) {
                 path_to_read = "game/assets/";
             }
         }
 
-        if (ImGui::BeginChild(path_to_read.c_str(), ImVec2(0, 0), true)) {
+        ImGuiDragDropFlags src_flags = 0;
+        src_flags |= ImGuiDragDropFlags_SourceNoDisableHover;     // Keep the source displayed as hovered
+        src_flags |= ImGuiDragDropFlags_SourceNoHoldToOpenOthers; // Because our dragging is local, we disable the feature of opening foreign treenodes/tabs while dragging
+
+
+        ImGui::BeginChild(path_to_read.c_str());
             ImVec2 getWidthWindow = ImGui::GetContentRegionAvail();
 
             try {
@@ -84,46 +101,127 @@ public:
                     
                     if (fs::is_regular_file(entry)) {
                         std::string extension = entry.path().extension().string();
-                        if (extension == ".scene") {
-                            if (ImGui::ImageButton((void*)(intptr_t)sceneTextureID, imageSize)) {
-                                path_to_read = entry.path().string();
-                            }
-                        } 
 
-                        if (extension == ".glsl") {
-                            if (ImGui::ImageButton((void*)(intptr_t)shaderTextureID, imageSize)) {
-                                path_to_read = entry.path().string();
-                            }
-                        }
-
-                        if (extension == ".png" || extension == ".gif") {
-                            if (ImGui::ImageButton((void*)(intptr_t)textureTextureID, imageSize)) {
-                                path_to_read = entry.path().string();
-                            }
-                        }
-
-                        if (extension == ".sr") {
-                            if (ImGui::ImageButton((void*)(intptr_t)scriptTextureID, imageSize)) {
-                                string path = entry.path().string();
-                                const char* fileName = path.c_str();
-
-                                const char* command = "code";
-                                const char* arguments = fileName;
-
-                                char fullCommand[100];
-                                snprintf(fullCommand, sizeof(fullCommand), "%s %s", command, arguments);
-
-                                int result = system(fullCommand);
-
-                                if (result == 0) {
-                                    printf("Archivo abierto exitosamente con VSCode.\n");
-                                }
-                                else {
-                                    printf("Error al abrir el archivo con VSCode.\n");
+                            if (extension == ".scene") {
+                                if (ImGui::ImageButton((void*)(intptr_t)sceneTextureID, imageSize)) {
+                                    //path_to_read = entry.path().string();
                                 }
                             }
+
+                            if (ImGui::BeginDragDropSource(src_flags))
+                            {
+                                const char* filePathN;
+                                string t = "Moving " + namePath;
+                                ImGui::Text(t.c_str());
+
+                                std::string pathToSend = entry.path().string();
+                                ImGui::SetDragDropPayload("SCENE_PATH", pathToSend.c_str(), pathToSend.size() + 1); // +1 para incluir el carácter nulo
+                                ImGui::EndDragDropSource();
+                            }
+
+
+
+                            if (extension == ".glsl") {
+                                if (ImGui::ImageButton((void*)(intptr_t)shaderTextureID, imageSize)) {
+                                    //path_to_read = entry.path().string();
+                                }
+                            }
+
+                            if (ImGui::BeginDragDropSource(src_flags))
+                            {
+                                const char* filePathN;
+                                string t = "Moving " + namePath;
+                                ImGui::Text(t.c_str());
+
+                                std::string pathToSend = entry.path().string();
+                                ImGui::SetDragDropPayload("SHADER_PATH", pathToSend.c_str(), pathToSend.size() + 1); // +1 para incluir el carácter nulo
+                                ImGui::EndDragDropSource();
+                            }
+
+
+                            if (extension == ".mp3") {
+                                if (ImGui::ImageButton((void*)(intptr_t)musicTextureID, imageSize)) {
+                                    //path_to_read = entry.path().string();
+                                }
+                            }
+
+                            if (ImGui::BeginDragDropSource(src_flags))
+                            {
+                                const char* filePathN;
+                                string t = "Moving " + namePath;
+                                ImGui::Text(t.c_str());
+
+                                std::string pathToSend = entry.path().string();
+                                ImGui::SetDragDropPayload("MUSICMP_PATH", pathToSend.c_str(), pathToSend.size() + 1); // +1 para incluir el carácter nulo
+                                ImGui::EndDragDropSource();
+                            }
+
+
+
+
+                            if (extension == ".png" || extension == ".gif") {
+                                if (ImGui::ImageButton((void*)(intptr_t)textureTextureID, imageSize)) {
+                                    //path_to_read = entry.path().string();
+                                }
+                            }
+
+                            if (ImGui::BeginDragDropSource(src_flags))
+                            {
+                                const char* filePathN;
+                                string t = "Moving " + namePath;
+                                ImGui::Text(t.c_str());
+
+                                std::string pathToSend = entry.path().string();
+                                ImGui::SetDragDropPayload("TXTTURE_PATH", pathToSend.c_str(), pathToSend.size() + 1); // +1 para incluir el carácter nulo
+                                ImGui::EndDragDropSource();
+                            }
+
+
+
+
+
+                            if (extension == ".sr") {
+                                if (ImGui::ImageButton((void*)(intptr_t)scriptTextureID, imageSize)) {
+                                    string path = entry.path().string();
+                                    const char* fileName = path.c_str();
+
+                                    const char* command = "code";
+                                    const char* arguments = fileName;
+
+                                    char fullCommand[100];
+                                    snprintf(fullCommand, sizeof(fullCommand), "%s %s", command, arguments);
+
+                                    int result = system(fullCommand);
+
+                                    if (result == 0) {
+                                        printf("Archivo abierto exitosamente con VSCode.\n");
+                                    }
+                                    else {
+                                        printf("Error al abrir el archivo con VSCode.\n");
+                                    }
+                                }
+                            }
                         }
+
+
+
+                    //src_flags |= ImGuiDragDropFlags_SourceNoPreviewTooltip; // Hide the tooltip
+
+                    if (ImGui::BeginDragDropSource(src_flags))
+                    {
+                        const char* filePathN;
+                        string t = "Moving " + namePath;
+                        ImGui::Text(t.c_str());
+
+                        std::string pathToSend = entry.path().string();
+                        ImGui::SetDragDropPayload("SRSCRIPT_PATH", pathToSend.c_str(), pathToSend.size() + 1); // +1 para incluir el carácter nulo
+                        ImGui::EndDragDropSource();
                     }
+
+
+
+
+                    
 
                         ImVec2 posicionImagen = getPosIMG;
                     if (entry.path().extension() != ".f") {
@@ -145,10 +243,6 @@ public:
 
                         drawList->AddText(font, font->FontSize, textPos, textColor, text.c_str());
                     }
-                    else {
-
-                    }
-
                     ImGui::PopID();
 
 
@@ -170,9 +264,14 @@ public:
                 std::cerr << "Error al acceder a la ruta: " << ex.what() << std::endl;
             }
 
+
+
+
+
+            
             ImGui::EndChild();
-            ImGui::End();
-        }
+        
+        ImGui::End();
     }
 
 

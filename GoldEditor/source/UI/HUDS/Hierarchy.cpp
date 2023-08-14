@@ -13,7 +13,7 @@ void HierarchyUI::draw() {
 
 
         ImGui::PushID(i);
-        if (ImGui::Button(object->ObjectName.c_str(), buttonSize)) {
+        if (ImGui::Selectable (object->ObjectName.c_str())) {
             UIManager::instance->inspectorui->ObjectSelectToInspector = object;
             std::cout << "SELECT OBJECT: " << object->ObjectName << std::endl;
             SelectInHierarchy = true;
