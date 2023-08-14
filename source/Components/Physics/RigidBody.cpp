@@ -35,7 +35,6 @@ void RigidBody::init() {
 	b2Vec2 newPosition(float(position.x), float(position.y));
 	body->SetTransform(newPosition, radians);
 
-
 	UpdateCollisions();
 }
 
@@ -158,7 +157,9 @@ std::string RigidBody::serialize() {
 	componentData["static"]		= isStatic;
 	componentData["freezex"]	= FreezeX;
 	componentData["freezey"]	= FreezeY;
-	componentData["isTrigger"]  = isTrigger;
+	componentData["isTrigger"] = isTrigger;
+	componentData["posx"] = body->GetPosition ().x;
+	componentData["posy"]  = body->GetPosition().y;
 
 	return componentData.dump();
 }
@@ -168,7 +169,7 @@ void RigidBody::deserialize(std::string g) {
 
 	if (CheckVar::Has (componentData, "static"))
 	isStatic  = (bool)componentData["static"];
-
+ 
 	if (CheckVar::Has(componentData, "freezex"))
 	FreezeX   = (bool)componentData["freezex"];
 
@@ -178,10 +179,22 @@ void RigidBody::deserialize(std::string g) {
 	if (CheckVar::Has(componentData, "isTrigger"))
 	isTrigger = (bool)componentData["isTrigger"];
 
+	float posX = 0;
+	float posY = 0;
+
+	if (CheckVar::Has(componentData, "posx"))
+		posX = componentData["posx"];
+
+	if (CheckVar::Has(componentData, "posy"))
+		posY = componentData["posy"];
+
 
 	SpriteComponent* srp = &entity->getComponent<SpriteComponent>();
+
 	float degrees = srp->rotationAngle;
 	float radians = degrees * (b2_pi / 180.0f);
+
+	body->SetTransform (b2Vec2 (posX, posY), radians);
 
 	if (!isStatic) {
 		body->SetAwake(true);
@@ -195,5 +208,7 @@ void RigidBody::deserialize(std::string g) {
 		body->SetTransform(newPosition, radians);
 	}
 
+
+	body->SetTransform (b2Vec2(srp->ObjectPosition.x, -srp->ObjectPosition.y), srp->rotationAngle);
 	body->SetAwake(true);
 }

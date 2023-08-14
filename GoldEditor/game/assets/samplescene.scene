@@ -5,7 +5,7 @@
                 {
                     "componentdata": {
                         "posx": -363.0986022949219,
-                        "posy": 0.0,
+                        "posy": 17.493999481201172,
                         "posz": 0.0,
                         "rotation": 352.4764099121094,
                         "scaleglobal": 1.0,
@@ -20,6 +20,8 @@
                         "freezex": false,
                         "freezey": false,
                         "isTrigger": false,
+                        "posx": -363.0986022949219,
+                        "posy": -17.493999481201172,
                         "static": true
                     },
                     "componenttype": "RigidBody"
@@ -56,6 +58,8 @@
                         "freezex": false,
                         "freezey": false,
                         "isTrigger": false,
+                        "posx": 342.91168212890625,
+                        "posy": -360.8901062011719,
                         "static": true
                     },
                     "componenttype": "RigidBody"
@@ -68,10 +72,10 @@
             "components": [
                 {
                     "componentdata": {
-                        "posx": -496.3221130371094,
-                        "posy": 220.46255493164063,
+                        "posx": -368.16900634765625,
+                        "posy": 236.3525848388672,
                         "posz": 0.0,
-                        "rotation": 352.4764099121094,
+                        "rotation": 20216.009765625,
                         "scaleglobal": 1.0,
                         "scalex": 25.0,
                         "scaley": 25.0,
@@ -84,6 +88,8 @@
                         "freezex": false,
                         "freezey": false,
                         "isTrigger": false,
+                        "posx": -368.16900634765625,
+                        "posy": -236.3525848388672,
                         "static": false
                     },
                     "componenttype": "RigidBody"

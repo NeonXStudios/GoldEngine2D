@@ -16,7 +16,7 @@ public:
 	b2PolygonShape* dynamicBox;
 	b2FixtureDef* fixtureDef;
 	b2Vec2 position;
-	float density = 1.0f;
+	float density = 25.0f;
 	float friction = 0.3f;
 	float Mass = 1;
 	bool isStatic;
