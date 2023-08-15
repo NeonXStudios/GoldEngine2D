@@ -8,5 +8,5 @@ void BinderFunctions::RegisterFunctions (ScriptCompiler* luaParent) {
 			std::cout << arg.as <string>() << std::endl;
 		}
 		std::cout << std::endl;
-		});
+	});
 }

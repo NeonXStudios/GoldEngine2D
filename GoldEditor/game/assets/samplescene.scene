@@ -11,7 +11,7 @@
                         "scaleglobal": 2.0,
                         "scalex": 25.0,
                         "scaley": 25.0,
-                        "texturepath": "game/assets/sprites\\objects\\rock_in_water_06.png"
+                        "texturepath": "game/assets/sprites\\characters\\player.png"
                     },
                     "componenttype": "SpriteComponent"
                 },
@@ -19,7 +19,7 @@
                     "componentdata": {
                         "pan": 0.0,
                         "pathfile": "game/assets/music\\battle\\sword-unsheathe2.wav",
-                        "volumen": 1.0
+                        "volumen": -107374176.0
                     },
                     "componenttype": "AudioSource"
                 }

@@ -1,5 +1,6 @@
 #include "ScriptCompiler.h"
 #include "BinderFunctions.h"
+#include "Binders/EntityBinder.h"
 #include "nlohmann/json.hpp"
 #include "../SaveSystem/CheckVar.h"
 #include "Libs/GMathf/GMathf.h"
@@ -29,6 +30,7 @@ void ScriptCompiler::init () {
 	std::string content = contenido;
 
 	BinderFunctions::RegisterFunctions(this);
+	EntityBinder::RegisterFunctions (this);
 	GMathf::RegisterLib (this);
 
 	int result = luaL_loadstring(lua.lua_state(), content.c_str());

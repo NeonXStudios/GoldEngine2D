@@ -1,15 +1,1 @@
-local life = 100
-local walkSpeed = 1
-
-
-
-function onTrigger (coll)
-   if coll == "damageZone" then
-     life -= 10
-      print ("player damaged")
-   end
-end
-
-
-
-print ("EL VS CODE SE MANEJA EN TIEMPO REAL DESDE EL PROGRAMA")
+print ("EL OBJETO ES: " .. self.name)
