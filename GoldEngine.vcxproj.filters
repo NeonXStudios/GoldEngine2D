@@ -83,6 +83,9 @@
     <Filter Include="Engine\02_Components\Scripting\Functions\Gmathf">
       <UniqueIdentifier>{8a7fdd04-4a79-4958-a977-42f65c15fec7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\02_Components\Scripting\Binders">
+      <UniqueIdentifier>{dbbf5d7d-e9e3-4ef5-8344-868dc63e5436}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Graphics\StartEngineGraphics.cpp">
@@ -198,6 +201,12 @@
     </ClCompile>
     <ClCompile Include="source\Components\Lib\GoldMath\GoldMathf.cpp">
       <Filter>Engine\02_Components\Libs\Mathf</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\Script\Binders\EntityBinder.cpp">
+      <Filter>Engine\02_Components\Scripting\Binders</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\Script\Binders\CalculatorBinder.cpp">
+      <Filter>Engine\02_Components\Scripting\Binders</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -323,6 +332,12 @@
     </ClInclude>
     <ClInclude Include="source\Components\Lib\GoldMath\GoldMathf.h">
       <Filter>Engine\02_Components\Libs\Mathf</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\Script\Binders\EntityBinder.h">
+      <Filter>Engine\02_Components\Scripting\Binders</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\Script\Binders\CalculatorBinder.h">
+      <Filter>Engine\02_Components\Scripting\Binders</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

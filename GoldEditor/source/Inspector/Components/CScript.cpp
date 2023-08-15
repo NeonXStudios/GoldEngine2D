@@ -39,7 +39,7 @@ void CScript::draw (Entity* owner) {
 			UIManager::instance->createScriptEditor (owner);
 		}
 	}
-
+    ImGui::SameLine();
 	if (EditorGUI::Button("Open VSC", vec2(100, 30))) {
         string path = "game/assets/" + owner->getComponent <ScriptCompiler>().pathScript + ".sr";
         const char* fileName = path.c_str();

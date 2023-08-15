@@ -8,9 +8,9 @@
                         "posy": 0.0,
                         "posz": 0.0,
                         "rotation": 0.0,
-                        "scaleglobal": 2.0,
-                        "scalex": 25.0,
-                        "scaley": 25.0,
+                        "scaleglobal": 7.0,
+                        "scalex": 132.0,
+                        "scaley": 132.0,
                         "texturepath": "game/assets/sprites\\characters\\player.png"
                     },
                     "componenttype": "SpriteComponent"

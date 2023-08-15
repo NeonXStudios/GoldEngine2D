@@ -24,6 +24,8 @@ F:\VISUAL STUDIO\GoldEngine2D\source\Components\SaveSystem\SaveSystem.cpp;F:\VIS
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\SceneManager\Scene.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Scene.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\SceneManager\SceneManager.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\SceneManager.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Script\BinderFunctions.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\BinderFunctions.obj
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Script\Binders\CalculatorBinder.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\CalculatorBinder.obj
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Script\Binders\EntityBinder.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\EntityBinder.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Script\Libs\GMathf\GMathf.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\GMathf.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Script\ScriptCompiler.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\ScriptCompiler.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\ShaderCompiler\ShaderCompiler.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\ShaderCompiler.obj

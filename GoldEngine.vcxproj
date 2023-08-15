@@ -181,6 +181,8 @@
     <ClCompile Include="source\Components\SceneManager\Scene.cpp" />
     <ClCompile Include="source\Components\SceneManager\SceneManager.cpp" />
     <ClCompile Include="source\Components\Script\BinderFunctions.cpp" />
+    <ClCompile Include="source\Components\Script\Binders\CalculatorBinder.cpp" />
+    <ClCompile Include="source\Components\Script\Binders\EntityBinder.cpp" />
     <ClCompile Include="source\Components\Script\Libs\GMathf\GMathf.cpp" />
     <ClCompile Include="source\Components\Script\ScriptCompiler.cpp" />
     <ClCompile Include="source\Components\ShaderCompiler\ShaderCompiler.cpp" />
@@ -223,6 +225,8 @@
     <ClInclude Include="source\Components\SceneManager\Scene.h" />
     <ClInclude Include="source\Components\SceneManager\SceneManager.h" />
     <ClInclude Include="source\Components\Script\BinderFunctions.h" />
+    <ClInclude Include="source\Components\Script\Binders\CalculatorBinder.h" />
+    <ClInclude Include="source\Components\Script\Binders\EntityBinder.h" />
     <ClInclude Include="source\Components\Script\Libs\GMathf\GMathf.h" />
     <ClInclude Include="source\Components\Script\ScriptCompiler.h" />
     <ClInclude Include="source\Components\ShaderCompiler\ShaderCompiler.h" />

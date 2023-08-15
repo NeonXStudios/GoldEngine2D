@@ -1,6 +1,11 @@
 #include "ScriptCompiler.h"
+
+//BINDERS
 #include "BinderFunctions.h"
 #include "Binders/EntityBinder.h"
+#include "Binders/CalculatorBinder.h"
+
+
 #include "nlohmann/json.hpp"
 #include "../SaveSystem/CheckVar.h"
 #include "Libs/GMathf/GMathf.h"
@@ -11,6 +16,12 @@ using namespace std;
 using namespace sol;
 
 void ScriptCompiler::init () {
+	CalculatorBinder::RegisterFunctions(this);
+	BinderFunctions::RegisterFunctions(this);
+	EntityBinder::RegisterFunctions(this);
+
+	GMathf::RegisterLib(this);
+
 	std::ifstream scrpt("game/assets/" + pathScript + ".sr");
 
 
@@ -28,15 +39,19 @@ void ScriptCompiler::init () {
 	std::cout << contenido << std::endl;
 
 	std::string content = contenido;
-
-	BinderFunctions::RegisterFunctions(this);
-	EntityBinder::RegisterFunctions (this);
-	GMathf::RegisterLib (this);
-
 	int result = luaL_loadstring(lua.lua_state(), content.c_str());
 
 	if (result == LUA_OK) {
 		result = lua_pcall(lua.lua_state(), 0, LUA_MULTRET, 0);
+		if (result != LUA_OK) {
+			std::string error = lua_tostring(lua.lua_state(), -1);
+			std::cout << "Error on compile lua: " << error << std::endl;
+			//std::cout << "Error: " << error << std::endl;
+			lua_pop(lua.lua_state(), 1);
+		}
+		else {
+			std::cout << "Lua compiled " << endl;
+		}
 	}
 	else {
 		std::string error = lua_tostring(lua.lua_state(), -1);
@@ -47,7 +62,11 @@ void ScriptCompiler::init () {
 	}
 }
 
-void ScriptCompiler::update(){}
+void ScriptCompiler::update()
+{
+	lua["update"]();
+}
+
 void ScriptCompiler::draw(){}
 void ScriptCompiler::clean(){}
 

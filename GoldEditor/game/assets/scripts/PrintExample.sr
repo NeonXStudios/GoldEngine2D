@@ -1,1 +1,9 @@
-print ("EL OBJETO ES: " .. self.name)
+local audio = self:GetAudioSource()
+
+audio.audio = "game/assets/music/HideYourHeart-NCS.mp3"
+audio:reset()
+
+
+audio:volumen (0.1)
+audio:pan (1)
+
