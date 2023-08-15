@@ -31,9 +31,9 @@ void RigidBody::init() {
 	body->CreateFixture(fixtureDef);
 
 	position.x = srp->ObjectPosition.x;
-	position.y = srp->ObjectPosition.y;
+	position.y = -srp->ObjectPosition.y;
 
-	body->SetTransform(b2Vec2((float)position.x, (float)-position.y), radians);
+	body->SetTransform(b2Vec2((float)position.x, (float)position.y), radians);
 
 	UpdateCollisions();
 	changeState (false);
@@ -79,8 +79,6 @@ void RigidBody::update() {
 		position.y = -srp->ObjectPosition.y;
 		body->SetTransform(b2Vec2(float(position.x), float(position.y)), radians);
 	}
-
-	UpdateCollisions();
 }
 
 
@@ -142,7 +140,11 @@ void RigidBody::changeState(bool val) {
 
 void RigidBody::triggerOn(Entity* enterEntity) {
 	if (!usedTrigger) {
-		std::cout << "MI OBJETO " << enterEntity->ObjectName << " ENTRO EN UNA COLISION" << std::endl;
+
+		if (entity->hasComponent<ScriptCompiler>()) {
+			entity->getComponent<ScriptCompiler>().ontrigger (enterEntity);
+			//std::cout << "MI OBJETO " << enterEntity->ObjectName << " ENTRO EN UNA COLISION" << std::endl;
+		}
 		usedTrigger = true;
 	}
 }
@@ -150,7 +152,10 @@ void RigidBody::triggerOn(Entity* enterEntity) {
 
 void RigidBody::triggerOff(Entity* enterEntity) {
 	if (usedTrigger) {
-		std::cout << "MI OBJETO " << enterEntity->ObjectName << " SALIO DE UNA COLISION" << std::endl;
+		if (entity->hasComponent<ScriptCompiler>()) {
+			entity->getComponent<ScriptCompiler>().ontriggerexit(enterEntity);
+			//std::cout << "MI OBJETO " << enterEntity->ObjectName << " SALIO DE UNA COLISION" << std::endl;
+		}
 		usedTrigger = false;
 	}
 }

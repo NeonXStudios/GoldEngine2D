@@ -1,3 +1,1 @@
-﻿LINK : warning LNK4098: la biblioteca predeterminada'MSVCRT' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
-LINK : warning LNK4098: la biblioteca predeterminada'LIBCMT' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
-  GoldEditor.vcxproj -> F:\VISUAL STUDIO\GoldEngine2D\BuildEditor\GoldEditor.exe
+﻿  GoldEditor.vcxproj -> F:\VISUAL STUDIO\GoldEngine2D\BuildEditor\GoldEditor.exe

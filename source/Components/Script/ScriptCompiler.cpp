@@ -71,6 +71,8 @@ void ScriptCompiler::draw(){}
 void ScriptCompiler::clean(){}
 
 
+
+
 std::string ScriptCompiler::serialize() {
 	json componentData;
 	componentData["scriptpath"] = pathScript;
@@ -83,4 +85,12 @@ void ScriptCompiler::deserialize(std::string g) {
 
 	if (CheckVar::Has(componentData, "scriptpath"))
 		pathScript = componentData["scriptpath"];
+}
+
+void ScriptCompiler::ontrigger          (Entity* obj) {
+	lua["triggerSlap"](obj);
+}
+
+void ScriptCompiler::ontriggerexit      (Entity* obj) {
+	lua["triggerEnd"](obj);
 }

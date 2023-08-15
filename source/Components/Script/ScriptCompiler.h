@@ -20,6 +20,9 @@ public:
 	void draw() override;
 	void clean() override;
 
+	void ontrigger(Entity* obj);
+	void ontriggerexit(Entity* obj);
+
 	string serialize() override;
 	void deserialize(std::string g) override;
 };

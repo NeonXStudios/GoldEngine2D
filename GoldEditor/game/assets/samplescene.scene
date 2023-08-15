@@ -4,11 +4,11 @@
             "components": [
                 {
                     "componentdata": {
-                        "posx": 0.0,
-                        "posy": 0.0,
+                        "posx": -464.0533447265625,
+                        "posy": 15.49078369140625,
                         "posz": 0.0,
                         "rotation": 0.0,
-                        "scaleglobal": 7.0,
+                        "scaleglobal": 1.0,
                         "scalex": 132.0,
                         "scaley": 132.0,
                         "texturepath": "game/assets/sprites\\characters\\player.png"
@@ -22,9 +22,45 @@
                         "volumen": -107374176.0
                     },
                     "componenttype": "AudioSource"
+                },
+                {
+                    "componentdata": {
+                        "freezex": true,
+                        "freezey": true,
+                        "isTrigger": true,
+                        "posx": -464.0533447265625,
+                        "posy": 21.719919204711914,
+                        "static": false
+                    },
+                    "componenttype": "RigidBody"
+                },
+                {
+                    "componentdata": {
+                        "scriptpath": "scripts/PrintExample"
+                    },
+                    "componenttype": "ScriptCompiler"
                 }
             ],
             "name": "New Entity 2",
+            "tag": "None"
+        },
+        {
+            "components": [
+                {
+                    "componentdata": {
+                        "posx": -438.45330810546875,
+                        "posy": 179.35549926757813,
+                        "posz": 0.0,
+                        "rotation": 0.0,
+                        "scaleglobal": 1.0,
+                        "scalex": 25.0,
+                        "scaley": 25.0,
+                        "texturepath": "game/assets/sprites/tile_0025.png"
+                    },
+                    "componenttype": "SpriteComponent"
+                }
+            ],
+            "name": "New Entity 3",
             "tag": "None"
         }
     ]

@@ -1,9 +1,7 @@
-local audio = self:GetAudioSource()
+function triggerSlap (b)
+ print ("======= Parece que el objeto " .. b.name .. " -) colisiono")
+end
 
-audio.audio = "game/assets/music/HideYourHeart-NCS.mp3"
-audio:reset()
-
-
-audio:volumen (0.1)
-audio:pan (1)
-
+function triggerEnd (bn)
+  print ("===== Parece que " .. bn.name .. " -) se fue del trigger")
+end
