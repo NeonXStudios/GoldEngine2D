@@ -1,8 +1,15 @@
 #include "SaveData.h"
+#include <iostream>
 #include "../Components/ECS/ComponentFactory.h"
+#include "../../Editor/GoldEditor.h"
 
 using namespace std;
 using namespace nlohmann;
+
+SaveData::SaveData() {
+
+}
+
 
 void SaveData::saveScene() {
     json objectData;
@@ -47,18 +54,18 @@ void SaveData::saveScene() {
 
     objectData["objects"] = objects;
 
-    GLD::SaveSystem::save("game/assets", "samplescene.scene", objectData.dump(4));
+    GLD::SaveSystem::save(GoldEditor::editor->ProjectPath + "/assets", "samplescene.scene", objectData.dump(4));
 }
 
 
 
 
 void SaveData::loadScene() {
-    if (GLD::SaveSystem::load("game/assets", "samplescene.scene").empty()) {
+    if (GLD::SaveSystem::load(GoldEditor::editor->ProjectPath + "/assets", "samplescene.scene").empty()) {
         std::cout << "ARCHIVO VACIO O NO EXISTENTE" << std::endl;
         return;
     }
-    string loadJsonDAta = GLD::SaveSystem::load("game/assets", "samplescene.scene");
+    string loadJsonDAta = GLD::SaveSystem::load(GoldEditor::editor->ProjectPath + "/assets", "samplescene.scene");
     json loadJson = json::parse (loadJsonDAta);
 
     std::cout << "OBJETOS CARGADOS: " << loadJson["objects"].size();

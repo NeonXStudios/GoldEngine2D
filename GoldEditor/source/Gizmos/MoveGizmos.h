@@ -1,6 +1,5 @@
 #pragma once
 #include "../UI/UIManager.h"
-#include <GoldEngineLib.h>
 
 class MoveGizmos
 {
@@ -11,8 +10,10 @@ public:
 	Entity* dragEntity;
 	bool dragging;
 	bool usingTop, usingLeft;
+	string getPathProject;
 
 	void start() {
+		setup();
 		left = new Entity();
 		top = new Entity();
 		//parent = new Entity();
@@ -21,8 +22,8 @@ public:
 		top->addComponent  <SpriteComponent>();
 		//parent->addComponent  <SpriteComponent>();
 
-		left->getComponent <SpriteComponent>().TexturePath = "game/engine/GIZMOS/LeftPos.png";
-		top->getComponent  <SpriteComponent>().TexturePath = "game/engine/GIZMOS/TopPos.png";
+		left->getComponent <SpriteComponent>().TexturePath = "Editor/engine/GIZMOS/LeftPos.png";
+		top->getComponent  <SpriteComponent>().TexturePath = "Editor/engine/GIZMOS/TopPos.png";
 
 		left->getComponent <SpriteComponent>().LoadTexture();
 		top->getComponent  <SpriteComponent>().LoadTexture();
@@ -32,6 +33,8 @@ public:
 		left->getComponent <SpriteComponent>().GlobalScale *= 2;
 		top->getComponent <SpriteComponent>().GlobalScale *= 2; 
 	}
+
+	void setup();
 
 	void draw() {
 		glm::vec2 WorldPoint = RenderSystem::RenderSystem::ScreenToViewPort(glm::vec2(UIManager::instance->sceneui->imagePosition.x, UIManager::instance->sceneui->imagePosition.y), glm::vec2(UIManager::instance->sceneui->imageSizeSCENE.x, UIManager::instance->sceneui->imageSizeSCENE.y));
@@ -56,7 +59,7 @@ public:
 			float objHeight = left->getComponent<SpriteComponent>().Scale.y * left->getComponent<SpriteComponent>().GlobalScale;
 			float radians = left->getComponent<SpriteComponent>().rotationAngle * (b2_pi / 180.0f);
 
-			glm::vec2 localPoint = RotatePoint(WorldPoint, obj, radians);
+			glm::vec2 localPoint = RotatePoint(glm::vec2 (-WorldPoint.x, WorldPoint.y), obj, radians);
 			glm::vec2 rotatedBoxMin(obj.x - objWidth * 0.5f, obj.y - objHeight * 0.5f);
 			glm::vec2 rotatedBoxMax(obj.x + objWidth * 0.5f, obj.y + objHeight * 0.5f);
 
@@ -92,7 +95,7 @@ public:
 			float objHeightTop = top->getComponent<SpriteComponent>().Scale.y * top->getComponent<SpriteComponent>().GlobalScale;
 			float radiansTop = top->getComponent<SpriteComponent>().rotationAngle * (b2_pi / 180.0f);
 
-			glm::vec2 localPointTop = RotatePoint(WorldPoint, objTop, radiansTop);
+			glm::vec2 localPointTop = RotatePoint(glm::vec2 (-WorldPoint.x, WorldPoint.y), objTop, radiansTop);
 			glm::vec2 rotatedBoxMinTop(objTop.x - objWidth * 0.5f, objTop.y - objHeight * 0.5f);
 			glm::vec2 rotatedBoxMaxTop(objTop.x + objWidth * 0.5f, objTop.y + objHeight * 0.5f);
 
@@ -127,11 +130,11 @@ public:
 
 				SpriteComponent* sprite = &left->getComponent<SpriteComponent>();
 				SpriteComponent* parentSprite = &UIManager::instance->inspectorui->ObjectSelectToInspector->getComponent<SpriteComponent>();
-				float getDistance = glm::distance (glm::vec3 (WorldPoint.x, WorldPoint.y, 0), sprite->ObjectPosition);
+				float getDistance = glm::distance (glm::vec3 (-WorldPoint.x, WorldPoint.y, 0), sprite->ObjectPosition);
 
 				float distanceOffset = glm::distance(sprite->ObjectPosition, parentSprite->ObjectPosition);
 
-				left->getComponent<SpriteComponent>().ObjectPosition.x = WorldPoint.x;
+				left->getComponent<SpriteComponent>().ObjectPosition.x = -WorldPoint.x;
 				parentSprite->ObjectPosition.x = left->getComponent<SpriteComponent>().ObjectPosition.x + distanceOffset;
 				top->getComponent <SpriteComponent>().ObjectPosition.y = UIManager::instance->inspectorui->ObjectSelectToInspector->getComponent<SpriteComponent>().ObjectPosition.y + 100;
 				top->getComponent <SpriteComponent>().ObjectPosition.x = UIManager::instance->inspectorui->ObjectSelectToInspector->getComponent<SpriteComponent>().ObjectPosition.x;

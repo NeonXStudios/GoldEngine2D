@@ -166,9 +166,6 @@
     <ClCompile Include="source\STBimplement.cpp">
       <Filter>Engine\03_Implementaciones</Filter>
     </ClCompile>
-    <ClCompile Include="source\Components\InputSystem\InputSystem.cpp">
-      <Filter>Engine\02_Components\InputSystem</Filter>
-    </ClCompile>
     <ClCompile Include="source\Components\Systems\RenderSystem.cpp">
       <Filter>Engine\02_Components\Events</Filter>
     </ClCompile>
@@ -206,6 +203,9 @@
       <Filter>Engine\02_Components\Scripting\Binders</Filter>
     </ClCompile>
     <ClCompile Include="source\Components\Script\Binders\CalculatorBinder.cpp">
+      <Filter>Engine\02_Components\Scripting\Binders</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\Script\Binders\InputBinder.cpp">
       <Filter>Engine\02_Components\Scripting\Binders</Filter>
     </ClCompile>
   </ItemGroup>
@@ -297,9 +297,6 @@
     <ClInclude Include="source\RequireLibs.h">
       <Filter>Engine\03_Implementaciones</Filter>
     </ClInclude>
-    <ClInclude Include="source\Components\InputSystem\InputSystem.h">
-      <Filter>Engine\02_Components\InputSystem</Filter>
-    </ClInclude>
     <ClInclude Include="source\Components\Systems\SystemsEvents.h">
       <Filter>Engine\02_Components\Events</Filter>
     </ClInclude>
@@ -337,6 +334,9 @@
       <Filter>Engine\02_Components\Scripting\Binders</Filter>
     </ClInclude>
     <ClInclude Include="source\Components\Script\Binders\CalculatorBinder.h">
+      <Filter>Engine\02_Components\Scripting\Binders</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\Script\Binders\InputBinder.h">
       <Filter>Engine\02_Components\Scripting\Binders</Filter>
     </ClInclude>
   </ItemGroup>

@@ -10,20 +10,19 @@ void EntityBinder::RegisterFunctions(ScriptCompiler* luaParent)
 		"tag", &Entity::ObjectTag,
 
 
-
-
 		//GET COMPONENTS
-		"GetRigidBody",   &Entity::getComponent<RigidBody>,
+		"GetTransform", &Entity::getComponent<SpriteComponent>,
+		"GetRigidBody", &Entity::getComponent<RigidBody>,
 		"GetAudioSource", &Entity::getComponent<AudioSource>
 	);
 
 	luaParent->lua.new_usertype<RigidBody>("RigidBody",
-		"static",		&RigidBody::isStatic,
-		"freezeX",		&RigidBody::FreezeX,
-		"freezeY",		&RigidBody::FreezeY,
-		"density",		&RigidBody::density,
-		"friction",	    &RigidBody::friction,
-		"isTrigger",    &RigidBody::isTrigger
+		"static", &RigidBody::isStatic,
+		"freezeX", &RigidBody::FreezeX,
+		"freezeY", &RigidBody::FreezeY,
+		"density", &RigidBody::density,
+		"friction", &RigidBody::friction,
+		"isTrigger", &RigidBody::isTrigger
 	);
 
 
@@ -38,16 +37,18 @@ void EntityBinder::RegisterFunctions(ScriptCompiler* luaParent)
 		"audio", &AudioSource::AudioPath
 	);
 
-	if (luaParent->entity->hasComponent<SpriteComponent>()) {
-		luaParent->lua["transform"] = sol::make_object(luaParent->lua.lua_state(), &luaParent->entity->getComponent<SpriteComponent>());
-		luaParent->lua.new_usertype<SpriteComponent>("SpriteComponent",
-			"position", &SpriteComponent::ObjectPosition,
-			"scale", &SpriteComponent::Scale,
-			"gScale", &SpriteComponent::GlobalScale,
-			"rotation", &SpriteComponent::rotationAngle,
-			"texture", &SpriteComponent::TexturePath
-		);
+	luaParent->lua.new_usertype<SpriteComponent>("SpriteComponent",
+		"position", &SpriteComponent::ObjectPosition,
+		"scale", &SpriteComponent::Scale,
+		"gScale", &SpriteComponent::GlobalScale,
+		"rotation", &SpriteComponent::rotationAngle,
+		"texture", &SpriteComponent::TexturePath
+	);
 
-		std::cout << "TRANSFORM REGISTRADO CON EXITO!" << std::endl;
-	}
+
+
+	/*luaParent->lua["Scene"] = sol::make_object(luaParent->lua.lua_state(), SceneManager::GetSceneManager());
+	luaParent->lua.new_usertype<Entity>("SceneManager",
+		"DestroyObject", &SceneManager::Destroy
+	);*/
 }

@@ -11,10 +11,14 @@
 class GoldEditor : public EngineBehaviour { 
 public:
     static GoldEditor* editor;
-    UIManager* uiMaster = new UIManager();
-    MoveGizmos* gizmos = new MoveGizmos();
+    UIManager* uiMaster;
+    MoveGizmos* gizmos;
+    string ProjectPath = "";
 
     void start() override {
+        uiMaster = new UIManager();
+        gizmos = new MoveGizmos();
+
         uiMaster->start();
         std::cout << "Starting editor" << endl;
         SaveData::loadScene();
@@ -26,6 +30,7 @@ public:
     }
 
     void update() override {
+
         uiMaster->update();
         Camera* cam = SceneManager::GetSceneManager()->OpenScene->worldCamera;
         float cameraSpeed = 1;

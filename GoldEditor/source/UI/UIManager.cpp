@@ -18,6 +18,8 @@ void UIManager::start (){
 }
 
 void UIManager::draw() {
+	ImGui::DockSpaceOverViewport();
+
 	sceneui->draw();
 	mainmenuui->draw();
 	hierarhcyui->draw();

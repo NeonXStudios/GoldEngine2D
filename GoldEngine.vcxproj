@@ -171,7 +171,6 @@
     <ClCompile Include="source\Components\ECS\ComponentManager.cpp" />
     <ClCompile Include="source\Components\ECS\ComponentSerializer.cpp" />
     <ClCompile Include="source\Components\ECS\ECS.cpp" />
-    <ClCompile Include="source\Components\InputSystem\InputSystem.cpp" />
     <ClCompile Include="source\Components\Lib\GoldMath\GoldMathf.cpp" />
     <ClCompile Include="source\Components\Models\Cube2DModel.cpp" />
     <ClCompile Include="source\Components\Physics\RigidBody.cpp" />
@@ -183,6 +182,7 @@
     <ClCompile Include="source\Components\Script\BinderFunctions.cpp" />
     <ClCompile Include="source\Components\Script\Binders\CalculatorBinder.cpp" />
     <ClCompile Include="source\Components\Script\Binders\EntityBinder.cpp" />
+    <ClCompile Include="source\Components\Script\Binders\InputBinder.cpp" />
     <ClCompile Include="source\Components\Script\Libs\GMathf\GMathf.cpp" />
     <ClCompile Include="source\Components\Script\ScriptCompiler.cpp" />
     <ClCompile Include="source\Components\ShaderCompiler\ShaderCompiler.cpp" />
@@ -215,7 +215,6 @@
     <ClInclude Include="source\Components\ECS\ComponentManager.h" />
     <ClInclude Include="source\Components\ECS\ComponentSerializer.h" />
     <ClInclude Include="source\Components\ECS\ECS.h" />
-    <ClInclude Include="source\Components\InputSystem\InputSystem.h" />
     <ClInclude Include="source\Components\Lib\GoldMath\GoldMathf.h" />
     <ClInclude Include="source\Components\Models\Cube2DModel.h" />
     <ClInclude Include="source\Components\Physics\RigidBody.h" />
@@ -227,6 +226,7 @@
     <ClInclude Include="source\Components\Script\BinderFunctions.h" />
     <ClInclude Include="source\Components\Script\Binders\CalculatorBinder.h" />
     <ClInclude Include="source\Components\Script\Binders\EntityBinder.h" />
+    <ClInclude Include="source\Components\Script\Binders\InputBinder.h" />
     <ClInclude Include="source\Components\Script\Libs\GMathf\GMathf.h" />
     <ClInclude Include="source\Components\Script\ScriptCompiler.h" />
     <ClInclude Include="source\Components\ShaderCompiler\ShaderCompiler.h" />

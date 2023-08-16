@@ -3,7 +3,7 @@
 #include "../Components/SceneManager/SceneManager.h"
 #include "../Components/AudioSource/AudioManager.h"
 #include "../EngineBehaviour/EngineBehaviour.h"
-
+#include <iostream>
 
 class RunEngine {
 public:
@@ -15,11 +15,12 @@ public:
 	double prevTime;
 
 
-	void StartGameEngine (EngineBehaviour* game) {
+	void StartGameEngine (EngineBehaviour* game, bool runGame) {
 		engine->create();
 
 		//CREATE APP SETTINGS
 		settings->create();
+		AppSettings::gameRunning = runGame;
 
 		//CREATE AUDIO MANAGER
 		audioManager->create();
@@ -36,7 +37,6 @@ public:
 		prevTime = glfwGetTime();
 		double targetFrameTime = 1.0 / AppSettings::getTargetFrame();
 		glfwWindowHint(GLFW_DOUBLEBUFFER, GLFW_FALSE);
-
 
 		///FPS LIMIT
 		while (!glfwWindowShouldClose(StartEngineGraphics::window))

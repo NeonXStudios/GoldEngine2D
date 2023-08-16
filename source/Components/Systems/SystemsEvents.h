@@ -3,7 +3,9 @@
 #include "../../Graphics/AppSettings.h"
 #include "../../Graphics/StartEngineGraphics.h"
 #include "../SceneManager/SceneManager.h"
+#include <glm/glm.hpp>
 
+using namespace glm;
 
 namespace RenderSystem {
     class RenderSystem

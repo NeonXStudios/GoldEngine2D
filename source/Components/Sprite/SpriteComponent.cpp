@@ -190,7 +190,7 @@ void SpriteComponent::deserialize (std::string g) {
 
 
     if (CheckVar::Has(componentData, "posx"))
-    ObjectPosition.x = componentData["posx"];
+    ObjectPosition.x = (float)componentData["posx"];
 
     if (CheckVar::Has (componentData, "posy"))
     ObjectPosition.y = componentData["posy"];
@@ -208,7 +208,7 @@ void SpriteComponent::deserialize (std::string g) {
     GlobalScale = componentData["scaleglobal"];
 
     if (CheckVar::Has(componentData, "rotation"))
-    rotationAngle = componentData["rotation"];
+    rotationAngle = (float)componentData["rotation"];
 
     if (CheckVar::Has(componentData, "texturepath"))
     TexturePath = componentData["texturepath"];

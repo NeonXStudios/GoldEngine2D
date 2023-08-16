@@ -2,7 +2,7 @@
 #include "../Sprite/SpriteComponent.h"
 #include "../AudioSource/AudioSource.h"
 #include "../Physics/TriggerModule.h"
-
+#include "../../source/Graphics/AppSettings.h"
 
 void Scene::start() {
 	CreateGravity();
@@ -12,12 +12,15 @@ void Scene::start() {
 void Scene::update() {
 	worldCamera->update();
 
-	if (GravityWorld != nullptr && GravityWorld->GetBodyCount() > 0) {
-		b2Body* body = GravityWorld->GetBodyList();
-		float timeStep = 1.0f / 60;
-		GravityWorld->Step(timeStep, 6, 2);
-		body->GetNext();
+	if (AppSettings::gameRunning) {
+		if (GravityWorld != nullptr && GravityWorld->GetBodyCount() > 0) {
+			b2Body* body = GravityWorld->GetBodyList();
+			float timeStep = 1.0f / 60;
+			GravityWorld->Step(timeStep, 6, 2);
+			body->GetNext();
+		}
 	}
+	
 
 	for (Entity* ents : objectsInScene) {
 		ents->entity = ents;

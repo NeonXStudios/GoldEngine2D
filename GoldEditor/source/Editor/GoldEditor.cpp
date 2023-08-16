@@ -3,16 +3,21 @@
 
 GoldEditor* GoldEditor::editor = nullptr;
 
+using namespace std;
 
 
-int main()
+int main (int argc, char* argv[])
 {
+    if (argv[1] == nullptr) {
+        std::cout << "Project path not found" << std::endl;
+        return 54;
+    }
+
     if (GoldEditor::editor) throw std::exception("GoldEditor already created.");
     GoldEditor::editor = new GoldEditor();
-    std::cout << "GoldEditor Created" << endl;
-
+    GoldEditor::editor->ProjectPath = (string)argv[1];
     RunEngine* engine = new RunEngine();
-    AppSettings::setTargetFrame (1);
+   // AppSettings::setTargetFrame (1);
 
 
     //GLD::SaveSystem* g = new GLD::SaveSystem();
@@ -26,7 +31,7 @@ int main()
 
     //std::cout << "--------" << g->load("game/assets/saves", "scene.f") << std::endl;
 
-    engine->StartGameEngine(GoldEditor::editor);
+    engine->StartGameEngine(GoldEditor::editor, false);
     std::cout << "Game finish" << endl;
     return 0;
 }

@@ -1,6 +1,6 @@
 #include "../UIDrawer.h"
 #include "../../Components/Data/SaveData.h"
-
+#include "../../Editor/GameCompiler.h"
 
 class BarMenuUI : public UIDrawer {
 
@@ -21,9 +21,15 @@ public:
                 SaveData::saveScene();
             }
 
+            if (ImGui::MenuItem ("Build Game")) {
+
+            }
+
+
             if (ImGui::MenuItem ("Exit")) {
                 StartEngineGraphics::closeWindow();
             }
+
 
             ImGui::EndMenu();
         }
@@ -40,10 +46,10 @@ public:
         if (ImGui::BeginMenu("Build")) {
 
             if (ImGui::MenuItem("Build -> Window")) {
-
+                GameCompiler::compileWindow();
             }
 
-            if (ImGui::MenuItem("Build -> Linux")) {
+            if (ImGui::MenuItem("Build -> Linux (NOT WORKING)")) {
 
             }
 

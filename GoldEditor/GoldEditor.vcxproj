@@ -77,10 +77,10 @@
     <OutDir>$(SolutionDir)BuildEditor/</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(SolutionDir)BuildEditor/</OutDir>
+    <OutDir>$(SolutionDir)BuildHub/Editor</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>$(SolutionDir)BuildEditor/</OutDir>
+    <OutDir>$(SolutionDir)BuildHub/Editor</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -162,6 +162,7 @@
     <ClCompile Include="..\Binarys\include\imgui\imgui_tables.cpp" />
     <ClCompile Include="..\Binarys\include\imgui\imgui_widgets.cpp" />
     <ClCompile Include="source\Components\Data\SaveData.cpp" />
+    <ClCompile Include="source\Editor\GameCompiler.cpp" />
     <ClCompile Include="source\Editor\GoldEditor.cpp" />
     <ClCompile Include="source\Gizmos\MoveGizmos.cpp" />
     <ClCompile Include="source\Inspector\AComponent.cpp" />
@@ -176,6 +177,7 @@
     <ClCompile Include="source\Inspector\ScriptEditor.cpp" />
     <ClCompile Include="source\UI\DragAndDrop.cpp" />
     <ClCompile Include="source\UI\EditorUI\EditorGUI.cpp" />
+    <ClCompile Include="source\UI\HUDS\Assets.cpp" />
     <ClCompile Include="source\UI\HUDS\Hierarchy.cpp" />
     <ClCompile Include="source\UI\HUDS\Inspector.cpp" />
     <ClCompile Include="source\UI\HUDS\RightClickUI.cpp" />
@@ -200,6 +202,7 @@
     <ClInclude Include="..\Binarys\include\imgui\imstb_truetype.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="source\Components\Data\SaveData.h" />
+    <ClInclude Include="source\Editor\GameCompiler.h" />
     <ClInclude Include="source\Editor\GoldEditor.h" />
     <ClInclude Include="source\Gizmos\MoveGizmos.h" />
     <ClInclude Include="source\Inspector\AComponent.h" />

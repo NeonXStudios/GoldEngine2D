@@ -11,7 +11,7 @@ using namespace std;
 class ScriptCompiler : public Component
 {
 public:
-	string pathScript = "scripts/PrintExample";
+	string pathScript = "/scripts/PrintExample";
 	sol::state lua;
 
 	void init() override;

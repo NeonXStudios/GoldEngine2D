@@ -79,6 +79,8 @@ void RigidBody::update() {
 		position.y = -srp->ObjectPosition.y;
 		body->SetTransform(b2Vec2(float(position.x), float(position.y)), radians);
 	}
+
+	body->GetFixtureList()->SetSensor(isTrigger);
 }
 
 

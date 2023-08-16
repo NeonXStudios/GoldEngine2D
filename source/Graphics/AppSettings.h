@@ -13,13 +13,14 @@ public:
 	static int TargetFPS;
 	static int RenderWidth;
 	static int RenderHeight;
+	
+	static bool gameRunning;
 
 	void create();
 	void release();
 
 	static void setTargetFrame (int fps);
 	static int getTargetFrame ();
-	static void ShowFPSConsoleDebug ();
 	static void setVsyncState (int active);
 
 	int GetWidthScreen();

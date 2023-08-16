@@ -24,7 +24,7 @@ void UIImplement::draw() {
 	ImGui_ImplGlfw_NewFrame();
 	ImGui::NewFrame();
 
-	ImGui::DockSpaceOverViewport();
+	
 }
 
 void UIImplement::DrawCanvas() {

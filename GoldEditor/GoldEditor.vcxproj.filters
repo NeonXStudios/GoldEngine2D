@@ -39,6 +39,9 @@
     <Filter Include="Editor\04_UI\Gizmos">
       <UniqueIdentifier>{fada7000-4c4a-4129-9b23-11dfb4618648}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Editor\03_EditorComponents\Compiler">
+      <UniqueIdentifier>{87ddcbb1-b81d-4fee-be67-903cb868e597}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Binarys\c\glad.c">
@@ -113,9 +116,6 @@
     <ClCompile Include="source\Inspector\Components\CRigidBody.cpp">
       <Filter>Editor\02_InspectorDrawer\Components</Filter>
     </ClCompile>
-    <ClCompile Include="source\Inspector\ComponentList.cpp">
-      <Filter>Editor</Filter>
-    </ClCompile>
     <ClCompile Include="source\Inspector\ComponentUIDrawer.cpp">
       <Filter>Editor\02_InspectorDrawer</Filter>
     </ClCompile>
@@ -126,6 +126,15 @@
       <Filter>Editor\04_UI\Gizmos</Filter>
     </ClCompile>
     <ClCompile Include="source\UI\DragAndDrop.cpp">
+      <Filter>Editor\04_UI</Filter>
+    </ClCompile>
+    <ClCompile Include="source\UI\HUDS\Assets.cpp">
+      <Filter>Editor\04_UI</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Editor\GameCompiler.cpp">
+      <Filter>Editor\03_EditorComponents\Compiler</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Inspector\ComponentList.cpp">
       <Filter>Editor\04_UI</Filter>
     </ClCompile>
   </ItemGroup>
@@ -212,9 +221,6 @@
     <ClInclude Include="source\Inspector\Components\CRigidBody.h">
       <Filter>Editor\02_InspectorDrawer\Components</Filter>
     </ClInclude>
-    <ClInclude Include="source\Inspector\ComponentList.h">
-      <Filter>Editor</Filter>
-    </ClInclude>
     <ClInclude Include="source\Inspector\ComponentUIDrawer.h">
       <Filter>Editor\02_InspectorDrawer</Filter>
     </ClInclude>
@@ -225,6 +231,12 @@
       <Filter>Editor\04_UI\Gizmos</Filter>
     </ClInclude>
     <ClInclude Include="source\UI\DragAndDrop.h">
+      <Filter>Editor\04_UI</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Editor\GameCompiler.h">
+      <Filter>Editor\03_EditorComponents\Compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Inspector\ComponentList.h">
       <Filter>Editor\04_UI</Filter>
     </ClInclude>
   </ItemGroup>

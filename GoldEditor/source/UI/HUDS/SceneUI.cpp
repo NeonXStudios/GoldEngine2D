@@ -47,8 +47,8 @@
         imageSizeSCENE.y = WindowYSize;
 
         // Invertimos las coordenadas de textura en el eje Y antes de mostrar la imagen
-        ImGui::Image((void*)(intptr_t)texture, ImVec2(WindowXSize, WindowYSize), ImVec2(1, 1), ImVec2(0, 0));
-        
+        ImGui::Image((void*)(intptr_t)texture, ImVec2(WindowXSize, WindowYSize), ImVec2(ImVec2(0, 1)), ImVec2(ImVec2(1, 0)));
+
         if (!UIManager::instance->rightClickui->miniMenuOpen) {
             UIManager::instance->rightClickui->SceneHover = ImGui::IsWindowHovered();
         }
@@ -99,7 +99,7 @@
                 float radians = objD->getComponent<SpriteComponent>().rotationAngle * (b2_pi / 180.0f);
 
                 // Aplica la rotación inversa al punto del mundo
-                glm::vec2 localPoint = RotatePoint(WorldPoint, obj, radians);
+                glm::vec2 localPoint = RotatePoint(glm::vec2 (-WorldPoint.x, WorldPoint.y), obj, radians);
 
                 // Calcula las coordenadas de la caja delimitadora del objeto rotado
                 glm::vec2 rotatedBoxMin(obj.x - objWidth * 0.5f, obj.y - objHeight * 0.5f);

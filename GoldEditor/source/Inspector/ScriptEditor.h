@@ -12,7 +12,13 @@ class ScriptEditor
 
 
 public:
+	string gPath;
+	void setupPath();
+
+
 	ScriptEditor(Entity* owner) {
+		setupPath();
+
 		own = owner;
 
 		filePath = owner->getComponent<ScriptCompiler>().pathScript;
@@ -42,7 +48,7 @@ public:
 	}
 
 	void SaveFileContent(const std::string& filename, const std::string& content) {
-		std::ofstream archivo("game/assets/" + filename + ".sr"); // Abre el archivo en modo de escritura
+		std::ofstream archivo(gPath + "/assets/" + filename + ".sr"); // Abre el archivo en modo de escritura
 
 		if (!archivo.is_open()) {
 			std::cerr << "No se pudo abrir el archivo." << std::endl;
@@ -54,7 +60,7 @@ public:
 	}
 
 	void LoadFileContent(const std::string& filename, std::string& content) {
-		std::ifstream scrpt("game/assets/" + filename + ".sr");
+		std::ifstream scrpt(gPath + "/assets/" + filename + ".sr");
 
 
 		if (!scrpt.is_open()) {

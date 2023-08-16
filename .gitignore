@@ -3,3 +3,4 @@
 .BuildCore/*
 .x64/*
 .GoldEditor/x64/*
+.BuildHub/*
