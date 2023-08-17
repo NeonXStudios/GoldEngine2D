@@ -88,7 +88,9 @@
             ImGui::EndDragDropTarget();
         }
 
-        if (ImGui::IsWindowHovered()) {
+        if (ImGui::IsWindowHovered() && !LockWithGizmos) {
+            float maxZ = -std::numeric_limits<float>::max();
+
             for (int i = 0; i < SceneManager::GetSceneManager()->OpenScene->objectsInScene.size(); i++) {
                 Entity* objD = SceneManager::GetSceneManager()->OpenScene->objectsInScene[i];
                 glm::vec3& obj = objD->getComponent<SpriteComponent>().ObjectPosition;
@@ -111,8 +113,30 @@
                 if (localPoint.x >= rotatedBoxMin.x && localPoint.x <= rotatedBoxMax.x &&
                     localPoint.y >= rotatedBoxMin.y && localPoint.y <= rotatedBoxMax.y) {
 
+                    //std::cout << "Objects in this position" << objectsInAABB.size() << std::endl;
+                    if (std::find(objectsInAABB.begin(), objectsInAABB.end(), objD) == objectsInAABB.end()) {
+                        objectsInAABB.push_back(objD);
+                    }
                     if (ImGui::IsMouseClicked(0)) {
-                        UIManager::instance->inspectorui->SelectEntity(objD);
+                        if (objectsInAABB.size() > 0) {
+                            SelectIndex++;
+                        }
+
+                        if (SelectIndex > objectsInAABB.size() - 1) {
+                            SelectIndex = 0;
+                        }
+                        if (UIManager::instance->inspectorui->ObjectSelectToInspector != objD) {
+                            UIManager::instance->inspectorui->SelectEntity(objectsInAABB[SelectIndex]);
+                        }
+
+                        /*if (UIManager::instance->inspectorui->ObjectSelectToInspector != nullptr && UIManager::instance->inspectorui->ObjectSelectToInspector != objD) {
+                            UIManager::instance->inspectorui->SelectEntity(objD);
+                        }
+                        else {
+                            if (UIManager::instance->inspectorui->ObjectSelectToInspector == nullptr) {
+                                UIManager::instance->inspectorui->SelectEntity(objD);
+                            }
+                        }*/
                         ObjectSelect = true;
 
                         UIManager::instance->hierarhcyui->SelectInHierarchy = false;
@@ -121,6 +145,11 @@
                     }
                 }
                 else {
+                    auto it = std::find(objectsInAABB.begin(), objectsInAABB.end(), objD);
+                    if (it != objectsInAABB.end()) {
+                        objectsInAABB.erase(it);
+                    }
+
                     if (ImGui::IsMouseClicked (0) && !LockWithGizmos) {
                         UIManager::instance->inspectorui->ObjectSelectToInspector = nullptr;
                     }

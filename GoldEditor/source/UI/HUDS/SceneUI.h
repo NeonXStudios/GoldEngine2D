@@ -1,5 +1,10 @@
 #pragma once
+#include <iostream>
+#include <vector>
 #include "../UIDrawer.h"
+
+
+using namespace std;
 
 class SceneUI : public UIDrawer {
 public:
@@ -13,6 +18,8 @@ public:
     bool isdragging;
     bool ObjectSelect;
     bool LockWithGizmos;
+    std::vector<Entity*> objectsInAABB;
+    int SelectIndex = 0;
 
     void start() override;
 
