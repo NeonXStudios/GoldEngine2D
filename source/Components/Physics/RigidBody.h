@@ -37,11 +37,12 @@ public:
 
 	void triggerOn  (Entity* enterEntity);
 	void triggerOff (Entity* enterEntity);
+	void addForce   (glm::vec2);
 
 	//LOCAL BODY CONFIG
 	bool usedTrigger;
 
 
 	string serialize() override;
-	void deserialize(std::string g) override;
+	void deserialize(std::string g, std::string path = "") override;
 };

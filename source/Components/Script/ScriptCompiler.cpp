@@ -16,7 +16,7 @@ using namespace std;
 using namespace sol;
 
 void ScriptCompiler::init() {
-
+	if (!loadD) return;
 	if (AppSettings::gameRunning) {
 		CalculatorBinder::RegisterFunctions(this);
 		BinderFunctions::RegisterFunctions(this);
@@ -24,7 +24,6 @@ void ScriptCompiler::init() {
 		InputBinder::RegisterFunction(this);
 
 		GMathf::RegisterLib(this);
-		pathScript = "game/scripts/PrintExample.sr";
 		std::ifstream scrpt(pathScript);
 
 		std::cout << "=======Iniciando script de la ruta " << pathScript << std::endl;
@@ -86,11 +85,15 @@ std::string ScriptCompiler::serialize() {
 	return componentData.dump();
 }
 
-void ScriptCompiler::deserialize(std::string g) {
+void ScriptCompiler::deserialize (std::string g, std::string path) {
 	json componentData = json::parse(g);
 
-	if (CheckVar::Has(componentData, "scriptpath"))
-		pathScript = componentData["scriptpath"];
+	if (CheckVar::Has(componentData, "scriptpath")) {
+		pathScript = path + (string)componentData["scriptpath"];
+		std::cout << "+++++++++SCRIPT PATH TO LOAD: " << path + (string)componentData["scriptpath"];
+		loadD = true;
+		init();
+	}
 }
 
 void ScriptCompiler::ontrigger(Entity* obj) {

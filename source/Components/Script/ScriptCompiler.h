@@ -11,7 +11,7 @@ using namespace std;
 class ScriptCompiler : public Component
 {
 public:
-	string pathScript = "/scripts/PrintExample";
+	string pathScript = "";
 	sol::state lua;
 
 	void init() override;
@@ -24,5 +24,6 @@ public:
 	void ontriggerexit(Entity* obj);
 
 	string serialize() override;
-	void deserialize(std::string g) override;
+	void deserialize(std::string g, std::string path = "") override;
+	bool loadD;
 };

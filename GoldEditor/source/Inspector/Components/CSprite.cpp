@@ -1,14 +1,17 @@
 #include "CSprite.h"
+#include <iostream>
+#include <filesystem>
+namespace fs = std::filesystem;
 
 
 void CSprite::start() {
 
 }
 
-void CSprite::draw (Entity* owner) {
-	EditorGUI::Text("Sprite");
+void CSprite::draw(Entity* owner) {
+    EditorGUI::Text("Sprite");
 
-	string newPath = EditorGUI::InputText("File Path", owner->getComponent<SpriteComponent>().TexturePath);
+    string newPath = EditorGUI::InputText("File Path", owner->getComponent<SpriteComponent>().TexturePath);
     if (ImGui::BeginDragDropTarget())
     {
         ImGuiDragDropFlags target_flags = 0;
@@ -20,7 +23,7 @@ void CSprite::draw (Entity* owner) {
         {
             const char* receivedString = static_cast<const char*>(payload->Data);
 
-
+            
             newPath = receivedString;
             owner->getComponent<SpriteComponent>().LoadTexture();
             std::cout << "String recibido: " << owner->getComponent<SpriteComponent>().TexturePath << std::endl;
@@ -30,8 +33,8 @@ void CSprite::draw (Entity* owner) {
         ImGui::EndDragDropTarget();
     }
 
-	if (owner->getComponent<SpriteComponent>().TexturePath != newPath) {
-		owner->getComponent<SpriteComponent>().TexturePath = newPath;
-		owner->getComponent<SpriteComponent>().LoadTexture();
-	}
+    if (owner->getComponent<SpriteComponent>().TexturePath != newPath) {
+        owner->getComponent<SpriteComponent>().TexturePath = newPath;
+        owner->getComponent<SpriteComponent>().LoadTexture();
+    }
 }

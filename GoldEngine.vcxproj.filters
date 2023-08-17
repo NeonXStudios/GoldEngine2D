@@ -53,9 +53,6 @@
     <Filter Include="Engine\02_Components\UI\Style">
       <UniqueIdentifier>{424109f7-2446-481b-b850-a2435cf884ae}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\02_Components\InputSystem">
-      <UniqueIdentifier>{a2ddda56-ed09-4509-aa25-8ccc1836a782}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\02_Components\Events">
       <UniqueIdentifier>{9789d116-cd45-4ad0-ac3d-b42019ad3cfa}</UniqueIdentifier>
     </Filter>

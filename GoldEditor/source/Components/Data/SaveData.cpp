@@ -97,7 +97,7 @@ void SaveData::loadScene() {
                 //    selectComponent->deserialize (getComponent["componentdata"].dump());
                 //}
 
-                ComponentFactory::loadComponent(getComponent["componenttype"].dump(), newEntity, getComponent["componentdata"].dump());
+                ComponentFactory::loadComponent(getComponent["componenttype"].dump(), newEntity, getComponent["componentdata"].dump(), "");
             }
         }
     }

@@ -151,6 +151,11 @@ void RigidBody::triggerOn(Entity* enterEntity) {
 	}
 }
 
+void RigidBody::addForce(glm::vec2 force) {
+	body->ApplyForce (b2Vec2 (force.x * 1000, force.y * 1000), body->GetPosition(), true);
+	std::cout << "AGREGANDO FUERZA" << std::endl;
+}
+
 
 void RigidBody::triggerOff(Entity* enterEntity) {
 	if (usedTrigger) {
@@ -174,7 +179,7 @@ std::string RigidBody::serialize() {
 	return componentData.dump();
 }
 
-void RigidBody::deserialize(std::string g) {
+void RigidBody::deserialize(std::string g, std::string) {
 	json componentData = json::parse(g);
 
 	if (CheckVar::Has (componentData, "static"))

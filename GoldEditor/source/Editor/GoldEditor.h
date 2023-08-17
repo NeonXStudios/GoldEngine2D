@@ -16,6 +16,7 @@ public:
     string ProjectPath = "";
 
     void start() override {
+        ProjectPath = ProjectPath;
         uiMaster = new UIManager();
         gizmos = new MoveGizmos();
 

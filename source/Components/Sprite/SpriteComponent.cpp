@@ -119,7 +119,9 @@ void SpriteComponent::start()  {
 }
 
 void SpriteComponent::LoadTexture () {
+    std::cout << "La nueva ruta de la textura es " << TexturePath << std::endl;
     int width, height, nrChannels;
+
     unsigned char* data = stbi_load(TexturePath.c_str(), &width, &height, &nrChannels, 0);
     if (data) {
         GLenum format;
@@ -185,7 +187,7 @@ std::string SpriteComponent::serialize() {
     return componentData.dump();
 }
 
-void SpriteComponent::deserialize (std::string g) {
+void SpriteComponent::deserialize (std::string g, std::string path) {
     json componentData = json::parse(g);
 
 
@@ -211,7 +213,7 @@ void SpriteComponent::deserialize (std::string g) {
     rotationAngle = (float)componentData["rotation"];
 
     if (CheckVar::Has(componentData, "texturepath"))
-    TexturePath = componentData["texturepath"];
+    TexturePath = path + (string)componentData["texturepath"];
 
     LoadTexture();
 }

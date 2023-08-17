@@ -22,7 +22,8 @@ void EntityBinder::RegisterFunctions(ScriptCompiler* luaParent)
 		"freezeY", &RigidBody::FreezeY,
 		"density", &RigidBody::density,
 		"friction", &RigidBody::friction,
-		"isTrigger", &RigidBody::isTrigger
+		"isTrigger", &RigidBody::isTrigger,
+		"addForce", &RigidBody::addForce
 	);
 
 
@@ -44,11 +45,4 @@ void EntityBinder::RegisterFunctions(ScriptCompiler* luaParent)
 		"rotation", &SpriteComponent::rotationAngle,
 		"texture", &SpriteComponent::TexturePath
 	);
-
-
-
-	/*luaParent->lua["Scene"] = sol::make_object(luaParent->lua.lua_state(), SceneManager::GetSceneManager());
-	luaParent->lua.new_usertype<Entity>("SceneManager",
-		"DestroyObject", &SceneManager::Destroy
-	);*/
 }

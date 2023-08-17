@@ -21,12 +21,6 @@
     <Filter Include="Editor\02_InspectorDrawer\Components">
       <UniqueIdentifier>{de6d0e30-4fc6-4797-ad19-6d6fa7726378}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Editor\03_EditorComponents">
-      <UniqueIdentifier>{6723af8d-0879-47cb-8e60-95ced42b9b7a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Editor\03_EditorComponents\Save">
-      <UniqueIdentifier>{a76da2c2-0cb3-42b0-b5a4-5224ae210971}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Editor\04_UI">
       <UniqueIdentifier>{3d12b6d9-648a-4459-9608-98a8c4679df6}</UniqueIdentifier>
     </Filter>
@@ -38,6 +32,12 @@
     </Filter>
     <Filter Include="Editor\04_UI\Gizmos">
       <UniqueIdentifier>{fada7000-4c4a-4129-9b23-11dfb4618648}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor\03_EditorComponents">
+      <UniqueIdentifier>{6723af8d-0879-47cb-8e60-95ced42b9b7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor\03_EditorComponents\Save">
+      <UniqueIdentifier>{a76da2c2-0cb3-42b0-b5a4-5224ae210971}</UniqueIdentifier>
     </Filter>
     <Filter Include="Editor\03_EditorComponents\Compiler">
       <UniqueIdentifier>{87ddcbb1-b81d-4fee-be67-903cb868e597}</UniqueIdentifier>

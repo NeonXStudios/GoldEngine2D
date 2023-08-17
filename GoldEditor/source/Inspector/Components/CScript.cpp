@@ -1,6 +1,9 @@
 #include "CScript.h"
 #include "../../UI/UIManager.h"
 #include "../../Editor/GoldEditor.h"
+#include <iostream>
+#include <filesystem>
+namespace fs = std::filesystem;
 
 
 void CScript::start() {
@@ -22,7 +25,6 @@ void CScript::draw (Entity* owner) {
         {
             if (ImGui::IsMouseReleased(0)) {
                 const char* receivedString = static_cast<const char*>(payload->Data);
-
 
                 std::cout << "String recibido: " << receivedString << std::endl;
                 owner->getComponent<ScriptCompiler>().pathScript = receivedString;

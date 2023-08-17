@@ -1,6 +1,8 @@
 #include "CAudio.h"
 #include "../../UI/EditorUI/EditorGUI.h"
-
+#include <iostream>
+#include <filesystem>
+namespace fs = std::filesystem;
 
 void CAudio::start() {
 
@@ -21,8 +23,7 @@ void CAudio::draw (Entity* owner) {
         {
             if (ImGui::IsMouseReleased (0)) {
                 const char* receivedString = static_cast<const char*>(payload->Data);
-
-
+                
                 pathSound = receivedString;
                 std::cout << "String recibido: " << owner->getComponent<AudioSource>().AudioPath << std::endl;
             }

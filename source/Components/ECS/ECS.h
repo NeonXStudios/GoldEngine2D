@@ -45,7 +45,7 @@ public:
 	virtual void draw() {}
 	virtual void clean() {}
 	virtual std::string serialize() { return ""; }
-	virtual void deserialize(std::string g) {}
+	virtual void deserialize(std::string g, std::string path = "") {}
 	virtual ~Component() {}
 };
 

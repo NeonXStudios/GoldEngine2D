@@ -1,11 +1,11 @@
 f:\visual studio\goldengine2d\buildcore\goldengine.pdb
 f:\visual studio\goldengine2d\buildcore\goldengine.idb
 f:\visual studio\goldengine2d\x64\debug\glad.obj
+f:\visual studio\goldengine2d\x64\debug\checkvar.obj
 f:\visual studio\goldengine2d\x64\debug\triggermodule.obj
 f:\visual studio\goldengine2d\x64\debug\rigidbody.obj
 f:\visual studio\goldengine2d\x64\debug\cube2dmodel.obj
 f:\visual studio\goldengine2d\x64\debug\goldmathf.obj
-f:\visual studio\goldengine2d\x64\debug\inputsystem.obj
 f:\visual studio\goldengine2d\x64\debug\ecs.obj
 f:\visual studio\goldengine2d\x64\debug\componentserializer.obj
 f:\visual studio\goldengine2d\x64\debug\componentmanager.obj
@@ -33,13 +33,13 @@ f:\visual studio\goldengine2d\x64\debug\spritecomponent.obj
 f:\visual studio\goldengine2d\x64\debug\shadercompiler.obj
 f:\visual studio\goldengine2d\x64\debug\scriptcompiler.obj
 f:\visual studio\goldengine2d\x64\debug\gmathf.obj
+f:\visual studio\goldengine2d\x64\debug\inputbinder.obj
 f:\visual studio\goldengine2d\x64\debug\entitybinder.obj
 f:\visual studio\goldengine2d\x64\debug\calculatorbinder.obj
 f:\visual studio\goldengine2d\x64\debug\binderfunctions.obj
 f:\visual studio\goldengine2d\x64\debug\scenemanager.obj
 f:\visual studio\goldengine2d\x64\debug\scene.obj
 f:\visual studio\goldengine2d\x64\debug\savesystem.obj
-f:\visual studio\goldengine2d\x64\debug\checkvar.obj
 f:\visual studio\goldengine2d\buildcore\goldengine.lib
 f:\visual studio\goldengine2d\x64\debug\goldengine.res
 f:\visual studio\goldengine2d\buildcore/goldengine.pdb

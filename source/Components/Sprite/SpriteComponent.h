@@ -38,6 +38,6 @@ public:
     void clean() override;
 
     string serialize() override;
-    void deserialize(std::string g) override;
+    void deserialize(std::string g, std::string path = "") override;
 };
 #endif
