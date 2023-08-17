@@ -24,3 +24,18 @@ LIBRARYS USED:
 
 
 ![image](https://github.com/GrstudiosGamesPro/GoldEngine2D/assets/85538374/271f5388-8ecc-46f5-884e-c40adb3e3552)
+
+![image](https://github.com/GrstudiosGamesPro/GoldEngine2D/assets/85538374/21046172-f512-411a-8a2e-3d37f4944c00)
+
+
+
+
+
+Program with VSCode or even in the editor itself
+
+![image](https://github.com/GrstudiosGamesPro/GoldEngine2D/assets/85538374/71956c5f-b271-435d-9445-0820917fafcf)
+
+
+The hub is basic but functional
+![image](https://github.com/GrstudiosGamesPro/GoldEngine2D/assets/85538374/9bfadd13-feb7-4eda-a06c-f744876686da)
+
