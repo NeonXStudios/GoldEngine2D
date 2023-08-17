@@ -99,6 +99,18 @@ void GameCompiler::compileWindow()
 
     copyDirectory(sourceFolder, destinationFolder);
     std::cout << "Game compiled... (PLATAFORM WINDOW)" << std::endl;
+
+
+    std::string folderPathOpen = GoldEditor::editor->ProjectPath + "/GameBuild";
+
+    if (fs::exists(folderPathOpen) && fs::is_directory(folderPathOpen)) {
+        for (const auto& entry : fs::directory_iterator(folderPathOpen)) {
+            std::cout << entry.path().filename() << std::endl;
+        }
+    }
+    else {
+        std::cout << "La carpeta no existe o no es válida." << std::endl;
+    }
 }
 
 
