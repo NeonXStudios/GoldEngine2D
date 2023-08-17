@@ -1,6 +1,6 @@
-.vs/*
-.BuildEditor/*
-.BuildCore/*
-.x64/*
-.GoldEditor/x64/*
-.BuildHub/*
+.vs/
+.BuildEditor/
+.BuildCore/
+.x64/
+.GoldEditor/x64/
+.BuildHub/
