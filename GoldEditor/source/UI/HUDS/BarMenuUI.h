@@ -55,6 +55,22 @@ public:
 
             ImGui::EndMenu();
         }
+
+        if (ImGui::BeginMenu("Camera")) {
+            if (ImGui::Button("Ortho")) {
+                SceneManager::GetSceneManager()->OpenScene->worldCamera->proj = Camera::Projection::Orthographic;
+            }
+
+            if (ImGui::Button("Perspective")) {
+                SceneManager::GetSceneManager()->OpenScene->worldCamera->proj = Camera::Projection::Perspective;
+            }
+
+            if (ImGui::MenuItem("Build -> Linux (NOT WORKING)")) {
+
+            }
+
+            ImGui::EndMenu();
+        }
         ImGui::EndMainMenuBar();
     }
 

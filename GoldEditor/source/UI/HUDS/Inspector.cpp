@@ -20,10 +20,20 @@ void InspectorUI::draw() {
         glm::vec3 newPos = EditorGUI::Vector3("Position:", ObjectSelectToInspector->getComponent<SpriteComponent>().ObjectPosition);
         ObjectSelectToInspector->getComponent<SpriteComponent>().ObjectPosition = glm::vec3 (newPos.x, newPos.y, newPos.z);
 
+        if (ObjectSelectToInspector->parent != nullptr) {
+            glm::vec3 newPosLocal = EditorGUI::Vector3("Local Position:", ObjectSelectToInspector->getComponent<SpriteComponent>().LocalPosition);
+            ObjectSelectToInspector->getComponent<SpriteComponent>().LocalPosition = glm::vec3(newPosLocal.x, newPosLocal.y, newPosLocal.z);
+        }
+
         ObjectSelectToInspector->getComponent<SpriteComponent>().Scale = EditorGUI::Vector2("Size", ObjectSelectToInspector->getComponent<SpriteComponent>().Scale);
         ObjectSelectToInspector->getComponent<SpriteComponent>().GlobalScale = EditorGUI::Float("Global Scale", ObjectSelectToInspector->getComponent<SpriteComponent>().GlobalScale);
-        ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngle = EditorGUI::Float("Rotation", ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngle);
-
+        //ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngle = EditorGUI::Float("Rotation", ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngle);
+        
+        
+        glm::vec3 newRot = EditorGUI::Vector3("Rotation:", glm::vec3 (ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngleX, ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngleY, ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngleZ));
+        ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngleX = newRot.x;
+        ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngleY = newRot.y;
+        ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngleZ = newRot.z;
 
         if (InputSystem::InputSystem::GetKey (GLFW_KEY_DELETE) && ObjectSelectToInspector != nullptr) {
             SceneManager::GetSceneManager()->Destroy (ObjectSelectToInspector);

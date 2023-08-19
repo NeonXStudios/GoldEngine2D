@@ -80,7 +80,7 @@
                     newOBJ->getComponent<SpriteComponent>().TexturePath = receivedString;
                     newOBJ->getComponent<SpriteComponent>().LoadTexture();
 
-                    newOBJ->getComponent <SpriteComponent>().ObjectPosition = glm::vec3(WorldPoint.x, WorldPoint.y, 0);
+                    newOBJ->getComponent <SpriteComponent>().ObjectPosition = glm::vec3(-WorldPoint.x, WorldPoint.y, 0);
                 }
             }
 

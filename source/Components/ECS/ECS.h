@@ -7,6 +7,7 @@
 #include <bitset>
 #include <array>
 
+using namespace std;
 
 class Component;
 class Entity;
@@ -66,11 +67,26 @@ public:
 	int objectID = 1;
 	Entity* entity;
 	Entity* parent;
+	vector<Entity*> childrens;
 
 	//Entity(Manager& mManager) : manager(mManager) {}
 
+	void addChild (Entity* newChild) {
+		childrens.push_back (newChild);
+	}
+
 	void update()
 	{
+		for (Entity* g : childrens) {
+			if (g != nullptr && g->parent != this) {
+				auto it = std::ranges::find(childrens, g);
+				if (it != childrens.end()) {
+					delete g;
+					childrens.erase(it);
+				}
+			}
+		}
+
 		for (auto& c : components)
 		{
 			c->entity = entity;

@@ -156,9 +156,18 @@ void SpriteComponent::onupdate() {
     glUniform1i(glGetUniformLocation(shaderProgram, "textureSampler"), 0);
 
     glm::mat4 model = glm::translate(glm::mat4(1.0f), glm::vec3(ObjectPosition.x, -ObjectPosition.y, ObjectPosition.z));
-    model = glm::rotate(model, glm::radians(rotationAngle), glm::vec3(0.0f, 0.0f, 1.0f)); // Rotación en el eje Z
+    model = glm::rotate(model, glm::radians(rotationAngleZ), glm::vec3(0.0f, 0.0f, 1.0f)); // Rotación en el eje Z
+    model = glm::rotate(model, glm::radians(rotationAngleY), glm::vec3(0.0f, 1.0f, 0.0f)); // Rotación en el eje Y
+    model = glm::rotate(model, glm::radians(rotationAngleX), glm::vec3(1.0f, 0.0f, 0.0f)); // Rotación en el eje X
     model = glm::scale(model, glm::vec3(Scale.x * GlobalScale, Scale.y * GlobalScale, 25));
+
     glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
+
+
+    //glm::mat4 model = glm::translate(glm::mat4(1.0f), glm::vec3(ObjectPosition.x, -ObjectPosition.y, ObjectPosition.z));
+    //model = glm::rotate(model, glm::radians(rotationAngle), glm::vec3(0.0f, 0.0f, 1.0f)); // Rotación en el eje Z
+    //model = glm::scale(model, glm::vec3(Scale.x * GlobalScale, Scale.y * GlobalScale, 25));
+    //glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
 
     glBindVertexArray(VAO);
     glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);

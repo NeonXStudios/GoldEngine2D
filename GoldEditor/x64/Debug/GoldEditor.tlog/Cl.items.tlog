@@ -21,6 +21,7 @@ F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\DrawComponents.cpp;F:\
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\InspectorComponents.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\InspectorComponents.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\ScriptEditor.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\ScriptEditor.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\DragAndDrop.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\DragAndDrop.obj
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\EditorUI\ChildDraw.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\ChildDraw.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\EditorUI\EditorGUI.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\EditorGUI.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\Assets.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Hierarchy.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\Hierarchy.obj

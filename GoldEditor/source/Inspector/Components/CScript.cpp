@@ -44,7 +44,7 @@ void CScript::draw (Entity* owner) {
 	}
     ImGui::SameLine();
 	if (EditorGUI::Button("Open VSC", vec2(100, 30))) {
-        string path = GoldEditor::editor->ProjectPath + "/assets/" + owner->getComponent <ScriptCompiler>().pathScript + ".sr";
+        string path = owner->getComponent <ScriptCompiler>().pathScript;
         const char* fileName = path.c_str();
 
         const char* command = "code";

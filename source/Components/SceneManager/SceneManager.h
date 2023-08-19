@@ -14,5 +14,6 @@ public:
 	static SceneManager* GetSceneManager();
 	Entity* NewEntity	  ();
 	Entity* GetObjectByID (int id);
+	Entity* GetObjectPerIndex (int index);
 	Entity* Destroy (Entity* object);
 };

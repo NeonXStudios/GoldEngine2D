@@ -50,6 +50,7 @@ void StartEngineGraphics::StartEngine () {
     }
 
     glfwGetFramebufferSize (StartEngineGraphics::window, &AppSettings::instance->ScreenWidth, &AppSettings::instance->ScreenHeight);
+    glEnable(GL_DEPTH_TEST);
 
     //START GAME
     SceneManager::GetSceneManager()->OpenScene->start();
@@ -72,7 +73,6 @@ void StartEngineGraphics::update() {
 
     AppSettings::RenderHeight = height;
     AppSettings::RenderWidth = width;
-
 
     glfwPollEvents();
     float currentFrame = glfwGetTime();

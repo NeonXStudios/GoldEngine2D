@@ -23,6 +23,10 @@ void SaveData::saveScene() {
 
             objectVal["name"] = getOBJ->ObjectName;
             objectVal["tag"] = getOBJ->ObjectTag;
+            
+            if (getOBJ->parent != nullptr) {
+                objectVal["parentID"] = getOBJ->parent->objectID;
+            }
 
             json components;
 

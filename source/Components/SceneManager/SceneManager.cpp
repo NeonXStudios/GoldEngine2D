@@ -36,6 +36,7 @@ Entity* SceneManager::NewEntity() {
 		newObj->addComponent<SpriteComponent>();
 	}
 	newObj->entity = newObj;
+	newObj->objectID = OpenScene->objectsInScene.size();
 
 	OpenScene->objectsInScene.push_back(newObj);
 	newObj->ObjectName = "New Entity " + std::to_string (OpenScene->objectsInScene.size() + 1);
@@ -65,4 +66,9 @@ Entity* SceneManager::Destroy(Entity* obj) {
 		}
 	}
 	return nullptr;
+}
+
+
+Entity* SceneManager::GetObjectPerIndex(int index) {
+	return OpenScene->objectsInScene[index];
 }

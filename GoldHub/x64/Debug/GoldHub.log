@@ -7,4 +7,49 @@ F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warni
 F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
-E:\VS2022IDE\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(1134,5): error MSB6006: "link.exe" salió con el código 1.
+LINK : warning LNK4098: la biblioteca predeterminada'MSVCRT' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
+MSVCRTD.lib(initializers.obj) : warning LNK4098: la biblioteca predeterminada'libcmt.lib' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
+box2d.lib(b2_world.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_world.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_polygon_shape.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_polygon_shape.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_body.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_body.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_fixture.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_fixture.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_math.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_math.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_settings.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_settings.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_island.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_island.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_dynamic_tree.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_dynamic_tree.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_broad_phase.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_broad_phase.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_contact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_contact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_draw.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_draw.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_distance.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_distance.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_time_of_impact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_time_of_impact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_timer.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_timer.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_block_allocator.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_block_allocator.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_contact_manager.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_contact_manager.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_stack_allocator.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_stack_allocator.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_collision.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_collision.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_contact_solver.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_contact_solver.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_chain_circle_contact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_chain_circle_contact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_chain_polygon_contact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_chain_polygon_contact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_circle_contact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_circle_contact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_edge_circle_contact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_edge_circle_contact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_edge_polygon_contact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_edge_polygon_contact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_polygon_circle_contact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_polygon_circle_contact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_polygon_contact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_polygon_contact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_distance_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_distance_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_friction_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_friction_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_gear_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_gear_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_motor_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_motor_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_mouse_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_mouse_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_prismatic_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_prismatic_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_pulley_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_pulley_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_revolute_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_revolute_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_weld_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_weld_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_wheel_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_wheel_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_world_callbacks.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_world_callbacks.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_collide_edge.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_collide_edge.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_chain_shape.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_chain_shape.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_edge_shape.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_edge_shape.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_collide_circle.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_collide_circle.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_collide_polygon.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_collide_polygon.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+  GoldHub.vcxproj -> F:\VISUAL STUDIO\GoldEngine2D\BuildHub\GoldHub.exe
