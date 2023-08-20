@@ -229,3 +229,18 @@ void SpriteComponent::deserialize (std::string g, std::string path) {
 
     LoadTexture();
 }
+
+
+//GLfloat* SpriteComponent::getVertices() {
+//    return vertices2;
+//}
+//
+//std::size_t SpriteComponent::getIndicesSize() {
+//    return sizeof(indices2);
+//}
+//
+//
+//
+//GLuint* SpriteComponent::getIndices() {
+//    return indices2;
+//}

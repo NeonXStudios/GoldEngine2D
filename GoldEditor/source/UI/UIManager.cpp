@@ -10,7 +10,7 @@ void UIManager::start (){
 	inspectorui = new InspectorUI();
 	assetsui = new AssetsUI();
 	rightClickui = new RightClickUI();
-
+	cameraSettingUI = new CameraSetting();
 
 	inspectorui->start();
 	sceneui->start();
@@ -26,6 +26,7 @@ void UIManager::draw() {
 	assetsui->draw();
 	inspectorui->draw();
 	rightClickui->draw();
+	cameraSettingUI->draw();
 
 	if (editorScript != nullptr) {
 		editorScript->update();

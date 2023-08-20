@@ -17,7 +17,6 @@
 #include "../Components/Models/Cube2DModel.h"
 #include "../Components/SceneManager/SceneManager.h"
 #include "../Components/SceneManager/Scene.h"
-#include "../Components/ShaderCompiler/ShaderCompiler.h"
 #include "../Components/UI/UIImplement.h"
 #include "../Components/Debug/DrawBox.h"
 #include "../Components/Sprite/SpriteComponent.h"
@@ -25,5 +24,7 @@
 #include "../Components/Script/ScriptCompiler.h"
 #include "../Components/Physics/RigidBody.h"
 #include "../Components/SaveSystem/SaveSystem.h"
+#include "../Components/Skybox/Skybox.h"
+#include "../Components/Shadercompiler/Material.h"
 
 #endif

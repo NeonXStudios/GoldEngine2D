@@ -14,6 +14,7 @@ F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ComponentFactory.cpp;F:\VISU
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ComponentManager.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\ComponentManager.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ComponentSerializer.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\ComponentSerializer.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ECS.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\ECS.obj
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\FileSystem\FileSystem.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\FileSystem.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Lib\GoldMath\GoldMathf.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\GoldMathf.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Models\Cube2DModel.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Cube2DModel.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\RigidBody.obj
@@ -28,7 +29,12 @@ F:\VISUAL STUDIO\GoldEngine2D\source\Components\Script\Binders\EntityBinder.cpp;
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Script\Binders\InputBinder.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\InputBinder.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Script\Libs\GMathf\GMathf.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\GMathf.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Script\ScriptCompiler.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\ScriptCompiler.obj
-F:\VISUAL STUDIO\GoldEngine2D\source\Components\ShaderCompiler\ShaderCompiler.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\ShaderCompiler.obj
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ShaderCompiler\EBO.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\EBO.obj
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ShaderCompiler\Material.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Material.obj
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ShaderCompiler\shaderClass.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\shaderClass.obj
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ShaderCompiler\VAO.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\VAO.obj
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ShaderCompiler\VBO.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\VBO.obj
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Skybox\Skybox.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Skybox.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Sprite\SpriteComponent.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\SpriteComponent.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Systems\RenderSystem.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\RenderSystem.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\UI\UIImplement.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\UIImplement.obj

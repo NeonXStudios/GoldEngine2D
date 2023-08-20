@@ -18,11 +18,17 @@ public:
     float GlobalScale = 1;
     float rotationAngle;
     glm::vec2 Scale = glm::vec2 (25, 25);
-    unsigned int shaderProgram;
+    GLuint shaderProgram;
     unsigned int vertexShader;
     unsigned int fragmentShader;
 
     string TexturePath = "game/assets/sprites/tile_0115.png";
+
+
+
+    const char* vertexSh;
+    const char* fragSh;
+
     unsigned int texture;
     unsigned int VBO, VAO, EBO;
 
@@ -42,5 +48,10 @@ public:
 
     string serialize() override;
     void deserialize(std::string g, std::string path = "") override;
+    //GLfloat* getVertices();
+    //std::size_t getIndicesSize();
+    //GLuint* getIndices();
+
+    //SpriteComponent();
 };
 #endif

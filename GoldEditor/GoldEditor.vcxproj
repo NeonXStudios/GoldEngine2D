@@ -179,6 +179,8 @@
     <ClCompile Include="source\UI\EditorUI\ChildDraw.cpp" />
     <ClCompile Include="source\UI\EditorUI\EditorGUI.cpp" />
     <ClCompile Include="source\UI\HUDS\Assets.cpp" />
+    <ClCompile Include="source\UI\HUDS\BarMenuUI.cpp" />
+    <ClCompile Include="source\UI\HUDS\CameraSetting.cpp" />
     <ClCompile Include="source\UI\HUDS\Hierarchy.cpp" />
     <ClCompile Include="source\UI\HUDS\Inspector.cpp" />
     <ClCompile Include="source\UI\HUDS\RightClickUI.cpp" />
@@ -221,6 +223,7 @@
     <ClInclude Include="source\UI\EditorUI\EditorGUI.h" />
     <ClInclude Include="source\UI\HUDS\Assets.h" />
     <ClInclude Include="source\UI\HUDS\BarMenuUI.h" />
+    <ClInclude Include="source\UI\HUDS\CameraSetting.h" />
     <ClInclude Include="source\UI\HUDS\HierarchyUI.h" />
     <ClInclude Include="source\UI\HUDS\Inspector.h" />
     <ClInclude Include="source\UI\HUDS\RightClickUI.h" />

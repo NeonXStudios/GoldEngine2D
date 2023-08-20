@@ -5,6 +5,7 @@
 #include "HUDS/Assets.h"
 #include "HUDS/Inspector.h"
 #include "HUDS/RightClickUI.h"
+#include "HUDS/CameraSetting.h"
 
 #include "../Inspector/ScriptEditor.h"
 
@@ -18,7 +19,7 @@ public:
 	AssetsUI* assetsui;
 	RightClickUI* rightClickui;
 	ScriptEditor* editorScript;
-
+	CameraSetting* cameraSettingUI;
 
 	void start();
 

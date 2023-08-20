@@ -30,7 +30,6 @@ f:\visual studio\goldengine2d\x64\debug\enginebehaviour.obj
 f:\visual studio\goldengine2d\x64\debug\uiimplement.obj
 f:\visual studio\goldengine2d\x64\debug\rendersystem.obj
 f:\visual studio\goldengine2d\x64\debug\spritecomponent.obj
-f:\visual studio\goldengine2d\x64\debug\shadercompiler.obj
 f:\visual studio\goldengine2d\x64\debug\scriptcompiler.obj
 f:\visual studio\goldengine2d\x64\debug\gmathf.obj
 f:\visual studio\goldengine2d\x64\debug\inputbinder.obj
@@ -40,8 +39,15 @@ f:\visual studio\goldengine2d\x64\debug\binderfunctions.obj
 f:\visual studio\goldengine2d\x64\debug\scenemanager.obj
 f:\visual studio\goldengine2d\x64\debug\scene.obj
 f:\visual studio\goldengine2d\x64\debug\savesystem.obj
+f:\visual studio\goldengine2d\x64\debug\skybox.obj
+f:\visual studio\goldengine2d\x64\debug\vbo.obj
+f:\visual studio\goldengine2d\x64\debug\vao.obj
+f:\visual studio\goldengine2d\x64\debug\shaderclass.obj
+f:\visual studio\goldengine2d\x64\debug\material.obj
+f:\visual studio\goldengine2d\x64\debug\ebo.obj
 f:\visual studio\goldengine2d\buildcore\goldengine.lib
 f:\visual studio\goldengine2d\x64\debug\goldengine.res
+f:\visual studio\goldengine2d\x64\debug\shadercompiler.obj
 f:\visual studio\goldengine2d\buildcore/goldengine.pdb
 f:\visual studio\goldengine2d\x64\debug\goldengine.tlog\cl.command.1.tlog
 f:\visual studio\goldengine2d\x64\debug\goldengine.tlog\cl.items.tlog

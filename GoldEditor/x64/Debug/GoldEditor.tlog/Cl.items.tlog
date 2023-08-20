@@ -24,6 +24,8 @@ F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\DragAndDrop.cpp;F:\VISUAL STU
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\EditorUI\ChildDraw.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\ChildDraw.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\EditorUI\EditorGUI.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\EditorGUI.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\Assets.obj
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\BarMenuUI.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\BarMenuUI.obj
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\CameraSetting.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\CameraSetting.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Hierarchy.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\Hierarchy.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Inspector.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\Inspector.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\RightClickUI.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\RightClickUI.obj

@@ -83,13 +83,19 @@
     <Filter Include="Engine\02_Components\Scripting\Binders">
       <UniqueIdentifier>{dbbf5d7d-e9e3-4ef5-8344-868dc63e5436}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\02_Components\SkyBox">
+      <UniqueIdentifier>{206b7c14-dba1-4bbd-8573-39a2b7a349d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\02_Components\ShaderCompiler\Components">
+      <UniqueIdentifier>{06bb44e5-3616-4bcf-8a6a-30a0e4912a58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\02_Components\FileSystem">
+      <UniqueIdentifier>{bea2e1cd-caac-4876-a4d0-0cf9832af4ca}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Graphics\StartEngineGraphics.cpp">
       <Filter>Engine\01_StartGraphics</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Components\ShaderCompiler\ShaderCompiler.cpp">
-      <Filter>Engine\02_Components\ShaderCompiler</Filter>
     </ClCompile>
     <ClCompile Include="source\Components\Models\Cube2DModel.cpp">
       <Filter>Engine\02_Components\Models</Filter>
@@ -205,11 +211,29 @@
     <ClCompile Include="source\Components\Script\Binders\InputBinder.cpp">
       <Filter>Engine\02_Components\Scripting\Binders</Filter>
     </ClCompile>
+    <ClCompile Include="source\Components\Skybox\Skybox.cpp">
+      <Filter>Engine\02_Components\SkyBox</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\ShaderCompiler\shaderClass.cpp">
+      <Filter>Engine\02_Components\ShaderCompiler</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\ShaderCompiler\VBO.cpp">
+      <Filter>Engine\02_Components\ShaderCompiler</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\ShaderCompiler\VAO.cpp">
+      <Filter>Engine\02_Components\ShaderCompiler</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\ShaderCompiler\EBO.cpp">
+      <Filter>Engine\02_Components\ShaderCompiler</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\ShaderCompiler\Material.cpp">
+      <Filter>Engine\02_Components\ShaderCompiler\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\FileSystem\FileSystem.cpp">
+      <Filter>Engine\02_Components\FileSystem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\Components\ShaderCompiler\ShaderCompiler.h">
-      <Filter>Engine\02_Components\ShaderCompiler</Filter>
-    </ClInclude>
     <ClInclude Include="source\Components\Models\Cube2DModel.h">
       <Filter>Engine\02_Components\Models</Filter>
     </ClInclude>
@@ -335,6 +359,27 @@
     </ClInclude>
     <ClInclude Include="source\Components\Script\Binders\InputBinder.h">
       <Filter>Engine\02_Components\Scripting\Binders</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\Skybox\Skybox.h">
+      <Filter>Engine\02_Components\SkyBox</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\ShaderCompiler\shaderClass.h">
+      <Filter>Engine\02_Components\ShaderCompiler</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\ShaderCompiler\VBO.h">
+      <Filter>Engine\02_Components\ShaderCompiler</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\ShaderCompiler\VAO.h">
+      <Filter>Engine\02_Components\ShaderCompiler</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\ShaderCompiler\EBO.h">
+      <Filter>Engine\02_Components\ShaderCompiler</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\ShaderCompiler\Material.h">
+      <Filter>Engine\02_Components\ShaderCompiler\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\FileSystem\FileSystem.h">
+      <Filter>Engine\02_Components\FileSystem</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

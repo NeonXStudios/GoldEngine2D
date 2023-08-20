@@ -171,6 +171,7 @@
     <ClCompile Include="source\Components\ECS\ComponentManager.cpp" />
     <ClCompile Include="source\Components\ECS\ComponentSerializer.cpp" />
     <ClCompile Include="source\Components\ECS\ECS.cpp" />
+    <ClCompile Include="source\Components\FileSystem\FileSystem.cpp" />
     <ClCompile Include="source\Components\Lib\GoldMath\GoldMathf.cpp" />
     <ClCompile Include="source\Components\Models\Cube2DModel.cpp" />
     <ClCompile Include="source\Components\Physics\RigidBody.cpp" />
@@ -185,7 +186,12 @@
     <ClCompile Include="source\Components\Script\Binders\InputBinder.cpp" />
     <ClCompile Include="source\Components\Script\Libs\GMathf\GMathf.cpp" />
     <ClCompile Include="source\Components\Script\ScriptCompiler.cpp" />
-    <ClCompile Include="source\Components\ShaderCompiler\ShaderCompiler.cpp" />
+    <ClCompile Include="source\Components\ShaderCompiler\EBO.cpp" />
+    <ClCompile Include="source\Components\ShaderCompiler\Material.cpp" />
+    <ClCompile Include="source\Components\ShaderCompiler\shaderClass.cpp" />
+    <ClCompile Include="source\Components\ShaderCompiler\VAO.cpp" />
+    <ClCompile Include="source\Components\ShaderCompiler\VBO.cpp" />
+    <ClCompile Include="source\Components\Skybox\Skybox.cpp" />
     <ClCompile Include="source\Components\Sprite\SpriteComponent.cpp" />
     <ClCompile Include="source\Components\Systems\RenderSystem.cpp" />
     <ClCompile Include="source\Components\UI\UIImplement.cpp" />
@@ -215,6 +221,7 @@
     <ClInclude Include="source\Components\ECS\ComponentManager.h" />
     <ClInclude Include="source\Components\ECS\ComponentSerializer.h" />
     <ClInclude Include="source\Components\ECS\ECS.h" />
+    <ClInclude Include="source\Components\FileSystem\FileSystem.h" />
     <ClInclude Include="source\Components\Lib\GoldMath\GoldMathf.h" />
     <ClInclude Include="source\Components\Models\Cube2DModel.h" />
     <ClInclude Include="source\Components\Physics\RigidBody.h" />
@@ -229,7 +236,12 @@
     <ClInclude Include="source\Components\Script\Binders\InputBinder.h" />
     <ClInclude Include="source\Components\Script\Libs\GMathf\GMathf.h" />
     <ClInclude Include="source\Components\Script\ScriptCompiler.h" />
-    <ClInclude Include="source\Components\ShaderCompiler\ShaderCompiler.h" />
+    <ClInclude Include="source\Components\ShaderCompiler\EBO.h" />
+    <ClInclude Include="source\Components\ShaderCompiler\Material.h" />
+    <ClInclude Include="source\Components\ShaderCompiler\shaderClass.h" />
+    <ClInclude Include="source\Components\ShaderCompiler\VAO.h" />
+    <ClInclude Include="source\Components\ShaderCompiler\VBO.h" />
+    <ClInclude Include="source\Components\Skybox\Skybox.h" />
     <ClInclude Include="source\Components\Sprite\SpriteComponent.h" />
     <ClInclude Include="source\Components\Systems\SystemsEvents.h" />
     <ClInclude Include="source\Components\UI\UIImplement.h" />

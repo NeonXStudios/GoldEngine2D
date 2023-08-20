@@ -14,6 +14,8 @@ public:
     UIManager* uiMaster;
     MoveGizmos* gizmos;
     string ProjectPath = "";
+    Entity* ent;
+    float cameraSpeed = 1;
 
     void start() override {
         ProjectPath = ProjectPath;
@@ -24,6 +26,9 @@ public:
         std::cout << "Starting editor" << endl;
         SaveData::loadScene();
         gizmos->start();
+
+        ent = SceneManager::GetSceneManager()->NewEntity();
+        ent->addComponent <Skybox>();
     }
 
     void draw() override {
@@ -34,8 +39,21 @@ public:
 
         uiMaster->update();
         Camera* cam = SceneManager::GetSceneManager()->OpenScene->worldCamera;
-        float cameraSpeed = 1;
 
+
+        glm::vec3 cameraDirection = glm::normalize(cam->cameraFront);
+
+        // Multiplicar el vector de dirección por la velocidad y sumarlo a la posición
+        if (InputSystem::InputSystem::GetKey(GLFW_KEY_W))
+            cam->cameraPosition += cameraDirection * cameraSpeed;
+        if (InputSystem::InputSystem::GetKey(GLFW_KEY_S))
+            cam->cameraPosition -= cameraDirection * cameraSpeed;
+        if (InputSystem::InputSystem::GetKey(GLFW_KEY_A))
+            cam->cameraPosition += glm::vec3(cameraSpeed, 0.0f, 0.0f);
+        if (InputSystem::InputSystem::GetKey(GLFW_KEY_D))
+            cam->cameraPosition += glm::vec3(-cameraSpeed, 0.0f, 0.0f);
+
+        /*
         if (InputSystem::InputSystem::GetKey(GLFW_KEY_W))
             cam->cameraPosition += glm::vec3(0.0f, 0.0f, cameraSpeed);
         if (InputSystem::InputSystem::GetKey(GLFW_KEY_S))
@@ -56,6 +74,23 @@ public:
         if (InputSystem::InputSystem::GetKey(GLFW_KEY_T)) {
             cam->cameraPosition = glm::vec3(0.0f, 0.0f, 0.0f);
             cam->zoom = 1;
+        }
+        */
+
+        if (InputSystem::InputSystem::GetKey(GLFW_KEY_UP)) {
+            cam->rotationXAngle += 0.3f;
+        }
+
+        if (InputSystem::InputSystem::GetKey(GLFW_KEY_DOWN)) {
+            cam->rotationXAngle -= 0.3f;
+        }
+
+        if (InputSystem::InputSystem::GetKey(GLFW_KEY_LEFT)) {
+            cam->rotationYAngle += 0.3f;
+        }
+
+        if (InputSystem::InputSystem::GetKey(GLFW_KEY_RIGHT)) {
+            cam->rotationYAngle -= 0.3f;
         }
     }
 
