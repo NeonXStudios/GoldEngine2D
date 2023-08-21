@@ -155,10 +155,10 @@ void SpriteComponent::onupdate() {
     glBindTexture(GL_TEXTURE_2D, texture);
     glUniform1i(glGetUniformLocation(shaderProgram, "textureSampler"), 0);
 
-    glm::mat4 model = glm::translate(glm::mat4(1.0f), glm::vec3(ObjectPosition.x, -ObjectPosition.y, ObjectPosition.z));
-    model = glm::rotate(model, glm::radians(rotationAngleZ), glm::vec3(0.0f, 0.0f, 1.0f)); // Rotación en el eje Z
-    model = glm::rotate(model, glm::radians(rotationAngleY), glm::vec3(0.0f, 1.0f, 0.0f)); // Rotación en el eje Y
-    model = glm::rotate(model, glm::radians(rotationAngleX), glm::vec3(1.0f, 0.0f, 0.0f)); // Rotación en el eje X
+    glm::mat4 model = glm::translate(glm::mat4(1.0f), glm::vec3(ObjectPosition.x, ObjectPosition.y, ObjectPosition.z));
+    model = glm::rotate(model, glm::radians(rotation.x), glm::vec3(0.0f, 0.0f, 1.0f)); // Rotación en el eje Z
+    model = glm::rotate(model, glm::radians(rotation.y), glm::vec3(0.0f, 1.0f, 0.0f)); // Rotación en el eje Y
+    model = glm::rotate(model, glm::radians(rotation.z), glm::vec3(1.0f, 0.0f, 0.0f)); // Rotación en el eje X
     model = glm::scale(model, glm::vec3(Scale.x * GlobalScale, Scale.y * GlobalScale, 25));
 
     glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
@@ -228,6 +228,17 @@ void SpriteComponent::deserialize (std::string g, std::string path) {
     TexturePath = path + (string)componentData["texturepath"];
 
     LoadTexture();
+}
+
+
+glm::mat4 SpriteComponent::GetMatrix() {
+    glm::mat4 matrix;
+
+    matrix = glm::translate  (glm::mat4 (1.0f), glm::vec3 (ObjectPosition.x, ObjectPosition.y, ObjectPosition.z));
+    matrix *= glm::mat4_cast (rotation);
+    matrix = glm::scale (matrix, Scale);
+
+    return matrix;
 }
 
 

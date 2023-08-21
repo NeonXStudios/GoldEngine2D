@@ -4,7 +4,6 @@
 
 
 
-
 void InspectorUI::start() {
     drawerComponents = new DrawComponents();
 
@@ -25,7 +24,7 @@ void InspectorUI::draw() {
             ObjectSelectToInspector->getComponent<SpriteComponent>().LocalPosition = glm::vec3(newPosLocal.x, newPosLocal.y, newPosLocal.z);
         }
 
-        ObjectSelectToInspector->getComponent<SpriteComponent>().Scale = EditorGUI::Vector2("Size", ObjectSelectToInspector->getComponent<SpriteComponent>().Scale);
+       // ObjectSelectToInspector->getComponent<SpriteComponent>().Scale = EditorGUI::Vector2("Size", ObjectSelectToInspector->getComponent<SpriteComponent>().Scale);
         ObjectSelectToInspector->getComponent<SpriteComponent>().GlobalScale = EditorGUI::Float("Global Scale", ObjectSelectToInspector->getComponent<SpriteComponent>().GlobalScale);
         //ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngle = EditorGUI::Float("Rotation", ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngle);
         

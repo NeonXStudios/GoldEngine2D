@@ -2,6 +2,8 @@
 #include <iostream>
 #include <vector>
 #include "../UIDrawer.h"
+#include <imguizmo/ImGuizmo.h>
+#include <glm/glm.hpp>
 
 
 using namespace std;
@@ -21,6 +23,14 @@ public:
     std::vector<Entity*> objectsInAABB;
     int SelectIndex = 0;
 
+    
+    bool res;
+    float* matrix;
+    float* view;
+    float* projection;
+
+
+
     void start() override;
 
     void draw() override;
@@ -30,5 +40,6 @@ public:
     void lateupdate() override;
 
     void fixupdate() override;
+
     glm::vec2 RotatePoint(const glm::vec2& point, const glm::vec2& center, float angle);
 };

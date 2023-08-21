@@ -42,6 +42,9 @@
     <Filter Include="Editor\03_EditorComponents\Compiler">
       <UniqueIdentifier>{87ddcbb1-b81d-4fee-be67-903cb868e597}</UniqueIdentifier>
     </Filter>
+    <Filter Include="RecursosEditor\IMGUIZMO">
+      <UniqueIdentifier>{c32555e7-2017-448d-a1bb-f03400be0e78}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Binarys\c\glad.c">
@@ -145,6 +148,9 @@
     </ClCompile>
     <ClCompile Include="source\UI\HUDS\BarMenuUI.cpp">
       <Filter>Editor\04_UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Binarys\include\imguizmo\ImGuizmo.cpp">
+      <Filter>RecursosEditor\IMGUIZMO</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -251,6 +257,9 @@
     <ClInclude Include="source\UI\EditorUI\ChildDraw.h" />
     <ClInclude Include="source\UI\HUDS\CameraSetting.h">
       <Filter>Editor\04_UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Binarys\include\imguizmo\ImGuizmo.h">
+      <Filter>RecursosEditor\IMGUIZMO</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

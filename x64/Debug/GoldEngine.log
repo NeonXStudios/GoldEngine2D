@@ -1,4 +1,14 @@
-﻿  Camera2D.cpp
+﻿  glad.c
+  imgui.cpp
+  imgui_demo.cpp
+  imgui_draw.cpp
+  imgui_impl_glfw.cpp
+  imgui_impl_opengl3.cpp
+  imgui_tables.cpp
+  imgui_widgets.cpp
+  AudioManager.cpp
+  AudioSource.cpp
+  Camera2D.cpp
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.cpp(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(39,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
@@ -20,6 +30,8 @@ F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warni
 F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+  ComponentManager.cpp
+  ComponentSerializer.cpp
   ECS.cpp
 F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
@@ -31,6 +43,12 @@ F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warni
 F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+  FileSystem.cpp
+  GoldMathf.cpp
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Lib\GoldMath\GoldMathf.h(19,12): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Lib\GoldMath\GoldMathf.h(53,10): warning C4244: 'return': conversión de 'int' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Lib\GoldMath\GoldMathf.h(173,10): warning C4305: 'return': truncamiento de 'double' a 'float'
+  Cube2DModel.cpp
   RigidBody.cpp
 F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
@@ -53,6 +71,9 @@ F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warni
 F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+  Generando código...
+  Compilando...
+  CheckVar.cpp
   SaveSystem.cpp
 F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
@@ -151,16 +172,34 @@ F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warni
 F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+  EBO.cpp
   Material.cpp
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(39,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(40,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(41,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  shaderClass.cpp
+  VAO.cpp
+  VBO.cpp
+  Skybox.cpp
   SpriteComponent.cpp
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(39,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(40,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(41,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  RenderSystem.cpp
+  UIImplement.cpp
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\UI\UIStyle.h(9,2): warning C4091: 'static ': se ha omitido a la izquierda de 'STYLES' cuando no hay ninguna variable declarada
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\UI\UIStyle.h(34,52): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\UI\UIStyle.h(39,52): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\UI\UIStyle.h(52,52): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\UI\UIStyle.h(52,46): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\UI\UIStyle.h(58,42): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  EngineBehaviour.cpp
+  Generando código...
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\AudioSource\AudioSource.h(83): warning C4172: devolución de dirección de la variable local o temporal: ispl
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\AudioSource\AudioSource.h(77): warning C4172: devolución de dirección de la variable local o temporal: g
+  Compilando...
   GoldEngineLib.cpp
 F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
@@ -172,6 +211,7 @@ F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warni
 F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+  AppSettings.cpp
   RunEngine.cpp
 F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
@@ -185,7 +225,6 @@ F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(39,33): warnin
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(40,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(41,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
 F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\StartEngineGraphics.cpp(78,24): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  STBimplement.cpp
   Generando código...
-F:\VISUAL STUDIO\GoldEngine2D\source\Components\AudioSource\AudioSource.h(83): warning C4172: devolución de dirección de la variable local o temporal: ispl
-F:\VISUAL STUDIO\GoldEngine2D\source\Components\AudioSource\AudioSource.h(77): warning C4172: devolución de dirección de la variable local o temporal: g
   GoldEngine.vcxproj -> F:\VISUAL STUDIO\GoldEngine2D\BuildCore\GoldEngine.lib
