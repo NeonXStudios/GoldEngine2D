@@ -57,6 +57,18 @@ public:
 		return glm::vec3(v[0], v[1], v[2]);
 	}
 
+	static glm::quat Quaternion (string Name, glm::quat quaternion) {
+		float v[3] = {
+			quaternion.x,
+			quaternion.y,
+			quaternion.z
+		};
+
+		ImGui::DragFloat3(EditorGUI::_labelPrefix(Name.c_str()).c_str(), v);
+
+		return glm::quat(glm::vec3(glm::radians(v[0]), glm::radians(v[1]), glm::radians(v[2])));
+	}
+
 	static bool Button (string Name, glm::vec2 size) {
 		return ImGui::Button (Name.c_str(), ImVec2 (size.x, size.y));
 	}
