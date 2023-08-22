@@ -45,6 +45,9 @@
     <Filter Include="RecursosEditor\IMGUIZMO">
       <UniqueIdentifier>{c32555e7-2017-448d-a1bb-f03400be0e78}</UniqueIdentifier>
     </Filter>
+    <Filter Include="RecursosEditor\IMGUINODE">
+      <UniqueIdentifier>{5e64e69f-05ca-4153-8b44-a82acfd985e2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Binarys\c\glad.c">

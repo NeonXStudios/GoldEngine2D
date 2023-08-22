@@ -2,6 +2,7 @@
 #include <iostream>
 
 #include "../../../source/EngineBehaviour/GoldEngineLib.h"
+#define IMGUI_DEFINE_MATH_OPERATORS
 #include "../UI/UIManager.h"
 #include "../Components/Data/SaveData.h"
 #include <imguizmo/ImGuizmo.h>
@@ -42,6 +43,7 @@ public:
 
 
         glm::vec3 cameraDirection = glm::normalize(cam->cameraFront);
+        glm::vec3 cameraDirectio2 = glm::normalize(cam->cameraFront);
 
         // Multiplicar el vector de dirección por la velocidad y sumarlo a la posición
         if (InputSystem::InputSystem::GetKey(GLFW_KEY_W))
@@ -49,9 +51,9 @@ public:
         if (InputSystem::InputSystem::GetKey(GLFW_KEY_S))
             cam->cameraPosition -= cameraDirection * cameraSpeed;
         if (InputSystem::InputSystem::GetKey(GLFW_KEY_A))
-            cam->cameraPosition += glm::vec3(cameraSpeed, 0.0f, 0.0f);
+            cam->cameraPosition += cameraDirectio2 * cameraSpeed;
         if (InputSystem::InputSystem::GetKey(GLFW_KEY_D))
-            cam->cameraPosition += glm::vec3(-cameraSpeed, 0.0f, 0.0f);
+            cam->cameraPosition += cameraDirectio2 * -cameraSpeed;
 
         /*
         if (InputSystem::InputSystem::GetKey(GLFW_KEY_W))

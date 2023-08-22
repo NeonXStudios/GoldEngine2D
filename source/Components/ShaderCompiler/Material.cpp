@@ -13,10 +13,10 @@ void Material::init() {
 	vbo = VBO1.ID;*/
 
 
-	VAO1.LinkVBO (VBO1, 0);
+	/*VAO1.LinkVBO (VBO1, 0);
 	VAO1.Unbind();
 	VBO1.Unbind();
-	EBO1.Unbind();
+	EBO1.Unbind();*/
 }
 
 

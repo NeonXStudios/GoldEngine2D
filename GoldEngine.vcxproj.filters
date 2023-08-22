@@ -97,9 +97,6 @@
     <ClCompile Include="source\Graphics\StartEngineGraphics.cpp">
       <Filter>Engine\01_StartGraphics</Filter>
     </ClCompile>
-    <ClCompile Include="source\Components\Models\Cube2DModel.cpp">
-      <Filter>Engine\02_Components\Models</Filter>
-    </ClCompile>
     <ClCompile Include="source\Components\Camera\Camera2D.cpp">
       <Filter>Engine\02_Components\Camera</Filter>
     </ClCompile>
@@ -232,11 +229,17 @@
     <ClCompile Include="source\Components\FileSystem\FileSystem.cpp">
       <Filter>Engine\02_Components\FileSystem</Filter>
     </ClCompile>
+    <ClCompile Include="source\Components\Models\Mesh.cpp">
+      <Filter>Engine\02_Components\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\Models\Model.cpp">
+      <Filter>Engine\02_Components\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\Models\Texture.cpp">
+      <Filter>Engine\02_Components\Models</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\Components\Models\Cube2DModel.h">
-      <Filter>Engine\02_Components\Models</Filter>
-    </ClInclude>
     <ClInclude Include="source\Components\Camera\Camera2D.h">
       <Filter>Engine\02_Components\Camera</Filter>
     </ClInclude>
@@ -380,6 +383,15 @@
     </ClInclude>
     <ClInclude Include="source\Components\FileSystem\FileSystem.h">
       <Filter>Engine\02_Components\FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\Models\Mesh.h">
+      <Filter>Engine\02_Components\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\Models\Model.h">
+      <Filter>Engine\02_Components\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\Models\Texture.h">
+      <Filter>Engine\02_Components\Models</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

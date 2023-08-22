@@ -13,8 +13,6 @@
 #include "../Components/AudioSource/AudioSource.h"
 #include "../Components/Camera/Camera2D.h"
 #include "../Components/ECS/ECS.h"
-#include "../Components/Models/Cube2DModel.h"
-#include "../Components/Models/Cube2DModel.h"
 #include "../Components/SceneManager/SceneManager.h"
 #include "../Components/SceneManager/Scene.h"
 #include "../Components/UI/UIImplement.h"

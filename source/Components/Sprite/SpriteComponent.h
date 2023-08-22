@@ -51,9 +51,9 @@ public:
     void deserialize(std::string g, std::string path = "") override;
     glm::mat4 GetMatrix();
 
-    //GLfloat* getVertices();
-    //std::size_t getIndicesSize();
-    //GLuint* getIndices();
+    float* getVertices();
+    std::size_t getIndicesSize();
+    GLuint* getIndices();
 
     //SpriteComponent();
 };

@@ -16,7 +16,9 @@ F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ComponentSerializer.cpp;F:\V
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ECS.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\ECS.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\FileSystem\FileSystem.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\FileSystem.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Lib\GoldMath\GoldMathf.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\GoldMathf.obj
-F:\VISUAL STUDIO\GoldEngine2D\source\Components\Models\Cube2DModel.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Cube2DModel.obj
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Models\Mesh.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Mesh.obj
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Models\Model.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Model.obj
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Models\Texture.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Texture.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\RigidBody.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\TriggerModule.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\TriggerModule.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\SaveSystem\CheckVar.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\CheckVar.obj

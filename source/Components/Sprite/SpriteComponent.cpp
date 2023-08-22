@@ -236,23 +236,23 @@ glm::mat4 SpriteComponent::GetMatrix() {
     glm::mat4 matrix;
 
     matrix = glm::translate  (glm::mat4 (1.0f), glm::vec3 (ObjectPosition.x, ObjectPosition.y, ObjectPosition.z));
-    matrix *= glm::mat4_cast (rotation);
+    matrix *= glm::mat4_cast (glm::quat (1, rotationAngleX, rotationAngleY, rotationAngleZ));
     matrix = glm::scale (matrix, Scale);
 
     return matrix;
 }
 
 
-//GLfloat* SpriteComponent::getVertices() {
-//    return vertices2;
-//}
-//
-//std::size_t SpriteComponent::getIndicesSize() {
-//    return sizeof(indices2);
-//}
-//
-//
-//
-//GLuint* SpriteComponent::getIndices() {
-//    return indices2;
-//}
+float* SpriteComponent::getVertices() {
+    return vertices2;
+}
+
+std::size_t SpriteComponent::getIndicesSize() {
+    return sizeof(indices2);
+}
+
+
+
+GLuint* SpriteComponent::getIndices() {
+    return indices2;
+}

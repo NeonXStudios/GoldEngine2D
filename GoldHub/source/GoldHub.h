@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#define IMGUI_DEFINE_MATH_OPERATORS
 #include <imgui/imgui.h>
 #include "../../source/EngineBehaviour/GoldEngineLib.h"
 #include <filesystem>
