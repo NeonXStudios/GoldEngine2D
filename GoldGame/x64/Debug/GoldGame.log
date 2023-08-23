@@ -3,6 +3,9 @@
 F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(40,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(41,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(42,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
@@ -11,13 +14,26 @@ F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): m
 F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(40,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(41,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(42,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
   Generando código...
-LINK : warning LNK4098: la biblioteca predeterminada'MSVCRT' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
-LINK : warning LNK4098: la biblioteca predeterminada'LIBCMT' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
+GoldGame.obj : error LNK2005: ya se definió "unsigned int __cdecl TextureFromFile(char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)" (?TextureFromFile@@YAIPEBDAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z) en SaveData.obj
+GoldEngine.lib(ScriptCompiler.obj) : error LNK2005: ya se definió "unsigned int __cdecl TextureFromFile(char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)" (?TextureFromFile@@YAIPEBDAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z) en SaveData.obj
+GoldEngine.lib(RigidBody.obj) : error LNK2005: ya se definió "unsigned int __cdecl TextureFromFile(char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)" (?TextureFromFile@@YAIPEBDAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z) en SaveData.obj
+GoldEngine.lib(SaveSystem.obj) : error LNK2005: ya se definió "unsigned int __cdecl TextureFromFile(char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)" (?TextureFromFile@@YAIPEBDAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z) en SaveData.obj
+GoldEngine.lib(BinderFunctions.obj) : error LNK2005: ya se definió "unsigned int __cdecl TextureFromFile(char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)" (?TextureFromFile@@YAIPEBDAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z) en SaveData.obj
+GoldEngine.lib(EntityBinder.obj) : error LNK2005: ya se definió "unsigned int __cdecl TextureFromFile(char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)" (?TextureFromFile@@YAIPEBDAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z) en SaveData.obj
+GoldEngine.lib(CalculatorBinder.obj) : error LNK2005: ya se definió "unsigned int __cdecl TextureFromFile(char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)" (?TextureFromFile@@YAIPEBDAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z) en SaveData.obj
+GoldEngine.lib(InputBinder.obj) : error LNK2005: ya se definió "unsigned int __cdecl TextureFromFile(char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)" (?TextureFromFile@@YAIPEBDAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z) en SaveData.obj
+GoldEngine.lib(GMathf.obj) : error LNK2005: ya se definió "unsigned int __cdecl TextureFromFile(char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)" (?TextureFromFile@@YAIPEBDAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z) en SaveData.obj
+GoldEngine.lib(Scene.obj) : error LNK2005: ya se definió "unsigned int __cdecl TextureFromFile(char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)" (?TextureFromFile@@YAIPEBDAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z) en SaveData.obj
+GoldEngine.lib(ECS.obj) : error LNK2005: ya se definió "unsigned int __cdecl TextureFromFile(char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)" (?TextureFromFile@@YAIPEBDAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z) en SaveData.obj
+GoldEngine.lib(TriggerModule.obj) : error LNK2005: ya se definió "unsigned int __cdecl TextureFromFile(char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)" (?TextureFromFile@@YAIPEBDAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z) en SaveData.obj
 box2d.lib(b2_polygon_shape.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_polygon_shape.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
 box2d.lib(b2_body.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_body.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
 box2d.lib(b2_fixture.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_fixture.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
@@ -61,4 +77,6 @@ box2d.lib(b2_chain_shape.obj) : warning LNK4099: no se encontró PDB '' con 'box
 box2d.lib(b2_edge_shape.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_edge_shape.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
 box2d.lib(b2_collide_circle.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_collide_circle.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
 box2d.lib(b2_collide_polygon.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_collide_polygon.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-  GoldGame.vcxproj -> F:\VISUAL STUDIO\GoldEngine2D\BuildHub\Editor\DATA\WINCOMPILER\GoldGame.exe
+LINK : warning LNK4098: la biblioteca predeterminada'MSVCRT' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
+LINK : warning LNK4098: la biblioteca predeterminada'LIBCMT' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
+F:\VISUAL STUDIO\GoldEngine2D\BuildHub\Editor\DATA\WINCOMPILER\GoldGame.exe : fatal error LNK1169: se encontraron uno o más símbolos definidos simultáneamente

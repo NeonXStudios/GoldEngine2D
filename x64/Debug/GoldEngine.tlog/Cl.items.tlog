@@ -18,7 +18,7 @@ F:\VISUAL STUDIO\GoldEngine2D\source\Components\FileSystem\FileSystem.cpp;F:\VIS
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Lib\GoldMath\GoldMathf.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\GoldMathf.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Models\Mesh.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Mesh.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Models\Model.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Model.obj
-F:\VISUAL STUDIO\GoldEngine2D\source\Components\Models\Texture.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Texture.obj
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Models\TextureManager.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\TextureManager.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\RigidBody.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\TriggerModule.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\TriggerModule.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\SaveSystem\CheckVar.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\CheckVar.obj
@@ -31,11 +31,7 @@ F:\VISUAL STUDIO\GoldEngine2D\source\Components\Script\Binders\EntityBinder.cpp;
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Script\Binders\InputBinder.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\InputBinder.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Script\Libs\GMathf\GMathf.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\GMathf.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Script\ScriptCompiler.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\ScriptCompiler.obj
-F:\VISUAL STUDIO\GoldEngine2D\source\Components\ShaderCompiler\EBO.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\EBO.obj
-F:\VISUAL STUDIO\GoldEngine2D\source\Components\ShaderCompiler\Material.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Material.obj
-F:\VISUAL STUDIO\GoldEngine2D\source\Components\ShaderCompiler\shaderClass.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\shaderClass.obj
-F:\VISUAL STUDIO\GoldEngine2D\source\Components\ShaderCompiler\VAO.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\VAO.obj
-F:\VISUAL STUDIO\GoldEngine2D\source\Components\ShaderCompiler\VBO.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\VBO.obj
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ShaderCompiler\Shader.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Shader.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Skybox\Skybox.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Skybox.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Sprite\SpriteComponent.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\SpriteComponent.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Systems\RenderSystem.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\RenderSystem.obj

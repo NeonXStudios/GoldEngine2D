@@ -211,21 +211,6 @@
     <ClCompile Include="source\Components\Skybox\Skybox.cpp">
       <Filter>Engine\02_Components\SkyBox</Filter>
     </ClCompile>
-    <ClCompile Include="source\Components\ShaderCompiler\shaderClass.cpp">
-      <Filter>Engine\02_Components\ShaderCompiler</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Components\ShaderCompiler\VBO.cpp">
-      <Filter>Engine\02_Components\ShaderCompiler</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Components\ShaderCompiler\VAO.cpp">
-      <Filter>Engine\02_Components\ShaderCompiler</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Components\ShaderCompiler\EBO.cpp">
-      <Filter>Engine\02_Components\ShaderCompiler</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Components\ShaderCompiler\Material.cpp">
-      <Filter>Engine\02_Components\ShaderCompiler\Components</Filter>
-    </ClCompile>
     <ClCompile Include="source\Components\FileSystem\FileSystem.cpp">
       <Filter>Engine\02_Components\FileSystem</Filter>
     </ClCompile>
@@ -235,7 +220,10 @@
     <ClCompile Include="source\Components\Models\Model.cpp">
       <Filter>Engine\02_Components\Models</Filter>
     </ClCompile>
-    <ClCompile Include="source\Components\Models\Texture.cpp">
+    <ClCompile Include="source\Components\ShaderCompiler\Shader.cpp">
+      <Filter>Engine\02_Components\ShaderCompiler\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\Models\TextureManager.cpp">
       <Filter>Engine\02_Components\Models</Filter>
     </ClCompile>
   </ItemGroup>
@@ -366,21 +354,6 @@
     <ClInclude Include="source\Components\Skybox\Skybox.h">
       <Filter>Engine\02_Components\SkyBox</Filter>
     </ClInclude>
-    <ClInclude Include="source\Components\ShaderCompiler\shaderClass.h">
-      <Filter>Engine\02_Components\ShaderCompiler</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Components\ShaderCompiler\VBO.h">
-      <Filter>Engine\02_Components\ShaderCompiler</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Components\ShaderCompiler\VAO.h">
-      <Filter>Engine\02_Components\ShaderCompiler</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Components\ShaderCompiler\EBO.h">
-      <Filter>Engine\02_Components\ShaderCompiler</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Components\ShaderCompiler\Material.h">
-      <Filter>Engine\02_Components\ShaderCompiler\Components</Filter>
-    </ClInclude>
     <ClInclude Include="source\Components\FileSystem\FileSystem.h">
       <Filter>Engine\02_Components\FileSystem</Filter>
     </ClInclude>
@@ -390,7 +363,10 @@
     <ClInclude Include="source\Components\Models\Model.h">
       <Filter>Engine\02_Components\Models</Filter>
     </ClInclude>
-    <ClInclude Include="source\Components\Models\Texture.h">
+    <ClInclude Include="source\Components\ShaderCompiler\Shader.h">
+      <Filter>Engine\02_Components\ShaderCompiler\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\Models\TextureManager.h">
       <Filter>Engine\02_Components\Models</Filter>
     </ClInclude>
   </ItemGroup>

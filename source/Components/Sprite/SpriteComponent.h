@@ -6,11 +6,18 @@
 #include "../SceneManager/SceneManager.h"
 #include <glm/gtc/quaternion.hpp>
 
+#define LOADMODELCLASS_H
+#include "../Models/Model.h"
+
 using namespace std;
 
 class SpriteComponent : public Component
 {
+    Shader* ourShader = nullptr;
+    GLD::Model* ourmodel = nullptr;
+
 public:
+
     glm::vec3 ObjectPosition = glm::vec3(0.0f, 0.0f, 0.0f);
     glm::vec3 LocalPosition = glm::vec3(0.0f, 0.0f, 0.0f);
     glm::quat rotation;
