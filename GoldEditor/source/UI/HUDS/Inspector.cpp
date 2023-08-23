@@ -38,6 +38,8 @@ void InspectorUI::draw() {
             SceneManager::GetSceneManager()->Destroy (ObjectSelectToInspector);
             ObjectSelectToInspector = nullptr;
         }
+        ObjectSelectToInspector->getComponent<SpriteComponent>().VertexPath = EditorGUI::InputText("Vertex Shader:", ObjectSelectToInspector->getComponent<SpriteComponent>().VertexPath);
+        ObjectSelectToInspector->getComponent<SpriteComponent>().FragmentPath = EditorGUI::InputText("Fragment Shader", ObjectSelectToInspector->getComponent<SpriteComponent>().FragmentPath);
 
 
         /*

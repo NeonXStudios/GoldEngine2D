@@ -23,7 +23,8 @@ void CameraSetting::draw() {
 		}
 		ImGui::Separator();
 
-		GoldEditor::editor->cameraSpeed = EditorGUI::Float ("Speed", GoldEditor::editor->cameraSpeed);
+		GoldEditor::editor->cameraSpeed = EditorGUI::Float("Speed", GoldEditor::editor->cameraSpeed);
+		SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom = EditorGUI::Slider("Fov", SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom, 0, 10);
 		
 		ImGui::End();
 	}

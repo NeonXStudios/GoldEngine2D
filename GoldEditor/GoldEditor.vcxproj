@@ -122,14 +122,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Binarys/include/;$(SolutionDir)Binarys/include/imgui;$(SolutionDir)Binarys/include/lua;$(SolutionDir)source/EngineBehaviour/</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Binarys/include/;$(SolutionDir)Binarys/include/imgui;$(SolutionDir)Binarys/include/lua;$(SolutionDir)source/EngineBehaviour/;$(SolutionDir)Binarys/include/imguinode</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)Binarys/lib/</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib; opengl32.lib; user32.lib; gdi32.lib; shell32.lib;fmodL_vc.lib;fmod_vc.lib;lua54.lib;box2d.lib</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib; opengl32.lib; user32.lib; gdi32.lib; shell32.lib;fmodL_vc.lib;fmod_vc.lib;lua54.lib;box2d.lib;assimp-vc143-mtd.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

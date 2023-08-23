@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#define IMGUI_DEFINE_MATH_OPERATORS 
 #include "imgui.h"
 #include "../../source/RequireLibs.h"
 #include "../../source/Components/Systems/SystemsEvents.h"

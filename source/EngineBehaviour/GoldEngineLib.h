@@ -13,8 +13,6 @@
 #include "../Components/AudioSource/AudioSource.h"
 #include "../Components/Camera/Camera2D.h"
 #include "../Components/ECS/ECS.h"
-#include "../Components/Models/Cube2DModel.h"
-#include "../Components/Models/Cube2DModel.h"
 #include "../Components/SceneManager/SceneManager.h"
 #include "../Components/SceneManager/Scene.h"
 #include "../Components/UI/UIImplement.h"
@@ -25,6 +23,12 @@
 #include "../Components/Physics/RigidBody.h"
 #include "../Components/SaveSystem/SaveSystem.h"
 #include "../Components/Skybox/Skybox.h"
-#include "../Components/Shadercompiler/Material.h"
+//#include "../Components/Shadercompiler/Material.h"
 
+//#define MESHCLASS_H
+//#include "../Components/Models/Mesh.h"
+
+
+//#define MODELCLASS_H
+//#include "../Components/Models/Model.h"
 #endif

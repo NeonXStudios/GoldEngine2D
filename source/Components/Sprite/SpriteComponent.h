@@ -6,11 +6,18 @@
 #include "../SceneManager/SceneManager.h"
 #include <glm/gtc/quaternion.hpp>
 
+#define LOADMODELCLASS_H
+#include "../Models/Model.h"
+
 using namespace std;
 
 class SpriteComponent : public Component
 {
+    Shader* ourShader = nullptr;
+    GLD::Model* ourmodel = nullptr;
+
 public:
+
     glm::vec3 ObjectPosition = glm::vec3(0.0f, 0.0f, 0.0f);
     glm::vec3 LocalPosition = glm::vec3(0.0f, 0.0f, 0.0f);
     glm::quat rotation;
@@ -24,7 +31,8 @@ public:
     unsigned int fragmentShader;
 
     string TexturePath = "game/assets/sprites/tile_0115.png";
-
+    string VertexPath = "F:\\VISUAL STUDIO\\GoldEngine2D\\GoldEditor\\def/shaders/model_loading.vs";
+    string FragmentPath = "F:\\VISUAL STUDIO\\GoldEngine2D\\GoldEditor\\def/shaders/model_loading.fs";
 
 
     const char* vertexSh;
@@ -44,6 +52,7 @@ public:
     void start();
     void onupdate();
     void LoadTexture ();
+    void compileShaders();
 
     void clean() override;
 
@@ -51,9 +60,9 @@ public:
     void deserialize(std::string g, std::string path = "") override;
     glm::mat4 GetMatrix();
 
-    //GLfloat* getVertices();
-    //std::size_t getIndicesSize();
-    //GLuint* getIndices();
+    float* getVertices();
+    std::size_t getIndicesSize();
+    GLuint* getIndices();
 
     //SpriteComponent();
 };

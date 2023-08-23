@@ -2,6 +2,7 @@
 #include "../../RequireLibs.h"
 #include "../../Graphics/StartEngineGraphics.h";
 #include "../../Graphics/AppSettings.h"
+#include "../ShaderCompiler/Shader.h"
 
 using namespace std;
 
@@ -20,7 +21,7 @@ public:
     glm::mat4 view;
     glm::vec3 cameraPosition = glm::vec3(0.0f, 0.0f, 10.0f);
     glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);  // Dirección hacia la que mira la cámara
-    glm::vec3 cameraUp = glm::vec3(0.0f, 0.05f, 0.0f);     // Vector hacia arriba de la cámara
+    glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);     // Vector hacia arriba de la cámara
     float fov = 45.0f;  // Campo de visión en grados
     float zoom = 1.0f;
 
@@ -46,7 +47,7 @@ public:
         glm::quat rotationZ = glm::angleAxis(glm::radians(rotationZAngle360), glm::vec3(0.0f, 0.0f, 1.0f));
 
         // Combinar las rotaciones en un solo quaternion
-        cameraRotation = rotationX * rotationY * rotationZ;
+        cameraRotation = rotationZ * rotationY * rotationX;
 
         // Convertir el quaternion a una matriz de rotación
         glm::mat4 rotationMatrix = glm::mat4_cast(cameraRotation);
@@ -82,6 +83,12 @@ public:
 
     glm::mat4 GetView() {
         return view;
+    }
+
+    void Matrix(Shader& shader, const char* uniform)
+    {
+        // Exports camera matrix
+       // glUniformMatrix4fv(glGetUniformLocation(shader.ID, uniform), 1, GL_FALSE, glm::value_ptr(GetProjectionMatrix()));
     }
 };
 

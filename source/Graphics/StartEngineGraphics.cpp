@@ -31,9 +31,9 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
 
 void StartEngineGraphics::StartEngine () {
     glfwInit();
-    glfwWindowHint (GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint (GLFW_CONTEXT_VERSION_MINOR, 3);
-    glfwWindowHint (GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3); // Cambia este número a la versión exacta que desees (4.1, 4.2, etc.)
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 
     StartEngineGraphics::window = glfwCreateWindow(1920, 1080, "GOLD ENGINE", NULL, NULL);
@@ -82,7 +82,7 @@ void StartEngineGraphics::update() {
 
     StartEngineGraphics::engine->lateupdate();
     glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     SceneManager::GetSceneManager()->OpenScene->update();
     StartEngineGraphics::engine->draw();
     StartEngineGraphics::engine->update();
