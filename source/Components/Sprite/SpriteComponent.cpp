@@ -61,11 +61,14 @@ const char* fragmentShaderSource2 = R"(
     }
 )";
 
-void SpriteComponent::start()  {
-    ourShader = new Shader("F:\\VISUAL STUDIO\\GoldEngine2D\\GoldEditor\\def/shaders/model_loading.vs", "F:\\VISUAL STUDIO\\GoldEngine2D\\GoldEditor\\def/shaders/model_loading.fs");
+void SpriteComponent::compileShaders() {
+    ourShader = new Shader(VertexPath.c_str(), FragmentPath.c_str());
     ourmodel = new GLD::Model("F:\\VISUAL STUDIO\\GoldEngine2D\\GoldEditor\\def/models/Plane.fbx");
+}
 
-    vertexShader = glCreateShader(GL_VERTEX_SHADER);
+void SpriteComponent::start()  {
+    compileShaders();
+    /*vertexShader = glCreateShader(GL_VERTEX_SHADER);
     glShaderSource(vertexShader, 1, &vertexShaderSource2, NULL);
     glCompileShader(vertexShader);
 
@@ -99,11 +102,13 @@ void SpriteComponent::start()  {
     glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
     glEnableVertexAttribArray(1);
 
+    */
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
 
     glGenTextures(1, &texture);
     glBindTexture(GL_TEXTURE_2D, texture);
+
 
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
@@ -203,6 +208,8 @@ std::string SpriteComponent::serialize() {
     componentData["scaleglobal"] = GlobalScale;
     componentData["rotation"] = rotationAngle;
     componentData["texturepath"] = TexturePath;
+    componentData["vertexpath"] = TexturePath;
+    componentData["fragmentpath"] = TexturePath;
 
     return componentData.dump();
 }
@@ -234,6 +241,14 @@ void SpriteComponent::deserialize (std::string g, std::string path) {
 
     if (CheckVar::Has(componentData, "texturepath"))
     TexturePath = path + (string)componentData["texturepath"];
+
+
+    if (CheckVar::Has(componentData, "vertexpath"))
+        VertexPath = path + (string)componentData["vertexpath"];
+
+
+    if (CheckVar::Has(componentData, "fragmentpath"))
+        FragmentPath = path + (string)componentData["fragmentpath"];
 
     LoadTexture();
 }

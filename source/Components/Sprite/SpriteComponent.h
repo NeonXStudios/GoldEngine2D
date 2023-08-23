@@ -31,7 +31,8 @@ public:
     unsigned int fragmentShader;
 
     string TexturePath = "game/assets/sprites/tile_0115.png";
-
+    string VertexPath = "F:\\VISUAL STUDIO\\GoldEngine2D\\GoldEditor\\def/shaders/model_loading.vs";
+    string FragmentPath = "F:\\VISUAL STUDIO\\GoldEngine2D\\GoldEditor\\def/shaders/model_loading.fs";
 
 
     const char* vertexSh;
@@ -51,6 +52,7 @@ public:
     void start();
     void onupdate();
     void LoadTexture ();
+    void compileShaders();
 
     void clean() override;
 
