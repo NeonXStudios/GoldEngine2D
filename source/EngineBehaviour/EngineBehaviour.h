@@ -1,7 +1,11 @@
 #pragma once
+#include <iostream>
+using namespace std;
+
 class EngineBehaviour
 {
 public:
+    string GamePath = "";
     virtual void start() = 0;
     virtual void draw() = 0;
     virtual void update() = 0;

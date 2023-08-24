@@ -116,7 +116,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glfw3.lib; opengl32.lib; user32.lib; gdi32.lib; shell32.lib;fmodL_vc.lib;fmod_vc.lib;lua54.lib;box2d.lib</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib; opengl32.lib; user32.lib; gdi32.lib; shell32.lib;fmodL_vc.lib;fmod_vc.lib;lua54.lib;box2d.lib;assimp-vc143-mtd.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)Binarys/lib/</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>

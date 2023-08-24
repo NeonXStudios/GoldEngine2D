@@ -24,7 +24,7 @@ void GoldEditor::draw() {
 
 void GoldEditor::update() {
 
-    std::cout << "SHADER LOAD AND MODEL" << std::endl;
+    //std::cout << "SHADER LOAD AND MODEL" << std::endl;
     //ourShader.Use();
 
     uiMaster->update();
@@ -84,30 +84,6 @@ void GoldEditor::release() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 int main (int argc, char* argv[])
 {
     if (argv[1] == nullptr && !GoldEditor::testMode) {
@@ -115,9 +91,12 @@ int main (int argc, char* argv[])
         return 54;
     }
 
+    string startPath = "C:\\Users\\tupap\\Documents\\GoldEngine\\Projects\\Vortex\\";
+
     if (GoldEditor::editor) throw std::exception("GoldEditor already created.");
     GoldEditor::editor = new GoldEditor();
-    GoldEditor::editor->ProjectPath = "C:\\Users\\tupap\\Documents\\GoldEngine\\Projects\\Vortex\\"/*(string)argv[1]*/;
+    GoldEditor::editor->ProjectPath = startPath/*(string)argv[1]*/;
+    GoldEditor::editor->GamePath = startPath;
     RunEngine* engine = new RunEngine();
    // AppSettings::setTargetFrame (1);
 

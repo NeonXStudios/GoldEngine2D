@@ -1,30 +1,33 @@
 #include "FileSystem.h"
+#include "../../Graphics/StartEngineGraphics.h"
+#include "../../Graphics/AppSettings.h"
+#include <iostream>
+#include <string>
+#include <algorithm>
 
 using namespace std;
 
-string FileSystem::readFile(string path) {
-	std::ifstream fileG (path);
+string FileSystem::GetAsset(string FilePath) {
+
+	if (!AppSettings::gameRunning) {
+		std::string output = StartEngineGraphics::instance->engine->GamePath + "\\assets\\" + FilePath;
+		std::replace(output.begin(), output.end(), '\\', '/');
+		return output;
+
+	}
+	else {
+		std::string output = StartEngineGraphics::instance->engine->GamePath + "\\assets\\" + FilePath;
+		std::replace (output.begin(), output.end(), '\\', '/');
 
 
-	if (!fileG.is_open()) {
-		std::cerr << "ERROR ON TRY OPEN THE FILE!" << std::endl;
-		return "ERROR ON TRY OPEN THE FILE!";
+		std::string::size_type pos = output.find("assets");
+		if (pos != std::string::npos) {
+			output.replace(pos, 6, "/");
+		}
+
+		string newPath = "game/" + output;
+		return newPath;
 	}
 
-	std::string line;
-
-
-	std::string content ((std::istreambuf_iterator <char>(fileG)), std::istreambuf_iterator<char>());
-
-
-	std::cout << "DATA FOUND!" << std::endl;
-
-	if (!content.empty()) {
-		return content;
-	}
-
-	fileG.close();
-
-
-	return "FILE NOT FOUND!";
+	return "RETURN NULL";
 }
