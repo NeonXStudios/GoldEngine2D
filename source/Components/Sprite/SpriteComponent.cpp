@@ -62,10 +62,7 @@ unsigned int indices2[] = {
 //    }
 //)";
 
-void SpriteComponent::compileShaders() {
-    ourShader = new Shader(VertexPath.c_str(), FragmentPath.c_str());
-    ourmodel = new GLD::Model("F:\\VISUAL STUDIO\\GoldEngine2D\\GoldEditor\\def/models/Plane.fbx");
-}
+
 
 void SpriteComponent::start()  {
     compileShaders();
@@ -104,8 +101,8 @@ void SpriteComponent::start()  {
     glEnableVertexAttribArray(1);
 
     */
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
-    glBindVertexArray(0);
+    //glBindBuffer(GL_ARRAY_BUFFER, 0);
+    //glBindVertexArray(0);
 
     glGenTextures(1, &texture);
     glBindTexture(GL_TEXTURE_2D, texture);
@@ -167,10 +164,17 @@ void SpriteComponent::onupdate() {
     glUniform1i(glGetUniformLocation(ourShader->ID, "textureSampler"), 0);
 
     glm::mat4 model = glm::translate(glm::mat4(1.0f), glm::vec3(ObjectPosition.x, ObjectPosition.y, ObjectPosition.z));
-    model = glm::rotate(model, glm::radians(rotationAngleZ), glm::vec3(0.0f, 0.0f, 1.0f)); // Rotación en el eje Z
-    model = glm::rotate(model, glm::radians(rotationAngleY), glm::vec3(0.0f, 1.0f, 0.0f)); // Rotación en el eje Y
-    model = glm::rotate(model, glm::radians(rotationAngleX), glm::vec3(1.0f, 0.0f, 0.0f)); // Rotación en el eje X
-    model = glm::scale(model, glm::vec3(Scale.x * GlobalScale, Scale.y * GlobalScale, 25));
+
+    model = glm::rotate(model, rotationAngleX, glm::vec3(1.0f, 0.0f, 0.0f));
+    model = glm::rotate(model, rotationAngleY, glm::vec3(0.0f, 1.0f, 0.0f));
+    model = glm::rotate(model, rotationAngleZ, glm::vec3(0.0f, 0.0f, 1.0f)); 
+
+    model = glm::scale(model, glm::vec3(Scale.x * GlobalScale, Scale.y * GlobalScale, Scale.z * GlobalScale));
+
+
+    std::cout << "ROT X: " << rotationAngleX << std::endl;
+
+    // Aplicar rotación utilizando glm::rotate
 
     //glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
 
@@ -185,7 +189,6 @@ void SpriteComponent::onupdate() {
     //glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
     //glBindVertexArray(0);
 
-    
     ourShader->setMat4("model", model);
     ourmodel->Draw(*ourShader);
 }
@@ -255,6 +258,7 @@ void SpriteComponent::deserialize (std::string g, std::string path) {
     if (CheckVar::Has(componentData, "fragmentpath"))
     FragmentPath = (string)componentData["fragmentpath"];
 
+    compileShaders();
     LoadTexture();
 }
 
@@ -263,7 +267,7 @@ glm::mat4 SpriteComponent::GetMatrix() {
     glm::mat4 matrix;
 
     matrix = glm::translate  (glm::mat4 (1.0f), glm::vec3 (ObjectPosition.x, ObjectPosition.y, ObjectPosition.z));
-    matrix *= glm::mat4_cast (glm::quat (1, rotationAngleX, rotationAngleY, rotationAngleZ));
+    matrix *= glm::mat4_cast (glm::quat (1, 0, 0, 0));
     matrix = glm::scale (matrix, Scale);
 
     return matrix;
@@ -282,4 +286,12 @@ std::size_t SpriteComponent::getIndicesSize() {
 
 GLuint* SpriteComponent::getIndices() {
     return indices2;
+}
+
+void SpriteComponent::compileShaders() {
+    string newPathVertex = FileSystem::GetAsset(VertexPath);
+    string newPathFrag = FileSystem::GetAsset(FragmentPath);
+
+    ourShader = new Shader(newPathVertex.c_str(), newPathFrag.c_str());
+    ourmodel = new GLD::Model("F:\\VISUAL STUDIO\\GoldEngine2D\\GoldEditor\\def/models/Plane.fbx");
 }

@@ -54,7 +54,7 @@ public:
 			vector.z
 		};
 
-		ImGui::DragFloat3(EditorGUI::_labelPrefix(Name.c_str()).c_str(), v);
+		ImGui::DragFloat3(EditorGUI::_labelPrefix(Name.c_str()).c_str(), v, 0.1f);
 
 		return glm::vec3(v[0], v[1], v[2]);
 	}
