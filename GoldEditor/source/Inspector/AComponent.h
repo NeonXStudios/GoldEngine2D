@@ -32,4 +32,23 @@ public:
 
 
 	virtual void draw(Entity* owner) = 0;
+
+public:
+    static string RemoveDir(string fullPath) {
+        std::string targetFolder = "assets/";
+
+        // Encuentra la posición de la carpeta "assets" en la ruta
+        size_t pos = fullPath.find(targetFolder);
+        if (pos != std::string::npos) {
+            // Extrae la parte de la ruta después de "assets"
+            std::string extractedPath = fullPath.substr(pos + targetFolder.length());
+
+            // Reemplazar barras diagonales normales por barras diagonales invertidas
+            std::replace(extractedPath.begin(), extractedPath.end(), '/', '\\');
+
+            return extractedPath;
+        }
+
+        return "";
+    }
 };

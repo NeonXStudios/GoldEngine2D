@@ -3,6 +3,7 @@
 #include <stb_image.h>
 #include "nlohmann/json.hpp"
 #include "../SaveSystem/CheckVar.h"
+#include "../FileSystem/FileSystem.h"
 
 using namespace nlohmann;
 
@@ -32,34 +33,34 @@ unsigned int indices2[] = {
     4, 0, 3
 };
 
-const char* vertexShaderSource2 = R"(
-    #version 330 core
-    layout (location = 0) in vec3 aPos;
-    layout (location = 1) in vec2 aTexCoord;
-
-    uniform mat4 projection;
-    uniform mat4 view;
-    uniform mat4 model;
-
-    out vec2 TexCoord;
-
-    void main() {
-        gl_Position = projection * view * model * vec4(aPos, 1.0);
-        TexCoord = aTexCoord;
-    }
-)";
-
-const char* fragmentShaderSource2 = R"(
-    #version 330 core
-    in vec2 TexCoord;
-    out vec4 FragColor;
-
-    uniform sampler2D textureSampler;
-
-    void main() {
-        FragColor = texture(textureSampler, TexCoord);
-    }
-)";
+//const char* vertexShaderSource2 = R"(
+//    #version 330 core
+//    layout (location = 0) in vec3 aPos;
+//    layout (location = 1) in vec2 aTexCoord;
+//
+//    uniform mat4 projection;
+//    uniform mat4 view;
+//    uniform mat4 model;
+//
+//    out vec2 TexCoord;
+//
+//    void main() {
+//        gl_Position = projection * view * model * vec4(aPos, 1.0);
+//        TexCoord = aTexCoord;
+//    }
+//)";
+//
+//const char* fragmentShaderSource2 = R"(
+//    #version 330 core
+//    in vec2 TexCoord;
+//    out vec4 FragColor;
+//
+//    uniform sampler2D textureSampler;
+//
+//    void main() {
+//        FragColor = texture(textureSampler, TexCoord);
+//    }
+//)";
 
 void SpriteComponent::compileShaders() {
     ourShader = new Shader(VertexPath.c_str(), FragmentPath.c_str());
@@ -132,8 +133,10 @@ void SpriteComponent::start()  {
 void SpriteComponent::LoadTexture () {
     std::cout << "La nueva ruta de la textura es " << TexturePath << std::endl;
     int width, height, nrChannels;
+    string newPath = FileSystem::GetAsset (TexturePath);
+    std::cout << "NUEVA RUTA:" << newPath << std::endl;
 
-    unsigned char* data = stbi_load(TexturePath.c_str(), &width, &height, &nrChannels, 0);
+    unsigned char* data = stbi_load(newPath.c_str(), &width, &height, &nrChannels, 0);
     if (data) {
         GLenum format;
         if (nrChannels == 1)
@@ -208,8 +211,8 @@ std::string SpriteComponent::serialize() {
     componentData["scaleglobal"] = GlobalScale;
     componentData["rotation"] = rotationAngle;
     componentData["texturepath"] = TexturePath;
-    componentData["vertexpath"] = TexturePath;
-    componentData["fragmentpath"] = TexturePath;
+    componentData["vertexpath"] = VertexPath;
+    componentData["fragmentpath"] = FragmentPath;
 
     return componentData.dump();
 }
@@ -239,16 +242,18 @@ void SpriteComponent::deserialize (std::string g, std::string path) {
     if (CheckVar::Has(componentData, "rotation"))
     rotationAngle = (float)componentData["rotation"];
 
-    if (CheckVar::Has(componentData, "texturepath"))
-    TexturePath = path + (string)componentData["texturepath"];
+    if (CheckVar::Has(componentData, "texturepath")) {
+        string newPath = (string)componentData["texturepath"];
+        TexturePath = newPath;
+    }
 
 
     if (CheckVar::Has(componentData, "vertexpath"))
-        VertexPath = path + (string)componentData["vertexpath"];
+    VertexPath = (string)componentData["vertexpath"];
 
 
     if (CheckVar::Has(componentData, "fragmentpath"))
-        FragmentPath = path + (string)componentData["fragmentpath"];
+    FragmentPath = (string)componentData["fragmentpath"];
 
     LoadTexture();
 }

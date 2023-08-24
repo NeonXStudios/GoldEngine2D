@@ -9,5 +9,5 @@ using namespace std;
 class FileSystem
 {
 public:
-	static string readFile (string path);
+	static string GetAsset (string path);
 };
