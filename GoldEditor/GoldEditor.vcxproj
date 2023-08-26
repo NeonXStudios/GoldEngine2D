@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NVIDIA.PhysX.4.1.229882250\build\native\NVIDIA.PhysX.props" Condition="Exists('..\packages\NVIDIA.PhysX.4.1.229882250\build\native\NVIDIA.PhysX.props')" />
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -123,13 +124,13 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)Binarys/include/;$(SolutionDir)Binarys/include/imgui;$(SolutionDir)Binarys/include/lua;$(SolutionDir)source/EngineBehaviour/;$(SolutionDir)Binarys/include/imguinode</AdditionalIncludeDirectories>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)Binarys/lib/</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib; opengl32.lib; user32.lib; gdi32.lib; shell32.lib;fmodL_vc.lib;fmod_vc.lib;lua54.lib;box2d.lib;assimp-vc143-mtd.lib</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;user32.lib;gdi32.lib;shell32.lib;fmodL_vc.lib;fmod_vc.lib;lua54.lib;box2d.lib;assimp-vc143-mtd.lib;nvfloweditor.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -153,6 +154,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\bullet3\src\clew\clew.c" />
     <ClCompile Include="..\Binarys\c\glad.c" />
     <ClCompile Include="..\Binarys\include\imguizmo\ImGuizmo.cpp" />
     <ClCompile Include="..\Binarys\include\imgui\imgui.cpp" />
@@ -195,6 +197,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\bullet3\src\clew\clew.h" />
     <ClInclude Include="..\Binarys\include\imguizmo\ImGuizmo.h" />
     <ClInclude Include="..\Binarys\include\imgui\imconfig.h" />
     <ClInclude Include="..\Binarys\include\imgui\imgui.h" />
@@ -241,7 +244,18 @@
   <ItemGroup>
     <ResourceCompile Include="GoldEditor.rc" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\packages\NVIDIA.PhysX.4.1.229882250\build\native\NVIDIA.PhysX.targets" Condition="Exists('..\packages\NVIDIA.PhysX.4.1.229882250\build\native\NVIDIA.PhysX.targets')" />
   </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NVIDIA.PhysX.4.1.229882250\build\native\NVIDIA.PhysX.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NVIDIA.PhysX.4.1.229882250\build\native\NVIDIA.PhysX.props'))" />
+    <Error Condition="!Exists('..\packages\NVIDIA.PhysX.4.1.229882250\build\native\NVIDIA.PhysX.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NVIDIA.PhysX.4.1.229882250\build\native\NVIDIA.PhysX.targets'))" />
+  </Target>
 </Project>

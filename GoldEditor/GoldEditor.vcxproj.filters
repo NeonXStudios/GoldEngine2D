@@ -155,6 +155,9 @@
     <ClCompile Include="..\Binarys\include\imguizmo\ImGuizmo.cpp">
       <Filter>RecursosEditor\IMGUIZMO</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\bullet3\src\clew\clew.c">
+      <Filter>RecursosEditor</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />
@@ -264,6 +267,9 @@
     <ClInclude Include="..\Binarys\include\imguizmo\ImGuizmo.h">
       <Filter>RecursosEditor\IMGUIZMO</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\bullet3\src\clew\clew.h">
+      <Filter>RecursosEditor</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\source\icons\Icon.ico">
@@ -280,5 +286,8 @@
     <ResourceCompile Include="GoldEditor.rc">
       <Filter>RecursosEditor</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

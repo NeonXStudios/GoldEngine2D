@@ -172,7 +172,7 @@ void SpriteComponent::onupdate() {
     model = glm::scale(model, glm::vec3(Scale.x * GlobalScale, Scale.y * GlobalScale, Scale.z * GlobalScale));
 
 
-    std::cout << "ROT X: " << rotationAngleX << std::endl;
+    //std::cout << "ROT X: " << rotationAngleX << std::endl;
 
     // Aplicar rotación utilizando glm::rotate
 
@@ -293,5 +293,5 @@ void SpriteComponent::compileShaders() {
     string newPathFrag = FileSystem::GetAsset(FragmentPath);
 
     ourShader = new Shader(newPathVertex.c_str(), newPathFrag.c_str());
-    ourmodel = new GLD::Model("F:\\VISUAL STUDIO\\GoldEngine2D\\GoldEditor\\def/models/Plane.fbx");
+    ourmodel = new GLD::Model("F:\\VISUAL STUDIO\\GoldEngine2D\\GoldEditor\\def/models/Terrain.fbx");
 }
