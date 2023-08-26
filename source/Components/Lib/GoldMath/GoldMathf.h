@@ -173,11 +173,11 @@ public:
 		return 3.14159;
 	};
 
-	static double SmoothStep(double start, double end, double value) {
+	/*static double SmoothStep(double start, double end, double value) {
 		value = std::clamp(value, 0.0, 1.0);
 		double smoothedValue = value * value * (3 - 2 * value);
 		return std::lerp(start, end, smoothedValue);
-	}
+	}*/
 
 	static double Tan(double degrees) {
 		double radians = degrees * GoldMathf::PI() / 180.0;

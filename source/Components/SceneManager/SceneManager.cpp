@@ -58,8 +58,17 @@ Entity* SceneManager::GetObjectByID (int id) {
 }
 
 Entity* SceneManager::Destroy(Entity* obj) {
-	if (obj != nullptr) {
+	//C++20 REQUIRE
+	/*if (obj != nullptr) {
 		auto it = std::ranges::find(OpenScene->objectsInScene, obj);
+		if (it != OpenScene->objectsInScene.end()) {
+			delete obj;
+			OpenScene->objectsInScene.erase(it);
+		}
+	}*/
+
+	if (obj != nullptr) {
+		auto it = std::find(OpenScene->objectsInScene.begin(), OpenScene->objectsInScene.end(), obj);
 		if (it != OpenScene->objectsInScene.end()) {
 			delete obj;
 			OpenScene->objectsInScene.erase(it);

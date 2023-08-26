@@ -226,6 +226,12 @@
     <ClCompile Include="source\Components\Models\TextureManager.cpp">
       <Filter>Engine\02_Components\Models</Filter>
     </ClCompile>
+    <ClCompile Include="source\EngineBehaviour\PhysicsLib.cpp">
+      <Filter>Engine\02_Components\Libs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\bullet3\src\clew\clew.c">
+      <Filter>Recursos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Components\Camera\Camera2D.h">
@@ -369,6 +375,12 @@
     <ClInclude Include="source\Components\Models\TextureManager.h">
       <Filter>Engine\02_Components\Models</Filter>
     </ClInclude>
+    <ClInclude Include="source\EngineBehaviour\PhysicsLib.h">
+      <Filter>Engine\02_Components\Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bullet3\src\clew\clew.h">
+      <Filter>Recursos</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GoldEngine.rc">
@@ -385,5 +397,8 @@
     <Image Include="source\icons\Icon.ico">
       <Filter>Recursos</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\NVIDIA.PhysX.4.1.229882250\build\native\NVIDIA.PhysX.props" Condition="Exists('packages\NVIDIA.PhysX.4.1.229882250\build\native\NVIDIA.PhysX.props')" />
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -124,8 +125,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)Binarys/include/;$(SolutionDir)Binarys/include/imgui;$(SolutionDir)Binarys/include/lua</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)Binarys/include/;$(SolutionDir)Binarys/include/imgui;$(SolutionDir)Binarys/include/lua;$(SolutionDir)Binarys/include/Bullet3</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -155,6 +156,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\bullet3\src\clew\clew.c" />
     <ClCompile Include="Binarys\c\glad.c" />
     <ClCompile Include="Binarys\include\imgui\imgui.cpp" />
     <ClCompile Include="Binarys\include\imgui\imgui_demo.cpp" />
@@ -195,12 +197,14 @@
     <ClCompile Include="source\Components\UI\UIImplement.cpp" />
     <ClCompile Include="source\EngineBehaviour\EngineBehaviour.cpp" />
     <ClCompile Include="source\EngineBehaviour\GoldEngineLib.cpp" />
+    <ClCompile Include="source\EngineBehaviour\PhysicsLib.cpp" />
     <ClCompile Include="source\Graphics\AppSettings.cpp" />
     <ClCompile Include="source\Graphics\RunEngine.cpp" />
     <ClCompile Include="source\Graphics\StartEngineGraphics.cpp" />
     <ClCompile Include="source\STBimplement.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\bullet3\src\clew\clew.h" />
     <ClInclude Include="Binarys\include\imgui\imconfig.h" />
     <ClInclude Include="Binarys\include\imgui\imgui.h" />
     <ClInclude Include="Binarys\include\imgui\imgui_impl_glfw.h" />
@@ -244,6 +248,7 @@
     <ClInclude Include="source\Components\UI\UIStyle.h" />
     <ClInclude Include="source\EngineBehaviour\EngineBehaviour.h" />
     <ClInclude Include="source\EngineBehaviour\GoldEngineLib.h" />
+    <ClInclude Include="source\EngineBehaviour\PhysicsLib.h" />
     <ClInclude Include="source\Graphics\AppSettings.h" />
     <ClInclude Include="source\Graphics\RunEngine.h" />
     <ClInclude Include="source\Graphics\StartEngineGraphics.h" />
@@ -257,7 +262,18 @@
     <Image Include="source\icons\engineIcon.png" />
     <Image Include="source\icons\Icon.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="packages\NVIDIA.PhysX.4.1.229882250\build\native\NVIDIA.PhysX.targets" Condition="Exists('packages\NVIDIA.PhysX.4.1.229882250\build\native\NVIDIA.PhysX.targets')" />
   </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\NVIDIA.PhysX.4.1.229882250\build\native\NVIDIA.PhysX.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\NVIDIA.PhysX.4.1.229882250\build\native\NVIDIA.PhysX.props'))" />
+    <Error Condition="!Exists('packages\NVIDIA.PhysX.4.1.229882250\build\native\NVIDIA.PhysX.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\NVIDIA.PhysX.4.1.229882250\build\native\NVIDIA.PhysX.targets'))" />
+  </Target>
 </Project>

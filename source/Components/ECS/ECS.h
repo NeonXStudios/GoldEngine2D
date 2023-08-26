@@ -77,13 +77,28 @@ public:
 
 	void update()
 	{
-		for (Entity* g : childrens) {
+		//C++20 REQUIRE FOR THIS
+		/*for (Entity* g : childrens) {
 			if (g != nullptr && g->parent != this) {
 				auto it = std::ranges::find(childrens, g);
 				if (it != childrens.end()) {
 					delete g;
 					childrens.erase(it);
 				}
+			}
+		}*/
+
+		for (auto it = childrens.begin(); it != childrens.end();) {
+			Entity* g = *it;
+			if (g != nullptr && g->parent != this) {
+				it = std::find(childrens.begin(), childrens.end(), g);
+				if (it != childrens.end()) {
+					delete g;
+					it = childrens.erase(it);
+				}
+			}
+			else {
+				++it;
 			}
 		}
 
