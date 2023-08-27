@@ -9,8 +9,8 @@ void CSprite::start() {
 }
 
 void CSprite::draw(Entity* owner) {
-    EditorGUI::Text("Sprite");
-
+    ImGui::Button("Sprite", ImVec2(ImGui::GetContentRegionAvail().x, 20));
+    ImGui::Spacing();
     string newPath = EditorGUI::InputText("File Path", owner->getComponent<SpriteComponent>().TexturePath);
     if (ImGui::BeginDragDropTarget())
     {

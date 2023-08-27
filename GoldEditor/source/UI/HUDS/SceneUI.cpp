@@ -1,4 +1,5 @@
 #pragma once
+#include "../../Editor/GoldEditor.h"
 #include "SceneUI.h"
 #include "../UIManager.h"
 #include <imguizmo/ImGuizmo.h>
@@ -68,6 +69,8 @@ using namespace std;
 
         // Invertimos las coordenadas de textura en el eje Y antes de mostrar la imagen
         ImGui::Image((void*)(intptr_t)texture, ImVec2(WindowXSize, WindowYSize), ImVec2(ImVec2(0, 1)), ImVec2(ImVec2(1, 0)));
+        GoldEditor::editor->activeMouse = ImGui::IsItemHovered();
+
 #pragma region IMGUIZMO 
 
 
@@ -77,8 +80,8 @@ using namespace std;
             static ImGuizmo::OPERATION gizmoOperation(ImGuizmo::TRANSLATE);
             float* matrix = (float*)glm::value_ptr(UIManager::instance->inspectorui->ObjectSelectToInspector->getComponent<SpriteComponent>().GetMatrix());
 
-            float* view = (float*)glm::value_ptr(SceneManager::GetSceneManager()->OpenScene->worldCamera->GetView());
             float* projection = (float*)glm::value_ptr(SceneManager::GetSceneManager()->OpenScene->worldCamera->GetProjectionMatrix());
+            float* view = (float*)glm::value_ptr(SceneManager::GetSceneManager()->OpenScene->worldCamera->GetView());
             ImGuizmo::SetRect(p.x, p.y, size.x, size.y);
 
             const bool res = ImGuizmo::Manipulate(view, projection, gizmoOperation, gizmoMode, matrix);

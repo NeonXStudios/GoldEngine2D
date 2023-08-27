@@ -16,6 +16,11 @@ public:
     UIManager* uiMaster;
     string ProjectPath = "";
     float cameraSpeed = 1;
+    float sensitivity = 100.0f;
+    bool firstClick = true;
+    bool activeMouse;
+
+
     //Shader ourShader;
 
     void start() override;

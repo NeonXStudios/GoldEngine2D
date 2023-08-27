@@ -7,7 +7,8 @@ void CRigidBody::start() {
 
 
 void CRigidBody::draw(Entity* owner) {
-    EditorGUI::Text ("Rigid Body 2D");
+    ImGui::Button("Rigidbody2D", ImVec2(ImGui::GetContentRegionAvail().x, 20));
+    ImGui::Spacing();
     RigidBody& rigidBody = owner->getComponent<RigidBody>();
     ImGui::Spacing();
     ImGui::Spacing();
@@ -49,4 +50,3 @@ void CRigidBody::draw(Entity* owner) {
         rigidBody.UpdateCollisions();
     }
 }
-

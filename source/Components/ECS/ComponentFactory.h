@@ -26,5 +26,15 @@ public:
 			ScriptCompiler* g = &owner->addComponent<ScriptCompiler>();
 			g->deserialize (data, path);
 		}
+
+		if (componentName == "Rigidbody3d") {
+			Rigidbody3d* g = &owner->addComponent<Rigidbody3d>();
+			g->deserialize(data, path);
+		}
+
+		if (componentName == "BoxCollider") {
+			BoxCollider* g = &owner->addComponent<BoxCollider>();
+			g->deserialize(data, path);
+		}
 	}
 };

@@ -39,7 +39,10 @@ unsigned int skyboxIndices[] =
 
 
 void Skybox::init() {
-	unsigned int skyboxVAO, skyboxVBO, skyboxEBO;
+	skyboxShader = new Shader(vertexPath.c_str(), fragPath.c_str());
+	skyboxShader->use();
+	glUniform1i(glGetUniformLocation(skyboxShader->ID, "skybox"), 0);
+
 	glGenVertexArrays(1, &skyboxVAO);
 	glGenBuffers(1, &skyboxVBO);
 	glGenBuffers(1, &skyboxEBO);
@@ -55,7 +58,7 @@ void Skybox::init() {
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
 
-unsigned int cubemapTexture;
+	
 	glGenTextures(1, &cubemapTexture);
 	glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapTexture);
 	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
@@ -64,8 +67,10 @@ unsigned int cubemapTexture;
 	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
 	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
+	// This might help with seams on some systems
+	//glEnable(GL_TEXTURE_CUBE_MAP_SEAMLESS);
 
-
+	// Cycles through all the textures and attaches them to the cubemap object
 	for (unsigned int i = 0; i < 6; i++)
 	{
 		int width, height, nrChannels;
@@ -94,7 +99,7 @@ unsigned int cubemapTexture;
 		}
 	}
 
-	std::cout << "STARTING SKYBOX" << std::endl;
+
 }
 
 void Skybox::draw() {
@@ -102,7 +107,26 @@ void Skybox::draw() {
 }
 
 void Skybox::update() {
+	glDepthFunc(GL_LEQUAL);
+	skyboxShader->use();
+	glm::mat4 view = glm::mat4(1.0f);
+	glm::mat4 projection = glm::mat4(1.0f);
+	// We make the mat4 into a mat3 and then a mat4 again in order to get rid of the last row and column
+	// The last row and column affect the translation of the skybox (which we don't want to affect)
+	Camera camera = *SceneManager::GetSceneManager()->OpenScene->worldCamera;
+	view = glm::mat4(glm::mat3(glm::lookAt(camera.cameraPosition, camera.cameraPosition + glm::vec3 (camera.rotationXAngle, camera.rotationYAngle, camera.rotationZAngle), camera.cameraUp)));
+	projection = glm::perspective(glm::radians(45.0f), (float)AppSettings::ScreenWidth / AppSettings::ScreenHeight, 0.1f, 100.0f);
+	glUniformMatrix4fv(glGetUniformLocation(skyboxShader->ID, "view"), 1, GL_FALSE, glm::value_ptr(view));
+	glUniformMatrix4fv(glGetUniformLocation(skyboxShader->ID, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
 
+
+	// Draws the cubemap as the last object so we can save a bit of performance by discarding all fragments
+	// where an object is present (a depth of 1.0f will always fail against any object's depth value)
+	glBindVertexArray(skyboxVAO);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapTexture);
+	glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
+	glBindVertexArray(0);
 }
 
 void Skybox::clean() {

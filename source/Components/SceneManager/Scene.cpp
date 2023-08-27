@@ -6,10 +6,15 @@
 
 void Scene::start() {
 	CreateGravity();
+
+	//worldCamera = new Camera (AppSettings::ScreenWidth, AppSettings::ScreenHeight, glm::vec3(0.0f, 0.0f, 2.0f));
 	worldCamera->start();
 }
 
 void Scene::update() {
+	//worldCamera->Inputs(StartEngineGraphics::window);
+	//worldCamera->updateMatrix(45.0f, 0.1f, 1000.0f);
+
 	worldCamera->update();
 
 	if (AppSettings::gameRunning) {
