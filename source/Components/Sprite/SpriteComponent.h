@@ -30,9 +30,9 @@ public:
     unsigned int vertexShader;
     unsigned int fragmentShader;
 
-    string TexturePath = "sprites/tile_0115.png";
-    string VertexPath = "shaders/vert.glsl";
-    string FragmentPath = "shaders/frag.glsl";
+    string TexturePath = "game/assets/sprites/tile_0115.png";
+    string VertexPath = "F:\\VISUAL STUDIO\\GoldEngine2D\\GoldEditor\\def/shaders/model_loading.vs";
+    string FragmentPath = "F:\\VISUAL STUDIO\\GoldEngine2D\\GoldEditor\\def/shaders/model_loading.fs";
 
 
     const char* vertexSh;

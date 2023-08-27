@@ -98,7 +98,7 @@ using namespace std;
 
             //std::cout << "GIZMO OVER: " << ignoreGui << std::endl;
 
-            //UIManager::instance->inspectorui->ObjectSelectToInspector->getComponent<SpriteComponent>().rotation = glm::quat(glm::radians(matrixRotation));
+            UIManager::instance->inspectorui->ObjectSelectToInspector->getComponent<SpriteComponent>().rotation = glm::quat(glm::radians(matrixRotation));
         }
 #pragma endregion
 
