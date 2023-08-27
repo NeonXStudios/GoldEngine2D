@@ -4,7 +4,7 @@
 using namespace std;
 GoldEditor* GoldEditor::editor = nullptr;
 bool GoldEditor::testMode = true;
-//Skybox* sky = new Skybox();
+Skybox* sky = new Skybox();
 
 void GoldEditor::start() {
     ProjectPath = ProjectPath;
@@ -13,7 +13,7 @@ void GoldEditor::start() {
     uiMaster->start();
     std::cout << "Starting editor" << endl;
     SaveData::loadScene();
-    //sky->init();
+    sky->init();
 }
 
 
@@ -24,7 +24,7 @@ void GoldEditor::draw() {
 
 
 void GoldEditor::update() {
-    //sky->update();
+    sky->update();
     uiMaster->update();
     Camera* cam = SceneManager::GetSceneManager()->OpenScene->worldCamera;
 

@@ -1,2 +1,253 @@
 ﻿E:\VS2022IDE\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: El directorio Output no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Output.
-  GoldEditor.vcxproj -> F:\VISUAL STUDIO\GoldEngine2D\BuildHub\Editor\GoldEditor.exe
+  SaveData.cpp
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(38,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(39,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(40,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ComponentFactory.h(31,4): error C2065: 'Rigidbody3d': identificador no declarado
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ComponentFactory.h(31,17): error C2065: 'g': identificador no declarado
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ComponentFactory.h(31,42): error C2065: 'Rigidbody3d': identificador no declarado
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ComponentFactory.h(31,27): error C2672: 'Entity::addComponent': no se encontró una función sobrecargada que coincida
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ECS.h(138,5): message : puede ser 'T &Entity::addComponent(TArgs &&...)'
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ComponentFactory.h(31,42): message : "Entity::addComponent": argumento plantilla no válido para "T", tipo esperado
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ComponentFactory.h(32,4): error C2065: 'g': identificador no declarado
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ComponentFactory.h(36,4): error C2065: 'BoxCollider': identificador no declarado
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ComponentFactory.h(36,17): error C2065: 'g': identificador no declarado
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ComponentFactory.h(36,42): error C2065: 'BoxCollider': identificador no declarado
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ComponentFactory.h(36,27): error C2672: 'Entity::addComponent': no se encontró una función sobrecargada que coincida
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ECS.h(138,5): message : puede ser 'T &Entity::addComponent(TArgs &&...)'
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ComponentFactory.h(36,42): message : "Entity::addComponent": argumento plantilla no válido para "T", tipo esperado
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ComponentFactory.h(37,4): error C2065: 'g': identificador no declarado
+  GameCompiler.cpp
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(38,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(39,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(40,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\DragAndDrop.h(18,25): warning C4101: 'filePathN': variable local sin referencia
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(184,41): warning C4101: 'filePathN': variable local sin referencia
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(203,41): warning C4101: 'filePathN': variable local sin referencia
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(223,41): warning C4101: 'filePathN': variable local sin referencia
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(271,41): warning C4101: 'filePathN': variable local sin referencia
+  CBoxCollider3D.cpp
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(38,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(39,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(40,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CBoxCollider3D.cpp(13,23): error C2065: 'BoxCollider': identificador no declarado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CBoxCollider3D.cpp(13,7): error C2672: 'Entity::getComponent': no se encontró una función sobrecargada que coincida
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ECS.h(151,26): message : puede ser 'T &Entity::getComponent(void) const'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CBoxCollider3D.cpp(13,23): message : "Entity::getComponent": argumento plantilla no válido para "T", tipo esperado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CBoxCollider3D.cpp(13,101): error C2065: 'BoxCollider': identificador no declarado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CBoxCollider3D.cpp(13,85): error C2672: 'Entity::getComponent': no se encontró una función sobrecargada que coincida
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ECS.h(151,26): message : puede ser 'T &Entity::getComponent(void) const'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CBoxCollider3D.cpp(13,101): message : "Entity::getComponent": argumento plantilla no válido para "T", tipo esperado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CBoxCollider3D.cpp(13,59): error C2660: 'EditorGUI::Vector3': la función no acepta 1 argumentos
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\EditorUI\EditorGUI.h(50,19): message : vea la declaración de 'EditorGUI::Vector3'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CBoxCollider3D.cpp(13,59): message : al hacer coincidir la lista de argumentos '(const char [9])'
+  CRigidBody.cpp
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(38,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(39,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(40,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+  CRigidbody3D.cpp
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(38,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(39,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(40,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(11,31): error C2065: 'Rigidbody3d': identificador no declarado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(11,15): error C2672: 'Entity::getComponent': no se encontró una función sobrecargada que coincida
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ECS.h(151,26): message : puede ser 'T &Entity::getComponent(void) const'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(11,31): message : "Entity::getComponent": argumento plantilla no válido para "T", tipo esperado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(11,108): error C2065: 'Rigidbody3d': identificador no declarado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(11,92): error C2672: 'Entity::getComponent': no se encontró una función sobrecargada que coincida
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ECS.h(151,26): message : puede ser 'T &Entity::getComponent(void) const'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(11,108): message : "Entity::getComponent": argumento plantilla no válido para "T", tipo esperado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(11,64): error C2660: 'EditorGUI::Float': la función no acepta 1 argumentos
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\EditorUI\EditorGUI.h(27,15): message : vea la declaración de 'EditorGUI::Float'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(11,64): message : al hacer coincidir la lista de argumentos '(const char [5])'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(18,81): error C2065: 'Rigidbody3d': identificador no declarado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(18,65): error C2672: 'Entity::getComponent': no se encontró una función sobrecargada que coincida
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ECS.h(151,26): message : puede ser 'T &Entity::getComponent(void) const'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(18,81): message : "Entity::getComponent": argumento plantilla no válido para "T", tipo esperado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(18,29): error C2660: 'EditorGUI::Toggle': la función no acepta 1 argumentos
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\EditorUI\EditorGUI.h(45,14): message : vea la declaración de 'EditorGUI::Toggle'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(18,29): message : al hacer coincidir la lista de argumentos '(const char [13])'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(19,80): error C2065: 'Rigidbody3d': identificador no declarado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(19,64): error C2672: 'Entity::getComponent': no se encontró una función sobrecargada que coincida
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ECS.h(151,26): message : puede ser 'T &Entity::getComponent(void) const'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(19,80): message : "Entity::getComponent": argumento plantilla no válido para "T", tipo esperado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(19,28): error C2660: 'EditorGUI::Toggle': la función no acepta 1 argumentos
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\EditorUI\EditorGUI.h(45,14): message : vea la declaración de 'EditorGUI::Toggle'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(19,28): message : al hacer coincidir la lista de argumentos '(const char [12])'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(20,31): error C2065: 'Rigidbody3d': identificador no declarado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(20,15): error C2672: 'Entity::getComponent': no se encontró una función sobrecargada que coincida
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ECS.h(151,26): message : puede ser 'T &Entity::getComponent(void) const'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(20,31): message : "Entity::getComponent": argumento plantilla no válido para "T", tipo esperado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(21,31): error C2065: 'Rigidbody3d': identificador no declarado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(21,15): error C2672: 'Entity::getComponent': no se encontró una función sobrecargada que coincida
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ECS.h(151,26): message : puede ser 'T &Entity::getComponent(void) const'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(21,31): message : "Entity::getComponent": argumento plantilla no válido para "T", tipo esperado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(31,66): error C2065: 'Rigidbody3d': identificador no declarado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(31,50): error C2672: 'Entity::getComponent': no se encontró una función sobrecargada que coincida
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ECS.h(151,26): message : puede ser 'T &Entity::getComponent(void) const'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(31,66): message : "Entity::getComponent": argumento plantilla no válido para "T", tipo esperado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(31,25): error C2660: 'EditorGUI::Toggle': la función no acepta 1 argumentos
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\EditorUI\EditorGUI.h(45,14): message : vea la declaración de 'EditorGUI::Toggle'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(31,25): message : al hacer coincidir la lista de argumentos '(const char [2])'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(33,66): error C2065: 'Rigidbody3d': identificador no declarado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(33,50): error C2672: 'Entity::getComponent': no se encontró una función sobrecargada que coincida
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ECS.h(151,26): message : puede ser 'T &Entity::getComponent(void) const'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(33,66): message : "Entity::getComponent": argumento plantilla no válido para "T", tipo esperado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(33,25): error C2660: 'EditorGUI::Toggle': la función no acepta 1 argumentos
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\EditorUI\EditorGUI.h(45,14): message : vea la declaración de 'EditorGUI::Toggle'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(33,25): message : al hacer coincidir la lista de argumentos '(const char [2])'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(35,66): error C2065: 'Rigidbody3d': identificador no declarado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(35,50): error C2672: 'Entity::getComponent': no se encontró una función sobrecargada que coincida
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ECS.h(151,26): message : puede ser 'T &Entity::getComponent(void) const'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(35,66): message : "Entity::getComponent": argumento plantilla no válido para "T", tipo esperado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(35,25): error C2660: 'EditorGUI::Toggle': la función no acepta 1 argumentos
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\EditorUI\EditorGUI.h(45,14): message : vea la declaración de 'EditorGUI::Toggle'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(35,25): message : al hacer coincidir la lista de argumentos '(const char [2])'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(37,31): error C2065: 'Rigidbody3d': identificador no declarado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(37,15): error C2672: 'Entity::getComponent': no se encontró una función sobrecargada que coincida
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ECS.h(151,26): message : puede ser 'T &Entity::getComponent(void) const'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(37,31): message : "Entity::getComponent": argumento plantilla no válido para "T", tipo esperado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(38,31): error C2065: 'Rigidbody3d': identificador no declarado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(38,15): error C2672: 'Entity::getComponent': no se encontró una función sobrecargada que coincida
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ECS.h(151,26): message : puede ser 'T &Entity::getComponent(void) const'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(38,31): message : "Entity::getComponent": argumento plantilla no válido para "T", tipo esperado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(39,31): error C2065: 'Rigidbody3d': identificador no declarado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(39,15): error C2672: 'Entity::getComponent': no se encontró una función sobrecargada que coincida
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ECS.h(151,26): message : puede ser 'T &Entity::getComponent(void) const'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(39,31): message : "Entity::getComponent": argumento plantilla no válido para "T", tipo esperado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(47,66): error C2065: 'Rigidbody3d': identificador no declarado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(47,50): error C2672: 'Entity::getComponent': no se encontró una función sobrecargada que coincida
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ECS.h(151,26): message : puede ser 'T &Entity::getComponent(void) const'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(47,66): message : "Entity::getComponent": argumento plantilla no válido para "T", tipo esperado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(47,25): error C2660: 'EditorGUI::Toggle': la función no acepta 1 argumentos
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\EditorUI\EditorGUI.h(45,14): message : vea la declaración de 'EditorGUI::Toggle'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(47,25): message : al hacer coincidir la lista de argumentos '(const char [2])'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(49,66): error C2065: 'Rigidbody3d': identificador no declarado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(49,50): error C2672: 'Entity::getComponent': no se encontró una función sobrecargada que coincida
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ECS.h(151,26): message : puede ser 'T &Entity::getComponent(void) const'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(49,66): message : "Entity::getComponent": argumento plantilla no válido para "T", tipo esperado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(49,25): error C2660: 'EditorGUI::Toggle': la función no acepta 1 argumentos
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\EditorUI\EditorGUI.h(45,14): message : vea la declaración de 'EditorGUI::Toggle'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(49,25): message : al hacer coincidir la lista de argumentos '(const char [2])'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(51,66): error C2065: 'Rigidbody3d': identificador no declarado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(51,50): error C2672: 'Entity::getComponent': no se encontró una función sobrecargada que coincida
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ECS.h(151,26): message : puede ser 'T &Entity::getComponent(void) const'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(51,66): message : "Entity::getComponent": argumento plantilla no válido para "T", tipo esperado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(51,25): error C2660: 'EditorGUI::Toggle': la función no acepta 1 argumentos
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\EditorUI\EditorGUI.h(45,14): message : vea la declaración de 'EditorGUI::Toggle'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(51,25): message : al hacer coincidir la lista de argumentos '(const char [2])'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(53,31): error C2065: 'Rigidbody3d': identificador no declarado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(53,15): error C2672: 'Entity::getComponent': no se encontró una función sobrecargada que coincida
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ECS.h(151,26): message : puede ser 'T &Entity::getComponent(void) const'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(53,31): message : "Entity::getComponent": argumento plantilla no válido para "T", tipo esperado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(54,31): error C2065: 'Rigidbody3d': identificador no declarado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(54,15): error C2672: 'Entity::getComponent': no se encontró una función sobrecargada que coincida
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ECS.h(151,26): message : puede ser 'T &Entity::getComponent(void) const'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(54,31): message : "Entity::getComponent": argumento plantilla no válido para "T", tipo esperado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(55,31): error C2065: 'Rigidbody3d': identificador no declarado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(55,15): error C2672: 'Entity::getComponent': no se encontró una función sobrecargada que coincida
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ECS.h(151,26): message : puede ser 'T &Entity::getComponent(void) const'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp(55,31): message : "Entity::getComponent": argumento plantilla no válido para "T", tipo esperado
+  CScript.cpp
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(38,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(39,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(40,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\DragAndDrop.h(18,25): warning C4101: 'filePathN': variable local sin referencia
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(184,41): warning C4101: 'filePathN': variable local sin referencia
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(203,41): warning C4101: 'filePathN': variable local sin referencia
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(223,41): warning C4101: 'filePathN': variable local sin referencia
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(271,41): warning C4101: 'filePathN': variable local sin referencia
+  InspectorComponents.cpp
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(38,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(39,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(40,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\InspectorComponents.cpp(11,32): error C2065: 'Rigidbody3d': identificador no declarado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\InspectorComponents.cpp(11,21): error C2672: 'ComponentUIDrawer::updateUI': no se encontró una función sobrecargada que coincida
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\ComponentUIDrawer.h(11,17): message : puede ser 'void ComponentUIDrawer::updateUI(Entity *,int,AComponent *)'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\InspectorComponents.cpp(11,32): message : "ComponentUIDrawer::updateUI": argumento plantilla no válido para "T", tipo esperado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\InspectorComponents.cpp(12,32): error C2065: 'BoxCollider': identificador no declarado
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\InspectorComponents.cpp(12,21): error C2672: 'ComponentUIDrawer::updateUI': no se encontró una función sobrecargada que coincida
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\ComponentUIDrawer.h(11,17): message : puede ser 'void ComponentUIDrawer::updateUI(Entity *,int,AComponent *)'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\InspectorComponents.cpp(12,32): message : "ComponentUIDrawer::updateUI": argumento plantilla no válido para "T", tipo esperado
+  ScriptEditor.cpp
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(38,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(39,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(40,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\DragAndDrop.h(18,25): warning C4101: 'filePathN': variable local sin referencia
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(184,41): warning C4101: 'filePathN': variable local sin referencia
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(203,41): warning C4101: 'filePathN': variable local sin referencia
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(223,41): warning C4101: 'filePathN': variable local sin referencia
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(271,41): warning C4101: 'filePathN': variable local sin referencia
+  BarMenuUI.cpp
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(38,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(39,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(40,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\DragAndDrop.h(18,25): warning C4101: 'filePathN': variable local sin referencia
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(184,41): warning C4101: 'filePathN': variable local sin referencia
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(203,41): warning C4101: 'filePathN': variable local sin referencia
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(223,41): warning C4101: 'filePathN': variable local sin referencia
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(271,41): warning C4101: 'filePathN': variable local sin referencia
+  UIManager.cpp
