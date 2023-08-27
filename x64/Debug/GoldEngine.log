@@ -1,4 +1,33 @@
-﻿  ComponentFactory.cpp
+﻿  AudioSource.cpp
+  DrawBox.cpp
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(38,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(39,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(40,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  ComponentFactory.cpp
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(38,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(39,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(40,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+  ComponentManager.cpp
+  ECS.cpp
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(38,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(39,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(40,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+  BoxCollider.cpp
 F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
@@ -20,5 +49,157 @@ F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warni
 F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+  RigidBody.cpp
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(38,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(39,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(40,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+  TriggerModule.cpp
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(38,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(39,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(40,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+  SaveSystem.cpp
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(38,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(39,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(40,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+  Scene.cpp
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(38,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(39,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(40,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+  SceneManager.cpp
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(38,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(39,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(40,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\SceneManager\SceneManager.cpp(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\SceneManager\SceneManager.cpp(39,51): warning C4267: '=': conversión de 'size_t' a 'int'; posible pérdida de datos
+  BinderFunctions.cpp
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(38,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(39,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(40,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+  CalculatorBinder.cpp
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(38,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(39,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(40,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+  EntityBinder.cpp
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(38,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(39,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(40,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+  InputBinder.cpp
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(38,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(39,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(40,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+  GMathf.cpp
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(38,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(39,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(40,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Lib\GoldMath\GoldMathf.h(19,12): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Lib\GoldMath\GoldMathf.h(53,10): warning C4244: 'return': conversión de 'int' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Lib\GoldMath\GoldMathf.h(173,10): warning C4305: 'return': truncamiento de 'double' a 'float'
+  ScriptCompiler.cpp
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(38,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(39,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(40,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+  Skybox.cpp
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(38,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(39,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(40,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  SpriteComponent.cpp
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(38,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(39,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(40,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  Generando código...
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\AudioSource\AudioSource.h(83): warning C4172: devolución de dirección de la variable local o temporal: ispl
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\AudioSource\AudioSource.h(77): warning C4172: devolución de dirección de la variable local o temporal: g
+  Compilando...
+  GoldEngineLib.cpp
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(38,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(39,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(40,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+  RunEngine.cpp
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(38,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(39,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(40,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
   Generando código...
   GoldEngine.vcxproj -> F:\VISUAL STUDIO\GoldEngine2D\BuildCore\GoldEngine.lib
