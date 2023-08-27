@@ -10,7 +10,8 @@ void CAudio::start() {
 
 
 void CAudio::draw (Entity* owner) {
-	EditorGUI::Text ("Audio Source");
+    ImGui::Button("Audio Source", ImVec2(ImGui::GetContentRegionAvail().x, 20));
+    ImGui::Spacing();
 	string pathSound = EditorGUI::InputText("Audio Path", owner->getComponent<AudioSource>().AudioPath);
     if (ImGui::BeginDragDropTarget())
     {

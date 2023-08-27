@@ -185,6 +185,7 @@ public:
 			component.clean();
 			componentBitset[getComponentTypeID<T>()] = false;
 			componentArray[getComponentTypeID<T>()] = nullptr;
+			std::cout << "Components: " << componentArray.size() << std::endl;
 			return true;
 		}
 		return false;

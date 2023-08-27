@@ -1,46 +1,15 @@
 #pragma once
-#include <iostream>
 #include "../ECS/ECS.h"
 #include "../../RequireLibs.h"
+#include "../ShaderCompiler/Shader.h"
+#include "../SceneManager/SceneManager.h"
+#include <iostream>
 
 using namespace std;
 
 class Skybox : public Component
 {
 public:
-    const char* vertexShaderSource2 = R"(
-    #version 330 core
-layout (location = 0) in vec3 aPos;
-
-out vec3 texCoords;
-
-uniform mat4 projection;
-uniform mat4 view;
-
-void main()
-{
-    vec4 pos = projection * view * vec4(aPos, 1.0f);
-    // Having z equal w will always result in a depth of 1.0f
-    gl_Position = vec4(pos.x, pos.y, pos.w, pos.w);
-    // We want to flip the z axis due to the different coordinate systems (left hand vs right hand)
-    texCoords = vec3(aPos.x, aPos.y, -aPos.z);
-}    
-)";
-
-    const char* fragmentShaderSource2 = R"(
-    #version 330 core
-out vec4 FragColor;
-
-in vec3 texCoords;
-E
-uniform samplerCube skybox;
-
-void main()
-{    
-    FragColor = texture(skybox, texCoords);
-}
-)";
-
 	std::string facesCubemap[6] =
 	{
 		"F:\\VISUAL STUDIO\\GoldEngine2D\\BuildHub\\Editor\\skybox/right.jpg",
@@ -50,6 +19,15 @@ void main()
 		"F:\\VISUAL STUDIO\\GoldEngine2D\\BuildHub\\Editor\\skybox/front.jpg",
 		"F:\\VISUAL STUDIO\\GoldEngine2D\\BuildHub\\Editor\\skybox/back.jpg"
 	};
+
+
+	string vertexPath = "F:\\VISUAL STUDIO\\GoldEngine2D\\def\\shaders\\skybox.vert";
+	string fragPath = "F:\\VISUAL STUDIO\\GoldEngine2D\\def\\shaders\\skybox.frag";
+	unsigned int skyboxVAO;
+	unsigned int skyboxVBO;
+	unsigned int skyboxEBO;
+	unsigned int cubemapTexture;
+	Shader* skyboxShader = nullptr;
 
 
 	void init() override;

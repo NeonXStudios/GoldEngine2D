@@ -12,6 +12,8 @@ void CScript::start() {
 
 
 void CScript::draw (Entity* owner) {
+    ImGui::Button("Gold Behaviour", ImVec2(ImGui::GetContentRegionAvail().x, 20));
+    ImGui::Spacing();
     ImGui::PushID("ScriptDROP");
 	owner->getComponent<ScriptCompiler>().pathScript = EditorGUI::InputText ("Script Path", owner->getComponent<ScriptCompiler>().pathScript);
     if (ImGui::BeginDragDropTarget())

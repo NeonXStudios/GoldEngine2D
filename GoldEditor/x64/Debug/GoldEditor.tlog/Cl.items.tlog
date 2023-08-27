@@ -11,11 +11,14 @@ F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\imgui\imgui_widgets.cpp;F:\VISUAL 
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Components\Data\SaveData.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\SaveData.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Editor\GameCompiler.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\GameCompiler.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Editor\GoldEditor.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\GoldEditor.obj
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Gizmos\GDGizmos.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\GDGizmos.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Gizmos\MoveGizmos.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\MoveGizmos.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\AComponent.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\AComponent.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\ComponentList.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\ComponentList.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CAudio.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\CAudio.obj
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CBoxCollider3D.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\CBoxCollider3D.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidBody.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\CRigidBody.obj
+F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\CRigidbody3D.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CScript.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\CScript.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\Components\CSprite.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\CSprite.obj
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Inspector\ComponentUIDrawer.cpp;F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\ComponentUIDrawer.obj

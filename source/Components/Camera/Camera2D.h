@@ -1,12 +1,10 @@
-#pragma once
+ï»¿#pragma once
 #include "../../RequireLibs.h"
 #include "../../Graphics/StartEngineGraphics.h";
 #include "../../Graphics/AppSettings.h"
 #include "../ShaderCompiler/Shader.h"
 
 using namespace std;
-
-
 
 
 class Camera {
@@ -20,9 +18,9 @@ public:
     glm::mat4 projection;
     glm::mat4 view;
     glm::vec3 cameraPosition = glm::vec3(0.0f, 0.0f, 10.0f);
-    glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);  // Dirección hacia la que mira la cámara
-    glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);     // Vector hacia arriba de la cámara
-    float fov = 45.0f;  // Campo de visión en grados
+    glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);  // Direcciï¿½n hacia la que mira la cï¿½mara
+    glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);     // Vector hacia arriba de la cï¿½mara
+    float fov = 45.0f;  // Campo de visiï¿½n en grados
     float zoom = 1.0f;
 
     // Quaterniones para las rotaciones
@@ -49,17 +47,17 @@ public:
         // Combinar las rotaciones en un solo quaternion
         cameraRotation = rotationZ * rotationY * rotationX;
 
-        // Convertir el quaternion a una matriz de rotación
+        // Convertir el quaternion a una matriz de rotaciï¿½n
         glm::mat4 rotationMatrix = glm::mat4_cast(cameraRotation);
 
         if (proj == Projection::Perspective) {
             float aspectRatio = static_cast<float>(AppSettings::instance->ScreenWidth) / static_cast<float>(AppSettings::instance->ScreenHeight);
             projection = glm::perspective(glm::radians(fov), aspectRatio, 0.1f, 10000000.0f);
 
-            // Aplicar la rotación a la dirección de la cámara usando la matriz de rotación
+            // Aplicar la rotaciï¿½n a la direcciï¿½n de la cï¿½mara usando la matriz de rotaciï¿½n
             cameraFront = glm::mat3(rotationMatrix) * glm::vec3(0.0f, 0.0f, -1.0f);
 
-            // Calcular la nueva posición de la cámara
+            // Calcular la nueva posiciï¿½n de la cï¿½mara
             glm::vec3 newPosition = cameraPosition + cameraFront * zoom;
             view = glm::lookAt(cameraPosition, newPosition, cameraUp);
         }
@@ -70,7 +68,7 @@ public:
             projection = glm::ortho(-screenWidth / 2.0f * zoom, screenWidth / 2.0f * zoom,
                 -screenHeight / 2.0f * zoom, screenHeight / 2.0f * zoom, -1000.0f, 1000.0f);
 
-            // Aplicar la rotación a la dirección de la cámara usando la matriz de rotación
+            // Aplicar la rotaciï¿½n a la direcciï¿½n de la cï¿½mara usando la matriz de rotaciï¿½n
             cameraFront = glm::mat3(rotationMatrix) * glm::vec3(0.0f, 0.0f, -1.0f);
 
             view = glm::lookAt(cameraPosition, cameraPosition + cameraFront, cameraUp);

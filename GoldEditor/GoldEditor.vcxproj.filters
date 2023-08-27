@@ -48,6 +48,12 @@
     <Filter Include="RecursosEditor\IMGUINODE">
       <UniqueIdentifier>{5e64e69f-05ca-4153-8b44-a82acfd985e2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Editor\03_EditorComponents\Gizmo">
+      <UniqueIdentifier>{bc615b35-913f-4741-828a-60ad31dcb3c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor\02_InspectorDrawer\Components\Physics">
+      <UniqueIdentifier>{2a68dfc8-73a1-48a2-8727-cb303d5d1382}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Binarys\c\glad.c">
@@ -119,9 +125,6 @@
     <ClCompile Include="source\Inspector\ScriptEditor.cpp">
       <Filter>Editor\02_InspectorDrawer</Filter>
     </ClCompile>
-    <ClCompile Include="source\Inspector\Components\CRigidBody.cpp">
-      <Filter>Editor\02_InspectorDrawer\Components</Filter>
-    </ClCompile>
     <ClCompile Include="source\Inspector\ComponentUIDrawer.cpp">
       <Filter>Editor\02_InspectorDrawer</Filter>
     </ClCompile>
@@ -157,6 +160,18 @@
     </ClCompile>
     <ClCompile Include="..\..\bullet3\src\clew\clew.c">
       <Filter>RecursosEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Gizmos\GDGizmos.cpp">
+      <Filter>Editor\03_EditorComponents\Gizmo</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Inspector\Components\CRigidbody3D.cpp">
+      <Filter>Editor\02_InspectorDrawer\Components\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Inspector\Components\CRigidBody.cpp">
+      <Filter>Editor\02_InspectorDrawer\Components\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Inspector\Components\CBoxCollider3D.cpp">
+      <Filter>Editor\02_InspectorDrawer\Components\Physics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -239,9 +254,6 @@
     <ClInclude Include="source\Inspector\ScriptEditor.h">
       <Filter>Editor\02_InspectorDrawer</Filter>
     </ClInclude>
-    <ClInclude Include="source\Inspector\Components\CRigidBody.h">
-      <Filter>Editor\02_InspectorDrawer\Components</Filter>
-    </ClInclude>
     <ClInclude Include="source\Inspector\ComponentUIDrawer.h">
       <Filter>Editor\02_InspectorDrawer</Filter>
     </ClInclude>
@@ -269,6 +281,18 @@
     </ClInclude>
     <ClInclude Include="..\..\bullet3\src\clew\clew.h">
       <Filter>RecursosEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Gizmos\GDGizmos.h">
+      <Filter>Editor\03_EditorComponents\Gizmo</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Inspector\Components\CRigidbody3D.h">
+      <Filter>Editor\02_InspectorDrawer\Components\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Inspector\Components\CRigidBody.h">
+      <Filter>Editor\02_InspectorDrawer\Components\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Inspector\Components\CBoxCollider3D.h">
+      <Filter>Editor\02_InspectorDrawer\Components\Physics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
