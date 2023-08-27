@@ -62,11 +62,6 @@ unsigned int indices2[] = {
 //    }
 //)";
 
-void SpriteComponent::compileShaders() {
-    ourShader = new Shader(VertexPath.c_str(), FragmentPath.c_str());
-    ourmodel = new GLD::Model("F:\\VISUAL STUDIO\\GoldEngine2D\\GoldEditor\\def/models/Plane.fbx");
-}
-
 void SpriteComponent::start()  {
     compileShaders();
     /*vertexShader = glCreateShader(GL_VERTEX_SHADER);
@@ -167,7 +162,6 @@ void SpriteComponent::onupdate() {
     glUniform1i(glGetUniformLocation(ourShader->ID, "textureSampler"), 0);
 
     glm::mat4 model = glm::translate(glm::mat4(1.0f), glm::vec3(ObjectPosition.x, ObjectPosition.y, ObjectPosition.z));
-<<<<<<< HEAD
 
     model = glm::rotate(model, rotationAngleX, glm::vec3(1.0f, 0.0f, 0.0f));
     model = glm::rotate(model, rotationAngleY, glm::vec3(0.0f, 1.0f, 0.0f));
@@ -179,12 +173,10 @@ void SpriteComponent::onupdate() {
     //std::cout << "ROT X: " << rotationAngleX << std::endl;
 
     // Aplicar rotación utilizando glm::rotate
-=======
-    model = glm::rotate(model, glm::radians(rotationAngleZ), glm::vec3(0.0f, 0.0f, 1.0f)); // Rotación en el eje Z
-    model = glm::rotate(model, glm::radians(rotationAngleY), glm::vec3(0.0f, 1.0f, 0.0f)); // Rotación en el eje Y
-    model = glm::rotate(model, glm::radians(rotationAngleX), glm::vec3(1.0f, 0.0f, 0.0f)); // Rotación en el eje X
-    model = glm::scale(model, glm::vec3(Scale.x * GlobalScale, Scale.y * GlobalScale, 25));
->>>>>>> parent of b3e4288 (Rotacion, Escala, Posicion. Reparados)
+    model = glm::rotate  (model, glm::radians(rotationAngleZ), glm::vec3(0.0f, 0.0f, 1.0f)); // Rotación en el eje Z
+    model = glm::rotate  (model, glm::radians(rotationAngleY), glm::vec3(0.0f, 1.0f, 0.0f)); // Rotación en el eje Y
+    model = glm::rotate  (model, glm::radians(rotationAngleX), glm::vec3(1.0f, 0.0f, 0.0f)); // Rotación en el eje X
+    model = glm::scale   (model, glm::vec3(Scale.x * GlobalScale, Scale.y * GlobalScale, 25));
 
     //glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
 
@@ -296,7 +288,6 @@ std::size_t SpriteComponent::getIndicesSize() {
 
 GLuint* SpriteComponent::getIndices() {
     return indices2;
-<<<<<<< HEAD
 }
 
 void SpriteComponent::compileShaders() {
@@ -305,6 +296,4 @@ void SpriteComponent::compileShaders() {
 
     ourShader = new Shader(newPathVertex.c_str(), newPathFrag.c_str());
     ourmodel = new GLD::Model("F:\\VISUAL STUDIO\\GoldEngine2D\\GoldEditor\\def/models/Terrain.fbx");
-=======
->>>>>>> parent of b3e4288 (Rotacion, Escala, Posicion. Reparados)
 }

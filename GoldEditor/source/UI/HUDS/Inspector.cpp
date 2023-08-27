@@ -29,18 +29,88 @@ void InspectorUI::draw() {
         //ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngle = EditorGUI::Float("Rotation", ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngle);
         
         
-        glm::vec3 newRot = EditorGUI::Vector3("Rotation:", glm::vec3 (ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngleX, ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngleY, ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngleZ));
-        ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngleX = newRot.x;
-        ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngleY = newRot.y;
-        ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngleZ = newRot.z;
+        ImGui::PushID("TKio3");
+
+        glm::vec3 newRot = EditorGUI::Vector3("Rotation:", glm::vec3(
+            ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngleX,
+            ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngleY,
+            ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngleZ
+        ));
+
+        ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngleX = (float)newRot.x;
+        ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngleY = (float)newRot.y;
+        ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngleZ = (float)newRot.z;
+        ImGui::PopID();
+
+        ImGui::PushID("TKio4");
+
+        glm::vec3 newScale = EditorGUI::Vector3("Scale:", glm::vec3(
+            ObjectSelectToInspector->getComponent<SpriteComponent>().Scale.x,
+            ObjectSelectToInspector->getComponent<SpriteComponent>().Scale.y,
+            ObjectSelectToInspector->getComponent<SpriteComponent>().Scale.z
+        ));
+
+        ObjectSelectToInspector->getComponent<SpriteComponent>().Scale = glm::vec3(newScale.x, newScale.y, newScale.z);
+        ImGui::PopID();
 
         if (InputSystem::InputSystem::GetKey (GLFW_KEY_DELETE) && ObjectSelectToInspector != nullptr) {
             SceneManager::GetSceneManager()->Destroy (ObjectSelectToInspector);
             ObjectSelectToInspector = nullptr;
         }
-        ObjectSelectToInspector->getComponent<SpriteComponent>().VertexPath = EditorGUI::InputText("Vertex Shader:", ObjectSelectToInspector->getComponent<SpriteComponent>().VertexPath);
-        ObjectSelectToInspector->getComponent<SpriteComponent>().FragmentPath = EditorGUI::InputText("Fragment Shader", ObjectSelectToInspector->getComponent<SpriteComponent>().FragmentPath);
 
+
+        ObjectSelectToInspector->getComponent<SpriteComponent>().VertexPath   = EditorGUI::InputText("Vertex Shader:", ObjectSelectToInspector->getComponent<SpriteComponent>().VertexPath);
+        if (ImGui::BeginDragDropTarget())
+        {
+            ImGuiDragDropFlags target_flags = 0;
+            target_flags |= ImGuiDragDropFlags_AcceptBeforeDelivery;
+            target_flags |= ImGuiDragDropFlags_AcceptNoDrawDefaultRect;
+
+
+            if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("SHADER_PATH", target_flags))
+            {
+                const char* receivedString = static_cast<const char*>(payload->Data);
+
+                if (ImGui::IsMouseReleased(0)) {
+                    std::string convertedPath = AComponent::RemoveDir(receivedString);
+                    ObjectSelectToInspector->getComponent<SpriteComponent>().VertexPath = convertedPath;
+
+
+
+                    std::cout << "Convertido: " << convertedPath << std::endl;
+                    ObjectSelectToInspector->getComponent<SpriteComponent>().compileShaders();
+                }
+            }
+
+
+            ImGui::EndDragDropTarget();
+        }
+        ObjectSelectToInspector->getComponent<SpriteComponent>().FragmentPath = EditorGUI::InputText("Fragment Shader", ObjectSelectToInspector->getComponent<SpriteComponent>().FragmentPath);
+        if (ImGui::BeginDragDropTarget())
+        {
+            ImGuiDragDropFlags target_flags = 0;
+            target_flags |= ImGuiDragDropFlags_AcceptBeforeDelivery;
+            target_flags |= ImGuiDragDropFlags_AcceptNoDrawDefaultRect;
+
+
+            if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("SHADER_PATH", target_flags))
+            {
+                const char* receivedString = static_cast<const char*>(payload->Data);
+
+                if (ImGui::IsMouseReleased(0)) {
+                    std::string convertedPath = AComponent::RemoveDir(receivedString);
+                    ObjectSelectToInspector->getComponent<SpriteComponent>().VertexPath = convertedPath;
+
+
+
+                    std::cout << "Convertido: " << convertedPath << std::endl;
+                    ObjectSelectToInspector->getComponent<SpriteComponent>().compileShaders();
+                }
+            }
+
+
+            ImGui::EndDragDropTarget();
+        }
 
         /*
         glm::vec3 newPos = EditorGUI::Vector3("Position:", ObjectSelectToInspector->getComponent<SpriteComponent>().ObjectPosition);

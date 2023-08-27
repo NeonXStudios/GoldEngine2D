@@ -20,6 +20,8 @@ F:\VISUAL STUDIO\GoldEngine2D\source\Components\Lib\GoldMath\GoldMathf.cpp;F:\VI
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Models\Mesh.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Mesh.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Models\Model.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Model.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Models\TextureManager.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\TextureManager.obj
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics3D\BoxCollider.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\BoxCollider.obj
+F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics3D\Rigidbody3d.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Rigidbody3d.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\RigidBody.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\TriggerModule.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\TriggerModule.obj
 F:\VISUAL STUDIO\GoldEngine2D\source\Components\SaveSystem\CheckVar.cpp;F:\VISUAL STUDIO\GoldEngine2D\x64\Debug\CheckVar.obj

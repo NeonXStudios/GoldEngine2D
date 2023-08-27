@@ -1,5 +1,7 @@
 #pragma once
 #include "../../EngineBehaviour/GoldEngineLib.h"
+#include "nlohmann/json.hpp"
+
 #include <iostream> 
 
 using namespace std;
@@ -16,8 +18,8 @@ public:
 
 	float friction = 0.5f;
 	
-	bool isStatic;
-	bool useGravity;
+	bool isStatic = false;
+	bool useGravity = true;
 
 	bool freezePosX = false;
 	bool freezePosY = false;

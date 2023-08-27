@@ -101,7 +101,7 @@ public:
 
                 if (ImGui::MenuItem("New Script")) {
                     std::string path_to_read = path_to_read;
-                    std::string file = path_to_read + "/NewScript.sr";
+                    std::string file = path_to_read + "/NewScript.lua";
 
                     std::ofstream archivof(file);
 
@@ -178,6 +178,17 @@ public:
                         if (ImGui::ImageButton((void*)(intptr_t)shaderTextureID, imageSize)) {
                             //path_to_read = entry.path().string();
                         }
+
+                        if (ImGui::BeginDragDropSource(src_flags))
+                        {
+                            const char* filePathN;
+                            string t = "File " + namePath;
+                            ImGui::Text(t.c_str());
+
+                            std::string pathToSend = entry.path().string();
+                            ImGui::SetDragDropPayload("SHADER_PATH", pathToSend.c_str(), pathToSend.size() + 1);
+                            ImGui::EndDragDropSource();
+                        }
                     }
 
                     ImGui::PushID("musicD");
@@ -202,7 +213,7 @@ public:
 
 
                     ImGui::PushID("png");
-                    if (extension == ".png" || extension == ".gif") {
+                    if (extension == ".png" || extension == ".gif" || extension == ".jpg") {
                         if (ImGui::ImageButton((void*)(intptr_t)textureTextureID, imageSize)) {
                             //path_to_read = entry.path().string();
                         }
