@@ -10,16 +10,7 @@ using namespace std;
 class Skybox : public Component
 {
 public:
-	std::string facesCubemap[6] =
-	{
-		"F:\\VISUAL STUDIO\\GoldEngine2D\\BuildHub\\Editor\\skybox/right.jpg",
-		"F:\\VISUAL STUDIO\\GoldEngine2D\\BuildHub\\Editor\\skybox/left.jpg",
-		"F:\\VISUAL STUDIO\\GoldEngine2D\\BuildHub\\Editor\\skybox/top.jpg",
-		"F:\\VISUAL STUDIO\\GoldEngine2D\\BuildHub\\Editor\\skybox/bottom.jpg",
-		"F:\\VISUAL STUDIO\\GoldEngine2D\\BuildHub\\Editor\\skybox/front.jpg",
-		"F:\\VISUAL STUDIO\\GoldEngine2D\\BuildHub\\Editor\\skybox/back.jpg"
-	};
-
+	string skyboxPath = "F:\\VISUAL STUDIO\\GoldEngine2D\\def\\shaders\\skybox.vert";
 
 	string vertexPath = "F:\\VISUAL STUDIO\\GoldEngine2D\\def\\shaders\\skybox.vert";
 	string fragPath = "F:\\VISUAL STUDIO\\GoldEngine2D\\def\\shaders\\skybox.frag";
@@ -28,6 +19,7 @@ public:
 	unsigned int skyboxEBO;
 	unsigned int cubemapTexture;
 	Shader* skyboxShader = nullptr;
+	unsigned int skyboxTexture;
 
 
 	void init() override;
