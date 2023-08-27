@@ -1235,3 +1235,5 @@ BuildHub/Editor/GoldEditor.exe
 BuildHub/Editor/GoldEditor.pdb
 BuildCore/GoldEngine.idb
 BuildCore/GoldEngine.pdb
+*.pdb
+*.idb
