@@ -49,8 +49,12 @@ void StartEngineGraphics::StartEngine () {
         std::cout << "Failed to initialize GLAD" << std::endl;
     }
 
-    glfwGetFramebufferSize (StartEngineGraphics::window, &AppSettings::instance->ScreenWidth, &AppSettings::instance->ScreenHeight);
     glEnable(GL_DEPTH_TEST);
+    glDepthFunc(GL_LESS);
+
+
+    glfwGetFramebufferSize (StartEngineGraphics::window, &AppSettings::instance->ScreenWidth, &AppSettings::instance->ScreenHeight);
+    
 
     //START GAME
     SceneManager::GetSceneManager()->OpenScene->start();

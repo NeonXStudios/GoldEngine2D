@@ -23,37 +23,37 @@ void GoldEditor::draw() {
 
 void GoldEditor::update() {
     uiMaster->update();
-    Camera* cam = SceneManager::GetSceneManager()->OpenScene->worldCamera;
+    //Camera* cam = SceneManager::GetSceneManager()->OpenScene->worldCamera;
 
 
-    glm::vec3 cameraDirection = glm::normalize(cam->cameraFront);
-    glm::vec3 cameraDirectio2 = glm::normalize(cam->cameraFront);
+    //glm::vec3 cameraDirection = glm::normalize(cam->cameraFront);
+    //glm::vec3 cameraDirectio2 = glm::normalize(cam->cameraFront);
 
-    // Multiplicar el vector de dirección por la velocidad y sumarlo a la posición
-    if (InputSystem::InputSystem::GetKey(GLFW_KEY_W))
-        cam->cameraPosition += cameraDirection * cameraSpeed;
-    if (InputSystem::InputSystem::GetKey(GLFW_KEY_S))
-        cam->cameraPosition -= cameraDirection * cameraSpeed;
-    if (InputSystem::InputSystem::GetKey(GLFW_KEY_A))
-        cam->cameraPosition += cameraDirectio2 * cameraSpeed;
-    if (InputSystem::InputSystem::GetKey(GLFW_KEY_D))
-        cam->cameraPosition += cameraDirectio2 * -cameraSpeed;
+    //// Multiplicar el vector de dirección por la velocidad y sumarlo a la posición
+    //if (InputSystem::InputSystem::GetKey(GLFW_KEY_W))
+    //    cam->cameraPosition += cameraDirection * cameraSpeed;
+    //if (InputSystem::InputSystem::GetKey(GLFW_KEY_S))
+    //    cam->cameraPosition -= cameraDirection * cameraSpeed;
+    //if (InputSystem::InputSystem::GetKey(GLFW_KEY_A))
+    //    cam->cameraPosition += cameraDirectio2 * cameraSpeed;
+    //if (InputSystem::InputSystem::GetKey(GLFW_KEY_D))
+    //    cam->cameraPosition += cameraDirectio2 * -cameraSpeed;
 
-    if (InputSystem::InputSystem::GetKey(GLFW_KEY_UP)) {
-        cam->rotationXAngle += 0.3f;
-    }
+    //if (InputSystem::InputSystem::GetKey(GLFW_KEY_UP)) {
+    //    cam->rotationXAngle += 0.3f;
+    //}
 
-    if (InputSystem::InputSystem::GetKey(GLFW_KEY_DOWN)) {
-        cam->rotationXAngle -= 0.3f;
-    }
+    //if (InputSystem::InputSystem::GetKey(GLFW_KEY_DOWN)) {
+    //    cam->rotationXAngle -= 0.3f;
+    //}
 
-    if (InputSystem::InputSystem::GetKey(GLFW_KEY_LEFT)) {
-        cam->rotationYAngle += 0.3f;
-    }
+    //if (InputSystem::InputSystem::GetKey(GLFW_KEY_LEFT)) {
+    //    cam->rotationYAngle += 0.3f;
+    //}
 
-    if (InputSystem::InputSystem::GetKey(GLFW_KEY_RIGHT)) {
-        cam->rotationYAngle -= 0.3f;
-    }   
+    //if (InputSystem::InputSystem::GetKey(GLFW_KEY_RIGHT)) {
+    //    cam->rotationYAngle -= 0.3f;
+    //}   
 }
 
 
