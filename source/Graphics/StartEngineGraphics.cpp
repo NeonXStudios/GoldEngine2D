@@ -3,6 +3,7 @@
 #include "../Components/SceneManager/SceneManager.h"
 #include "../Components/Sprite/SpriteComponent.h"
 #include "../Components/UI/UIImplement.h"
+#include "../EngineBehaviour/GoldEngineLib.h"
 
 GLFWwindow* StartEngineGraphics::window = nullptr;
 EngineBehaviour* StartEngineGraphics::engine = nullptr;
@@ -84,9 +85,9 @@ void StartEngineGraphics::update() {
     lastFrame = currentFrame;
     time += deltaTime;
 
-    StartEngineGraphics::engine->lateupdate();
     glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    StartEngineGraphics::engine->lateupdate();
     SceneManager::GetSceneManager()->OpenScene->update();
     StartEngineGraphics::engine->draw();
     StartEngineGraphics::engine->update();
@@ -104,6 +105,7 @@ void StartEngineGraphics::update() {
     //DRAW CANVAS DATA
     UIIMPL->DrawData();
 
+    glDepthFunc(GL_LESS);
     // Renderizar ImGUI
     glfwSwapBuffers(StartEngineGraphics::window);
 }
