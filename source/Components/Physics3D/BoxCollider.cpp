@@ -1,5 +1,7 @@
 #include "BoxCollider.h"
+#include "nlohmann/json.hpp"
 
+using namespace nlohmann;
 
 void BoxCollider::init() {
 	mPhysics = SceneManager::GetSceneManager()->OpenScene->mPhysics;
@@ -33,4 +35,7 @@ std::string BoxCollider::serialize() {
 void BoxCollider::deserialize(std::string g, std::string path) {
 	json componentData = json::parse(g);
 
+	boxSize.x = componentData["boxsizex"];
+	boxSize.y = componentData["boxsizey"];
+	boxSize.z = componentData["boxsizez"];
 }

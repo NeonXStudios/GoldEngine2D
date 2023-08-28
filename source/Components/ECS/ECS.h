@@ -41,6 +41,7 @@ class Component
 {
 public:
 	Entity* entity;
+	bool enabled = true;
 	virtual void init() {}
 	virtual void update() {}
 	virtual void draw() {}
@@ -105,6 +106,8 @@ public:
 		for (auto& c : components)
 		{
 			c->entity = entity;
+			
+			if (c->enabled)
 			c->update();
 		}
 
@@ -114,7 +117,10 @@ public:
 
 	void draw()
 	{
-		for (auto& c : components) c->draw();
+		for (auto& c : components) { 
+			if (c->enabled)
+				c->draw();
+		}
 	}
 
 	void entityUpdate();
@@ -144,6 +150,7 @@ public:
 		componentArray[getComponentTypeID<T>()] = c;
 		componentBitset[getComponentTypeID<T>()] = true;
 
+		if (c->enabled)
 		c->init();
 		return *c;
 	}
@@ -183,6 +190,7 @@ public:
 		{
 			Component& component = getComponent<T>();
 			component.clean();
+
 			componentBitset[getComponentTypeID<T>()] = false;
 			componentArray[getComponentTypeID<T>()] = nullptr;
 			std::cout << "Components: " << componentArray.size() << std::endl;

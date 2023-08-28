@@ -176,7 +176,7 @@ public:
 
                     if (extension == ".glsl") {
                         if (ImGui::ImageButton((void*)(intptr_t)shaderTextureID, imageSize)) {
-                            
+                            //path_to_read = entry.path().string();
                         }
 
                         if (ImGui::BeginDragDropSource(src_flags))

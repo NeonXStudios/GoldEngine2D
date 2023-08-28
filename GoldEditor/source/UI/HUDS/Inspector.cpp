@@ -19,6 +19,27 @@ void InspectorUI::draw() {
         glm::vec3 newPos = EditorGUI::Vector3("Position:", ObjectSelectToInspector->getComponent<SpriteComponent>().ObjectPosition);
         ObjectSelectToInspector->getComponent<SpriteComponent>().ObjectPosition = glm::vec3 (newPos.x, newPos.y, newPos.z);
 
+        if (ObjectSelectToInspector->parent != nullptr) {
+            glm::vec3 newPosLocal = EditorGUI::Vector3("Local Position:", ObjectSelectToInspector->getComponent<SpriteComponent>().LocalPosition);
+            ObjectSelectToInspector->getComponent<SpriteComponent>().LocalPosition = glm::vec3(newPosLocal.x, newPosLocal.y, newPosLocal.z);
+        }
+
+       // ObjectSelectToInspector->getComponent<SpriteComponent>().Scale = EditorGUI::Vector2("Size", ObjectSelectToInspector->getComponent<SpriteComponent>().Scale);
+        ObjectSelectToInspector->getComponent<SpriteComponent>().GlobalScale = EditorGUI::Float("Global Scale", ObjectSelectToInspector->getComponent<SpriteComponent>().GlobalScale);
+        //ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngle = EditorGUI::Float("Rotation", ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngle);
+        
+        ImGui::PushID("TKio4");
+
+        glm::vec3 newScale = EditorGUI::Vector3("Scale:", glm::vec3(
+            ObjectSelectToInspector->getComponent<SpriteComponent>().Scale.x,
+            ObjectSelectToInspector->getComponent<SpriteComponent>().Scale.y,
+            ObjectSelectToInspector->getComponent<SpriteComponent>().Scale.z
+        ));
+
+        ObjectSelectToInspector->getComponent<SpriteComponent>().Scale = glm::vec3(newScale.x, newScale.y, newScale.z);
+        ImGui::PopID();
+
+
         ImGui::PushID("TKio3");
 
         glm::vec3 newRot = EditorGUI::Vector3("Rotation:", glm::vec3(
@@ -32,36 +53,13 @@ void InspectorUI::draw() {
         ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngleZ = (float)newRot.z;
         ImGui::PopID();
 
-        ImGui::PushID("TKio4");
-
-        glm::vec3 newScale = EditorGUI::Vector3("Scale:", glm::vec3(
-            ObjectSelectToInspector->getComponent<SpriteComponent>().Scale.x,
-            ObjectSelectToInspector->getComponent<SpriteComponent>().Scale.y,
-            ObjectSelectToInspector->getComponent<SpriteComponent>().Scale.z
-        ));
-
-        ObjectSelectToInspector->getComponent<SpriteComponent>().Scale = glm::vec3 (newScale.x, newScale.y, newScale.z);
-        ImGui::PopID();
-
-
-        if (ObjectSelectToInspector->parent != nullptr) {
-            glm::vec3 newPosLocal = EditorGUI::Vector3("Local Position:", ObjectSelectToInspector->getComponent<SpriteComponent>().LocalPosition);
-            ObjectSelectToInspector->getComponent<SpriteComponent>().LocalPosition = glm::vec3(newPosLocal.x, newPosLocal.y, newPosLocal.z);
-        }
-
-       // ObjectSelectToInspector->getComponent<SpriteComponent>().Scale = EditorGUI::Vector2("Size", ObjectSelectToInspector->getComponent<SpriteComponent>().Scale);
-        ObjectSelectToInspector->getComponent<SpriteComponent>().GlobalScale = EditorGUI::Float("Global Scale", ObjectSelectToInspector->getComponent<SpriteComponent>().GlobalScale);
-        //ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngle = EditorGUI::Float("Rotation", ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngle);
-       
-
         if (InputSystem::InputSystem::GetKey (GLFW_KEY_DELETE) && ObjectSelectToInspector != nullptr) {
             SceneManager::GetSceneManager()->Destroy (ObjectSelectToInspector);
             ObjectSelectToInspector = nullptr;
         }
-        ImGui::Separator();
-        ImGui::Text ("Material");
 
-        ObjectSelectToInspector->getComponent<SpriteComponent>().VertexPath = EditorGUI::InputText("Vertex Shader:", ObjectSelectToInspector->getComponent<SpriteComponent>().VertexPath);
+
+        ObjectSelectToInspector->getComponent<SpriteComponent>().VertexPath   = EditorGUI::InputText("Vertex Shader:", ObjectSelectToInspector->getComponent<SpriteComponent>().VertexPath);
         if (ImGui::BeginDragDropTarget())
         {
             ImGuiDragDropFlags target_flags = 0;
@@ -87,9 +85,6 @@ void InspectorUI::draw() {
 
             ImGui::EndDragDropTarget();
         }
-
-
-
         ObjectSelectToInspector->getComponent<SpriteComponent>().FragmentPath = EditorGUI::InputText("Fragment Shader", ObjectSelectToInspector->getComponent<SpriteComponent>().FragmentPath);
         if (ImGui::BeginDragDropTarget())
         {
@@ -102,20 +97,20 @@ void InspectorUI::draw() {
             {
                 const char* receivedString = static_cast<const char*>(payload->Data);
 
-
-                if (ImGui::IsMouseReleased (0)) {
+                if (ImGui::IsMouseReleased(0)) {
                     std::string convertedPath = AComponent::RemoveDir(receivedString);
-                    ObjectSelectToInspector->getComponent<SpriteComponent>().FragmentPath = convertedPath;
+                    ObjectSelectToInspector->getComponent<SpriteComponent>().VertexPath = convertedPath;
 
-                    ObjectSelectToInspector->getComponent<SpriteComponent>().compileShaders();
+
+
                     std::cout << "Convertido: " << convertedPath << std::endl;
+                    ObjectSelectToInspector->getComponent<SpriteComponent>().compileShaders();
                 }
             }
 
 
             ImGui::EndDragDropTarget();
         }
-
 
         /*
         glm::vec3 newPos = EditorGUI::Vector3("Position:", ObjectSelectToInspector->getComponent<SpriteComponent>().ObjectPosition);
@@ -163,8 +158,6 @@ void InspectorUI::draw() {
         }
         
         */
-
-
         ImGui::Spacing();
         ImGui::Spacing();
         ImGui::Spacing();

@@ -1,6 +1,9 @@
 #include "Rigidbody3d.h"
+#include "nlohmann/json.hpp"
 #include <cmath>
 # define M_PI           3.14159
+
+using namespace nlohmann;
 
 void Rigidbody3d::init() {
 	if (SceneManager::GetSceneManager() != nullptr) {
@@ -29,6 +32,11 @@ void Rigidbody3d::init() {
 		physx::PxRigidBodyExt::updateMassAndInertia(*body, mass);
 		SceneManager::GetSceneManager()->OpenScene->mScene->addActor(*body);
 
+		body->setRigidBodyFlag(physx::PxRigidBodyFlag::eKINEMATIC, isStatic);
+		body->setActorFlag(PxActorFlag::eDISABLE_GRAVITY, !useGravity);
+
+		body->wakeUp();
+
 		//shape->release();
 	}
 	else {
@@ -48,10 +56,16 @@ void Rigidbody3d::update() {
 
 		physx::PxRigidBodyExt::updateMassAndInertia(*body, mass);
 		
-		entity->getComponent<SpriteComponent>().ObjectPosition = glm::vec3(position.x, position.y, position.z);
+		entity->getComponent<SpriteComponent>().ObjectPosition = glm::vec3(
+			position.x, 
+			position.y, 
+			position.z
+		);
+
 		entity->getComponent<SpriteComponent>().rotationAngleX = rotation.x;
 		entity->getComponent<SpriteComponent>().rotationAngleY = rotation.y;
 		entity->getComponent<SpriteComponent>().rotationAngleZ = rotation.z;
+
 
 		body->setRigidBodyFlag(physx::PxRigidBodyFlag::eKINEMATIC, isStatic);
 		body->setActorFlag(PxActorFlag::eDISABLE_GRAVITY, !useGravity);

@@ -178,6 +178,8 @@
     <ClCompile Include="source\Components\Models\Mesh.cpp" />
     <ClCompile Include="source\Components\Models\Model.cpp" />
     <ClCompile Include="source\Components\Models\TextureManager.cpp" />
+    <ClCompile Include="source\Components\Physics3D\BoxCollider.cpp" />
+    <ClCompile Include="source\Components\Physics3D\Rigidbody3d.cpp" />
     <ClCompile Include="source\Components\Physics\RigidBody.cpp" />
     <ClCompile Include="source\Components\Physics\TriggerModule.cpp" />
     <ClCompile Include="source\Components\SaveSystem\CheckVar.cpp" />
@@ -228,6 +230,8 @@
     <ClInclude Include="source\Components\Models\Mesh.h" />
     <ClInclude Include="source\Components\Models\Model.h" />
     <ClInclude Include="source\Components\Models\TextureManager.h" />
+    <ClInclude Include="source\Components\Physics3D\BoxCollider.h" />
+    <ClInclude Include="source\Components\Physics3D\Rigidbody3d.h" />
     <ClInclude Include="source\Components\Physics\RigidBody.h" />
     <ClInclude Include="source\Components\Physics\TriggerModule.h" />
     <ClInclude Include="source\Components\SaveSystem\CheckVar.h" />

@@ -33,76 +33,8 @@ unsigned int indices2[] = {
     4, 0, 3
 };
 
-//const char* vertexShaderSource2 = R"(
-//    #version 330 core
-//    layout (location = 0) in vec3 aPos;
-//    layout (location = 1) in vec2 aTexCoord;
-//
-//    uniform mat4 projection;
-//    uniform mat4 view;
-//    uniform mat4 model;
-//
-//    out vec2 TexCoord;
-//
-//    void main() {
-//        gl_Position = projection * view * model * vec4(aPos, 1.0);
-//        TexCoord = aTexCoord;
-//    }
-//)";
-//
-//const char* fragmentShaderSource2 = R"(
-//    #version 330 core
-//    in vec2 TexCoord;
-//    out vec4 FragColor;
-//
-//    uniform sampler2D textureSampler;
-//
-//    void main() {
-//        FragColor = texture(textureSampler, TexCoord);
-//    }
-//)";
-
-
-
 void SpriteComponent::start()  {
     compileShaders();
-    /*vertexShader = glCreateShader(GL_VERTEX_SHADER);
-    glShaderSource(vertexShader, 1, &vertexShaderSource2, NULL);
-    glCompileShader(vertexShader);
-
-    fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-    glShaderSource(fragmentShader, 1, &fragmentShaderSource2, NULL);
-    glCompileShader(fragmentShader);
-
-    shaderProgram = glCreateProgram();
-    glAttachShader(shaderProgram, vertexShader);
-    glAttachShader(shaderProgram, fragmentShader);
-    glLinkProgram(shaderProgram);
-
-    glDeleteShader(vertexShader);
-    glDeleteShader(fragmentShader);
-
-    glGenVertexArrays(1, &VAO);
-    glGenBuffers(1, &VBO);
-    glGenBuffers(1, &EBO);
-
-    glBindVertexArray(VAO);
-
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices2), vertices2, GL_STATIC_DRAW);
-
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices2), indices2, GL_STATIC_DRAW);
-
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
-    glEnableVertexAttribArray(0);
-
-    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
-    glEnableVertexAttribArray(1);
-
-    */
-    //glBindBuffer(GL_ARRAY_BUFFER, 0);
-    //glBindVertexArray(0);
 
     glGenTextures(1, &texture);
     glBindTexture(GL_TEXTURE_2D, texture);
@@ -112,19 +44,13 @@ void SpriteComponent::start()  {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
     // Configuraciones de la textura
-    //glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    //glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    //glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    //glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
-    //glGenerateMipmap  (GL_TEXTURE_2D);
-    //glTexParameteri   (GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-    //glTexParameterf   (GL_TEXTURE_2D, GL_TEXTURE_LOD_BIAS, -0.4f);
-
+    LoadTexture ();
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-    LoadTexture ();
 }
 
 void SpriteComponent::LoadTexture () {
@@ -156,50 +82,39 @@ void SpriteComponent::LoadTexture () {
 
 void SpriteComponent::onupdate() {
     glUseProgram(ourShader->ID);
-    glUniformMatrix4fv(glGetUniformLocation(ourShader->ID, "projection"), 1, GL_FALSE, glm::value_ptr(SceneManager::GetSceneManager()->OpenScene->worldCamera->GetProjectionMatrix()));
-    glUniformMatrix4fv(glGetUniformLocation(ourShader->ID, "view"), 1, GL_FALSE, glm::value_ptr(SceneManager::GetSceneManager()->OpenScene->worldCamera->GetView()));
-
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture);
-    glUniform1i(glGetUniformLocation(ourShader->ID, "textureSampler"), 0);
+    glGetUniformLocation(ourShader->ID, "texture_diffuse1");
 
-    glm::mat4 model = glm::translate(glm::mat4(1.0f), glm::vec3(ObjectPosition.x, ObjectPosition.y, ObjectPosition.z));
-
-    model = glm::rotate(model, rotationAngleX, glm::vec3(1.0f, 0.0f, 0.0f));
-    model = glm::rotate(model, rotationAngleY, glm::vec3(0.0f, 1.0f, 0.0f));
-    model = glm::rotate(model, rotationAngleZ, glm::vec3(0.0f, 0.0f, 1.0f)); 
-
-    model = glm::scale(model, glm::vec3(Scale.x * GlobalScale, Scale.y * GlobalScale, Scale.z * GlobalScale));
-
-
-    //std::cout << "ROT X: " << rotationAngleX << std::endl;
 
     // Aplicar rotación utilizando glm::rotate
+    glm::mat4 model = glm::mat4(1.0f);
 
-    //glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
+    // Aplicar traslación
+    model = glm::scale(model, glm::vec3(Scale.x * GlobalScale, Scale.y * GlobalScale, Scale.z * GlobalScale));
 
-    //std::cout << "ROTATION X: " << rotationAngleX << std::endl;
+    glm::quat rotationX = glm::angleAxis(glm::radians(rotationAngleX), glm::vec3(1.0f, 0.0f, 0.0f));
+    glm::quat rotationY = glm::angleAxis(glm::radians(rotationAngleY), glm::vec3(0.0f, 1.0f, 0.0f));
+    glm::quat rotationZ = glm::angleAxis(glm::radians(rotationAngleZ), glm::vec3(0.0f, 0.0f, 1.0f));
 
-    ////glm::mat4 model = glm::translate(glm::mat4(1.0f), glm::vec3(ObjectPosition.x, -ObjectPosition.y, ObjectPosition.z));
-    ////model = glm::rotate(model, glm::radians(rotationAngle), glm::vec3(0.0f, 0.0f, 1.0f)); // Rotación en el eje Z
-    ////model = glm::scale(model, glm::vec3(Scale.x * GlobalScale, Scale.y * GlobalScale, 25));
-    ////glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
+    rotation = rotationZ * rotationY * rotationX;
 
-    //glBindVertexArray(VAO);
-    //glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
-    //glBindVertexArray(0);
+    glm::mat4 rotationMatrix = glm::mat4_cast(rotation);
 
-    ourShader->setMat4("model", model);
+
+    model *= glm::mat4_cast(rotation);
+    model = glm::translate(model, glm::vec3(ObjectPosition.x, ObjectPosition.y, ObjectPosition.z));
+    
+    ourShader->setMat4("view", SceneManager::GetSceneManager()->OpenScene->worldCamera->GetView());
+    ourShader->setMat4("projection", SceneManager::GetSceneManager()->OpenScene->worldCamera->GetProjectionMatrix());
+    ourShader->setMat4("model", model);  // Aplicar la matriz de modelo
+    ourShader->use();
     ourmodel->Draw(*ourShader);
 }
 
 
 void SpriteComponent::clean() {
-    glDeleteVertexArrays(1, &VAO);
-    glDeleteBuffers(1, &VBO);
-    glDeleteBuffers(1, &EBO);
-    glDeleteTextures(1, &texture);
-    glDeleteProgram(shaderProgram);
+
 }
 
 
@@ -258,7 +173,6 @@ void SpriteComponent::deserialize (std::string g, std::string path) {
     if (CheckVar::Has(componentData, "fragmentpath"))
     FragmentPath = (string)componentData["fragmentpath"];
 
-    compileShaders();
     LoadTexture();
 }
 

@@ -9,6 +9,9 @@
 #include "../Graphics/RunEngine.h"
 #include "../Graphics/AppSettings.h"
 
+//EXTRA LIBS
+#include "nlohmann/json.hpp"
+
 //ENGINE COMPONENTS
 #include "../Components/AudioSource/AudioManager.h"
 #include "../Components/AudioSource/AudioSource.h"
@@ -22,8 +25,12 @@
 #include "../Components/Systems/SystemsEvents.h"
 #include "../Components/Script/ScriptCompiler.h"
 #include "../Components/Physics/RigidBody.h"
+#include "../Components/Physics3D/Rigidbody3D.h"
+#include "../Components/Physics3D/BoxCollider.h"
 #include "../Components/SaveSystem/SaveSystem.h"
 #include "../Components/Skybox/Skybox.h"
+
+
 //#include "../Components/Shadercompiler/Material.h"
 
 //#define MESHCLASS_H

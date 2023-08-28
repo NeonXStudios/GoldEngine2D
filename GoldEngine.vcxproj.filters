@@ -92,6 +92,9 @@
     <Filter Include="Engine\02_Components\FileSystem">
       <UniqueIdentifier>{bea2e1cd-caac-4876-a4d0-0cf9832af4ca}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\02_Components\Physics3D">
+      <UniqueIdentifier>{518261dc-e820-4e9c-9c29-708a8ca9d6c4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Graphics\StartEngineGraphics.cpp">
@@ -231,6 +234,12 @@
     </ClCompile>
     <ClCompile Include="..\bullet3\src\clew\clew.c">
       <Filter>Recursos</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\Physics3D\BoxCollider.cpp">
+      <Filter>Engine\02_Components\Physics3D</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\Physics3D\Rigidbody3d.cpp">
+      <Filter>Engine\02_Components\Physics3D</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -380,6 +389,12 @@
     </ClInclude>
     <ClInclude Include="..\bullet3\src\clew\clew.h">
       <Filter>Recursos</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\Physics3D\Rigidbody3d.h">
+      <Filter>Engine\02_Components\Physics3D</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\Physics3D\BoxCollider.h">
+      <Filter>Engine\02_Components\Physics3D</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

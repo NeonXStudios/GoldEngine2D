@@ -25,13 +25,11 @@ void Scene::update() {
 			GravityWorld->Step(timeStep, 6, 2);
 			body->GetNext();
 		}
-
-
-
-		mScene->simulate(1.0f / 60.0f);
-		mScene->fetchResults(true);
 	}
 	
+
+	mScene->simulate(1.0f / 60.0f);
+	mScene->fetchResults(true);
 
 	for (Entity* ents : objectsInScene) {
 		ents->entity = ents;
