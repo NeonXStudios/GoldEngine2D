@@ -38,6 +38,10 @@ public:
 
 	void start();
 	void update();
+	void draw();
 	void release();
 	void CreateGravity();
+
+	void PreRender();
+	void PostRender();
 };

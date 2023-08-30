@@ -26,8 +26,21 @@ using namespace std;
         if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
             std::cout << "Framebuffer is not complete!" << std::endl;
 
-        glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
+
+        glGenTextures(1, &colorAndDepthTexture);
+        glBindTexture(GL_TEXTURE_2D, colorAndDepthTexture);
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, AppSettings::instance->ScreenWidth, AppSettings::instance->ScreenHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+        // Crear y configurar el renderbuffer de profundidad
+        glGenRenderbuffers(1, &depthRenderbuffer);
+        glBindRenderbuffer(GL_RENDERBUFFER, depthRenderbuffer);
+        glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT, AppSettings::instance->ScreenWidth, AppSettings::instance->ScreenHeight);
+
+
+        glBindFramebuffer(GL_FRAMEBUFFER, 0);
     }
 
 
@@ -35,13 +48,11 @@ using namespace std;
 
 #pragma region DRAW TEXTURE SCENE
 
-
-
         ImVec2 windowSize = ImVec2(AppSettings::ScreenWidth, AppSettings::ScreenHeight);
 
         // Dibujamos la imagen en la ventana de ImGui
         ImGui::SetNextWindowSize(windowSize);
-        ImGui::Begin("Scene", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize);
+        ImGui::Begin("Scene", nullptr, ImGuiWindowFlags_NoTitleBar);
         //RenderSizeWindow = ImGui::GetWindowSize();
         ImGuizmo::SetDrawlist();
 
@@ -230,7 +241,12 @@ using namespace std;
     }
 
     void SceneUI::lateupdate() {
+
+        glGenFramebuffers(1, &framebuffer);
         glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
+
+        glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, colorAndDepthTexture, 0);
+        glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, depthRenderbuffer);
     }
 
 

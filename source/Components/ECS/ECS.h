@@ -45,6 +45,8 @@ public:
 	virtual void init() {}
 	virtual void update() {}
 	virtual void draw() {}
+	virtual void PreRender(){}
+	virtual void PostRender(){}
 	virtual void clean() {}
 	virtual std::string serialize() { return ""; }
 	virtual void deserialize(std::string g, std::string path = "") {}
@@ -111,7 +113,36 @@ public:
 			c->update();
 		}
 
+		for (auto& c : components)
+		{
+			c->entity = entity;
+
+			if (c->enabled)
+				c->update();
+		}
+
 		entityUpdate();
+	}
+
+
+	void PreRender() {
+		for (auto& c : components)
+		{
+			c->entity = entity;
+
+			if (c->enabled)
+				c->PreRender();
+		}
+	}
+
+	void PostRender() {
+		for (auto& c : components)
+		{
+			c->entity = entity;
+
+			if (c->enabled)
+				c->PostRender();
+		}
 	}
 
 
@@ -157,7 +188,7 @@ public:
 
 	template<typename T> T& getComponent() const
 	{
-		auto ptr(componentArray[getComponentTypeID<T>()]);
+auto ptr(componentArray[getComponentTypeID<T>()]);
 		return *static_cast<T*>(ptr);
 	}
 

@@ -10,8 +10,6 @@ using namespace std;
 
 class SceneUI : public UIDrawer {
 public:
-    unsigned int framebuffer;
-    unsigned int texture;
     ImVec2 imageSizeSCENE;
     double textureMousePosX = 0;
     double textureMousePosY = 0;
@@ -23,7 +21,15 @@ public:
     std::vector<Entity*> objectsInAABB;
     int SelectIndex = 0;
 
-    
+
+    unsigned int texture;
+    unsigned int framebuffer;       // Framebuffer Object
+    unsigned int depthTexture;      // Texture to capture depth
+    GLuint colorAndDepthTexture; // Variable para almacenar el ID de la textura combinada de color y profundidad
+    GLuint depthRenderbuffer;    // Variable para almacenar el ID del renderbuffer de profundidad
+
+
+
     bool res;
     float* matrix;
     float* view;

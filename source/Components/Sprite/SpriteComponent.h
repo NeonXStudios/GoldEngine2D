@@ -40,6 +40,7 @@ public:
 
     unsigned int texture;
     unsigned int VBO, VAO, EBO;
+    glm::mat4 model = glm::mat4(1.0f);
 
     void init() override {
         start();
@@ -48,6 +49,10 @@ public:
     void update() override {
         onupdate();
     }
+
+    void draw() override;
+    void PreRender() override;
+    void PostRender() override;
 
     void start();
     void onupdate();

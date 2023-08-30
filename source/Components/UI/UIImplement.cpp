@@ -10,9 +10,9 @@ void UIImplement::start() {
 	ImGuiIO& io = ImGui::GetIO(); (void)io;
 	io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 
-	UIStyle::SetStyleUI (Dark);
+	UIStyle::SetStyleUI(Dark);
 
-//	ImGui::StyleColorsDark();
+	//	ImGui::StyleColorsDark();
 
 	ImGui_ImplGlfw_InitForOpenGL(StartEngineGraphics::window, true);
 	ImGui_ImplOpenGL3_Init("#version 330");
@@ -31,9 +31,13 @@ void UIImplement::DrawCanvas() {
 
 }
 
+void UIImplement::RenderUI() {
+	ImGui::Render();
+}
+
+
 
 void UIImplement::DrawData() {
-	ImGui::Render();
 	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 }
 

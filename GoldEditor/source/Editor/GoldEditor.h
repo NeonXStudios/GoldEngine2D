@@ -29,9 +29,9 @@ public:
     void update() override;
 
 
-    void lateupdate() override;
+    void PostRender() override;
 
-    void fixupdate() override;
+    void PreRender() override;
 
     void drawUI() override;
 
