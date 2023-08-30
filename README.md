@@ -39,3 +39,7 @@ Program with VSCode or even in the editor itself
 The hub is basic but functional
 ![image](https://github.com/GrstudiosGamesPro/GoldEngine2D/assets/85538374/9bfadd13-feb7-4eda-a06c-f744876686da)
 
+![Screenshot 2023-08-28 003731](https://github.com/GrstudiosGamesPro/GoldEngine2D/assets/85538374/86f2e020-e9f2-4383-8d7f-c4b3551d31a5)
+
+
+
