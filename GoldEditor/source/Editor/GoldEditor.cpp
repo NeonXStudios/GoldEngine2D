@@ -13,7 +13,7 @@ void GoldEditor::start() {
     uiMaster->start();
     std::cout << "Starting editor" << endl;
     SaveData::loadScene();
-    //sky->init();
+    // sky->init();
 }
 
 
@@ -58,7 +58,6 @@ void GoldEditor::update() {
     //} 
     //   
 #pragma endregion
-    //sky->update();
 }
 
 
@@ -68,6 +67,7 @@ void GoldEditor::PreRender() {
 }
 
 void GoldEditor::PostRender() {
+    //sky->update();
     uiMaster->fixupdate();
 }
 

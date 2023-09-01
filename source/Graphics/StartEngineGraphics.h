@@ -22,7 +22,7 @@ public:
 
 	void RenderImgui();
 	void RenderOpenGL();
-	
+
 	//STATIC GLOBAL FUNCTIONS
 	static void closeWindow();
 

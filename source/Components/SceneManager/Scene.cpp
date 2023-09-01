@@ -14,13 +14,13 @@ void Scene::start() {
 void Scene::update() {
 	//worldCamera->Inputs(StartEngineGraphics::window);
 	//worldCamera->updateMatrix(45.0f, 0.1f, 1000.0f);
+	worldCamera->update();
 
 	for (Entity* ents : objectsInScene) {
 		//ents->entity = ents;
 		ents->update();
 	}
 
-	worldCamera->update();
 
 	if (AppSettings::gameRunning) {
 		if (GravityWorld != nullptr && GravityWorld->GetBodyCount() > 0) {

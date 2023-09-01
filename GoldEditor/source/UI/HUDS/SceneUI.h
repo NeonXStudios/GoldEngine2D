@@ -28,7 +28,7 @@ public:
     GLuint colorAndDepthTexture; // Variable para almacenar el ID de la textura combinada de color y profundidad
     GLuint depthRenderbuffer;    // Variable para almacenar el ID del renderbuffer de profundidad
 
-
+    glm::vec2 WorldPoint;
 
     bool res;
     float* matrix;
@@ -46,6 +46,5 @@ public:
     void lateupdate() override;
 
     void fixupdate() override;
-
     glm::vec2 RotatePoint(const glm::vec2& point, const glm::vec2& center, float angle);
 };

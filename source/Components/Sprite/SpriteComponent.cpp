@@ -116,7 +116,6 @@ void SpriteComponent::draw() {
     ourmodel->Draw(*ourShader);
 }
 
-
 void SpriteComponent::PreRender() {
  
 }
@@ -201,16 +200,16 @@ void SpriteComponent::deserialize (std::string g, std::string path) {
     LoadTexture();
 }
 
-
 glm::mat4 SpriteComponent::GetMatrix() {
     glm::mat4 matrix;
 
-    matrix = glm::translate  (glm::mat4 (1.0f), glm::vec3 (ObjectPosition.x, ObjectPosition.y, ObjectPosition.z));
-    matrix *= glm::mat4_cast (glm::quat (1, 0, 0, 0));
-    matrix = glm::scale (matrix, Scale);
+    matrix = glm::translate(glm::mat4(1.0f), glm::vec3(ObjectPosition.x, ObjectPosition.y, ObjectPosition.z));
+    matrix *= glm::mat4_cast(glm::quat(1, 0, 0, 0));
+    matrix = glm::scale(matrix, Scale);
 
     return matrix;
 }
+
 
 
 float* SpriteComponent::getVertices() {
@@ -232,5 +231,5 @@ void SpriteComponent::compileShaders() {
     string newPathFrag = FileSystem::GetAsset(FragmentPath);
 
     ourShader = new Shader(newPathVertex.c_str(), newPathFrag.c_str());
-    ourmodel = new GLD::Model("F:\\VISUAL STUDIO\\GoldEngine2D\\GoldEditor\\def/models/Terrain.fbx");
+    ourmodel = new GLD::Model("E:\\VISUAL STUDIO\\GoldEngine2D\\GoldEditor\\def/models/Terrain.fbx");
 }

@@ -4,6 +4,7 @@
 #include "../Components/Sprite/SpriteComponent.h"
 #include "../Components/UI/UIImplement.h"
 #include "../EngineBehaviour/GoldEngineLib.h"
+#include <math.h>
 
 GLFWwindow* StartEngineGraphics::window = nullptr;
 EngineBehaviour* StartEngineGraphics::engine = nullptr;
@@ -11,8 +12,8 @@ StartEngineGraphics* StartEngineGraphics::instance = nullptr;
 UIImplement* UIIMPL = new UIImplement();
 
 
-GLuint imguiFramebuffer;
-GLuint imguiTexture;
+
+//Skybox* sky = new Skybox();
 
 
 void StartEngineGraphics::create() {
@@ -56,6 +57,7 @@ void StartEngineGraphics::StartEngine () {
 
 
     glfwGetFramebufferSize (StartEngineGraphics::window, &AppSettings::instance->ScreenWidth, &AppSettings::instance->ScreenHeight);
+
 
     //START GAME
     SceneManager::GetSceneManager()->OpenScene->start();
@@ -116,10 +118,9 @@ void StartEngineGraphics::update() {
         glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        //RenderOpenGL();
-        //glDepthFunc(GL_LESS);d
-        //glDepthMask(GL_TRUE);
-        glEnable(GL_DEPTH_TEST);
+        //DRAW SKYBOX
+        //sky->update();
+
         SceneManager::GetSceneManager()->OpenScene->draw();
         StartEngineGraphics::engine->draw();
 
@@ -139,15 +140,13 @@ void StartEngineGraphics::update() {
         //glBlitFramebuffer(0, 0, AppSettings::RenderWidth, AppSettings::RenderHeight, 0, 0, AppSettings::RenderWidth, AppSettings::RenderHeight, GL_COLOR_BUFFER_BIT, GL_NEAREST);
 
 
-
-
-        bool isDepthTestEnabled = glIsEnabled(GL_DEPTH_TEST);
-        if (isDepthTestEnabled) {
-            std::cout << "DEPTH IS ENABLED" << std::endl;
-        }
-        else {
-            std::cout << "DEPTH IS DISABLED" << std::endl;
-        }
+        //bool isDepthTestEnabled = glIsEnabled(GL_DEPTH_TEST);
+        //if (isDepthTestEnabled) {
+        //    std::cout << "DEPTH IS ENABLED" << std::endl;
+        //}
+        //else {
+        //    std::cout << "DEPTH IS DISABLED" << std::endl;
+        //}
 
 
         // INTERCAMBIO DE BUFERES Y PRESENTACION

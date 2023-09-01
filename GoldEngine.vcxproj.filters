@@ -241,6 +241,9 @@
     <ClCompile Include="source\Components\Physics3D\Rigidbody3d.cpp">
       <Filter>Engine\02_Components\Physics3D</Filter>
     </ClCompile>
+    <ClCompile Include="source\Components\Systems\PickingTexture.cpp">
+      <Filter>Engine\02_Components\Events</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Components\Camera\Camera2D.h">
@@ -395,6 +398,9 @@
     </ClInclude>
     <ClInclude Include="source\Components\Physics3D\BoxCollider.h">
       <Filter>Engine\02_Components\Physics3D</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\Systems\PickingTexture.h">
+      <Filter>Engine\02_Components\Events</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
