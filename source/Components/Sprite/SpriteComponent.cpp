@@ -107,7 +107,7 @@ void SpriteComponent::draw() {
 
 
     model *= glm::mat4_cast(rotation);
-    model = glm::scale(model, glm::vec3(Scale.x * GlobalScale, Scale.y * GlobalScale, Scale.z * GlobalScale));
+    model = glm::scale(model, glm::vec3(Scale.x /** GlobalScale*/, Scale.y /** GlobalScale*/, Scale.z/* * GlobalScale*/));
 
 
     ourShader->use();
@@ -140,7 +140,7 @@ std::string SpriteComponent::serialize() {
     componentData["scalex"] = Scale.x;
     componentData["scaley"] = Scale.y;
     componentData["scalez"] = Scale.z;
-    componentData["scaleglobal"] = GlobalScale;
+    //componentData["scaleglobal"] = GlobalScale;
     componentData["rotationx"] = rotationAngleX;
     componentData["rotationy"] = rotationAngleY;
     componentData["rotationz"] = rotationAngleZ;
@@ -173,8 +173,8 @@ void SpriteComponent::deserialize (std::string g, std::string path) {
     if (CheckVar::Has(componentData, "scalez"))
     Scale.z = componentData["scalez"];
 
-    if (CheckVar::Has(componentData, "scaleglobal"))
-    GlobalScale = componentData["scaleglobal"];
+    //if (CheckVar::Has(componentData, "scaleglobal"))
+    //GlobalScale = componentData["scaleglobal"];
 
     if (CheckVar::Has(componentData, "rotationx"))
     rotationAngleX = (float)componentData["rotationx"];

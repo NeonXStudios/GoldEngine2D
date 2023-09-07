@@ -25,7 +25,7 @@ void InspectorUI::draw() {
         }
 
        // ObjectSelectToInspector->getComponent<SpriteComponent>().Scale = EditorGUI::Vector2("Size", ObjectSelectToInspector->getComponent<SpriteComponent>().Scale);
-        ObjectSelectToInspector->getComponent<SpriteComponent>().GlobalScale = EditorGUI::Float("Global Scale", ObjectSelectToInspector->getComponent<SpriteComponent>().GlobalScale);
+        //ObjectSelectToInspector->getComponent<SpriteComponent>().GlobalScale = EditorGUI::Float("Global Scale", ObjectSelectToInspector->getComponent<SpriteComponent>().GlobalScale);
         //ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngle = EditorGUI::Float("Rotation", ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngle);
         
         ImGui::PushID("TKio4");

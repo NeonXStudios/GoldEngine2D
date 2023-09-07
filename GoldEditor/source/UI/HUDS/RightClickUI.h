@@ -6,6 +6,7 @@ class RightClickUI : public UIDrawer
     ImVec2 MousePos;
 
 public:
+    bool locked;
     bool miniMenuOpen = false;
     bool SceneHover;
     void start() override;

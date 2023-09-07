@@ -41,7 +41,7 @@ void EntityBinder::RegisterFunctions(ScriptCompiler* luaParent)
 	luaParent->lua.new_usertype<SpriteComponent>("SpriteComponent",
 		"position", &SpriteComponent::ObjectPosition,
 		"scale", &SpriteComponent::Scale,
-		"gScale", &SpriteComponent::GlobalScale,
+		//"gScale", &SpriteComponent::GlobalScale,
 		"rotation", &SpriteComponent::rotationAngle,
 		"texture", &SpriteComponent::TexturePath
 	);

@@ -28,7 +28,7 @@ public:
     glm::quat rotation;
     float rotationAngleY, rotationAngleZ, rotationAngleX;
 
-    float GlobalScale = 1;
+    //float GlobalScale = 1;
     float rotationAngle;
     glm::vec3 Scale = glm::vec3 (1, 1, 1);
     GLuint shaderProgram;

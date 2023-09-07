@@ -65,10 +65,16 @@ namespace InputSystem {
     {
     public:
 
-        static bool GetKey(int key)
+        static bool GetKey        (int key)
         {
             return glfwGetKey(StartEngineGraphics::window, key) == GLFW_PRESS;
         };
+
+        static bool GetKeyUp    (int key)
+        {
+            return glfwGetKey(StartEngineGraphics::window, key) == GLFW_RELEASE;
+        };
+
 
 
         static vec2 GetGlobalMousePosition() {
@@ -87,15 +93,6 @@ namespace InputSystem {
 
             double NormalMousePosX = windowMousePosX / WindowSize.x;
             double NormalMousePosY = -windowMousePosY / WindowSize.y;
-
-            //double centeredMousePosX = (NormalMousePosX * 2.0f - 1.0f) * (ScreenSize.x / 2) * SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom;
-            //double centeredMousePosY = (NormalMousePosY * 2.0f + 1.0f) * (ScreenSize.y / 2) * SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom;
-
-            //Camera* cam = SceneManager::GetSceneManager()->OpenScene->worldCamera;
-
-            //double WorldPointX = (centeredMousePosX + cam->cameraPosition.x);
-            //double WorldPointY = (centeredMousePosY - cam->cameraPosition.y);
-
 
             return vec2(0, 0);
         }
