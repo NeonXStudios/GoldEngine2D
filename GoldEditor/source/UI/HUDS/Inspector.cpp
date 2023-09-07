@@ -16,12 +16,12 @@ void InspectorUI::draw() {
         ObjectSelectToInspector->ObjectName = EditorGUI::InputText("Name:", ObjectSelectToInspector->ObjectName);
         ObjectSelectToInspector->ObjectTag = EditorGUI::InputText("Tag:", ObjectSelectToInspector->ObjectTag);
 
-        glm::vec3 newPos = EditorGUI::Vector3("Position:", ObjectSelectToInspector->getComponent<SpriteComponent>().ObjectPosition);
-        ObjectSelectToInspector->getComponent<SpriteComponent>().ObjectPosition = glm::vec3 (newPos.x, newPos.y, newPos.z);
+        glm::vec3 newPos = EditorGUI::Vector3 ("Position:", ObjectSelectToInspector->transform->Position);
+        ObjectSelectToInspector->transform->Position = glm::vec3 (newPos.x, newPos.y, newPos.z);
 
         if (ObjectSelectToInspector->parent != nullptr) {
-            glm::vec3 newPosLocal = EditorGUI::Vector3("Local Position:", ObjectSelectToInspector->getComponent<SpriteComponent>().LocalPosition);
-            ObjectSelectToInspector->getComponent<SpriteComponent>().LocalPosition = glm::vec3(newPosLocal.x, newPosLocal.y, newPosLocal.z);
+            glm::vec3 newPosLocal = EditorGUI::Vector3("Local Position:", ObjectSelectToInspector->transform->LocalPosition);
+            ObjectSelectToInspector->transform->LocalPosition = glm::vec3(newPosLocal.x, newPosLocal.y, newPosLocal.z);
         }
 
        // ObjectSelectToInspector->getComponent<SpriteComponent>().Scale = EditorGUI::Vector2("Size", ObjectSelectToInspector->getComponent<SpriteComponent>().Scale);
@@ -31,26 +31,26 @@ void InspectorUI::draw() {
         ImGui::PushID("TKio4");
 
         glm::vec3 newScale = EditorGUI::Vector3("Scale:", glm::vec3(
-            ObjectSelectToInspector->getComponent<SpriteComponent>().Scale.x,
-            ObjectSelectToInspector->getComponent<SpriteComponent>().Scale.y,
-            ObjectSelectToInspector->getComponent<SpriteComponent>().Scale.z
+            ObjectSelectToInspector->transform->Scale.x,
+            ObjectSelectToInspector->transform->Scale.y,
+            ObjectSelectToInspector->transform->Scale.z
         ));
 
-        ObjectSelectToInspector->getComponent<SpriteComponent>().Scale = glm::vec3(newScale.x, newScale.y, newScale.z);
+        ObjectSelectToInspector->transform->Scale = glm::vec3(newScale.x, newScale.y, newScale.z);
         ImGui::PopID();
 
 
         ImGui::PushID("TKio3");
-
+        
         glm::vec3 newRot = EditorGUI::Vector3("Rotation:", glm::vec3(
-            ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngleX,
-            ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngleY,
-            ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngleZ
+            ObjectSelectToInspector->transform->Rotation.x,
+            ObjectSelectToInspector->transform->Rotation.y,
+            ObjectSelectToInspector->transform->Rotation.z
         ));
-
-        ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngleX = (float)newRot.x;
-        ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngleY = (float)newRot.y;
-        ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngleZ = (float)newRot.z;
+        ObjectSelectToInspector->transform->Rotation = glm::vec3 ((float)newRot.x, (float)newRot.y, (float)newRot.z);
+        //ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngleX = (float)newRot.x;
+        //ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngleY = (float)newRot.y;
+        //ObjectSelectToInspector->getComponent<SpriteComponent>().rotationAngleZ = (float)newRot.z;
         ImGui::PopID();
 
         if (InputSystem::InputSystem::GetKey (GLFW_KEY_DELETE) && ObjectSelectToInspector != nullptr) {

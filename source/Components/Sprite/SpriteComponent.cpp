@@ -90,30 +90,10 @@ void SpriteComponent::draw() {
     glBindTexture(GL_TEXTURE_2D, texture);
     glUniform1i(glGetUniformLocation(ourShader->ID, "texture_diffuse1"), 0);
 
-
-    // Aplicar rotación utilizando glm::rotate
-    model = glm::mat4(1.0f);
-
-    // Aplicar traslación
-
-    model = glm::translate(model, glm::vec3(ObjectPosition.x, ObjectPosition.y, ObjectPosition.z));
-    glm::quat rotationZ = glm::angleAxis(glm::radians(rotationAngleZ), glm::vec3(0.0f, 0.0f, 1.0f));
-    glm::quat rotationY = glm::angleAxis(glm::radians(rotationAngleY), glm::vec3(0.0f, 1.0f, 0.0f));
-    glm::quat rotationX = glm::angleAxis(glm::radians(rotationAngleX), glm::vec3(1.0f, 0.0f, 0.0f));
-
-    rotation = rotationZ * rotationY * rotationX;
-
-    //glm::mat4 rotationMatrix = glm::mat4_cast(rotation);
-
-
-    model *= glm::mat4_cast(rotation);
-    model = glm::scale(model, glm::vec3(Scale.x /** GlobalScale*/, Scale.y /** GlobalScale*/, Scale.z/* * GlobalScale*/));
-
-
     ourShader->use();
     ourShader->setMat4  ("view", SceneManager::GetSceneManager()->OpenScene->worldCamera->GetView());
     ourShader->setMat4  ("projection", SceneManager::GetSceneManager()->OpenScene->worldCamera->GetProjectionMatrix());
-    ourShader->setMat4  ("model", model);  // Aplicar la matriz de modelo
+    ourShader->setMat4  ("model", entity->transform->GetMatrix());  // Aplicar la matriz de modelo
     ourmodel->Draw      (*ourShader);
 }
 
@@ -134,16 +114,16 @@ void SpriteComponent::clean() {
 
 std::string SpriteComponent::serialize() {
     json componentData;
-    componentData["posx"] = ObjectPosition.x;
-    componentData["posy"] = ObjectPosition.y;
-    componentData["posz"] = ObjectPosition.z;
+    //componentData["posx"] = ObjectPosition.x;
+    //componentData["posy"] = ObjectPosition.y;
+    //componentData["posz"] = ObjectPosition.z;
     componentData["scalex"] = Scale.x;
     componentData["scaley"] = Scale.y;
     componentData["scalez"] = Scale.z;
     //componentData["scaleglobal"] = GlobalScale;
-    componentData["rotationx"] = rotationAngleX;
-    componentData["rotationy"] = rotationAngleY;
-    componentData["rotationz"] = rotationAngleZ;
+    //componentData["rotationx"] = rotationAngleX;
+    //componentData["rotationy"] = rotationAngleY;
+    //componentData["rotationz"] = rotationAngleZ;
     componentData["texturepath"] = TexturePath;
     componentData["vertexpath"] = VertexPath;
     componentData["fragmentpath"] = FragmentPath;
@@ -155,14 +135,14 @@ void SpriteComponent::deserialize (std::string g, std::string path) {
     json componentData = json::parse(g);
 
 
-    if (CheckVar::Has(componentData, "posx"))
-    ObjectPosition.x = (float)componentData["posx"];
+    //if (CheckVar::Has(componentData, "posx"))
+    //ObjectPosition.x = (float)componentData["posx"];
 
-    if (CheckVar::Has (componentData, "posy"))
-    ObjectPosition.y = componentData["posy"];
+    //if (CheckVar::Has (componentData, "posy"))
+    //ObjectPosition.y = componentData["posy"];
 
-    if (CheckVar::Has(componentData, "posz"))
-    ObjectPosition.z = componentData["posz"];
+    //if (CheckVar::Has(componentData, "posz"))
+    //ObjectPosition.z = componentData["posz"];
 
     if (CheckVar::Has(componentData, "scalex"))
     Scale.x = componentData["scalex"];
@@ -176,14 +156,14 @@ void SpriteComponent::deserialize (std::string g, std::string path) {
     //if (CheckVar::Has(componentData, "scaleglobal"))
     //GlobalScale = componentData["scaleglobal"];
 
-    if (CheckVar::Has(componentData, "rotationx"))
-    rotationAngleX = (float)componentData["rotationx"];
+    //if (CheckVar::Has(componentData, "rotationx"))
+    //rotationAngleX = (float)componentData["rotationx"];
 
-    if (CheckVar::Has(componentData, "rotationy"))
-    rotationAngleY = (float)componentData["rotationy"];
+    //if (CheckVar::Has(componentData, "rotationy"))
+    //rotationAngleY = (float)componentData["rotationy"];
 
-    if (CheckVar::Has(componentData, "rotationz"))
-    rotationAngleZ = (float)componentData["rotationz"];
+    //if (CheckVar::Has(componentData, "rotationz"))
+    //rotationAngleZ = (float)componentData["rotationz"];
 
     if (CheckVar::Has(componentData, "texturepath")) {
         string newPath = (string)componentData["texturepath"];
@@ -205,7 +185,7 @@ void SpriteComponent::deserialize (std::string g, std::string path) {
 glm::mat4 SpriteComponent::GetMatrix() {
     glm::mat4 matrix;
 
-    matrix = glm::translate(glm::mat4(1.0f), glm::vec3(ObjectPosition.x, ObjectPosition.y, ObjectPosition.z));
+    matrix = glm::translate(glm::mat4(1.0f), glm::vec3(1, 1, 1));
     matrix *= glm::mat4_cast(glm::quat(1, 0, 0, 0));
     matrix = glm::scale(matrix, Scale);
 

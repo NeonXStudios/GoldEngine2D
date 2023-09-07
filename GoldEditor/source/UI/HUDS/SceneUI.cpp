@@ -95,7 +95,7 @@ void SceneUI::draw() {
         bool ignoreGui = false;
         static ImGuizmo::MODE gizmoMode(ImGuizmo::LOCAL);
         static ImGuizmo::OPERATION gizmoOperation(ImGuizmo::TRANSLATE);
-        float* matrix = (float*)glm::value_ptr(UIManager::instance->inspectorui->ObjectSelectToInspector->getComponent<SpriteComponent>().GetMatrix());
+        float* matrix = (float*)glm::value_ptr(UIManager::instance->inspectorui->ObjectSelectToInspector->transform->GetMatrix());
 
         float* projection = (float*)glm::value_ptr(SceneManager::GetSceneManager()->OpenScene->worldCamera->GetProjectionMatrix());
         float* view = (float*)glm::value_ptr(SceneManager::GetSceneManager()->OpenScene->worldCamera->GetView());
@@ -108,9 +108,9 @@ void SceneUI::draw() {
         glm::vec3 matrixRotation;
         ImGuizmo::DecomposeMatrixToComponents(
             matrix,
-            glm::value_ptr(UIManager::instance->inspectorui->ObjectSelectToInspector->getComponent<SpriteComponent>().ObjectPosition),
+            glm::value_ptr(UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Position),
             glm::value_ptr(matrixRotation),
-            glm::value_ptr(UIManager::instance->inspectorui->ObjectSelectToInspector->getComponent<SpriteComponent>().Scale)
+            glm::value_ptr(UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Scale)
         );
 
         //std::cout << "GIZMO OVER: " << ignoreGui << std::endl;
@@ -150,7 +150,7 @@ void SceneUI::draw() {
                 newOBJ->getComponent<SpriteComponent>().TexturePath = AComponent::RemoveDir(receivedString);
                 newOBJ->getComponent<SpriteComponent>().LoadTexture();
 
-                newOBJ->getComponent <SpriteComponent>().ObjectPosition = glm::vec3(WorldPoint.x, WorldPoint.y, 0);
+                newOBJ->transform->Position = glm::vec3(WorldPoint.x, WorldPoint.y, 0);
             }
         }
 
@@ -280,9 +280,9 @@ void SceneUI::draw() {
             glm::vec3 aabb_max(ObjectScale.x,
                                ObjectScale.y,
                                ObjectScale.z);
-
+            
             glm::mat4 RotationMatrix = glm::mat4_cast(glm::quat(1, 0, 0, 0));
-            glm::mat4 TranslationMatrix = glm::translate(glm::mat4(1.0f), glm::vec3(objs->getComponent<SpriteComponent>().ObjectPosition.x, objs->getComponent<SpriteComponent>().ObjectPosition.y, objs->getComponent<SpriteComponent>().ObjectPosition.z));
+            glm::mat4 TranslationMatrix = glm::translate(glm::mat4(1.0f), glm::vec3(objs->transform->Position.x, objs->transform->Position.y, objs->transform->Position.z));
             glm::mat4 ModelMatrix = TranslationMatrix * RotationMatrix;
 
 

@@ -26,6 +26,7 @@ void SaveData::loadScene() {
         json getEntityData = loadJson["objects"][i];
         newEntity->ObjectName = getEntityData["name"];
         newEntity->ObjectTag  = getEntityData["tag"];
+        newEntity->transform->deserialize (getEntityData["transform"].dump(), "game/");
 
         std::vector<Component*> cmpms = newEntity->getComponents<Component>();
 

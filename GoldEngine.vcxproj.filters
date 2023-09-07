@@ -95,9 +95,6 @@
     <Filter Include="Engine\02_Components\Physics3D">
       <UniqueIdentifier>{518261dc-e820-4e9c-9c29-708a8ca9d6c4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\02_Components\GoldMaths">
-      <UniqueIdentifier>{e84b0893-654f-4f4d-b326-1927aa1894fd}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Graphics\StartEngineGraphics.cpp">

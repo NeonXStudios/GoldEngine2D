@@ -32,6 +32,10 @@ SceneManager* SceneManager::GetSceneManager() {
 Entity* SceneManager::NewEntity() {
 	Entity* newObj = new Entity();
 
+	/*if (&newObj->getComponent<Transform>() == nullptr) {
+		newObj->addComponent<Transform>();
+	}*/
+
 	if (&newObj->getComponent<SpriteComponent>() == nullptr) {
 		newObj->addComponent<SpriteComponent>();
 	}

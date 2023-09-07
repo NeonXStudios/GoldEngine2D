@@ -23,6 +23,7 @@ void SaveData::saveScene() {
 
             objectVal["name"] = getOBJ->ObjectName;
             objectVal["tag"] = getOBJ->ObjectTag;
+            objectVal["transform"] = getOBJ->transform->serialize();
             
             if (getOBJ->parent != nullptr) {
                 objectVal["parentID"] = getOBJ->parent->objectID;
@@ -79,6 +80,8 @@ void SaveData::loadScene() {
         json getEntityData = loadJson["objects"][i];
         newEntity->ObjectName = getEntityData["name"];
         newEntity->ObjectTag  = getEntityData["tag"];
+        newEntity->transform->deserialize (getEntityData["transform"], "");
+        
 
         std::vector<Component*> cmpms = newEntity->getComponents<Component>();
 

@@ -1,3 +1,4 @@
+#pragma once
 #ifndef ECSCOMPONENT_H
 #define ECSCOMPONENT_H
 #include <iostream>
@@ -6,12 +7,15 @@
 #include <algorithm>
 #include <bitset>
 #include <array>
+#include "../../RequireLibs.h"
+#include "../SaveSystem/CheckVar.h"
 
 using namespace std;
 
 class Component;
 class Entity;
 class Manager;
+class Transform;
 
 using ComponentID = std::size_t;
 using Group = std::size_t;
@@ -53,8 +57,103 @@ public:
 	virtual ~Component() {}
 };
 
+class Transform {
+public:
+	glm::vec3 Position = glm::vec3(0.0f, 0.0f, 0.0f);
+	glm::vec3 LocalPosition = glm::vec3(1.0f, 1.0f, 1.0f);
+
+
+	glm::vec3 Rotation = glm::vec3(0.0f, 0.0f, 0.0f);
+	glm::vec3 Scale = glm::vec3(1.0f, 1.0f, 1.0f);
+
+	glm::mat4 Matrix = glm::mat4(1.0f);
+	glm::quat rotation;
+
+	void update() {
+		Matrix = glm::mat4(1.0f);
+
+		// Aplicar traslación
+
+		Matrix = glm::translate(Matrix, glm::vec3(Position.x, Position.y, Position.z));
+		glm::quat rotationZ = glm::angleAxis(glm::radians(Rotation.x), glm::vec3(0.0f, 0.0f, 1.0f));
+		glm::quat rotationY = glm::angleAxis(glm::radians(Rotation.y), glm::vec3(0.0f, 1.0f, 0.0f));
+		glm::quat rotationX = glm::angleAxis(glm::radians(Rotation.z), glm::vec3(1.0f, 0.0f, 0.0f));
+
+		rotation = rotationZ * rotationY * rotationX;
+
+		//glm::mat4 rotationMatrix = glm::mat4_cast(rotation);
+
+
+		Matrix *= glm::mat4_cast(rotation);
+		Matrix = glm::scale(Matrix, glm::vec3(Scale.x, Scale.y, Scale.z));
+
+		//std::cout << "Position: (" << Position.x << ", " << Position.y << ", " << Position.z << ")" << std::endl;
+		//std::cout << "Rotation: (" << Rotation.x << ", " << Rotation.y << ", " << Rotation.z << ")" << std::endl;
+		//std::cout << "Scale: (" << Scale.x << ", " << Scale.y << ", " << Scale.z << ")" << std::endl;
+	}
+
+	glm::mat4 GetMatrix() {
+		return Matrix;
+	}
+
+	//SAVE DATA AND LOAD
+	std::string serialize() {
+		json componentData;
+		componentData["posx"] = Position.x;
+		componentData["posy"] = Position.y;
+		componentData["posz"] = Position.z;
+		componentData["scalex"] = Scale.x;
+		componentData["scaley"] = Scale.y;
+		componentData["scalez"] = Scale.z;
+		componentData["rotationx"] = Rotation.x;
+		componentData["rotationy"] = Rotation.y;
+		componentData["rotationz"] = Rotation.z;
+
+		return componentData.dump ();
+	}
+
+	void deserialize(std::string g, std::string path = "") {
+		json componentData = json::parse(g);
+
+
+		if (CheckVar::Has(componentData, "posx"))
+			Position.x = (float)componentData["posx"];
+
+		if (CheckVar::Has (componentData, "posy"))
+			Position.y = (float)componentData["posy"];
+
+		if (CheckVar::Has(componentData, "posz"))
+			Position.z = (float)componentData["posz"];
+
+		if (CheckVar::Has(componentData, "scalex"))
+			Scale.x = (float)componentData["scalex"];
+
+		if (CheckVar::Has(componentData, "scaley"))
+			Scale.y = (float)componentData["scaley"];
+
+		if (CheckVar::Has(componentData, "scalez"))
+			Scale.z = (float)componentData["scalez"];
+
+		if (CheckVar::Has(componentData, "rotationx"))
+			Rotation.x = (float)componentData["rotationx"];
+
+		if (CheckVar::Has(componentData, "rotationy"))
+			Rotation.y = (float)componentData["rotationy"];
+
+		if (CheckVar::Has(componentData, "rotationz"))
+			Rotation.z = (float)componentData["rotationz"];
+
+
+
+		std::cout << "Position: (" << (float)componentData["posx"] << ", " << (float)componentData["posy"] << ", " << (float)componentData["posz"] << ")" << std::endl;
+		std::cout << "Rotation: (" << (float)componentData["rotationx"] << ", " << (float)componentData["rotationy"] << ", " << (float)componentData["rotationz"] << ")" << std::endl;
+		std::cout << "Scale: (" << (float)componentData["scalex"] << ", " << (float)componentData["scaley"] << ", " << (float)componentData["scalez"] << ")" << std::endl;
+	}
+};
+
 class Entity
 {
+
 private:
 	//Manager& manager;
 	bool active = true;
@@ -64,10 +163,15 @@ private:
 	ComponentBitSet componentBitset;
 	GroupBitset groupBitset;
 
+
+
+	
 public:
 	std::string ObjectName = "New Entity";
 	std::string ObjectTag = "None";
 	int objectID = 1;
+	Transform* transform = new Transform();
+
 	Entity* entity;
 	Entity* parent;
 	vector<Entity*> childrens;
@@ -120,6 +224,8 @@ public:
 			if (c->enabled)
 				c->update();
 		}
+
+		transform->update();
 
 		entityUpdate();
 	}

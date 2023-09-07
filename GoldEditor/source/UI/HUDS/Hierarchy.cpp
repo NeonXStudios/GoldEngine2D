@@ -90,11 +90,11 @@ void HierarchyUI::draw() {
                     SpriteComponent* sprite = &SceneManager::GetSceneManager()->GetObjectPerIndex(std::stoi(receivedString))->getComponent<SpriteComponent>();
                     SpriteComponent* parentSprite = &object->getComponent<SpriteComponent>();
 
-                    glm::vec3 offset = sprite->ObjectPosition - parentSprite->ObjectPosition;
+                    //glm::vec3 offset = sprite->ObjectPosition - parentSprite->ObjectPosition;
 
                     Entity* objGet = SceneManager::GetSceneManager()->GetObjectPerIndex(std::stoi(receivedString));
                     objGet->parent = object;
-                    objGet->getComponent <SpriteComponent>().LocalPosition = offset;
+                    objGet->transform->LocalPosition = vec3(0,0,0);
 
                     object->addChild (SceneManager::GetSceneManager()->GetObjectPerIndex(std::stoi(receivedString)));
                 }

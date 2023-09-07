@@ -38,11 +38,11 @@ void EntityBinder::RegisterFunctions(ScriptCompiler* luaParent)
 		"audio", &AudioSource::AudioPath
 	);
 
-	luaParent->lua.new_usertype<SpriteComponent>("SpriteComponent",
-		"position", &SpriteComponent::ObjectPosition,
-		"scale", &SpriteComponent::Scale,
-		//"gScale", &SpriteComponent::GlobalScale,
-		"rotation", &SpriteComponent::rotationAngle,
-		"texture", &SpriteComponent::TexturePath
-	);
+	//luaParent->lua.new_usertype<SpriteComponent>("SpriteComponent",
+	//	"position", &SpriteComponent::,
+	//	"scale", &SpriteComponent::Scale,
+	//	//"gScale", &SpriteComponent::GlobalScale,
+	//	"rotation", &SpriteComponent::rotationAngle,
+	//	"texture", &SpriteComponent::TexturePath
+	//);
 }
