@@ -33,6 +33,29 @@ namespace RenderSystem {
 
             return glm::vec2(WorldPointX, WorldPointY);
         }
+
+        static glm::vec2 MouseToViewPortPosition (glm::vec2 ViewportRenderPosition, glm::vec2 WindowSize) {
+            double x, y;
+            glfwGetCursorPos(StartEngineGraphics::window, &x, &y);
+
+            double windowMousePosX = x - ViewportRenderPosition.x;
+            double windowMousePosY = y - ViewportRenderPosition.y;
+
+            double NormalMousePosX = windowMousePosX;
+            double NormalMousePosY = windowMousePosY;
+
+            // CALCULAR CENTRO DE LA TEXTURA CON EL MOUSE (0, 0)
+            double centeredMousePosX = (NormalMousePosX * 2.0f - 1.0f) * (AppSettings::ScreenWidth) * SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom;
+            double centeredMousePosY = (NormalMousePosY * 2.0f + 1.0f) * (AppSettings::ScreenHeight) * SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom;
+
+            Camera* cam = SceneManager::GetSceneManager()->OpenScene->worldCamera;
+
+            double WorldPointX = (centeredMousePosX + cam->cameraPosition.x);
+            double WorldPointY = (centeredMousePosY - cam->cameraPosition.y);
+
+
+            return glm::vec2(NormalMousePosX, NormalMousePosY);
+        }
     };
 }
 

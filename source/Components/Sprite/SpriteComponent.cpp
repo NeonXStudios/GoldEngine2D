@@ -4,6 +4,7 @@
 #include "nlohmann/json.hpp"
 #include "../SaveSystem/CheckVar.h"
 #include "../FileSystem/FileSystem.h"
+#include "../Systems/SystemsEvents.h"
 
 using namespace nlohmann;
 
@@ -47,10 +48,9 @@ void SpriteComponent::start()  {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
+    LoadTexture();
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-    LoadTexture ();
 }
 
 void SpriteComponent::LoadTexture () {
@@ -109,15 +109,16 @@ void SpriteComponent::draw() {
     model *= glm::mat4_cast(rotation);
     model = glm::scale(model, glm::vec3(Scale.x * GlobalScale, Scale.y * GlobalScale, Scale.z * GlobalScale));
 
+
     ourShader->use();
-    ourShader->setMat4("view", SceneManager::GetSceneManager()->OpenScene->worldCamera->GetView());
-    ourShader->setMat4("projection", SceneManager::GetSceneManager()->OpenScene->worldCamera->GetProjectionMatrix());
-    ourShader->setMat4("model", model);  // Aplicar la matriz de modelo
-    ourmodel->Draw(*ourShader);
+    ourShader->setMat4  ("view", SceneManager::GetSceneManager()->OpenScene->worldCamera->GetView());
+    ourShader->setMat4  ("projection", SceneManager::GetSceneManager()->OpenScene->worldCamera->GetProjectionMatrix());
+    ourShader->setMat4  ("model", model);  // Aplicar la matriz de modelo
+    ourmodel->Draw      (*ourShader);
 }
 
 void SpriteComponent::PreRender() {
- 
+
 }
 
 void SpriteComponent::PostRender() {
@@ -196,6 +197,7 @@ void SpriteComponent::deserialize (std::string g, std::string path) {
 
     if (CheckVar::Has(componentData, "fragmentpath"))
     FragmentPath = (string)componentData["fragmentpath"];
+    compileShaders();
 
     LoadTexture();
 }
@@ -232,4 +234,15 @@ void SpriteComponent::compileShaders() {
 
     ourShader = new Shader(newPathVertex.c_str(), newPathFrag.c_str());
     ourmodel = new GLD::Model("E:\\VISUAL STUDIO\\GoldEngine2D\\GoldEditor\\def/models/Terrain.fbx");
+    ourShader->use();
+}
+
+glm::vec3 SpriteComponent::Min()
+{
+    return m_Min;
+}
+
+glm::vec3 SpriteComponent::Max()
+{
+    return m_Max;
 }
