@@ -4,6 +4,7 @@
 #include "nlohmann/json.hpp"
 #include "../SaveSystem/CheckVar.h"
 #include "../FileSystem/FileSystem.h"
+#include "../Systems/SystemsEvents.h"
 
 using namespace nlohmann;
 
@@ -47,10 +48,9 @@ void SpriteComponent::start()  {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
-    LoadTexture ();
+    LoadTexture();
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
 }
 
 void SpriteComponent::LoadTexture () {
@@ -81,35 +81,48 @@ void SpriteComponent::LoadTexture () {
 }
 
 void SpriteComponent::onupdate() {
+    
+}
+
+void SpriteComponent::draw() {
     glUseProgram(ourShader->ID);
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture);
-    glGetUniformLocation(ourShader->ID, "texture_diffuse1");
+    glUniform1i(glGetUniformLocation(ourShader->ID, "texture_diffuse1"), 0);
 
 
     // Aplicar rotación utilizando glm::rotate
-    glm::mat4 model = glm::mat4(1.0f);
+    model = glm::mat4(1.0f);
 
     // Aplicar traslación
-    model = glm::scale(model, glm::vec3(Scale.x * GlobalScale, Scale.y * GlobalScale, Scale.z * GlobalScale));
 
-    glm::quat rotationX = glm::angleAxis(glm::radians(rotationAngleX), glm::vec3(1.0f, 0.0f, 0.0f));
-    glm::quat rotationY = glm::angleAxis(glm::radians(rotationAngleY), glm::vec3(0.0f, 1.0f, 0.0f));
+    model = glm::translate(model, glm::vec3(ObjectPosition.x, ObjectPosition.y, ObjectPosition.z));
     glm::quat rotationZ = glm::angleAxis(glm::radians(rotationAngleZ), glm::vec3(0.0f, 0.0f, 1.0f));
+    glm::quat rotationY = glm::angleAxis(glm::radians(rotationAngleY), glm::vec3(0.0f, 1.0f, 0.0f));
+    glm::quat rotationX = glm::angleAxis(glm::radians(rotationAngleX), glm::vec3(1.0f, 0.0f, 0.0f));
 
     rotation = rotationZ * rotationY * rotationX;
 
-    glm::mat4 rotationMatrix = glm::mat4_cast(rotation);
+    //glm::mat4 rotationMatrix = glm::mat4_cast(rotation);
 
 
     model *= glm::mat4_cast(rotation);
-    model = glm::translate(model, glm::vec3(ObjectPosition.x, ObjectPosition.y, ObjectPosition.z));
-    
-    ourShader->setMat4("view", SceneManager::GetSceneManager()->OpenScene->worldCamera->GetView());
-    ourShader->setMat4("projection", SceneManager::GetSceneManager()->OpenScene->worldCamera->GetProjectionMatrix());
-    ourShader->setMat4("model", model);  // Aplicar la matriz de modelo
+    model = glm::scale(model, glm::vec3(Scale.x * GlobalScale, Scale.y * GlobalScale, Scale.z * GlobalScale));
+
+
     ourShader->use();
-    ourmodel->Draw(*ourShader);
+    ourShader->setMat4  ("view", SceneManager::GetSceneManager()->OpenScene->worldCamera->GetView());
+    ourShader->setMat4  ("projection", SceneManager::GetSceneManager()->OpenScene->worldCamera->GetProjectionMatrix());
+    ourShader->setMat4  ("model", model);  // Aplicar la matriz de modelo
+    ourmodel->Draw      (*ourShader);
+}
+
+void SpriteComponent::PreRender() {
+
+}
+
+void SpriteComponent::PostRender() {
+
 }
 
 
@@ -126,8 +139,11 @@ std::string SpriteComponent::serialize() {
     componentData["posz"] = ObjectPosition.z;
     componentData["scalex"] = Scale.x;
     componentData["scaley"] = Scale.y;
+    componentData["scalez"] = Scale.z;
     componentData["scaleglobal"] = GlobalScale;
-    componentData["rotation"] = rotationAngle;
+    componentData["rotationx"] = rotationAngleX;
+    componentData["rotationy"] = rotationAngleY;
+    componentData["rotationz"] = rotationAngleZ;
     componentData["texturepath"] = TexturePath;
     componentData["vertexpath"] = VertexPath;
     componentData["fragmentpath"] = FragmentPath;
@@ -154,11 +170,20 @@ void SpriteComponent::deserialize (std::string g, std::string path) {
     if (CheckVar::Has(componentData, "scaley"))
     Scale.y = componentData["scaley"];
 
+    if (CheckVar::Has(componentData, "scalez"))
+    Scale.z = componentData["scalez"];
+
     if (CheckVar::Has(componentData, "scaleglobal"))
     GlobalScale = componentData["scaleglobal"];
 
-    if (CheckVar::Has(componentData, "rotation"))
-    rotationAngle = (float)componentData["rotation"];
+    if (CheckVar::Has(componentData, "rotationx"))
+    rotationAngleX = (float)componentData["rotationx"];
+
+    if (CheckVar::Has(componentData, "rotationy"))
+    rotationAngleY = (float)componentData["rotationy"];
+
+    if (CheckVar::Has(componentData, "rotationz"))
+    rotationAngleZ = (float)componentData["rotationz"];
 
     if (CheckVar::Has(componentData, "texturepath")) {
         string newPath = (string)componentData["texturepath"];
@@ -172,20 +197,21 @@ void SpriteComponent::deserialize (std::string g, std::string path) {
 
     if (CheckVar::Has(componentData, "fragmentpath"))
     FragmentPath = (string)componentData["fragmentpath"];
+    compileShaders();
 
     LoadTexture();
 }
 
-
 glm::mat4 SpriteComponent::GetMatrix() {
     glm::mat4 matrix;
 
-    matrix = glm::translate  (glm::mat4 (1.0f), glm::vec3 (ObjectPosition.x, ObjectPosition.y, ObjectPosition.z));
-    matrix *= glm::mat4_cast (glm::quat (1, 0, 0, 0));
-    matrix = glm::scale (matrix, Scale);
+    matrix = glm::translate(glm::mat4(1.0f), glm::vec3(ObjectPosition.x, ObjectPosition.y, ObjectPosition.z));
+    matrix *= glm::mat4_cast(glm::quat(1, 0, 0, 0));
+    matrix = glm::scale(matrix, Scale);
 
     return matrix;
 }
+
 
 
 float* SpriteComponent::getVertices() {
@@ -207,5 +233,16 @@ void SpriteComponent::compileShaders() {
     string newPathFrag = FileSystem::GetAsset(FragmentPath);
 
     ourShader = new Shader(newPathVertex.c_str(), newPathFrag.c_str());
-    ourmodel = new GLD::Model("F:\\VISUAL STUDIO\\GoldEngine2D\\GoldEditor\\def/models/Terrain.fbx");
+    ourmodel = new GLD::Model("E:\\VISUAL STUDIO\\GoldEngine2D\\GoldEditor\\def/models/Terrain.fbx");
+    ourShader->use();
+}
+
+glm::vec3 SpriteComponent::Min()
+{
+    return m_Min;
+}
+
+glm::vec3 SpriteComponent::Max()
+{
+    return m_Max;
 }

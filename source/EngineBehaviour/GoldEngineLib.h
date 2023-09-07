@@ -23,6 +23,7 @@
 #include "../Components/Debug/DrawBox.h"
 #include "../Components/Sprite/SpriteComponent.h"
 #include "../Components/Systems/SystemsEvents.h"
+#include "../Components/Systems/PickingTexture.h"
 #include "../Components/Script/ScriptCompiler.h"
 #include "../Components/Physics/RigidBody.h"
 #include "../Components/Physics3D/Rigidbody3D.h"

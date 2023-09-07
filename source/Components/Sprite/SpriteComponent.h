@@ -17,6 +17,11 @@ class SpriteComponent : public Component
     GLD::Model* ourmodel = nullptr;
 
 public:
+    glm::vec3 Min();
+    glm::vec3 Max();
+
+    glm::vec3 m_Min;
+    glm::vec3 m_Max;
 
     glm::vec3 ObjectPosition = glm::vec3(0.0f, 0.0f, 0.0f);
     glm::vec3 LocalPosition = glm::vec3(0.0f, 0.0f, 0.0f);
@@ -40,6 +45,7 @@ public:
 
     unsigned int texture;
     unsigned int VBO, VAO, EBO;
+    glm::mat4 model = glm::mat4(1.0f);
 
     void init() override {
         start();
@@ -48,6 +54,10 @@ public:
     void update() override {
         onupdate();
     }
+
+    void draw() override;
+    void PreRender() override;
+    void PostRender() override;
 
     void start();
     void onupdate();

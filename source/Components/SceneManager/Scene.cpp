@@ -14,8 +14,13 @@ void Scene::start() {
 void Scene::update() {
 	//worldCamera->Inputs(StartEngineGraphics::window);
 	//worldCamera->updateMatrix(45.0f, 0.1f, 1000.0f);
-
 	worldCamera->update();
+
+	for (Entity* ents : objectsInScene) {
+		//ents->entity = ents;
+		ents->update();
+	}
+
 
 	if (AppSettings::gameRunning) {
 		if (GravityWorld != nullptr && GravityWorld->GetBodyCount() > 0) {
@@ -25,15 +30,30 @@ void Scene::update() {
 			GravityWorld->Step(timeStep, 6, 2);
 			body->GetNext();
 		}
+
+		mScene->simulate(1.0f / 60.0f);
+		mScene->fetchResults(true);
 	}
-	
+}
 
-	mScene->simulate(1.0f / 60.0f);
-	mScene->fetchResults(true);
-
+void Scene::draw() {
 	for (Entity* ents : objectsInScene) {
-		ents->entity = ents;
-		ents->update();
+		//ents->entity = ents;
+		ents->draw();
+	}
+}
+
+void Scene::PreRender() {
+	for (Entity* ents : objectsInScene) {
+		//ents->entity = ents;
+		ents->PreRender();
+	}
+}
+
+void Scene::PostRender() {
+	for (Entity* ents : objectsInScene) {
+		//ents->entity = ents;
+		ents->PostRender();
 	}
 }
 

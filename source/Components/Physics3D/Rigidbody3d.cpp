@@ -45,6 +45,9 @@ void Rigidbody3d::init() {
 
 	if (body != nullptr) {
 		body->setGlobalPose (PxTransform (entity->getComponent<SpriteComponent>().ObjectPosition.x, entity->getComponent<SpriteComponent>().ObjectPosition.y, entity->getComponent<SpriteComponent>().ObjectPosition.z));
+		PxQuat newRotation(PxPi / 4.0f, PxVec3(entity->getComponent<SpriteComponent>().rotationAngleX, entity->getComponent<SpriteComponent>().rotationAngleY, entity->getComponent<SpriteComponent>().rotationAngleZ)); // Rotación de 45 grados alrededor del eje Y
+		body->setGlobalPose(PxTransform(body->getGlobalPose().p, newRotation));
+
 	}
 }
 
@@ -61,10 +64,13 @@ void Rigidbody3d::update() {
 			position.y, 
 			position.z
 		);
+		double gradosX = rotation.x * (180.0 / M_PI);
+		double gradosY = rotation.y * (180.0 / M_PI);
+		double gradosZ = rotation.z * (180.0 / M_PI);
 
-		entity->getComponent<SpriteComponent>().rotationAngleX = rotation.x;
-		entity->getComponent<SpriteComponent>().rotationAngleY = rotation.y;
-		entity->getComponent<SpriteComponent>().rotationAngleZ = rotation.z;
+		entity->getComponent<SpriteComponent>().rotationAngleX = gradosX;
+		entity->getComponent<SpriteComponent>().rotationAngleY = gradosY;
+		entity->getComponent<SpriteComponent>().rotationAngleZ = gradosZ;
 
 
 		body->setRigidBodyFlag(physx::PxRigidBodyFlag::eKINEMATIC, isStatic);

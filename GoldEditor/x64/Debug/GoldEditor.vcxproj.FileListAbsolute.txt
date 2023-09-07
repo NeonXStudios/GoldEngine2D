@@ -1,1 +1,2 @@
 F:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\GoldEditor.vcxproj.CopyComplete
+E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\x64\Debug\GoldEditor.vcxproj.CopyComplete

@@ -35,13 +35,19 @@ Entity* SceneManager::NewEntity() {
 	if (&newObj->getComponent<SpriteComponent>() == nullptr) {
 		newObj->addComponent<SpriteComponent>();
 	}
+
 	newObj->entity = newObj;
-	newObj->objectID = OpenScene->objectsInScene.size();
+	int objectID = OpenScene->objectsInScene.size();
+	newObj->objectID = objectID;
+
+	std::cout << "New id: " << newObj->objectID << std::endl;
 
 	OpenScene->objectsInScene.push_back(newObj);
-	newObj->ObjectName = "New Entity " + std::to_string (OpenScene->objectsInScene.size() + 1);
+	newObj->ObjectName = "New Entity " + std::to_string(OpenScene->objectsInScene.size());
+
 	return newObj;
 }
+
 
 
 Entity* SceneManager::GetObjectByID (int id) {

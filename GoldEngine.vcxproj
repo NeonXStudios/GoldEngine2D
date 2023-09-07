@@ -195,6 +195,7 @@
     <ClCompile Include="source\Components\ShaderCompiler\Shader.cpp" />
     <ClCompile Include="source\Components\Skybox\Skybox.cpp" />
     <ClCompile Include="source\Components\Sprite\SpriteComponent.cpp" />
+    <ClCompile Include="source\Components\Systems\PickingTexture.cpp" />
     <ClCompile Include="source\Components\Systems\RenderSystem.cpp" />
     <ClCompile Include="source\Components\UI\UIImplement.cpp" />
     <ClCompile Include="source\EngineBehaviour\EngineBehaviour.cpp" />
@@ -247,6 +248,7 @@
     <ClInclude Include="source\Components\ShaderCompiler\Shader.h" />
     <ClInclude Include="source\Components\Skybox\Skybox.h" />
     <ClInclude Include="source\Components\Sprite\SpriteComponent.h" />
+    <ClInclude Include="source\Components\Systems\PickingTexture.h" />
     <ClInclude Include="source\Components\Systems\SystemsEvents.h" />
     <ClInclude Include="source\Components\UI\UIImplement.h" />
     <ClInclude Include="source\Components\UI\UIStyle.h" />

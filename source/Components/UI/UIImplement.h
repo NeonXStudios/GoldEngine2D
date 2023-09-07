@@ -14,6 +14,7 @@ public:
 	void draw();
 	void DrawCanvas();
 	void DrawData();
+	void RenderUI();
 
 	~UIImplement();
 };
