@@ -1,12 +1,9 @@
 #include "UIManager.h"
-//
-//#define IMGUI_DEFINE_MATH_OPERATORS
-//#include <imguinode/imgui_node_editor.h>
 
+
+//SINGLETON VARIABLE
 UIManager* UIManager::instance = nullptr;
 
-//namespace ed = ax::NodeEditor;
-//ed::EditorContext* m_Context = nullptr;
 
 void UIManager::start (){
 	UIManager::instance = this;
@@ -29,6 +26,7 @@ void UIManager::start (){
 
 void UIManager::draw() {
 	ImGui::DockSpaceOverViewport();
+
 	sceneui->draw();
 	mainmenuui->draw();
 	hierarhcyui->draw();

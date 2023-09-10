@@ -1,4 +1,6 @@
 #pragma once
+#include "../../RequireLibs.h"
+#include "../SceneManager/SceneManager.h"
 #include <inc/fmod.hpp>
 #include <inc/fmod_errors.h>
 #include <iostream>
@@ -7,21 +9,20 @@ using namespace FMOD;
 
 class AudioManager
 {
-	static AudioManager* instance;
 public:
+	static AudioManager* instance;
 	System* system = nullptr;
 	FMOD_RESULT result = System_Create(&system);
 	
 	void create();
 	void release();
 
-	static AudioManager* GetManager() {
-		return instance;
-	}
+
+	void Update();
+	void StartSystem();
+
+	static AudioManager* GetManager();
 
 
-	~AudioManager() {
-		result = system->close();
-		result = system->release();
-	}
+	~AudioManager();
 };

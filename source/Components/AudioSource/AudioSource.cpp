@@ -13,6 +13,9 @@ std::string AudioSource::serialize () {
     componentData["volumen"] = g;
     componentData["pathfile"] = AudioPath;
 
+    componentData["minv"] = minDistance;
+    componentData["maxv"] = maxDistance;
+
     return componentData.dump();
 }
 
@@ -24,6 +27,14 @@ void AudioSource::deserialize(std::string g, std::string path) {
     if (CheckVar::Has(componentData, "volumen"))
     SetVolumen (componentData["volumen"]);
 
+    if (CheckVar::Has(componentData, "minv"))
+        minDistance = componentData["minv"];
+
+    if (CheckVar::Has(componentData, "maxv"))
+        maxDistance = componentData["maxv"];
+
     if (CheckVar::Has(componentData, "pathfile"))
     AudioPath = path + (string)componentData["pathfile"];
+
+    Reset();
 }

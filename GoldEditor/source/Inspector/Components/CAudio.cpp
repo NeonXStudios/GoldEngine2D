@@ -43,4 +43,6 @@ void CAudio::draw (Entity* owner) {
 
 	sr->SetVolumen(glm::abs(EditorGUI::Slider("Volumen", *sr->GetVolumen(), 0, 1)));
     sr->SetPan (EditorGUI::Float("Pan", sr->GetPan()));
+    sr->minDistance = EditorGUI::Float("Min Distance", sr->minDistance);
+    sr->maxDistance = EditorGUI::Float("Max Distance", sr->maxDistance);
 }

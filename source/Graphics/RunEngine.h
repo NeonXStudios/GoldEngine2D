@@ -23,7 +23,9 @@ public:
 		AppSettings::gameRunning = runGame;
 
 		//CREATE AUDIO MANAGER
+		//audioManager->create();
 		audioManager->create();
+		audioManager->StartSystem();
 
 		//CREATE SCENEMANAGER INSTANCE
 		sceneManager->create();

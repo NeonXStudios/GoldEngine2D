@@ -5,7 +5,6 @@
 #include <imguizmo/ImGuizmo.h>
 #include <glm/glm.hpp>
 
-
 using namespace std;
 
 class SceneUI : public UIDrawer {

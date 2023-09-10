@@ -3,7 +3,6 @@
 #include <iostream>
 #include <string>
 
-#define IMGUI_DEFINE_MATH_OPERATORS
 #include "imgui.h"
 
 using namespace std;

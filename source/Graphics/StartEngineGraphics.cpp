@@ -10,10 +10,7 @@ GLFWwindow* StartEngineGraphics::window = nullptr;
 EngineBehaviour* StartEngineGraphics::engine = nullptr;
 StartEngineGraphics* StartEngineGraphics::instance = nullptr;
 UIImplement* UIIMPL = new UIImplement();
-
-
-
-//Skybox* sky = new Skybox();
+Skybox* sky = new Skybox();
 
 
 void StartEngineGraphics::create() {
@@ -27,17 +24,10 @@ void StartEngineGraphics::release() {
     delete StartEngineGraphics::instance;
 }
 
-//void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
-//    glViewport(0, 0, width, height);
-//    float aspectRatio = static_cast<float>(width) / static_cast<float>(height);
-//    
-//    SceneManager::GetSceneManager()->OpenScene->worldCamera->projection = glm::ortho(-aspectRatio * SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom, aspectRatio * SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom, -SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom, SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom, -1000.0f, 1000.0f);
-//}
-
 void StartEngineGraphics::StartEngine () {
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3); // Cambia este número a la versión exacta que desees (4.1, 4.2, etc.)
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 
@@ -69,28 +59,18 @@ void StartEngineGraphics::StartEngine () {
     StartEngineGraphics::engine->start();
 
     UIIMPL->start();
-    //glGenFramebuffers(1, &imguiFramebuffer);
-    //glBindFramebuffer(GL_FRAMEBUFFER, imguiFramebuffer);
-
-    //glGenTextures(1, &imguiTexture);
-    //glBindTexture(GL_TEXTURE_2D, imguiTexture);
-    //glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, AppSettings::ScreenWidth, AppSettings::ScreenHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, nullptr);
-    //glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, imguiTexture, 0);
-
 
     //LOAD IMGUI IMPLEMENTATION
     gameStarted = true;
 
 
 
-    // Crear y adjuntar el buffer de profundidad para la escena 3D
     glEnable(GL_DEPTH_TEST);
-    // Enables Cull Facing
     glEnable(GL_CULL_FACE);
-    // Keeps front faces
     glCullFace(GL_FRONT);
-    // Uses counter clock-wise standard
     glFrontFace(GL_CCW);
+
+    sky->init();
 }
 
 void StartEngineGraphics::update() {
@@ -103,6 +83,8 @@ void StartEngineGraphics::update() {
         lastFrame = currentFrame;
         time += deltaTime;
 
+
+
         // RENDERIZACION DE TODO OPENGL
         StartEngineGraphics::engine->PreRender();
         SceneManager::GetSceneManager()->OpenScene->PreRender();
@@ -114,39 +96,39 @@ void StartEngineGraphics::update() {
         AppSettings::RenderHeight = height;
         AppSettings::RenderWidth = width;
 
+
         glViewport(0, 0, AppSettings::RenderWidth, AppSettings::RenderHeight);
         glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        glDepthFunc(GL_LESS);
 
-        //DRAW SKYBOX
-        //sky->update();
+
+        
+        glDepthMask  (GL_FALSE);
+        sky->update();
+        glDepthMask  (GL_TRUE);
+
+        glDepthFunc(GL_ALWAYS);
 
         SceneManager::GetSceneManager()->OpenScene->draw();
         StartEngineGraphics::engine->draw();
 
+
+
         SceneManager::GetSceneManager()->OpenScene->update();
         StartEngineGraphics::engine->update();
+ 
+
+
 
 
         SceneManager::GetSceneManager()->OpenScene->PostRender();
         StartEngineGraphics::engine->PostRender();
 
+        AudioManager::GetManager()->Update();
+
+
         RenderImgui();
-
-
-        //glBindFramebuffer(GL_FRAMEBUFFER, imguiFramebuffer);
-        //glBindFramebuffer(GL_READ_FRAMEBUFFER, imguiFramebuffer);
-        //glBindFramebuffer(GL_DRAW_FRAMEBUFFER, 0);
-        //glBlitFramebuffer(0, 0, AppSettings::RenderWidth, AppSettings::RenderHeight, 0, 0, AppSettings::RenderWidth, AppSettings::RenderHeight, GL_COLOR_BUFFER_BIT, GL_NEAREST);
-
-
-        //bool isDepthTestEnabled = glIsEnabled(GL_DEPTH_TEST);
-        //if (isDepthTestEnabled) {
-        //    std::cout << "DEPTH IS ENABLED" << std::endl;
-        //}
-        //else {
-        //    std::cout << "DEPTH IS DISABLED" << std::endl;
-        //}
 
 
         // INTERCAMBIO DE BUFERES Y PRESENTACION
@@ -157,10 +139,6 @@ void StartEngineGraphics::update() {
 
 
 void StartEngineGraphics::RenderOpenGL() {
-    //glViewport(0, 0, AppSettings::ScreenWidth, AppSettings::ScreenHeight);
-    //glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
-    //glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
 
 }
 

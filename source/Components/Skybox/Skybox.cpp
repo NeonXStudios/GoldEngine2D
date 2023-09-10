@@ -3,113 +3,84 @@
 #include "stb_image.h"
 
 
-float skyboxVertices[] =
-{
-	//   Coordinates
-	-1.0f, -1.0f,  1.0f,//        7--------6
-	 1.0f, -1.0f,  1.0f,//       /|       /|
-	 1.0f, -1.0f, -1.0f,//      4--------5 |
-	-1.0f, -1.0f, -1.0f,//      | |      | |
-	-1.0f,  1.0f,  1.0f,//      | 3------|-2
-	 1.0f,  1.0f,  1.0f,//      |/       |/
-	 1.0f,  1.0f, -1.0f,//      0--------1
-	-1.0f,  1.0f, -1.0f
-};
-
-unsigned int skyboxIndices[] =
-{
-	// Right
-	1, 2, 6,
-	6, 5, 1,
-	// Left
-	0, 4, 7,
-	7, 3, 0,
-	// Top
-	4, 5, 6,
-	6, 7, 4,
-	// Bottom
-	0, 3, 2,
-	2, 1, 0,
-	// Back
-	0, 1, 5,
-	5, 4, 0,
-	// Front
-	3, 7, 6,
-	6, 2, 3
-};
-
-
 void Skybox::init() {
-	skyboxShader = new Shader (vertexPath.c_str(), fragPath.c_str());
-	skyboxShader->use();
-	glUniform1i(glGetUniformLocation(skyboxShader->ID, "skybox"), 0);
+	string newPathVertex = FileSystem::GetAsset(VertexPath);
+	string newPathFrag = FileSystem::GetAsset(FragmentPath);
 
-	glGenVertexArrays(1, &skyboxVAO);
-	glGenBuffers(1, &skyboxVBO);
-	glGenBuffers(1, &skyboxEBO);
-	glBindVertexArray(skyboxVAO);
-	glBindBuffer(GL_ARRAY_BUFFER, skyboxVBO);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(skyboxVertices), &skyboxVertices, GL_STATIC_DRAW);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, skyboxEBO);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(skyboxIndices), &skyboxIndices, GL_STATIC_DRAW);
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-	glEnableVertexAttribArray(0);
-	glBindBuffer(GL_ARRAY_BUFFER, 0);
-	glBindVertexArray(0);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+	ourShader = new Shader(newPathVertex.c_str(), newPathFrag.c_str());
+	ourmodel = new GLD::Model(modelPath);
+	ourShader->setFloat ("texture_diffuse1", 0);
+	ourShader->use();
+
+	glGenTextures(1, &texture);
+	glBindTexture(GL_TEXTURE_2D, texture);
 
 
-	// All the faces of the cubemap (make sure they are in this exact order)
-	std::string facesCubemap[6] =
-	{
-		"C:\\Users\\tupap\\Documents\\GoldEngine\\Projects\\Vortex\\assets\\skybox\\right.jpg",
-		"C:\\Users\\tupap\\Documents\\GoldEngine\\Projects\\Vortex\\assets\\skybox\\left.jpg",
-		"C:\\Users\\tupap\\Documents\\GoldEngine\\Projects\\Vortex\\assets\\skybox\\top.jpg",
-		"C:\\Users\\tupap\\Documents\\GoldEngine\\Projects\\Vortex\\assets\\skybox\\bottom.jpg",
-		"C:\\Users\\tupap\\Documents\\GoldEngine\\Projects\\Vortex\\assets\\skybox\\front.jpg",
-		"C:\\Users\\tupap\\Documents\\GoldEngine\\Projects\\Vortex\\assets\\skybox\\back.jpg"
-	};
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-	// Creates the cubemap texture object
-	glGenTextures(1, &cubemapTexture);
-	glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapTexture);
-	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	// These are very important to prevent seams
-	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
-	// This might help with seams on some systems
-	//glEnable(GL_TEXTURE_CUBE_MAP_SEAMLESS);
+	// Configuraciones de la textura
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
-	// Cycles through all the textures and attaches them to the cubemap object
-	for (unsigned int i = 0; i < 6; i++)
-	{
-		int width, height, nrChannels;
-		unsigned char* data = stbi_load(facesCubemap[i].c_str(), &width, &height, &nrChannels, 0);
-		if (data)
-		{
-			stbi_set_flip_vertically_on_load(false);
-			glTexImage2D
-			(
-				GL_TEXTURE_CUBE_MAP_POSITIVE_X + i,
-				0,
-				GL_RGB,
-				width,
-				height,
-				0,
-				GL_RGB,
-				GL_UNSIGNED_BYTE,
-				data
-			);
-			stbi_image_free(data);
-		}
-		else
-		{
-			std::cout << "Failed to load texture: " << facesCubemap[i] << std::endl;
-			stbi_image_free(data);
-		}
+	//glEnable(GL_BLEND);
+ //   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+
+	std::cout << "La nueva ruta de la textura es " << TexturePath << std::endl;
+	int width, height, nrChannels;
+	string newPath = FileSystem::GetAsset(TexturePath);
+	std::cout << "NUEVA RUTA:" << newPath << std::endl;
+
+	unsigned char* data = stbi_load(newPath.c_str(), &width, &height, &nrChannels, 0);
+	if (data) {
+		GLenum format; 
+		if (nrChannels == 1)
+			format = GL_RED;
+		else if (nrChannels == 3)
+			format = GL_RGB;
+		else if (nrChannels == 4)
+			format = GL_RGBA;
+
+		glBindTexture		(GL_TEXTURE_2D, texture															);
+		glTexImage2D		(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data		);
+		glGenerateMipmap	(GL_TEXTURE_2D																	);
 	}
+	else {
+		std::cout << "Failed to load texture" << std::endl;
+	}
+
+	stbi_image_free(data);
+	
+
+
+	//SKYBOX BUFFER START
+	glGenTextures(1, &skyboxTexture);
+	glBindTexture(GL_TEXTURE_2D, skyboxTexture);
+	// Configura los parámetros de textura aquí (min/mag filter, wrap mode, etc.)
+
+	// Configurar la textura de profundidad
+	glGenTextures(1, &depthTexture);
+	glBindTexture(GL_TEXTURE_2D, depthTexture);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT, AppSettings::RenderWidth, AppSettings::RenderHeight, 0, GL_DEPTH_COMPONENT, GL_FLOAT, nullptr);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+
+	// Configurar el framebuffer del skybox
+	glGenFramebuffers(1, &skyboxFramebuffer);
+	glBindFramebuffer(GL_FRAMEBUFFER, skyboxFramebuffer);
+	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, skyboxTexture, 0);
+	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, depthTexture, 0);
+
+	// Verificar el estado del framebuffer
+	if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE) {
+		std::cerr << "Error: Framebuffer del skybox no está completo" << std::endl;
+	}
+
+	// Restaurar el framebuffer predeterminado
+	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }
 
 void Skybox::draw() {
@@ -117,23 +88,51 @@ void Skybox::draw() {
 }
 
 void Skybox::update() {
-	skyboxShader->use();
-	glm::mat4 view = glm::mat4(1.0f);
-	glm::mat4 projection = glm::mat4(1.0f);
-
-
-	view = glm::mat4(glm::mat3(glm::lookAt(SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition, SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition + SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation, SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraUp)));
-	projection = glm::perspective(glm::radians(45.0f), (float)1920 / 1080, 0.1f, 1000.0f);
-	glUniformMatrix4fv(glGetUniformLocation(skyboxShader->ID, "view"), 1, GL_FALSE, glm::value_ptr(view));
-	glUniformMatrix4fv(glGetUniformLocation(skyboxShader->ID, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
-
-	glBindVertexArray(skyboxVAO);
+	glUseProgram(ourShader->ID);
 	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapTexture);
-	glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
-	glBindVertexArray(0);
+	glBindTexture(GL_TEXTURE_2D, texture);
+	glUniform1i(glGetUniformLocation(ourShader->ID, "texture_diffuse1"), 0);
+
+	Rotation.z = -90;
+
+	Matrix = glm::mat4(1.0f);
+	vec3 cameraPos = SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition;
+	// Aplicar traslación
+	Matrix = glm::translate(Matrix, glm::vec3(Position.x, Position.y, Position.z));
+	glm::quat rotationZ = glm::angleAxis(glm::radians(Rotation.x), glm::vec3(0.0f, 0.0f, 1.0f));
+	glm::quat rotationY = glm::angleAxis(glm::radians(Rotation.y), glm::vec3(0.0f, 1.0f, 0.0f));
+	glm::quat rotationX = glm::angleAxis(glm::radians(Rotation.z), glm::vec3(1.0f, 0.0f, 0.0f));
+
+	rotation = rotationZ * rotationY * rotationX;
+
+	//glm::mat4 rotationMatrix = glm::mat4_cast(rotation);
+
+
+	Matrix *= glm::mat4_cast(rotation);
+	Matrix = glm::scale(Matrix, glm::vec3(Scale.x, Scale.y, Scale.z));
+
+	ourShader->use();
+	ourShader->setMat4("view", SceneManager::GetSceneManager()->OpenScene->worldCamera->GetView());
+	ourShader->setMat4("projection", SceneManager::GetSceneManager()->OpenScene->worldCamera->GetProjectionMatrix());
+	ourShader->setMat4("model", GetMatrix());  // Aplicar la matriz de modelo
+	ourmodel->Draw(*ourShader);
+	Position = cameraPos;
 }
+
+void Skybox::PreRender() {
+
+}
+
+
+void Skybox::PostRender() {
+
+}
+
 
 void Skybox::clean() {
 
+}
+
+glm::mat4 Skybox::GetMatrix() {
+	return Matrix;
 }

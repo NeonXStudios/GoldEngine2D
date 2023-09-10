@@ -92,6 +92,7 @@ void GoldEditor::update() {
         // Calculates upcoming vertical change in the Orientation
         glm::vec3 newOrientation = glm::rotate(SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation, glm::radians(-rotX), glm::normalize(glm::cross(SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation, SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraUp)));
 
+
         // Decides whether or not the next vertical Orientation is legal or not
         if (abs(glm::angle(newOrientation, SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraUp) - glm::radians(90.0f)) <= glm::radians(85.0f))
         {

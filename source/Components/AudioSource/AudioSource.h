@@ -1,6 +1,6 @@
 #pragma once
-#include <iostream>
 #include "AudioManager.h"
+#include <iostream>
 #include "../ECS/ECS.h"
 
 
@@ -12,40 +12,40 @@ class AudioSource : public Component
 	Sound* sound = nullptr;
 	Channel* channel = nullptr;
 	float pan = 0;
+	bool IsSpatial3D = true;
+	FMOD_RESULT result;
 
 public:
 	std::string AudioPath = "";
+	float minDistance = 5;
+	float maxDistance = 10;
+
 	void init () override {
-
-		if (AudioManager::GetManager()->result != FMOD_OK) {
-			std::cout << "AUDIO MANAGER NOT STARTED" << std::endl;
+		FMOD_RESULT initResult = AudioManager::GetManager()->result;
+		if (initResult != FMOD_OK) {
+			std::cout << "ERROR: FMOD initialization failed" << std::endl;
 		}
 		else {
-			std::cout << "AudioManager Load 1 Completed..." << std::endl;
+			// FMOD inicializado correctamente, ahora carga y reproduce el sonido.
+			FMOD_RESULT loadResult = AudioManager::GetManager()->system->createSound(AudioPath.c_str(), FMOD_3D | FMOD_3D_LINEARROLLOFF, nullptr, &sound);
+
+			if (loadResult != FMOD_OK) {
+				std::cout << "Failed to load audio: " << FMOD_ErrorString(loadResult) << std::endl;
+			}
+			else {
+				// Reproduce el sonido.
+				FMOD_RESULT playResult = AudioManager::GetManager()->system->playSound(sound, nullptr, false, &channel);
+				if (playResult != FMOD_OK) {
+					std::cout << "Failed to play audio: " << FMOD_ErrorString(playResult) << std::endl;
+				}
+				else {
+					std::cout << "Audio component started successfully..." << std::endl;
+				}
+			}
 		}
-		
-
-		AudioManager::GetManager()->result = AudioManager::GetManager()->system->init (32, FMOD_INIT_NORMAL, nullptr);
-
-		if (AudioManager::GetManager()->result != FMOD_OK) {
-			std::cout << "AUDIO MANAGER NOT STARTED" << std::endl;
-		}
-		else {
-			std::cout << "AudioManager Load 2 Completed..." << std::endl;
-		}
-
-		AudioManager::GetManager()->result = AudioManager::GetManager()->system->createSound (AudioPath.c_str(), FMOD_DEFAULT, nullptr, &sound);
 
 
-		AudioManager::GetManager()->result = AudioManager::GetManager()->system->playSound (sound, nullptr, false, &channel);
-
-		if (AudioManager::GetManager()->result != FMOD_OK) {
-			std::cout << "AUDIO MANAGER NOT STARTED" << std::endl;
-		}
-		else {
-			std::cout << "Audio component started successfully..." << std::endl;
-		}
-		SetVolumen (1.0f);
+		channel->set3DMinMaxDistance(minDistance, maxDistance);
 	}
 
 	void Stop() {
@@ -89,6 +89,20 @@ public:
 
 	void update() override {
 
+		if (IsSpatial3D && SceneManager::GetSceneManager()->OpenScene->worldCamera != nullptr && entity != nullptr) {
+			Camera* cam = SceneManager::GetSceneManager()->OpenScene->worldCamera;
+
+			FMOD_VECTOR position = { entity->transform->Position.x, entity->transform->Position.y, entity->transform->Position.z };
+			FMOD_VECTOR velocity = { cam->cameraVelocity.x, cam->cameraVelocity.y, cam->cameraVelocity.z };
+			FMOD_VECTOR forward =  { cam->cameraFront.x, cam->cameraFront.y, cam->cameraFront.z };
+			FMOD_VECTOR up = { cam->cameraUp.x, cam->cameraUp.y, cam->cameraUp.z };
+
+			FMOD_RESULT result = channel->set3DAttributes(&position, 0);
+
+			if (result != FMOD_OK) {
+				//std::cout << "3D AUDIO LOAD" << std::endl;
+			}
+		}
 	}
 
 	void clean() override {

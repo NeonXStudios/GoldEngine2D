@@ -99,7 +99,7 @@ void SceneUI::draw() {
 
         float* projection = (float*)glm::value_ptr(SceneManager::GetSceneManager()->OpenScene->worldCamera->GetProjectionMatrix());
         float* view = (float*)glm::value_ptr(SceneManager::GetSceneManager()->OpenScene->worldCamera->GetView());
-        ImGuizmo::SetRect(p.x, p.y, size.x, size.y);
+        ImGuizmo::SetRect(p.x, p.y, imageSizeSCENE.x, imageSizeSCENE.y);
 
         const bool res = ImGuizmo::Manipulate(view, projection, gizmoOperation, gizmoMode, matrix);
 
@@ -239,7 +239,7 @@ void SceneUI::draw() {
     }
 
 
-    if (ImGui::IsMouseClicked (0)/* && ImGui::IsWindowHovered()*/) {
+    if (ImGui::IsMouseDown (0)/* && ImGui::IsWindowHovered()*/) {
 
         glm::vec3 ray_origin;
         glm::vec3 ray_direction;
@@ -267,9 +267,9 @@ void SceneUI::draw() {
 
             glm::vec3 ObjectScale = glm::vec3
             (
-                (objs->getComponent<SpriteComponent>().Scale.x),
-                (objs->getComponent<SpriteComponent>().Scale.y),
-                (objs->getComponent<SpriteComponent>().Scale.z)
+                (objs->transform->Scale.x),
+                (objs->transform->Scale.y),
+                (objs->transform->Scale.z)
             );
 
             glm::vec3 aabb_min(-ObjectScale.x,
@@ -283,7 +283,7 @@ void SceneUI::draw() {
             
             glm::mat4 RotationMatrix = glm::mat4_cast(glm::quat(1, 0, 0, 0));
             glm::mat4 TranslationMatrix = glm::translate(glm::mat4(1.0f), glm::vec3(objs->transform->Position.x, objs->transform->Position.y, objs->transform->Position.z));
-            glm::mat4 ModelMatrix = TranslationMatrix * RotationMatrix;
+            glm::mat4 ModelMatrix = objs->transform->GetMatrix()/*TranslationMatrix * RotationMatrix*/;
 
 
             if (TestRayOBBIntersection(
@@ -373,7 +373,7 @@ bool SceneUI::TestRayOBBIntersection(
     // Intersection method from Real-Time Rendering and Essential Mathematics for Games
 
     float tMin = 0.0f;
-    float tMax = 100000.0f;
+    float tMax = 100000000.0f;
 
     glm::vec3 OBBposition_worldspace(ModelMatrix[3].x, ModelMatrix[3].y, ModelMatrix[3].z);
 
