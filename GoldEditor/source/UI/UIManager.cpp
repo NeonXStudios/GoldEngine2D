@@ -41,7 +41,7 @@ void UIManager::draw() {
 }
 
 void UIManager::update() {
-
+	inspectorui->update();
 }
 
 void UIManager::fixupdate() {

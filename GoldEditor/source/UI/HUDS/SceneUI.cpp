@@ -5,6 +5,7 @@
 #include <imguizmo/ImGuizmo.h>
 #include <glm/glm.hpp>
 #include <iostream>
+#include "../../Gizmos/GDGizmos.h"
 
 
 using namespace ImGuizmo;
@@ -52,6 +53,7 @@ void SceneUI::start() {
 
 
 void SceneUI::draw() {
+
 #pragma region DRAW TEXTURE SCENE
 
     ImVec2 windowSize = ImVec2(AppSettings::ScreenWidth, AppSettings::ScreenHeight);
@@ -303,7 +305,6 @@ void SceneUI::draw() {
         }
     }
     ImGui::End();
-
 #pragma endregion
 }
 

@@ -51,36 +51,6 @@ void Skybox::init() {
 	}
 
 	stbi_image_free(data);
-	
-
-
-	//SKYBOX BUFFER START
-	glGenTextures(1, &skyboxTexture);
-	glBindTexture(GL_TEXTURE_2D, skyboxTexture);
-	// Configura los parámetros de textura aquí (min/mag filter, wrap mode, etc.)
-
-	// Configurar la textura de profundidad
-	glGenTextures(1, &depthTexture);
-	glBindTexture(GL_TEXTURE_2D, depthTexture);
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT, AppSettings::RenderWidth, AppSettings::RenderHeight, 0, GL_DEPTH_COMPONENT, GL_FLOAT, nullptr);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-
-	// Configurar el framebuffer del skybox
-	glGenFramebuffers(1, &skyboxFramebuffer);
-	glBindFramebuffer(GL_FRAMEBUFFER, skyboxFramebuffer);
-	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, skyboxTexture, 0);
-	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, depthTexture, 0);
-
-	// Verificar el estado del framebuffer
-	if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE) {
-		std::cerr << "Error: Framebuffer del skybox no está completo" << std::endl;
-	}
-
-	// Restaurar el framebuffer predeterminado
-	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }
 
 void Skybox::draw() {

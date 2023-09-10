@@ -10,7 +10,7 @@ GLFWwindow* StartEngineGraphics::window = nullptr;
 EngineBehaviour* StartEngineGraphics::engine = nullptr;
 StartEngineGraphics* StartEngineGraphics::instance = nullptr;
 UIImplement* UIIMPL = new UIImplement();
-Skybox* sky = new Skybox();
+//Skybox* sky = new Skybox();
 
 
 void StartEngineGraphics::create() {
@@ -66,11 +66,12 @@ void StartEngineGraphics::StartEngine () {
 
 
     glEnable(GL_DEPTH_TEST);
-    glEnable(GL_CULL_FACE);
-    glCullFace(GL_FRONT);
-    glFrontFace(GL_CCW);
+    //glEnable(GL_CULL_FACE);
+    //glCullFace(GL_FRONT);
+    //glFrontFace(GL_CCW);
 
-    sky->init();
+    //sky->init();
+    
 }
 
 void StartEngineGraphics::update() {
@@ -100,15 +101,25 @@ void StartEngineGraphics::update() {
         glViewport(0, 0, AppSettings::RenderWidth, AppSettings::RenderHeight);
         glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        glDepthFunc(GL_LESS);
 
 
-        
-        glDepthMask  (GL_FALSE);
-        sky->update();
-        glDepthMask  (GL_TRUE);
+        (glEnable(GL_CULL_FACE));
+        (glEnable(GL_DEPTH_TEST));
+        //(glEnable(GL_TEXTURE_2D));
 
-        glDepthFunc(GL_ALWAYS);
+        (glEnable(GL_ALPHA_TEST));
+        (glEnable(GL_BLEND));
+        (glAlphaFunc(GL_GREATER, 1));
+        (glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));
+
+
+
+        //
+        //glDepthMask  (GL_FALSE);
+        //sky->update();
+        //glDepthMask  (GL_TRUE);
+
+        //glDepthFunc(GL_ALWAYS);
 
         SceneManager::GetSceneManager()->OpenScene->draw();
         StartEngineGraphics::engine->draw();
@@ -122,13 +133,14 @@ void StartEngineGraphics::update() {
 
 
 
+        RenderImgui();
+
         SceneManager::GetSceneManager()->OpenScene->PostRender();
         StartEngineGraphics::engine->PostRender();
 
         AudioManager::GetManager()->Update();
 
 
-        RenderImgui();
 
 
         // INTERCAMBIO DE BUFERES Y PRESENTACION
@@ -143,12 +155,7 @@ void StartEngineGraphics::RenderOpenGL() {
 }
 
 void StartEngineGraphics::RenderImgui() {
-    ImGui_ImplOpenGL3_NewFrame();
-    ImGui_ImplGlfw_NewFrame();
-    ImGui::NewFrame();
     StartEngineGraphics::engine->drawUI();
-    ImGui::Render();
-    ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 }
 
 

@@ -42,11 +42,6 @@ public:
 	Shader* skyboxShader = nullptr;
 	unsigned int skyboxTexture;
 
-
-	GLuint skyboxFramebuffer; // Framebuffer del skybox
-	GLuint depthTexture;
-
-
 	void init() override;
 
 

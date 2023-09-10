@@ -8,7 +8,7 @@
 class AComponent
 {
 public:
-	virtual void start() = 0;
+    bool started  = false;
 
 	template <typename T> void update(Entity* owner, int id) {
         if (owner->hasComponent<T>()) {
@@ -30,8 +30,8 @@ public:
 
 	}
 
-
-	virtual void draw(Entity* owner) = 0;
+    virtual void start () = 0;
+	virtual void draw  (Entity* owner) = 0;
 
 public:
     static string RemoveDir(string fullPath) {

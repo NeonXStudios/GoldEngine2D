@@ -215,7 +215,7 @@ void SpriteComponent::compileShaders() {
     string newPathFrag = FileSystem::GetAsset(FragmentPath);
 
     ourShader = new Shader(newPathVertex.c_str(), newPathFrag.c_str());
-    ourmodel = new GLD::Model("E:\\VISUAL STUDIO\\GoldEngine2D\\GoldEditor\\def/models/Terrain.fbx");
+    ourmodel = new GLD::Model("E:\\VISUAL STUDIO\\GoldEngine2D\\GoldEditor\\def/models/Cube.fbx");
     ourShader->use();
 }
 

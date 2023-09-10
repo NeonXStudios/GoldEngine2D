@@ -97,6 +97,7 @@ public:
 			FMOD_VECTOR forward =  { cam->cameraFront.x, cam->cameraFront.y, cam->cameraFront.z };
 			FMOD_VECTOR up = { cam->cameraUp.x, cam->cameraUp.y, cam->cameraUp.z };
 
+			channel->set3DMinMaxDistance(minDistance, maxDistance);
 			FMOD_RESULT result = channel->set3DAttributes(&position, 0);
 
 			if (result != FMOD_OK) {

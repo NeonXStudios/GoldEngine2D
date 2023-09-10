@@ -1,8 +1,14 @@
 #include "CAudio.h"
 #include "../../UI/EditorUI/EditorGUI.h"
+#include "../../Editor/GoldEditor.h"
 #include <iostream>
 #include <filesystem>
+
 namespace fs = std::filesystem;
+
+CAudio::CAudio() {
+
+}
 
 void CAudio::start() {
 
@@ -45,4 +51,7 @@ void CAudio::draw (Entity* owner) {
     sr->SetPan (EditorGUI::Float("Pan", sr->GetPan()));
     sr->minDistance = EditorGUI::Float("Min Distance", sr->minDistance);
     sr->maxDistance = EditorGUI::Float("Max Distance", sr->maxDistance);
+
+    GoldEditor::editor->gizmos->DrawSphere(owner->transform->Position, sr->minDistance, glm::vec3(0.3f, 0.3f, 0.3f));
+    GoldEditor::editor->gizmos->DrawSphere(owner->transform->Position, sr->maxDistance, glm::vec3(0.6f, 0.6f, 0.6f));
 }

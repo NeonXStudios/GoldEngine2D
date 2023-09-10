@@ -1,5 +1,4 @@
 #include "GoldEditor.h"
-#include "../Gizmos/GDGizmos.h"
 
 using namespace std;
 GoldEditor* GoldEditor::editor = nullptr;
@@ -7,6 +6,8 @@ bool GoldEditor::testMode = true;
 int width = 1920;
 int height = 1080;
 bool saved;
+
+
 
 //Skybox* sky = new Skybox();
 
@@ -17,6 +18,8 @@ void GoldEditor::start() {
     uiMaster->start();
     std::cout << "Starting editor" << endl;
     SaveData::loadScene();
+    //gizmos->create();
+    gizmos->start();
     // sky->init();
 }
 
@@ -28,6 +31,13 @@ void GoldEditor::draw() {
 
 
 void GoldEditor::update() {
+    if (UIManager::instance->inspectorui->ObjectSelectToInspector != nullptr) {
+        glm::vec3 pos = UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Position;
+        glm::vec3 scale = UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Scale;
+
+        gizmos->DrawCube      (pos, scale, glm::vec3(1, 0.6f, 1));
+    }
+
 #pragma region MOVE CAMERA
     GLFWwindow* window = StartEngineGraphics::window;
 
@@ -123,18 +133,26 @@ void GoldEditor::update() {
     else {
         saved = false;
     }
+
+    uiMaster->update ();
 #pragma endregion
 }
 
 
 
 void GoldEditor::PreRender() {
+    ImGui_ImplOpenGL3_NewFrame();
+    ImGui_ImplGlfw_NewFrame();
+    ImGui::NewFrame();
     uiMaster->lateupdate();
 }
 
 void GoldEditor::PostRender() {
     //sky->update();
+
     uiMaster->fixupdate();
+    ImGui::Render();
+    ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 }
 
 void GoldEditor::drawUI() {

@@ -3,27 +3,29 @@
 
 class GDGizmos
 {
+private:
+    //std::vector<glm::vec3> vertices;
+    //std::vector<glm::vec3> colors;
+
 public:
-	static void DrawCube (){
-        glBegin(GL_QUADS);
-
-        // Front face
-        glColor3f(1.0f, 0.0f, 0.0f);  // Red color
-        glVertex3f(-0.5f, -0.5f, 0.5f);  // Bottom-left vertex
-        glVertex3f(0.5f, -0.5f, 0.5f);   // Bottom-right vertex
-        glVertex3f(0.5f, 0.5f, 0.5f);    // Top-right vertex
-        glVertex3f(-0.5f, 0.5f, 0.5f);   // Top-left vertex
-
-        // Back face
-        glColor3f(0.0f, 1.0f, 0.0f);  // Green color
-        glVertex3f(-0.5f, -0.5f, -0.5f);
-        glVertex3f(0.5f, -0.5f, -0.5f);
-        glVertex3f(0.5f, 0.5f, -0.5f);
-        glVertex3f(-0.5f, 0.5f, -0.5f);
-
-        glEnd();
+    static GDGizmos* instance;
+    Shader* shader = nullptr;
+    void start      ();
+    void Draw       ();
+    
+    //GIZMOS
+    void DrawCube   (const glm::vec3& position, const glm::vec3& size, const glm::vec3& color);
+    void DrawSphere (const glm::vec3& position, const float radius, const glm::vec3& color);
 
 
+    void AddLine    (const glm::vec3& start, const glm::vec3& end, const glm::vec3& color);
+    Entity* entity = new Entity();
+    unsigned int VBO, VAO, EBO;
+    unsigned int texture;
+    unsigned int compileShader(unsigned int type, const char* source);
+    unsigned int vertexShader, fragmentShader, shaderProgram;
 
-	}
+
+    void create  ();
+    void release ();
 };

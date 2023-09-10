@@ -1,11 +1,6 @@
 #include "DrawComponents.h"
 #include "../UI/UIManager.h"
-#include "InspectorComponents.h"
 
-
-
-//PROGRAMAR EL DIBUJADO DE COMPONENTES PARA EL MENU ADD COMPONENT
-InspectorComponents* components = new InspectorComponents();
 
 void DrawComponents::start() {
 
@@ -13,10 +8,6 @@ void DrawComponents::start() {
 }
 
 void DrawComponents::update() {
-	if (UIManager::instance->inspectorui->ObjectSelectToInspector != nullptr) {
-		components->update(UIManager::instance->inspectorui->ObjectSelectToInspector);
-	}
-
 	ImVec2 contentRegionAvailable = ImGui::GetContentRegionAvail();
 	ImVec2 buttonSize(contentRegionAvailable.x, 20);
 

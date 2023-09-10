@@ -85,7 +85,7 @@ public:
 
 
 		Matrix *= glm::mat4_cast(rotation);
-		Matrix = glm::scale(Matrix, glm::vec3(Scale.x, Scale.y, Scale.z));
+		Matrix = glm::scale(Matrix, Scale);
 
 		//std::cout << "Position: (" << Position.x << ", " << Position.y << ", " << Position.z << ")" << std::endl;
 		//std::cout << "Rotation: (" << Rotation.x << ", " << Rotation.y << ", " << Rotation.z << ")" << std::endl;

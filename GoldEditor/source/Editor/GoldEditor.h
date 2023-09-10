@@ -1,10 +1,10 @@
 #pragma once
 #include <iostream>
-
 #include "../../../source/EngineBehaviour/GoldEngineLib.h"
 #include "../UI/UIManager.h"
 #include "../Components/Data/SaveData.h"
 #include <imguizmo/ImGuizmo.h>
+#include "../Gizmos/GDGizmos.h"
 
 
 class GoldEditor : public EngineBehaviour { 
@@ -19,6 +19,7 @@ public:
     float sensitivity = 100.0f;
     bool firstClick = true;
     bool activeMouse;
+    GDGizmos* gizmos = new GDGizmos();
 
 
     //Shader ourShader;

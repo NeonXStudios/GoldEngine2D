@@ -58,6 +58,7 @@ E:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warni
 E:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
 E:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 E:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\Gizmos\GDGizmos.cpp(257,42): warning C4267: 'argumento': conversión de 'size_t' a 'GLsizei'; posible pérdida de datos
   MoveGizmos.cpp
 E:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 E:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
@@ -118,6 +119,11 @@ E:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warni
 E:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
 E:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 E:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\DragAndDrop.h(17,25): warning C4101: 'filePathN': variable local sin referencia
+E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(184,41): warning C4101: 'filePathN': variable local sin referencia
+E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(203,41): warning C4101: 'filePathN': variable local sin referencia
+E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(223,41): warning C4101: 'filePathN': variable local sin referencia
+E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(271,41): warning C4101: 'filePathN': variable local sin referencia
   CBoxCollider3D.cpp
 E:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 E:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
@@ -232,22 +238,6 @@ E:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warni
 E:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
 E:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 E:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
-  BarMenuUI.cpp
-E:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-E:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-E:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-E:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
-E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\DragAndDrop.h(17,25): warning C4101: 'filePathN': variable local sin referencia
-E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(184,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(203,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(223,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(271,41): warning C4101: 'filePathN': variable local sin referencia
   CameraSetting.cpp
 E:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 E:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
@@ -264,9 +254,6 @@ E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(184,41): warnin
 E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(203,41): warning C4101: 'filePathN': variable local sin referencia
 E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(223,41): warning C4101: 'filePathN': variable local sin referencia
 E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(271,41): warning C4101: 'filePathN': variable local sin referencia
-  Generando código...
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\AudioSource\AudioSource.h(77): warning C4172: devolución de dirección de la variable local o temporal: g
-  Compilando...
   Hierarchy.cpp
 E:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 E:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
@@ -284,6 +271,9 @@ E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(203,41): warnin
 E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(223,41): warning C4101: 'filePathN': variable local sin referencia
 E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(271,41): warning C4101: 'filePathN': variable local sin referencia
 E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Hierarchy.cpp(107,25): warning C4101: 'filePathN': variable local sin referencia
+  Generando código...
+E:\VISUAL STUDIO\GoldEngine2D\source\Components\AudioSource\AudioSource.h(77): warning C4172: devolución de dirección de la variable local o temporal: g
+  Compilando...
   Inspector.cpp
 E:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 E:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
@@ -295,11 +285,11 @@ E:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warni
 E:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
 E:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 E:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
-  RightClickUI.cpp
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\DragAndDrop.h(17,25): warning C4101: 'filePathN': variable local sin referencia
+E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(184,41): warning C4101: 'filePathN': variable local sin referencia
+E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(203,41): warning C4101: 'filePathN': variable local sin referencia
+E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(223,41): warning C4101: 'filePathN': variable local sin referencia
+E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(271,41): warning C4101: 'filePathN': variable local sin referencia
   SceneUI.cpp
 E:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 E:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
@@ -316,25 +306,20 @@ E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(184,41): warnin
 E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(203,41): warning C4101: 'filePathN': variable local sin referencia
 E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(223,41): warning C4101: 'filePathN': variable local sin referencia
 E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(271,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(57,71): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(57,45): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(82,21): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
-E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(83,21): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
-E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(84,24): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
-E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(85,24): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
-E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(88,64): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(88,51): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(257,45): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(257,27): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(256,19): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(256,13): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(134,15): warning C4101: 'initialMousePos': variable local sin referencia
-E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(135,15): warning C4101: 'initialObjectPos': variable local sin referencia
-  UIDrawer.cpp
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(59,71): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(59,45): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(84,21): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(85,21): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(86,24): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(87,24): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(90,64): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(90,51): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(259,45): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(259,27): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(258,19): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(258,13): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(136,15): warning C4101: 'initialMousePos': variable local sin referencia
+E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(137,15): warning C4101: 'initialObjectPos': variable local sin referencia
   UIManager.cpp
 E:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 E:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
@@ -351,52 +336,3 @@ E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(184,41): warnin
 E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(203,41): warning C4101: 'filePathN': variable local sin referencia
 E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(223,41): warning C4101: 'filePathN': variable local sin referencia
 E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(271,41): warning C4101: 'filePathN': variable local sin referencia
-  Generando código...
-box2d.lib(b2_polygon_shape.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_polygon_shape.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_body.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_body.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_fixture.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_fixture.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_world.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_world.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_math.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_math.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_collision.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_collision.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_block_allocator.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_block_allocator.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_settings.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_settings.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_broad_phase.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_broad_phase.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_contact_manager.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_contact_manager.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_island.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_island.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_dynamic_tree.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_dynamic_tree.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_contact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_contact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_draw.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_draw.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_distance.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_distance.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_time_of_impact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_time_of_impact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_timer.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_timer.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_stack_allocator.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_stack_allocator.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_world_callbacks.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_world_callbacks.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_contact_solver.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_contact_solver.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_chain_circle_contact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_chain_circle_contact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_chain_polygon_contact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_chain_polygon_contact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_circle_contact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_circle_contact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_edge_circle_contact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_edge_circle_contact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-LINK : warning LNK4098: la biblioteca predeterminada'MSVCRT' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
-LINK : warning LNK4098: la biblioteca predeterminada'LIBCMT' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
-box2d.lib(b2_edge_polygon_contact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_edge_polygon_contact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_polygon_circle_contact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_polygon_circle_contact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_polygon_contact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_polygon_contact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_distance_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_distance_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_friction_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_friction_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_gear_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_gear_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_motor_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_motor_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_mouse_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_mouse_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_prismatic_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_prismatic_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_pulley_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_pulley_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_revolute_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_revolute_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_weld_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_weld_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_wheel_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_wheel_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_collide_edge.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_collide_edge.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_chain_shape.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_chain_shape.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_edge_shape.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_edge_shape.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_collide_circle.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_collide_circle.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-box2d.lib(b2_collide_polygon.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_collide_polygon.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-ucrtd.lib(ucrtbased.dll) : warning LNK4020: un registro de tipo de '' está dañado; puede que algunos símbolos y tipos no sean accesibles desde el depurador
-LINK : warning LNK4020: un registro de tipo de '' está dañado; puede que algunos símbolos y tipos no sean accesibles desde el depurador
-  GoldEditor.vcxproj -> E:\VISUAL STUDIO\GoldEngine2D\BuildHub\Editor\GoldEditor.exe
