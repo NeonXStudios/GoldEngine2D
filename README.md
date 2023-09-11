@@ -43,3 +43,9 @@ The hub is basic but functional
 
 
 
+GIZMOS CREATED
+![image](https://github.com/GrstudiosGamesPro/GoldEngine2D/assets/85538374/17db5291-01c2-44c0-8559-e70771b66034)
+
+
+
+
