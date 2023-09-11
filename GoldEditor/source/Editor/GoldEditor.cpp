@@ -24,7 +24,6 @@ void GoldEditor::start() {
 }
 
 
-
 void GoldEditor::draw() {
 
 }
@@ -35,8 +34,9 @@ void GoldEditor::update() {
         glm::vec3 pos = UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Position;
         glm::vec3 scale = UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Scale;
 
-        gizmos->DrawCube      (pos, scale, glm::vec3(1, 0.6f, 1));
+        gizmos->DrawCapsule   (pos, 1, 1, glm::vec3(0, 1, 0));
     }
+
 
 #pragma region MOVE CAMERA
     GLFWwindow* window = StartEngineGraphics::window;

@@ -31,9 +31,10 @@ void Scene::update() {
 			body->GetNext();
 		}
 
+	}
+
 		mScene->simulate(1.0f / 60.0f);
 		mScene->fetchResults(true);
-	}
 }
 
 void Scene::draw() {
@@ -102,26 +103,7 @@ void Scene::CreateGravity() {
 		pvdClient->setScenePvdFlag(physx::PxPvdSceneFlag::eTRANSMIT_SCENEQUERIES, true);
 	}
 
-
 	// create simulation
 	mMaterial = mPhysics->createMaterial(0.5f, 0.5f, 0.6f);
-	physx::PxRigidStatic* groundPlane = PxCreatePlane(*mPhysics, physx::PxPlane(0, 1, 0, 50), *mMaterial);
-	mScene->addActor(*groundPlane);
-
-	float halfExtent = .5f;
-	physx::PxShape* shape = mPhysics->createShape(physx::PxBoxGeometry(halfExtent, halfExtent, halfExtent), *mMaterial);
-	physx::PxU32 size = 30;
-	physx::PxTransform t(physx::PxVec3(0));
-	for (physx::PxU32 i = 0; i < size; i++) {
-		for (physx::PxU32 j = 0; j < size - i; j++) {
-			physx::PxTransform localTm(physx::PxVec3(physx::PxReal(j * 2) - physx::PxReal(size - i), physx::PxReal(i * 2 + 1), 0) * halfExtent);
-			physx::PxRigidDynamic* body = mPhysics->createRigidDynamic(t.transform(localTm));
-			body->attachShape(*shape);
-			physx::PxRigidBodyExt::updateMassAndInertia(*body, 10.0f);
-			mScene->addActor(*body);
-		}
-	}
-	shape->release();
-	//std::cout << "POSICION X: " << groundPlane->getGlobalPose().p.y << std::endl;
 #pragma endregion
 }

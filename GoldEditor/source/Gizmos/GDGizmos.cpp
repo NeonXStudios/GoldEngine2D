@@ -1,6 +1,8 @@
 #include "GDGizmos.h"
 
 GDGizmos* GDGizmos::instance = nullptr;
+const float PI = 3.14159265359f;
+
 
 const char* vertexShaderSource = R"(
 #version 330 core
@@ -123,7 +125,7 @@ void GDGizmos::start() {
 
     // Cargar una imagen como textura
     int width, height, nrChannels;
-    unsigned char* data = stbi_load("C:\\Users\\tupap\\OneDrive\\Imágenes\\Capturas de pantalla\\invoker.png", &width, &height, &nrChannels, 0);
+    unsigned char* data = stbi_load("", &width, &height, &nrChannels, 0);
     if (data) {
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
         glGenerateMipmap(GL_TEXTURE_2D);
@@ -166,8 +168,118 @@ unsigned int GDGizmos::compileShader(unsigned int type, const char* source) {
 }
 
 
-void GDGizmos::DrawSphere(const glm::vec3& position, const float radius, const glm::vec3& color) {
-    glLineWidth(2.0f);
+
+
+void GDGizmos::DrawCapsule(const glm::vec3& position, const float radius, const float height, const glm::vec3& color, float Width) {
+    glLineWidth(Width);
+    DrawPrism (position, glm::vec3 (0, 90, 0), radius, height, color, 8);
+    DrawPrism (position, glm::vec3 (0, 0,  0), radius, height, color, 8);
+}
+
+
+
+void GDGizmos::DrawPrism(const glm::vec3& position, glm::vec3 Rotation, const float radius, const float height, const glm::vec3& color, float Width) {
+    glm::quat rotation;
+
+    std::vector<float> verticesLeft = {
+       0.0f, 0.0f, 0.0f, 0.0f, 1.0f, // 0
+       1.0f, 0.5f, 0.0f, 0.0f, 1.0f, // 2
+       1.0f, 4.5f, 0.0f, 0.0f, 1.0f, // 1
+       0.0f, 5.0f, 0.0f, 0.0f, 1.0f, // 3
+
+       0.0f, 0.0f, 0.0f, 0.0f, 1.0f, // 0
+      -1.0f, 0.5f, 0.0f, 0.0f, 1.0f, // 2
+      -1.0f, 4.5f, 0.0f, 0.0f, 1.0f, // 1
+       0.0f, 5.0f, 0.0f, 0.0f, 1.0f, // 3
+
+    };
+
+    std::vector<unsigned int> indicesLeft = {
+        0,   1,    1,    2,   2,   3,   3,   0,
+        4,   5,    5,    6,   6,   7,   7,   4,
+    };
+
+    GLuint VAO, VBO, EBO;
+    glGenVertexArrays(1, &VAO);
+    glGenBuffers(1, &VBO);
+    glGenBuffers(1, &EBO);
+
+    // Enlaza el VAO
+    glBindVertexArray(VAO);
+
+    // Enlaza y configura el búfer de vértices (posiciones y coordenadas de textura)
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glBufferData(GL_ARRAY_BUFFER, verticesLeft.size() * sizeof(float), verticesLeft.data(), GL_STATIC_DRAW);
+
+    // Configura los atributos de los vértices
+    // Atributo 0: Posiciones de los vértices
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(0);
+
+    // Atributo 1: Coordenadas de textura
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+    glEnableVertexAttribArray(1);
+
+    // Enlaza y configura el búfer de elementos
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, indicesLeft.size() * sizeof(unsigned int), indicesLeft.data(), GL_STATIC_DRAW);
+
+    // Finalmente, puedes dibujar la cápsula llamando a glDrawElements.
+    glDrawElements(GL_TRIANGLES, indicesLeft.size(), GL_UNSIGNED_INT, 0);
+
+
+
+    glm::mat4 model = glm::mat4(1.0f);
+    model = glm::translate(model, position);
+    glm::quat rotationZ = glm::angleAxis(glm::radians(Rotation.x), glm::vec3(0.0f, 0.0f, 1.0f));
+    glm::quat rotationY = glm::angleAxis(glm::radians(Rotation.y), glm::vec3(0.0f, 1.0f, 0.0f));
+    glm::quat rotationX = glm::angleAxis(glm::radians(Rotation.z), glm::vec3(1.0f, 0.0f, 0.0f));
+
+    rotation = rotationZ * rotationY * rotationX;
+
+    //glm::mat4 rotationMatrix = glm::mat4_cast(rotation);
+
+
+    model *= glm::mat4_cast(rotation);
+    model = glm::scale(model, glm::vec3(radius, height, radius) * 2.2f);
+    glUseProgram(shaderProgram);
+
+
+    unsigned int viewLoc = glGetUniformLocation(shaderProgram, "view");
+    glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(SceneManager::GetSceneManager()->OpenScene->worldCamera->GetView()));
+
+    // Enviar la matriz de proyección al shader
+    unsigned int projectionLoc = glGetUniformLocation(shaderProgram, "projection");
+    glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(SceneManager::GetSceneManager()->OpenScene->worldCamera->GetProjectionMatrix()));
+
+    unsigned int modelLoc = glGetUniformLocation(shaderProgram, "model");
+    glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+
+    glUniform3fv(glGetUniformLocation(shaderProgram, "color"), 1, glm::value_ptr(color));
+
+    // Dibujar el cubo
+    glBindTexture(GL_TEXTURE_2D, texture);
+    glBindVertexArray(VAO);
+    glDrawElements(GL_LINES, 24, GL_UNSIGNED_INT, 0); // Utilizar GL_LINES y 24 índices para dibujar el cubo con líneas
+}
+
+
+
+
+void GDGizmos::DrawHalfSphere(const glm::vec3& position, const float radius, const glm::vec3& color, float Width) {
+    glLineWidth(Width);
+}
+
+void GDGizmos::DrawCylinder(const glm::vec3& position, const float radius, const float height, const glm::vec3& color, float Width) {
+    glLineWidth(Width);
+}
+
+
+
+
+
+void GDGizmos::DrawSphere(const glm::vec3& position, const float radius, const glm::vec3& color, float Width) {
+    glLineWidth(Width);
     // Configura las matrices de modelo, vista y proyección
     glm::mat4 modelMatrix = glm::translate(glm::mat4(1.0f), position);
     glm::mat4 viewMatrix = SceneManager::GetSceneManager()->OpenScene->worldCamera->GetView();
@@ -258,8 +370,8 @@ void GDGizmos::DrawSphere(const glm::vec3& position, const float radius, const g
 }
 
 
-void GDGizmos::DrawCube(const glm::vec3& position, const glm::vec3& size, const glm::vec3& color) {
-    glLineWidth (5.0f);
+void GDGizmos::DrawCube(const glm::vec3& position, const glm::vec3& size, const glm::vec3& color, float Width) {
+    glLineWidth (Width);
     glm::mat4 model = glm::mat4(1.0f); 
     model = glm::translate(model, position); 
     model = glm::scale(model, size * 2.2f);
@@ -291,3 +403,89 @@ void GDGizmos::DrawCube(const glm::vec3& position, const glm::vec3& size, const 
 void GDGizmos::Draw () {
 
 }
+
+
+
+//std::vector<float> vertices;
+//std::vector<unsigned int> indices;
+
+//int stacks = 20;  // Número de "bandas" en la cápsula
+//int slices = 20;  // Número de "rebanadas" en la cápsula
+
+//float halfHeight = height / 2.0f;
+
+//// Dibuja el cilindro
+//for (int i = 0; i <= stacks; ++i) {
+//    float y = (static_cast<float>(i) / stacks) * height - halfHeight;
+//    float radiusAtY = radius;
+
+//    for (int j = 0; j <= slices; ++j) {
+//        float phi = j * 2 * glm::pi<float>() / slices;
+//        float sinPhi = sin(phi);
+//        float cosPhi = cos(phi);
+
+//        float x = radiusAtY * cosPhi;
+//        float z = radiusAtY * sinPhi;
+
+//        // Agrega el vértice a la lista
+//        vertices.push_back(x);
+//        vertices.push_back(y);
+//        vertices.push_back(z);
+
+//        // Calcula las coordenadas de textura (puedes configurarlas según tus necesidades)
+//        float texCoordX = static_cast<float>(j) / slices;
+//        float texCoordY = static_cast<float>(i) / stacks;
+//        vertices.push_back(texCoordX);
+//        vertices.push_back(texCoordY);
+//    }
+//}
+
+//// Genera los índices para dibujar el cilindro
+//for (int i = 0; i < stacks; ++i) {
+//    for (int j = 0; j < slices; ++j) {
+//        int first = (i * (slices + 1)) + j;
+//        int second = first + slices + 1;
+
+//        // Dibuja los triángulos que forman el cilindro
+//        indices.push_back(first);
+//        indices.push_back(second);
+//        indices.push_back(first + 1);
+
+//        indices.push_back(second);
+//        indices.push_back(second + 1);
+//        indices.push_back(first + 1);
+//    }
+//}
+
+//// Dibuja las medias esferas arriba y abajo
+//DrawHalfSphere(position + glm::vec3(0.0f, height + radius, 0.0f), radius, color);
+//DrawHalfSphere(position + glm::vec3(0.0f, -height + radius, 0.0f), radius, color);
+
+//// Configura los búferes de vértices e índices
+//GLuint VAO, VBO, EBO;
+//glGenVertexArrays(1, &VAO);
+//glGenBuffers(1, &VBO);
+//glGenBuffers(1, &EBO);
+
+//// Enlaza el VAO
+//glBindVertexArray(VAO);
+
+//// Enlaza y configura el búfer de vértices (posiciones y coordenadas de textura)
+//glBindBuffer(GL_ARRAY_BUFFER, VBO);
+//glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(float), vertices.data(), GL_STATIC_DRAW);
+
+//// Configura los atributos de los vértices
+//// Atributo 0: Posiciones de los vértices
+//glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+//glEnableVertexAttribArray(0);
+
+//// Atributo 1: Coordenadas de textura
+//glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+//glEnableVertexAttribArray(1);
+
+//// Enlaza y configura el búfer de elementos
+//glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+//glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(unsigned int), indices.data(), GL_STATIC_DRAW);
+
+//// Finalmente, puedes dibujar la cápsula llamando a glDrawElements.
+//glDrawElements(GL_LINES, indices.size(), GL_UNSIGNED_INT, 0);

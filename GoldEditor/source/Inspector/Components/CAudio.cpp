@@ -52,6 +52,6 @@ void CAudio::draw (Entity* owner) {
     sr->minDistance = EditorGUI::Float("Min Distance", sr->minDistance);
     sr->maxDistance = EditorGUI::Float("Max Distance", sr->maxDistance);
 
-    GoldEditor::editor->gizmos->DrawSphere(owner->transform->Position, sr->minDistance, glm::vec3(0.3f, 0.3f, 0.3f));
-    GoldEditor::editor->gizmos->DrawSphere(owner->transform->Position, sr->maxDistance, glm::vec3(0.6f, 0.6f, 0.6f));
+    GoldEditor::editor->gizmos->DrawSphere(owner->transform->Position, sr->minDistance, glm::vec3(0, 0.5f, 0));
+    GoldEditor::editor->gizmos->DrawSphere(owner->transform->Position, sr->maxDistance, glm::vec3(0, 1, 0));
 }

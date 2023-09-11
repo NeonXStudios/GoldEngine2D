@@ -6,13 +6,18 @@ using namespace nlohmann;
 void BoxCollider::init() {
 	mPhysics = SceneManager::GetSceneManager()->OpenScene->mPhysics;
 	shape = mPhysics->createShape(physx::PxBoxGeometry(boxSize.x, boxSize.y, boxSize.z), *SceneManager::GetSceneManager()->OpenScene->mMaterial, 1);
-	//body->attachShape(*shape);
+
+	//PxTransform newTransform; // Crea una nueva transformación
+
+	//PxVec3 newPosition(entity->transform->Position.x, entity->transform->Position.y, entity->transform->Position.z); // Cambia estas coordenadas según la posición deseada
+	//newTransform.p = newPosition;
+	//shape->setLocalPose(newTransform);
 }
 
 void BoxCollider::update() {
 	physx::PxGeometry* newGeometry = nullptr;
 	newGeometry = new physx::PxBoxGeometry (boxSize.x, boxSize.y, boxSize.z);
-	shape->setGeometry(*newGeometry);
+	shape->setGeometry (*newGeometry);
 }
 
 void BoxCollider::draw() {

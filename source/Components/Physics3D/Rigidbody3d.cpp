@@ -12,9 +12,6 @@ void Rigidbody3d::init() {
 			return;
 		}
 
-
-		float halfExtent = 0.5f;
-
 		if (SceneManager::GetSceneManager()->OpenScene->mMaterial == nullptr) {
 			std::cout << "EL MATERIAL ES NULL" << std::endl;
 			throw ("MATERIAL NULL ERROR ON CREATE RIGID BODY 3D");
@@ -44,10 +41,9 @@ void Rigidbody3d::init() {
 	}
 
 	if (body != nullptr) {
-		body->setGlobalPose (PxTransform (entity->transform->Position.x, entity->transform->Position.y, entity->transform->Position.z));
+		body->setGlobalPose(PxTransform(entity->transform->Position.x, entity->transform->Position.y, entity->transform->Position.z));
 		PxQuat newRotation(PxPi / 4.0f, PxVec3(entity->transform->Rotation.x, entity->transform->Rotation.y, entity->transform->Rotation.z)); // Rotación de 45 grados alrededor del eje Y
-		body->setGlobalPose(PxTransform(body->getGlobalPose().p, newRotation));
-
+		//body->setGlobalPose(PxTransform(body->getGlobalPose().p, newRotation), true);
 	}
 }
 
@@ -64,6 +60,7 @@ void Rigidbody3d::update() {
 			position.y, 
 			position.z
 		);
+
 		double gradosX = rotation.x * (180.0 / M_PI);
 		double gradosY = rotation.y * (180.0 / M_PI);
 		double gradosZ = rotation.z * (180.0 / M_PI);
@@ -78,7 +75,7 @@ void Rigidbody3d::update() {
 
 
 
-		if (entity != nullptr) {
+		if (entity != nullptr) { 
 			if (&entity->getComponent <BoxCollider>() && !shapeAttached) {
 			     body->attachShape (*entity->getComponent<BoxCollider>().shape);
 				 shapeAttached = true;
