@@ -8,11 +8,8 @@ using namespace std;
 std::string AudioSource::serialize () {
     json componentData;
     componentData["pan"] = pan;
-    float g;
-    channel->getVolume(&g);
-    componentData["volumen"] = g;
+    componentData["volumen"] = Volumen;
     componentData["pathfile"] = AudioPath;
-
     componentData["minv"] = minDistance;
     componentData["maxv"] = maxDistance;
 
@@ -25,7 +22,7 @@ void AudioSource::deserialize(std::string g, std::string path) {
     SetPan  (componentData["pan"]);
 
     if (CheckVar::Has(componentData, "volumen"))
-    SetVolumen (componentData["volumen"]);
+    Volumen = componentData["volumen"];
 
     if (CheckVar::Has(componentData, "minv"))
         minDistance = componentData["minv"];

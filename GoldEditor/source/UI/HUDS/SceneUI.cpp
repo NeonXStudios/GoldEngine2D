@@ -110,14 +110,28 @@ void SceneUI::draw() {
         glm::vec3 matrixRotation;
         ImGuizmo::DecomposeMatrixToComponents(
             matrix,
-            glm::value_ptr(UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Position),
-            glm::value_ptr(matrixRotation),
-            glm::value_ptr(UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Scale)
+            glm::value_ptr (UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Position),
+            glm::value_ptr (matrixRotation),
+            glm::value_ptr (UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Scale)
         );
 
         //std::cout << "GIZMO OVER: " << ignoreGui << std::endl;
 
-        //UIManager::instance->inspectorui->ObjectSelectToInspector->getComponent<SpriteComponent>().rotation = glm::quat(glm::radians(matrixRotation));
+        UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Rotation = matrixRotation;
+
+        if (!ImGui::IsMouseDown (1)) {
+            if (InputSystem::InputSystem::GetKey (GLFW_KEY_W)) {
+                gizmoOperation = ImGuizmo::TRANSLATE;
+            }
+
+            if (InputSystem::InputSystem::GetKey(GLFW_KEY_Q)) {
+                gizmoOperation = ImGuizmo::ROTATE;
+            }
+
+            if (InputSystem::InputSystem::GetKey(GLFW_KEY_E)) {
+                gizmoOperation = ImGuizmo::SCALE;
+            }
+        }
     }
 #pragma endregion
 

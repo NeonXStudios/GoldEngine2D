@@ -30,6 +30,7 @@ void GoldEditor::draw() {
 
 
 void GoldEditor::update() {
+
     if (UIManager::instance->inspectorui->ObjectSelectToInspector != nullptr) {
         glm::vec3 pos = UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Position;
         glm::vec3 scale = UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Scale;
@@ -39,81 +40,84 @@ void GoldEditor::update() {
 
 
 #pragma region MOVE CAMERA
-    GLFWwindow* window = StartEngineGraphics::window;
-
-    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-    {
-        SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition += SceneManager::GetSceneManager()->OpenScene->worldCamera->speed * SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation;
-    }
-    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-    {
-        SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition += SceneManager::GetSceneManager()->OpenScene->worldCamera->speed * -glm::normalize(glm::cross(SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation, SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraUp));
-    }
-    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-    {
-        SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition += SceneManager::GetSceneManager()->OpenScene->worldCamera->speed * -SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation;
-    }
-    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-    {
-        SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition += SceneManager::GetSceneManager()->OpenScene->worldCamera->speed * glm::normalize(glm::cross(SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation, SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraUp));
-    }
-    if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
-    {
-        SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition += SceneManager::GetSceneManager()->OpenScene->worldCamera->speed * SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraUp;
-    }
-    if (glfwGetKey(window, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS)
-    {
-        SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition += SceneManager::GetSceneManager()->OpenScene->worldCamera->speed * -SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraUp;
-    }
-    if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS)
-    {
-        SceneManager::GetSceneManager()->OpenScene->worldCamera->speed = 0.4f;
-    }
-    else if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_RELEASE)
-    {
-        SceneManager::GetSceneManager()->OpenScene->worldCamera->speed = 0.1f;
-    }
+        GLFWwindow* window = StartEngineGraphics::window;
 
 
-    // Handles mouse inputs
-    if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT) == GLFW_PRESS)
-    {
-        // Hides mouse cursor
-        glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
-
-        // Prevents camera from jumping on the first click
-        if (firstClick)
+    if (activeMouse) {
+        // Handles mouse inputs
+        if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT) == GLFW_PRESS)
         {
+            if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+            {
+                SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition += SceneManager::GetSceneManager()->OpenScene->worldCamera->speed * SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation;
+            }
+            if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+            {
+                SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition += SceneManager::GetSceneManager()->OpenScene->worldCamera->speed * -glm::normalize(glm::cross(SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation, SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraUp));
+            }
+            if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+            {
+                SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition += SceneManager::GetSceneManager()->OpenScene->worldCamera->speed * -SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation;
+            }
+            if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+            {
+                SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition += SceneManager::GetSceneManager()->OpenScene->worldCamera->speed * glm::normalize(glm::cross(SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation, SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraUp));
+            }
+            if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
+            {
+                SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition += SceneManager::GetSceneManager()->OpenScene->worldCamera->speed * SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraUp;
+            }
+            if (glfwGetKey(window, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS)
+            {
+                SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition += SceneManager::GetSceneManager()->OpenScene->worldCamera->speed * -SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraUp;
+            }
+            if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS)
+            {
+                SceneManager::GetSceneManager()->OpenScene->worldCamera->speed = 0.4f;
+            }
+            else if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_RELEASE)
+            {
+                SceneManager::GetSceneManager()->OpenScene->worldCamera->speed = 0.1f;
+            }
+
+
+            // Hides mouse cursor
+            glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
+
+            // Prevents camera from jumping on the first click
+            if (firstClick)
+            {
+                glfwSetCursorPos(window, (width / 2), (height / 2));
+                firstClick = false;
+            }
+
+            // Stores the coordinates of the cursor
+            double mouseX;
+            double mouseY;
+            // Fetches the coordinates of the cursor
+            glfwGetCursorPos(window, &mouseX, &mouseY);
+
+            // Normalizes and shifts the coordinates of the cursor such that they begin in the middle of the screen
+            // and then "transforms" them into degrees 
+            float rotX = sensitivity * (float)(mouseY - (height / 2)) / height;
+            float rotY = sensitivity * (float)(mouseX - (width / 2)) / width;
+
+            // Calculates upcoming vertical change in the Orientation
+            glm::vec3 newOrientation = glm::rotate(SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation, glm::radians(-rotX), glm::normalize(glm::cross(SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation, SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraUp)));
+
+
+            // Decides whether or not the next vertical Orientation is legal or not
+            if (abs(glm::angle(newOrientation, SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraUp) - glm::radians(90.0f)) <= glm::radians(85.0f))
+            {
+                SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation = newOrientation;
+            }
+
+            // Rotates the Orientation left and right       
+            SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation = glm::rotate(SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation, glm::radians(-rotY), SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraUp);
+            UIManager::instance->rightClickui->locked = true;
+            // Sets mouse cursor to the middle of the screen so that it doesn't end up roaming around
             glfwSetCursorPos(window, (width / 2), (height / 2));
-            firstClick = false;
-        }
-
-        // Stores the coordinates of the cursor
-        double mouseX;
-        double mouseY;
-        // Fetches the coordinates of the cursor
-        glfwGetCursorPos(window, &mouseX, &mouseY);
-
-        // Normalizes and shifts the coordinates of the cursor such that they begin in the middle of the screen
-        // and then "transforms" them into degrees 
-        float rotX = sensitivity * (float)(mouseY - (height / 2)) / height;
-        float rotY = sensitivity * (float)(mouseX - (width / 2)) / width;
-
-        // Calculates upcoming vertical change in the Orientation
-        glm::vec3 newOrientation = glm::rotate(SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation, glm::radians(-rotX), glm::normalize(glm::cross(SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation, SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraUp)));
-
-
-        // Decides whether or not the next vertical Orientation is legal or not
-        if (abs(glm::angle(newOrientation, SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraUp) - glm::radians(90.0f)) <= glm::radians(85.0f))
-        {
-            SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation = newOrientation;
-        }
-
-        // Rotates the Orientation left and right       
-        SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation = glm::rotate(SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation, glm::radians(-rotY), SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraUp);
-        UIManager::instance->rightClickui->locked = true;
-        // Sets mouse cursor to the middle of the screen so that it doesn't end up roaming around
-        glfwSetCursorPos(window, (width / 2), (height / 2));
+        }       
     }
     else if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_RELEASE)
     {
@@ -123,6 +127,7 @@ void GoldEditor::update() {
         // Makes sure the next time the camera looks around it doesn't jump
         firstClick = true;
     }
+     
 
     if (InputSystem::InputSystem::GetKey(GLFW_KEY_LEFT_CONTROL) && InputSystem::InputSystem::GetKey(GLFW_KEY_S)) {
         if (!saved) {

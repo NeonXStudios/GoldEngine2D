@@ -17,6 +17,7 @@ public:
     bool isdragging;
     bool ObjectSelect;
     bool LockWithGizmos;
+    bool HoveringSceneUI;
     std::vector<Entity*> objectsInAABB;
     int SelectIndex = 0;
 

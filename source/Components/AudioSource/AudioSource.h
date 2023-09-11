@@ -11,9 +11,10 @@ class AudioSource : public Component
 {
 	Sound* sound = nullptr;
 	Channel* channel = nullptr;
-	float pan = 0;
 	bool IsSpatial3D = true;
 	FMOD_RESULT result;
+	float pan = 0;
+	float Volumen = 1;
 
 public:
 	std::string AudioPath = "";
@@ -68,7 +69,8 @@ public:
 	}
 
 	void SetVolumen (float newVolumen) {
-		channel->setVolume(newVolumen);
+		Volumen = newVolumen;
+		channel->setVolume(Volumen);
 	}
 
 	float* GetVolumen() {
@@ -103,7 +105,10 @@ public:
 			if (result != FMOD_OK) {
 				//std::cout << "3D AUDIO LOAD" << std::endl;
 			}
+
 		}
+
+			SetVolumen (Volumen);
 	}
 
 	void clean() override {
