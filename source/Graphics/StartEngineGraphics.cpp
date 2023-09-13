@@ -118,10 +118,10 @@ void StartEngineGraphics::update() {
         (glEnable(GL_DEPTH_TEST));
         (glEnable(GL_TEXTURE_2D));
 
-        (glEnable(GL_ALPHA_TEST));
-        (glEnable(GL_BLEND));
-        (glAlphaFunc(GL_GREATER, 1));
-        (glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));
+        //(glEnable(GL_ALPHA_TEST));
+        //(glEnable(GL_BLEND));
+        //(glAlphaFunc(GL_GREATER, 1));
+        //(glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));
 
         newLightTest->update();
         newLightTest->draw();

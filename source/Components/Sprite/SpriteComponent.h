@@ -38,6 +38,7 @@ public:
     unsigned int fragmentShader;
 
     string TexturePath = "sprites/tile_0115.png";
+    string TextureSpecularPath = "Textures/Roughness.png";
     string VertexPath = "shaders/vert.glsl";
     string FragmentPath = "shaders/frag.glsl";
 
@@ -46,6 +47,7 @@ public:
     const char* fragSh;
 
     unsigned int texture;
+    unsigned int textureSpecular;
     unsigned int VBO, VAO, EBO;
     glm::mat4 model = glm::mat4(1.0f);
 

@@ -80,6 +80,24 @@ void SpriteComponent::LoadTexture () {
     }
 
     stbi_image_free(data);
+
+
+    std::cout << "La nueva ruta de la textura es " << TextureSpecularPath << std::endl;
+    int widthSpecular , heightSpecular, nrChannelsSpecular;
+    string newPathSpecular = FileSystem::GetAsset(TextureSpecularPath);
+    std::cout << "NUEVA RUTA:" << newPath << std::endl;
+
+    unsigned char* dataSpecular = stbi_load(newPathSpecular.c_str(), &widthSpecular, &heightSpecular, &nrChannelsSpecular, 0);
+    if (data) {
+        glBindTexture(GL_TEXTURE_2D, textureSpecular);
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RED, widthSpecular, heightSpecular, 1, GL_RED, GL_UNSIGNED_BYTE, dataSpecular);
+        glGenerateMipmap(GL_TEXTURE_2D);
+    }
+    else {
+        std::cout << "Failed to load texture" << std::endl;
+    }
+
+    stbi_image_free(dataSpecular);
 }
 
 void SpriteComponent::onupdate() {
@@ -89,8 +107,15 @@ void SpriteComponent::onupdate() {
 void SpriteComponent::draw() {
     glUseProgram(ourShader->ID);
     glActiveTexture(GL_TEXTURE0);
+
+    //DIFFUSE TEXTURE
     glBindTexture(GL_TEXTURE_2D, texture);
     glUniform1i(glGetUniformLocation(ourShader->ID, "texture_diffuse1"), 0);
+
+    //SPECULAR MAP
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, texture);
+    glUniform1i(glGetUniformLocation(ourShader->ID, "texture_specular1"), 0);
 
     ourShader->use();
     ourShader->setMat4  ("view", SceneManager::GetSceneManager()->OpenScene->worldCamera->GetView());
