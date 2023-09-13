@@ -34,11 +34,14 @@ public:
 	void PreRender() override;
 	void PostRender() override;
 
+	void preRenderShadow();
+
 
 
 	std::string serialize() override {
-
-		return "";
+		json data;
+		data["wid"] = shadowMapWidth;
+		return data;
 	}
 
 

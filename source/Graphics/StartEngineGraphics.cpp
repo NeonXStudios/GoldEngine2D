@@ -77,7 +77,7 @@ void StartEngineGraphics::StartEngine () {
     newLightTest = SceneManager::GetSceneManager()->NewEntity();
 
     newLightTest->addComponent <Light>();
-    newLightTest->getComponent <Light>().init();
+    newLightTest->getComponent <Light>();
     newLightTest->ObjectName = "LIGHT";
 }
 
@@ -91,10 +91,17 @@ void StartEngineGraphics::update() {
         lastFrame = currentFrame;
         time += deltaTime;
 
+        //GET SCREEN SIZE
+        glfwGetFramebufferSize(StartEngineGraphics::window, &width, &height);
+        AppSettings::RenderHeight = height;
+        AppSettings::RenderWidth = width;
 
-        newLightTest->PreRender();
+
+        //newLightTest->PreRender();
 
 
+        //RENDER SHADOWS FOR LIGHT
+        newLightTest->getComponent <Light>().preRenderShadow();
 
 
         // RENDERIZACION DE TODO OPENGL
@@ -104,9 +111,6 @@ void StartEngineGraphics::update() {
         // LIMPIEZA DEL BUFFER DE PROFUNDIDAD PARA LA ESCENA 3D
         //glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
-        glfwGetFramebufferSize(StartEngineGraphics::window, &width, &height);
-        AppSettings::RenderHeight = height;
-        AppSettings::RenderWidth = width;
 
 
 
@@ -117,14 +121,15 @@ void StartEngineGraphics::update() {
         (glEnable(GL_CULL_FACE));
         (glEnable(GL_DEPTH_TEST));
         (glEnable(GL_TEXTURE_2D));
+        //glEnable (GL_FRAMEBUFFER_SRGB);
 
         //(glEnable(GL_ALPHA_TEST));
         //(glEnable(GL_BLEND));
         //(glAlphaFunc(GL_GREATER, 1));
         //(glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));
 
-        newLightTest->update();
-        newLightTest->draw();
+        //newLightTest->update();
+        //newLightTest->draw();
 
 
         //
