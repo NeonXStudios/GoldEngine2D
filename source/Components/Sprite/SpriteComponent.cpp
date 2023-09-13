@@ -94,6 +94,7 @@ void SpriteComponent::draw() {
 
     ourShader->use();
     ourShader->setMat4  ("view", SceneManager::GetSceneManager()->OpenScene->worldCamera->GetView());
+    ourShader->setVec3  ("camPos", SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition);
     ourShader->setMat4  ("projection", SceneManager::GetSceneManager()->OpenScene->worldCamera->GetProjectionMatrix());
     ourShader->setMat4  ("model", entity->transform->GetMatrix());  // Aplicar la matriz de modelo
     ourmodel->Draw      (*ourShader);

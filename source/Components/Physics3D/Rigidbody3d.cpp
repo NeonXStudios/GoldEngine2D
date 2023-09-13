@@ -25,6 +25,10 @@ void Rigidbody3d::init() {
 
 		// Crear un objeto dinámico
 		body = mPhysics->createRigidDynamic(t);
+
+		string nameBODY = std::to_string(entity->objectID);
+		body->setName(nameBODY.c_str());
+
 		//body->attachShape(*shape);
 		physx::PxRigidBodyExt::updateMassAndInertia(*body, mass);
 		SceneManager::GetSceneManager()->OpenScene->mScene->addActor(*body);
@@ -48,6 +52,9 @@ void Rigidbody3d::init() {
 }
 
 void Rigidbody3d::update() {
+	string nameBODY = std::to_string(entity->objectID);
+	body->setName(nameBODY.c_str());
+
 	if (body != nullptr) {	
 		physx::PxTransform pose = body->getGlobalPose();
 		physx::PxVec3 position = pose.p;

@@ -7,9 +7,7 @@ int width = 1920;
 int height = 1080;
 bool saved;
 
-
-
-//Skybox* sky = new Skybox();
+Skybox* sky = new Skybox();
 
 void GoldEditor::start() {
     ProjectPath = ProjectPath;
@@ -20,12 +18,11 @@ void GoldEditor::start() {
     SaveData::loadScene();
     //gizmos->create();
     gizmos->start();
-    // sky->init();
+    sky->init();
 }
 
 
 void GoldEditor::draw() {
-
 }
 
 
@@ -34,10 +31,9 @@ void GoldEditor::update() {
     if (UIManager::instance->inspectorui->ObjectSelectToInspector != nullptr) {
         glm::vec3 pos = UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Position;
         glm::vec3 scale = UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Scale;
-
+         
         gizmos->DrawCapsule   (pos, 1, 1, glm::vec3(0, 1, 0));
     }
-
 
 #pragma region MOVE CAMERA
         GLFWwindow* window = StartEngineGraphics::window;
@@ -51,30 +47,37 @@ void GoldEditor::update() {
             {
                 SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition += SceneManager::GetSceneManager()->OpenScene->worldCamera->speed * SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation;
             }
+
             if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
             {
                 SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition += SceneManager::GetSceneManager()->OpenScene->worldCamera->speed * -glm::normalize(glm::cross(SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation, SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraUp));
             }
+
             if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
             {
                 SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition += SceneManager::GetSceneManager()->OpenScene->worldCamera->speed * -SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation;
             }
+
             if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
             {
                 SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition += SceneManager::GetSceneManager()->OpenScene->worldCamera->speed * glm::normalize(glm::cross(SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation, SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraUp));
             }
+
             if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
             {
                 SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition += SceneManager::GetSceneManager()->OpenScene->worldCamera->speed * SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraUp;
             }
+
             if (glfwGetKey(window, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS)
             {
                 SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition += SceneManager::GetSceneManager()->OpenScene->worldCamera->speed * -SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraUp;
             }
+
             if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS)
             {
                 SceneManager::GetSceneManager()->OpenScene->worldCamera->speed = 0.4f;
             }
+
             else if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_RELEASE)
             {
                 SceneManager::GetSceneManager()->OpenScene->worldCamera->speed = 0.1f;
@@ -128,6 +131,8 @@ void GoldEditor::update() {
         firstClick = true;
     }
      
+    RayCastHit hit;
+
 
     if (InputSystem::InputSystem::GetKey(GLFW_KEY_LEFT_CONTROL) && InputSystem::InputSystem::GetKey(GLFW_KEY_S)) {
         if (!saved) {
@@ -137,6 +142,16 @@ void GoldEditor::update() {
     }
     else {
         saved = false;
+    }
+
+    Cast3D* cast = new Cast3D();
+
+    if (cast->RayCast (SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition, 
+                       SceneManager::GetSceneManager()->OpenScene->worldCamera->GetForwardInverse(), 
+                       1000, 
+                       &hit)) 
+    {
+        std::cout << "BOX FIND: " << hit.entity->ObjectName << std::endl;
     }
 
     uiMaster->update ();
@@ -153,7 +168,7 @@ void GoldEditor::PreRender() {
 }
 
 void GoldEditor::PostRender() {
-    //sky->update();
+    sky->update();
 
     uiMaster->fixupdate();
     ImGui::Render();

@@ -4,8 +4,7 @@
 #include <vector>
 #include <iostream>
 #include "box2d/box2d.h"
-#include <PxPhysics.h>
-#include <PxPhysicsAPI.h>
+#include "../../RequireLibs.h"
 
 using namespace std;
 

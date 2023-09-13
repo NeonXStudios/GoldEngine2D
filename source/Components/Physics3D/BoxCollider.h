@@ -1,5 +1,6 @@
 #pragma once
 #include "../../EngineBehaviour/GoldEngineLib.h"
+#include <iostream>
 
 class BoxCollider : public Component
 {
@@ -8,7 +9,6 @@ public:
 
 	physx::PxPhysics* mPhysics = NULL;
 	physx::PxShape* shape = NULL;
-
 
 	void init() override;
 

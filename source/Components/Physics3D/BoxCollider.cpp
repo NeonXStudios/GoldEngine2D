@@ -1,23 +1,25 @@
 #include "BoxCollider.h"
 #include "nlohmann/json.hpp"
+#include <iostream>
 
+using namespace std;
 using namespace nlohmann;
 
 void BoxCollider::init() {
 	mPhysics = SceneManager::GetSceneManager()->OpenScene->mPhysics;
 	shape = mPhysics->createShape(physx::PxBoxGeometry(boxSize.x, boxSize.y, boxSize.z), *SceneManager::GetSceneManager()->OpenScene->mMaterial, 1);
 
-	//PxTransform newTransform; // Crea una nueva transformación
-
-	//PxVec3 newPosition(entity->transform->Position.x, entity->transform->Position.y, entity->transform->Position.z); // Cambia estas coordenadas según la posición deseada
-	//newTransform.p = newPosition;
-	//shape->setLocalPose(newTransform);
+	string nameBODY = std::to_string(entity->objectID);
+	shape->setName (nameBODY.c_str());
 }
 
 void BoxCollider::update() {
+	shape->setName (entity->ObjectSTRID.c_str());
+
 	physx::PxGeometry* newGeometry = nullptr;
 	newGeometry = new physx::PxBoxGeometry (boxSize.x, boxSize.y, boxSize.z);
 	shape->setGeometry (*newGeometry);
+
 }
 
 void BoxCollider::draw() {

@@ -11,6 +11,7 @@ EngineBehaviour* StartEngineGraphics::engine = nullptr;
 StartEngineGraphics* StartEngineGraphics::instance = nullptr;
 UIImplement* UIIMPL = new UIImplement();
 //Skybox* sky = new Skybox();
+Entity* newLightTest;
 
 
 void StartEngineGraphics::create() {
@@ -72,6 +73,12 @@ void StartEngineGraphics::StartEngine () {
 
     //sky->init();
     
+
+    newLightTest = SceneManager::GetSceneManager()->NewEntity();
+
+    newLightTest->addComponent <Light>();
+    newLightTest->getComponent <Light>().init();
+    newLightTest->ObjectName = "LIGHT";
 }
 
 void StartEngineGraphics::update() {
@@ -83,6 +90,10 @@ void StartEngineGraphics::update() {
         deltaTime = currentFrame - lastFrame;
         lastFrame = currentFrame;
         time += deltaTime;
+
+
+        newLightTest->PreRender();
+
 
 
 
@@ -98,20 +109,22 @@ void StartEngineGraphics::update() {
         AppSettings::RenderWidth = width;
 
 
+
         glViewport(0, 0, AppSettings::RenderWidth, AppSettings::RenderHeight);
         glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-
         (glEnable(GL_CULL_FACE));
         (glEnable(GL_DEPTH_TEST));
-        //(glEnable(GL_TEXTURE_2D));
+        (glEnable(GL_TEXTURE_2D));
 
         (glEnable(GL_ALPHA_TEST));
         (glEnable(GL_BLEND));
         (glAlphaFunc(GL_GREATER, 1));
         (glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));
 
+        newLightTest->update();
+        newLightTest->draw();
 
 
         //

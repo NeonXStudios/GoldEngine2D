@@ -13,10 +13,12 @@ using namespace std;
 
 class SpriteComponent : public Component
 {
+
+public:
     Shader* ourShader = nullptr;
     GLD::Model* ourmodel = nullptr;
 
-public:
+
     glm::vec3 Min();
     glm::vec3 Max();
 

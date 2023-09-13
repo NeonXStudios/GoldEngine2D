@@ -103,6 +103,21 @@ public:
         return glm::inverse(view);
     }
 
+    glm::vec3 GetRightInverse() {
+        return -glm::normalize(glm::vec3(GetView()[0]));
+    }
+
+    glm::vec3 GetUpInverse() {
+        return -glm::normalize(glm::vec3(GetView()[1]));
+    }
+
+    glm::vec3 GetForwardInverse() {
+        return -glm::normalize(glm::vec3(GetView()[2]));
+    }
+
+
+
+
     glm::vec3 GetForward () {
         return glm::normalize (glm::vec3 (GetViewInverse()[2]));
     }

@@ -30,6 +30,8 @@
 #include "../Components/Physics3D/BoxCollider.h"
 #include "../Components/SaveSystem/SaveSystem.h"
 #include "../Components/Skybox/Skybox.h"
+#include "../Components/Physics3D/Cast3D.h"
+#include "../Components/Light/Light.h"
 
 
 //#include "../Components/Shadercompiler/Material.h"

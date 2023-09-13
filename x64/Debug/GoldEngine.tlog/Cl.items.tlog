@@ -17,10 +17,12 @@ E:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ComponentSerializer.cpp;E:\V
 E:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ECS.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\ECS.obj
 E:\VISUAL STUDIO\GoldEngine2D\source\Components\FileSystem\FileSystem.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\FileSystem.obj
 E:\VISUAL STUDIO\GoldEngine2D\source\Components\Lib\GoldMath\GoldMathf.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\GoldMathf.obj
+E:\VISUAL STUDIO\GoldEngine2D\source\Components\Light\Light.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Light.obj
 E:\VISUAL STUDIO\GoldEngine2D\source\Components\Models\Mesh.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Mesh.obj
 E:\VISUAL STUDIO\GoldEngine2D\source\Components\Models\Model.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Model.obj
 E:\VISUAL STUDIO\GoldEngine2D\source\Components\Models\TextureManager.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\TextureManager.obj
 E:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics3D\BoxCollider.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\BoxCollider.obj
+E:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics3D\Cast3D.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Cast3D.obj
 E:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics3D\Rigidbody3d.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Rigidbody3d.obj
 E:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\RigidBody.obj
 E:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\TriggerModule.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\TriggerModule.obj

@@ -169,6 +169,7 @@ private:
 public:
 	std::string ObjectName = "New Entity";
 	std::string ObjectTag = "None";
+	std::string ObjectSTRID = "0";
 	int objectID = 1;
 	Transform* transform = new Transform();
 

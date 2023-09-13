@@ -1,18 +1,2 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: El directorio Output no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Output.
-  GoldEditor.cpp
-E:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-E:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-E:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-E:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
-E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\DragAndDrop.h(17,25): warning C4101: 'filePathN': variable local sin referencia
-E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(184,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(203,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(223,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VISUAL STUDIO\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(271,41): warning C4101: 'filePathN': variable local sin referencia
   GoldEditor.vcxproj -> E:\VISUAL STUDIO\GoldEngine2D\BuildHub\Editor\GoldEditor.exe

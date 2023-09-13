@@ -43,8 +43,9 @@ Entity* SceneManager::NewEntity() {
 	newObj->entity = newObj;
 	int objectID = OpenScene->objectsInScene.size();
 	newObj->objectID = objectID;
+	newObj->ObjectSTRID = std::to_string(objectID);
 
-	std::cout << "New id: " << newObj->objectID << std::endl;
+	std::cout << "New id: " << newObj->ObjectSTRID << std::endl;
 
 	OpenScene->objectsInScene.push_back(newObj);
 	newObj->ObjectName = "New Entity " + std::to_string(OpenScene->objectsInScene.size());

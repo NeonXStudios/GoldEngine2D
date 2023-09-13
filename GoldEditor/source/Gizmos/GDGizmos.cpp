@@ -374,7 +374,7 @@ void GDGizmos::DrawCube(const glm::vec3& position, const glm::vec3& size, const 
     glLineWidth (Width);
     glm::mat4 model = glm::mat4(1.0f); 
     model = glm::translate(model, position); 
-    model = glm::scale(model, size * 2.2f);
+    model = glm::scale(model, size * 2.0f);
 
     glUseProgram(shaderProgram); 
 

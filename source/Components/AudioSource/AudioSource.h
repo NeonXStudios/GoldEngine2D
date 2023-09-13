@@ -36,6 +36,7 @@ public:
 			else {
 				// Reproduce el sonido.
 				FMOD_RESULT playResult = AudioManager::GetManager()->system->playSound(sound, nullptr, false, &channel);
+				channel->setVolume (0);
 				if (playResult != FMOD_OK) {
 					std::cout << "Failed to play audio: " << FMOD_ErrorString(playResult) << std::endl;
 				}

@@ -117,7 +117,7 @@ void SceneUI::draw() {
 
         //std::cout << "GIZMO OVER: " << ignoreGui << std::endl;
 
-        UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Rotation = matrixRotation;
+        //UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Rotation = matrixRotation;
 
         if (!ImGui::IsMouseDown (1)) {
             if (InputSystem::InputSystem::GetKey (GLFW_KEY_W)) {
