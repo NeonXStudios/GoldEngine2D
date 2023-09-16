@@ -25,6 +25,7 @@
     <ProjectGuid>{b60f187e-34bc-4fb0-8703-ea71a8d73d39}</ProjectGuid>
     <RootNamespace>GoldEngine</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>ZXCore</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

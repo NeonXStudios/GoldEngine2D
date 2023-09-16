@@ -25,6 +25,7 @@
     <ProjectGuid>{1ce4db2a-fdbe-4ed0-8444-0eb5eef275e1}</ProjectGuid>
     <RootNamespace>GoldGame</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>ZXGame</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -117,7 +118,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glfw3.lib; opengl32.lib; user32.lib; gdi32.lib; shell32.lib;fmodL_vc.lib;fmod_vc.lib;lua54.lib;box2d.lib</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;user32.lib;gdi32.lib;shell32.lib;fmodL_vc.lib;fmod_vc.lib;lua54.lib;box2d.lib;assimp-vc143-mtd.lib;nvfloweditor.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)Binarys/lib/</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>

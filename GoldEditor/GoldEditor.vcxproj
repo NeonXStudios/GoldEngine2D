@@ -25,6 +25,7 @@
     <ProjectGuid>{f31b76aa-6398-4d57-8909-22a3a980bccd}</ProjectGuid>
     <RootNamespace>GoldEditor</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>ZXEditor</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

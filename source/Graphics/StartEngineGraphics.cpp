@@ -10,9 +10,6 @@ GLFWwindow* StartEngineGraphics::window = nullptr;
 EngineBehaviour* StartEngineGraphics::engine = nullptr;
 StartEngineGraphics* StartEngineGraphics::instance = nullptr;
 UIImplement* UIIMPL = new UIImplement();
-//Skybox* sky = new Skybox();
-Entity* newLightTest;
-
 
 void StartEngineGraphics::create() {
     if (StartEngineGraphics::instance) throw std::exception ("Graphics manager already exist");
@@ -72,13 +69,6 @@ void StartEngineGraphics::StartEngine () {
     //glFrontFace(GL_CCW);
 
     //sky->init();
-    
-
-    newLightTest = SceneManager::GetSceneManager()->NewEntity();
-
-    newLightTest->addComponent <Light>();
-    newLightTest->getComponent <Light>();
-    newLightTest->ObjectName = "LIGHT";
 }
 
 void StartEngineGraphics::update() {
@@ -96,12 +86,6 @@ void StartEngineGraphics::update() {
         AppSettings::RenderHeight = height;
         AppSettings::RenderWidth = width;
 
-
-        //newLightTest->PreRender();
-
-
-        //RENDER SHADOWS FOR LIGHT
-        newLightTest->getComponent <Light>().preRenderShadow();
 
 
         // RENDERIZACION DE TODO OPENGL

@@ -26,11 +26,11 @@ public:
 
     }
 
-    void lateupdate() override {
+    void PostRender() override {
 
     }
 
-    void fixupdate() override {
+    void PreRender() override {
 
     }
 
