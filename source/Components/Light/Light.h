@@ -3,14 +3,31 @@
 
 using namespace std;
 
+enum TypeLight {
+	DirectionLight,
+	PointLight,
+	SpotLight
+};
+
 class Light : public Component
 {
 public:
 	glm::vec4 LightColor = glm::vec4 (1.0f, 1.0f, 1.0f, 1.0f);
 	float DistanceLight;
 
-	string frag = "C:\\Users\\tupap\\Documents\\GoldEngine\\Projects\\Vortex\\assets\\shaders\\light.frag";
-	string vert = "C:\\Users\\tupap\\Documents\\GoldEngine\\Projects\\Vortex\\assets\\shaders\\light.vert";
+	//DIRECTION LIGHT SHADER
+	string Directionfrag = "C:\\Users\\tupap\\Documents\\GoldEngine\\Projects\\Vortex\\assets\\shaders\\LightShaders\\DirectionLight.frag";
+	string Directionvert = "C:\\Users\\tupap\\Documents\\GoldEngine\\Projects\\Vortex\\assets\\shaders\\LightShaders\\DirectionLight.vert";
+
+	//SPOT LIGHT SHADER
+	string Spotfrag = "C:\\Users\\tupap\\Documents\\GoldEngine\\Projects\\Vortex\\assets\\shaders\\LightShaders\\SpotLight.frag";
+	string Spotvert = "C:\\Users\\tupap\\Documents\\GoldEngine\\Projects\\Vortex\\assets\\shaders\\LightShaders\\SpotLight.vert";
+
+	//POINT LIGHT SHADER
+	string Pointfrag = "C:\\Users\\tupap\\Documents\\GoldEngine\\Projects\\Vortex\\assets\\shaders\\LightShaders\\PointLight.frag";
+	string Pointvert = "C:\\Users\\tupap\\Documents\\GoldEngine\\Projects\\Vortex\\assets\\shaders\\LightShaders\\PointLight.vert";
+
+
 	Shader* shader = nullptr;
 
 
