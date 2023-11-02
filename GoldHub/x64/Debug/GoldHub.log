@@ -1,4 +1,5 @@
-﻿E:\VS2022IDE\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: El directorio Output no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Output.
+﻿C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: El directorio Output no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Output.
+C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: El directorio intermedio (x64\Debug\) contiene archivos compartidos de otro proyecto (GoldHub.vcxproj). Esto puede dar lugar a un comportamiento incorrecto de limpieza y recompilación.
   glad.c
   imgui.cpp
   imgui_demo.cpp
@@ -8,31 +9,30 @@
   imgui_tables.cpp
   imgui_widgets.cpp
   GoldHub.cpp
-F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-F:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(40,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(41,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-F:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.h(42,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-E:\VS2022IDE\VC\Tools\MSVC\14.37.32822\include\ciso646(15,47): error C4996: '_Header_ciso646': warning STL4036: <ciso646> is removed in C++20. You can define _SILENCE_CXX20_CISO646_REMOVED_WARNING or _SILENCE_ALL_CXX20_DEPRECATION_WARNINGS to suppress this warning.
-F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
-F:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-F:\VISUAL STUDIO\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
-<<<<<<< HEAD
+E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+E:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+E:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+E:\VS\GoldEngine2D\GoldHub\source\GoldHub.h(73,10): error C3668: 'GoldHub::lateupdate': el método con el especificador de invalidación 'override' no invalidó ningún método de clase base
+E:\VS\GoldEngine2D\GoldHub\source\GoldHub.h(77,10): error C3668: 'GoldHub::fixupdate': el método con el especificador de invalidación 'override' no invalidó ningún método de clase base
+E:\VS\GoldEngine2D\GoldHub\source\GoldHub.cpp(7,24): error C2259: "GoldHub": no se puede crear una instancia de una clase abstract
+E:\VS\GoldEngine2D\GoldHub\source\GoldHub.h(15,7): message : vea la declaración de 'GoldHub'
+E:\VS\GoldEngine2D\GoldHub\source\GoldHub.cpp(7,24): message : debido a los siguientes miembros:
+E:\VS\GoldEngine2D\GoldHub\source\GoldHub.cpp(7,24): message : 'void EngineBehaviour::PostRender(void)': es abstracto
+E:\VS\GoldEngine2D\source\EngineBehaviour\EngineBehaviour.h(12,18): message : vea la declaración de 'EngineBehaviour::PostRender'
+E:\VS\GoldEngine2D\GoldHub\source\GoldHub.cpp(7,24): message : 'void EngineBehaviour::PreRender(void)': es abstracto
+E:\VS\GoldEngine2D\source\EngineBehaviour\EngineBehaviour.h(13,18): message : vea la declaración de 'EngineBehaviour::PreRender'
+E:\VS\GoldEngine2D\GoldHub\source\GoldHub.cpp(7,31): error C2259: "GoldHub": no se puede crear una instancia de una clase abstract
+E:\VS\GoldEngine2D\GoldHub\source\GoldHub.h(15,7): message : vea la declaración de 'GoldHub'
+E:\VS\GoldEngine2D\GoldHub\source\GoldHub.cpp(7,31): message : debido a los siguientes miembros:
+E:\VS\GoldEngine2D\GoldHub\source\GoldHub.cpp(7,31): message : 'void EngineBehaviour::PostRender(void)': es abstracto
+E:\VS\GoldEngine2D\source\EngineBehaviour\EngineBehaviour.h(12,18): message : vea la declaración de 'EngineBehaviour::PostRender'
+E:\VS\GoldEngine2D\GoldHub\source\GoldHub.cpp(7,31): message : 'void EngineBehaviour::PreRender(void)': es abstracto
+E:\VS\GoldEngine2D\source\EngineBehaviour\EngineBehaviour.h(13,18): message : vea la declaración de 'EngineBehaviour::PreRender'
   Generando código...
-=======
-GoldEngine.lib(Scene.obj) : error LNK2005: ya se definió "unsigned int __cdecl TextureFromFile(char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)" (?TextureFromFile@@YAIPEBDAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z) en GoldHub.obj
-GoldEngine.lib(ECS.obj) : error LNK2005: ya se definió "unsigned int __cdecl TextureFromFile(char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)" (?TextureFromFile@@YAIPEBDAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z) en GoldHub.obj
-GoldEngine.lib(TriggerModule.obj) : error LNK2005: ya se definió "unsigned int __cdecl TextureFromFile(char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)" (?TextureFromFile@@YAIPEBDAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z) en GoldHub.obj
-GoldEngine.lib(RigidBody.obj) : error LNK2005: ya se definió "unsigned int __cdecl TextureFromFile(char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)" (?TextureFromFile@@YAIPEBDAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z) en GoldHub.obj
-GoldEngine.lib(ScriptCompiler.obj) : error LNK2005: ya se definió "unsigned int __cdecl TextureFromFile(char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)" (?TextureFromFile@@YAIPEBDAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z) en GoldHub.obj
-GoldEngine.lib(BinderFunctions.obj) : error LNK2005: ya se definió "unsigned int __cdecl TextureFromFile(char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)" (?TextureFromFile@@YAIPEBDAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z) en GoldHub.obj
-GoldEngine.lib(EntityBinder.obj) : error LNK2005: ya se definió "unsigned int __cdecl TextureFromFile(char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)" (?TextureFromFile@@YAIPEBDAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z) en GoldHub.obj
-GoldEngine.lib(CalculatorBinder.obj) : error LNK2005: ya se definió "unsigned int __cdecl TextureFromFile(char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)" (?TextureFromFile@@YAIPEBDAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z) en GoldHub.obj
-GoldEngine.lib(InputBinder.obj) : error LNK2005: ya se definió "unsigned int __cdecl TextureFromFile(char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)" (?TextureFromFile@@YAIPEBDAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z) en GoldHub.obj
-GoldEngine.lib(GMathf.obj) : error LNK2005: ya se definió "unsigned int __cdecl TextureFromFile(char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)" (?TextureFromFile@@YAIPEBDAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z) en GoldHub.obj
-LINK : warning LNK4098: la biblioteca predeterminada'MSVCRT' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
-MSVCRTD.lib(initializers.obj) : warning LNK4098: la biblioteca predeterminada'libcmt.lib' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
-F:\VISUAL STUDIO\GoldEngine2D\BuildHub\GoldHub.exe : fatal error LNK1169: se encontraron uno o más símbolos definidos simultáneamente
->>>>>>> parent of b3e4288 (Rotacion, Escala, Posicion. Reparados)

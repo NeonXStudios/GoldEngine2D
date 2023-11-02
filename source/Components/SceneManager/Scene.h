@@ -20,19 +20,19 @@ public:
 	b2World* GravityWorld;
 
 
-	//3D CONFIGURATION PHYSICS (PHYSX 4.1.2)
-	physx::PxDefaultAllocator      mDefaultAllocatorCallback;
-	physx::PxDefaultErrorCallback  mDefaultErrorCallback;
-	physx::PxDefaultCpuDispatcher* mDispatcher = NULL;
-	physx::PxTolerancesScale       mToleranceScale;
+	////3D CONFIGURATION PHYSICS (PHYSX 4.1.2)
+	//physx::PxDefaultAllocator      mDefaultAllocatorCallback;
+	//physx::PxDefaultErrorCallback  mDefaultErrorCallback;
+	//physx::PxDefaultCpuDispatcher* mDispatcher = NULL;
+	//physx::PxTolerancesScale       mToleranceScale;
 
-	physx::PxFoundation* mFoundation = NULL;
-	physx::PxPhysics* mPhysics = NULL;
+	//physx::PxFoundation* mFoundation = NULL;
+	//physx::PxPhysics* mPhysics = NULL;
 
-	physx::PxScene* mScene = NULL;
-	physx::PxMaterial* mMaterial = NULL;
+	//physx::PxScene* mScene = NULL;
+	//physx::PxMaterial* mMaterial = NULL;
 
-	physx::PxPvd* mPvd = NULL;
+	//physx::PxPvd* mPvd = NULL;
 
 
 	void start();

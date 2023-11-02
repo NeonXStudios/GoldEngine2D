@@ -26,11 +26,11 @@
 #include "../Components/Systems/PickingTexture.h"
 #include "../Components/Script/ScriptCompiler.h"
 #include "../Components/Physics/RigidBody.h"
-#include "../Components/Physics3D/Rigidbody3D.h"
-#include "../Components/Physics3D/BoxCollider.h"
+//#include "../Components/Physics3D/Rigidbody3D.h"
+//#include "../Components/Physics3D/BoxCollider.h"
 #include "../Components/SaveSystem/SaveSystem.h"
 #include "../Components/Skybox/Skybox.h"
-#include "../Components/Physics3D/Cast3D.h"
+//#include "../Components/Physics3D/Cast3D.h"
 #include "../Components/Light/Light.h"
 
 

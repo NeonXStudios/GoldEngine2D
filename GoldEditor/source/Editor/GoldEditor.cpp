@@ -131,7 +131,7 @@ void GoldEditor::update() {
         firstClick = true;
     }
      
-    RayCastHit hit;
+  /*  RayCastHit hit;
 
 
     if (InputSystem::InputSystem::GetKey(GLFW_KEY_LEFT_CONTROL) && InputSystem::InputSystem::GetKey(GLFW_KEY_S)) {
@@ -152,7 +152,7 @@ void GoldEditor::update() {
                        &hit)) 
     {
         std::cout << "BOX FIND: " << hit.entity->ObjectName << std::endl;
-    }
+    }*/
 
     uiMaster->update ();
 #pragma endregion

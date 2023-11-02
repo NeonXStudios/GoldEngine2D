@@ -1,51 +1,50 @@
-E:\VISUAL STUDIO\bullet3\src\clew\clew.c;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\clew.obj
-E:\VISUAL STUDIO\GoldEngine2D\Binarys\c\glad.c;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\glad.obj
-E:\VISUAL STUDIO\GoldEngine2D\Binarys\include\imgui\imgui.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\imgui.obj
-E:\VISUAL STUDIO\GoldEngine2D\Binarys\include\imgui\imgui_demo.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\imgui_demo.obj
-E:\VISUAL STUDIO\GoldEngine2D\Binarys\include\imgui\imgui_draw.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\imgui_draw.obj
-E:\VISUAL STUDIO\GoldEngine2D\Binarys\include\imgui\imgui_impl_glfw.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\imgui_impl_glfw.obj
-E:\VISUAL STUDIO\GoldEngine2D\Binarys\include\imgui\imgui_impl_opengl3.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\imgui_impl_opengl3.obj
-E:\VISUAL STUDIO\GoldEngine2D\Binarys\include\imgui\imgui_tables.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\imgui_tables.obj
-E:\VISUAL STUDIO\GoldEngine2D\Binarys\include\imgui\imgui_widgets.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\imgui_widgets.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\AudioSource\AudioManager.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\AudioManager.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\AudioSource\AudioSource.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\AudioSource.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Camera\Camera2D.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Camera2D.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Debug\DrawBox.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\DrawBox.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ComponentFactory.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\ComponentFactory.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ComponentManager.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\ComponentManager.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ComponentSerializer.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\ComponentSerializer.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\ECS\ECS.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\ECS.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\FileSystem\FileSystem.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\FileSystem.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Lib\GoldMath\GoldMathf.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\GoldMathf.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Light\Light.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Light.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Models\Mesh.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Mesh.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Models\Model.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Model.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Models\TextureManager.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\TextureManager.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics3D\BoxCollider.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\BoxCollider.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics3D\Cast3D.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Cast3D.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics3D\Rigidbody3d.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Rigidbody3d.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\RigidBody.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\RigidBody.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Physics\TriggerModule.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\TriggerModule.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\SaveSystem\CheckVar.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\CheckVar.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\SaveSystem\SaveSystem.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\SaveSystem.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\SceneManager\Scene.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Scene.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\SceneManager\SceneManager.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\SceneManager.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Script\BinderFunctions.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\BinderFunctions.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Script\Binders\CalculatorBinder.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\CalculatorBinder.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Script\Binders\EntityBinder.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\EntityBinder.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Script\Binders\InputBinder.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\InputBinder.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Script\Libs\GMathf\GMathf.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\GMathf.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Script\ScriptCompiler.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\ScriptCompiler.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\ShaderCompiler\Shader.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Shader.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Skybox\Skybox.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\Skybox.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Sprite\SpriteComponent.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\SpriteComponent.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Systems\PickingTexture.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\PickingTexture.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\Systems\RenderSystem.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\RenderSystem.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Components\UI\UIImplement.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\UIImplement.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\EngineBehaviour\EngineBehaviour.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\EngineBehaviour.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\EngineBehaviour\GoldEngineLib.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\GoldEngineLib.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\EngineBehaviour\PhysicsLib.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\PhysicsLib.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Graphics\AppSettings.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\AppSettings.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Graphics\RunEngine.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\RunEngine.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\Graphics\StartEngineGraphics.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\StartEngineGraphics.obj
-E:\VISUAL STUDIO\GoldEngine2D\source\STBimplement.cpp;E:\VISUAL STUDIO\GoldEngine2D\x64\Debug\STBimplement.obj
+E:\VS\GoldEngine2D\Binarys\c\glad.c;E:\VS\GoldEngine2D\x64\Debug\glad.obj
+E:\VS\GoldEngine2D\Binarys\include\imgui\imgui.cpp;E:\VS\GoldEngine2D\x64\Debug\imgui.obj
+E:\VS\GoldEngine2D\Binarys\include\imgui\imgui_demo.cpp;E:\VS\GoldEngine2D\x64\Debug\imgui_demo.obj
+E:\VS\GoldEngine2D\Binarys\include\imgui\imgui_draw.cpp;E:\VS\GoldEngine2D\x64\Debug\imgui_draw.obj
+E:\VS\GoldEngine2D\Binarys\include\imgui\imgui_impl_glfw.cpp;E:\VS\GoldEngine2D\x64\Debug\imgui_impl_glfw.obj
+E:\VS\GoldEngine2D\Binarys\include\imgui\imgui_impl_opengl3.cpp;E:\VS\GoldEngine2D\x64\Debug\imgui_impl_opengl3.obj
+E:\VS\GoldEngine2D\Binarys\include\imgui\imgui_tables.cpp;E:\VS\GoldEngine2D\x64\Debug\imgui_tables.obj
+E:\VS\GoldEngine2D\Binarys\include\imgui\imgui_widgets.cpp;E:\VS\GoldEngine2D\x64\Debug\imgui_widgets.obj
+E:\VS\GoldEngine2D\source\Components\AudioSource\AudioManager.cpp;E:\VS\GoldEngine2D\x64\Debug\AudioManager.obj
+E:\VS\GoldEngine2D\source\Components\AudioSource\AudioSource.cpp;E:\VS\GoldEngine2D\x64\Debug\AudioSource.obj
+E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.cpp;E:\VS\GoldEngine2D\x64\Debug\Camera2D.obj
+E:\VS\GoldEngine2D\source\Components\Debug\DrawBox.cpp;E:\VS\GoldEngine2D\x64\Debug\DrawBox.obj
+E:\VS\GoldEngine2D\source\Components\ECS\ComponentFactory.cpp;E:\VS\GoldEngine2D\x64\Debug\ComponentFactory.obj
+E:\VS\GoldEngine2D\source\Components\ECS\ComponentManager.cpp;E:\VS\GoldEngine2D\x64\Debug\ComponentManager.obj
+E:\VS\GoldEngine2D\source\Components\ECS\ComponentSerializer.cpp;E:\VS\GoldEngine2D\x64\Debug\ComponentSerializer.obj
+E:\VS\GoldEngine2D\source\Components\ECS\ECS.cpp;E:\VS\GoldEngine2D\x64\Debug\ECS.obj
+E:\VS\GoldEngine2D\source\Components\FileSystem\FileSystem.cpp;E:\VS\GoldEngine2D\x64\Debug\FileSystem.obj
+E:\VS\GoldEngine2D\source\Components\Lib\GoldMath\GoldMathf.cpp;E:\VS\GoldEngine2D\x64\Debug\GoldMathf.obj
+E:\VS\GoldEngine2D\source\Components\Light\Light.cpp;E:\VS\GoldEngine2D\x64\Debug\Light.obj
+E:\VS\GoldEngine2D\source\Components\Models\Mesh.cpp;E:\VS\GoldEngine2D\x64\Debug\Mesh.obj
+E:\VS\GoldEngine2D\source\Components\Models\Model.cpp;E:\VS\GoldEngine2D\x64\Debug\Model.obj
+E:\VS\GoldEngine2D\source\Components\Models\TextureManager.cpp;E:\VS\GoldEngine2D\x64\Debug\TextureManager.obj
+E:\VS\GoldEngine2D\source\Components\Physics3D\BoxCollider.cpp;E:\VS\GoldEngine2D\x64\Debug\BoxCollider.obj
+E:\VS\GoldEngine2D\source\Components\Physics3D\Cast3D.cpp;E:\VS\GoldEngine2D\x64\Debug\Cast3D.obj
+E:\VS\GoldEngine2D\source\Components\Physics3D\Rigidbody3d.cpp;E:\VS\GoldEngine2D\x64\Debug\Rigidbody3d.obj
+E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.cpp;E:\VS\GoldEngine2D\x64\Debug\RigidBody.obj
+E:\VS\GoldEngine2D\source\Components\Physics\TriggerModule.cpp;E:\VS\GoldEngine2D\x64\Debug\TriggerModule.obj
+E:\VS\GoldEngine2D\source\Components\SaveSystem\CheckVar.cpp;E:\VS\GoldEngine2D\x64\Debug\CheckVar.obj
+E:\VS\GoldEngine2D\source\Components\SaveSystem\SaveSystem.cpp;E:\VS\GoldEngine2D\x64\Debug\SaveSystem.obj
+E:\VS\GoldEngine2D\source\Components\SceneManager\Scene.cpp;E:\VS\GoldEngine2D\x64\Debug\Scene.obj
+E:\VS\GoldEngine2D\source\Components\SceneManager\SceneManager.cpp;E:\VS\GoldEngine2D\x64\Debug\SceneManager.obj
+E:\VS\GoldEngine2D\source\Components\Script\BinderFunctions.cpp;E:\VS\GoldEngine2D\x64\Debug\BinderFunctions.obj
+E:\VS\GoldEngine2D\source\Components\Script\Binders\CalculatorBinder.cpp;E:\VS\GoldEngine2D\x64\Debug\CalculatorBinder.obj
+E:\VS\GoldEngine2D\source\Components\Script\Binders\EntityBinder.cpp;E:\VS\GoldEngine2D\x64\Debug\EntityBinder.obj
+E:\VS\GoldEngine2D\source\Components\Script\Binders\InputBinder.cpp;E:\VS\GoldEngine2D\x64\Debug\InputBinder.obj
+E:\VS\GoldEngine2D\source\Components\Script\Libs\GMathf\GMathf.cpp;E:\VS\GoldEngine2D\x64\Debug\GMathf.obj
+E:\VS\GoldEngine2D\source\Components\Script\ScriptCompiler.cpp;E:\VS\GoldEngine2D\x64\Debug\ScriptCompiler.obj
+E:\VS\GoldEngine2D\source\Components\ShaderCompiler\Shader.cpp;E:\VS\GoldEngine2D\x64\Debug\Shader.obj
+E:\VS\GoldEngine2D\source\Components\Skybox\Skybox.cpp;E:\VS\GoldEngine2D\x64\Debug\Skybox.obj
+E:\VS\GoldEngine2D\source\Components\Sprite\SpriteComponent.cpp;E:\VS\GoldEngine2D\x64\Debug\SpriteComponent.obj
+E:\VS\GoldEngine2D\source\Components\Systems\PickingTexture.cpp;E:\VS\GoldEngine2D\x64\Debug\PickingTexture.obj
+E:\VS\GoldEngine2D\source\Components\Systems\RenderSystem.cpp;E:\VS\GoldEngine2D\x64\Debug\RenderSystem.obj
+E:\VS\GoldEngine2D\source\Components\UI\UIImplement.cpp;E:\VS\GoldEngine2D\x64\Debug\UIImplement.obj
+E:\VS\GoldEngine2D\source\EngineBehaviour\EngineBehaviour.cpp;E:\VS\GoldEngine2D\x64\Debug\EngineBehaviour.obj
+E:\VS\GoldEngine2D\source\EngineBehaviour\GoldEngineLib.cpp;E:\VS\GoldEngine2D\x64\Debug\GoldEngineLib.obj
+E:\VS\GoldEngine2D\source\EngineBehaviour\PhysicsLib.cpp;E:\VS\GoldEngine2D\x64\Debug\PhysicsLib.obj
+E:\VS\GoldEngine2D\source\Graphics\AppSettings.cpp;E:\VS\GoldEngine2D\x64\Debug\AppSettings.obj
+E:\VS\GoldEngine2D\source\Graphics\RunEngine.cpp;E:\VS\GoldEngine2D\x64\Debug\RunEngine.obj
+E:\VS\GoldEngine2D\source\Graphics\StartEngineGraphics.cpp;E:\VS\GoldEngine2D\x64\Debug\StartEngineGraphics.obj
+E:\VS\GoldEngine2D\source\STBimplement.cpp;E:\VS\GoldEngine2D\x64\Debug\STBimplement.obj

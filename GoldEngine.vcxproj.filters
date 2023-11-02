@@ -238,9 +238,6 @@
     <ClCompile Include="source\EngineBehaviour\PhysicsLib.cpp">
       <Filter>Engine\02_Components\Libs</Filter>
     </ClCompile>
-    <ClCompile Include="..\bullet3\src\clew\clew.c">
-      <Filter>Recursos</Filter>
-    </ClCompile>
     <ClCompile Include="source\Components\Systems\PickingTexture.cpp">
       <Filter>Engine\02_Components\Events</Filter>
     </ClCompile>
@@ -401,9 +398,6 @@
     </ClInclude>
     <ClInclude Include="source\EngineBehaviour\PhysicsLib.h">
       <Filter>Engine\02_Components\Libs</Filter>
-    </ClInclude>
-    <ClInclude Include="..\bullet3\src\clew\clew.h">
-      <Filter>Recursos</Filter>
     </ClInclude>
     <ClInclude Include="source\Components\Systems\PickingTexture.h">
       <Filter>Engine\02_Components\Events</Filter>

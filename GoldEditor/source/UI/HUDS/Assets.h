@@ -45,6 +45,7 @@ public:
     GLuint shaderTextureID;
     GLuint textureTextureID;
     GLuint musicTextureID;
+    GLuint whereTextureID;
 
     void start() override {
         path_to_read = getRoute() + "/assets/";
@@ -54,7 +55,8 @@ public:
         sceneTextureID   = assetIcon::start("scene.png", pathG);
         shaderTextureID  = assetIcon::start("shader.png", pathG);
         textureTextureID = assetIcon::start("texture.png", pathG);
-        musicTextureID   = assetIcon::start("music.png", pathG);
+        musicTextureID = assetIcon::start("music.png", pathG);
+        whereTextureID = assetIcon::start("where.png", pathG);
     }
 
     void resetRoute();
@@ -141,6 +143,7 @@ public:
                 textPos.y += imageSize.y + textPadding.y;
 
                 ImVec2 getPosIMG = ImGui::GetCursorPos();
+                ImVec2 posicionImagen = getPosIMG;
 
                 // Dibujar la imagen
 
@@ -159,22 +162,7 @@ public:
                         if (ImGui::ImageButton((void*)(intptr_t)sceneTextureID, imageSize)) {
                             //path_to_read = entry.path().string();
                         }
-                    }
-
-                    //if (ImGui::BeginDragDropSource(src_flags))
-                    //{
-                    //    const char* filePathN;
-                    //    string t = "Moving " + namePath;
-                    //    ImGui::Text(t.c_str());
-
-                    //    std::string pathToSend = entry.path().string();
-                    //    ImGui::SetDragDropPayload("SCENE_PATH", pathToSend.c_str(), pathToSend.size() + 1); // +1 para incluir el carácter nulo
-                    //    ImGui::EndDragDropSource();
-                    //}
-
-
-
-                    if (extension == ".glsl") {
+                    }else if (extension == ".glsl") {
                         if (ImGui::ImageButton((void*)(intptr_t)shaderTextureID, imageSize)) {
                             //path_to_read = entry.path().string();
                         }
@@ -189,11 +177,8 @@ public:
                             ImGui::SetDragDropPayload("SHADER_PATH", pathToSend.c_str(), pathToSend.size() + 1);
                             ImGui::EndDragDropSource();
                         }
-                    }
-
+                    }else if (extension == ".mp3" || extension == ".wav") {
                     ImGui::PushID("musicD");
-
-                    if (extension == ".mp3" || extension == ".wav") {
                         if (ImGui::ImageButton((void*)(intptr_t)musicTextureID, imageSize)) {
                             //path_to_read = entry.path().string();
                         }
@@ -208,12 +193,9 @@ public:
                             ImGui::SetDragDropPayload("MUSICH_PATH", pathToSend.c_str(), pathToSend.size() + 1);
                             ImGui::EndDragDropSource();
                         }
-                    }
                     ImGui::PopID();
-
-
+                    }else if (extension == ".png" || extension == ".gif" || extension == ".jpg") {
                     ImGui::PushID("png");
-                    if (extension == ".png" || extension == ".gif" || extension == ".jpg") {
                         if (ImGui::ImageButton((void*)(intptr_t)textureTextureID, imageSize)) {
                             //path_to_read = entry.path().string();
                         }
@@ -228,25 +210,9 @@ public:
                             ImGui::SetDragDropPayload("TEXTUREDA_PATH", pathToSend.c_str(), pathToSend.size() + 1); // +1 para incluir el carácter nulo
                             ImGui::EndDragDropSource();
                         }
-                    }
                     ImGui::PopID();
-
-                    //if (ImGui::BeginDragDropSource(src_flags))
-                    //{
-                    //    const char* filePathN;
-                    //    string t = "Moving " + namePath;
-                    //    ImGui::Text(t.c_str());
-
-                    //    std::string pathToSend = entry.path().string();
-                    //    ImGui::SetDragDropPayload("TXTTURE_PATH", pathToSend.c_str(), pathToSend.size() + 1); // +1 para incluir el carácter nulo
-                    //    ImGui::EndDragDropSource();
-                    //}
-
-
-
-
-                    ImGui::PushID("sr");
-                    if (extension == ".sr") {
+                    }else if (extension == ".sr") {
+                           ImGui::PushID("sr"); 
                         if (ImGui::ImageButton((void*)(intptr_t)scriptTextureID, imageSize)) {
                             string path = entry.path().string();
                             const char* fileName = path.c_str();
@@ -276,8 +242,32 @@ public:
                             ImGui::SetDragDropPayload("SRSCRIPT_PATH", pathToSend.c_str(), pathToSend.size() + 1); // +1 para incluir el carácter nulo
                             ImGui::EndDragDropSource();
                         }
-                    }
                     ImGui::PopID();
+                    }
+                    else {
+                        
+                            ImGui::PushID("notexist");
+                        if (ImGui::ImageButton((void*)(intptr_t)whereTextureID, imageSize)) {
+                            /*string path = entry.path().string();
+                            const char* fileName = path.c_str();
+
+                            const char* command = "code";
+                            const char* arguments = fileName;
+
+                            char fullCommand[100];
+                            snprintf(fullCommand, sizeof(fullCommand), "%s %s", command, arguments);
+
+                            int result = system(fullCommand);
+
+                            if (result == 0) {
+                                printf("Archivo abierto exitosamente con VSCode.\n");
+                            }
+                            else {
+                                printf("Error al abrir el archivo con VSCode.\n");
+                            }*/
+                        }
+                        ImGui::PopID();
+                    }
                 }
 
 
@@ -288,7 +278,6 @@ public:
 
 
 
-                ImVec2 posicionImagen = getPosIMG;
                 if (entry.path().extension() != ".f") {
 
                     ImDrawList* drawList = ImGui::GetWindowDrawList();

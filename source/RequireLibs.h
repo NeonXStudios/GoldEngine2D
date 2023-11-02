@@ -11,6 +11,6 @@
 #include <glm/gtx/vector_angle.hpp>
 
 
-//PHYSICS LIB
-#include <PxPhysics.h>
-#include <PxPhysicsAPI.h>
+////PHYSICS LIB
+//#include <PxPhysics.h>
+//#include <PxPhysicsAPI.h>

@@ -158,9 +158,6 @@
     <ClCompile Include="..\Binarys\include\imguizmo\ImGuizmo.cpp">
       <Filter>RecursosEditor\IMGUIZMO</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\bullet3\src\clew\clew.c">
-      <Filter>RecursosEditor</Filter>
-    </ClCompile>
     <ClCompile Include="source\Gizmos\GDGizmos.cpp">
       <Filter>Editor\03_EditorComponents\Gizmo</Filter>
     </ClCompile>
@@ -278,9 +275,6 @@
     </ClInclude>
     <ClInclude Include="..\Binarys\include\imguizmo\ImGuizmo.h">
       <Filter>RecursosEditor\IMGUIZMO</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\bullet3\src\clew\clew.h">
-      <Filter>RecursosEditor</Filter>
     </ClInclude>
     <ClInclude Include="source\Gizmos\GDGizmos.h">
       <Filter>Editor\03_EditorComponents\Gizmo</Filter>

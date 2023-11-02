@@ -127,7 +127,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)Binarys/include/;$(SolutionDir)Binarys/include/imgui;$(SolutionDir)Binarys/include/lua;$(SolutionDir)Binarys/include/Bullet3</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Binarys/include/;$(SolutionDir)Binarys/include/imgui;$(SolutionDir)Binarys/include/lua</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -157,7 +157,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\bullet3\src\clew\clew.c" />
     <ClCompile Include="Binarys\c\glad.c" />
     <ClCompile Include="Binarys\include\imgui\imgui.cpp" />
     <ClCompile Include="Binarys\include\imgui\imgui_demo.cpp" />
@@ -210,7 +209,6 @@
     <ClCompile Include="source\STBimplement.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\bullet3\src\clew\clew.h" />
     <ClInclude Include="Binarys\include\imgui\imconfig.h" />
     <ClInclude Include="Binarys\include\imgui\imgui.h" />
     <ClInclude Include="Binarys\include\imgui\imgui_impl_glfw.h" />

@@ -30,8 +30,8 @@ void RigidBody::init() {
 	fixtureDef->shape = dynamicBox;
 	body->CreateFixture(fixtureDef);
 
-	position.x = srp->ObjectPosition.x;
-	position.y = -srp->ObjectPosition.y;
+	//position.x = srp->ObjectPosition.x;
+	//position.y = -srp->ObjectPosition.y;
 
 	body->SetTransform(b2Vec2((float)position.x, (float)position.y), radians);
 
@@ -53,7 +53,7 @@ void RigidBody::update() {
 			degrees += 360.0f;
 		}
 
-		if (!FreezeX) {
+		/*if (!FreezeX) {
 			srp->ObjectPosition.x = position.x;
 		}
 		else {
@@ -67,7 +67,7 @@ void RigidBody::update() {
 		else {
 			body->SetLinearVelocity (b2Vec2_zero);
 			position.y = -srp->ObjectPosition.y;
-		}
+		}*/
 
 		srp->rotationAngle = degrees;
 	}
@@ -75,9 +75,9 @@ void RigidBody::update() {
 		float degrees = srp->rotationAngle;
 		float radians = degrees * (b2_pi / 180.0f);
 
-		position.x = srp->ObjectPosition.x;
-		position.y = -srp->ObjectPosition.y;
-		body->SetTransform(b2Vec2(float(position.x), float(position.y)), radians);
+		//position.x = srp->ObjectPosition.x;
+		//position.y = -srp->ObjectPosition.y;
+		//body->SetTransform(b2Vec2(float(position.x), float(position.y)), radians);
 	}
 
 	body->GetFixtureList()->SetSensor(isTrigger);
@@ -224,6 +224,6 @@ void RigidBody::deserialize(std::string g, std::string) {
 	}
 
 
-	body->SetTransform (b2Vec2(srp->ObjectPosition.x, -srp->ObjectPosition.y), srp->rotationAngle);
-	body->SetAwake(true);
+	//body->SetTransform (b2Vec2(srp->ObjectPosition.x, -srp->ObjectPosition.y), srp->rotationAngle);
+	//body->SetAwake(true);
 }

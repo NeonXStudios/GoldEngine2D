@@ -14,7 +14,7 @@ public:
         Orthographic
     };
 
-    Projection proj = Projection::Perspective;
+    Projection proj = Projection::Orthographic;
     glm::mat4 projection;
     glm::mat4 view;
     glm::vec3 cameraPosition = glm::vec3(0.0f, 0.0f, 10.0f);
@@ -22,7 +22,7 @@ public:
     glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
     glm::vec3 cameraVelocity = glm::vec3(0.0f, 0.0f, 0.0f);
 
-    float fov = 45.0f;  // Campo de visi�n en grados
+    float fov = 25.0f;  // Campo de visi�n en grados
     float zoom = 1.0f;
 
     // Quaterniones para las rotaciones
