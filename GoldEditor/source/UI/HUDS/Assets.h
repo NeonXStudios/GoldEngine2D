@@ -178,7 +178,7 @@ public:
                             ImGui::EndDragDropSource();
                         }
                     }else if (extension == ".mp3" || extension == ".wav") {
-                    ImGui::PushID("musicD");
+                        ImGui::PushID("musicD");
                         if (ImGui::ImageButton((void*)(intptr_t)musicTextureID, imageSize)) {
                             //path_to_read = entry.path().string();
                         }
@@ -196,6 +196,20 @@ public:
                     ImGui::PopID();
                     }else if (extension == ".png" || extension == ".gif" || extension == ".jpg") {
                     ImGui::PushID("png");
+
+                        //GLuint genTexture = 0;
+                        //unsigned char* image_data;
+                        //int width, height, channels;
+                        //string pat = entry.path().string();
+                        //std::cout << "Icons Path: " << entry.path().string() << std::endl;
+                        //image_data = stbi_load(pat.c_str(), &width, &height, &channels, STBI_rgb_alpha);
+                        //glGenTextures(1, &genTexture);
+                        //glBindTexture(GL_TEXTURE_2D, genTexture);
+                        //glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+                        //glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+                        //glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, image_data);
+                        //stbi_image_free (&image_data);
+
                         if (ImGui::ImageButton((void*)(intptr_t)textureTextureID, imageSize)) {
                             //path_to_read = entry.path().string();
                         }

@@ -82,6 +82,8 @@ void InspectorUI::draw() {
 
             ImGui::EndDragDropTarget();
         }
+
+
         ObjectSelectToInspector->getComponent<SpriteComponent>().FragmentPath = EditorGUI::InputText("Fragment Shader", ObjectSelectToInspector->getComponent<SpriteComponent>().FragmentPath);
         if (ImGui::BeginDragDropTarget())
         {
@@ -96,7 +98,7 @@ void InspectorUI::draw() {
 
                 if (ImGui::IsMouseReleased(0)) {
                     std::string convertedPath = AComponent::RemoveDir(receivedString);
-                    ObjectSelectToInspector->getComponent<SpriteComponent>().VertexPath = convertedPath;
+                    ObjectSelectToInspector->getComponent<SpriteComponent>().FragmentPath = convertedPath;
 
 
 

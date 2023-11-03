@@ -74,7 +74,6 @@ void SaveData::loadScene() {
     json loadJson = json::parse (loadJsonDAta);
 
     std::cout << "OBJETOS CARGADOS: " << loadJson["objects"].size();
-
     for (int i = 0; i < loadJson["objects"].size(); i++) {
         Entity* newEntity = SceneManager::GetSceneManager()->NewEntity();
         json getEntityData = loadJson["objects"][i];
@@ -108,4 +107,5 @@ void SaveData::loadScene() {
             }
         }
     }
+    SceneManager::GetSceneManager()->OpenScene->objectsInScene[0]->addComponent<Animator2D>();
 }

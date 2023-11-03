@@ -11,6 +11,7 @@ using namespace std;
 class Scene
 {
 public:
+	string SceneName = "New Level";
 	Camera* worldCamera = new Camera();
 	//Manager ObjectsScene;
 	std::vector<Entity*> objectsInScene = std::vector<Entity*>();

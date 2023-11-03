@@ -12,6 +12,8 @@ public:
 	static void release();
 
 	static SceneManager* GetSceneManager();
+	static Scene* GetOpenScene();
+	static string* GetOpenSceneName();
 	Entity* NewEntity	  ();
 	Entity* GetObjectByID (int id);
 	Entity* GetObjectPerIndex (int index);

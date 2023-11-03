@@ -101,6 +101,9 @@
     <Filter Include="Engine\02_Components\Light">
       <UniqueIdentifier>{4dae5f94-451e-4d9f-8825-f29dd280ac46}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\02_Components\Animator2D">
+      <UniqueIdentifier>{1c9f65e5-fa0e-4733-b221-90079a5f3590}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Graphics\StartEngineGraphics.cpp">
@@ -252,6 +255,12 @@
     </ClCompile>
     <ClCompile Include="source\Components\Light\Light.cpp">
       <Filter>Engine\02_Components\Light</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\Animator\Animator2D.cpp">
+      <Filter>Engine\02_Components\Animator2D</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\Animator\AnimationsStates.cpp">
+      <Filter>Engine\02_Components\Animator2D</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -413,6 +422,12 @@
     </ClInclude>
     <ClInclude Include="source\Components\Light\Light.h">
       <Filter>Engine\02_Components\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\Animator\Animator2D.h">
+      <Filter>Engine\02_Components\Animator2D</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\Animator\AnimationsStates.h">
+      <Filter>Engine\02_Components\Animator2D</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

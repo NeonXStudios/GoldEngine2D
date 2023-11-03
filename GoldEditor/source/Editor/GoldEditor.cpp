@@ -17,7 +17,7 @@ void GoldEditor::start() {
     std::cout << "Starting editor" << endl;
     SaveData::loadScene();
     //gizmos->create();
-    gizmos->start();
+    //gizmos->start();
     sky->init();
 }
 
@@ -28,12 +28,12 @@ void GoldEditor::draw() {
 
 void GoldEditor::update() {
 
-    if (UIManager::instance->inspectorui->ObjectSelectToInspector != nullptr) {
-        glm::vec3 pos = UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Position;
-        glm::vec3 scale = UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Scale;
-         
-        gizmos->DrawCapsule   (pos, 1, 1, glm::vec3(0, 1, 0));
-    }
+    //if (UIManager::instance->inspectorui->ObjectSelectToInspector != nullptr) {
+    //    glm::vec3 pos = UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Position;
+    //    glm::vec3 scale = UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Scale;
+    //     
+    //    gizmos->DrawCapsule   (pos, 1, 1, glm::vec3(0, 1, 0));
+    //}
 
 #pragma region MOVE CAMERA
         GLFWwindow* window = StartEngineGraphics::window;

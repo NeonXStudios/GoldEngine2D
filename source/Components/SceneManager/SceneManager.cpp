@@ -92,3 +92,11 @@ Entity* SceneManager::Destroy(Entity* obj) {
 Entity* SceneManager::GetObjectPerIndex(int index) {
 	return OpenScene->objectsInScene[index];
 }
+
+Scene* SceneManager::GetOpenScene() {
+	return SceneManager::GetSceneManager()->OpenScene;
+}
+
+string* SceneManager::GetOpenSceneName() {
+	return &SceneManager::GetSceneManager()->OpenScene->SceneName;
+}

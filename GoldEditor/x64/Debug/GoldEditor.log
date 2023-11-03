@@ -11,27 +11,13 @@ E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: '
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
 E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+E:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+E:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
 E:\VS\GoldEngine2D\GoldEditor\source\UI\DragAndDrop.h(17,25): warning C4101: 'filePathN': variable local sin referencia
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(172,41): warning C4101: 'filePathN': variable local sin referencia
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(188,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(205,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(237,41): warning C4101: 'filePathN': variable local sin referencia
-  GameCompiler.cpp
-E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-E:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
-E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-E:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
-E:\VS\GoldEngine2D\GoldEditor\source\UI\DragAndDrop.h(17,25): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(172,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(188,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(205,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(237,41): warning C4101: 'filePathN': variable local sin referencia
+E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(219,41): warning C4101: 'filePathN': variable local sin referencia
+E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(251,41): warning C4101: 'filePathN': variable local sin referencia
   GoldEditor.cpp
 E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
@@ -43,11 +29,13 @@ E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: '
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
 E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+E:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+E:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
 E:\VS\GoldEngine2D\GoldEditor\source\UI\DragAndDrop.h(17,25): warning C4101: 'filePathN': variable local sin referencia
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(172,41): warning C4101: 'filePathN': variable local sin referencia
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(188,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(205,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(237,41): warning C4101: 'filePathN': variable local sin referencia
+E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(219,41): warning C4101: 'filePathN': variable local sin referencia
+E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(251,41): warning C4101: 'filePathN': variable local sin referencia
   GDGizmos.cpp
 E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
@@ -59,24 +47,10 @@ E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: '
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
 E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+E:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+E:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
 E:\VS\GoldEngine2D\GoldEditor\source\Gizmos\GDGizmos.cpp(228,50): warning C4267: 'argumento': conversión de 'size_t' a 'GLsizei'; posible pérdida de datos
 E:\VS\GoldEngine2D\GoldEditor\source\Gizmos\GDGizmos.cpp(369,42): warning C4267: 'argumento': conversión de 'size_t' a 'GLsizei'; posible pérdida de datos
-  MoveGizmos.cpp
-E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-E:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
-E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-E:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
-E:\VS\GoldEngine2D\GoldEditor\source\UI\DragAndDrop.h(17,25): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(172,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(188,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(205,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(237,41): warning C4101: 'filePathN': variable local sin referencia
   AComponent.cpp
 E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
@@ -88,6 +62,8 @@ E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: '
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
 E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+E:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+E:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
   ComponentList.cpp
 E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
@@ -99,33 +75,8 @@ E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: '
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
 E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
-  ComponentUIDrawer.cpp
-E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-E:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
-E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-E:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
-  CAudio.cpp
-E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-E:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
-E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-E:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
-E:\VS\GoldEngine2D\GoldEditor\source\UI\DragAndDrop.h(17,25): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(172,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(188,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(205,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(237,41): warning C4101: 'filePathN': variable local sin referencia
+E:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+E:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
   CRigidBody.cpp
 E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
@@ -137,6 +88,8 @@ E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: '
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
 E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+E:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+E:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
   CScript.cpp
 E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
@@ -148,11 +101,13 @@ E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: '
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
 E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+E:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+E:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
 E:\VS\GoldEngine2D\GoldEditor\source\UI\DragAndDrop.h(17,25): warning C4101: 'filePathN': variable local sin referencia
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(172,41): warning C4101: 'filePathN': variable local sin referencia
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(188,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(205,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(237,41): warning C4101: 'filePathN': variable local sin referencia
+E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(219,41): warning C4101: 'filePathN': variable local sin referencia
+E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(251,41): warning C4101: 'filePathN': variable local sin referencia
   CSprite.cpp
 E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
@@ -164,6 +119,21 @@ E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: '
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
 E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+E:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+E:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
+  ComponentUIDrawer.cpp
+E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+E:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+E:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+E:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+E:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
   DrawComponents.cpp
 E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
@@ -175,11 +145,13 @@ E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: '
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
 E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+E:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+E:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
 E:\VS\GoldEngine2D\GoldEditor\source\UI\DragAndDrop.h(17,25): warning C4101: 'filePathN': variable local sin referencia
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(172,41): warning C4101: 'filePathN': variable local sin referencia
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(188,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(205,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(237,41): warning C4101: 'filePathN': variable local sin referencia
+E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(219,41): warning C4101: 'filePathN': variable local sin referencia
+E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(251,41): warning C4101: 'filePathN': variable local sin referencia
   InspectorComponents.cpp
 E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
@@ -191,6 +163,8 @@ E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: '
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
 E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+E:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+E:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
   ScriptEditor.cpp
 E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
@@ -202,11 +176,13 @@ E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: '
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
 E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+E:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+E:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
 E:\VS\GoldEngine2D\GoldEditor\source\UI\DragAndDrop.h(17,25): warning C4101: 'filePathN': variable local sin referencia
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(172,41): warning C4101: 'filePathN': variable local sin referencia
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(188,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(205,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(237,41): warning C4101: 'filePathN': variable local sin referencia
+E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(219,41): warning C4101: 'filePathN': variable local sin referencia
+E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(251,41): warning C4101: 'filePathN': variable local sin referencia
   ChildDraw.cpp
 E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
@@ -218,6 +194,8 @@ E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: '
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
 E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+E:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+E:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
   Assets.cpp
 E:\VS\GoldEngine2D\GoldEditor\source\UI\DragAndDrop.h(17,25): warning C4101: 'filePathN': variable local sin referencia
 E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
@@ -226,14 +204,16 @@ E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'i
 E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(172,41): warning C4101: 'filePathN': variable local sin referencia
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(188,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(205,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(237,41): warning C4101: 'filePathN': variable local sin referencia
+E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(219,41): warning C4101: 'filePathN': variable local sin referencia
+E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(251,41): warning C4101: 'filePathN': variable local sin referencia
 E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
 E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+E:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+E:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
   BarMenuUI.cpp
 E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
@@ -245,11 +225,13 @@ E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: '
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
 E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+E:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+E:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
 E:\VS\GoldEngine2D\GoldEditor\source\UI\DragAndDrop.h(17,25): warning C4101: 'filePathN': variable local sin referencia
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(172,41): warning C4101: 'filePathN': variable local sin referencia
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(188,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(205,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(237,41): warning C4101: 'filePathN': variable local sin referencia
+E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(219,41): warning C4101: 'filePathN': variable local sin referencia
+E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(251,41): warning C4101: 'filePathN': variable local sin referencia
   CameraSetting.cpp
 E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
@@ -261,11 +243,13 @@ E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: '
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
 E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+E:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+E:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
 E:\VS\GoldEngine2D\GoldEditor\source\UI\DragAndDrop.h(17,25): warning C4101: 'filePathN': variable local sin referencia
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(172,41): warning C4101: 'filePathN': variable local sin referencia
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(188,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(205,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(237,41): warning C4101: 'filePathN': variable local sin referencia
+E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(219,41): warning C4101: 'filePathN': variable local sin referencia
+E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(251,41): warning C4101: 'filePathN': variable local sin referencia
   Hierarchy.cpp
 E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
@@ -277,15 +261,14 @@ E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: '
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
 E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+E:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+E:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
 E:\VS\GoldEngine2D\GoldEditor\source\UI\DragAndDrop.h(17,25): warning C4101: 'filePathN': variable local sin referencia
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(172,41): warning C4101: 'filePathN': variable local sin referencia
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(188,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(205,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(237,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Hierarchy.cpp(107,25): warning C4101: 'filePathN': variable local sin referencia
-  Generando código...
-E:\VS\GoldEngine2D\source\Components\AudioSource\AudioSource.h(80): warning C4172: devolución de dirección de la variable local o temporal: g
-  Compilando...
+E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(219,41): warning C4101: 'filePathN': variable local sin referencia
+E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(251,41): warning C4101: 'filePathN': variable local sin referencia
+E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Hierarchy.cpp(123,25): warning C4101: 'filePathN': variable local sin referencia
   Inspector.cpp
 E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
@@ -297,16 +280,13 @@ E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: '
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
 E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+E:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+E:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
 E:\VS\GoldEngine2D\GoldEditor\source\UI\DragAndDrop.h(17,25): warning C4101: 'filePathN': variable local sin referencia
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(172,41): warning C4101: 'filePathN': variable local sin referencia
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(188,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(205,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(237,41): warning C4101: 'filePathN': variable local sin referencia
-  RightClickUI.cpp
-E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(219,41): warning C4101: 'filePathN': variable local sin referencia
+E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(251,41): warning C4101: 'filePathN': variable local sin referencia
   SceneUI.cpp
 E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
@@ -318,11 +298,13 @@ E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: '
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
 E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+E:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+E:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
 E:\VS\GoldEngine2D\GoldEditor\source\UI\DragAndDrop.h(17,25): warning C4101: 'filePathN': variable local sin referencia
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(172,41): warning C4101: 'filePathN': variable local sin referencia
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(188,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(205,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(237,41): warning C4101: 'filePathN': variable local sin referencia
+E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(219,41): warning C4101: 'filePathN': variable local sin referencia
+E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(251,41): warning C4101: 'filePathN': variable local sin referencia
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(59,71): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(59,45): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(84,21): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
@@ -337,11 +319,6 @@ E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(272,19): warning C4244:
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(272,13): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(150,15): warning C4101: 'initialMousePos': variable local sin referencia
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(151,15): warning C4101: 'initialObjectPos': variable local sin referencia
-  UIDrawer.cpp
-E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
   UIManager.cpp
 E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
@@ -353,10 +330,12 @@ E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: '
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
 E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 E:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+E:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+E:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
 E:\VS\GoldEngine2D\GoldEditor\source\UI\DragAndDrop.h(17,25): warning C4101: 'filePathN': variable local sin referencia
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(172,41): warning C4101: 'filePathN': variable local sin referencia
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(188,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(205,41): warning C4101: 'filePathN': variable local sin referencia
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(237,41): warning C4101: 'filePathN': variable local sin referencia
+E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(219,41): warning C4101: 'filePathN': variable local sin referencia
+E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.h(251,41): warning C4101: 'filePathN': variable local sin referencia
   Generando código...
   GoldEditor.vcxproj -> E:\VS\GoldEngine2D\BuildHub\Editor\ZXEditor.exe

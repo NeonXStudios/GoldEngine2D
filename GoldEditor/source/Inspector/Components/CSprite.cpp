@@ -19,21 +19,23 @@ void CSprite::draw(Entity* owner) {
         target_flags |= ImGuiDragDropFlags_AcceptNoDrawDefaultRect;
 
 
-        if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("TEXTUREDA_PATH", target_flags))
-        {
-            const char* receivedString = static_cast<const char*>(payload->Data);
-
-            
-            std::string convertedPath = AComponent::RemoveDir (receivedString);
-            newPath = convertedPath;
+        if (ImGui::IsMouseReleased(0)) {
+            if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("TEXTUREDA_PATH", target_flags))
+            {
+                const char* receivedString = static_cast<const char*>(payload->Data);
 
 
+                std::string convertedPath = AComponent::RemoveDir(receivedString);
+                newPath = convertedPath;
 
-            std::cout << "Convertido: " << convertedPath << std::endl;
 
 
-            owner->getComponent<SpriteComponent>().LoadTexture();
-            std::cout << "String recibido: " << owner->getComponent<SpriteComponent>().TexturePath << std::endl;           
+                std::cout << "Convertido: " << convertedPath << std::endl;
+
+
+                owner->getComponent<SpriteComponent>().LoadTexture();
+                std::cout << "String recibido: " << owner->getComponent<SpriteComponent>().TexturePath << std::endl;
+            }
         }
 
 

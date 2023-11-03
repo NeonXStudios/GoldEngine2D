@@ -27,6 +27,11 @@ public:
 			g->deserialize (data, path);
 		}
 
+		if (componentName == "Animator2D") {
+			Animator2D* g = &owner->addComponent<Animator2D>();
+			g->deserialize(data, path);
+		}
+
 		//if (componentName == "Rigidbody3d") {
 		//	Rigidbody3d* g = &owner->addComponent<Rigidbody3d>();
 		//	g->deserialize(data, path);

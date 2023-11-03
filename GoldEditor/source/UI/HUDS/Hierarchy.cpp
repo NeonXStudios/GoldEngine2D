@@ -7,8 +7,8 @@
 void HierarchyUI::draw() {
 
     ImGui::Begin("Hierarchy");
-
-    if (ImGui::Selectable ("Open Scene")) { }
+    string name = "Open Scene -> " + *SceneManager::GetOpenSceneName();
+    ImGui::Selectable (name.c_str()); 
     if (ImGui::BeginDragDropTarget())
     {
         ImGuiDragDropFlags target_flags = 0;
@@ -72,6 +72,22 @@ void HierarchyUI::draw() {
             }
         }
 
+        //if (ImGui::TreeNode(object->ObjectName.c_str()))
+        //{
+        //    for (int e = 0; e < object->childrens.size(); e++) {
+        //        ImGui::PushID(e);
+
+        //        Entity* child = object->childrens[e];
+
+        //        if (ImGui::Selectable(child->ObjectName.c_str())) {
+        //            UIManager::instance->inspectorui->ObjectSelectToInspector = child;
+        //            std::cout << "SELECT OBJECT: " << child->ObjectName << std::endl;
+        //            SelectInHierarchy = true;
+        //        }
+        //        ImGui::PopID();
+        //    }
+        //    ImGui::TreePop();
+        //}
 
         if (ImGui::BeginDragDropTarget())
         {

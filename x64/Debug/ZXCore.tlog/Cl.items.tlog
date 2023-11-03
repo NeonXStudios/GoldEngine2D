@@ -6,6 +6,8 @@ E:\VS\GoldEngine2D\Binarys\include\imgui\imgui_impl_glfw.cpp;E:\VS\GoldEngine2D\
 E:\VS\GoldEngine2D\Binarys\include\imgui\imgui_impl_opengl3.cpp;E:\VS\GoldEngine2D\x64\Debug\imgui_impl_opengl3.obj
 E:\VS\GoldEngine2D\Binarys\include\imgui\imgui_tables.cpp;E:\VS\GoldEngine2D\x64\Debug\imgui_tables.obj
 E:\VS\GoldEngine2D\Binarys\include\imgui\imgui_widgets.cpp;E:\VS\GoldEngine2D\x64\Debug\imgui_widgets.obj
+E:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.cpp;E:\VS\GoldEngine2D\x64\Debug\AnimationsStates.obj
+E:\VS\GoldEngine2D\source\Components\Animator\Animator2D.cpp;E:\VS\GoldEngine2D\x64\Debug\Animator2D.obj
 E:\VS\GoldEngine2D\source\Components\AudioSource\AudioManager.cpp;E:\VS\GoldEngine2D\x64\Debug\AudioManager.obj
 E:\VS\GoldEngine2D\source\Components\AudioSource\AudioSource.cpp;E:\VS\GoldEngine2D\x64\Debug\AudioSource.obj
 E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.cpp;E:\VS\GoldEngine2D\x64\Debug\Camera2D.obj

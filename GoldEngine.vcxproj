@@ -165,6 +165,8 @@
     <ClCompile Include="Binarys\include\imgui\imgui_impl_opengl3.cpp" />
     <ClCompile Include="Binarys\include\imgui\imgui_tables.cpp" />
     <ClCompile Include="Binarys\include\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="source\Components\Animator\AnimationsStates.cpp" />
+    <ClCompile Include="source\Components\Animator\Animator2D.cpp" />
     <ClCompile Include="source\Components\AudioSource\AudioManager.cpp" />
     <ClCompile Include="source\Components\AudioSource\AudioSource.cpp" />
     <ClCompile Include="source\Components\Camera\Camera2D.cpp" />
@@ -219,6 +221,8 @@
     <ClInclude Include="Binarys\include\imgui\imstb_textedit.h" />
     <ClInclude Include="Binarys\include\imgui\imstb_truetype.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="source\Components\Animator\AnimationsStates.h" />
+    <ClInclude Include="source\Components\Animator\Animator2D.h" />
     <ClInclude Include="source\Components\AudioSource\AudioManager.h" />
     <ClInclude Include="source\Components\AudioSource\AudioSource.h" />
     <ClInclude Include="source\Components\Camera\Camera2D.h" />
