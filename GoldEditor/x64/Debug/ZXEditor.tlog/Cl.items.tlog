@@ -1,4 +1,8 @@
 E:\VS\GoldEngine2D\Binarys\c\glad.c;E:\VS\GoldEngine2D\GoldEditor\x64\Debug\glad.obj
+E:\VS\GoldEngine2D\Binarys\include\imguinode\crude_json.cpp;E:\VS\GoldEngine2D\GoldEditor\x64\Debug\crude_json.obj
+E:\VS\GoldEngine2D\Binarys\include\imguinode\imgui_canvas.cpp;E:\VS\GoldEngine2D\GoldEditor\x64\Debug\imgui_canvas.obj
+E:\VS\GoldEngine2D\Binarys\include\imguinode\imgui_node_editor.cpp;E:\VS\GoldEngine2D\GoldEditor\x64\Debug\imgui_node_editor.obj
+E:\VS\GoldEngine2D\Binarys\include\imguinode\imgui_node_editor_api.cpp;E:\VS\GoldEngine2D\GoldEditor\x64\Debug\imgui_node_editor_api.obj
 E:\VS\GoldEngine2D\Binarys\include\imguizmo\ImGuizmo.cpp;E:\VS\GoldEngine2D\GoldEditor\x64\Debug\ImGuizmo.obj
 E:\VS\GoldEngine2D\Binarys\include\imgui\imgui.cpp;E:\VS\GoldEngine2D\GoldEditor\x64\Debug\imgui.obj
 E:\VS\GoldEngine2D\Binarys\include\imgui\imgui_demo.cpp;E:\VS\GoldEngine2D\GoldEditor\x64\Debug\imgui_demo.obj
@@ -35,5 +39,6 @@ E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Hierarchy.cpp;E:\VS\GoldEngine2D\Go
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Inspector.cpp;E:\VS\GoldEngine2D\GoldEditor\x64\Debug\Inspector.obj
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\RightClickUI.cpp;E:\VS\GoldEngine2D\GoldEditor\x64\Debug\RightClickUI.obj
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp;E:\VS\GoldEngine2D\GoldEditor\x64\Debug\SceneUI.obj
+E:\VS\GoldEngine2D\GoldEditor\source\UI\NodeUI\NodeUI.cpp;E:\VS\GoldEngine2D\GoldEditor\x64\Debug\NodeUI.obj
 E:\VS\GoldEngine2D\GoldEditor\source\UI\UIDrawer.cpp;E:\VS\GoldEngine2D\GoldEditor\x64\Debug\UIDrawer.obj
 E:\VS\GoldEngine2D\GoldEditor\source\UI\UIManager.cpp;E:\VS\GoldEngine2D\GoldEditor\x64\Debug\UIManager.obj

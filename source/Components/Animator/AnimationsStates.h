@@ -20,4 +20,5 @@ public:
 	void BuildTexture(string path);
 	void UpdateState();
 	void RebuildState();
+	void DeleteFrame(int index);
 };

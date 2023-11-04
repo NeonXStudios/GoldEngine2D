@@ -30,6 +30,7 @@ public:
 
 	void NextFrame (float wtT);
 	void RebuildAnimator();
+	void DeleteState (int index);
 
 	string serialize() override;
 	void deserialize(std::string g, std::string path = "") override;

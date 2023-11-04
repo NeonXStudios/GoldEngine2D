@@ -78,9 +78,9 @@ void SaveData::loadScene() {
         Entity* newEntity = SceneManager::GetSceneManager()->NewEntity();
         json getEntityData = loadJson["objects"][i];
         newEntity->ObjectName = getEntityData["name"];
-        newEntity->ObjectTag  = getEntityData["tag"];
-        newEntity->transform->deserialize (getEntityData["transform"], "");
-        
+        newEntity->ObjectTag = getEntityData["tag"];
+        newEntity->transform->deserialize(getEntityData["transform"], "");
+
 
         std::vector<Component*> cmpms = newEntity->getComponents<Component>();
 
@@ -107,5 +107,4 @@ void SaveData::loadScene() {
             }
         }
     }
-    SceneManager::GetSceneManager()->OpenScene->objectsInScene[0]->addComponent<Animator2D>();
 }

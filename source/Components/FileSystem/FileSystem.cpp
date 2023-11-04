@@ -16,10 +16,11 @@ string FileSystem::GetAsset(string FilePath) {
 
 	}
 	else {
-		std::string output = StartEngineGraphics::instance->engine->GamePath + "\\assets\\" + FilePath;
+		std::string output = StartEngineGraphics::instance->engine->GamePath + "\\" + FilePath;
 		std::replace(output.begin(), output.end(), '\\', '/');
 
 		string newPath = "game/" + output;
+		std::cout << "Path to game " << newPath << std::endl;
 		return newPath;
 	}
 

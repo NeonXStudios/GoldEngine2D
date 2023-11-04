@@ -37,8 +37,8 @@ void GameCompiler::compileWindow()
     }
 
 
-    std::string sourceFilePath = "Editor/DATA/WINCOMPILER/GoldGame.exe";
-    std::string destinationFilePath = GoldEditor::editor->ProjectPath + "/GameBuild/GoldGame.exe";
+    std::string sourceFilePath = "Editor/DATA/WINCOMPILER/ZXGame.exe";
+    std::string destinationFilePath = GoldEditor::editor->ProjectPath + "/GameBuild/ZXGame.exe";
 
     try {
         fs::copy(sourceFilePath, destinationFilePath, fs::copy_options::overwrite_existing);

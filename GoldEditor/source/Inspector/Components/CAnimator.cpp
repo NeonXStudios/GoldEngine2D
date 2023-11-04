@@ -20,54 +20,73 @@ void CAnimator::draw(Entity* owner) {
 
 
 	if (ImGui::TreeNode ("Animator States")) {
-		for (int i = 0; i < owner->getComponent<Animator2D>().states.size(); i++) {
+			for (int i = 0; i < owner->getComponent<Animator2D>().states.size(); i++) {
 
-			ImGui::PushID (i);
+				ImGui::PushID(i);
 
-			AnimationsStates* anims = owner->getComponent<Animator2D>().states[i];
-			anims->StateName = EditorGUI::InputText("State Name:", anims->StateName.c_str());
+				if (ImGui::Button("Delete State", ImVec2(ImGui::GetContentRegionAvail().x, 20))) {
+					std::cout << i << std::endl;
+					owner->getComponent<Animator2D>().DeleteState(i);
+				}
+				else {
+					if (owner->getComponent<Animator2D>().states.size() != 0) {
+						AnimationsStates* anims = owner->getComponent<Animator2D>().states[i];
+						anims->StateName = EditorGUI::InputText("State Name:", anims->StateName.c_str());
 
-			if (ImGui::TreeNode("State")) {
-				for (int g = 0; g < anims->FramesPath.size(); g++) {
-					ImGui::PushID (+g);
-					string newPath = EditorGUI::InputText("Frame:", anims->FramesPath[g]);
-					anims->FramesPath[g] = newPath;
-
-					if (ImGui::BeginDragDropTarget())
-					{
-						ImGuiDragDropFlags target_flags = 0;
-						target_flags |= ImGuiDragDropFlags_AcceptBeforeDelivery;
-						target_flags |= ImGuiDragDropFlags_AcceptNoDrawDefaultRect;
-
-
-						if (ImGui::IsMouseReleased(0)) {
-							if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("TEXTUREDA_PATH", target_flags))
-							{
-								const char* receivedString = static_cast<const char*>(payload->Data);
-
-
-								std::string convertedPath = AComponent::RemoveDir(receivedString);
-								newPath = convertedPath;
-
-
+						if (ImGui::TreeNode("State")) {
+							for (int g = 0; g < anims->FramesPath.size(); g++) {
+								ImGui::PushID(g);
+								string newPath = EditorGUI::InputText("Frame:", anims->FramesPath[g]);
 								anims->FramesPath[g] = newPath;
-								std::cout << "Convertido: " << convertedPath << std::endl;
+								if (ImGui::BeginDragDropTarget())
+								{
+									ImGuiDragDropFlags target_flags = 0;
+									target_flags |= ImGuiDragDropFlags_AcceptBeforeDelivery;
+									target_flags |= ImGuiDragDropFlags_AcceptNoDrawDefaultRect;
+
+
+									if (ImGui::IsMouseReleased(0)) {
+										if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("TEXTUREDA_PATH", target_flags))
+										{
+											const char* receivedString = static_cast<const char*>(payload->Data);
+
+
+											std::string convertedPath = AComponent::RemoveDir(receivedString);
+											newPath = convertedPath;
+
+
+											anims->FramesPath[g] = newPath;
+											std::cout << "Convertido: " << convertedPath << std::endl;
+										}
+									}
+
+
+									ImGui::EndDragDropTarget();
+								}
+
+								if (ImGui::Button("Delete Frame", ImVec2(ImGui::GetContentRegionAvail().x, 20))) {
+									anims->DeleteFrame(g);
+								}
+
+								ImGui::Spacing();
+								ImGui::Spacing();
+								ImGui::Spacing();
+								ImGui::Spacing();
+								ImGui::PopID();
 							}
+
+							if (ImGui::Button("Add New Frame")) {
+								anims->AddNewFrame("");
+							}
+							ImGui::TreePop();
 						}
 
-
-						ImGui::EndDragDropTarget();
 					}
-					ImGui::PopID();
 				}
 
-				if (ImGui::Button ("Add New Frame")) {
-					anims->AddNewFrame("");
-				}
-				ImGui::TreePop();
-			}
+			
+				ImGui::PopID();
 
-			ImGui::PopID();
 		}
 		ImGui::TreePop();
 	}

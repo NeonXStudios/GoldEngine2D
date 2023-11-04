@@ -1,38 +1,49 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: El directorio Output no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Output.
 C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: El directorio intermedio (x64\Debug\) contiene archivos compartidos de otro proyecto (GoldHub.vcxproj). Esto puede dar lugar a un comportamiento incorrecto de limpieza y recompilación.
-  glad.c
-  imgui.cpp
-  imgui_demo.cpp
-  imgui_draw.cpp
-  imgui_impl_glfw.cpp
-  imgui_impl_opengl3.cpp
-  imgui_tables.cpp
-  imgui_widgets.cpp
-  GoldHub.cpp
-E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-E:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-E:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-E:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
-E:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-E:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
-E:\VS\GoldEngine2D\GoldHub\source\GoldHub.h(73,10): error C3668: 'GoldHub::lateupdate': el método con el especificador de invalidación 'override' no invalidó ningún método de clase base
-E:\VS\GoldEngine2D\GoldHub\source\GoldHub.h(77,10): error C3668: 'GoldHub::fixupdate': el método con el especificador de invalidación 'override' no invalidó ningún método de clase base
-E:\VS\GoldEngine2D\GoldHub\source\GoldHub.cpp(7,24): error C2259: "GoldHub": no se puede crear una instancia de una clase abstract
-E:\VS\GoldEngine2D\GoldHub\source\GoldHub.h(15,7): message : vea la declaración de 'GoldHub'
-E:\VS\GoldEngine2D\GoldHub\source\GoldHub.cpp(7,24): message : debido a los siguientes miembros:
-E:\VS\GoldEngine2D\GoldHub\source\GoldHub.cpp(7,24): message : 'void EngineBehaviour::PostRender(void)': es abstracto
-E:\VS\GoldEngine2D\source\EngineBehaviour\EngineBehaviour.h(12,18): message : vea la declaración de 'EngineBehaviour::PostRender'
-E:\VS\GoldEngine2D\GoldHub\source\GoldHub.cpp(7,24): message : 'void EngineBehaviour::PreRender(void)': es abstracto
-E:\VS\GoldEngine2D\source\EngineBehaviour\EngineBehaviour.h(13,18): message : vea la declaración de 'EngineBehaviour::PreRender'
-E:\VS\GoldEngine2D\GoldHub\source\GoldHub.cpp(7,31): error C2259: "GoldHub": no se puede crear una instancia de una clase abstract
-E:\VS\GoldEngine2D\GoldHub\source\GoldHub.h(15,7): message : vea la declaración de 'GoldHub'
-E:\VS\GoldEngine2D\GoldHub\source\GoldHub.cpp(7,31): message : debido a los siguientes miembros:
-E:\VS\GoldEngine2D\GoldHub\source\GoldHub.cpp(7,31): message : 'void EngineBehaviour::PostRender(void)': es abstracto
-E:\VS\GoldEngine2D\source\EngineBehaviour\EngineBehaviour.h(12,18): message : vea la declaración de 'EngineBehaviour::PostRender'
-E:\VS\GoldEngine2D\GoldHub\source\GoldHub.cpp(7,31): message : 'void EngineBehaviour::PreRender(void)': es abstracto
-E:\VS\GoldEngine2D\source\EngineBehaviour\EngineBehaviour.h(13,18): message : vea la declaración de 'EngineBehaviour::PreRender'
-  Generando código...
+C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: El directorio intermedio (x64\Debug\) contiene archivos compartidos de otro proyecto (GoldEngine.vcxproj). Esto puede dar lugar a un comportamiento incorrecto de limpieza y recompilación.
+box2d.lib(b2_world.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_world.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_polygon_shape.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_polygon_shape.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_body.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_body.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_fixture.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_fixture.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_settings.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_settings.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_island.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_island.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_dynamic_tree.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_dynamic_tree.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_broad_phase.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_broad_phase.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_contact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_contact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_draw.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_draw.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_distance.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_distance.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_time_of_impact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_time_of_impact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_timer.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_timer.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_block_allocator.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_block_allocator.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_contact_manager.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_contact_manager.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_stack_allocator.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_stack_allocator.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_collision.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_collision.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_math.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_math.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_contact_solver.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_contact_solver.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_chain_circle_contact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_chain_circle_contact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_chain_polygon_contact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_chain_polygon_contact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_circle_contact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_circle_contact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_edge_circle_contact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_edge_circle_contact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_edge_polygon_contact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_edge_polygon_contact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_polygon_circle_contact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_polygon_circle_contact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_polygon_contact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_polygon_contact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_distance_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_distance_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_friction_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_friction_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_gear_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_gear_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_motor_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_motor_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_mouse_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_mouse_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_prismatic_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_prismatic_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_pulley_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_pulley_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_revolute_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_revolute_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_weld_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_weld_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_wheel_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_wheel_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_world_callbacks.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_world_callbacks.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_collide_edge.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_collide_edge.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_chain_shape.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_chain_shape.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_edge_shape.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_edge_shape.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_collide_circle.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_collide_circle.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_collide_polygon.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_collide_polygon.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+LINK : warning LNK4098: la biblioteca predeterminada'MSVCRT' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
+MSVCRTD.lib(initializers.obj) : warning LNK4098: la biblioteca predeterminada'libcmt.lib' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
+  GoldHub.vcxproj -> E:\VS\GoldEngine2D\BuildHub\ZXHub.exe

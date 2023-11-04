@@ -1,0 +1,40 @@
+{
+    "objects": [
+        {
+            "components": [
+                {
+                    "componentdata": {
+                        "fragmentpath": "shaders/frag.glsl",
+                        "scalex": 1.0,
+                        "scaley": 1.0,
+                        "scalez": 1.0,
+                        "texturepath": "Textures\\Color.png",
+                        "vertexpath": "shaders/vert.glsl"
+                    },
+                    "componenttype": "SpriteComponent"
+                }
+            ],
+            "name": "New Entity 1",
+            "tag": "None",
+            "transform": "{\"posx\":0.0,\"posy\":-1.0,\"posz\":0.0,\"rotationx\":0.0,\"rotationy\":0.0,\"rotationz\":0.0,\"scalex\":1.0,\"scaley\":1.0,\"scalez\":1.0}"
+        },
+        {
+            "components": [
+                {
+                    "componentdata": {
+                        "fragmentpath": "shaders/frag.glsl",
+                        "scalex": 1.0,
+                        "scaley": 1.0,
+                        "scalez": 1.0,
+                        "texturepath": "Textures\\Color.png",
+                        "vertexpath": "shaders/vert.glsl"
+                    },
+                    "componenttype": "SpriteComponent"
+                }
+            ],
+            "name": "New Entity 2",
+            "tag": "None",
+            "transform": "{\"posx\":0.0,\"posy\":-2.0,\"posz\":0.0,\"rotationx\":0.0,\"rotationy\":0.0,\"rotationz\":0.0,\"scalex\":5.0,\"scaley\":0.10000024735927582,\"scalez\":5.0}"
+        }
+    ]
+}

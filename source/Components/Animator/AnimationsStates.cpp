@@ -69,3 +69,18 @@ void AnimationsStates::RebuildState() {
     Rebuilding = false;
     std::cout << "States Rebuild Succefully" << std::endl;
 }
+
+void AnimationsStates::DeleteFrame (int index)
+{
+    if (index >= 0 && index < FramesPath.size()) {
+        FramesPath.erase(FramesPath.begin() + index);
+
+        std::cout << "Frame Path eliminado" << std::endl;
+    }
+
+    if (index >= 0 && index < Frames.size()) {
+        Frames.erase(Frames.begin() + index);
+
+        std::cout << "Frame eliminado" << std::endl;
+    }
+}

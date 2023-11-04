@@ -3,7 +3,7 @@
 
 
 void Animator2D::NextFrame(float wtT) {
-    while (true) {
+    while (states.size() > 0){
         for (AnimationsStates* stateFound : states) {
             if (stateFound->StateName == SelectState) {
                 stateFound->cp = cp;
@@ -19,7 +19,6 @@ void Animator2D::init() {
 
 
 
-    AddNewState("Idle");
     float wtT = NextFrameTime;
 
     std::thread t([this, wtT]() {
@@ -56,11 +55,25 @@ void Animator2D::RebuildAnimator() {
     }
 }
 
+void Animator2D::DeleteState(int index)
+{
+    if (states.size() > 0) {
+        if (index >= 0 && index < states.size()) {
+            states.erase(states.begin() + index);
+            std::cout << "Elemento eliminado -> Quedan: " << states.size() << " Estados" << std::endl;
+        }
+        else {
+            std::cout << "Índice fuera de rango" << std::endl;
+        }
+
+    }
+}
 
 string Animator2D::serialize() {
 
     return "{}";
 }
+
 
 
 void Animator2D::deserialize(std::string g, std::string path) {

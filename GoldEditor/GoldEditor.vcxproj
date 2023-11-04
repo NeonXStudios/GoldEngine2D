@@ -156,6 +156,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Binarys\c\glad.c" />
+    <ClCompile Include="..\Binarys\include\imguinode\crude_json.cpp" />
+    <ClCompile Include="..\Binarys\include\imguinode\imgui_canvas.cpp" />
+    <ClCompile Include="..\Binarys\include\imguinode\imgui_node_editor.cpp" />
+    <ClCompile Include="..\Binarys\include\imguinode\imgui_node_editor_api.cpp" />
     <ClCompile Include="..\Binarys\include\imguizmo\ImGuizmo.cpp" />
     <ClCompile Include="..\Binarys\include\imgui\imgui.cpp" />
     <ClCompile Include="..\Binarys\include\imgui\imgui_demo.cpp" />
@@ -192,6 +196,7 @@
     <ClCompile Include="source\UI\HUDS\Inspector.cpp" />
     <ClCompile Include="source\UI\HUDS\RightClickUI.cpp" />
     <ClCompile Include="source\UI\HUDS\SceneUI.cpp" />
+    <ClCompile Include="source\UI\NodeUI\NodeUI.cpp" />
     <ClCompile Include="source\UI\UIDrawer.cpp" />
     <ClCompile Include="source\UI\UIManager.cpp" />
   </ItemGroup>
@@ -201,6 +206,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Binarys\include\imguinode\crude_json.h" />
+    <ClInclude Include="..\Binarys\include\imguinode\imgui_bezier_math.h" />
+    <ClInclude Include="..\Binarys\include\imguinode\imgui_canvas.h" />
+    <ClInclude Include="..\Binarys\include\imguinode\imgui_extra_math.h" />
+    <ClInclude Include="..\Binarys\include\imguinode\imgui_node_editor.h" />
+    <ClInclude Include="..\Binarys\include\imguinode\imgui_node_editor_internal.h" />
     <ClInclude Include="..\Binarys\include\imguizmo\ImGuizmo.h" />
     <ClInclude Include="..\Binarys\include\imgui\imconfig.h" />
     <ClInclude Include="..\Binarys\include\imgui\imgui.h" />
@@ -240,6 +251,7 @@
     <ClInclude Include="source\UI\HUDS\Inspector.h" />
     <ClInclude Include="source\UI\HUDS\RightClickUI.h" />
     <ClInclude Include="source\UI\HUDS\SceneUI.h" />
+    <ClInclude Include="source\UI\NodeUI\NodeUI.h" />
     <ClInclude Include="source\UI\UIDrawer.h" />
     <ClInclude Include="source\UI\UIManager.h" />
   </ItemGroup>
@@ -252,6 +264,9 @@
     <ResourceCompile Include="GoldEditor.rc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\Binarys\include\imguinode\imgui_bezier_math.inl" />
+    <None Include="..\Binarys\include\imguinode\imgui_extra_math.inl" />
+    <None Include="..\Binarys\include\imguinode\imgui_node_editor_internal.inl" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -225,7 +225,7 @@ public:
                             ImGui::EndDragDropSource();
                         }
                     ImGui::PopID();
-                    }else if (extension == ".sr") {
+                    }else if (extension == ".lua") {
                            ImGui::PushID("sr"); 
                         if (ImGui::ImageButton((void*)(intptr_t)scriptTextureID, imageSize)) {
                             string path = entry.path().string();

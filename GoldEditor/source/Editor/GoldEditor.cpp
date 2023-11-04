@@ -9,6 +9,7 @@ bool saved;
 
 Skybox* sky = new Skybox();
 
+
 void GoldEditor::start() {
     ProjectPath = ProjectPath;
     uiMaster = new UIManager();

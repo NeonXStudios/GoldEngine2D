@@ -25,8 +25,9 @@ void SaveData::loadScene() {
         Entity* newEntity = SceneManager::GetSceneManager()->NewEntity();
         json getEntityData = loadJson["objects"][i];
         newEntity->ObjectName = getEntityData["name"];
-        newEntity->ObjectTag  = getEntityData["tag"];
-        newEntity->transform->deserialize (getEntityData["transform"].dump(), "game/");
+        newEntity->ObjectTag = getEntityData["tag"];
+        newEntity->transform->deserialize(getEntityData["transform"], "");
+
 
         std::vector<Component*> cmpms = newEntity->getComponents<Component>();
 
@@ -49,10 +50,9 @@ void SaveData::loadScene() {
                 //    selectComponent->deserialize (getComponent["componentdata"].dump());
                 //}
 
-                ComponentFactory::loadComponent(getComponent["componenttype"].dump(), newEntity, getComponent["componentdata"].dump(), "game/");
+                ComponentFactory::loadComponent(getComponent["componenttype"].dump(), newEntity, getComponent["componentdata"].dump(), "");
             }
         }
-        std::cout << "OBJECT LOAD " << i << std::endl;
     }
 
     std::cout << "Loading data" << std::endl;

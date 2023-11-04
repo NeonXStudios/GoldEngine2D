@@ -54,6 +54,9 @@
     <Filter Include="Editor\02_InspectorDrawer\Components\Physics">
       <UniqueIdentifier>{2a68dfc8-73a1-48a2-8727-cb303d5d1382}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Editor\04_UI\NodeUI">
+      <UniqueIdentifier>{3e9e76e8-2e58-48e1-8d04-3e1e373bb712}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Binarys\c\glad.c">
@@ -172,6 +175,21 @@
     </ClCompile>
     <ClCompile Include="source\Inspector\Components\CAnimator.cpp">
       <Filter>Editor\02_InspectorDrawer\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="source\UI\NodeUI\NodeUI.cpp">
+      <Filter>Editor\04_UI\NodeUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Binarys\include\imguinode\imgui_node_editor.cpp">
+      <Filter>RecursosEditor\IMGUINODE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Binarys\include\imguinode\imgui_node_editor_api.cpp">
+      <Filter>RecursosEditor\IMGUINODE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Binarys\include\imguinode\imgui_canvas.cpp">
+      <Filter>RecursosEditor\IMGUINODE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Binarys\include\imguinode\crude_json.cpp">
+      <Filter>RecursosEditor\IMGUINODE</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -294,6 +312,27 @@
     <ClInclude Include="source\Inspector\Components\CAnimator.h">
       <Filter>Editor\02_InspectorDrawer\Components</Filter>
     </ClInclude>
+    <ClInclude Include="source\UI\NodeUI\NodeUI.h">
+      <Filter>Editor\04_UI\NodeUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Binarys\include\imguinode\imgui_node_editor.h">
+      <Filter>RecursosEditor\IMGUINODE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Binarys\include\imguinode\imgui_node_editor_internal.h">
+      <Filter>RecursosEditor\IMGUINODE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Binarys\include\imguinode\imgui_extra_math.h">
+      <Filter>RecursosEditor\IMGUINODE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Binarys\include\imguinode\imgui_bezier_math.h">
+      <Filter>RecursosEditor\IMGUINODE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Binarys\include\imguinode\imgui_canvas.h">
+      <Filter>RecursosEditor\IMGUINODE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Binarys\include\imguinode\crude_json.h">
+      <Filter>RecursosEditor\IMGUINODE</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\source\icons\Icon.ico">
@@ -313,5 +352,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="..\Binarys\include\imguinode\imgui_node_editor_internal.inl">
+      <Filter>RecursosEditor\IMGUINODE</Filter>
+    </None>
+    <None Include="..\Binarys\include\imguinode\imgui_extra_math.inl">
+      <Filter>RecursosEditor\IMGUINODE</Filter>
+    </None>
+    <None Include="..\Binarys\include\imguinode\imgui_bezier_math.inl">
+      <Filter>RecursosEditor\IMGUINODE</Filter>
+    </None>
   </ItemGroup>
 </Project>
