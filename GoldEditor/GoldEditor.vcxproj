@@ -171,6 +171,7 @@
     <ClCompile Include="source\Gizmos\MoveGizmos.cpp" />
     <ClCompile Include="source\Inspector\AComponent.cpp" />
     <ClCompile Include="source\Inspector\ComponentList.cpp" />
+    <ClCompile Include="source\Inspector\Components\CAnimator.cpp" />
     <ClCompile Include="source\Inspector\Components\CAudio.cpp" />
     <ClCompile Include="source\Inspector\Components\CBoxCollider3D.cpp" />
     <ClCompile Include="source\Inspector\Components\CRigidBody.cpp" />
@@ -218,6 +219,7 @@
     <ClInclude Include="source\Gizmos\MoveGizmos.h" />
     <ClInclude Include="source\Inspector\AComponent.h" />
     <ClInclude Include="source\Inspector\ComponentList.h" />
+    <ClInclude Include="source\Inspector\Components\CAnimator.h" />
     <ClInclude Include="source\Inspector\Components\CAudio.h" />
     <ClInclude Include="source\Inspector\Components\CBoxCollider3D.h" />
     <ClInclude Include="source\Inspector\Components\CRigidBody.h" />

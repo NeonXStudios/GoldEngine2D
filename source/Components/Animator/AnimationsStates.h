@@ -14,8 +14,10 @@ public:
 	string StateName;
 	vector<string> FramesPath = vector<string>();
 	vector<GLuint> Frames = vector<GLuint>();
-
+	bool Rebuilding;
 
 	void AddNewFrame(string path);
+	void BuildTexture(string path);
 	void UpdateState();
+	void RebuildState();
 };

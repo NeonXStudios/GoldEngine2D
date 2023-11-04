@@ -21,7 +21,7 @@ public:
 	float NextFrameTime = 0.1f;
 
 	std::vector<AnimationsStates*> states = std::vector<AnimationsStates*>();
-	int SelectState = 0;
+	string SelectState = "NULL";
 
 	void init() override;
 	void update() override;
@@ -29,6 +29,7 @@ public:
 	void clean() override;
 
 	void NextFrame (float wtT);
+	void RebuildAnimator();
 
 	string serialize() override;
 	void deserialize(std::string g, std::string path = "") override;

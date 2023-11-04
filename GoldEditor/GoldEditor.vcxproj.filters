@@ -170,6 +170,9 @@
     <ClCompile Include="source\Inspector\Components\CBoxCollider3D.cpp">
       <Filter>Editor\02_InspectorDrawer\Components\Physics</Filter>
     </ClCompile>
+    <ClCompile Include="source\Inspector\Components\CAnimator.cpp">
+      <Filter>Editor\02_InspectorDrawer\Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />
@@ -287,6 +290,9 @@
     </ClInclude>
     <ClInclude Include="source\Inspector\Components\CBoxCollider3D.h">
       <Filter>Editor\02_InspectorDrawer\Components\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Inspector\Components\CAnimator.h">
+      <Filter>Editor\02_InspectorDrawer\Components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

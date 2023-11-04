@@ -4,8 +4,12 @@
 
 void Animator2D::NextFrame(float wtT) {
     while (true) {
-        states[SelectState]->cp = cp;
-        states[SelectState]->UpdateState();
+        for (AnimationsStates* stateFound : states) {
+            if (stateFound->StateName == SelectState) {
+                stateFound->cp = cp;
+                stateFound->UpdateState();
+            }
+        }
         std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<long long>(wtT * 1000)));
     }
 }
@@ -13,9 +17,7 @@ void Animator2D::NextFrame(float wtT) {
 void Animator2D::init() {
     cp = &entity->getComponent<SpriteComponent>();
 
-    AnimationsStates* newState = new AnimationsStates();
-    newState->StateName = "Idle";
-    states.push_back (newState);
+
 
     AddNewState("Idle");
     float wtT = NextFrameTime;
@@ -43,23 +45,21 @@ void Animator2D::clean() {
 }
 
 void Animator2D::AddNewState (string StateName) {
+    AnimationsStates* newState = new AnimationsStates();
+    newState->StateName = StateName;
+    states.push_back(newState);
+}
 
-    for (AnimationsStates* SelectState : states) {
-        if (SelectState->StateName == StateName) {
-            SelectState->AddNewFrame("playersprites/idle/Warrior_Idle_1.png");
-            SelectState->AddNewFrame("playersprites/idle/Warrior_Idle_2.png");
-            SelectState->AddNewFrame("playersprites/idle/Warrior_Idle_3.png");
-            SelectState->AddNewFrame("playersprites/idle/Warrior_Idle_4.png");
-            SelectState->AddNewFrame("playersprites/idle/Warrior_Idle_5.png");
-            SelectState->AddNewFrame("playersprites/idle/Warrior_Idle_6.png");
-        } 
+void Animator2D::RebuildAnimator() {
+    for (AnimationsStates* stateSelect : states) {
+        stateSelect->RebuildState();
     }
 }
 
 
 string Animator2D::serialize() {
 
-    return "";
+    return "{}";
 }
 
 

@@ -48,6 +48,7 @@ void DrawComponents::update() {
 void DrawComponents::DrawButtons() {
 	Entity* objectOwner = UIManager::instance->inspectorui->ObjectSelectToInspector;
 	ComponentList::createNewComponent <AudioSource>			("Audio Source", objectOwner);
+	ComponentList::createNewComponent <Animator2D>			("Animator", objectOwner);
 	ComponentList::createNewComponent <RigidBody>			("RigidBody", objectOwner);
 	//ComponentList::createNewComponent <Rigidbody3d>			("Rigidbody3d", objectOwner);
 	//ComponentList::createNewComponent <BoxCollider>			("BoxCollider", objectOwner);

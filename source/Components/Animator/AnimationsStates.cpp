@@ -2,16 +2,23 @@
 
 
 void AnimationsStates::UpdateState() {
-    currentFrame++;
+    if (!Rebuilding && Frames.size() > 0) {
+        currentFrame++;
 
-    if (currentFrame >= Frames.size() - 1) {
-        currentFrame = 0;
+        if (currentFrame >= Frames.size() - 1) {
+            currentFrame = 0;
+        }
+
+        cp->texture = Frames[currentFrame];
     }
-
-    cp->texture = Frames[currentFrame];
 }
 
 void AnimationsStates::AddNewFrame(string path) {
+    FramesPath.push_back (path);
+    BuildTexture (path);
+}
+
+void AnimationsStates::BuildTexture (string path) {
     GLuint texture;
     glGenTextures(1, &texture);
     glBindTexture(GL_TEXTURE_2D, texture);
@@ -49,4 +56,16 @@ void AnimationsStates::AddNewFrame(string path) {
     stbi_image_free(data);
 
     Frames.push_back(texture);
+}
+
+void AnimationsStates::RebuildState() {
+    Rebuilding = true;
+    Frames.clear();
+
+    for (string framePath : FramesPath) {
+        BuildTexture (framePath);
+    }
+
+    Rebuilding = false;
+    std::cout << "States Rebuild Succefully" << std::endl;
 }
