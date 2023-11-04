@@ -13,7 +13,8 @@ void EntityBinder::RegisterFunctions(ScriptCompiler* luaParent)
 		//GET COMPONENTS
 		"GetTransform", &Entity::getComponent<SpriteComponent>,
 		"GetRigidBody", &Entity::getComponent<RigidBody>,
-		"GetAudioSource", &Entity::getComponent<AudioSource>
+		"GetAudioSource", &Entity::getComponent<AudioSource>,
+		"GetAnimator", &Entity::getComponent<Animator2D>
 	);
 
 	luaParent->lua.new_usertype<RigidBody>("RigidBody",
@@ -36,6 +37,11 @@ void EntityBinder::RegisterFunctions(ScriptCompiler* luaParent)
 		"reset", &AudioSource::Reset,
 		"isPlaying", &AudioSource::IsPlaying,
 		"audio", &AudioSource::AudioPath
+	);
+
+	luaParent->lua.new_usertype<Animator2D>("Animator", 
+		"setState", &Animator2D::SetState,
+		"getState", &Animator2D::GetCurrentState
 	);
 
 	//luaParent->lua.new_usertype<SpriteComponent>("SpriteComponent",

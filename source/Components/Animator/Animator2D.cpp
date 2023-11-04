@@ -10,14 +10,13 @@ void Animator2D::NextFrame(float wtT) {
                 stateFound->UpdateState();
             }
         }
+
         std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<long long>(wtT * 1000)));
     }
 }
 
 void Animator2D::init() {
     cp = &entity->getComponent<SpriteComponent>();
-
-
 
     float wtT = NextFrameTime;
 
@@ -30,7 +29,6 @@ void Animator2D::init() {
 
 
 void Animator2D::update() {
-
 }
 
 
@@ -70,12 +68,67 @@ void Animator2D::DeleteState(int index)
 }
 
 string Animator2D::serialize() {
+    json animatorData;
 
-    return "{}";
+    animatorData["stateSelect"] = SelectState;
+
+    for (AnimationsStates* g : states) {
+        json stateData;
+        stateData["stateName"] = g->StateName;
+
+        for (string frames : g->FramesPath) {
+            json dataFrames;
+            dataFrames["frame"] = frames;
+            stateData["frames"].push_back(dataFrames);
+        }
+
+        animatorData["states"].push_back(stateData);
+    }
+
+    return animatorData.dump();
 }
 
 
 
-void Animator2D::deserialize(std::string g, std::string path) {
 
+void Animator2D::deserialize(std::string g, std::string path) {
+    json animatorData;
+
+    animatorData = json::parse(g);
+
+    if (CheckVar::Has(animatorData, "stateSelect"))
+        SelectState = animatorData["stateSelect"];
+
+    if (CheckVar::Has(animatorData, "states")) {
+        json statesData = animatorData["states"];
+
+        for (const auto& stateData : statesData) {
+            AnimationsStates* newState = new AnimationsStates();
+
+            if (CheckVar::Has(stateData, "stateName"))
+                newState->StateName = stateData["stateName"];
+
+            if (CheckVar::Has(stateData, "frames")) {
+                for (const auto& frame : stateData["frames"]) {
+                    if (CheckVar::Has(frame, "frame")) {
+                        newState->FramesPath.push_back(frame["frame"]);
+                    }
+                }
+            }
+
+            states.push_back(newState);
+        }
+
+        init();
+        RebuildAnimator();
+    }
+}
+
+
+void Animator2D::SetState (string st){
+    SelectState = st;
+}
+
+string Animator2D::GetCurrentState() {
+    return SelectState;
 }
