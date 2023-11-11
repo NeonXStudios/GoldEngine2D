@@ -58,6 +58,7 @@ string GLD::SaveSystem::load(string path, string fileName) {
 
     return "SAVE DATA IS NULL!";
 }
+
 bool GLD::SaveSystem::fileExists(const std::string& filename) {
     std::ifstream file(filename);
     return file.good();

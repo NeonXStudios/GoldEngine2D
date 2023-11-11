@@ -1,7 +1,5 @@
 #include "Animator2D.h"
 
-
-
 void Animator2D::NextFrame(float wtT) {
     while (states.size() > 0){
         for (AnimationsStates* stateFound : states) {
@@ -29,6 +27,7 @@ void Animator2D::init() {
 
 
 void Animator2D::update() {
+
 }
 
 
@@ -52,6 +51,8 @@ void Animator2D::RebuildAnimator() {
         stateSelect->RebuildState();
     }
 }
+
+
 
 void Animator2D::DeleteState(int index)
 {

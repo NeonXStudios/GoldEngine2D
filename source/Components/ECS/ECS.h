@@ -337,6 +337,15 @@ public:
 		return false;
 	}
 
+	void ClearAllComponentes() {
+		for (auto& c : components) {
+			c->clean();
+			delete c; 
+		}
+		components.clear();
+	}
+
+
 	void setParent (Entity* newParent) {
 		parent = newParent;
 	}

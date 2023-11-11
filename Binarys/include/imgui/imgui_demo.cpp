@@ -3763,6 +3763,7 @@ static void ShowDemoWindowPopups()
                 }
                 ImGui::EndMenuBar();
             }
+
             ImGui::Text("Hello from Stacked The First\nUsing style.Colors[ImGuiCol_ModalWindowDimBg] behind it.");
 
             // Testing behavior of widgets stacking their own regular popups over the modal.

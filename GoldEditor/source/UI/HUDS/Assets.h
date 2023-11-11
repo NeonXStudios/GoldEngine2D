@@ -160,6 +160,10 @@ public:
 
                     if (extension == ".scene") {
                         if (ImGui::ImageButton((void*)(intptr_t)sceneTextureID, imageSize)) {
+                            std::string nombreArchivo = obtenerNombreArchivo(entry.path().string());
+                            std::string rutaSinNombreArchivo = obtenerRutaSinNombreArchivo(entry.path().string());
+                            std::cout << "Carpeta: " << rutaSinNombreArchivo << nombreArchivo << std::endl;
+                            SceneManager::LoadScene(rutaSinNombreArchivo, nombreArchivo);
                             //path_to_read = entry.path().string();
                         }
                     }else if (extension == ".glsl") {
@@ -347,5 +351,23 @@ public:
 
     void fixupdate() override {
 
+    }
+
+
+    std::string obtenerNombreArchivo(const std::string& ruta) {
+        size_t ultimaBarra = ruta.find_last_of("/\\");
+        if (ultimaBarra != std::string::npos) {
+            return ruta.substr(ultimaBarra + 1);
+        }
+        return ruta; // Si no se encuentra ninguna barra, se devuelve toda la ruta como nombre de archivo
+    }
+
+    // Función para obtener la ruta sin el nombre del archivo
+    std::string obtenerRutaSinNombreArchivo(const std::string& ruta) {
+        size_t ultimaBarra = ruta.find_last_of("/\\");
+        if (ultimaBarra != std::string::npos) {
+            return ruta.substr(0, ultimaBarra + 1);
+        }
+        return ""; // Si no se encuentra ninguna barra, se devuelve una cadena vacía
     }
 };
