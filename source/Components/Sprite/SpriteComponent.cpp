@@ -145,9 +145,9 @@ std::string SpriteComponent::serialize() {
     //componentData["posx"] = ObjectPosition.x;
     //componentData["posy"] = ObjectPosition.y;
     //componentData["posz"] = ObjectPosition.z;
-    componentData["scalex"] = Scale.x;
-    componentData["scaley"] = Scale.y;
-    componentData["scalez"] = Scale.z;
+    componentData["scalex"] = entity->transform->Scale.x;
+    componentData["scaley"] = entity->transform->Scale.y;
+    componentData["scalez"] = entity->transform->Scale.z;
     //componentData["scaleglobal"] = GlobalScale;
     //componentData["rotationx"] = rotationAngleX;
     //componentData["rotationy"] = rotationAngleY;
@@ -173,13 +173,13 @@ void SpriteComponent::deserialize (std::string g, std::string path) {
     //ObjectPosition.z = componentData["posz"];
 
     if (CheckVar::Has(componentData, "scalex"))
-    Scale.x = componentData["scalex"];
+        entity->transform->Scale.x = componentData["scalex"];
 
     if (CheckVar::Has(componentData, "scaley"))
-    Scale.y = componentData["scaley"];
+        entity->transform->Scale.y = componentData["scaley"];
 
     if (CheckVar::Has(componentData, "scalez"))
-    Scale.z = componentData["scalez"];
+        entity->transform->Scale.z = componentData["scalez"];
 
     //if (CheckVar::Has(componentData, "scaleglobal"))
     //GlobalScale = componentData["scaleglobal"];
@@ -215,7 +215,7 @@ glm::mat4 SpriteComponent::GetMatrix() {
 
     matrix = glm::translate(glm::mat4(1.0f), glm::vec3(1, 1, 1));
     matrix *= glm::mat4_cast(glm::quat(1, 0, 0, 0));
-    matrix = glm::scale(matrix, Scale);
+    matrix = glm::scale(matrix, entity->transform->Scale);
 
     return matrix;
 }

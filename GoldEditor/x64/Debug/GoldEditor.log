@@ -27,10 +27,7 @@ E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(87,24): warning C4244: 
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(88,24): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(91,64): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(91,51): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(274,45): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(274,27): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(273,19): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(273,13): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(151,15): warning C4101: 'initialMousePos': variable local sin referencia
 E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(152,15): warning C4101: 'initialObjectPos': variable local sin referencia
+E:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(196,23): warning C4101: 'dragOffset': variable local sin referencia
   GoldEditor.vcxproj -> E:\VS\GoldEngine2D\BuildHub\Editor\ZXEditor.exe

@@ -32,7 +32,6 @@ public:
 
     //float GlobalScale = 1;
     float rotationAngle;
-    glm::vec3 Scale = glm::vec3 (1, 1, 1);
     GLuint shaderProgram;
     unsigned int vertexShader;
     unsigned int fragmentShader;

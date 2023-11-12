@@ -178,147 +178,147 @@ void SceneUI::draw() {
     if (ImGui::IsWindowHovered() && !LockWithGizmos) {
         float maxZ = -std::numeric_limits<float>::max();
 
-        //for (int i = 0; i < SceneManager::GetSceneManager()->OpenScene->objectsInScene.size(); i++) {
-        //    Entity* objD = SceneManager::GetSceneManager()->OpenScene->objectsInScene[i];
-        //    glm::vec3& obj = objD->getComponent<SpriteComponent>().ObjectPosition;
-        //    float objWidth = objD->getComponent<SpriteComponent>().Scale.x * objD->getComponent<SpriteComponent>().GlobalScale;
-        //    float objHeight = objD->getComponent<SpriteComponent>().Scale.y * objD->getComponent<SpriteComponent>().GlobalScale;
+        for (int i = 0; i < SceneManager::GetSceneManager()->OpenScene->objectsInScene.size(); i++) {
+            Entity* objD = SceneManager::GetSceneManager()->OpenScene->objectsInScene[i];
+            glm::vec3& obj = objD->getComponent<SpriteComponent>().entity->transform->Position;
+            float objWidth = objD->getComponent<SpriteComponent>().entity->transform->Scale.x;
+            float objHeight = objD->getComponent<SpriteComponent>().entity->transform->Scale.y;
 
-        //    // Obtén la rotación en radianes desde Box2D
-        //    float radians = objD->getComponent<SpriteComponent>().rotationAngle * (b2_pi / 180.0f);
+            // Obtén la rotación en radianes desde Box2D
+            float radians = objD->getComponent<SpriteComponent>().rotationAngle * (b2_pi / 180.0f);
 
-        //    // Aplica la rotación inversa al punto del mundo
-        //    glm::vec2 localPoint = RotatePoint(glm::vec2 (WorldPoint.x, WorldPoint.y), obj, radians);
+            // Aplica la rotación inversa al punto del mundo
+            glm::vec2 localPoint = RotatePoint(glm::vec2 (WorldPoint.x, WorldPoint.y), obj, radians);
 
-        //    // Calcula las coordenadas de la caja delimitadora del objeto rotado
-        //    glm::vec2 rotatedBoxMin(obj.x - objWidth * 0.5f, obj.y - objHeight * 0.5f);
-        //    glm::vec2 rotatedBoxMax(obj.x + objWidth * 0.5f, obj.y + objHeight * 0.5f);
-        //    glm::vec2 dragOffset;
-
-
-        //     //Comprueba si el punto rotado está dentro de la caja delimitadora rotada
-        //    if (localPoint.x >= rotatedBoxMin.x && localPoint.x <= rotatedBoxMax.x &&
-        //        localPoint.y >= rotatedBoxMin.y && localPoint.y <= rotatedBoxMax.y) {
-
-        //        //std::cout << "Objects in this position" << objectsInAABB.size() << std::endl;
-        //        if (std::find(objectsInAABB.begin(), objectsInAABB.end(), objD) == objectsInAABB.end()) {
-        //            objectsInAABB.push_back(objD);
-        //        }
-        //        if (ImGui::IsMouseClicked(0)) {
-        //            if (objectsInAABB.size() > 0) {
-        //                SelectIndex++;
-        //            }
-
-        //            if (SelectIndex > objectsInAABB.size() - 1) {
-        //                SelectIndex = 0;
-        //            }
-        //            if (UIManager::instance->inspectorui->ObjectSelectToInspector != objD) {
-        //                UIManager::instance->inspectorui->SelectEntity(objectsInAABB[SelectIndex]);
-        //            }
-
-        //            /*if (UIManager::instance->inspectorui->ObjectSelectToInspector != nullptr && UIManager::instance->inspectorui->ObjectSelectToInspector != objD) {
-        //                UIManager::instance->inspectorui->SelectEntity(objD);
-        //            }
-        //            else {
-        //                if (UIManager::instance->inspectorui->ObjectSelectToInspector == nullptr) {
-        //                    UIManager::instance->inspectorui->SelectEntity(objD);
-        //                }
-        //            }*/
-        //            ObjectSelect = true;
-
-        //            UIManager::instance->hierarhcyui->SelectInHierarchy = false;
-        //            std::cout << "Clicked object" << std::endl;
-        //            break;
-        //        }
-        //    }
-        //    else {
-        //        auto it = std::find(objectsInAABB.begin(), objectsInAABB.end(), objD);
-        //        if (it != objectsInAABB.end()) {
-        //            objectsInAABB.erase(it);
-        //        }
-
-        //        if (ImGui::IsMouseClicked (0) && !LockWithGizmos) {
-        //            UIManager::instance->inspectorui->ObjectSelectToInspector = nullptr;
-        //        }
-        //    }
-
-        //    
-        //    if (ImGui::IsMouseDragging (0) && ImGui::IsMouseDown(0) && UIManager::instance->inspectorui->ObjectSelectToInspector != nullptr) {
-        //            //UIManager::instance->inspectorui->ObjectSelectToInspector->getComponent<SpriteComponent>().ObjectPosition.x = WorldPoint.x;
-        //            //UIManager::instance->inspectorui->ObjectSelectToInspector->getComponent<SpriteComponent>().ObjectPosition.y = WorldPoint.y;
-        //        isdragging = true;
-        //    }
-
-        //    if (!ImGui::IsMouseDragging (0)) {
-        //        isdragging = false;
-        //    }
-        //}
-    }
+            // Calcula las coordenadas de la caja delimitadora del objeto rotado
+            glm::vec2 rotatedBoxMin(obj.x - objWidth, obj.y - objHeight);
+            glm::vec2 rotatedBoxMax(obj.x + objWidth, obj.y + objHeight);
+            glm::vec2 dragOffset;
 
 
-    if (ImGui::IsMouseDown (0)/* && ImGui::IsWindowHovered()*/) {
+             //Comprueba si el punto rotado está dentro de la caja delimitadora rotada
+            if (localPoint.x >= rotatedBoxMin.x && localPoint.x <= rotatedBoxMax.x &&
+                localPoint.y >= rotatedBoxMin.y && localPoint.y <= rotatedBoxMax.y) {
 
-        glm::vec3 ray_origin;
-        glm::vec3 ray_direction;
+                //std::cout << "Objects in this position" << objectsInAABB.size() << std::endl;
+                if (std::find(objectsInAABB.begin(), objectsInAABB.end(), objD) == objectsInAABB.end()) {
+                    objectsInAABB.push_back(objD);
+                }
+                if (ImGui::IsMouseClicked(0)) {
+                    if (objectsInAABB.size() > 0) {
+                        SelectIndex++;
+                    }
 
-        double x, y;
-        glfwGetCursorPos(StartEngineGraphics::window, &x, &y);
+                    if (SelectIndex > objectsInAABB.size() - 1) {
+                        SelectIndex = 0;
+                    }
+                    if (UIManager::instance->inspectorui->ObjectSelectToInspector != objD) {
+                        UIManager::instance->inspectorui->SelectEntity(objectsInAABB[SelectIndex]);
+                    }
 
-        double xPos = x - imagePosition.x;
-        double yPos = y - imagePosition.y;
+                    /*if (UIManager::instance->inspectorui->ObjectSelectToInspector != nullptr && UIManager::instance->inspectorui->ObjectSelectToInspector != objD) {
+                        UIManager::instance->inspectorui->SelectEntity(objD);
+                    }
+                    else {
+                        if (UIManager::instance->inspectorui->ObjectSelectToInspector == nullptr) {
+                            UIManager::instance->inspectorui->SelectEntity(objD);
+                        }
+                    }*/
+                    ObjectSelect = true;
 
-
-
-        ScreenPosToWorldRay(
-            xPos, yPos,
-            imageSizeSCENE.x, imageSizeSCENE.y,
-            SceneManager::GetSceneManager()->OpenScene->worldCamera->GetView(),
-            SceneManager::GetSceneManager()->OpenScene->worldCamera->GetProjectionMatrix(),
-            ray_origin,
-            ray_direction
-        );
-
-        
-        for (Entity* objs : SceneManager::GetSceneManager()->OpenScene->objectsInScene) {
-            float intersection_distance; // Output of TestRayOBBIntersection()
-
-            glm::vec3 ObjectScale = glm::vec3
-            (
-                (objs->transform->Scale.x),
-                (objs->transform->Scale.y),
-                (objs->transform->Scale.z)
-            );
-
-            glm::vec3 aabb_min(-ObjectScale.x,
-                               -ObjectScale.y,
-                               -ObjectScale.z);
-
-
-            glm::vec3 aabb_max(ObjectScale.x,
-                               ObjectScale.y,
-                               ObjectScale.z);
-            
-            glm::mat4 RotationMatrix = glm::mat4_cast(glm::quat(1, 0, 0, 0));
-            glm::mat4 TranslationMatrix = glm::translate(glm::mat4(1.0f), glm::vec3(objs->transform->Position.x, objs->transform->Position.y, objs->transform->Position.z));
-            glm::mat4 ModelMatrix = objs->transform->GetMatrix()/*TranslationMatrix * RotationMatrix*/;
-
-
-            if (TestRayOBBIntersection(
-                ray_origin,
-                ray_direction,
-                aabb_min,
-                aabb_max,
-                ModelMatrix,
-                intersection_distance)
-                ) {
-                UIManager::instance->inspectorui->ObjectSelectToInspector = objs;
-                std::cout << "Object Found:  " << objs->ObjectName << " | DISTANCE: " << intersection_distance << std::endl;
+                    UIManager::instance->hierarhcyui->SelectInHierarchy = false;
+                    std::cout << "Clicked object" << std::endl;
+                    break;
+                }
             }
             else {
-                //UIManager::instance->inspectorui->ObjectSelectToInspector = nullptr;
+                auto it = std::find(objectsInAABB.begin(), objectsInAABB.end(), objD);
+                if (it != objectsInAABB.end()) {
+                    objectsInAABB.erase(it);
+                }
+
+                if (ImGui::IsMouseClicked (0) && !LockWithGizmos) {
+                    UIManager::instance->inspectorui->ObjectSelectToInspector = nullptr;
+                }
+            }
+
+            
+            if (ImGui::IsMouseDragging (0) && ImGui::IsMouseDown(0) && UIManager::instance->inspectorui->ObjectSelectToInspector != nullptr) {
+                    //UIManager::instance->inspectorui->ObjectSelectToInspector->getComponent<SpriteComponent>().ObjectPosition.x = WorldPoint.x;
+                    //UIManager::instance->inspectorui->ObjectSelectToInspector->getComponent<SpriteComponent>().ObjectPosition.y = WorldPoint.y;
+                isdragging = true;
+            }
+
+            if (!ImGui::IsMouseDragging (0)) {
+                isdragging = false;
             }
         }
     }
+
+
+    //if (ImGui::IsMouseDown (0)/* && ImGui::IsWindowHovered()*/) {
+
+    //    glm::vec3 ray_origin;
+    //    glm::vec3 ray_direction;
+
+    //    double x, y;
+    //    glfwGetCursorPos(StartEngineGraphics::window, &x, &y);
+
+    //    double xPos = x - imagePosition.x;
+    //    double yPos = y - imagePosition.y;
+
+
+
+    //    ScreenPosToWorldRay(
+    //        xPos, yPos,
+    //        imageSizeSCENE.x, imageSizeSCENE.y,
+    //        SceneManager::GetSceneManager()->OpenScene->worldCamera->GetView(),
+    //        SceneManager::GetSceneManager()->OpenScene->worldCamera->GetProjectionMatrix(),
+    //        ray_origin,
+    //        ray_direction
+    //    );
+
+    //    
+    //    for (Entity* objs : SceneManager::GetSceneManager()->OpenScene->objectsInScene) {
+    //        float intersection_distance; // Output of TestRayOBBIntersection()
+
+    //        glm::vec3 ObjectScale = glm::vec3
+    //        (
+    //            (objs->transform->Scale.x),
+    //            (objs->transform->Scale.y),
+    //            (objs->transform->Scale.z)
+    //        );
+
+    //        glm::vec3 aabb_min(-ObjectScale.x,
+    //                           -ObjectScale.y,
+    //                           -ObjectScale.z);
+
+
+    //        glm::vec3 aabb_max(ObjectScale.x,
+    //                           ObjectScale.y,
+    //                           ObjectScale.z);
+    //        
+    //        glm::mat4 RotationMatrix = glm::mat4_cast(glm::quat(1, 0, 0, 0));
+    //        glm::mat4 TranslationMatrix = glm::translate(glm::mat4(1.0f), glm::vec3(objs->transform->Position.x, objs->transform->Position.y, objs->transform->Position.z));
+    //        glm::mat4 ModelMatrix = objs->transform->GetMatrix()/*TranslationMatrix * RotationMatrix*/;
+
+
+    //        if (TestRayOBBIntersection(
+    //            ray_origin,
+    //            ray_direction,
+    //            aabb_min,
+    //            aabb_max,
+    //            ModelMatrix,
+    //            intersection_distance)
+    //            ) {
+    //            UIManager::instance->inspectorui->ObjectSelectToInspector = objs;
+    //            std::cout << "Object Found:  " << objs->ObjectName << " | DISTANCE: " << intersection_distance << std::endl;
+    //        }
+    //        else {
+    //            //UIManager::instance->inspectorui->ObjectSelectToInspector = nullptr;
+    //        }
+    //    }
+    //}
     ImGui::End();
 #pragma endregion
 }
