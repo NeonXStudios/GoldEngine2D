@@ -49,6 +49,7 @@ void SceneUI::start() {
 
 
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
+    //glGenFramebuffers(1, &framebuffer);
 }
 
 
@@ -570,7 +571,6 @@ void SceneUI::update() {
 }
 
 void SceneUI::lateupdate() {
-    glGenFramebuffers(1, &framebuffer);
     glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
 
     glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, colorAndDepthTexture, 0);

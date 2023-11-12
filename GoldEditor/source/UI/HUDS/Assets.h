@@ -359,15 +359,14 @@ public:
         if (ultimaBarra != std::string::npos) {
             return ruta.substr(ultimaBarra + 1);
         }
-        return ruta; // Si no se encuentra ninguna barra, se devuelve toda la ruta como nombre de archivo
+        return ruta;
     }
 
-    // Función para obtener la ruta sin el nombre del archivo
     std::string obtenerRutaSinNombreArchivo(const std::string& ruta) {
         size_t ultimaBarra = ruta.find_last_of("/\\");
         if (ultimaBarra != std::string::npos) {
             return ruta.substr(0, ultimaBarra + 1);
         }
-        return ""; // Si no se encuentra ninguna barra, se devuelve una cadena vacía
+        return ""; 
     }
 };

@@ -36,7 +36,7 @@ void UIManager::draw() {
 	inspectorui->draw();
 	rightClickui->draw();
 	cameraSettingUI->draw();
-	nodePanel->update();
+	//nodePanel->update();
 
 	if (editorScript != nullptr) {
 		editorScript->update();

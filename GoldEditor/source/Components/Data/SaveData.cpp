@@ -59,7 +59,7 @@ void SaveData::saveScene() {
 
     objectData["objects"] = objects;
 
-    GLD::SaveSystem::save(GoldEditor::editor->ProjectPath + "/assets", "samplescene.scene", objectData.dump(4));
+    GLD::SaveSystem::save(GoldEditor::editor->ProjectPath + "/assets", SceneManager::GetOpenSceneName()->c_str(), objectData.dump(4));
 }
 
 

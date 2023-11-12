@@ -7,7 +7,7 @@ int width = 1920;
 int height = 1080;
 bool saved;
 
-Skybox* sky = new Skybox();
+//Skybox* sky = new Skybox();
 
 
 void GoldEditor::start() {
@@ -19,7 +19,7 @@ void GoldEditor::start() {
     SaveData::loadScene();
     //gizmos->create();
     //gizmos->start();
-    sky->init();
+    //sky->init();
 }
 
 
@@ -169,7 +169,7 @@ void GoldEditor::PreRender() {
 }
 
 void GoldEditor::PostRender() {
-    sky->update();
+    //sky->update();
 
     uiMaster->fixupdate();
     ImGui::Render();

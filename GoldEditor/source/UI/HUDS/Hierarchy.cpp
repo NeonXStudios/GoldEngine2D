@@ -27,13 +27,14 @@ void HierarchyUI::draw() {
         ImGui::EndDragDropTarget();
     }
 
+    ImGui::Separator();
 
 
     ImGuiDragDropFlags src_flags = 0;
     src_flags |= ImGuiDragDropFlags_SourceNoDisableHover;
     src_flags |= ImGuiDragDropFlags_SourceNoHoldToOpenOthers;
 
-    for (int i = 0; i < SceneManager::GetSceneManager()->OpenScene->objectsInScene.size(); i++) {
+        for (int i = 0; i < SceneManager::GetSceneManager()->OpenScene->objectsInScene.size(); i++) {
         Entity* object = SceneManager::GetSceneManager()->OpenScene->objectsInScene[i];
         ImVec2 contentRegionAvailable = ImGui::GetContentRegionAvail();
         ImVec2 buttonSize(contentRegionAvailable.x, 20);
