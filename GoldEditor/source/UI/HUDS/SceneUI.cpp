@@ -68,7 +68,6 @@ void SceneUI::draw() {
     ImVec2 windowPos = ImGui::GetWindowPos();
     ImVec2 offset = ImGui::GetWindowContentRegionMin();
     ImVec2 size = ImGui::GetContentRegionAvail();
-    ImVec2 p = ImGui::GetCursorScreenPos();
 
     ImDrawList* draw_list = ImGui::GetWindowDrawList();
 
@@ -86,6 +85,9 @@ void SceneUI::draw() {
     int WindowYSize = imageSizeSCENE.y;
     imageSizeSCENE.x = WindowXSize;
     imageSizeSCENE.y = WindowYSize;
+
+
+    ImVec2 p = ImGui::GetCursorScreenPos();
 
     // Invertimos las coordenadas de textura en el eje Y antes de mostrar la imagen
     ImGui::Image((void*)(intptr_t)texture, ImVec2(WindowXSize, WindowYSize), ImVec2(ImVec2(0, 1)), ImVec2(ImVec2(1, 0)));
@@ -108,31 +110,31 @@ void SceneUI::draw() {
 
         ignoreGui &= !ImGuizmo::IsOver();
 
-        //glm::vec3 matrixRotation;
-        //ImGuizmo::DecomposeMatrixToComponents(
-        //    matrix,
-        //    glm::value_ptr (UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Position),
-        //    glm::value_ptr (matrixRotation),
-        //    glm::value_ptr (UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Scale)
-        //);
+        glm::vec3 matrixRotation;
+        ImGuizmo::DecomposeMatrixToComponents(
+            matrix,
+            glm::value_ptr (UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Position),
+            glm::value_ptr (matrixRotation),
+            glm::value_ptr (UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Scale)
+        );
 
-        ////std::cout << "GIZMO OVER: " << ignoreGui << std::endl;
+        std::cout << "GIZMO OVER: " << ImGuizmo::IsOver() << std::endl;
 
-        ////UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Rotation = matrixRotation;
+        //UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Rotation = matrixRotation;
 
-        //if (!ImGui::IsMouseDown (1)) {
-        //    if (InputSystem::InputSystem::GetKey (GLFW_KEY_W)) {
-        //        gizmoOperation = ImGuizmo::TRANSLATE;
-        //    }
+        if (!ImGui::IsMouseDown (1)) {
+            if (InputSystem::InputSystem::GetKey (GLFW_KEY_W)) {
+                gizmoOperation = ImGuizmo::TRANSLATE;
+            }
 
-        //    if (InputSystem::InputSystem::GetKey(GLFW_KEY_Q)) {
-        //        gizmoOperation = ImGuizmo::ROTATE;
-        //    }
+            if (InputSystem::InputSystem::GetKey(GLFW_KEY_Q)) {
+                gizmoOperation = ImGuizmo::ROTATE;
+            }
 
-        //    if (InputSystem::InputSystem::GetKey(GLFW_KEY_E)) {
-        //        gizmoOperation = ImGuizmo::SCALE;
-        //    }
-        //}
+            if (InputSystem::InputSystem::GetKey(GLFW_KEY_E)) {
+                gizmoOperation = ImGuizmo::SCALE;
+            }
+        }
     }
 #pragma endregion
 
@@ -175,7 +177,7 @@ void SceneUI::draw() {
         ImGui::EndDragDropTarget();
     }
 
-    if (ImGui::IsWindowHovered() && !LockWithGizmos) {
+    if (ImGui::IsWindowHovered() && !LockWithGizmos && !ImGuizmo::IsOver()) {
         float maxZ = -std::numeric_limits<float>::max();
 
         for (int i = 0; i < SceneManager::GetSceneManager()->OpenScene->objectsInScene.size(); i++) {

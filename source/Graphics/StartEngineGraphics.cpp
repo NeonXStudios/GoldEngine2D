@@ -86,8 +86,6 @@ void StartEngineGraphics::update() {
         AppSettings::RenderHeight = height;
         AppSettings::RenderWidth = width;
 
-        std::cout << "Width: " << AppSettings::RenderWidth << std::endl;
-        std::cout << "Height: " << AppSettings::RenderHeight << std::endl;
         glViewport(0, 0, AppSettings::RenderWidth, AppSettings::RenderHeight);
 
         // RENDERIZACION DE TODO OPENGL
