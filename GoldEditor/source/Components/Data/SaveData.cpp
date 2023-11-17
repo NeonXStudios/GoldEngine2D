@@ -12,9 +12,12 @@ SaveData::SaveData() {
 
 
 void SaveData::saveScene() {
-    json objectData;
+    json GameDataSettings;
+    GameDataSettings["StartScene"] = "SampleScene.scene";
 
+    json objectData;
     json objects = json::array();
+
 
     if (SceneManager::GetSceneManager() != nullptr) {
         for (int i = 0; i < SceneManager::GetSceneManager()->OpenScene->objectsInScene.size(); i++) {
@@ -58,7 +61,7 @@ void SaveData::saveScene() {
     }
 
     objectData["objects"] = objects;
-
+    GLD::SaveSystem::save(GoldEditor::editor->ProjectPath + "/assets", "GameSettings.data", GameDataSettings.dump(4));
     GLD::SaveSystem::save(GoldEditor::editor->ProjectPath + "/assets", SceneManager::GetOpenSceneName()->c_str(), objectData.dump(4));
 }
 
@@ -66,7 +69,12 @@ void SaveData::saveScene() {
 
 
 void SaveData::loadScene() {
-    SceneManager::LoadScene(GoldEditor::editor->ProjectPath + "/assets", "samplescenea.scene");
+    string LoadedGameSettings = GLD::SaveSystem::load(GoldEditor::editor->ProjectPath + "/assets/", "GameSettings.data");
+    json dataJson = json::parse(LoadedGameSettings);
+
+    std::cout << "Game Settings Loaded" << (string)dataJson["StartScene"] << std::endl;
+
+    SceneManager::LoadScene(GoldEditor::editor->ProjectPath + "/assets/", (string)dataJson["StartScene"]);
     //if (GLD::SaveSystem::load(GoldEditor::editor->ProjectPath + "/assets", "samplescene.scene").empty()) {
     //    std::cout << "ARCHIVO VACIO O NO EXISTENTE" << std::endl;
     //    return;

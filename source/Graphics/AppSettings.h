@@ -8,8 +8,6 @@ class AppSettings
 {
 public:
 	static AppSettings* instance;
-	static int ScreenWidth;
-	static int ScreenHeight;
 	static int TargetFPS;
 	static int RenderWidth;
 	static int RenderHeight;
@@ -22,7 +20,4 @@ public:
 	static void setTargetFrame (int fps);
 	static int getTargetFrame ();
 	static void setVsyncState (int active);
-
-	int GetWidthScreen();
-	int GetHeightScreen();
 };

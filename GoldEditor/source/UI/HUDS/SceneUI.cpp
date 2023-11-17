@@ -26,7 +26,7 @@ void SceneUI::start() {
 
     glGenTextures(1, &texture);
     glBindTexture(GL_TEXTURE_2D, texture);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, AppSettings::instance->ScreenWidth, AppSettings::instance->ScreenHeight, 0, GL_RGB, GL_UNSIGNED_BYTE, NULL);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, AppSettings::RenderWidth, AppSettings::RenderHeight, 0, GL_RGB, GL_UNSIGNED_BYTE, NULL);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, texture, 0);
@@ -38,14 +38,14 @@ void SceneUI::start() {
 
     glGenTextures(1, &colorAndDepthTexture);
     glBindTexture(GL_TEXTURE_2D, colorAndDepthTexture);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, AppSettings::instance->ScreenWidth, AppSettings::instance->ScreenHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, AppSettings::RenderWidth, AppSettings::RenderHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
     // Crear y configurar el renderbuffer de profundidad
     glGenRenderbuffers(1, &depthRenderbuffer);
     glBindRenderbuffer(GL_RENDERBUFFER, depthRenderbuffer);
-    glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT, AppSettings::instance->ScreenWidth, AppSettings::instance->ScreenHeight);
+    glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT, AppSettings::RenderWidth, AppSettings::RenderHeight);
 
 
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
@@ -57,7 +57,7 @@ void SceneUI::draw() {
 
 #pragma region DRAW TEXTURE SCENE
 
-    ImVec2 windowSize = ImVec2(AppSettings::ScreenWidth, AppSettings::ScreenHeight);
+    ImVec2 windowSize = ImVec2(AppSettings::RenderWidth, AppSettings::RenderHeight);
 
     // Dibujamos la imagen en la ventana de ImGui
     ImGui::SetNextWindowSize(windowSize);
@@ -71,10 +71,10 @@ void SceneUI::draw() {
     ImVec2 p = ImGui::GetCursorScreenPos();
 
     ImDrawList* draw_list = ImGui::GetWindowDrawList();
-    // Obtenemos el tamaño de la ventana de ImGui después de que se apliquen las restricciones de tamaño
+
     ImVec2 actualWindowSize = ImGui::GetWindowSize();
     float scaleFactor = std::min(actualWindowSize.x / windowSize.x, actualWindowSize.y / windowSize.y);
-    imageSizeSCENE = ImVec2(AppSettings::ScreenWidth * scaleFactor, AppSettings::ScreenHeight * scaleFactor);
+    imageSizeSCENE = ImVec2(AppSettings::RenderWidth * scaleFactor, AppSettings::RenderHeight * scaleFactor);
 
 
     // Calculamos la posición para centrar la imagen en la ventana
@@ -108,31 +108,31 @@ void SceneUI::draw() {
 
         ignoreGui &= !ImGuizmo::IsOver();
 
-        glm::vec3 matrixRotation;
-        ImGuizmo::DecomposeMatrixToComponents(
-            matrix,
-            glm::value_ptr (UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Position),
-            glm::value_ptr (matrixRotation),
-            glm::value_ptr (UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Scale)
-        );
+        //glm::vec3 matrixRotation;
+        //ImGuizmo::DecomposeMatrixToComponents(
+        //    matrix,
+        //    glm::value_ptr (UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Position),
+        //    glm::value_ptr (matrixRotation),
+        //    glm::value_ptr (UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Scale)
+        //);
 
-        //std::cout << "GIZMO OVER: " << ignoreGui << std::endl;
+        ////std::cout << "GIZMO OVER: " << ignoreGui << std::endl;
 
-        //UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Rotation = matrixRotation;
+        ////UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Rotation = matrixRotation;
 
-        if (!ImGui::IsMouseDown (1)) {
-            if (InputSystem::InputSystem::GetKey (GLFW_KEY_W)) {
-                gizmoOperation = ImGuizmo::TRANSLATE;
-            }
+        //if (!ImGui::IsMouseDown (1)) {
+        //    if (InputSystem::InputSystem::GetKey (GLFW_KEY_W)) {
+        //        gizmoOperation = ImGuizmo::TRANSLATE;
+        //    }
 
-            if (InputSystem::InputSystem::GetKey(GLFW_KEY_Q)) {
-                gizmoOperation = ImGuizmo::ROTATE;
-            }
+        //    if (InputSystem::InputSystem::GetKey(GLFW_KEY_Q)) {
+        //        gizmoOperation = ImGuizmo::ROTATE;
+        //    }
 
-            if (InputSystem::InputSystem::GetKey(GLFW_KEY_E)) {
-                gizmoOperation = ImGuizmo::SCALE;
-            }
-        }
+        //    if (InputSystem::InputSystem::GetKey(GLFW_KEY_E)) {
+        //        gizmoOperation = ImGuizmo::SCALE;
+        //    }
+        //}
     }
 #pragma endregion
 
@@ -180,15 +180,16 @@ void SceneUI::draw() {
 
         for (int i = 0; i < SceneManager::GetSceneManager()->OpenScene->objectsInScene.size(); i++) {
             Entity* objD = SceneManager::GetSceneManager()->OpenScene->objectsInScene[i];
-            glm::vec3& obj = objD->getComponent<SpriteComponent>().entity->transform->Position;
-            float objWidth = objD->getComponent<SpriteComponent>().entity->transform->Scale.x;
-            float objHeight = objD->getComponent<SpriteComponent>().entity->transform->Scale.y;
+
+            glm::vec3& obj = objD->entity->transform->Position;
+            float objWidth = objD->entity->transform->Scale.x;
+            float objHeight = objD->entity->transform->Scale.y;
 
             // Obtén la rotación en radianes desde Box2D
-            float radians = objD->getComponent<SpriteComponent>().rotationAngle * (b2_pi / 180.0f);
+            float radians = objD->entity->transform->Rotation.x * (b2_pi / 180.0f);
 
             // Aplica la rotación inversa al punto del mundo
-            glm::vec2 localPoint = RotatePoint(glm::vec2 (WorldPoint.x, WorldPoint.y), obj, radians);
+            glm::vec2 localPoint = RotatePoint(WorldPoint, obj, radians);
 
             // Calcula las coordenadas de la caja delimitadora del objeto rotado
             glm::vec2 rotatedBoxMin(obj.x - objWidth, obj.y - objHeight);
@@ -212,6 +213,9 @@ void SceneUI::draw() {
                     if (SelectIndex > objectsInAABB.size() - 1) {
                         SelectIndex = 0;
                     }
+
+                    std::cout << "Click Point (X: " << localPoint.x << " | Y:" << localPoint.y << std::endl;
+
                     if (UIManager::instance->inspectorui->ObjectSelectToInspector != objD) {
                         UIManager::instance->inspectorui->SelectEntity(objectsInAABB[SelectIndex]);
                     }
@@ -224,10 +228,10 @@ void SceneUI::draw() {
                             UIManager::instance->inspectorui->SelectEntity(objD);
                         }
                     }*/
+
                     ObjectSelect = true;
 
                     UIManager::instance->hierarhcyui->SelectInHierarchy = false;
-                    std::cout << "Clicked object" << std::endl;
                     break;
                 }
             }
@@ -256,6 +260,7 @@ void SceneUI::draw() {
     }
 
 
+#pragma region OLD AABB WITH RAYCAST
     //if (ImGui::IsMouseDown (0)/* && ImGui::IsWindowHovered()*/) {
 
     //    glm::vec3 ray_origin;
@@ -319,6 +324,8 @@ void SceneUI::draw() {
     //        }
     //    }
     //}
+#pragma endregion
+    
     ImGui::End();
 #pragma endregion
 }
@@ -584,7 +591,7 @@ void SceneUI::fixupdate() {
     // Copiar el contenido del framebuffer en la textura
     glBindFramebuffer(GL_READ_FRAMEBUFFER, framebuffer);
     glBindTexture(GL_TEXTURE_2D, texture);
-    glCopyTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, 0, 0, AppSettings::instance->ScreenWidth, AppSettings::instance->ScreenHeight, 0);
+    glCopyTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, 0, 0, AppSettings::RenderWidth, AppSettings::RenderHeight, 0);
     glBindFramebuffer(GL_READ_FRAMEBUFFER, 0);
 }
 

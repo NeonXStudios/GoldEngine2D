@@ -44,7 +44,7 @@ void StartEngineGraphics::StartEngine () {
     }
 
 
-    glfwGetFramebufferSize (StartEngineGraphics::window, &AppSettings::instance->ScreenWidth, &AppSettings::instance->ScreenHeight);
+    glfwGetFramebufferSize (StartEngineGraphics::window, &AppSettings::RenderWidth, &AppSettings::RenderHeight);
 
 
     //START GAME
@@ -86,7 +86,9 @@ void StartEngineGraphics::update() {
         AppSettings::RenderHeight = height;
         AppSettings::RenderWidth = width;
 
-
+        std::cout << "Width: " << AppSettings::RenderWidth << std::endl;
+        std::cout << "Height: " << AppSettings::RenderHeight << std::endl;
+        glViewport(0, 0, AppSettings::RenderWidth, AppSettings::RenderHeight);
 
         // RENDERIZACION DE TODO OPENGL
         StartEngineGraphics::engine->PreRender();
@@ -98,7 +100,6 @@ void StartEngineGraphics::update() {
 
 
 
-        glViewport(0, 0, AppSettings::RenderWidth, AppSettings::RenderHeight);
         glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 

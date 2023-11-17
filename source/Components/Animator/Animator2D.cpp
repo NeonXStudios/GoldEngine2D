@@ -1,15 +1,17 @@
 #include "Animator2D.h"
 
 void Animator2D::NextFrame(float wtT) {
-    while (states.size() > 0){
-        for (AnimationsStates* stateFound : states) {
-            if (stateFound->StateName == SelectState) {
-                stateFound->cp = cp;
-                stateFound->UpdateState();
+    if (!Pause) {
+        while (states.size() > 0) {
+            for (AnimationsStates* stateFound : states) {
+                if (stateFound->StateName == SelectState) {
+                    stateFound->cp = cp;
+                    stateFound->UpdateState();
+                }
             }
-        }
 
-        std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<long long>(wtT * 1000)));
+            std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<long long>(wtT * 1000)));
+        }
     }
 }
 
@@ -37,7 +39,8 @@ void Animator2D::draw() {
 
 
 void Animator2D::clean() {
-
+    Pause = true;
+    states.clear();
 }
 
 void Animator2D::AddNewState (string StateName) {
@@ -64,7 +67,6 @@ void Animator2D::DeleteState(int index)
         else {
             std::cout << "Índice fuera de rango" << std::endl;
         }
-
     }
 }
 

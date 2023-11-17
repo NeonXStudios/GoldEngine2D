@@ -30,9 +30,6 @@ void RigidBody::init() {
 	fixtureDef->shape = dynamicBox;
 	body->CreateFixture(fixtureDef);
 
-	//position.x = srp->ObjectPosition.x;
-	//position.y = -srp->ObjectPosition.y;
-
 	body->SetTransform(b2Vec2((float)position.x, (float)position.y), radians);
 
 	UpdateCollisions();
@@ -41,10 +38,16 @@ void RigidBody::init() {
 
 
 void RigidBody::update() {
-	SpriteComponent* srp = &entity->getComponent <SpriteComponent>();
 	if (!isStatic) {
-		position.x = body->GetPosition().x;
-		position.y = -body->GetPosition().y;
+
+		if (!FreezeX) {
+			entity->transform->Position.x = body->GetPosition().x;
+			body->SetLinearVelocity(b2Vec2_zero);
+		}
+
+		if (!FreezeY) {
+			entity->transform->Position.y = -body->GetPosition().y;
+		}
 
 		float radians = body->GetAngle();
 		float degrees = radians * (180.0f / b2_pi);
@@ -69,10 +72,10 @@ void RigidBody::update() {
 			position.y = -srp->ObjectPosition.y;
 		}*/
 
-		srp->rotationAngle = degrees;
+		entity->transform->Rotation.x = 0;
 	}
 	else {
-		float degrees = srp->rotationAngle;
+		float degrees = entity->transform->Rotation.x;
 		float radians = degrees * (b2_pi / 180.0f);
 
 		//position.x = srp->ObjectPosition.x;
@@ -120,13 +123,12 @@ void RigidBody::clean() {
 
 void RigidBody::changeState(bool val) {
 	isStatic = val;
-	SpriteComponent* srp = &entity->getComponent<SpriteComponent>();
-	float degrees = srp->rotationAngle;
+	float degrees = entity->transform->Rotation.x;
 	float radians = degrees * (b2_pi / 180.0f);
 
 	if (!isStatic) {
 		body->SetAwake(true);
-		b2Vec2 newPosition(float(position.x), float(position.y));
+		b2Vec2 newPosition(float(entity->transform->Position.x), float(-entity->transform->Position.y));
 		body->SetTransform(newPosition, radians);
 		body->SetType(b2_dynamicBody);
 	}

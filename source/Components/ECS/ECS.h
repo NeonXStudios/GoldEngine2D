@@ -58,16 +58,16 @@ public:
 };
 
 class Transform {
+private:
+	glm::quat rotation;
+	glm::mat4 Matrix = glm::mat4(1.0f);
+
 public:
 	glm::vec3 Position = glm::vec3(0.0f, 0.0f, 0.0f);
 	glm::vec3 LocalPosition = glm::vec3(1.0f, 1.0f, 1.0f);
-
-
 	glm::vec3 Rotation = glm::vec3(0.0f, 0.0f, 0.0f);
 	glm::vec3 Scale = glm::vec3(1.0f, 1.0f, 1.0f);
 
-	glm::mat4 Matrix = glm::mat4(1.0f);
-	glm::quat rotation;
 
 	void update() {
 		Matrix = glm::mat4(1.0f);

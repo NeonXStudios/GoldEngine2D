@@ -68,6 +68,7 @@ void AnimationsStates::RebuildState() {
 
     Rebuilding = false;
     std::cout << "States Rebuild Succefully" << std::endl;
+    std::cout << "Total States In Machine: " << Frames.size() << std::endl;
 }
 
 void AnimationsStates::DeleteFrame (int index)

@@ -10,6 +10,7 @@ SaveData::SaveData() {
 }
 
 void SaveData::loadScene() {
+
     SceneManager::LoadScene("game/scenes/", "samplescene.scene");
 
     //if (GLD::SaveSystem::load("game/scenes/", "samplescene.scene").empty()) {

@@ -114,7 +114,7 @@ void SceneManager::ClearOpenScene() {
 
 void SceneManager::LoadScene(string scenePath, string sceneName) {
 
-	//SceneManager::GetSceneManager()->ClearOpenScene();
+	SceneManager::GetSceneManager()->ClearOpenScene();
 
 	std::cout << "Scene Open: " << scenePath << sceneName << std::endl;
 
@@ -123,6 +123,7 @@ void SceneManager::LoadScene(string scenePath, string sceneName) {
 		std::cout << "ARCHIVO VACIO O NO EXISTENTE" << std::endl;
 		return;
 	}
+
 	string loadJsonDAta = GLD::SaveSystem::load(scenePath/*GoldEditor::editor->ProjectPath + "/assets"*/, sceneName/*"samplescene.scene"*/);
 	json loadJson = json::parse(loadJsonDAta);
 

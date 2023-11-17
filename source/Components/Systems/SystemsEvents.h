@@ -22,8 +22,8 @@ namespace RenderSystem {
             double NormalMousePosY = -windowMousePosY / WindowSize.y;
 
             // CALCULAR CENTRO DE LA TEXTURA CON EL MOUSE (0, 0)
-            double centeredMousePosX = (NormalMousePosX * 2.0f - 1.0f) * (AppSettings::ScreenWidth / 2) * SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom;
-            double centeredMousePosY = (NormalMousePosY * 2.0f + 1.0f) * (AppSettings::ScreenHeight / 2) * SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom;
+            double centeredMousePosX = (NormalMousePosX * 2.0f - 1.0f) * (AppSettings::RenderWidth / 2) * SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom;
+            double centeredMousePosY = (NormalMousePosY * 2.0f + 1.0f) * (AppSettings::RenderHeight / 2) * SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom;
 
             Camera* cam = SceneManager::GetSceneManager()->OpenScene->worldCamera;
 
@@ -45,8 +45,8 @@ namespace RenderSystem {
             double NormalMousePosY = windowMousePosY;
 
             // CALCULAR CENTRO DE LA TEXTURA CON EL MOUSE (0, 0)
-            double centeredMousePosX = (NormalMousePosX * 2.0f - 1.0f) * (AppSettings::ScreenWidth) * SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom;
-            double centeredMousePosY = (NormalMousePosY * 2.0f + 1.0f) * (AppSettings::ScreenHeight) * SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom;
+            double centeredMousePosX = (NormalMousePosX * 2.0f - 1.0f) * (AppSettings::RenderWidth) * SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom;
+            double centeredMousePosY = (NormalMousePosY * 2.0f + 1.0f) * (AppSettings::RenderHeight) * SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom;
 
             Camera* cam = SceneManager::GetSceneManager()->OpenScene->worldCamera;
 

@@ -23,16 +23,15 @@ void Scene::update() {
 
 
 	if (AppSettings::gameRunning) {
-		if (GravityWorld != nullptr && GravityWorld->GetBodyCount() > 0) {
-
-			b2Body* body = GravityWorld->GetBodyList();
-			float timeStep = 1.0f / 60;
-			GravityWorld->Step(timeStep, 6, 2);
-			body->GetNext();
-		}
-
+		
 	}
 
+	if (GravityWorld != nullptr && GravityWorld->GetBodyCount() > 0) {
+		b2Body* body = GravityWorld->GetBodyList();
+		float timeStep = 1.0f / 60;
+		GravityWorld->Step(timeStep, 6, 2);
+		body->GetNext();
+	}
 		//mScene->simulate(1.0f / 60.0f);
 		//mScene->fetchResults(true);
 }

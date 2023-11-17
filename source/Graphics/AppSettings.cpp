@@ -6,8 +6,6 @@
 using namespace std;
 
 AppSettings* AppSettings::instance = nullptr;
-int AppSettings::ScreenWidth = 1920;
-int AppSettings::ScreenHeight = 1080;
 int AppSettings::RenderWidth = 0;
 int AppSettings::RenderHeight = 0;
 
@@ -42,14 +40,6 @@ void AppSettings::release() {
     delete AppSettings::instance;
 }
 
-int AppSettings::GetWidthScreen() {
-    return ScreenWidth;
-}
-
-
-int AppSettings::GetHeightScreen() {
-    return ScreenHeight;
-}
 
 void AppSettings::setTargetFrame (int fps) {
     TargetFPS = fps;

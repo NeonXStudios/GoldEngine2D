@@ -22,6 +22,7 @@ public:
 
 	std::vector<AnimationsStates*> states = std::vector<AnimationsStates*>();
 	string SelectState = "NULL";
+	bool Pause;
 
 	void init() override;
 	void update() override;

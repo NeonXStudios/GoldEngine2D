@@ -213,7 +213,7 @@ void SpriteComponent::deserialize (std::string g, std::string path) {
 glm::mat4 SpriteComponent::GetMatrix() {
     glm::mat4 matrix;
 
-    matrix = glm::translate(glm::mat4(1.0f), glm::vec3(1, 1, 1));
+    matrix = glm::translate(glm::mat4(1.0f), entity->transform->Position);
     matrix *= glm::mat4_cast(glm::quat(1, 0, 0, 0));
     matrix = glm::scale(matrix, entity->transform->Scale);
 
@@ -241,11 +241,13 @@ void SpriteComponent::compileShaders() {
     string newPathFrag = FileSystem::GetAsset(FragmentPath);
 
     ourShader = new Shader(newPathVertex.c_str(), newPathFrag.c_str());
-    ourmodel = new GLD::Model("E:\\VS\\GoldEngine2D\\GoldEditor\\def/models/Plane.fbx");
+    
+    ourmodel = new GLD::Model(FileSystem::GetAsset("/models/Plane.fbx"));
     ourShader->use();
 }
 
 glm::vec3 SpriteComponent::Min()
+
 {
     return m_Min;
 }

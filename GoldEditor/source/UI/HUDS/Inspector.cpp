@@ -10,7 +10,6 @@ InspectorComponents* components = new InspectorComponents();
 
 void InspectorUI::start() {
     drawerComponents = new DrawComponents();
-
 }
 
 void InspectorUI::draw() {
