@@ -15,7 +15,7 @@ string AssetsUI::getRoute() {
 void AssetsUI::draw() {
     string pathallName = "Assets";
 
-    ImGui::Begin(pathallName.c_str());
+    ImGui::Begin(pathallName.c_str());  
     //std::cout << getRoute() + "/assets/" << std::endl;
     if (path_to_read != getRoute() + "/assets/") {
         if (ImGui::Button("<")) {
@@ -29,48 +29,53 @@ void AssetsUI::draw() {
 
 #pragma region DRAG AND DROP FILES
 
-
-
     ImGui::BeginChild(path_to_read.c_str());
 
-    if (ImGui::IsWindowHovered()) {
-        if (ImGui::IsMouseClicked(1)) {
-            assetsMenuOpen = true;
-            std::cout << "Cliqueando" << std::endl;
-        }
+    ImVec2 getWidthWindow = ImGui::GetContentRegionAvail();
 
-        if (assetsMenuOpen) {
-            ImGui::PushID("AASETID23");
-            ImGui::Begin("Assets");
 
-            if (ImGui::MenuItem("New Script")) {
-                std::string path_to_read = path_to_read;
-                std::string file = path_to_read + "/NewScript.lua";
+    if (assetsMenuOpen) {
+        ImGui::SetNextWindowPos(mousePos, ImGuiCond_Always, ImVec2(0.5f, 0.5f));
+        ImGui::SetNextWindowSize(ImVec2(300, 200), ImGuiCond_Always);
+        ImGui::PushID("AASETID23");
+        ImGui::Begin("Create Asset");
 
-                std::ofstream archivof(file);
+        if (ImGui::MenuItem("New Script")) {
+            std::string path_to_read = path_to_read;
+            std::string file = FileSystem::GetAsset (path_to_read) + "/NewScript.lua";
 
-                if (archivof.is_open()) {
-                    archivof << "Contenido para escribir en el archivo." << std::endl;
+            std::ofstream archivof(file);
 
-                    archivof.close();
-                    std::cout << "Archivo creado y contenido escrito correctamente." << std::endl;
-                }
-                else {
-                    std::cerr << "No se pudo abrir el archivo." << std::endl;
-                }
+            if (archivof.is_open()) {
+                archivof << "Contenido para escribir en el archivo." << std::endl;
+
+                archivof.close();
+                std::cout << "Archivo creado y contenido escrito correctamente." << std::endl;
             }
-
-            ImGui::End();
-            ImGui::PopID();
+            else {
+                std::cerr << "No se pudo abrir el archivo." << std::endl;
+            }
         }
+
+        ImGui::End();
+        ImGui::PopID();
     }
-    else {
-        if (ImGui::IsAnyMouseDown()) {
+
+
+    if (!ImGui::IsWindowHovered()) {
+        if (ImGui::IsMouseReleased (0)) {
             assetsMenuOpen = false;
         }
     }
+    else {
+        if (ImGui::IsMouseClicked(1)) {
+            std::cout << "Listo para abrir el menu de creacion de assets" << std::endl;
+            mousePos = ImGui::GetMousePos();
+            assetsMenuOpen = true;
+        }
+    }
 
-    ImVec2 getWidthWindow = ImGui::GetContentRegionAvail();
+
 
     try {
         for (const auto& entry : fs::directory_iterator(path_to_read)) {

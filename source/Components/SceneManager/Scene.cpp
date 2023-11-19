@@ -72,6 +72,7 @@ void Scene::CreateGravity() {
 		TriggerModule* triggerData = new TriggerModule();
 		GravityWorld->SetContactListener(triggerData);
 		std::cout << "Gravity created " << endl;
+		std::cout << "Trigger Module created " << endl;
 	}
 #pragma endregion
 

@@ -191,6 +191,9 @@
     <ClCompile Include="..\Binarys\include\imguinode\crude_json.cpp">
       <Filter>RecursosEditor\IMGUINODE</Filter>
     </ClCompile>
+    <ClCompile Include="source\Inspector\Components\CSkybox.cpp">
+      <Filter>Editor\02_InspectorDrawer\Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />
@@ -332,6 +335,9 @@
     </ClInclude>
     <ClInclude Include="..\Binarys\include\imguinode\crude_json.h">
       <Filter>RecursosEditor\IMGUINODE</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Inspector\Components\CSkybox.h">
+      <Filter>Editor\02_InspectorDrawer\Components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

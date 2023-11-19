@@ -24,6 +24,7 @@ D:\VS\GoldEngine2D\GoldEditor\source\Inspector\Components\CBoxCollider3D.cpp;D:\
 D:\VS\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidBody.cpp;D:\VS\GoldEngine2D\GoldEditor\x64\Debug\CRigidBody.obj
 D:\VS\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp;D:\VS\GoldEngine2D\GoldEditor\x64\Debug\CRigidbody3D.obj
 D:\VS\GoldEngine2D\GoldEditor\source\Inspector\Components\CScript.cpp;D:\VS\GoldEngine2D\GoldEditor\x64\Debug\CScript.obj
+D:\VS\GoldEngine2D\GoldEditor\source\Inspector\Components\CSkybox.cpp;D:\VS\GoldEngine2D\GoldEditor\x64\Debug\CSkybox.obj
 D:\VS\GoldEngine2D\GoldEditor\source\Inspector\Components\CSprite.cpp;D:\VS\GoldEngine2D\GoldEditor\x64\Debug\CSprite.obj
 D:\VS\GoldEngine2D\GoldEditor\source\Inspector\ComponentUIDrawer.cpp;D:\VS\GoldEngine2D\GoldEditor\x64\Debug\ComponentUIDrawer.obj
 D:\VS\GoldEngine2D\GoldEditor\source\Inspector\DrawComponents.cpp;D:\VS\GoldEngine2D\GoldEditor\x64\Debug\DrawComponents.obj

@@ -213,7 +213,7 @@ void SpriteComponent::deserialize (std::string g, std::string path) {
 glm::mat4 SpriteComponent::GetMatrix() {
     glm::mat4 matrix;
 
-    matrix = glm::translate(glm::mat4(1.0f), entity->transform->Position);
+    matrix = glm::translate(glm::mat4(1.0f), glm::vec3 (entity->transform->Position.x, entity->transform->Position.y, 0));
     matrix *= glm::mat4_cast(glm::quat(1, 0, 0, 0));
     matrix = glm::scale(matrix, entity->transform->Scale);
 

@@ -26,7 +26,7 @@ void RigidBody::init() {
 
 	b2Vec2 localCenter(0.0f, 0.0f);
 	localCenter.Set(0, 0);
-	dynamicBox->SetAsBox(float(srp->entity->transform->Scale.x/* * srp->GlobalScale */* 0.5f), float(srp->entity->transform->Scale.y/* * srp->GlobalScale*/ * 0.5f));
+	dynamicBox->SetAsBox(float(srp->entity->transform->Scale.x * 0.5f), float(srp->entity->transform->Scale.y * 0.5f));
 	fixtureDef->shape = dynamicBox;
 	body->CreateFixture(fixtureDef);
 
@@ -42,46 +42,21 @@ void RigidBody::update() {
 
 		if (!FreezeX) {
 			entity->transform->Position.x = body->GetPosition().x;
-			body->SetLinearVelocity(b2Vec2_zero);
+			body->SetLinearVelocity(b2Vec2(0, body->GetLinearVelocity().y));
 		}
 
 		if (!FreezeY) {
 			entity->transform->Position.y = -body->GetPosition().y;
+			body->SetLinearVelocity (b2Vec2 (body->GetLinearVelocity().x, 0));
 		}
 
-		float radians = body->GetAngle();
-		float degrees = radians * (180.0f / b2_pi);
-
-		if (degrees < 0.0f) {
-			degrees += 360.0f;
-		}
-
-		/*if (!FreezeX) {
-			srp->ObjectPosition.x = position.x;
-		}
-		else {
-			body->SetLinearVelocity(b2Vec2_zero);
-			position.x = srp->ObjectPosition.x;
-		}
-
-		if (!FreezeY) {
-			srp->ObjectPosition.y = position.y;
-		}
-		else {
-			body->SetLinearVelocity (b2Vec2_zero);
-			position.y = -srp->ObjectPosition.y;
-		}*/
-
-		entity->transform->Rotation.x = 0;
+		entity->transform->Rotation.x = -glm::degrees(body->GetAngle());
 	}
 	else {
-		float degrees = entity->transform->Rotation.x;
-		float radians = degrees * (b2_pi / 180.0f);
-
-		//position.x = srp->ObjectPosition.x;
-		//position.y = -srp->ObjectPosition.y;
-		//body->SetTransform(b2Vec2(float(position.x), float(position.y)), radians);
+		body->SetTransform(b2Vec2(float(entity->transform->Position.x), -float(entity->transform->Position.y)), -glm::radians(entity->transform->Rotation.x));
 	}
+
+	//UpdateCollisions();
 
 	body->GetFixtureList()->SetSensor(isTrigger);
 }
@@ -94,18 +69,16 @@ void RigidBody::draw() {
 
 void RigidBody::UpdateCollisions() {
 	SpriteComponent* srp = &entity->getComponent<SpriteComponent>();
-	b2Vec2 localCenter(0.0f, 0.0f);
-	localCenter.Set(0, 0);
 
 	body->DestroyFixture(body->GetFixtureList());
 	b2FixtureDef* fx = new b2FixtureDef();
-	//float scaleX = (float)srp->GlobalScale;
-	//float scaleY = (float)srp->GlobalScale;
 	fx->density = density;
 	fx->friction = friction;
 
-	float boxWidth = srp->entity->transform->Scale.x * 0.5f /** srp->GlobalScale*/;
-	float boxHeight = srp->entity->transform->Scale.y * 0.5f /** srp->GlobalScale*/;
+	b2Vec2 localCenter(0.0f, 0.0f);
+	localCenter.Set(0, 0);
+	float boxWidth = srp->entity->transform->Scale.x;
+	float boxHeight = srp->entity->transform->Scale.y;
 	dynamicBox->SetAsBox(boxWidth, boxHeight, localCenter, 0);
 	fx->shape = dynamicBox;
 	fixtureDef = fx;
@@ -114,17 +87,13 @@ void RigidBody::UpdateCollisions() {
 	body->GetFixtureList()->SetSensor(isTrigger);
 }
 
-
-
-
 void RigidBody::clean() {
 	std::cout << "Componente rigidBody removido" << std::endl;
 }
 
 void RigidBody::changeState(bool val) {
 	isStatic = val;
-	float degrees = entity->transform->Rotation.x;
-	float radians = degrees * (b2_pi / 180.0f);
+	float radians = -glm::radians (entity->transform->Rotation.x);
 
 	if (!isStatic) {
 		body->SetAwake(true);
@@ -147,8 +116,9 @@ void RigidBody::triggerOn(Entity* enterEntity) {
 
 		if (entity->hasComponent<ScriptCompiler>()) {
 			entity->getComponent<ScriptCompiler>().ontrigger (enterEntity);
-			//std::cout << "MI OBJETO " << enterEntity->ObjectName << " ENTRO EN UNA COLISION" << std::endl;
 		}
+
+		std::cout << "MI OBJETO " << enterEntity->ObjectName << " ENTRO EN UNA COLISION" << std::endl;
 		usedTrigger = true;
 	}
 }
@@ -163,8 +133,9 @@ void RigidBody::triggerOff(Entity* enterEntity) {
 	if (usedTrigger) {
 		if (entity->hasComponent<ScriptCompiler>()) {
 			entity->getComponent<ScriptCompiler>().ontriggerexit(enterEntity);
-			//std::cout << "MI OBJETO " << enterEntity->ObjectName << " SALIO DE UNA COLISION" << std::endl;
 		}
+
+		std::cout << "MI OBJETO " << enterEntity->ObjectName << " SALIO DE UNA COLISION" << std::endl;
 		usedTrigger = false;
 	}
 }

@@ -18,7 +18,7 @@ public:
 	b2Vec2 position;
 	float density = 25.0f;
 	float friction = 0.3f;
-	float Mass = 1;
+	float Mass = 25;
 	bool isStatic;
 	bool isTrigger = false;
 

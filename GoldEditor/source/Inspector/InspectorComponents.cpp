@@ -9,6 +9,7 @@ void InspectorComponents::update(Entity* ownerActor) {
 	ComponentUIDrawer::updateUI		<AudioSource>				(ownerActor, 2, new CAudio				()			);
 	ComponentUIDrawer::updateUI		<RigidBody>				    (ownerActor, 3, new CRigidBody			()			);
 	ComponentUIDrawer::updateUI     <Animator2D>				(ownerActor, 4, new CAnimator			()			);
+	ComponentUIDrawer::updateUI     <Skybox>					(ownerActor, 4, new CSkybox				()			);
 
 	//ComponentUIDrawer::updateUI		<Rigidbody3d>			    (ownerActor, 4, new CRigidbody3D		()			);
 	//ComponentUIDrawer::updateUI		<BoxCollider>			    (ownerActor, 5, new CBoxCollider3D		()			);

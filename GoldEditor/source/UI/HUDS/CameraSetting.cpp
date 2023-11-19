@@ -2,10 +2,6 @@
 #include "../EditorUI/EditorGUI.h"
 #include "../../Editor/GoldEditor.h"
 
-
-
-
-
 void CameraSetting::start() {
 
 }
@@ -26,6 +22,9 @@ void CameraSetting::draw() {
 		GoldEditor::editor->cameraSpeed = EditorGUI::Float("Speed", GoldEditor::editor->cameraSpeed);
 		SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom = EditorGUI::Slider("Fov", SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom, 0, 10);
 		
+		if (ImGui::Button("Close")) {
+			isOpen = false;
+		}
 		ImGui::End();
 	}
 }

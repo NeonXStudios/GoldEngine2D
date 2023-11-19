@@ -262,6 +262,10 @@
     <ClCompile Include="source\Components\Animator\AnimationsStates.cpp">
       <Filter>Engine\02_Components\Animator2D</Filter>
     </ClCompile>
+    <ClCompile Include="source\Components\Physics\ObjectCaster.cpp">
+      <Filter>Engine\02_Components\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\Physics\CastData.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Components\Camera\Camera2D.h">
@@ -429,6 +433,10 @@
     <ClInclude Include="source\Components\Animator\AnimationsStates.h">
       <Filter>Engine\02_Components\Animator2D</Filter>
     </ClInclude>
+    <ClInclude Include="source\Components\Physics\ObjectCaster.h">
+      <Filter>Engine\02_Components\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\Physics\CastData.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GoldEngine.rc">

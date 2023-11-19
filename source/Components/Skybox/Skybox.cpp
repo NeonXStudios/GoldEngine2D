@@ -8,7 +8,7 @@ void Skybox::init() {
 	string newPathFrag = FileSystem::GetAsset(FragmentPath);
 
 	ourShader = new Shader(newPathVertex.c_str(), newPathFrag.c_str());
-	ourmodel = new GLD::Model(modelPath);
+	ourmodel = new GLD::Model(FileSystem::GetAsset(modelPath));
 	ourShader->setFloat ("texture_diffuse1", 0);
 	ourShader->use();
 
@@ -24,7 +24,7 @@ void Skybox::init() {
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
 	//glEnable(GL_BLEND);
- //   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	//glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 
 	std::cout << "La nueva ruta de la textura es " << TexturePath << std::endl;
@@ -54,10 +54,7 @@ void Skybox::init() {
 }
 
 void Skybox::draw() {
-
-}
-
-void Skybox::update() {
+	glDepthMask(GL_FALSE);
 	glUseProgram(ourShader->ID);
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, texture);
@@ -87,6 +84,12 @@ void Skybox::update() {
 	ourShader->setMat4("model", GetMatrix());  // Aplicar la matriz de modelo
 	ourmodel->Draw(*ourShader);
 	Position = cameraPos;
+	glDepthMask(GL_TRUE);
+	//glDepthFunc(GL_ALWAYS);
+}
+
+void Skybox::update() {
+	
 }
 
 void Skybox::PreRender() {

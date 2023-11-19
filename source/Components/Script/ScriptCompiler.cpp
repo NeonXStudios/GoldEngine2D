@@ -24,6 +24,8 @@ void ScriptCompiler::init() {
 		InputBinder::RegisterFunction(this);
 
 		GMathf::RegisterLib(this);
+
+
 		std::ifstream scrpt(pathScript);
 
 		std::cout << "=======Iniciando script de la ruta " << pathScript << std::endl;
@@ -63,14 +65,15 @@ void ScriptCompiler::init() {
 
 			std::cout << "Lua error on compiled " << std::endl;
 		}
-	}
 
+		lua["onStart"]();
+	}
 }
 
 void ScriptCompiler::update()
 {
 	if (AppSettings::gameRunning)
-	lua["update"]();
+	lua["onTick"]();
 }
 
 void ScriptCompiler::draw(){}

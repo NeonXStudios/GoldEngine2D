@@ -13,12 +13,12 @@ using namespace std;
 class Skybox : public Component
 {
 public:
-	string modelPath = "E:\\VISUAL STUDIO\\GoldEngine2D\\def\\models\\SkySphere.fbx";
+	string modelPath = "models/Sphere.fbx";
 
 
-	string TexturePath = "skybox/sky360.png";
-	string VertexPath = "shaders/skyboxvert.glsl";
-	string FragmentPath = "shaders/skyboxfrag.glsl";
+	string TexturePath = "sprites/skybox/sky.png";
+	string VertexPath = "shaders/BetaShaders/skyboxvert.glsl";
+	string FragmentPath = "shaders/BetaShaders/skyboxfrag.glsl";
 
 	glm::vec3 Position = glm::vec3(0.0f, 0.0f, 0.0f);
 	glm::vec3 LocalPosition = glm::vec3(1.0f, 1.0f, 1.0f);

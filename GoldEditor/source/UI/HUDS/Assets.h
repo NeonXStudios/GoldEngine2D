@@ -47,6 +47,7 @@ public:
     GLuint musicTextureID;
     GLuint whereTextureID;
     GLuint fbxTextureID;
+    ImVec2 mousePos;
 
     void start() override {
         path_to_read = getRoute() + "/assets/";

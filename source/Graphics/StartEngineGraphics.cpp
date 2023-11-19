@@ -101,7 +101,7 @@ void StartEngineGraphics::update() {
         glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        (glEnable(GL_CULL_FACE));
+        //(glEnable(GL_CULL_FACE));
         (glEnable(GL_DEPTH_TEST));
         (glEnable(GL_TEXTURE_2D));
         //glEnable (GL_FRAMEBUFFER_SRGB);
@@ -114,13 +114,11 @@ void StartEngineGraphics::update() {
         //newLightTest->update();
         //newLightTest->draw();
 
-
-        //
         //glDepthMask  (GL_FALSE);
         //sky->update();
         //glDepthMask  (GL_TRUE);
 
-        //glDepthFunc(GL_ALWAYS);
+        //
 
         SceneManager::GetSceneManager()->OpenScene->draw();
         StartEngineGraphics::engine->draw();

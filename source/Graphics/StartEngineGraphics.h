@@ -8,6 +8,7 @@ public:
 	static StartEngineGraphics* instance;
 	static GLFWwindow* window;
 	static EngineBehaviour* engine;
+	//Skybox* sky = new Skybox();
 
 	float time = 0.0f;
 	float deltaTime = 0.0f;

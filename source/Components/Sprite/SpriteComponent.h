@@ -35,8 +35,8 @@ public:
     GLuint shaderProgram;
     unsigned int vertexShader;
     unsigned int fragmentShader;
-
-    string TexturePath = "sprites/tile_0115.png";
+    //sprites/tile_0115.png
+    string TexturePath = "";
     string TextureSpecularPath = "Textures/Roughness.png";
     string VertexPath = "shaders/vert.glsl";
     string FragmentPath = "shaders/frag.glsl";

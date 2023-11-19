@@ -6,6 +6,7 @@
 #include "Components/CScript.h"
 #include "Components/CRigidBody.h"
 #include "Components/CAnimator.h"
+#include "Components/CSkybox.h"
 //#include "Components/CRigidBody3D.h"
 //#include "Components/CBoxCollider3D.h"
 
