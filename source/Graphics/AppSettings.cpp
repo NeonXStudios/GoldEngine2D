@@ -8,6 +8,7 @@ using namespace std;
 AppSettings* AppSettings::instance = nullptr;
 int AppSettings::RenderWidth = 0;
 int AppSettings::RenderHeight = 0;
+float AppSettings::DeltaTime = 0;
 
 int AppSettings::TargetFPS = 30;
 bool AppSettings::gameRunning = false;

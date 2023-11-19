@@ -5,6 +5,7 @@
 #include "../../RequireLibs.h"
 #include "../../EngineBehaviour/GoldEngineLib.h"
 #include "sol/sol.hpp"
+#include "../FileSystem/FileSystem.h"
 
 using namespace std;
 

@@ -112,6 +112,7 @@ void SceneManager::ClearOpenScene() {
 	SceneManager::GetSceneManager()->OpenScene->objectsInScene.clear();
 }
 
+
 void SceneManager::LoadScene(string scenePath, string sceneName) {
 
 	SceneManager::GetSceneManager()->ClearOpenScene();
@@ -149,6 +150,32 @@ void SceneManager::LoadScene(string scenePath, string sceneName) {
 				newName.replace(pos, 6, "");
 			}
 
+			/*for (int j = 0; j < getEntityData["components"].size(); j++) {
+				json getComponent = getEntityData["components"][j];
+
+				ComponentFactory::loadComponent(getComponent["componenttype"].dump(), newEntity, getComponent["componentdata"].dump(), "");
+			}*/
+		}
+	}
+
+
+	for (int i = 0; i < SceneManager::GetSceneManager()->OpenScene->objectsInScene.size(); i++) {
+		Entity* newEntity = SceneManager::GetSceneManager()->OpenScene->objectsInScene[i];
+		json getEntityData = loadJson["objects"][i];
+
+		std::vector<Component*> cmpms = newEntity->getComponents<Component>();
+
+		for (int e = 0; e < cmpms.size(); e++) {
+			json cpmOBJ;
+			Component* selectComponent = cmpms[e];
+			string typeg = typeid(*selectComponent).name();
+
+			std::string newName = typeg;
+			size_t pos = newName.find("class ");
+			if (pos != std::string::npos) {
+				newName.replace(pos, 6, "");
+			}
+
 			for (int j = 0; j < getEntityData["components"].size(); j++) {
 				json getComponent = getEntityData["components"][j];
 
@@ -162,3 +189,58 @@ void SceneManager::LoadScene(string scenePath, string sceneName) {
 		}
 	}
 }
+
+
+
+
+//
+//void SceneManager::LoadScene(string scenePath, string sceneName) {
+//
+//	SceneManager::GetSceneManager()->ClearOpenScene();
+//
+//	std::cout << "Scene Open: " << scenePath << sceneName << std::endl;
+//
+//	SceneManager::GetSceneManager()->OpenScene->SceneName = sceneName;
+//	if (GLD::SaveSystem::load(scenePath/*GoldEditor::editor->ProjectPath + "/assets"*/, /*"samplescene.scene"*/sceneName).empty()) {
+//		std::cout << "ARCHIVO VACIO O NO EXISTENTE" << std::endl;
+//		return;
+//	}
+//
+//	string loadJsonDAta = GLD::SaveSystem::load(scenePath/*GoldEditor::editor->ProjectPath + "/assets"*/, sceneName/*"samplescene.scene"*/);
+//	json loadJson = json::parse(loadJsonDAta);
+//
+//	std::cout << "OBJETOS CARGADOS: " << loadJson["objects"].size();
+//	for (int i = 0; i < loadJson["objects"].size(); i++) {
+//		Entity* newEntity = SceneManager::GetSceneManager()->NewEntity();
+//		json getEntityData = loadJson["objects"][i];
+//		newEntity->ObjectName = getEntityData["name"];
+//		newEntity->ObjectTag = getEntityData["tag"];
+//		newEntity->transform->deserialize(getEntityData["transform"], "");
+//
+//
+//		std::vector<Component*> cmpms = newEntity->getComponents<Component>();
+//
+//		for (int e = 0; e < cmpms.size(); e++) {
+//			json cpmOBJ;
+//			Component* selectComponent = cmpms[e];
+//			string typeg = typeid(*selectComponent).name();
+//
+//			std::string newName = typeg;
+//			size_t pos = newName.find("class ");
+//			if (pos != std::string::npos) {
+//				newName.replace(pos, 6, "");
+//			}
+//
+//			for (int j = 0; j < getEntityData["components"].size(); j++) {
+//				json getComponent = getEntityData["components"][j];
+//
+//
+//				//if (getComponent["componenttype"] == newName) {
+//				//    selectComponent->deserialize (getComponent["componentdata"].dump());
+//				//}
+//
+//				ComponentFactory::loadComponent(getComponent["componenttype"].dump(), newEntity, getComponent["componentdata"].dump(), "");
+//			}
+//		}
+//	}
+//}

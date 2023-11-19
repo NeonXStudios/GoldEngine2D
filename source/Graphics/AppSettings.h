@@ -11,6 +11,7 @@ public:
 	static int TargetFPS;
 	static int RenderWidth;
 	static int RenderHeight;
+	static float DeltaTime;
 	
 	static bool gameRunning;
 

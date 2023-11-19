@@ -5,16 +5,21 @@ using namespace glm;
 void EntityBinder::RegisterFunctions(ScriptCompiler* luaParent)
 {
 	luaParent->lua["self"] = sol::make_object(luaParent->lua.lua_state(), luaParent->entity);
+
 	luaParent->lua.new_usertype<Entity>("Object",
 		"name", &Entity::ObjectName,
 		"tag", &Entity::ObjectTag,
-
 
 		//GET COMPONENTS
 		"GetTransform", &Entity::getComponent<SpriteComponent>,
 		"GetRigidBody", &Entity::getComponent<RigidBody>,
 		"GetAudioSource", &Entity::getComponent<AudioSource>,
 		"GetAnimator", &Entity::getComponent<Animator2D>
+	);
+
+	luaParent->lua["Scene"] = sol::make_object(luaParent->lua.lua_state(), SceneManager::GetSceneManager());
+	luaParent->lua.new_usertype<SceneManager>("SceneManager",
+		"GetObjectPerID", &SceneManager::GetObjectPerIndex
 	);
 
 	luaParent->lua.new_usertype<RigidBody>("RigidBody",

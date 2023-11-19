@@ -265,7 +265,12 @@
     <ClCompile Include="source\Components\Physics\ObjectCaster.cpp">
       <Filter>Engine\02_Components\Physics</Filter>
     </ClCompile>
-    <ClCompile Include="source\Components\Physics\CastData.cpp" />
+    <ClCompile Include="source\Components\Script\Binders\CameraBinder.cpp">
+      <Filter>Engine\02_Components\Scripting\Binders</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\Physics\CastData.cpp">
+      <Filter>Engine\02_Components\Physics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Components\Camera\Camera2D.h">
@@ -436,7 +441,12 @@
     <ClInclude Include="source\Components\Physics\ObjectCaster.h">
       <Filter>Engine\02_Components\Physics</Filter>
     </ClInclude>
-    <ClInclude Include="source\Components\Physics\CastData.h" />
+    <ClInclude Include="source\Components\Script\Binders\CameraBinder.h">
+      <Filter>Engine\02_Components\Scripting\Binders</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\Physics\CastData.h">
+      <Filter>Engine\02_Components\Physics</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GoldEngine.rc">

@@ -31,7 +31,7 @@ void AudioSource::deserialize(std::string g, std::string path) {
         maxDistance = componentData["maxv"];
 
     if (CheckVar::Has(componentData, "pathfile"))
-    AudioPath = path + (string)componentData["pathfile"];
+    AudioPath = (string)componentData["pathfile"];
 
     Reset();
 }

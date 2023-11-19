@@ -85,6 +85,7 @@ void StartEngineGraphics::update() {
         glfwGetFramebufferSize(StartEngineGraphics::window, &width, &height);
         AppSettings::RenderHeight = height;
         AppSettings::RenderWidth = width;
+        AppSettings::DeltaTime = deltaTime;
 
         glViewport(0, 0, AppSettings::RenderWidth, AppSettings::RenderHeight);
 

@@ -35,6 +35,7 @@ D:\VS\GoldEngine2D\source\Components\SceneManager\Scene.cpp;D:\VS\GoldEngine2D\x
 D:\VS\GoldEngine2D\source\Components\SceneManager\SceneManager.cpp;D:\VS\GoldEngine2D\x64\Debug\SceneManager.obj
 D:\VS\GoldEngine2D\source\Components\Script\BinderFunctions.cpp;D:\VS\GoldEngine2D\x64\Debug\BinderFunctions.obj
 D:\VS\GoldEngine2D\source\Components\Script\Binders\CalculatorBinder.cpp;D:\VS\GoldEngine2D\x64\Debug\CalculatorBinder.obj
+D:\VS\GoldEngine2D\source\Components\Script\Binders\CameraBinder.cpp;D:\VS\GoldEngine2D\x64\Debug\CameraBinder.obj
 D:\VS\GoldEngine2D\source\Components\Script\Binders\EntityBinder.cpp;D:\VS\GoldEngine2D\x64\Debug\EntityBinder.obj
 D:\VS\GoldEngine2D\source\Components\Script\Binders\InputBinder.cpp;D:\VS\GoldEngine2D\x64\Debug\InputBinder.obj
 D:\VS\GoldEngine2D\source\Components\Script\Libs\GMathf\GMathf.cpp;D:\VS\GoldEngine2D\x64\Debug\GMathf.obj

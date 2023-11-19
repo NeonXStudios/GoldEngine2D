@@ -2,6 +2,7 @@
 #include "AudioManager.h"
 #include <iostream>
 #include "../ECS/ECS.h"
+#include "../FileSystem/FileSystem.h" 
 
 
 using namespace std;
@@ -28,7 +29,7 @@ public:
 		}
 		else {
 			// FMOD inicializado correctamente, ahora carga y reproduce el sonido.
-			FMOD_RESULT loadResult = AudioManager::GetManager()->system->createSound(AudioPath.c_str(), FMOD_3D | FMOD_3D_LINEARROLLOFF, nullptr, &sound);
+			FMOD_RESULT loadResult = AudioManager::GetManager()->system->createSound(FileSystem::GetAsset(AudioPath).c_str(), FMOD_3D | FMOD_3D_LINEARROLLOFF, nullptr, &sound);
 
 			if (loadResult != FMOD_OK) {
 				std::cout << "Failed to load audio: " << FMOD_ErrorString(loadResult) << std::endl;
@@ -41,7 +42,7 @@ public:
 					std::cout << "Failed to play audio: " << FMOD_ErrorString(playResult) << std::endl;
 				}
 				else {
-					std::cout << "Audio component started successfully..." << std::endl;
+					std::cout << "************* Audio component started successfully..." << std::endl;
 				}
 			}
 		}
@@ -95,7 +96,7 @@ public:
 		if (IsSpatial3D && SceneManager::GetSceneManager()->OpenScene->worldCamera != nullptr && entity != nullptr) {
 			Camera* cam = SceneManager::GetSceneManager()->OpenScene->worldCamera;
 
-			FMOD_VECTOR position = { entity->transform->Position.x, entity->transform->Position.y, entity->transform->Position.z };
+			FMOD_VECTOR position = { entity->transform->Position.x, entity->transform->Position.y, SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition.z};
 			FMOD_VECTOR velocity = { cam->cameraVelocity.x, cam->cameraVelocity.y, cam->cameraVelocity.z };
 			FMOD_VECTOR forward =  { cam->cameraFront.x, cam->cameraFront.y, cam->cameraFront.z };
 			FMOD_VECTOR up = { cam->cameraUp.x, cam->cameraUp.y, cam->cameraUp.z };
