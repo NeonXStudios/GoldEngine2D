@@ -128,7 +128,7 @@ void RigidBody::triggerOn(Entity* enterEntity) {
 }
 
 void RigidBody::addForce(glm::vec2 force) {
-	body->ApplyForce (b2Vec2 (force.x * 1000, force.y * 1000), body->GetPosition(), true);
+	body->ApplyForce (b2Vec2 (force.x * 1000, -(force.y * 1000)), body->GetPosition(), true);
 	std::cout << "AGREGANDO FUERZA" << std::endl;
 }
 

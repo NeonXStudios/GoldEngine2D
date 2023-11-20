@@ -30,7 +30,7 @@ void CScript::draw (Entity* owner) {
 
                 std::string convertedPath = AComponent::RemoveDir(receivedString);
 
-                std::cout << "String recibido: " << convertedPath << std::endl;
+                std::cout << "String recibido: " << receivedString << std::endl;
                 owner->getComponent<ScriptCompiler>().pathScript = convertedPath;
             }
 
