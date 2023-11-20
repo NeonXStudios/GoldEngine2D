@@ -10,6 +10,9 @@ using namespace nlohmann;
 using namespace std;
 
 void RigidBody::init() {
+
+	position = b2Vec2 (entity->transform->Position.x, entity->transform->Position.y);
+
 	SpriteComponent* srp = &entity->getComponent <SpriteComponent>();
 	float degrees = srp->rotationAngle;
 	float radians = degrees * (b2_pi / 180.0f);
@@ -56,7 +59,8 @@ void RigidBody::update() {
 		body->SetTransform(b2Vec2(float(entity->transform->Position.x), -float(entity->transform->Position.y)), -glm::radians(entity->transform->Rotation.x));
 	}
 
-	//UpdateCollisions();
+	b2PolygonShape* boxShape = static_cast<b2PolygonShape*>(body->GetFixtureList()->GetShape());
+	boxShape->SetAsBox(entity->transform->Scale.x, entity->transform->Scale.y);
 
 	body->GetFixtureList()->SetSensor(isTrigger);
 }

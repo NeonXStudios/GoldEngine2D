@@ -30,8 +30,9 @@ void CAudio::draw (Entity* owner) {
         {
             if (ImGui::IsMouseReleased (0)) {
                 const char* receivedString = static_cast<const char*>(payload->Data);
-                
-                pathSound = receivedString;
+                std::string convertedPath = AComponent::RemoveDir(receivedString);
+
+                pathSound = convertedPath;
                 std::cout << "String recibido: " << owner->getComponent<AudioSource>().AudioPath << std::endl;
             }
         }

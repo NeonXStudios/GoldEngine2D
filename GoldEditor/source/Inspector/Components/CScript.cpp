@@ -28,8 +28,10 @@ void CScript::draw (Entity* owner) {
             if (ImGui::IsMouseReleased(0)) {
                 const char* receivedString = static_cast<const char*>(payload->Data);
 
-                std::cout << "String recibido: " << receivedString << std::endl;
-                owner->getComponent<ScriptCompiler>().pathScript = receivedString;
+                std::string convertedPath = AComponent::RemoveDir(receivedString);
+
+                std::cout << "String recibido: " << convertedPath << std::endl;
+                owner->getComponent<ScriptCompiler>().pathScript = convertedPath;
             }
 
         }
