@@ -102,7 +102,7 @@ public:
                     for (const auto& entrada : fs::directory_iterator(ruta)) {
                         if (fs::is_directory(entrada.status())) {
                             if (ImGui::Button(entrada.path().filename().string().c_str(), ImVec2(windowSize.x - 20, 70))) {
-                                const char* programa = "Editor/GoldEditor.exe";
+                                const char* programa = "Editor/ZXEditor.exe";
 
                                 string argumento = entrada.path().string();
 
