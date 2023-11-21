@@ -13,6 +13,12 @@
     <ClCompile Include="source\GoldHub.cpp">
       <Filter>Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\Binarys\c\glad.c">
+      <Filter>Recursos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Binarys\include\imgui\imgui.cpp">
+      <Filter>Recursos</Filter>
+    </ClCompile>
     <ClCompile Include="..\Binarys\include\imgui\imgui_demo.cpp">
       <Filter>Recursos</Filter>
     </ClCompile>
@@ -31,16 +37,13 @@
     <ClCompile Include="..\Binarys\include\imgui\imgui_widgets.cpp">
       <Filter>Recursos</Filter>
     </ClCompile>
-    <ClCompile Include="..\Binarys\include\imgui\imgui.cpp">
-      <Filter>Recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Binarys\c\glad.c">
-      <Filter>Recursos</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\GoldHub.h">
       <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Binarys\include\imgui\imconfig.h">
+      <Filter>Recursos</Filter>
     </ClInclude>
     <ClInclude Include="..\Binarys\include\imgui\imgui.h">
       <Filter>Recursos</Filter>
@@ -64,9 +67,6 @@
       <Filter>Recursos</Filter>
     </ClInclude>
     <ClInclude Include="..\Binarys\include\imgui\imstb_truetype.h">
-      <Filter>Recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Binarys\include\imgui\imconfig.h">
       <Filter>Recursos</Filter>
     </ClInclude>
   </ItemGroup>

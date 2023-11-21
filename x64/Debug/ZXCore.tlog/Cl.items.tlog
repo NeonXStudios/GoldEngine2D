@@ -25,7 +25,8 @@ D:\VS\GoldEngine2D\source\Components\Models\TextureManager.cpp;D:\VS\GoldEngine2
 D:\VS\GoldEngine2D\source\Components\Physics3D\BoxCollider.cpp;D:\VS\GoldEngine2D\x64\Debug\BoxCollider.obj
 D:\VS\GoldEngine2D\source\Components\Physics3D\Cast3D.cpp;D:\VS\GoldEngine2D\x64\Debug\Cast3D.obj
 D:\VS\GoldEngine2D\source\Components\Physics3D\Rigidbody3d.cpp;D:\VS\GoldEngine2D\x64\Debug\Rigidbody3d.obj
-D:\VS\GoldEngine2D\source\Components\Physics\CastData.cpp;D:\VS\GoldEngine2D\x64\Debug\CastData.obj
+D:\VS\GoldEngine2D\source\Components\Physics\B2Raycast.cpp;D:\VS\GoldEngine2D\x64\Debug\B2Raycast.obj
+D:\VS\GoldEngine2D\source\Components\Physics\LayerMaskSystem.cpp;D:\VS\GoldEngine2D\x64\Debug\LayerMaskSystem.obj
 D:\VS\GoldEngine2D\source\Components\Physics\ObjectCaster.cpp;D:\VS\GoldEngine2D\x64\Debug\ObjectCaster.obj
 D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.cpp;D:\VS\GoldEngine2D\x64\Debug\RigidBody.obj
 D:\VS\GoldEngine2D\source\Components\Physics\TriggerModule.cpp;D:\VS\GoldEngine2D\x64\Debug\TriggerModule.obj

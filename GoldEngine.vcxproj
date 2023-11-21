@@ -184,7 +184,8 @@
     <ClCompile Include="source\Components\Physics3D\BoxCollider.cpp" />
     <ClCompile Include="source\Components\Physics3D\Cast3D.cpp" />
     <ClCompile Include="source\Components\Physics3D\Rigidbody3d.cpp" />
-    <ClCompile Include="source\Components\Physics\CastData.cpp" />
+    <ClCompile Include="source\Components\Physics\B2Raycast.cpp" />
+    <ClCompile Include="source\Components\Physics\LayerMaskSystem.cpp" />
     <ClCompile Include="source\Components\Physics\ObjectCaster.cpp" />
     <ClCompile Include="source\Components\Physics\RigidBody.cpp" />
     <ClCompile Include="source\Components\Physics\TriggerModule.cpp" />
@@ -243,7 +244,8 @@
     <ClInclude Include="source\Components\Physics3D\BoxCollider.h" />
     <ClInclude Include="source\Components\Physics3D\Cast3D.h" />
     <ClInclude Include="source\Components\Physics3D\Rigidbody3d.h" />
-    <ClInclude Include="source\Components\Physics\CastData.h" />
+    <ClInclude Include="source\Components\Physics\B2Raycast.h" />
+    <ClInclude Include="source\Components\Physics\LayerMaskSystem.h" />
     <ClInclude Include="source\Components\Physics\ObjectCaster.h" />
     <ClInclude Include="source\Components\Physics\RigidBody.h" />
     <ClInclude Include="source\Components\Physics\TriggerModule.h" />

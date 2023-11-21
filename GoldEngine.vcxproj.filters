@@ -268,7 +268,10 @@
     <ClCompile Include="source\Components\Script\Binders\CameraBinder.cpp">
       <Filter>Engine\02_Components\Scripting\Binders</Filter>
     </ClCompile>
-    <ClCompile Include="source\Components\Physics\CastData.cpp">
+    <ClCompile Include="source\Components\Physics\B2Raycast.cpp">
+      <Filter>Engine\02_Components\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\Physics\LayerMaskSystem.cpp">
       <Filter>Engine\02_Components\Physics</Filter>
     </ClCompile>
   </ItemGroup>
@@ -444,7 +447,10 @@
     <ClInclude Include="source\Components\Script\Binders\CameraBinder.h">
       <Filter>Engine\02_Components\Scripting\Binders</Filter>
     </ClInclude>
-    <ClInclude Include="source\Components\Physics\CastData.h">
+    <ClInclude Include="source\Components\Physics\B2Raycast.h">
+      <Filter>Engine\02_Components\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\Physics\LayerMaskSystem.h">
       <Filter>Engine\02_Components\Physics</Filter>
     </ClInclude>
   </ItemGroup>

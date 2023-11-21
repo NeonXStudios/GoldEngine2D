@@ -44,7 +44,7 @@ void GoldEditor::update() {
         // Handles mouse inputs
         if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT) == GLFW_PRESS)
         {
-            if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+            /*if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
             {
                 SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition += SceneManager::GetSceneManager()->OpenScene->worldCamera->speed * SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation;
             }
@@ -72,7 +72,7 @@ void GoldEditor::update() {
             if (glfwGetKey(window, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS)
             {
                 SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition += SceneManager::GetSceneManager()->OpenScene->worldCamera->speed * -SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraUp;
-            }
+            }*/
 
             if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS)
             {
@@ -107,17 +107,17 @@ void GoldEditor::update() {
             float rotY = sensitivity * (float)(mouseX - (width / 2)) / width;
 
             // Calculates upcoming vertical change in the Orientation
-            glm::vec3 newOrientation = glm::rotate(SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation, glm::radians(-rotX), glm::normalize(glm::cross(SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation, SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraUp)));
-
-
-            // Decides whether or not the next vertical Orientation is legal or not
+            //glm::vec3 newOrientation = glm::rotate(SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation, glm::radians(-rotX), glm::normalize(glm::cross(SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation, SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraUp)));
+           /*
             if (abs(glm::angle(newOrientation, SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraUp) - glm::radians(90.0f)) <= glm::radians(85.0f))
             {
                 SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation = newOrientation;
             }
-
-            // Rotates the Orientation left and right       
-            SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation = glm::rotate(SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation, glm::radians(-rotY), SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraUp);
+            */
+            //SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation = glm::rotate(SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation, glm::radians(-rotY), SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraUp);
+            
+            SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition.x += rotY;
+            SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition.y -= rotX;
             UIManager::instance->rightClickui->locked = true;
             // Sets mouse cursor to the middle of the screen so that it doesn't end up roaming around
             glfwSetCursorPos(window, (width / 2), (height / 2));
@@ -194,7 +194,8 @@ int main (int argc, char* argv[])
         return 54;
     }
 
-    string startPath = "C:\\Users\\tupap\\Documents\\GoldEngine\\Projects\\Vortex\\";
+    //string startPath = "C:\\Users\\tupap\\Documents\\GoldEngine\\Projects\\Vortex\\";
+    string startPath = (string)argv[1];
 
     if (GoldEditor::editor) throw std::exception("GoldEditor already created.");
     GoldEditor::editor = new GoldEditor();

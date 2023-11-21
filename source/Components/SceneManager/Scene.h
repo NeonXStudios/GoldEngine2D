@@ -5,6 +5,7 @@
 #include <iostream>
 #include "box2d/box2d.h"
 #include "../../RequireLibs.h"
+#include "../Physics/B2Raycast.h"
 
 using namespace std;
 
@@ -19,6 +20,7 @@ public:
 	
 	//2D CONFIGUTARION PHYSICS
 	b2World* GravityWorld;
+	B2Raycast* raycast;
 
 
 	////3D CONFIGURATION PHYSICS (PHYSX 4.1.2)

@@ -31,6 +31,15 @@ void Scene::update() {
 		float timeStep = 1.0f / 60;
 		GravityWorld->Step(timeStep, 6, 2);
 		body->GetNext();
+
+
+		for (b2Body* body = GravityWorld->GetBodyList(); body; body = body->GetNext()) {
+			b2Vec2 p1 = body->GetPosition();
+
+			b2Vec2 p2 = p1 + b2Vec2(0.0f, -10.0f);
+
+			GravityWorld->RayCast(raycast, p1, p2);
+		}
 	}
 		//mScene->simulate(1.0f / 60.0f);
 		//mScene->fetchResults(true);
@@ -71,6 +80,7 @@ void Scene::CreateGravity() {
 		//TriggerData* data = new TriggerData();
 		TriggerModule* triggerData = new TriggerModule();
 		GravityWorld->SetContactListener(triggerData);
+		raycast = new B2Raycast();
 		std::cout << "Gravity created " << endl;
 		std::cout << "Trigger Module created " << endl;
 	}

@@ -1,6 +1,5 @@
 #pragma once
 #include "../../EngineBehaviour/GoldEngineLib.h"
-#include "CastData.h"
 
 struct CastData
 {

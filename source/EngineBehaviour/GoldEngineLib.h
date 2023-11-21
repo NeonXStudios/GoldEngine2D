@@ -31,6 +31,7 @@
 #include "../Components/Skybox/Skybox.h"
 #include "../Components/SaveSystem/SaveSystem.h"
 #include "../Components/Light/Light.h"
+#include "../Components/Physics/LayerMaskSystem.h"
 
 //PHYSICS 3D IMPLEMENTATION 
 //#include "../Components/Physics3D/Rigidbody3D.h"

@@ -2,6 +2,7 @@
 #include "../Graphics/AppSettings.h";
 #include "../Components/SceneManager/SceneManager.h"
 #include "../Components/AudioSource/AudioManager.h"
+#include "../Components/Physics/LayerMaskSystem.h"
 #include "../EngineBehaviour/EngineBehaviour.h"
 #include <iostream>
 
@@ -21,7 +22,7 @@ public:
 		//CREATE APP SETTINGS
 		settings->create();
 		AppSettings::gameRunning = runGame;
-
+		LayerMaskSystem::StartMaskSystem();
 		//CREATE AUDIO MANAGER
 		//audioManager->create();
 		audioManager->create();
@@ -57,6 +58,7 @@ public:
 			engine->update();
 		}
 
+		LayerMaskSystem::ClearSystem();
 		audioManager->release();
 		sceneManager->release();
 		settings->release();
