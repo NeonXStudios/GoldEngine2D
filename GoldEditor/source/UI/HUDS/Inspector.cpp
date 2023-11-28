@@ -123,7 +123,6 @@ void InspectorUI::draw() {
         drawerComponents->update();
     }
     ImGui::End();
-
 }
 
 void InspectorUI::update() {
