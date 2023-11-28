@@ -6,6 +6,7 @@
 class HierarchyUI : public UIDrawer {
 public:
     bool SelectInHierarchy;
+    bool DragChild;
 
     void start() override {
         

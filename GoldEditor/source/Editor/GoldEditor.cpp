@@ -194,8 +194,8 @@ int main (int argc, char* argv[])
         return 54;
     }
 
-    //string startPath = "C:\\Users\\tupap\\Documents\\GoldEngine\\Projects\\Vortex\\";
-    string startPath = (string)argv[1];
+    string startPath = "C:\\Users\\tupap\\Documents\\GoldEngine\\Projects\\Vortex\\";
+    //string startPath = (string)argv[1];
 
     if (GoldEditor::editor) throw std::exception("GoldEditor already created.");
     GoldEditor::editor = new GoldEditor();

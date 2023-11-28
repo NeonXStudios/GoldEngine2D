@@ -9,6 +9,7 @@
 #include <array>
 #include "../../RequireLibs.h"
 #include "../SaveSystem/CheckVar.h"
+#include "../Physics/LayerMaskSystem.h"
 
 using namespace std;
 
@@ -68,7 +69,6 @@ public:
 	glm::vec3 Rotation = glm::vec3(0.0f, 0.0f, 0.0f);
 	glm::vec3 Scale = glm::vec3(1.0f, 1.0f, 1.0f);
 
-
 	void update() {
 		Matrix = glm::mat4(1.0f);
 
@@ -102,12 +102,16 @@ public:
 		componentData["posx"] = Position.x;
 		componentData["posy"] = Position.y;
 		componentData["posz"] = Position.z;
+		componentData["lposx"] = LocalPosition.x;
+		componentData["lposy"] = LocalPosition.y;
+		componentData["lposz"] = LocalPosition.z;
 		componentData["scalex"] = Scale.x;
 		componentData["scaley"] = Scale.y;
 		componentData["scalez"] = Scale.z;
 		componentData["rotationx"] = Rotation.x;
 		componentData["rotationy"] = Rotation.y;
 		componentData["rotationz"] = Rotation.z;
+	
 
 		return componentData.dump ();
 	}
@@ -124,6 +128,15 @@ public:
 
 		if (CheckVar::Has(componentData, "posz"))
 			Position.z = (float)componentData["posz"];
+
+		if (CheckVar::Has(componentData, "lposx"))
+			LocalPosition.x = (float)componentData["lposx"];
+
+		if (CheckVar::Has(componentData, "lposy"))
+			LocalPosition.y = (float)componentData["lposy"];
+
+		if (CheckVar::Has(componentData, "lposz"))
+			LocalPosition.z = (float)componentData["lposz"];
 
 		if (CheckVar::Has(componentData, "scalex"))
 			Scale.x = (float)componentData["scalex"];
@@ -162,9 +175,6 @@ private:
 	ComponentArray componentArray;
 	ComponentBitSet componentBitset;
 	GroupBitset groupBitset;
-
-
-
 	
 public:
 	std::string ObjectName = "New Entity";
@@ -173,9 +183,11 @@ public:
 	int objectID = 1;
 	Transform* transform = new Transform();
 
-	Entity* entity;
-	Entity* parent;
+	Entity* entity = nullptr;
+	Entity* parent = nullptr;
+
 	vector<Entity*> childrens;
+	//Mask* ObjectMask = new Mask();
 
 	//Entity(Manager& mManager) : manager(mManager) {}
 
@@ -326,28 +338,42 @@ public:
 	{
 		if (hasComponent<T>())
 		{
-			Component& component = getComponent<T>();
-			component.clean();
+			auto it = std::remove_if(components.begin(), components.end(),
+				[](const Component* c) { return dynamic_cast<const T*>(c) != nullptr; });
 
-			componentBitset[getComponentTypeID<T>()] = false;
+			components.erase(it, components.end());
+
 			componentArray[getComponentTypeID<T>()] = nullptr;
-			std::cout << "Components: " << componentArray.size() << std::endl;
+			componentBitset[getComponentTypeID<T>()] = false;
 			return true;
 		}
 		return false;
 	}
 
 	void ClearAllComponentes() {
-		for (auto& c : components) {
-			c->clean();
-			delete c; 
+		for (auto& component : components) {
+			delete component;
 		}
+
 		components.clear();
+		std::fill(componentArray.begin(), componentArray.end(), nullptr);
+		componentBitset.reset();
 	}
 
 
 	void setParent (Entity* newParent) {
 		parent = newParent;
+		parent->addChild(this);
+
+		std::cout << "Childs: " << parent->childrens.size() << std::endl;
+		
+		if (parent != nullptr) {
+			std::cout << "Parent succefully setup" << std::endl;
+		}
+	}
+
+	void removeParent() {
+		parent = nullptr;
 	}
 };
 #endif

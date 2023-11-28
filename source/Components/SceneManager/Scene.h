@@ -19,8 +19,9 @@ public:
 	
 	
 	//2D CONFIGUTARION PHYSICS
-	b2World* GravityWorld;
+	b2World* GravityWorld;	
 	B2Raycast* raycast;
+	b2Filter* filterBox;	
 
 
 	////3D CONFIGURATION PHYSICS (PHYSX 4.1.2)

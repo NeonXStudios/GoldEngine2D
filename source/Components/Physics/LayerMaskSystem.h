@@ -5,19 +5,21 @@
 using namespace std;
 
 struct Mask {
-	int Index;
-	string name;
+	int Index = 0;
+	string name = "Default";
 };
 
 class LayerMaskSystem
 {
 private:
-	vector <Mask*> GameMask = vector<Mask*>();
 	static LayerMaskSystem* instance;
 
 public:
-
+	vector <Mask*> GameMask = vector<Mask*>();
 	static void StartMaskSystem();
 	static void ClearSystem();
 	static LayerMaskSystem* GetSystem();
+	
+	void AddLayer (string nameLayer);
+	void GetLayers();
 };

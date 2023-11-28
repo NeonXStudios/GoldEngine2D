@@ -32,10 +32,13 @@ void Scene::update() {
 		GravityWorld->Step(timeStep, 6, 2);
 		body->GetNext();
 
+		b2RayCastInput raycastInput;
+		raycastInput.p1.Set(0.0f, 10.0f);  // Punto de inicio del rayo
+		raycastInput.p2.Set(10.0f, 0.0f);  // Punto final del rayo
+		raycastInput.maxFraction = 1.0f;  // Longitud máxima del rayo
 
 		for (b2Body* body = GravityWorld->GetBodyList(); body; body = body->GetNext()) {
 			b2Vec2 p1 = body->GetPosition();
-
 			b2Vec2 p2 = p1 + b2Vec2(0.0f, -10.0f);
 
 			GravityWorld->RayCast(raycast, p1, p2);

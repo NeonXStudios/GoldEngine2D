@@ -5,14 +5,6 @@
 float B2Raycast::ReportFixture (b2Fixture* fixture, const b2Vec2& point, const b2Vec2& normal, float fraction) {
     b2Body* body = fixture->GetBody();
 
-    //// Aquí puedes realizar acciones con el resultado del raycast
-    //std::cout << "Ray hit fixture." << std::endl;
-    //std::cout << "Body ID: " << body->GetUserData() << std::endl;
-    //std::cout << "Fraction: " << fraction << std::endl;
-    //std::cout << "Point: (" << point.x << ", " << point.y << ")" << std::endl;
-    //std::cout << "Normal: (" << normal.x << ", " << normal.y << ")" << std::endl;
-
-    //// Continuar con el siguiente fixture
 
     for (Entity* objs : SceneManager::GetSceneManager()->OpenScene->objectsInScene) {
         if (objs->hasComponent<RigidBody>()) {

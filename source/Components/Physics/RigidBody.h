@@ -16,6 +16,10 @@ public:
 	b2PolygonShape* dynamicBox;
 	b2FixtureDef* fixtureDef;
 	b2Vec2 position;
+
+	uint16 mask = 0x0001;
+	uint16 group = 0x0001;
+
 	float density = 25.0f;
 	float friction = 0.3f;
 	float Mass = 25;

@@ -3,7 +3,6 @@
 #include "../../Inspector/DrawComponents.h"
 
 class InspectorUI : public UIDrawer {
-
 public:
 
 

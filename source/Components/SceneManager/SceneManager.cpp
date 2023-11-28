@@ -72,19 +72,10 @@ Entity* SceneManager::GetObjectByID (int id) {
 }
 
 Entity* SceneManager::Destroy(Entity* obj) {
-	//C++20 REQUIRE
-	/*if (obj != nullptr) {
-		auto it = std::ranges::find(OpenScene->objectsInScene, obj);
-		if (it != OpenScene->objectsInScene.end()) {
-			delete obj;
-			OpenScene->objectsInScene.erase(it);
-		}
-	}*/
-
 	if (obj != nullptr) {
 		auto it = std::find(OpenScene->objectsInScene.begin(), OpenScene->objectsInScene.end(), obj);
 		if (it != OpenScene->objectsInScene.end()) {
-			delete obj;
+			obj->ClearAllComponentes();
 			OpenScene->objectsInScene.erase(it);
 		}
 	}
@@ -188,6 +179,18 @@ void SceneManager::LoadScene(string scenePath, string sceneName) {
 			}
 		}
 	}
+
+
+	for (int i = 0; i < loadJson["objects"].size(); i++) {
+		Entity* newEntity = SceneManager::GetSceneManager()->OpenScene->objectsInScene[i];
+		json getEntityData = loadJson["objects"][i];
+
+		if (CheckVar::Has (getEntityData, "parentID")) {
+			newEntity->setParent (SceneManager::GetSceneManager()->GetObjectPerIndex(getEntityData["parentID"]));
+		}	
+	}
+
+	//LOAD PARENTS
 }
 
 

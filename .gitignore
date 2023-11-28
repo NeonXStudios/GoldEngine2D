@@ -1237,3 +1237,4 @@ BuildCore/GoldEngine.idb
 BuildCore/GoldEngine.pdb
 *.pdb
 *.idb
+GoldHub/x64/Debug/ZXHub.ilk

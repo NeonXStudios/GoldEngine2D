@@ -63,6 +63,9 @@ void RigidBody::update() {
 	boxShape->SetAsBox(entity->transform->Scale.x, entity->transform->Scale.y);
 
 	body->GetFixtureList()->SetSensor(isTrigger);
+
+	fixtureDef->filter.categoryBits = group;
+	fixtureDef->filter.maskBits = mask;
 }
 
 

@@ -9,7 +9,7 @@ void HierarchyUI::draw() {
     ImGui::Begin("Hierarchy");
     string name = "Open Scene -> " + *SceneManager::GetOpenSceneName();
     ImGui::Selectable (name.c_str()); 
-    if (ImGui::BeginDragDropTarget())
+   /* if (ImGui::BeginDragDropTarget())
     {
         ImGuiDragDropFlags target_flags = 0;
         target_flags |= ImGuiDragDropFlags_AcceptBeforeDelivery;
@@ -25,7 +25,7 @@ void HierarchyUI::draw() {
             }
         }
         ImGui::EndDragDropTarget();
-    }
+    }*/
 
     ImGui::Separator();
 
@@ -42,97 +42,128 @@ void HierarchyUI::draw() {
 
         ImGui::PushID(i);
 
-        
-        if (object->parent == nullptr) {
-            if (object->childrens.size() > 0) {
-                if (ImGui::ArrowButton("##Right", ImGuiDir_Right)) {
-                    //isArrowButtonOpen[i] = !isArrowButtonOpen[i];
-                }
-                ImGui::SameLine();
-            }
 
-            if (ImGui::Selectable(object->ObjectName.c_str())) {
-                UIManager::instance->inspectorui->ObjectSelectToInspector = object;
-                std::cout << "SELECT OBJECT: " << object->ObjectName << std::endl;
-                SelectInHierarchy = true;
-            }
-        }
-
-        if (object->childrens.size() > 0 && object->parent == nullptr /*&& isArrowButtonOpen[i] == true*/) {
-            for (int e = 0; e < object->childrens.size(); e++) {
-                ImGui::PushID(e);
-
-                Entity* child = object->childrens[e];
-
-                if (ImGui::Selectable(child->ObjectName.c_str())) {
-                    UIManager::instance->inspectorui->ObjectSelectToInspector = child;
-                    std::cout << "SELECT OBJECT: " << child->ObjectName << std::endl;
+        if (object->childrens.size() == 0) {
+            if (object != nullptr && object->parent == nullptr) {
+                if (ImGui::Selectable(object->ObjectName.c_str())) {
+                    UIManager::instance->inspectorui->ObjectSelectToInspector = object;
+                    std::cout << "SELECT OBJECT: " << object->ObjectName << std::endl;
                     SelectInHierarchy = true;
                 }
-                ImGui::PopID();
-            }
-        }
 
-        //if (ImGui::TreeNode(object->ObjectName.c_str()))
-        //{
-        //    for (int e = 0; e < object->childrens.size(); e++) {
-        //        ImGui::PushID(e);
 
-        //        Entity* child = object->childrens[e];
+                if (ImGui::BeginDragDropTarget())
+                {
+                    ImGuiDragDropFlags target_flags = 0;
+                    target_flags |= ImGuiDragDropFlags_AcceptBeforeDelivery;
+                    target_flags |= ImGuiDragDropFlags_AcceptNoDrawDefaultRect;
+                    if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("OBJECTSPARENT", target_flags))
+                    {
+                        const char* receivedString = static_cast<const char*>(payload->Data);
 
-        //        if (ImGui::Selectable(child->ObjectName.c_str())) {
-        //            UIManager::instance->inspectorui->ObjectSelectToInspector = child;
-        //            std::cout << "SELECT OBJECT: " << child->ObjectName << std::endl;
-        //            SelectInHierarchy = true;
-        //        }
-        //        ImGui::PopID();
-        //    }
-        //    ImGui::TreePop();
-        //}
+                        if (ImGui::IsMouseReleased(0)) {
+                            std::cout << "El identificador hijo es " << SceneManager::GetSceneManager()->GetObjectPerIndex(std::stoi(receivedString))->objectID << std::endl;
+                            std::cout << "El identificador padre es " << object->objectID << std::endl;
 
-        if (ImGui::BeginDragDropTarget())
-        {
-            ImGuiDragDropFlags target_flags = 0;
-            target_flags |= ImGuiDragDropFlags_AcceptBeforeDelivery;
-            target_flags |= ImGuiDragDropFlags_AcceptNoDrawDefaultRect;
-            if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("OBJECTSPARENT", target_flags))
-            {
-                const char* receivedString = static_cast<const char*>(payload->Data);
-                std::cout << "String recibido: " << std::stoi(receivedString) << std::endl;
-                std::cout << "EL OBJETO QUE CHOCO ES " << object->ObjectName << std::endl;
+                            int objectIndex = std::stoi(receivedString);
 
-                if (ImGui::IsMouseReleased (0)) {
-                    int objectIndex = std::stoi(receivedString);
+                            //glm::vec3 offset = sprite->ObjectPosition - parentSprite->ObjectPosition;
 
-                    SpriteComponent* sprite = &SceneManager::GetSceneManager()->GetObjectPerIndex(std::stoi(receivedString))->getComponent<SpriteComponent>();
-                    SpriteComponent* parentSprite = &object->getComponent<SpriteComponent>();
+                            Entity* objGet = SceneManager::GetSceneManager()->GetObjectPerIndex(std::stoi(receivedString));
+                            objGet->setParent(object);
 
-                    //glm::vec3 offset = sprite->ObjectPosition - parentSprite->ObjectPosition;
+                            if (objGet->parent != nullptr) {
+                                std::cout << "Parent correctly Setup" << std::endl;
+                                std::cout << "Parent Childrens  " << objGet->childrens.size() << object->childrens.size() << std::endl;
+                            }
 
-                    Entity* objGet = SceneManager::GetSceneManager()->GetObjectPerIndex(std::stoi(receivedString));
-                    objGet->parent = object;
-                    objGet->transform->LocalPosition = vec3(0,0,0);
-
-                    object->addChild (SceneManager::GetSceneManager()->GetObjectPerIndex(std::stoi(receivedString)));
+                            std::cout << "Childrens " << object->childrens.size() << std::endl;
+                        }
+                    }
+                    ImGui::EndDragDropTarget();
                 }
-            }
-            ImGui::EndDragDropTarget();
+
+                if (ImGui::BeginDragDropSource(src_flags))
+                {
+                    const char* filePathN;
+                    string t = "File " + object->ObjectName;
+                    ImGui::Text(t.c_str());
+
+                    std::string pathToSend = to_string(object->objectID);
+                    ImGui::SetDragDropPayload("OBJECTSPARENT", pathToSend.c_str(), pathToSend.size() + 1); // +1 para incluir el carácter nulo
+                    ImGui::EndDragDropSource();
+                }
+            } 
         }
+        else {
+            if (ImGui::TreeNode(object->ObjectName.c_str())) {
+                UIManager::instance->inspectorui->SelectEntity(object);
+                
+                for (Entity* d : object->childrens) {
+                    if (d->childrens.size() > 0) {
+                        if (ImGui::TreeNode(d->ObjectName.c_str())) {
+                            UIManager::instance->inspectorui->SelectEntity(d);
 
-        if (ImGui::BeginDragDropSource(src_flags))
-        {
-            const char* filePathN;
-            string t = "File " + object->ObjectName;
-            ImGui::Text(t.c_str());
+                            ImGui::TreePop();
+                        }
+                    }
+                    else {
+                        if (ImGui::Selectable(d->ObjectName.c_str())) {
+                            UIManager::instance->inspectorui->ObjectSelectToInspector = d;
+                            std::cout << "SELECT OBJECT: " << d->ObjectName << std::endl;
+                        }
+                    }
+                }
+                ImGui::TreePop();
+            }
+            if (ImGui::BeginDragDropTarget())
+            {
+                ImGuiDragDropFlags target_flags = 0;
+                target_flags |= ImGuiDragDropFlags_AcceptBeforeDelivery;
+                target_flags |= ImGuiDragDropFlags_AcceptNoDrawDefaultRect;
+                if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("OBJECTSPARENT", target_flags))
+                {
+                    const char* receivedString = static_cast<const char*>(payload->Data);
 
-            std::string pathToSend = to_string(object->objectID)/*entry.path().string()*/;
-            ImGui::SetDragDropPayload("OBJECTSPARENT", pathToSend.c_str(), pathToSend.size() + 1); // +1 para incluir el carácter nulo
-            ImGui::EndDragDropSource();
+                    if (ImGui::IsMouseReleased(0)) {
+                        std::cout << "El identificador hijo es " << SceneManager::GetSceneManager()->GetObjectPerIndex(std::stoi(receivedString))->objectID << std::endl;
+                        std::cout << "El identificador padre es " << object->objectID << std::endl;
+
+                        int objectIndex = std::stoi(receivedString);
+
+                        //glm::vec3 offset = sprite->ObjectPosition - parentSprite->ObjectPosition;
+
+                        Entity* objGet = SceneManager::GetSceneManager()->GetObjectPerIndex(std::stoi(receivedString));
+                        objGet->setParent(object);
+
+                        if (objGet->parent != nullptr) {
+                            std::cout << "Parent correctly Setup" << std::endl;
+                            std::cout << "Parent Childrens  " << objGet->childrens.size() << object->childrens.size() << std::endl;
+                        }
+
+                        std::cout << "Childrens " << object->childrens.size() << std::endl;
+                    }
+                }
+                ImGui::EndDragDropTarget();
+            }
+
+            if (ImGui::BeginDragDropSource(src_flags))
+            {
+                const char* filePathN;
+                string t = "File " + object->ObjectName;
+                ImGui::Text(t.c_str());
+
+                std::string pathToSend = to_string(object->objectID);
+                ImGui::SetDragDropPayload("OBJECTSPARENT", pathToSend.c_str(), pathToSend.size() + 1); // +1 para incluir el carácter nulo
+                ImGui::EndDragDropSource();
+            }
         }
         ImGui::PopID();
     }
     ImGui::End();
-    if (ImGui::BeginDragDropTarget())
+
+
+    /*if (ImGui::BeginDragDropTarget())
     {
         ImGuiDragDropFlags target_flags = 0;
         target_flags |= ImGuiDragDropFlags_AcceptBeforeDelivery;
@@ -148,5 +179,5 @@ void HierarchyUI::draw() {
             }
         }
         ImGui::EndDragDropTarget();
-    }
+    }*/
 }

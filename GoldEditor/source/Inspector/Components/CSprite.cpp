@@ -37,14 +37,14 @@ void CSprite::draw(Entity* owner) {
                 owner->getComponent<SpriteComponent>().LoadTexture();
                 std::cout << "String recibido: " << owner->getComponent<SpriteComponent>().TexturePath << std::endl;
             }
+
+            if (owner->getComponent<SpriteComponent>().TexturePath != newPath) {
+                owner->getComponent<SpriteComponent>().TexturePath = newPath;
+                owner->getComponent<SpriteComponent>().LoadTexture();
+            }
         }
 
 
         ImGui::EndDragDropTarget();
-    }
-
-    if (owner->getComponent<SpriteComponent>().TexturePath != newPath) {
-        owner->getComponent<SpriteComponent>().TexturePath = newPath;
-        owner->getComponent<SpriteComponent>().LoadTexture();
     }
 }

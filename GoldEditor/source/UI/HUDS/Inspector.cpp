@@ -14,7 +14,13 @@ void InspectorUI::start() {
 
 void InspectorUI::draw() {
     ImGui::Begin("Inspector");
+    if (InputSystem::InputSystem::GetKey(GLFW_KEY_DELETE) && ObjectSelectToInspector != nullptr) {
+        SceneManager::GetSceneManager()->Destroy(ObjectSelectToInspector);
+        ObjectSelectToInspector = nullptr;
+    }
+
     if (ObjectSelectToInspector != nullptr) {
+
         ObjectSelectToInspector->ObjectName = EditorGUI::InputText("Name:", ObjectSelectToInspector->ObjectName);
         ObjectSelectToInspector->ObjectTag = EditorGUI::InputText("Tag:", ObjectSelectToInspector->ObjectTag);
 
@@ -47,12 +53,6 @@ void InspectorUI::draw() {
         ));
         ObjectSelectToInspector->transform->Rotation = glm::vec3 ((float)newRot.x, (float)newRot.y, (float)newRot.z);
         ImGui::PopID();
-
-        if (InputSystem::InputSystem::GetKey (GLFW_KEY_DELETE) && ObjectSelectToInspector != nullptr) {
-            SceneManager::GetSceneManager()->Destroy (ObjectSelectToInspector);
-            ObjectSelectToInspector = nullptr;
-        }
-
 
         ObjectSelectToInspector->getComponent<SpriteComponent>().VertexPath   = EditorGUI::InputText("Vertex Shader:", ObjectSelectToInspector->getComponent<SpriteComponent>().VertexPath);
         

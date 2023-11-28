@@ -19,7 +19,8 @@ void EntityBinder::RegisterFunctions(ScriptCompiler* luaParent)
 
 	luaParent->lua["Scene"] = sol::make_object(luaParent->lua.lua_state(), SceneManager::GetSceneManager());
 	luaParent->lua.new_usertype<SceneManager>("SceneManager",
-		"GetObjectPerID", &SceneManager::GetObjectPerIndex
+		"GetObjectPerID", &SceneManager::GetObjectPerIndex,
+		"ChangeScene", &SceneManager::LoadScene
 	);
 
 	luaParent->lua.new_usertype<RigidBody>("RigidBody",
