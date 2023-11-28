@@ -372,6 +372,28 @@ public:
 		}
 	}
 
+	void deleteAllChildrens() {
+		for (Entity* childs : childrens) {			
+			if (childs != nullptr) {
+				auto it = std::find(childrens.begin(), childrens.end(), childs);
+				if (it != childrens.end()) {
+					childs->ClearAllComponentes();
+					childrens.erase(it);
+				}
+			}
+		}
+	}
+
+	void removeChild (Entity* childs) {
+		if (childs != nullptr) {
+			auto it = std::find(childrens.begin(), childrens.end(), childs);
+			if (it != childrens.end()) {
+				childs->parent = nullptr;
+				childrens.erase(it);
+			}
+		}
+	}
+
 	void removeParent() {
 		parent = nullptr;
 	}

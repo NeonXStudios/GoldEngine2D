@@ -1,11 +1,74 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: El directorio Output no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Output.
 C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: El directorio intermedio (x64\Debug\) contiene archivos compartidos de otro proyecto (GoldEditor.vcxproj). Esto puede dar lugar a un comportamiento incorrecto de limpieza y recompilación.
-C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: El directorio intermedio (x64\Debug\) contiene archivos compartidos de otro proyecto (GoldEngine.vcxproj). Esto puede dar lugar a un comportamiento incorrecto de limpieza y recompilación.
-  Inspector.cpp
+  SaveData.cpp
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
 D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
 D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,4): error C2653: 'SceneManager': no es un nombre de clase o espacio de nombres
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,18): error C3861: 'GetSceneManager': no se encontró el identificador
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+D:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
+  GameCompiler.cpp
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,4): error C2653: 'SceneManager': no es un nombre de clase o espacio de nombres
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,18): error C3861: 'GetSceneManager': no se encontró el identificador
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+D:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
+  GoldEditor.cpp
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,4): error C2653: 'SceneManager': no es un nombre de clase o espacio de nombres
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,18): error C3861: 'GetSceneManager': no se encontró el identificador
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+D:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
+  GDGizmos.cpp
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,4): error C2653: 'SceneManager': no es un nombre de clase o espacio de nombres
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,18): error C3861: 'GetSceneManager': no se encontró el identificador
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+D:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
+D:\VS\GoldEngine2D\GoldEditor\source\Gizmos\GDGizmos.cpp(228,50): warning C4267: 'argumento': conversión de 'size_t' a 'GLsizei'; posible pérdida de datos
+D:\VS\GoldEngine2D\GoldEditor\source\Gizmos\GDGizmos.cpp(369,42): warning C4267: 'argumento': conversión de 'size_t' a 'GLsizei'; posible pérdida de datos
+  MoveGizmos.cpp
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,4): error C2653: 'SceneManager': no es un nombre de clase o espacio de nombres
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,18): error C3861: 'GetSceneManager': no se encontró el identificador
 D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
@@ -14,5 +77,329 @@ D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: '
 D:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
 D:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 D:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
+  AComponent.cpp
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,4): error C2653: 'SceneManager': no es un nombre de clase o espacio de nombres
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,18): error C3861: 'GetSceneManager': no se encontró el identificador
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+D:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
+  ComponentList.cpp
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,4): error C2653: 'SceneManager': no es un nombre de clase o espacio de nombres
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,18): error C3861: 'GetSceneManager': no se encontró el identificador
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+D:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
+  ComponentUIDrawer.cpp
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,4): error C2653: 'SceneManager': no es un nombre de clase o espacio de nombres
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,18): error C3861: 'GetSceneManager': no se encontró el identificador
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+D:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
+  CAnimator.cpp
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,4): error C2653: 'SceneManager': no es un nombre de clase o espacio de nombres
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,18): error C3861: 'GetSceneManager': no se encontró el identificador
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+D:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
+  CAudio.cpp
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,4): error C2653: 'SceneManager': no es un nombre de clase o espacio de nombres
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,18): error C3861: 'GetSceneManager': no se encontró el identificador
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+D:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
+  CRigidBody.cpp
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,4): error C2653: 'SceneManager': no es un nombre de clase o espacio de nombres
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,18): error C3861: 'GetSceneManager': no se encontró el identificador
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+D:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
+  CScript.cpp
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,4): error C2653: 'SceneManager': no es un nombre de clase o espacio de nombres
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,18): error C3861: 'GetSceneManager': no se encontró el identificador
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+D:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
+  CSkybox.cpp
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,4): error C2653: 'SceneManager': no es un nombre de clase o espacio de nombres
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,18): error C3861: 'GetSceneManager': no se encontró el identificador
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+D:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
+  CSprite.cpp
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,4): error C2653: 'SceneManager': no es un nombre de clase o espacio de nombres
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,18): error C3861: 'GetSceneManager': no se encontró el identificador
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+D:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
+  DrawComponents.cpp
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,4): error C2653: 'SceneManager': no es un nombre de clase o espacio de nombres
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,18): error C3861: 'GetSceneManager': no se encontró el identificador
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+D:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
+  InspectorComponents.cpp
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,4): error C2653: 'SceneManager': no es un nombre de clase o espacio de nombres
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,18): error C3861: 'GetSceneManager': no se encontró el identificador
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+D:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
+  ScriptEditor.cpp
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,4): error C2653: 'SceneManager': no es un nombre de clase o espacio de nombres
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,18): error C3861: 'GetSceneManager': no se encontró el identificador
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+D:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
+  ChildDraw.cpp
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,4): error C2653: 'SceneManager': no es un nombre de clase o espacio de nombres
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,18): error C3861: 'GetSceneManager': no se encontró el identificador
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+D:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
+  Assets.cpp
 D:\VS\GoldEngine2D\GoldEditor\source\UI\DragAndDrop.h(17,25): warning C4101: 'filePathN': variable local sin referencia
-  GoldEditor.vcxproj -> D:\VS\GoldEngine2D\BuildHub\Editor\ZXEditor.exe
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,4): error C2653: 'SceneManager': no es un nombre de clase o espacio de nombres
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,18): error C3861: 'GetSceneManager': no se encontró el identificador
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+D:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
+  BarMenuUI.cpp
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,4): error C2653: 'SceneManager': no es un nombre de clase o espacio de nombres
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,18): error C3861: 'GetSceneManager': no se encontró el identificador
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+D:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
+  Generando código...
+  Compilando...
+  CameraSetting.cpp
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,4): error C2653: 'SceneManager': no es un nombre de clase o espacio de nombres
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,18): error C3861: 'GetSceneManager': no se encontró el identificador
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+D:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
+  Hierarchy.cpp
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,4): error C2653: 'SceneManager': no es un nombre de clase o espacio de nombres
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,18): error C3861: 'GetSceneManager': no se encontró el identificador
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+D:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
+  Inspector.cpp
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,4): error C2653: 'SceneManager': no es un nombre de clase o espacio de nombres
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,18): error C3861: 'GetSceneManager': no se encontró el identificador
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+D:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
+  RightClickUI.cpp
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,4): error C2653: 'SceneManager': no es un nombre de clase o espacio de nombres
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,18): error C3861: 'GetSceneManager': no se encontró el identificador
+  SceneUI.cpp
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,4): error C2653: 'SceneManager': no es un nombre de clase o espacio de nombres
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,18): error C3861: 'GetSceneManager': no se encontró el identificador
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+D:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
+D:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(60,71): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(60,45): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(84,21): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+D:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(85,21): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+D:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(86,24): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(87,24): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(93,64): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp(93,51): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  UIDrawer.cpp
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,4): error C2653: 'SceneManager': no es un nombre de clase o espacio de nombres
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,18): error C3861: 'GetSceneManager': no se encontró el identificador
+  UIManager.cpp
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,4): error C2653: 'SceneManager': no es un nombre de clase o espacio de nombres
+D:\VS\GoldEngine2D\source\Components\ECS\ECS.h(378,18): error C3861: 'GetSceneManager': no se encontró el identificador
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Graphics\RunEngine.h(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(8,14): warning C4099: 'b2Body': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_joint.h(29,7): message : vea la declaración de 'b2Body'
+D:\VS\GoldEngine2D\source\Components\Physics\RigidBody.h(9,22): warning C4099: 'b2PolygonShape': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\Binarys\include\box2d\b2_polygon_shape.h(34,14): message : vea la declaración de 'b2PolygonShape'
+D:\VS\GoldEngine2D\source\Components\Animator\Animator2D.h(14,24): warning C4099: 'AnimationsStates': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+D:\VS\GoldEngine2D\source\Components\Animator\AnimationsStates.h(8,7): message : vea la declaración de 'AnimationsStates'
+  Generando código...

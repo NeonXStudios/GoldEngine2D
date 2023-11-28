@@ -15,6 +15,15 @@ void InspectorUI::start() {
 void InspectorUI::draw() {
     ImGui::Begin("Inspector");
     if (InputSystem::InputSystem::GetKey(GLFW_KEY_DELETE) && ObjectSelectToInspector != nullptr) {
+
+        if (ObjectSelectToInspector->parent != nullptr) {
+            ObjectSelectToInspector->parent->removeChild(ObjectSelectToInspector);
+        }
+
+        if (ObjectSelectToInspector->childrens.size() > 0) {
+            ObjectSelectToInspector->deleteAllChildrens();
+        }
+
         SceneManager::GetSceneManager()->Destroy(ObjectSelectToInspector);
         ObjectSelectToInspector = nullptr;
     }
