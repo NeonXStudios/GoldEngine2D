@@ -104,6 +104,9 @@
     <Filter Include="Engine\02_Components\Animator2D">
       <UniqueIdentifier>{1c9f65e5-fa0e-4733-b221-90079a5f3590}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\02_Components\Tile">
+      <UniqueIdentifier>{7f4295ae-0153-45e9-a44c-7262a08ac9f9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Graphics\StartEngineGraphics.cpp">
@@ -273,6 +276,9 @@
     </ClCompile>
     <ClCompile Include="source\Components\Physics\LayerMaskSystem.cpp">
       <Filter>Engine\02_Components\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\TileMap\TileMapComponent.cpp">
+      <Filter>Engine\02_Components\Tile</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -452,6 +458,9 @@
     </ClInclude>
     <ClInclude Include="source\Components\Physics\LayerMaskSystem.h">
       <Filter>Engine\02_Components\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\TileMap\TileMapComponent.h">
+      <Filter>Engine\02_Components\Tile</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

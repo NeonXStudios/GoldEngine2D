@@ -62,6 +62,7 @@ class Transform {
 private:
 	glm::quat rotation;
 	glm::mat4 Matrix = glm::mat4(1.0f);
+	glm::mat4 MatrixLocal = glm::mat4(1.0f);
 
 public:
 	glm::vec3 Position = glm::vec3(0.0f, 0.0f, 0.0f);
@@ -72,7 +73,6 @@ public:
 	void update() {
 		Matrix = glm::mat4(1.0f);
 
-		// Aplicar traslación
 
 		Matrix = glm::translate(Matrix, glm::vec3(Position.x, Position.y, Position.z));
 		glm::quat rotationZ = glm::angleAxis(glm::radians(Rotation.x), glm::vec3(0.0f, 0.0f, 1.0f));
@@ -81,20 +81,14 @@ public:
 
 		rotation = rotationZ * rotationY * rotationX;
 
-		//glm::mat4 rotationMatrix = glm::mat4_cast(rotation);
-
-
 		Matrix *= glm::mat4_cast(rotation);
 		Matrix = glm::scale(Matrix, Scale);
-
-		//std::cout << "Position: (" << Position.x << ", " << Position.y << ", " << Position.z << ")" << std::endl;
-		//std::cout << "Rotation: (" << Rotation.x << ", " << Rotation.y << ", " << Rotation.z << ")" << std::endl;
-		//std::cout << "Scale: (" << Scale.x << ", " << Scale.y << ", " << Scale.z << ")" << std::endl;
 	}
 
 	glm::mat4 GetMatrix() {
 		return Matrix;
 	}
+
 
 	//SAVE DATA AND LOAD
 	std::string serialize() {
@@ -241,6 +235,11 @@ public:
 		transform->update();
 
 		entityUpdate();
+
+		/*if (parent != nullptr) {
+			glm::vec3 CalculateLocalPosition = parent->transform->Position - entity->transform->Position;
+			entity->transform->LocalPosition = CalculateLocalPosition;
+		}*/
 	}
 
 
@@ -327,6 +326,9 @@ public:
 		return result;
 	}
 
+	std::vector<Component*> GetAllComponent() {
+		return components;
+	}
 
 	template <typename T> bool hasComponent() const
 	{

@@ -26,6 +26,7 @@ D:\VS\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp;D:\VS
 D:\VS\GoldEngine2D\GoldEditor\source\Inspector\Components\CScript.cpp;D:\VS\GoldEngine2D\GoldEditor\x64\Debug\CScript.obj
 D:\VS\GoldEngine2D\GoldEditor\source\Inspector\Components\CSkybox.cpp;D:\VS\GoldEngine2D\GoldEditor\x64\Debug\CSkybox.obj
 D:\VS\GoldEngine2D\GoldEditor\source\Inspector\Components\CSprite.cpp;D:\VS\GoldEngine2D\GoldEditor\x64\Debug\CSprite.obj
+D:\VS\GoldEngine2D\GoldEditor\source\Inspector\Components\CTileMap.cpp;D:\VS\GoldEngine2D\GoldEditor\x64\Debug\CTileMap.obj
 D:\VS\GoldEngine2D\GoldEditor\source\Inspector\ComponentUIDrawer.cpp;D:\VS\GoldEngine2D\GoldEditor\x64\Debug\ComponentUIDrawer.obj
 D:\VS\GoldEngine2D\GoldEditor\source\Inspector\DrawComponents.cpp;D:\VS\GoldEngine2D\GoldEditor\x64\Debug\DrawComponents.obj
 D:\VS\GoldEngine2D\GoldEditor\source\Inspector\InspectorComponents.cpp;D:\VS\GoldEngine2D\GoldEditor\x64\Debug\InspectorComponents.obj
@@ -40,6 +41,7 @@ D:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Hierarchy.cpp;D:\VS\GoldEngine2D\Go
 D:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Inspector.cpp;D:\VS\GoldEngine2D\GoldEditor\x64\Debug\Inspector.obj
 D:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\RightClickUI.cpp;D:\VS\GoldEngine2D\GoldEditor\x64\Debug\RightClickUI.obj
 D:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\SceneUI.cpp;D:\VS\GoldEngine2D\GoldEditor\x64\Debug\SceneUI.obj
+D:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\TileMapUI.cpp;D:\VS\GoldEngine2D\GoldEditor\x64\Debug\TileMapUI.obj
 D:\VS\GoldEngine2D\GoldEditor\source\UI\NodeUI\NodeUI.cpp;D:\VS\GoldEngine2D\GoldEditor\x64\Debug\NodeUI.obj
 D:\VS\GoldEngine2D\GoldEditor\source\UI\UIDrawer.cpp;D:\VS\GoldEngine2D\GoldEditor\x64\Debug\UIDrawer.obj
 D:\VS\GoldEngine2D\GoldEditor\source\UI\UIManager.cpp;D:\VS\GoldEngine2D\GoldEditor\x64\Debug\UIManager.obj

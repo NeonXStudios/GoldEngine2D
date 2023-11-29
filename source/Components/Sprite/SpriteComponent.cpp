@@ -56,6 +56,8 @@ void SpriteComponent::start()  {
 }
 
 void SpriteComponent::LoadTexture () {
+    //glDeleteTextures(1, &texture);
+
     std::cout << "La nueva ruta de la textura es " << TexturePath << std::endl;
     int width, height, nrChannels;
     string newPath = FileSystem::GetAsset (TexturePath);
@@ -135,7 +137,7 @@ void SpriteComponent::PostRender() {
 
 
 void SpriteComponent::clean() {
-
+    glDeleteTextures(1, &texture);
 }
 
 

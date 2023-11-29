@@ -91,6 +91,9 @@ void SceneUI::draw() {
 
     // Invertimos las coordenadas de textura en el eje Y antes de mostrar la imagen
     ImGui::Image((void*)(intptr_t)texture, ImVec2(WindowXSize, WindowYSize), ImVec2(ImVec2(0, 1)), ImVec2(ImVec2(1, 0)));
+    if (!UIManager::instance->rightClickui->miniMenuOpen) {
+        UIManager::instance->rightClickui->SceneHover = ImGui::IsItemHovered();
+    }
     GoldEditor::editor->activeMouse = ImGui::IsItemHovered();
 
 #pragma region IMGUIZMO 
@@ -134,11 +137,7 @@ void SceneUI::draw() {
             }
         }
     }
-#pragma endregion
-
-    if (!UIManager::instance->rightClickui->miniMenuOpen) {
-        UIManager::instance->rightClickui->SceneHover = ImGui::IsWindowHovered();
-    }
+#pragma endregion 
 
     //std::cout << "Nuevo tamaño de la textura: " << imageSizeSCENE.x << "x" << imageSizeSCENE.y << std::endl;
 

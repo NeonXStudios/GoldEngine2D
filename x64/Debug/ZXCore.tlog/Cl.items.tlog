@@ -46,6 +46,7 @@ D:\VS\GoldEngine2D\source\Components\Skybox\Skybox.cpp;D:\VS\GoldEngine2D\x64\De
 D:\VS\GoldEngine2D\source\Components\Sprite\SpriteComponent.cpp;D:\VS\GoldEngine2D\x64\Debug\SpriteComponent.obj
 D:\VS\GoldEngine2D\source\Components\Systems\PickingTexture.cpp;D:\VS\GoldEngine2D\x64\Debug\PickingTexture.obj
 D:\VS\GoldEngine2D\source\Components\Systems\RenderSystem.cpp;D:\VS\GoldEngine2D\x64\Debug\RenderSystem.obj
+D:\VS\GoldEngine2D\source\Components\TileMap\TileMapComponent.cpp;D:\VS\GoldEngine2D\x64\Debug\TileMapComponent.obj
 D:\VS\GoldEngine2D\source\Components\UI\UIImplement.cpp;D:\VS\GoldEngine2D\x64\Debug\UIImplement.obj
 D:\VS\GoldEngine2D\source\EngineBehaviour\EngineBehaviour.cpp;D:\VS\GoldEngine2D\x64\Debug\EngineBehaviour.obj
 D:\VS\GoldEngine2D\source\EngineBehaviour\GoldEngineLib.cpp;D:\VS\GoldEngine2D\x64\Debug\GoldEngineLib.obj

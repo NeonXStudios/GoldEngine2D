@@ -2,16 +2,18 @@
 
 
 void RightClickUI::draw() {
-        if (!locked && SceneHover && miniMenuOpen && ImGui::Begin("Assets Menu", &miniMenuOpen, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove)) {
-            if (ImGui::BeginMenu("Create")) {
-                if (ImGui::Button("New Entity")) {
-                    SceneManager::GetSceneManager()->NewEntity();
-                    std::cout << "NEW OBJECT CREATED" << std::endl;
-                    miniMenuOpen = false;
+        if (!locked && SceneHover && miniMenuOpen) {
+            if (ImGui::Begin("Assets Menu", &miniMenuOpen, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove)) {
+                if (ImGui::BeginMenu("Create")) {
+                    if (ImGui::Button("New Entity")) {
+                        SceneManager::GetSceneManager()->NewEntity();
+                        std::cout << "NEW OBJECT CREATED" << std::endl;
+                        miniMenuOpen = false;
+                    }
+                    ImGui::EndMenu();
                 }
-                ImGui::EndMenu();
-            }
-            ImGui::End();
+                ImGui::End();
+            }     
         }
 
         if (SceneHover && ImGui::IsMouseDown (1)) {

@@ -15,11 +15,13 @@ void UIManager::start (){
 	rightClickui = new RightClickUI();
 	cameraSettingUI = new CameraSetting();
 	nodePanel = new NodeUI();
+	tileMapUI = new TileMapUI();
 
 	inspectorui->start();
 	sceneui->start();
 	assetsui->start();
 	nodePanel->start();
+	tileMapUI->start();
 
 	//ed::Config config;
 	//config.SettingsFile = "Simple.json";
@@ -36,6 +38,7 @@ void UIManager::draw() {
 	inspectorui->draw();
 	rightClickui->draw();
 	cameraSettingUI->draw();
+	tileMapUI->draw();
 	//nodePanel->update();
 
 	if (editorScript != nullptr) {

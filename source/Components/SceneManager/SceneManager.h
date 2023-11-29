@@ -17,6 +17,7 @@ public:
 	Entity* NewEntity	  ();
 	Entity* GetObjectByID (int id);
 	Entity* GetObjectPerIndex (int index);
+	Entity* CloneEntity (Entity* entity);
 	Entity* Destroy (Entity* object);
 	void ClearOpenScene();
 };

@@ -183,6 +183,7 @@
     <ClCompile Include="source\Inspector\Components\CScript.cpp" />
     <ClCompile Include="source\Inspector\Components\CSkybox.cpp" />
     <ClCompile Include="source\Inspector\Components\CSprite.cpp" />
+    <ClCompile Include="source\Inspector\Components\CTileMap.cpp" />
     <ClCompile Include="source\Inspector\ComponentUIDrawer.cpp" />
     <ClCompile Include="source\Inspector\DrawComponents.cpp" />
     <ClCompile Include="source\Inspector\InspectorComponents.cpp" />
@@ -197,6 +198,7 @@
     <ClCompile Include="source\UI\HUDS\Inspector.cpp" />
     <ClCompile Include="source\UI\HUDS\RightClickUI.cpp" />
     <ClCompile Include="source\UI\HUDS\SceneUI.cpp" />
+    <ClCompile Include="source\UI\HUDS\TileMapUI.cpp" />
     <ClCompile Include="source\UI\NodeUI\NodeUI.cpp" />
     <ClCompile Include="source\UI\UIDrawer.cpp" />
     <ClCompile Include="source\UI\UIManager.cpp" />
@@ -239,6 +241,7 @@
     <ClInclude Include="source\Inspector\Components\CScript.h" />
     <ClInclude Include="source\Inspector\Components\CSkybox.h" />
     <ClInclude Include="source\Inspector\Components\CSprite.h" />
+    <ClInclude Include="source\Inspector\Components\CTileMap.h" />
     <ClInclude Include="source\Inspector\ComponentUIDrawer.h" />
     <ClInclude Include="source\Inspector\DrawComponents.h" />
     <ClInclude Include="source\Inspector\InspectorComponents.h" />
@@ -253,6 +256,7 @@
     <ClInclude Include="source\UI\HUDS\Inspector.h" />
     <ClInclude Include="source\UI\HUDS\RightClickUI.h" />
     <ClInclude Include="source\UI\HUDS\SceneUI.h" />
+    <ClInclude Include="source\UI\HUDS\TileMapUI.h" />
     <ClInclude Include="source\UI\NodeUI\NodeUI.h" />
     <ClInclude Include="source\UI\UIDrawer.h" />
     <ClInclude Include="source\UI\UIManager.h" />

@@ -32,6 +32,7 @@
 #include "../Components/SaveSystem/SaveSystem.h"
 #include "../Components/Light/Light.h"
 #include "../Components/Physics/LayerMaskSystem.h"
+#include "../Components/TileMap/TileMapComponent.h"
 
 //PHYSICS 3D IMPLEMENTATION 
 //#include "../Components/Physics3D/Rigidbody3D.h"

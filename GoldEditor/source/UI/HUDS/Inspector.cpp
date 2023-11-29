@@ -28,6 +28,12 @@ void InspectorUI::draw() {
         ObjectSelectToInspector = nullptr;
     }
 
+    if (InputSystem::InputSystem::GetKey(GLFW_KEY_LEFT_CONTROL) && InputSystem::InputSystem::GetKey(GLFW_KEY_D)) {
+        if (ObjectSelectToInspector != nullptr) {
+            SceneManager::GetSceneManager()->CloneEntity(ObjectSelectToInspector);
+        }
+    }
+
     if (ObjectSelectToInspector != nullptr) {
 
         ObjectSelectToInspector->ObjectName = EditorGUI::InputText("Name:", ObjectSelectToInspector->ObjectName);

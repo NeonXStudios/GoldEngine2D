@@ -10,7 +10,7 @@ bool CheckVar::Has(json js, string nameVar) {
         return true;
     }
     else {
-        std::cout << "isTrigger variable not found in JSON." << std::endl;
+        std::cout << nameVar << " variable not found in JSON." << std::endl;
         return false;
     }
 

@@ -95,6 +95,11 @@ string* SceneManager::GetOpenSceneName() {
 	return &SceneManager::GetSceneManager()->OpenScene->SceneName;
 }
 
+Entity* SceneManager::CloneEntity(Entity* entity) {
+	std::cout << "Components to clone: " << entity->GetAllComponent().size() << std::endl;
+	return entity;
+}
+
 void SceneManager::ClearOpenScene() {
 	for (Entity* g : SceneManager::GetSceneManager()->OpenScene->objectsInScene) {
 		g->ClearAllComponentes();

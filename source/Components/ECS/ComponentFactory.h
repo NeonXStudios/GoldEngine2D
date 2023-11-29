@@ -37,6 +37,11 @@ public:
 			g->deserialize(data, path);
 		}
 
+		if (componentName == "TileMapComponent") {
+			TileMapComponent* mapTile = &owner->addComponent<TileMapComponent>();
+			mapTile->deserialize(data, path);
+		}
+
 		//if (componentName == "Rigidbody3d") {
 		//	Rigidbody3d* g = &owner->addComponent<Rigidbody3d>();
 		//	g->deserialize(data, path);
