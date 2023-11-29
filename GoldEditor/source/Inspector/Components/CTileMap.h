@@ -1,7 +1,9 @@
 #pragma once
 #include "../../UI/UIManager.h"
 #include "../AComponent.h"
+#include <iostream>
 
+using namespace std;
 
 class CTileMap : public AComponent
 {

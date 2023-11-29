@@ -10,10 +10,10 @@ using namespace std;
 class SceneUI : public UIDrawer {
 public:
     ImVec2 imageSizeSCENE;
+    ImVec2 imagePosition;
     double textureMousePosX = 0;
     double textureMousePosY = 0;
     int textureWidth, textureHeight;
-    ImVec2 imagePosition;
     bool isdragging;
     bool ObjectSelect;
     bool LockWithGizmos;

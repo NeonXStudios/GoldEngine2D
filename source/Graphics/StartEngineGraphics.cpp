@@ -24,10 +24,13 @@ void StartEngineGraphics::release() {
 
 void StartEngineGraphics::StartEngine () {
     glfwInit();
+    //SET OPENGL VERSION
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
+    //START THE MAXIMIZE WINDOW
+    glfwWindowHint(GLFW_MAXIMIZED, GLFW_TRUE);
 
 
     StartEngineGraphics::window = glfwCreateWindow(1920, 1080, "GOLD ENGINE", NULL, NULL);
@@ -64,6 +67,7 @@ void StartEngineGraphics::StartEngine () {
 
 
     glEnable(GL_DEPTH_TEST);
+
     //glEnable(GL_CULL_FACE);
     //glCullFace(GL_FRONT);
     //glFrontFace(GL_CCW);

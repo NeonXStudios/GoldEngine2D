@@ -1,11 +1,14 @@
 #pragma once
 #include "../UIDrawer.h"
+
 #include "../../../../source/Components/TileMap/TileMapComponent.h"
 
 class TileMapUI : public UIDrawer
 {
 public:
     TileMapComponent* componentSelect;
+    Entity* instanceEntity;
+    bool EditionModeActive;
     bool isOpen;
 
     void start() override;

@@ -96,47 +96,52 @@ void SceneUI::draw() {
     }
     GoldEditor::editor->activeMouse = ImGui::IsItemHovered();
 
+
+    if (!UIManager::instance->tileMapUI->EditionModeActive) {
 #pragma region IMGUIZMO 
 
 
-    if (UIManager::instance->inspectorui->ObjectSelectToInspector != nullptr) {
-        bool ignoreGui = false;
-        static ImGuizmo::MODE gizmoMode(ImGuizmo::LOCAL);
-        static ImGuizmo::OPERATION gizmoOperation(ImGuizmo::TRANSLATE);
-        float* matrix = (float*)glm::value_ptr(UIManager::instance->inspectorui->ObjectSelectToInspector->transform->GetMatrix());
+        if (UIManager::instance->inspectorui->ObjectSelectToInspector != nullptr) {
+            bool ignoreGui = false;
+            static ImGuizmo::MODE gizmoMode(ImGuizmo::LOCAL);
+            static ImGuizmo::OPERATION gizmoOperation(ImGuizmo::TRANSLATE);
+            float* matrix = (float*)glm::value_ptr(UIManager::instance->inspectorui->ObjectSelectToInspector->transform->GetMatrix());
 
-        float* projection = (float*)glm::value_ptr(SceneManager::GetSceneManager()->OpenScene->worldCamera->GetProjectionMatrix());
-        float* view = (float*)glm::value_ptr(SceneManager::GetSceneManager()->OpenScene->worldCamera->GetView());
-        ImGuizmo::SetRect(p.x, p.y, imageSizeSCENE.x, imageSizeSCENE.y);
+            float* projection = (float*)glm::value_ptr(SceneManager::GetSceneManager()->OpenScene->worldCamera->GetProjectionMatrix());
+            float* view = (float*)glm::value_ptr(SceneManager::GetSceneManager()->OpenScene->worldCamera->GetView());
+            ImGuizmo::SetRect(p.x, p.y, imageSizeSCENE.x, imageSizeSCENE.y);
 
-        const bool res = ImGuizmo::Manipulate(view, projection, gizmoOperation, gizmoMode, matrix);
+            const bool res = ImGuizmo::Manipulate(view, projection, gizmoOperation, gizmoMode, matrix);
 
-        ignoreGui &= !ImGuizmo::IsOver();
+            ignoreGui &= !ImGuizmo::IsOver();
 
-        glm::vec3 matrixRotation;
-        ImGuizmo::DecomposeMatrixToComponents(
-            matrix,
-            glm::value_ptr (UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Position),
-            glm::value_ptr (matrixRotation),
-            glm::value_ptr (UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Scale)
-        );
+            glm::vec3 matrixRotation;
+            ImGuizmo::DecomposeMatrixToComponents(
+                matrix,
+                glm::value_ptr(UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Position),
+                glm::value_ptr(matrixRotation),
+                glm::value_ptr(UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Scale)
+            );
 
-        //UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Rotation = matrixRotation;
+            //UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Rotation = matrixRotation;
 
-        if (!ImGui::IsMouseDown (1)) {
-            if (InputSystem::InputSystem::GetKey (GLFW_KEY_W)) {
-                gizmoOperation = ImGuizmo::TRANSLATE;
-            }
+            if (!ImGui::IsMouseDown(1)) {
+                if (InputSystem::InputSystem::GetKey(GLFW_KEY_W)) {
+                    gizmoOperation = ImGuizmo::TRANSLATE;
+                }
 
-            if (InputSystem::InputSystem::GetKey(GLFW_KEY_Q)) {
-                gizmoOperation = ImGuizmo::ROTATE;
-            }
+                if (InputSystem::InputSystem::GetKey(GLFW_KEY_Q)) {
+                    gizmoOperation = ImGuizmo::ROTATE;
+                }
 
-            if (InputSystem::InputSystem::GetKey(GLFW_KEY_E)) {
-                gizmoOperation = ImGuizmo::SCALE;
+                if (InputSystem::InputSystem::GetKey(GLFW_KEY_E)) {
+                    gizmoOperation = ImGuizmo::SCALE;
+                }
             }
         }
+
     }
+
 #pragma endregion 
 
     //std::cout << "Nuevo tamaño de la textura: " << imageSizeSCENE.x << "x" << imageSizeSCENE.y << std::endl;
@@ -326,7 +331,8 @@ void SceneUI::draw() {
     //    }
     //}
 #pragma endregion
-    
+
+
     ImGui::End();
 #pragma endregion
 }

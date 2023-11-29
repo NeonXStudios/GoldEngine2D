@@ -14,6 +14,8 @@ public:
 	std::vector<string> TileSprites = std::vector<string>();
 	std::vector<Entity*> Tiles = std::vector<Entity*>();
 	
+	glm::vec2 SizeTile = glm::vec2 (32, 32);
+	float SnapMultiply = 32;
 
 	void init() override;
 	void draw() override;

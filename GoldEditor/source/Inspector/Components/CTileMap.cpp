@@ -13,6 +13,7 @@ void CTileMap::start() {
 void CTileMap::draw(Entity* owner) {
     ImGui::Button("Tile Map", ImVec2(ImGui::GetContentRegionAvail().x, 20));
     ImGui::Spacing();
+    
 
     if (ImGui::TreeNode ("Tile Sprites")) {
         for (int i = 0; i < owner->getComponent<TileMapComponent>().TileSprites.size(); i++) {
