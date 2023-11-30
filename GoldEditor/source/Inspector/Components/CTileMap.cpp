@@ -57,6 +57,17 @@ void CTileMap::draw(Entity* owner) {
         UIManager::instance->tileMapUI->isOpen = true;
         UIManager::instance->tileMapUI->componentSelect = &owner->getComponent<TileMapComponent>();
         UIManager::instance->tileMapUI->ReSetup();
+
+        for (int i = 0; i < UIManager::instance->tileMapUI->Images.size(); i++) {
+            glDeleteTextures(1, &UIManager::instance->tileMapUI->Images[i]);
+        }
+
+        UIManager::instance->tileMapUI->Images.clear();
+
+        for (int i = 0; i < owner->getComponent<TileMapComponent>().TileSprites.size(); i++) {
+            UIManager::instance->tileMapUI->Images.push_back (UIManager::instance->tileMapUI->LoadTexture(owner->getComponent<TileMapComponent>().TileSprites[i]));
+        }
+
         std::cout << "Tile Editor Open" << std::endl;
     }
 }

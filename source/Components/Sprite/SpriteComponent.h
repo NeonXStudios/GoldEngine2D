@@ -36,8 +36,8 @@ public:
     unsigned int vertexShader;
     unsigned int fragmentShader;
     //sprites/tile_0115.png
-    string TexturePath = "";
-    string TextureSpecularPath = "Textures/Roughness.png";
+    string TexturePath = "Editor/NullSprite.png";
+    string TextureSpecularPath = "";
     string VertexPath = "shaders/vert.glsl";
     string FragmentPath = "shaders/frag.glsl";
 

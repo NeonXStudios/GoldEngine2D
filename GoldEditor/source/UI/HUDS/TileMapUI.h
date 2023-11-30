@@ -8,8 +8,11 @@ class TileMapUI : public UIDrawer
 public:
     TileMapComponent* componentSelect;
     Entity* instanceEntity;
+    string TileSelect;
     bool EditionModeActive;
     bool isOpen;
+
+    std::vector<GLuint> Images = std::vector<GLuint>();
 
     void start() override;
 
@@ -22,4 +25,6 @@ public:
     void fixupdate() override;
 
     void ReSetup();
+
+    GLuint LoadTexture(string TexturePath);
 };

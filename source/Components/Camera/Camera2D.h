@@ -22,8 +22,8 @@ public:
     glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
     glm::vec3 cameraVelocity = glm::vec3(0.0f, 0.0f, 0.0f);
 
-    float fov = 25.0f;
-    float zoom = 0.030f;
+    float fov = 65.0f;
+    float zoom = 1.0f;
 
     // Quaterniones para las rotaciones
     glm::quat cameraRotation = glm::quat(1.0f, 0.0f, 0.0f, 0.0f);
