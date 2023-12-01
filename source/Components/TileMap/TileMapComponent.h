@@ -25,7 +25,7 @@ public:
 	void PostRender() override;
 	std::string serialize() override;
 	void deserialize(std::string g, std::string path = "") override;
-
+	Entity* Destroy(Entity* obj);
 	
 	void AddNewTile(string TilePath, glm::vec3 PositionToSet);
 };

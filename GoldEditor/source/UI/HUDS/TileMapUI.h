@@ -13,6 +13,7 @@ public:
     bool isOpen;
 
     std::vector<GLuint> Images = std::vector<GLuint>();
+    GLuint SelectSprite;
 
     void start() override;
 

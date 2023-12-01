@@ -14,8 +14,9 @@ void CTileMap::draw(Entity* owner) {
     ImGui::Button("Tile Map", ImVec2(ImGui::GetContentRegionAvail().x, 20));
     ImGui::Spacing();
     
+    string nameTreeNode = "Tile Sprites (" + std::to_string(owner->getComponent<TileMapComponent>().TileSprites.size()) + ")";
 
-    if (ImGui::TreeNode ("Tile Sprites")) {
+    if (ImGui::TreeNode (nameTreeNode.c_str())) {
         for (int i = 0; i < owner->getComponent<TileMapComponent>().TileSprites.size(); i++) {
             ImGui::PushID(i);
             owner->getComponent<TileMapComponent>().TileSprites[i] = EditorGUI::InputText ("Tile", owner->getComponent<TileMapComponent>().TileSprites[i]);
@@ -31,7 +32,6 @@ void CTileMap::draw(Entity* owner) {
                     if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("TEXTUREDA_PATH", target_flags))
                     {
                         const char* receivedString = static_cast<const char*>(payload->Data);
-
 
                         std::string convertedPath = AComponent::RemoveDir(receivedString);
 

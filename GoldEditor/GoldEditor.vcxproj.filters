@@ -69,6 +69,12 @@
     <Filter Include="Editor\04_UI\Hierarchy">
       <UniqueIdentifier>{e309ea7d-adc7-4dd7-a6bb-3754cb4ea3ce}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Editor\04_UI\GameEngineRun">
+      <UniqueIdentifier>{d4c4e5e5-9fe8-4543-a1bb-0ea4f0f86bae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor\04_UI\InfoAsset">
+      <UniqueIdentifier>{08cce3ea-6253-4900-ad5b-dbcfd6a94254}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Binarys\c\glad.c">
@@ -211,6 +217,9 @@
     </ClCompile>
     <ClCompile Include="source\UI\EditorUI\ChildDraw.cpp">
       <Filter>Editor\04_UI</Filter>
+    </ClCompile>
+    <ClCompile Include="source\UI\GameView\GameRun.cpp">
+      <Filter>Editor\04_UI\GameEngineRun</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -364,6 +373,9 @@
     </ClInclude>
     <ClInclude Include="source\UI\EditorUI\ChildDraw.h">
       <Filter>Editor\04_UI</Filter>
+    </ClInclude>
+    <ClInclude Include="source\UI\GameView\GameRun.h">
+      <Filter>Editor\04_UI\GameEngineRun</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

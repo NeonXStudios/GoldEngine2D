@@ -24,6 +24,7 @@
 
 
             if (ImGui::MenuItem ("Exit")) {
+                SaveData::saveScene();
                 StartEngineGraphics::closeWindow();
             }
 

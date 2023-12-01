@@ -17,14 +17,18 @@ void TileMapUI::draw() {
 
             CastData* data = new CastData();
             ObjectCaster* caster = new ObjectCaster();
-            if (caster->MouseCast(WorldPoint, data)) {
-                SceneManager::GetSceneManager()->Destroy(data->object);
-                UIManager::instance->inspectorui->ObjectSelectToInspector = nullptr;
+
+            if (caster->MouseCastNonScene(WorldPoint, data, componentSelect->Tiles)) {
+                componentSelect->Destroy(data->object);
+                //UIManager::instance->inspectorui->ObjectSelectToInspector = nullptr;
             }
         }
 
 
 		if (ImGui::Begin("Tile Editor", &isOpen)) {
+            ImGui::Text ("Tile Select");
+            ImGui::Image((ImTextureID)(intptr_t)SelectSprite, ImVec2(32, 32));
+
             if (EditionModeActive) {
                 if (ImGui::Button("Edition Mode (Active)")) {
                     EditionModeActive = false;
@@ -44,13 +48,23 @@ void TileMapUI::draw() {
             if (EditionModeActive && GoldEditor::editor->activeMouse && !ImGui::IsKeyDown(ImGuiKey_LeftCtrl)) {
                 if (instanceEntity == nullptr) {
                     if (ImGui::IsMouseClicked(0)) {
-                        Entity* newSprite = SceneManager::GetSceneManager()->NewEntity();
-
+                        Entity* newSprite = SceneManager::GetSceneManager()->NewEntityNonSetupScene();
                         instanceEntity = newSprite;
+
+                        if (!string(TileSelect).empty()) {
+                            instanceEntity->getComponent<SpriteComponent>().TexturePath = TileSelect;
+                            instanceEntity->getComponent<SpriteComponent>().LoadTexture();
+                        }
                     }
                 }
                 else {
                     if (instanceEntity != nullptr) {
+
+                        if (instanceEntity != nullptr) {
+                            instanceEntity->update();
+                            instanceEntity->draw();
+                        }
+
                         glm::vec2 WorldPoint = RenderSystem::RenderSystem::ScreenToViewPort(glm::vec2(UIManager::instance->sceneui->imagePosition.x, UIManager::instance->sceneui->imagePosition.y), glm::vec2(UIManager::instance->sceneui->imageSizeSCENE.x, UIManager::instance->sceneui->imageSizeSCENE.y));
                         instanceEntity->transform->Position = glm::vec3(
                             (int)(WorldPoint.x / componentSelect->SnapMultiply) * componentSelect->SnapMultiply,
@@ -65,6 +79,10 @@ void TileMapUI::draw() {
                                 instanceEntity->getComponent<SpriteComponent>().TexturePath = TileSelect;
                                 instanceEntity->getComponent<SpriteComponent>().LoadTexture();
                             }
+
+                            componentSelect->Tiles.push_back (instanceEntity);
+
+                            std::cout << "New Tile Instanced Has Been Created" << std::endl;
 
                             instanceEntity = nullptr;
                         }
@@ -83,10 +101,11 @@ void TileMapUI::draw() {
                 float x = (i % numColumns) * (cellSize + buttonSpacingX);
                 float y = (i / numColumns) * (cellSize + buttonSpacingY);
 
-                ImGui::SetCursorPos({ x + 20, y + 100 });
+                ImGui::SetCursorPos({ x + 20, y + 150 });
 
                 if (ImGui::ImageButton((ImTextureID)(intptr_t)Images[i], ImVec2(cellSize, cellSize))) {
                     TileSelect = componentSelect->TileSprites[i];
+                    SelectSprite = Images[i];
                 }
             }
 

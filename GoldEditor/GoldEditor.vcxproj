@@ -191,6 +191,7 @@
     <ClCompile Include="source\UI\DragAndDrop.cpp" />
     <ClCompile Include="source\UI\EditorUI\ChildDraw.cpp" />
     <ClCompile Include="source\UI\EditorUI\EditorGUI.cpp" />
+    <ClCompile Include="source\UI\GameView\GameRun.cpp" />
     <ClCompile Include="source\UI\HUDS\Assets.cpp" />
     <ClCompile Include="source\UI\HUDS\BarMenuUI.cpp" />
     <ClCompile Include="source\UI\HUDS\CameraSetting.cpp" />
@@ -249,6 +250,7 @@
     <ClInclude Include="source\UI\DragAndDrop.h" />
     <ClInclude Include="source\UI\EditorUI\ChildDraw.h" />
     <ClInclude Include="source\UI\EditorUI\EditorGUI.h" />
+    <ClInclude Include="source\UI\GameView\GameRun.h" />
     <ClInclude Include="source\UI\HUDS\Assets.h" />
     <ClInclude Include="source\UI\HUDS\BarMenuUI.h" />
     <ClInclude Include="source\UI\HUDS\CameraSetting.h" />

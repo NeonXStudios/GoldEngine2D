@@ -34,6 +34,7 @@ D:\VS\GoldEngine2D\GoldEditor\source\Inspector\ScriptEditor.cpp;D:\VS\GoldEngine
 D:\VS\GoldEngine2D\GoldEditor\source\UI\DragAndDrop.cpp;D:\VS\GoldEngine2D\GoldEditor\x64\Debug\DragAndDrop.obj
 D:\VS\GoldEngine2D\GoldEditor\source\UI\EditorUI\ChildDraw.cpp;D:\VS\GoldEngine2D\GoldEditor\x64\Debug\ChildDraw.obj
 D:\VS\GoldEngine2D\GoldEditor\source\UI\EditorUI\EditorGUI.cpp;D:\VS\GoldEngine2D\GoldEditor\x64\Debug\EditorGUI.obj
+D:\VS\GoldEngine2D\GoldEditor\source\UI\GameView\GameRun.cpp;D:\VS\GoldEngine2D\GoldEditor\x64\Debug\GameRun.obj
 D:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\Assets.cpp;D:\VS\GoldEngine2D\GoldEditor\x64\Debug\Assets.obj
 D:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\BarMenuUI.cpp;D:\VS\GoldEngine2D\GoldEditor\x64\Debug\BarMenuUI.obj
 D:\VS\GoldEngine2D\GoldEditor\source\UI\HUDS\CameraSetting.cpp;D:\VS\GoldEngine2D\GoldEditor\x64\Debug\CameraSetting.obj

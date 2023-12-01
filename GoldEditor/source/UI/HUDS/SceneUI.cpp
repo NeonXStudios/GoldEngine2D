@@ -56,284 +56,118 @@ void SceneUI::start() {
 void SceneUI::draw() {
 
 #pragma region DRAW TEXTURE SCENE
+    //ImDrawList* draw_list = ImGui::GetWindowDrawList();
+
 
     ImVec2 windowSize = ImVec2(AppSettings::RenderWidth, AppSettings::RenderHeight);
 
     // Dibujamos la imagen en la ventana de ImGui
     ImGui::SetNextWindowSize(windowSize);
-    ImGui::Begin("Scene", nullptr, ImGuiWindowFlags_NoTitleBar);
-    //RenderSizeWindow = ImGui::GetWindowSize();
-    ImGuizmo::SetDrawlist();
+    
+    if (ImGui::Begin("Scene", nullptr, ImGuiWindowFlags_NoTitleBar)) {
+        ImGui::Text("FPS: %.1f", ImGui::GetIO().Framerate);
+        //RenderSizeWindow = ImGui::GetWindowSize();
+        ImGuizmo::SetDrawlist();
 
-    ImVec2 windowPos = ImGui::GetWindowPos();
-    ImVec2 offset = ImGui::GetWindowContentRegionMin();
-    ImVec2 size = ImGui::GetContentRegionAvail();
+        ImVec2 windowPos = ImGui::GetWindowPos();
+        ImVec2 offset = ImGui::GetWindowContentRegionMin();
+        ImVec2 size = ImGui::GetContentRegionAvail();
 
-    ImDrawList* draw_list = ImGui::GetWindowDrawList();
-
-    ImVec2 actualWindowSize = ImGui::GetWindowSize();
-    float scaleFactor = std::min(actualWindowSize.x / windowSize.x, actualWindowSize.y / windowSize.y);
-    imageSizeSCENE = ImVec2(AppSettings::RenderWidth * scaleFactor, AppSettings::RenderHeight * scaleFactor);
-
-
-    // Calculamos la posición para centrar la imagen en la ventana
-    imagePosition = ImVec2((actualWindowSize.x - imageSizeSCENE.x) * 0.5f, (actualWindowSize.y - imageSizeSCENE.y) * 0.5f);
-
-    ImGui::SetCursorPos(imagePosition);
-
-    int WindowXSize = imageSizeSCENE.x;
-    int WindowYSize = imageSizeSCENE.y;
-    imageSizeSCENE.x = WindowXSize;
-    imageSizeSCENE.y = WindowYSize;
+        ImVec2 actualWindowSize = ImGui::GetWindowSize();
+        float scaleFactor = std::min(actualWindowSize.x / windowSize.x, actualWindowSize.y / windowSize.y);
+        imageSizeSCENE = ImVec2(AppSettings::RenderWidth * scaleFactor, AppSettings::RenderHeight * scaleFactor);
 
 
-    ImVec2 p = ImGui::GetCursorScreenPos();
+        // Calculamos la posición para centrar la imagen en la ventana
+        imagePosition = ImVec2((actualWindowSize.x - imageSizeSCENE.x) * 0.5f, (actualWindowSize.y - imageSizeSCENE.y) * 0.5f);
 
-    // Invertimos las coordenadas de textura en el eje Y antes de mostrar la imagen
-    ImGui::Image((void*)(intptr_t)texture, ImVec2(WindowXSize, WindowYSize), ImVec2(ImVec2(0, 1)), ImVec2(ImVec2(1, 0)));
-    if (!UIManager::instance->rightClickui->miniMenuOpen) {
-        UIManager::instance->rightClickui->SceneHover = ImGui::IsItemHovered();
-    }
-    GoldEditor::editor->activeMouse = ImGui::IsItemHovered();
+        ImGui::SetCursorPos(imagePosition);
+
+        int WindowXSize = imageSizeSCENE.x;
+        int WindowYSize = imageSizeSCENE.y;
+        imageSizeSCENE.x = WindowXSize;
+        imageSizeSCENE.y = WindowYSize;
 
 
-    if (!UIManager::instance->tileMapUI->EditionModeActive) {
+        ImVec2 p = ImGui::GetCursorScreenPos();
+
+        // Invertimos las coordenadas de textura en el eje Y antes de mostrar la imagen
+        ImGui::Image((void*)(intptr_t)texture, ImVec2(WindowXSize, WindowYSize), ImVec2(ImVec2(0, 1)), ImVec2(ImVec2(1, 0)));
+        if (!UIManager::instance->rightClickui->miniMenuOpen) {
+            UIManager::instance->rightClickui->SceneHover = ImGui::IsItemHovered();
+        }
+        GoldEditor::editor->activeMouse = ImGui::IsItemHovered();
+
+
+        if (!UIManager::instance->tileMapUI->EditionModeActive) {
 #pragma region IMGUIZMO 
 
 
-        if (UIManager::instance->inspectorui->ObjectSelectToInspector != nullptr) {
-            bool ignoreGui = false;
-            static ImGuizmo::MODE gizmoMode(ImGuizmo::LOCAL);
-            static ImGuizmo::OPERATION gizmoOperation(ImGuizmo::TRANSLATE);
-            float* matrix = (float*)glm::value_ptr(UIManager::instance->inspectorui->ObjectSelectToInspector->transform->GetMatrix());
+            if (UIManager::instance->inspectorui->ObjectSelectToInspector != nullptr) {
+                bool ignoreGui = false;
+                static ImGuizmo::MODE gizmoMode(ImGuizmo::LOCAL);
+                static ImGuizmo::OPERATION gizmoOperation(ImGuizmo::TRANSLATE);
+                float* matrix = (float*)glm::value_ptr(UIManager::instance->inspectorui->ObjectSelectToInspector->transform->GetMatrix());
 
-            float* projection = (float*)glm::value_ptr(SceneManager::GetSceneManager()->OpenScene->worldCamera->GetProjectionMatrix());
-            float* view = (float*)glm::value_ptr(SceneManager::GetSceneManager()->OpenScene->worldCamera->GetView());
-            ImGuizmo::SetRect(p.x, p.y, imageSizeSCENE.x, imageSizeSCENE.y);
+                float* projection = (float*)glm::value_ptr(SceneManager::GetSceneManager()->OpenScene->worldCamera->GetProjectionMatrix());
+                float* view = (float*)glm::value_ptr(SceneManager::GetSceneManager()->OpenScene->worldCamera->GetView());
+                ImGuizmo::SetRect(p.x, p.y, imageSizeSCENE.x, imageSizeSCENE.y);
 
-            const bool res = ImGuizmo::Manipulate(view, projection, gizmoOperation, gizmoMode, matrix);
+                const bool res = ImGuizmo::Manipulate(view, projection, gizmoOperation, gizmoMode, matrix);
 
-            ignoreGui &= !ImGuizmo::IsOver();
+                ignoreGui &= !ImGuizmo::IsOver();
 
-            glm::vec3 matrixRotation;
-            ImGuizmo::DecomposeMatrixToComponents(
-                matrix,
-                glm::value_ptr(UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Position),
-                glm::value_ptr(matrixRotation),
-                glm::value_ptr(UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Scale)
-            );
+                glm::vec3 matrixRotation;
+                ImGuizmo::DecomposeMatrixToComponents(
+                    matrix,
+                    glm::value_ptr(UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Position),
+                    glm::value_ptr(matrixRotation),
+                    glm::value_ptr(UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Scale)
+                );
 
-            //UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Rotation = matrixRotation;
+                //UIManager::instance->inspectorui->ObjectSelectToInspector->transform->Rotation = matrixRotation;
 
-            if (!ImGui::IsMouseDown(1)) {
-                if (InputSystem::InputSystem::GetKey(GLFW_KEY_W)) {
-                    gizmoOperation = ImGuizmo::TRANSLATE;
-                }
+                if (!ImGui::IsMouseDown(1)) {
+                    if (InputSystem::InputSystem::GetKey(GLFW_KEY_W)) {
+                        gizmoOperation = ImGuizmo::TRANSLATE;
+                    }
 
-                if (InputSystem::InputSystem::GetKey(GLFW_KEY_Q)) {
-                    gizmoOperation = ImGuizmo::ROTATE;
-                }
+                    if (InputSystem::InputSystem::GetKey(GLFW_KEY_Q)) {
+                        gizmoOperation = ImGuizmo::ROTATE;
+                    }
 
-                if (InputSystem::InputSystem::GetKey(GLFW_KEY_E)) {
-                    gizmoOperation = ImGuizmo::SCALE;
+                    if (InputSystem::InputSystem::GetKey(GLFW_KEY_E)) {
+                        gizmoOperation = ImGuizmo::SCALE;
+                    }
                 }
             }
-        }
-
-    }
 
 #pragma endregion 
+        }
 
-    //std::cout << "Nuevo tamaño de la textura: " << imageSizeSCENE.x << "x" << imageSizeSCENE.y << std::endl;
+        imagePosition.x += ImGui::GetWindowPos().x;
+        imagePosition.y += ImGui::GetWindowPos().y;
 
-    // Después de obtener el nuevo tamaño de la textura, puedes usarlo como lo necesites
+        WorldPoint = RenderSystem::RenderSystem::ScreenToViewPort(glm::vec2(imagePosition.x, imagePosition.y), glm::vec2(imageSizeSCENE.x, imageSizeSCENE.y));
+        glm::vec2 initialMousePos;  // Posición del mouse cuando comenzó el arrastre
+        glm::vec2 initialObjectPos; // Posición inicial del objeto cuando comenzó el arrastre
 
-    imagePosition.x += ImGui::GetWindowPos().x;
-    imagePosition.y += ImGui::GetWindowPos().y;
+        
 
-    WorldPoint = RenderSystem::RenderSystem::ScreenToViewPort(glm::vec2(imagePosition.x, imagePosition.y), glm::vec2(imageSizeSCENE.x, imageSizeSCENE.y));
-    glm::vec2 initialMousePos;  // Posición del mouse cuando comenzó el arrastre
-    glm::vec2 initialObjectPos; // Posición inicial del objeto cuando comenzó el arrastre
+        if (ImGui::IsWindowHovered() && !LockWithGizmos && !ImGuizmo::IsOver()) {
+            float maxZ = -std::numeric_limits<float>::max();
 
-    if (ImGui::BeginDragDropTarget())
-    {
-        ImGuiDragDropFlags target_flags = 0;
-        target_flags |= ImGuiDragDropFlags_AcceptBeforeDelivery;
-        target_flags |= ImGuiDragDropFlags_AcceptNoDrawDefaultRect;
-
-
-        if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("TEXTUREDA_PATH", target_flags))
-        {
-            if (ImGui::IsMouseReleased(0)) {
-                const char* receivedString = static_cast<const char*>(payload->Data);
-
-                Entity* newOBJ = SceneManager::GetSceneManager()->NewEntity();
-                newOBJ->getComponent<SpriteComponent>().TexturePath = AComponent::RemoveDir(receivedString);
-                newOBJ->getComponent<SpriteComponent>().LoadTexture();
-
-                newOBJ->transform->Position = glm::vec3(WorldPoint.x, WorldPoint.y, 0);
+            CastData* data = new CastData();
+            ObjectCaster* caster = new ObjectCaster();
+            if (caster->MouseCast(WorldPoint, data)) {
+                if (ImGui::IsMouseDown(0)) {
+                    UIManager::instance->inspectorui->SelectEntity(data->object);
+                }
             }
         }
 
-
-        ImGui::EndDragDropTarget();
-    }
-
-    if (ImGui::IsWindowHovered() && !LockWithGizmos && !ImGuizmo::IsOver()) {
-        float maxZ = -std::numeric_limits<float>::max();
-
-        CastData* data = new CastData();
-        ObjectCaster* caster = new ObjectCaster();
-        if (caster->MouseCast(WorldPoint, data)) {
-            if (ImGui::IsMouseDown(0)) {
-                UIManager::instance->inspectorui->SelectEntity(data->object);
-            }
-        }
-
-        //for (int i = 0; i < SceneManager::GetSceneManager()
-
-        //    // Obtén la rotación en radianes desde Box2D
-        //    float radians = objD->entity->transform->Rotation.x * (b2_pi / 180.0f);
-
-        //    // Aplica la rotación inversa al punto del mundo
-        //    glm::vec2 localPoint = RotatePoint(WorldPoint, obj, radians);
-
-        //    // Calcula las coordenadas de la caja delimitadora del objeto rotado
-        //    glm::vec2 rotatedBoxMin(obj.x - objWidth, obj.y - objHeight);
-        //    glm::vec2 rotatedBoxMax(obj.x + objWidth, obj.y + objHeight);
-        //    glm::vec2 dragOffset;
-
-
-        //    //Comprueba si el punto rotado está dentro de la caja delimitadora rotada
-        //    if (localPoint.x >= rotatedBoxMin.x && localPoint.x <= rotatedBoxMax.x &&
-        //        localPoint.y >= rotatedBoxMin.y && localPoint.y <= rotatedBoxMax.y) {
-
-        //        //std::cout << "Objects in this position" << objectsInAABB.size() << std::endl;
-        //        if (std::find(objectsInAABB.begin(), objectsInAABB.end(), objD) == objectsInAABB.end()) {
-        //            objectsInAABB.push_back(objD);
-        //        }
-        //        if (ImGui::IsMouseClicked(0)) {
-        //            if (objectsInAABB.size() > 0) {
-        //                SelectIndex++;
-        //            }
-
-        //            if (SelectIndex > objectsInAABB.size() - 1) {
-        //                SelectIndex = 0;
-        //            }
-
-
-        //            if (UIManager::instance->inspectorui->ObjectSelectToInspector != objD) {
-        //                UIManager::instance->inspectorui->SelectEntity(objectsInAABB[SelectIndex]);
-        //            }
-
-        //            /*if (UIManager::instance->inspectorui->ObjectSelectToInspector != nullptr && UIManager::instance->inspectorui->ObjectSelectToInspector != objD) {
-        //                UIManager::instance->inspectorui->SelectEntity(objD);
-        //            }
-        //            else {
-        //                if (UIManager::instance->inspectorui->ObjectSelectToInspector == nullptr) {
-        //                    UIManager::instance->inspectorui->SelectEntity(objD);
-        //                }
-        //            }*/
-
-        //            ObjectSelect = true;
-
-        //            UIManager::instance->hierarhcyui->SelectInHierarchy = false;
-        //            break;
-        //        }
-        //    }
-        //    else {
-        //        auto it = std::find(objectsInAABB.begin(), objectsInAABB.end(), objD);
-        //        if (it != objectsInAABB.end()) {
-        //            objectsInAABB.erase(it);
-        //        }
-
-        //        if (ImGui::IsMouseClicked(0) && !LockWithGizmos) {
-        //            UIManager::instance->inspectorui->ObjectSelectToInspector = nullptr;
-        //        }
-        //    }
-
-
-        //    if (ImGui::IsMouseDragging(0) && ImGui::IsMouseDown(0) && UIManager::instance->inspectorui->ObjectSelectToInspector != nullptr) {
-        //        //UIManager::instance->inspectorui->ObjectSelectToInspector->getComponent<SpriteComponent>().ObjectPosition.x = WorldPoint.x;
-        //        //UIManager::instance->inspectorui->ObjectSelectToInspector->getComponent<SpriteComponent>().ObjectPosition.y = WorldPoint.y;
-        //        isdragging = true;
-        //    }
-
-        //    if (!ImGui::IsMouseDragging(0)) {
-        //        isdragging = false;
-        //    }
-        //}
-    }
-
-
-#pragma region OLD AABB WITH RAYCAST
-    //if (ImGui::IsMouseDown (0)/* && ImGui::IsWindowHovered()*/) {
-
-    //    glm::vec3 ray_origin;
-    //    glm::vec3 ray_direction;
-
-    //    double x, y;
-    //    glfwGetCursorPos(StartEngineGraphics::window, &x, &y);
-
-    //    double xPos = x - imagePosition.x;
-    //    double yPos = y - imagePosition.y;
-
-
-
-    //    ScreenPosToWorldRay(
-    //        xPos, yPos,
-    //        imageSizeSCENE.x, imageSizeSCENE.y,
-    //        SceneManager::GetSceneManager()->OpenScene->worldCamera->GetView(),
-    //        SceneManager::GetSceneManager()->OpenScene->worldCamera->GetProjectionMatrix(),
-    //        ray_origin,
-    //        ray_direction
-    //    );
-
-    //    
-    //    for (Entity* objs : SceneManager::GetSceneManager()->OpenScene->objectsInScene) {
-    //        float intersection_distance; // Output of TestRayOBBIntersection()
-
-    //        glm::vec3 ObjectScale = glm::vec3
-    //        (
-    //            (objs->transform->Scale.x),
-    //            (objs->transform->Scale.y),
-    //            (objs->transform->Scale.z)
-    //        );
-
-    //        glm::vec3 aabb_min(-ObjectScale.x,
-    //                           -ObjectScale.y,
-    //                           -ObjectScale.z);
-
-
-    //        glm::vec3 aabb_max(ObjectScale.x,
-    //                           ObjectScale.y,
-    //                           ObjectScale.z);
-    //        
-    //        glm::mat4 RotationMatrix = glm::mat4_cast(glm::quat(1, 0, 0, 0));
-    //        glm::mat4 TranslationMatrix = glm::translate(glm::mat4(1.0f), glm::vec3(objs->transform->Position.x, objs->transform->Position.y, objs->transform->Position.z));
-    //        glm::mat4 ModelMatrix = objs->transform->GetMatrix()/*TranslationMatrix * RotationMatrix*/;
-
-
-    //        if (TestRayOBBIntersection(
-    //            ray_origin,
-    //            ray_direction,
-    //            aabb_min,
-    //            aabb_max,
-    //            ModelMatrix,
-    //            intersection_distance)
-    //            ) {
-    //            UIManager::instance->inspectorui->ObjectSelectToInspector = objs;
-    //            std::cout << "Object Found:  " << objs->ObjectName << " | DISTANCE: " << intersection_distance << std::endl;
-    //        }
-    //        else {
-    //            //UIManager::instance->inspectorui->ObjectSelectToInspector = nullptr;
-    //        }
-    //    }
-    //}
-#pragma endregion
-
-
-    ImGui::End();
+        ImGui::End();
+    }    
 #pragma endregion
 }
 

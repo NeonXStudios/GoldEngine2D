@@ -15,6 +15,7 @@ public:
 	static string* GetOpenSceneName();
 	static void LoadScene (string scenePath, string sceneName);
 	Entity* NewEntity	  ();
+	Entity* NewEntityNonSetupScene	  ();
 	Entity* GetObjectByID (int id);
 	Entity* GetObjectPerIndex (int index);
 	Entity* CloneEntity (Entity* entity);
