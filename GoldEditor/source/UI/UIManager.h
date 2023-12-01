@@ -7,6 +7,7 @@
 #include "HUDS/RightClickUI.h"
 #include "HUDS/CameraSetting.h"
 #include "HUDS/TileMapUI.h"
+#include "HUDS/InfoAssetUI.h"
 #include "../UI/NodeUI/NodeUI.h"
 
 #include "../Inspector/ScriptEditor.h"
@@ -24,6 +25,8 @@ public:
 	CameraSetting* cameraSettingUI;
 	TileMapUI* tileMapUI;
 	NodeUI* nodePanel;
+	InfoAssetUI* infoAssetsUI;
+
 
 	void start();
 

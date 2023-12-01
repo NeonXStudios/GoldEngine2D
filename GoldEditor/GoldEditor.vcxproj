@@ -196,6 +196,7 @@
     <ClCompile Include="source\UI\HUDS\BarMenuUI.cpp" />
     <ClCompile Include="source\UI\HUDS\CameraSetting.cpp" />
     <ClCompile Include="source\UI\HUDS\Hierarchy.cpp" />
+    <ClCompile Include="source\UI\HUDS\InfoAssetUI.cpp" />
     <ClCompile Include="source\UI\HUDS\Inspector.cpp" />
     <ClCompile Include="source\UI\HUDS\RightClickUI.cpp" />
     <ClCompile Include="source\UI\HUDS\SceneUI.cpp" />
@@ -255,6 +256,7 @@
     <ClInclude Include="source\UI\HUDS\BarMenuUI.h" />
     <ClInclude Include="source\UI\HUDS\CameraSetting.h" />
     <ClInclude Include="source\UI\HUDS\HierarchyUI.h" />
+    <ClInclude Include="source\UI\HUDS\InfoAssetUI.h" />
     <ClInclude Include="source\UI\HUDS\Inspector.h" />
     <ClInclude Include="source\UI\HUDS\RightClickUI.h" />
     <ClInclude Include="source\UI\HUDS\SceneUI.h" />

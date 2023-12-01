@@ -28,4 +28,5 @@ public:
 	Entity* Destroy(Entity* obj);
 	
 	void AddNewTile(string TilePath, glm::vec3 PositionToSet);
+	void DeleteTile(int index);
 };

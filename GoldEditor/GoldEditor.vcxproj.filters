@@ -75,6 +75,27 @@
     <Filter Include="Editor\04_UI\InfoAsset">
       <UniqueIdentifier>{08cce3ea-6253-4900-ad5b-dbcfd6a94254}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Editor\04_UI\Assets">
+      <UniqueIdentifier>{433fe5f2-8a91-4f4c-b083-65b378b35bb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor\04_UI\ChildDraw">
+      <UniqueIdentifier>{f6ffe52a-6afc-4398-9011-755f7e1a13d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor\04_UI\CameraSetting">
+      <UniqueIdentifier>{643ef847-dfc1-4421-8c00-50b54f81c947}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor\04_UI\BarMenuUI">
+      <UniqueIdentifier>{5632a21f-da66-43c7-bf76-166ef95d7284}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor\04_UI\DragAndDrop">
+      <UniqueIdentifier>{9a90fa06-3fcc-4275-a610-b8d11f67aee3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor\04_UI\ComponentList">
+      <UniqueIdentifier>{8ee6e39d-a136-4363-8cf4-ed3fe163b8e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor\04_UI\SceneUI">
+      <UniqueIdentifier>{c64cadcd-7895-46f5-8833-31ba42e838a3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Binarys\c\glad.c">
@@ -106,9 +127,6 @@
     </ClCompile>
     <ClCompile Include="source\UI\UIManager.cpp">
       <Filter>Editor\04_UI\Behaviour</Filter>
-    </ClCompile>
-    <ClCompile Include="source\UI\HUDS\SceneUI.cpp">
-      <Filter>Editor\04_UI</Filter>
     </ClCompile>
     <ClCompile Include="source\UI\EditorUI\EditorGUI.cpp">
       <Filter>Editor\04_UI\EditorGUI</Filter>
@@ -146,23 +164,8 @@
     <ClCompile Include="source\Gizmos\MoveGizmos.cpp">
       <Filter>Editor\04_UI\Gizmos</Filter>
     </ClCompile>
-    <ClCompile Include="source\UI\DragAndDrop.cpp">
-      <Filter>Editor\04_UI</Filter>
-    </ClCompile>
-    <ClCompile Include="source\UI\HUDS\Assets.cpp">
-      <Filter>Editor\04_UI</Filter>
-    </ClCompile>
     <ClCompile Include="source\Editor\GameCompiler.cpp">
       <Filter>Editor\03_EditorComponents\Compiler</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Inspector\ComponentList.cpp">
-      <Filter>Editor\04_UI</Filter>
-    </ClCompile>
-    <ClCompile Include="source\UI\HUDS\CameraSetting.cpp">
-      <Filter>Editor\04_UI</Filter>
-    </ClCompile>
-    <ClCompile Include="source\UI\HUDS\BarMenuUI.cpp">
-      <Filter>Editor\04_UI</Filter>
     </ClCompile>
     <ClCompile Include="..\Binarys\include\imguizmo\ImGuizmo.cpp">
       <Filter>RecursosEditor\IMGUIZMO</Filter>
@@ -215,11 +218,32 @@
     <ClCompile Include="source\UI\HUDS\Hierarchy.cpp">
       <Filter>Editor\04_UI\Hierarchy</Filter>
     </ClCompile>
-    <ClCompile Include="source\UI\EditorUI\ChildDraw.cpp">
-      <Filter>Editor\04_UI</Filter>
-    </ClCompile>
     <ClCompile Include="source\UI\GameView\GameRun.cpp">
       <Filter>Editor\04_UI\GameEngineRun</Filter>
+    </ClCompile>
+    <ClCompile Include="source\UI\HUDS\InfoAssetUI.cpp">
+      <Filter>Editor\04_UI\InfoAsset</Filter>
+    </ClCompile>
+    <ClCompile Include="source\UI\HUDS\Assets.cpp">
+      <Filter>Editor\04_UI\Assets</Filter>
+    </ClCompile>
+    <ClCompile Include="source\UI\EditorUI\ChildDraw.cpp">
+      <Filter>Editor\04_UI\ChildDraw</Filter>
+    </ClCompile>
+    <ClCompile Include="source\UI\HUDS\CameraSetting.cpp">
+      <Filter>Editor\04_UI\CameraSetting</Filter>
+    </ClCompile>
+    <ClCompile Include="source\UI\HUDS\BarMenuUI.cpp">
+      <Filter>Editor\04_UI\BarMenuUI</Filter>
+    </ClCompile>
+    <ClCompile Include="source\UI\DragAndDrop.cpp">
+      <Filter>Editor\04_UI\DragAndDrop</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Inspector\ComponentList.cpp">
+      <Filter>Editor\04_UI\ComponentList</Filter>
+    </ClCompile>
+    <ClCompile Include="source\UI\HUDS\SceneUI.cpp">
+      <Filter>Editor\04_UI\SceneUI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -254,17 +278,8 @@
     <ClInclude Include="source\UI\UIDrawer.h">
       <Filter>Editor\04_UI\Behaviour</Filter>
     </ClInclude>
-    <ClInclude Include="source\UI\HUDS\SceneUI.h">
-      <Filter>Editor\04_UI</Filter>
-    </ClInclude>
     <ClInclude Include="source\UI\UIManager.h">
       <Filter>Editor\04_UI\Behaviour</Filter>
-    </ClInclude>
-    <ClInclude Include="source\UI\HUDS\BarMenuUI.h">
-      <Filter>Editor\04_UI</Filter>
-    </ClInclude>
-    <ClInclude Include="source\UI\HUDS\Assets.h">
-      <Filter>Editor\04_UI</Filter>
     </ClInclude>
     <ClInclude Include="source\UI\EditorUI\EditorGUI.h">
       <Filter>Editor\04_UI\EditorGUI</Filter>
@@ -302,17 +317,8 @@
     <ClInclude Include="source\Gizmos\MoveGizmos.h">
       <Filter>Editor\04_UI\Gizmos</Filter>
     </ClInclude>
-    <ClInclude Include="source\UI\DragAndDrop.h">
-      <Filter>Editor\04_UI</Filter>
-    </ClInclude>
     <ClInclude Include="source\Editor\GameCompiler.h">
       <Filter>Editor\03_EditorComponents\Compiler</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Inspector\ComponentList.h">
-      <Filter>Editor\04_UI</Filter>
-    </ClInclude>
-    <ClInclude Include="source\UI\HUDS\CameraSetting.h">
-      <Filter>Editor\04_UI</Filter>
     </ClInclude>
     <ClInclude Include="..\Binarys\include\imguizmo\ImGuizmo.h">
       <Filter>RecursosEditor\IMGUIZMO</Filter>
@@ -371,11 +377,32 @@
     <ClInclude Include="source\UI\HUDS\HierarchyUI.h">
       <Filter>Editor\04_UI\Hierarchy</Filter>
     </ClInclude>
-    <ClInclude Include="source\UI\EditorUI\ChildDraw.h">
-      <Filter>Editor\04_UI</Filter>
-    </ClInclude>
     <ClInclude Include="source\UI\GameView\GameRun.h">
       <Filter>Editor\04_UI\GameEngineRun</Filter>
+    </ClInclude>
+    <ClInclude Include="source\UI\HUDS\InfoAssetUI.h">
+      <Filter>Editor\04_UI\InfoAsset</Filter>
+    </ClInclude>
+    <ClInclude Include="source\UI\HUDS\Assets.h">
+      <Filter>Editor\04_UI\Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="source\UI\EditorUI\ChildDraw.h">
+      <Filter>Editor\04_UI\ChildDraw</Filter>
+    </ClInclude>
+    <ClInclude Include="source\UI\HUDS\CameraSetting.h">
+      <Filter>Editor\04_UI\CameraSetting</Filter>
+    </ClInclude>
+    <ClInclude Include="source\UI\HUDS\BarMenuUI.h">
+      <Filter>Editor\04_UI\BarMenuUI</Filter>
+    </ClInclude>
+    <ClInclude Include="source\UI\DragAndDrop.h">
+      <Filter>Editor\04_UI\DragAndDrop</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Inspector\ComponentList.h">
+      <Filter>Editor\04_UI\ComponentList</Filter>
+    </ClInclude>
+    <ClInclude Include="source\UI\HUDS\SceneUI.h">
+      <Filter>Editor\04_UI\SceneUI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

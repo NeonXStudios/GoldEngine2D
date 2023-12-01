@@ -35,6 +35,18 @@ void TileMapComponent::PostRender() {
 }
 
 
+void TileMapComponent::DeleteTile (int index) {
+	if (TileSprites.size() > 0) {
+		if (index >= 0 && index < TileSprites.size()) {
+			TileSprites.erase(TileSprites.begin() + index);
+			std::cout << "Elemento eliminado -> Quedan: " << TileSprites.size() << " tiles" << std::endl;
+		}
+		else {
+			std::cout << "Índice fuera de rango" << std::endl;
+		}
+	}
+}
+
 
 void TileMapComponent::AddNewTile(string TilePath, glm::vec3 PositionToSet) {
 	/*Entity* newTile = new Entity();

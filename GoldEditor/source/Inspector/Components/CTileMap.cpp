@@ -14,7 +14,9 @@ void CTileMap::draw(Entity* owner) {
     ImGui::Button("Tile Map", ImVec2(ImGui::GetContentRegionAvail().x, 20));
     ImGui::Spacing();
     
-    string nameTreeNode = "Tile Sprites (" + std::to_string(owner->getComponent<TileMapComponent>().TileSprites.size()) + ")";
+    //(" + std::to_string(owner->getComponent<TileMapComponent>().TileSprites.size()) + ")
+
+    string nameTreeNode = "Tile Sprites";
 
     if (ImGui::TreeNode (nameTreeNode.c_str())) {
         for (int i = 0; i < owner->getComponent<TileMapComponent>().TileSprites.size(); i++) {
@@ -42,6 +44,11 @@ void CTileMap::draw(Entity* owner) {
 
                 ImGui::EndDragDropTarget();
             }
+
+            if (ImGui::Button("-")) {
+                owner->getComponent<TileMapComponent>().DeleteTile(i);
+            }
+            ImGui::Separator();
             ImGui::PopID();
         }
 

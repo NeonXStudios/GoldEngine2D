@@ -155,6 +155,9 @@ void AssetsUI::draw() {
 
                     if (ImGui::ImageButton((void*)(intptr_t)textureTextureID, imageSize)) {
                         //path_to_read = entry.path().string();
+                        UIManager::instance->infoAssetsUI->assetPath = AComponent::RemoveDir(entry.path().string());
+                        UIManager::instance->infoAssetsUI->LoadIMG (AComponent::RemoveDir(entry.path().string()));
+                        UIManager::instance->infoAssetsUI->openUI = true;
                     }
 
                     if (ImGui::BeginDragDropSource(src_flags))
