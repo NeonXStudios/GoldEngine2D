@@ -27,6 +27,7 @@ public:
     unsigned int depthTexture;      // Texture to capture depth
     GLuint colorAndDepthTexture; // Variable para almacenar el ID de la textura combinada de color y profundidad
     GLuint depthRenderbuffer;    // Variable para almacenar el ID del renderbuffer de profundidad
+    bool windowOpen = true;
 
     glm::vec2 WorldPoint;
 

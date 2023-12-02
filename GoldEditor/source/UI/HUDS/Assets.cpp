@@ -33,6 +33,7 @@ void AssetsUI::draw() {
             }
         }
     }
+
     ImGuiDragDropFlags src_flags = 0;
     src_flags |= ImGuiDragDropFlags_SourceNoDisableHover;
     src_flags |= ImGuiDragDropFlags_SourceNoHoldToOpenOthers;
@@ -51,20 +52,7 @@ void AssetsUI::draw() {
         ImGui::Begin("Create Asset");
 
         if (ImGui::MenuItem("New Script")) {
-            std::string path_to_read = path_to_read;
-            std::string file = FileSystem::GetAsset (path_to_read) + "/NewScript.lua";
-
-            std::ofstream archivof(file);
-
-            if (archivof.is_open()) {
-                archivof << "Contenido para escribir en el archivo." << std::endl;
-
-                archivof.close();
-                std::cout << "Archivo creado y contenido escrito correctamente." << std::endl;
-            }
-            else {
-                std::cerr << "No se pudo abrir el archivo." << std::endl;
-            }
+            CreatingScriptMenuOpen = true;
         }
 
         ImGui::End();
@@ -85,6 +73,41 @@ void AssetsUI::draw() {
         }
     }
 
+    if (CreatingScriptMenuOpen) {
+
+        ImGui::SetWindowPos(ImVec2(AppSettings::RenderWidth / 2, AppSettings::RenderHeight / 2));
+        ImGui::SetWindowSize(ImVec2(500, 320));
+        if (ImGui::Begin("New Script Menu")) {
+
+            ScriptName = EditorGUI::InputText("Script Name", ScriptName);
+
+            if (ImGui::Button("Create"))
+            {
+                std::string path_to_read = path_to_read;
+                std::string file = FileSystem::GetAsset(path_to_read) + "/ " + ScriptName + ".lua";
+
+                std::ofstream archivof(file);
+
+                if (archivof.is_open()) {
+                    archivof << "Contenido para escribir en el archivo." << std::endl;
+
+                    archivof.close();
+                    std::cout << "Archivo creado y contenido escrito correctamente." << std::endl;
+                }
+                else {
+                    std::cerr << "No se pudo abrir el archivo." << std::endl;
+                }
+                CreatingScriptMenuOpen = false;
+            }
+
+            if (ImGui::Button("Cancel")) {
+                CreatingScriptMenuOpen = false;
+            }
+
+            ImGui::End();
+        }
+    }
+
 
 
     try {
@@ -92,7 +115,7 @@ void AssetsUI::draw() {
             std::string namePath = entry.path().filename().string();
             ImGui::PushID(namePath.c_str());
 
-            ImVec2 imageSize(50, 50); // Tamaño de la imagen
+            ImVec2 imageSize(100, 100); // Tamaño de la imagen
             ImVec2 textPadding(0, 5); // Espaciado entre la imagen y el texto
 
             // Guardar la posición actual para dibujar el texto superpuesto
@@ -261,37 +284,39 @@ void AssetsUI::draw() {
 
 
             if (entry.path().extension() != ".f" && entry.path().extension() != ".data") {
-
                 ImDrawList* drawList = ImGui::GetWindowDrawList();
                 ImFont* font = ImGui::GetFont(); // Obtiene la fuente actual de ImGui
 
                 std::string text = namePath; // Tu cadena de texto original
-                //ImVec2 textPos = ImVec2(0.0f, 0.0f); // Posición del texto
                 ImU32 textColor = IM_COL32_WHITE; // Color del texto
 
-                int maxLetters = 7; // Máximo de letras que deseas mostrar
+                int maxLetters = 15; // Máximo de letras que deseas mostrar
 
                 if (text.size() > maxLetters) {
                     text = text.substr(0, maxLetters); // Obtén solo las primeras 9 letras
                 }
 
-                drawList->AddText(font, font->FontSize, ImVec2(0.0f, 0.0f), textColor, text.c_str());
+                // Reducir el tamaño de la fuente a la mitad
+                float newFontSize = font->FontSize * 0.5f;
 
+                // Dibujar texto con la nueva fuente más pequeña
+                drawList->AddText(font, newFontSize, ImVec2(0.0f, 0.0f), textColor, text.c_str());
                 drawList->AddText(font, font->FontSize, textPos, textColor, text.c_str());
             }
             ImGui::PopID();
 
 
-            float espacioHorizontal = 5.0f;
+            float espacioHorizontal = 5.0f;  // Ajusta este valor según sea necesario
             float anchoImagen = 50.0f;
             float espacioTotalImagen = anchoImagen + espacioHorizontal;
 
             if (posicionImagen.x + espacioTotalImagen < ImGui::GetContentRegionAvail().x - 50) {
-                ImGui::SameLine();
+                ImGui::SameLine(0, espacioHorizontal);  // Puedes ajustar el segundo parámetro según tus necesidades
             }
             else {
                 ImGui::NewLine();
             }
+
         }
     }
     catch (const fs::filesystem_error& ex) {

@@ -21,7 +21,6 @@ public:
     bool activeMouse;
     GDGizmos* gizmos = new GDGizmos();
 
-
     //Shader ourShader;
 
     void start() override;

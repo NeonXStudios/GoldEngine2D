@@ -48,6 +48,8 @@ public:
     GLuint whereTextureID;
     GLuint fbxTextureID;
     ImVec2 mousePos;
+    bool CreatingScriptMenuOpen;
+    string ScriptName;
 
     void start() override {
         path_to_read = getRoute() + "/assets/";

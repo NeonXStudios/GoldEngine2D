@@ -1,6 +1,6 @@
 #pragma once
-#include "../../Editor/GoldEditor.h"
 #include "SceneUI.h"
+#include "../../Editor/GoldEditor.h"
 #include "../UIManager.h"
 #include <imguizmo/ImGuizmo.h>
 #include <glm/glm.hpp>
@@ -63,8 +63,10 @@ void SceneUI::draw() {
 
     // Dibujamos la imagen en la ventana de ImGui
     ImGui::SetNextWindowSize(windowSize);
-    
-    if (ImGui::Begin("Scene", nullptr, ImGuiWindowFlags_NoTitleBar)) {
+    ImGui::PushID ("SceneUIView");
+    windowOpen = true;
+
+    ImGui::Begin("Scene Open", &windowOpen);
         ImGui::Text("FPS: %.1f", ImGui::GetIO().Framerate);
         //RenderSizeWindow = ImGui::GetWindowSize();
         ImGuizmo::SetDrawlist();
@@ -152,7 +154,7 @@ void SceneUI::draw() {
         glm::vec2 initialMousePos;  // Posición del mouse cuando comenzó el arrastre
         glm::vec2 initialObjectPos; // Posición inicial del objeto cuando comenzó el arrastre
 
-        
+
 
         if (ImGui::IsWindowHovered() && !LockWithGizmos && !ImGuizmo::IsOver()) {
             float maxZ = -std::numeric_limits<float>::max();
@@ -167,10 +169,10 @@ void SceneUI::draw() {
                 else {
                     UIManager::instance->inspectorui->ObjectSelectToInspector = nullptr;
                 }
-            }     
+            }
         }
         ImGui::End();
-    }    
+    ImGui::PopID();
 #pragma endregion
 }
 
