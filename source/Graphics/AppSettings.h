@@ -20,5 +20,5 @@ public:
 
 	static void setTargetFrame (int fps);
 	static int getTargetFrame ();
-	static void setVsyncState (int active);
+	static void setVsyncState (int active = 0);
 };

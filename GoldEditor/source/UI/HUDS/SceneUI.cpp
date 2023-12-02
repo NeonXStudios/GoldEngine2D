@@ -159,13 +159,16 @@ void SceneUI::draw() {
 
             CastData* data = new CastData();
             ObjectCaster* caster = new ObjectCaster();
-            if (caster->MouseCast(WorldPoint, data)) {
-                if (ImGui::IsMouseDown(0)) {
+
+            if (ImGui::IsMouseClicked(0)) {
+                if (caster->MouseCast(WorldPoint, data)) {
                     UIManager::instance->inspectorui->SelectEntity(data->object);
                 }
-            }
+                else {
+                    UIManager::instance->inspectorui->ObjectSelectToInspector = nullptr;
+                }
+            }     
         }
-
         ImGui::End();
     }    
 #pragma endregion

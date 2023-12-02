@@ -22,6 +22,16 @@ void AssetsUI::draw() {
             resetRoute();
             //std::cout << "Redirigido a la carpeta: " << path_to_read << std::endl;
         }
+
+        if (ImGui::Button ("Send All Sprites To Tile Select") && UIManager::instance->inspectorui->ObjectSelectToInspector->hasComponent<TileMapComponent>()) {
+            for (const auto& entry : fs::directory_iterator(path_to_read)) {
+                string GetExtension = entry.path().extension().string();
+
+                if (GetExtension == ".png") {
+                    UIManager::instance->inspectorui->ObjectSelectToInspector->getComponent<TileMapComponent>().TileSprites.push_back(AComponent::RemoveDir(entry.path().string()));
+                }
+            }
+        }
     }
     ImGuiDragDropFlags src_flags = 0;
     src_flags |= ImGuiDragDropFlags_SourceNoDisableHover;

@@ -45,7 +45,7 @@ void InfoAssetUI::draw() {
 void InfoAssetUI::LoadIMG(string pathIMG) {
 
     if (SelectUIIMG != -1) {
-        glDeleteBuffers(1, &SelectUIIMG);
+        glDeleteTextures(1, &SelectUIIMG);
         std::cout << "Liberando memoria del buffer " << pathIMG << std::endl;
     }
 

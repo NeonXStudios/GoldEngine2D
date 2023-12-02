@@ -15,20 +15,26 @@ namespace RenderSystem {
             double x, y;
             glfwGetCursorPos(StartEngineGraphics::window, &x, &y);
 
+            Camera* cam = SceneManager::GetSceneManager()->OpenScene->worldCamera;
+
             double windowMousePosX = x - ViewportRenderPosition.x;
             double windowMousePosY = y - ViewportRenderPosition.y;
 
-            double NormalMousePosX = windowMousePosX / WindowSize.x;
-            double NormalMousePosY = -windowMousePosY / WindowSize.y;
+            double NormalMousePosX = (windowMousePosX / WindowSize.x);
+            double NormalMousePosY = (-windowMousePosY / WindowSize.y);
+
 
             // CALCULAR CENTRO DE LA TEXTURA CON EL MOUSE (0, 0)
-            double centeredMousePosX = (NormalMousePosX * 2.0f - 1.0f) * (AppSettings::RenderWidth / 2) * SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom;
-            double centeredMousePosY = (NormalMousePosY * 2.0f + 1.0f) * (AppSettings::RenderHeight / 2) * SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom;
+            double centeredMousePosX = ((NormalMousePosX * 2.0f - 1.0f) * (AppSettings::RenderWidth / 2) * SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom);
+            double centeredMousePosY = ((NormalMousePosY * 2.0f + 1.0f) * (AppSettings::RenderHeight / 2) * SceneManager::GetSceneManager()->OpenScene->worldCamera->zoom);
 
-            Camera* cam = SceneManager::GetSceneManager()->OpenScene->worldCamera;
 
-            double WorldPointX = (centeredMousePosX + cam->cameraPosition.x);
-            double WorldPointY = (centeredMousePosY - cam->cameraPosition.y);
+            double WorldPointX = centeredMousePosX + cam->cameraPosition.x;
+            double WorldPointY = centeredMousePosY + cam->cameraPosition.y;
+
+
+            std::cout << "Mouse X: " << WorldPointX << "Camera Pos X: " << cam->cameraPosition.x << std::endl;
+            std::cout << "Mouse Y: " << WorldPointY << "Camera Pos Y: " << cam->cameraPosition.y << std::endl;
 
 
             return glm::vec2(WorldPointX, WorldPointY);
@@ -50,8 +56,8 @@ namespace RenderSystem {
 
             Camera* cam = SceneManager::GetSceneManager()->OpenScene->worldCamera;
 
-            double WorldPointX = (centeredMousePosX + cam->cameraPosition.x);
-            double WorldPointY = (centeredMousePosY - cam->cameraPosition.y);
+            double WorldPointX = centeredMousePosX + cam->cameraPosition.x;
+            double WorldPointY = centeredMousePosY + cam->cameraPosition.y;
 
 
             return glm::vec2(NormalMousePosX, NormalMousePosY);

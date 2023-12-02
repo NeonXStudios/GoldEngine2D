@@ -7,7 +7,10 @@ bool ObjectCaster::MouseCast(glm::vec2 coords, CastData* data) {
     for (int i = 0; i < SceneManager::GetSceneManager()->OpenScene->objectsInScene.size(); i++) {
         Entity* objD = SceneManager::GetSceneManager()->OpenScene->objectsInScene[i];
 
-        glm::vec3& obj = objD->entity->transform->Position;
+
+        glm::vec3 PosCam = objD->entity->transform->Position;
+
+        glm::vec3& obj = PosCam;
         float objWidth = objD->entity->transform->Scale.x;
         float objHeight = objD->entity->transform->Scale.y;
 

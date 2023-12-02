@@ -106,21 +106,23 @@ void GoldEditor::update() {
             float rotX = sensitivity * (float)(mouseY - (height / 2)) / height;
             float rotY = sensitivity * (float)(mouseX - (width / 2)) / width;
 
-            // Calculates upcoming vertical change in the Orientation
-            //glm::vec3 newOrientation = glm::rotate(SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation, glm::radians(-rotX), glm::normalize(glm::cross(SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation, SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraUp)));
-           /*
-            if (abs(glm::angle(newOrientation, SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraUp) - glm::radians(90.0f)) <= glm::radians(85.0f))
-            {
-                SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation = newOrientation;
+            if (rotX != 0 || rotY != 0) {
+                // Calculates upcoming vertical change in the Orientation
+           //glm::vec3 newOrientation = glm::rotate(SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation, glm::radians(-rotX), glm::normalize(glm::cross(SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation, SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraUp)));
+          /*
+           if (abs(glm::angle(newOrientation, SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraUp) - glm::radians(90.0f)) <= glm::radians(85.0f))
+           {
+               SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation = newOrientation;
+           }
+           */
+           //SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation = glm::rotate(SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation, glm::radians(-rotY), SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraUp);
+
+                SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition.x += rotY;
+                SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition.y -= rotX;
+                UIManager::instance->rightClickui->locked = true;
+                // Sets mouse cursor to the middle of the screen so that it doesn't end up roaming around
+                glfwSetCursorPos(window, (width / 2), (height / 2));
             }
-            */
-            //SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation = glm::rotate(SceneManager::GetSceneManager()->OpenScene->worldCamera->Orientation, glm::radians(-rotY), SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraUp);
-            
-            SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition.x += rotY;
-            SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition.y -= rotX;
-            UIManager::instance->rightClickui->locked = true;
-            // Sets mouse cursor to the middle of the screen so that it doesn't end up roaming around
-            glfwSetCursorPos(window, (width / 2), (height / 2));
         }       
     }
     else if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_RELEASE)
@@ -132,6 +134,12 @@ void GoldEditor::update() {
         firstClick = true;
     }
      
+
+    if (InputSystem::InputSystem::GetKey (GLFW_KEY_LEFT_CONTROL) && InputSystem::InputSystem::GetKey(GLFW_KEY_LEFT_SHIFT) && InputSystem::InputSystem::GetKey(GLFW_KEY_R)) {
+        SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition.x = 0;
+        SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition.y = 0;
+    }
+
   /*  RayCastHit hit;
 
 
