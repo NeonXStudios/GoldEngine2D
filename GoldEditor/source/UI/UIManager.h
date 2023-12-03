@@ -8,6 +8,7 @@
 #include "HUDS/CameraSetting.h"
 #include "HUDS/TileMapUI.h"
 #include "HUDS/InfoAssetUI.h"
+#include "HUDS/CanvasUI.h"
 #include "../UI/NodeUI/NodeUI.h"
 
 #include "../Inspector/ScriptEditor.h"
@@ -26,7 +27,7 @@ public:
 	TileMapUI* tileMapUI;
 	NodeUI* nodePanel;
 	InfoAssetUI* infoAssetsUI;
-
+	CanvasUI* canvasUI;
 
 	void start();
 

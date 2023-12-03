@@ -48,6 +48,9 @@ D:\VS\GoldEngine2D\source\Components\Sprite\SpriteComponent.cpp;D:\VS\GoldEngine
 D:\VS\GoldEngine2D\source\Components\Systems\PickingTexture.cpp;D:\VS\GoldEngine2D\x64\Debug\PickingTexture.obj
 D:\VS\GoldEngine2D\source\Components\Systems\RenderSystem.cpp;D:\VS\GoldEngine2D\x64\Debug\RenderSystem.obj
 D:\VS\GoldEngine2D\source\Components\TileMap\TileMapComponent.cpp;D:\VS\GoldEngine2D\x64\Debug\TileMapComponent.obj
+D:\VS\GoldEngine2D\source\Components\UI\Canvas.cpp;D:\VS\GoldEngine2D\x64\Debug\Canvas.obj
+D:\VS\GoldEngine2D\source\Components\UI\ComponentsUI\UIButton.cpp;D:\VS\GoldEngine2D\x64\Debug\UIButton.obj
+D:\VS\GoldEngine2D\source\Components\UI\UIBehaviour.cpp;D:\VS\GoldEngine2D\x64\Debug\UIBehaviour.obj
 D:\VS\GoldEngine2D\source\Components\UI\UIImplement.cpp;D:\VS\GoldEngine2D\x64\Debug\UIImplement.obj
 D:\VS\GoldEngine2D\source\EngineBehaviour\EngineBehaviour.cpp;D:\VS\GoldEngine2D\x64\Debug\EngineBehaviour.obj
 D:\VS\GoldEngine2D\source\EngineBehaviour\GoldEngineLib.cpp;D:\VS\GoldEngine2D\x64\Debug\GoldEngineLib.obj

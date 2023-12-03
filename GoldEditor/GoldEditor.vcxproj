@@ -178,6 +178,7 @@
     <ClCompile Include="source\Inspector\Components\CAnimator.cpp" />
     <ClCompile Include="source\Inspector\Components\CAudio.cpp" />
     <ClCompile Include="source\Inspector\Components\CBoxCollider3D.cpp" />
+    <ClCompile Include="source\Inspector\Components\CCanvas.cpp" />
     <ClCompile Include="source\Inspector\Components\CMaterial.cpp" />
     <ClCompile Include="source\Inspector\Components\CRigidBody.cpp" />
     <ClCompile Include="source\Inspector\Components\CRigidbody3D.cpp" />
@@ -196,6 +197,7 @@
     <ClCompile Include="source\UI\HUDS\Assets.cpp" />
     <ClCompile Include="source\UI\HUDS\BarMenuUI.cpp" />
     <ClCompile Include="source\UI\HUDS\CameraSetting.cpp" />
+    <ClCompile Include="source\UI\HUDS\CanvasUI.cpp" />
     <ClCompile Include="source\UI\HUDS\Hierarchy.cpp" />
     <ClCompile Include="source\UI\HUDS\InfoAssetUI.cpp" />
     <ClCompile Include="source\UI\HUDS\Inspector.cpp" />
@@ -239,6 +241,7 @@
     <ClInclude Include="source\Inspector\Components\CAnimator.h" />
     <ClInclude Include="source\Inspector\Components\CAudio.h" />
     <ClInclude Include="source\Inspector\Components\CBoxCollider3D.h" />
+    <ClInclude Include="source\Inspector\Components\CCanvas.h" />
     <ClInclude Include="source\Inspector\Components\CMaterial.h" />
     <ClInclude Include="source\Inspector\Components\CRigidBody.h" />
     <ClInclude Include="source\Inspector\Components\CRigidbody3D.h" />
@@ -257,6 +260,7 @@
     <ClInclude Include="source\UI\HUDS\Assets.h" />
     <ClInclude Include="source\UI\HUDS\BarMenuUI.h" />
     <ClInclude Include="source\UI\HUDS\CameraSetting.h" />
+    <ClInclude Include="source\UI\HUDS\CanvasUI.h" />
     <ClInclude Include="source\UI\HUDS\HierarchyUI.h" />
     <ClInclude Include="source\UI\HUDS\InfoAssetUI.h" />
     <ClInclude Include="source\UI\HUDS\Inspector.h" />

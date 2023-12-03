@@ -9,6 +9,7 @@
 #include "Components/CSkybox.h"
 #include "Components/CTileMap.h"
 #include "Components/CMaterial.h"
+#include "Components/CCanvas.h"
 //#include "Components/CRigidBody3D.h"
 //#include "Components/CBoxCollider3D.h"
 

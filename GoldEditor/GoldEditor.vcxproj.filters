@@ -96,6 +96,9 @@
     <Filter Include="Editor\04_UI\SceneUI">
       <UniqueIdentifier>{c64cadcd-7895-46f5-8833-31ba42e838a3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Editor\04_UI\CanvasEditor">
+      <UniqueIdentifier>{86bfb904-8820-45e7-ab29-48e1dd41bc38}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Binarys\c\glad.c">
@@ -246,6 +249,12 @@
       <Filter>Editor\04_UI\SceneUI</Filter>
     </ClCompile>
     <ClCompile Include="source\Inspector\Components\CMaterial.cpp">
+      <Filter>Editor\02_InspectorDrawer\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="source\UI\HUDS\CanvasUI.cpp">
+      <Filter>Editor\04_UI\CanvasEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Inspector\Components\CCanvas.cpp">
       <Filter>Editor\02_InspectorDrawer\Components</Filter>
     </ClCompile>
   </ItemGroup>
@@ -408,6 +417,12 @@
       <Filter>Editor\04_UI\SceneUI</Filter>
     </ClInclude>
     <ClInclude Include="source\Inspector\Components\CMaterial.h">
+      <Filter>Editor\02_InspectorDrawer\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="source\UI\HUDS\CanvasUI.h">
+      <Filter>Editor\04_UI\CanvasEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Inspector\Components\CCanvas.h">
       <Filter>Editor\02_InspectorDrawer\Components</Filter>
     </ClInclude>
   </ItemGroup>

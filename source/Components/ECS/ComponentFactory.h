@@ -47,6 +47,11 @@ public:
 			g->deserialize(data, path);
 		}
 
+		if (componentName == "Canvas") {
+			Canvas* g = &owner->addComponent<Canvas>();
+			g->deserialize(data, path);
+		}
+
 		//if (componentName == "Rigidbody3d") {
 		//	Rigidbody3d* g = &owner->addComponent<Rigidbody3d>();
 		//	g->deserialize(data, path);

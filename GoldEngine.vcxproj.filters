@@ -107,6 +107,12 @@
     <Filter Include="Engine\02_Components\Tile">
       <UniqueIdentifier>{7f4295ae-0153-45e9-a44c-7262a08ac9f9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\02_Components\UI\GameUI">
+      <UniqueIdentifier>{dad33481-3d15-4138-bbc1-92822810b138}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\02_Components\UI\GameUI\Components">
+      <UniqueIdentifier>{0c4fbb1b-2b61-4eec-b28a-0c54a827e203}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Graphics\StartEngineGraphics.cpp">
@@ -144,9 +150,6 @@
     </ClCompile>
     <ClCompile Include="Binarys\c\glad.c">
       <Filter>Recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Components\UI\UIImplement.cpp">
-      <Filter>Engine\02_Components\UI</Filter>
     </ClCompile>
     <ClCompile Include="Binarys\include\imgui\imgui.cpp">
       <Filter>Recursos\IMGUI</Filter>
@@ -283,6 +286,18 @@
     <ClCompile Include="source\Components\ECS\MaterialComponent.cpp">
       <Filter>Engine\02_Components\ECS</Filter>
     </ClCompile>
+    <ClCompile Include="source\Components\UI\Canvas.cpp">
+      <Filter>Engine\02_Components\UI\GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\UI\ComponentsUI\UIButton.cpp">
+      <Filter>Engine\02_Components\UI\GameUI\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\UI\UIImplement.cpp">
+      <Filter>Engine\02_Components\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Components\UI\UIBehaviour.cpp">
+      <Filter>Engine\02_Components\UI\GameUI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Components\Camera\Camera2D.h">
@@ -320,9 +335,6 @@
     </ClInclude>
     <ClInclude Include="source\Components\AudioSource\AudioManager.h">
       <Filter>Engine\02_Components\AudioSource</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Components\UI\UIImplement.h">
-      <Filter>Engine\02_Components\UI</Filter>
     </ClInclude>
     <ClInclude Include="Binarys\include\imgui\imstb_truetype.h">
       <Filter>Recursos\IMGUI</Filter>
@@ -467,6 +479,18 @@
     </ClInclude>
     <ClInclude Include="source\Components\ECS\MaterialComponent.h">
       <Filter>Engine\02_Components\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\UI\Canvas.h">
+      <Filter>Engine\02_Components\UI\GameUI</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\UI\ComponentsUI\UIButton.h">
+      <Filter>Engine\02_Components\UI\GameUI\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\UI\UIImplement.h">
+      <Filter>Engine\02_Components\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\UI\UIBehaviour.h">
+      <Filter>Engine\02_Components\UI\GameUI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
