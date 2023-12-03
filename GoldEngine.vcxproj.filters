@@ -280,6 +280,9 @@
     <ClCompile Include="source\Components\TileMap\TileMapComponent.cpp">
       <Filter>Engine\02_Components\Tile</Filter>
     </ClCompile>
+    <ClCompile Include="source\Components\ECS\MaterialComponent.cpp">
+      <Filter>Engine\02_Components\ECS</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Components\Camera\Camera2D.h">
@@ -461,6 +464,9 @@
     </ClInclude>
     <ClInclude Include="source\Components\TileMap\TileMapComponent.h">
       <Filter>Engine\02_Components\Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Components\ECS\MaterialComponent.h">
+      <Filter>Engine\02_Components\ECS</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

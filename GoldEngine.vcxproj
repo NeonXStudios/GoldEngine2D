@@ -175,6 +175,7 @@
     <ClCompile Include="source\Components\ECS\ComponentManager.cpp" />
     <ClCompile Include="source\Components\ECS\ComponentSerializer.cpp" />
     <ClCompile Include="source\Components\ECS\ECS.cpp" />
+    <ClCompile Include="source\Components\ECS\MaterialComponent.cpp" />
     <ClCompile Include="source\Components\FileSystem\FileSystem.cpp" />
     <ClCompile Include="source\Components\Lib\GoldMath\GoldMathf.cpp" />
     <ClCompile Include="source\Components\Light\Light.cpp" />
@@ -236,6 +237,7 @@
     <ClInclude Include="source\Components\ECS\ComponentManager.h" />
     <ClInclude Include="source\Components\ECS\ComponentSerializer.h" />
     <ClInclude Include="source\Components\ECS\ECS.h" />
+    <ClInclude Include="source\Components\ECS\MaterialComponent.h" />
     <ClInclude Include="source\Components\FileSystem\FileSystem.h" />
     <ClInclude Include="source\Components\Lib\GoldMath\GoldMathf.h" />
     <ClInclude Include="source\Components\Light\Light.h" />

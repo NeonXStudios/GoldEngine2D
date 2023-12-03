@@ -33,8 +33,6 @@ namespace RenderSystem {
             double WorldPointY = centeredMousePosY + cam->cameraPosition.y;
 
 
-            std::cout << "Mouse X: " << WorldPointX << "Camera Pos X: " << cam->cameraPosition.x << std::endl;
-            std::cout << "Mouse Y: " << WorldPointY << "Camera Pos Y: " << cam->cameraPosition.y << std::endl;
 
 
             return glm::vec2(WorldPointX, WorldPointY);
@@ -80,7 +78,6 @@ namespace InputSystem {
         {
             return glfwGetKey(StartEngineGraphics::window, key) == GLFW_RELEASE;
         };
-
 
 
         static vec2 GetGlobalMousePosition() {

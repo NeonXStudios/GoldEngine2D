@@ -35,7 +35,6 @@ unsigned int indices2[] = {
 };
 
 void SpriteComponent::start()  {
-    compileShaders();
 
     glGenTextures(1, &texture);
     glBindTexture(GL_TEXTURE_2D, texture);
@@ -52,6 +51,7 @@ void SpriteComponent::start()  {
     //glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 
+    compileShaders();
     LoadTexture();
 }
 
@@ -103,28 +103,31 @@ void SpriteComponent::LoadTexture () {
 }
 
 void SpriteComponent::onupdate() {
-    
+    if (entity->hasComponent<MaterialComponent>()) {
+        //glUseProgram(ourShader->ID);
+//        ourShader->use();
+        glActiveTexture(GL_TEXTURE0);
+
+        //DIFFUSE TEXTURE
+        glBindTexture(GL_TEXTURE_2D, texture);
+        glUniform1i(glGetUniformLocation(entity->getComponent<MaterialComponent>().ourShader->ID, "texture_diffuse1"), 0);
+
+        //SPECULAR MAP
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D, texture);
+        glUniform1i(glGetUniformLocation(entity->getComponent<MaterialComponent>().ourShader->ID, "texture_specular1"), 0);
+
+        entity->getComponent<MaterialComponent>().ourShader->use();
+        entity->getComponent<MaterialComponent>().ourShader->setMat4("view", SceneManager::GetSceneManager()->OpenScene->worldCamera->GetView());
+        entity->getComponent<MaterialComponent>().ourShader->setVec3("camPos", SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition);
+        entity->getComponent<MaterialComponent>().ourShader->setMat4("projection", SceneManager::GetSceneManager()->OpenScene->worldCamera->GetProjectionMatrix());
+        entity->getComponent<MaterialComponent>().ourShader->setMat4("model", entity->transform->GetMatrix());  // Aplicar la matriz de modelo
+        ourmodel->Draw(*entity->getComponent<MaterialComponent>().ourShader);
+    }
 }
 
 void SpriteComponent::draw() {
-    glUseProgram(ourShader->ID);
-    glActiveTexture(GL_TEXTURE0);
 
-    //DIFFUSE TEXTURE
-    glBindTexture(GL_TEXTURE_2D, texture);
-    glUniform1i(glGetUniformLocation(ourShader->ID, "texture_diffuse1"), 0);
-
-    //SPECULAR MAP
-    glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, texture);
-    glUniform1i(glGetUniformLocation(ourShader->ID, "texture_specular1"), 0);
-
-    ourShader->use();
-    ourShader->setMat4  ("view", SceneManager::GetSceneManager()->OpenScene->worldCamera->GetView());
-    ourShader->setVec3  ("camPos", SceneManager::GetSceneManager()->OpenScene->worldCamera->cameraPosition);
-    ourShader->setMat4  ("projection", SceneManager::GetSceneManager()->OpenScene->worldCamera->GetProjectionMatrix());
-    ourShader->setMat4  ("model", entity->transform->GetMatrix());  // Aplicar la matriz de modelo
-    ourmodel->Draw      (*ourShader);
 }
 
 void SpriteComponent::PreRender() {
@@ -144,19 +147,11 @@ void SpriteComponent::clean() {
 
 std::string SpriteComponent::serialize() {
     json componentData;
-    //componentData["posx"] = ObjectPosition.x;
-    //componentData["posy"] = ObjectPosition.y;
-    //componentData["posz"] = ObjectPosition.z;
-    componentData["scalex"] = entity->transform->Scale.x;
+    componentData["scalex"] = entity->transform->Scale.x; 
     componentData["scaley"] = entity->transform->Scale.y;
     componentData["scalez"] = entity->transform->Scale.z;
-    //componentData["scaleglobal"] = GlobalScale;
-    //componentData["rotationx"] = rotationAngleX;
-    //componentData["rotationy"] = rotationAngleY;
-    //componentData["rotationz"] = rotationAngleZ;
+
     componentData["texturepath"] = TexturePath;
-    componentData["vertexpath"] = VertexPath;
-    componentData["fragmentpath"] = FragmentPath;
 
     return componentData.dump();
 }
@@ -164,15 +159,6 @@ std::string SpriteComponent::serialize() {
 void SpriteComponent::deserialize (std::string g, std::string path) {
     json componentData = json::parse(g);
 
-
-    //if (CheckVar::Has(componentData, "posx"))
-    //ObjectPosition.x = (float)componentData["posx"];
-
-    //if (CheckVar::Has (componentData, "posy"))
-    //ObjectPosition.y = componentData["posy"];
-
-    //if (CheckVar::Has(componentData, "posz"))
-    //ObjectPosition.z = componentData["posz"];
 
     if (CheckVar::Has(componentData, "scalex"))
         entity->transform->Scale.x = componentData["scalex"];
@@ -183,31 +169,12 @@ void SpriteComponent::deserialize (std::string g, std::string path) {
     if (CheckVar::Has(componentData, "scalez"))
         entity->transform->Scale.z = componentData["scalez"];
 
-    //if (CheckVar::Has(componentData, "scaleglobal"))
-    //GlobalScale = componentData["scaleglobal"];
-
-    //if (CheckVar::Has(componentData, "rotationx"))
-    //rotationAngleX = (float)componentData["rotationx"];
-
-    //if (CheckVar::Has(componentData, "rotationy"))
-    //rotationAngleY = (float)componentData["rotationy"];
-
-    //if (CheckVar::Has(componentData, "rotationz"))
-    //rotationAngleZ = (float)componentData["rotationz"];
 
     if (CheckVar::Has(componentData, "texturepath")) {
         string newPath = (string)componentData["texturepath"];
         TexturePath = newPath;
     }
 
-
-    if (CheckVar::Has(componentData, "vertexpath"))
-    VertexPath = (string)componentData["vertexpath"];
-
-
-    if (CheckVar::Has(componentData, "fragmentpath"))
-    FragmentPath = (string)componentData["fragmentpath"];
-    compileShaders();
 
     LoadTexture();
 }
@@ -239,14 +206,9 @@ GLuint* SpriteComponent::getIndices() {
 }
 
 void SpriteComponent::compileShaders() {
-    string newPathVertex = FileSystem::GetAsset(VertexPath);
-    string newPathFrag = FileSystem::GetAsset(FragmentPath);
-
-    ourShader = new Shader(newPathVertex.c_str(), newPathFrag.c_str());
-    
     ourmodel = new GLD::Model(FileSystem::GetAsset("/models/Plane.fbx"));
-    ourShader->use();
 }
+
 
 glm::vec3 SpriteComponent::Min()
 

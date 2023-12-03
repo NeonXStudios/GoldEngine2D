@@ -21,6 +21,7 @@ D:\VS\GoldEngine2D\GoldEditor\source\Inspector\ComponentList.cpp;D:\VS\GoldEngin
 D:\VS\GoldEngine2D\GoldEditor\source\Inspector\Components\CAnimator.cpp;D:\VS\GoldEngine2D\GoldEditor\x64\Debug\CAnimator.obj
 D:\VS\GoldEngine2D\GoldEditor\source\Inspector\Components\CAudio.cpp;D:\VS\GoldEngine2D\GoldEditor\x64\Debug\CAudio.obj
 D:\VS\GoldEngine2D\GoldEditor\source\Inspector\Components\CBoxCollider3D.cpp;D:\VS\GoldEngine2D\GoldEditor\x64\Debug\CBoxCollider3D.obj
+D:\VS\GoldEngine2D\GoldEditor\source\Inspector\Components\CMaterial.cpp;D:\VS\GoldEngine2D\GoldEditor\x64\Debug\CMaterial.obj
 D:\VS\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidBody.cpp;D:\VS\GoldEngine2D\GoldEditor\x64\Debug\CRigidBody.obj
 D:\VS\GoldEngine2D\GoldEditor\source\Inspector\Components\CRigidbody3D.cpp;D:\VS\GoldEngine2D\GoldEditor\x64\Debug\CRigidbody3D.obj
 D:\VS\GoldEngine2D\GoldEditor\source\Inspector\Components\CScript.cpp;D:\VS\GoldEngine2D\GoldEditor\x64\Debug\CScript.obj

@@ -245,6 +245,9 @@
     <ClCompile Include="source\UI\HUDS\SceneUI.cpp">
       <Filter>Editor\04_UI\SceneUI</Filter>
     </ClCompile>
+    <ClCompile Include="source\Inspector\Components\CMaterial.cpp">
+      <Filter>Editor\02_InspectorDrawer\Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />
@@ -403,6 +406,9 @@
     </ClInclude>
     <ClInclude Include="source\UI\HUDS\SceneUI.h">
       <Filter>Editor\04_UI\SceneUI</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Inspector\Components\CMaterial.h">
+      <Filter>Editor\02_InspectorDrawer\Components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

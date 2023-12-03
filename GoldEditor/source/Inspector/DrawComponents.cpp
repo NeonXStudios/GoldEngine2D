@@ -55,4 +55,5 @@ void DrawComponents::DrawButtons() {
 	ComponentList::createNewComponent <ScriptCompiler>		("Gold Behaviour", objectOwner);
 	ComponentList::createNewComponent <Skybox>				("Sky Box", objectOwner);
 	ComponentList::createNewComponent <TileMapComponent>	("Tile Map", objectOwner);
+	ComponentList::createNewComponent <MaterialComponent>	("Material", objectOwner);
 }

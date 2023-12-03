@@ -22,7 +22,7 @@ public:
 
 	float density = 25.0f;
 	float friction = 0.3f;
-	float Mass = 25;
+	float Mass = 1;
 	bool isStatic;
 	bool isTrigger = false;
 

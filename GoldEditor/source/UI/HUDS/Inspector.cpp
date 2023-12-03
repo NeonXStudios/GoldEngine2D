@@ -39,8 +39,8 @@ void InspectorUI::draw() {
         ObjectSelectToInspector->ObjectName = EditorGUI::InputText("Name:", ObjectSelectToInspector->ObjectName);
         ObjectSelectToInspector->ObjectTag = EditorGUI::InputText("Tag:", ObjectSelectToInspector->ObjectTag);
 
-        glm::vec3 newPos = EditorGUI::Vector3 ("Position:", ObjectSelectToInspector->transform->Position);
-        ObjectSelectToInspector->transform->Position = glm::vec3 (newPos.x, newPos.y, newPos.z);
+        //glm::vec3 newPos = EditorGUI::Vector3("Position:", ObjectSelectToInspector->transform->Position);
+        ObjectSelectToInspector->transform->Position = EditorGUI::Vector3("Position:", ObjectSelectToInspector->transform->Position);
 
         if (ObjectSelectToInspector->parent != nullptr) {
             glm::vec3 newPosLocal = EditorGUI::Vector3("Local Position:", ObjectSelectToInspector->transform->LocalPosition);
@@ -69,7 +69,7 @@ void InspectorUI::draw() {
         ObjectSelectToInspector->transform->Rotation = glm::vec3 ((float)newRot.x, (float)newRot.y, (float)newRot.z);
         ImGui::PopID();
 
-        ObjectSelectToInspector->getComponent<SpriteComponent>().VertexPath   = EditorGUI::InputText("Vertex Shader:", ObjectSelectToInspector->getComponent<SpriteComponent>().VertexPath);
+       /* ObjectSelectToInspector->getComponent<SpriteComponent>().VertexPath   = EditorGUI::InputText("Vertex Shader:", ObjectSelectToInspector->getComponent<SpriteComponent>().VertexPath);
         
         if (ImGui::BeginDragDropTarget())
         {
@@ -123,7 +123,7 @@ void InspectorUI::draw() {
 
 
             ImGui::EndDragDropTarget();
-        }
+        }*/
 
         ImGui::Spacing();
         ImGui::Spacing();

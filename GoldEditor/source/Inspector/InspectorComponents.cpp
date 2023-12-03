@@ -10,6 +10,7 @@ void InspectorComponents::update(Entity* ownerActor) {
 	ComponentUIDrawer::updateUI		<RigidBody>				    (ownerActor, 3, new CRigidBody			()			);
 	ComponentUIDrawer::updateUI     <Animator2D>				(ownerActor, 4, new CAnimator			()			);
 	ComponentUIDrawer::updateUI     <TileMapComponent>	    	(ownerActor, 5, new CTileMap			()			);
+	ComponentUIDrawer::updateUI     <MaterialComponent>	    	(ownerActor, 6, new CMaterial			()			);
 	//ComponentUIDrawer::updateUI     <Skybox>					(ownerActor, 4, new CSkybox				()			);
 
 	//ComponentUIDrawer::updateUI		<Rigidbody3d>			    (ownerActor, 4, new CRigidbody3D		()			);

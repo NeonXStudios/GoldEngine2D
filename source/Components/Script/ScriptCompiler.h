@@ -6,6 +6,7 @@
 #include "../../EngineBehaviour/GoldEngineLib.h"
 #include "sol/sol.hpp"
 #include "../FileSystem/FileSystem.h"
+#include "../ShaderCompiler/Shader.h"
 
 using namespace std;
 

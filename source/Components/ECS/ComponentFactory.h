@@ -42,6 +42,11 @@ public:
 			mapTile->deserialize(data, path);
 		}
 
+		if (componentName == "MaterialComponent") {
+			MaterialComponent* g = &owner->addComponent<MaterialComponent>();
+			g->deserialize(data, path);
+		}
+
 		//if (componentName == "Rigidbody3d") {
 		//	Rigidbody3d* g = &owner->addComponent<Rigidbody3d>();
 		//	g->deserialize(data, path);

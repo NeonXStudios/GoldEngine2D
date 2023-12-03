@@ -16,6 +16,7 @@ D:\VS\GoldEngine2D\source\Components\ECS\ComponentFactory.cpp;D:\VS\GoldEngine2D
 D:\VS\GoldEngine2D\source\Components\ECS\ComponentManager.cpp;D:\VS\GoldEngine2D\x64\Debug\ComponentManager.obj
 D:\VS\GoldEngine2D\source\Components\ECS\ComponentSerializer.cpp;D:\VS\GoldEngine2D\x64\Debug\ComponentSerializer.obj
 D:\VS\GoldEngine2D\source\Components\ECS\ECS.cpp;D:\VS\GoldEngine2D\x64\Debug\ECS.obj
+D:\VS\GoldEngine2D\source\Components\ECS\MaterialComponent.cpp;D:\VS\GoldEngine2D\x64\Debug\MaterialComponent.obj
 D:\VS\GoldEngine2D\source\Components\FileSystem\FileSystem.cpp;D:\VS\GoldEngine2D\x64\Debug\FileSystem.obj
 D:\VS\GoldEngine2D\source\Components\Lib\GoldMath\GoldMathf.cpp;D:\VS\GoldEngine2D\x64\Debug\GoldMathf.obj
 D:\VS\GoldEngine2D\source\Components\Light\Light.cpp;D:\VS\GoldEngine2D\x64\Debug\Light.obj

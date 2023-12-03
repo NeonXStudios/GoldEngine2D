@@ -33,6 +33,7 @@ void UIManager::start (){
 void UIManager::draw() {
 	ImGui::DockSpaceOverViewport();
 
+	sceneui->draw();
 	mainmenuui->draw();
 	hierarhcyui->draw();
 	assetsui->draw();
@@ -41,7 +42,6 @@ void UIManager::draw() {
 	cameraSettingUI->draw();
 	tileMapUI->draw();
 	infoAssetsUI->draw();
-	sceneui->draw();
 	//nodePanel->update();
 
 	if (editorScript != nullptr) {

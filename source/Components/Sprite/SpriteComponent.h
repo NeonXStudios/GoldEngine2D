@@ -5,6 +5,7 @@
 #include "../../RequireLibs.h"
 #include "../SceneManager/SceneManager.h"
 #include <glm/gtc/quaternion.hpp>
+#include "../ECS/MaterialComponent.h"
 
 #define LOADMODELCLASS_H
 #include "../Models/Model.h"
@@ -15,7 +16,7 @@ class SpriteComponent : public Component
 {
 
 public:
-    Shader* ourShader = nullptr;
+    //Shader* ourShader = nullptr;
     GLD::Model* ourmodel = nullptr;
 
 
@@ -32,14 +33,14 @@ public:
 
     //float GlobalScale = 1;
     float rotationAngle;
-    GLuint shaderProgram;
-    unsigned int vertexShader;
-    unsigned int fragmentShader;
+    //GLuint shaderProgram;
+    //unsigned int vertexShader;
+    //unsigned int fragmentShader;
     //sprites/tile_0115.png
     string TexturePath = "Editor/NullSprite.png";
     string TextureSpecularPath = "";
-    string VertexPath = "shaders/vert.glsl";
-    string FragmentPath = "shaders/frag.glsl";
+    //string VertexPath = "shaders/vert.glsl";
+    //string FragmentPath = "shaders/frag.glsl";
 
 
     const char* vertexSh;

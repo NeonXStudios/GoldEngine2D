@@ -19,7 +19,7 @@ using namespace sol;
 
 void ScriptCompiler::init() {
 
-	if (AppSettings::gameRunning && loadD) {
+	if (!AppSettings::gameRunning && loadD) {
 		CalculatorBinder::RegisterFunctions(this);
 		BinderFunctions::RegisterFunctions(this);
 		EntityBinder::RegisterFunctions(this);
@@ -73,14 +73,14 @@ void ScriptCompiler::init() {
 		}
 
 		
-		if (AppSettings::gameRunning && loadD)
+		if (!AppSettings::gameRunning && loadD)
 		lua["onStart"]();
 	}
 }
 
 void ScriptCompiler::update()
 {
-	if (AppSettings::gameRunning && loadD)
+	if (!AppSettings::gameRunning && loadD)
 	lua["onTick"]();
 }
 

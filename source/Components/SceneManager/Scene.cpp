@@ -14,6 +14,7 @@ void Scene::start() {
 void Scene::update() {
 	//worldCamera->Inputs(StartEngineGraphics::window);
 	//worldCamera->updateMatrix(45.0f, 0.1f, 1000.0f);
+
 	worldCamera->update();
 
 	for (Entity* ents : objectsInScene) {
@@ -28,21 +29,21 @@ void Scene::update() {
 
 	if (GravityWorld != nullptr && GravityWorld->GetBodyCount() > 0) {
 		b2Body* body = GravityWorld->GetBodyList();
-		float timeStep = 1.0f / 60;
+		float timeStep = 1.0f / 60.0f;
 		GravityWorld->Step(timeStep, 6, 2);
 		body->GetNext();
 
-		b2RayCastInput raycastInput;
-		raycastInput.p1.Set(0.0f, 10.0f);  // Punto de inicio del rayo
-		raycastInput.p2.Set(10.0f, 0.0f);  // Punto final del rayo
-		raycastInput.maxFraction = 1.0f;  // Longitud máxima del rayo
+		//b2RayCastInput raycastInput;
+		//raycastInput.p1.Set(0.0f, 10.0f);  // Punto de inicio del rayo
+		//raycastInput.p2.Set(10.0f, 0.0f);  // Punto final del rayo
+		//raycastInput.maxFraction = 1.0f;  // Longitud máxima del rayo
 
-		for (b2Body* body = GravityWorld->GetBodyList(); body; body = body->GetNext()) {
-			b2Vec2 p1 = body->GetPosition();
-			b2Vec2 p2 = p1 + b2Vec2(0.0f, -10.0f);
+		//for (b2Body* body = GravityWorld->GetBodyList(); body; body = body->GetNext()) {
+		//	b2Vec2 p1 = body->GetPosition();
+		//	b2Vec2 p2 = p1 + b2Vec2(0.0f, -10.0f);
 
-			GravityWorld->RayCast(raycast, p1, p2);
-		}
+		//	GravityWorld->RayCast(raycast, p1, p2);
+		//}
 	}
 		//mScene->simulate(1.0f / 60.0f);
 		//mScene->fetchResults(true);

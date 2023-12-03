@@ -96,7 +96,7 @@ void TileMapUI::draw() {
         float cellSize = 32.0f;
         int numColumns = 5;
         float buttonSpacingX = 10.0f;
-        float buttonSpacingY = 15.0f;
+        float buttonSpacingY = 25.0f;
 
 
         for (int i = 0; i < Images.size(); ++i) {

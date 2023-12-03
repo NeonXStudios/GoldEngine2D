@@ -310,7 +310,7 @@ void AssetsUI::draw() {
             float anchoImagen = 50.0f;
             float espacioTotalImagen = anchoImagen + espacioHorizontal;
 
-            if (posicionImagen.x + espacioTotalImagen < ImGui::GetContentRegionAvail().x - 50) {
+            if (posicionImagen.x + espacioTotalImagen < ImGui::GetContentRegionAvail().x - 150) {
                 ImGui::SameLine(0, espacioHorizontal);  // Puedes ajustar el segundo parámetro según tus necesidades
             }
             else {
