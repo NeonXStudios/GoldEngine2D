@@ -18,15 +18,15 @@ void RightClickUI::draw() {
 
         if (SceneHover && ImGui::IsMouseDown (1)) {
             MousePos = ImGui::GetMousePos();           
-            ImGui::SetNextWindowPos(ImVec2(MousePos.x, MousePos.y));
-            ImGui::SetNextWindowSize(ImVec2(300, 500));
+            //::SetNextWindowPos(ImVec2(MousePos.x, MousePos.y));
+            //ImGui::SetNextWindowSize(ImVec2(300, 500));
 
-            miniMenuOpen = true;
+            //miniMenuOpen = true;
         }
     
 
     if (ImGui::IsMouseReleased (0)) {
-        miniMenuOpen = false;
+        //miniMenuOpen = false;
     }
 }
 

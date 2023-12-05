@@ -33,29 +33,32 @@ void CanvasUI::start() {
 }
 
 void CanvasUI::draw() {
-	if (isOpen) {
-        ImVec2 windowSize = ImVec2(AppSettings::RenderWidth, AppSettings::RenderHeight);
+        ImGui::Begin("Canvas Editor", &isOpen);
+  //      ImVec2 windowSize = ImVec2(AppSettings::RenderWidth, AppSettings::RenderHeight);
 
-		ImGui::Begin("Canvas Editor", &isOpen);
-        ImVec2 windowPos = ImGui::GetWindowPos();
-        ImVec2 offset = ImGui::GetWindowContentRegionMin();
-        ImVec2 size = ImGui::GetContentRegionAvail();
+		//ImGui::Begin("Canvas Editor", &isOpen);
+  //      ImVec2 windowPos = ImGui::GetWindowPos();
+  //      ImVec2 offset = ImGui::GetWindowContentRegionMin();
+  //      ImVec2 size = ImGui::GetContentRegionAvail();
 
-        ImVec2 actualWindowSize = ImGui::GetWindowSize();
-        float scaleFactor = std::min(actualWindowSize.x / windowSize.x, actualWindowSize.y / windowSize.y);
-        imageSizeSCENE = ImVec2(AppSettings::RenderWidth * scaleFactor, AppSettings::RenderHeight * scaleFactor);
+  //      ImVec2 actualWindowSize = ImGui::GetWindowSize();
+  //      float scaleFactor = std::min(actualWindowSize.x / windowSize.x, actualWindowSize.y / windowSize.y);
+  //      imageSizeSCENE = ImVec2(AppSettings::RenderWidth * scaleFactor, AppSettings::RenderHeight * scaleFactor);
 
 
-        // Calculamos la posición para centrar la imagen en la ventana
-        imagePosition = ImVec2((actualWindowSize.x - imageSizeSCENE.x) * 0.5f, (actualWindowSize.y - imageSizeSCENE.y) * 0.5f);
+  //      // Calculamos la posición para centrar la imagen en la ventana
+  //      imagePosition = ImVec2((actualWindowSize.x - imageSizeSCENE.x) * 0.5f, (actualWindowSize.y - imageSizeSCENE.y) * 0.5f);
 
-        ImGui::SetCursorPos(imagePosition);
+  //      ImGui::SetCursorPos(imagePosition);
 
-        int WindowXSize = imageSizeSCENE.x;
-        int WindowYSize = imageSizeSCENE.y;
-        imageSizeSCENE.x = WindowXSize;
-        imageSizeSCENE.y = WindowYSize;
+  //      int WindowXSize = imageSizeSCENE.x;
+  //      int WindowYSize = imageSizeSCENE.y;
+  //      imageSizeSCENE.x = WindowXSize;
+  //      imageSizeSCENE.y = WindowYSize;
 
+        //drawSquareInImGui();
+        ImVec2 size(AppSettings::RenderWidth, AppSettings::RenderHeight);
+        ImGui::GetWindowDrawList()->AddRect(ImGui::GetCursorScreenPos(), ImVec2(ImGui::GetCursorScreenPos().x + size.x, ImGui::GetCursorScreenPos().y + size.y), IM_COL32(255, 255, 255, 255));
 		ImGui::End();
 
 
@@ -76,7 +79,6 @@ void CanvasUI::draw() {
 
 		}
 		ImGui::End();
-	}
 }
 
 void CanvasUI::update() {

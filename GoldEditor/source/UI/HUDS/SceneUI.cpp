@@ -77,7 +77,7 @@ void SceneUI::draw() {
 
         ImVec2 actualWindowSize = ImGui::GetWindowSize();
         float scaleFactor = std::min(actualWindowSize.x / windowSize.x, actualWindowSize.y / windowSize.y);
-        imageSizeSCENE = ImVec2(AppSettings::RenderWidth * scaleFactor, AppSettings::RenderHeight * scaleFactor);
+        imageSizeSCENE = ImVec2((AppSettings::RenderWidth) * scaleFactor, (AppSettings::RenderHeight) * scaleFactor);
 
 
         // Calculamos la posición para centrar la imagen en la ventana

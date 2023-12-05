@@ -9,10 +9,12 @@ public:
 	GLuint texture;
 	GLuint framebuffer;       // Framebuffer Object
 	GLuint depthTexture;      // Texture to capture depth
+	GLuint framebufferID;
+	GLuint textureID;
 	ImVec2 imageSizeSCENE;
 	ImVec2 imagePosition;
 
-	bool isOpen;
+	bool isOpen = false;
 	void start() override;
 	void draw() override;
 	void update() override;

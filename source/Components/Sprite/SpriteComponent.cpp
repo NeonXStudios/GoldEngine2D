@@ -35,7 +35,6 @@ unsigned int indices2[] = {
 };
 
 void SpriteComponent::start()  {
-
     glGenTextures(1, &texture);
     glBindTexture(GL_TEXTURE_2D, texture);
 
