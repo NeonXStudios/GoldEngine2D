@@ -5,7 +5,7 @@ void CCanvas::start() {
 }
 
 void CCanvas::draw(Entity* owner) {
-	ImGui::Button("Animator", ImVec2(ImGui::GetContentRegionAvail().x, 20));
+	ImGui::Button("Canvas", ImVec2(ImGui::GetContentRegionAvail().x, 20));
 	ImGui::Spacing();
 
 	if (ImGui::Button ("Open Editor UI")) {

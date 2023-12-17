@@ -37,7 +37,7 @@ public:
 	glm::vec3 Position = glm::vec3(0.0f, 0.0f, 0.0f);
 	glm::vec3 LocalPosition = glm::vec3(1.0f, 1.0f, 1.0f);
 	glm::vec3 Rotation = glm::vec3(0.0f, 0.0f, 0.0f);
-	glm::vec3 Scale = glm::vec3(200.0f, 50.0f, 1.0f);
+	glm::vec3 Scale = glm::vec3(100.0f, 100.0f, 1.0f);
 	glm::vec3 Offset = glm::vec3(0.0f, 0.0f, 0.0f);
 
 	float normalXSize = 0;

@@ -14,7 +14,7 @@ public:
 	ImVec2 imageSizeSCENE;
 	ImVec2 imagePosition;
 
-	bool isOpen = false;
+	bool isOpen = true;
 	void start() override;
 	void draw() override;
 	void update() override;

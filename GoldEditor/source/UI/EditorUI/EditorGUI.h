@@ -28,7 +28,10 @@ public:
 		return value;
 	}
 
-
+	static float Int(const std::string& name, int value) {
+		ImGui::DragInt(EditorGUI::_labelPrefix(name.c_str()).c_str(), &value);
+		return value;
+	}
 
 	static glm::vec2 Vector2 (string Name, glm::vec2 vector) {
 		float v[2] = {
@@ -56,6 +59,19 @@ public:
 		ImGui::DragFloat3(EditorGUI::_labelPrefix(Name.c_str()).c_str(), v);
 
 		return glm::vec3(v[0], v[1], v[2]);
+	}
+
+	static glm::vec4 Vector4(string Name, glm::vec4 vector) {
+		float v[4] = {
+			vector.x,
+			vector.y,
+			vector.z,
+			vector.w
+		};
+
+		ImGui::DragFloat4(EditorGUI::_labelPrefix(Name.c_str()).c_str(), v);
+
+		return glm::vec4(v[0], v[1], v[2], v[3]);
 	}
 
 	static glm::quat Quaternion (string Name, glm::quat quaternion) {

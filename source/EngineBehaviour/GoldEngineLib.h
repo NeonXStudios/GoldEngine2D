@@ -35,6 +35,7 @@
 #include "../Components/TileMap/TileMapComponent.h"
 #include "../Components/ECS/MaterialComponent.h"
 #include "../Components/UI/Canvas.h"
+#include "../Components/UI/ComponentsUI/UIButton.h"
 #include "../Components/FileSystem/FileSystem.h"
 
 //PHYSICS 3D IMPLEMENTATION 

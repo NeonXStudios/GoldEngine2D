@@ -4,6 +4,8 @@ D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(3,10): warning C4067: sí
 D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(54,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
 D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(55,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
 D:\VS\GoldEngine2D\source\Components\Camera\Camera2D.h(56,33): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-D:\VS\GoldEngine2D\source\Components\UI\ComponentsUI\UIButton.cpp(156,16): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
-D:\VS\GoldEngine2D\source\Components\UI\ComponentsUI\UIButton.cpp(157,17): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\UI\ComponentsUI\UIButton.cpp(86,23): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\UI\ComponentsUI\UIButton.cpp(88,23): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\UI\ComponentsUI\UIButton.cpp(163,16): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\VS\GoldEngine2D\source\Components\UI\ComponentsUI\UIButton.cpp(164,17): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
   GoldEngine.vcxproj -> D:\VS\GoldEngine2D\BuildCore\ZXCore.lib

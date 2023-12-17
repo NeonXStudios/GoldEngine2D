@@ -15,6 +15,9 @@ float vertices23[] = {
 
 void UIButton::start() {
 
+    CompilerShaders();
+
+
     glGenTextures(1, &texture);
     glBindTexture(GL_TEXTURE_2D, 0);
 
@@ -26,7 +29,6 @@ void UIButton::start() {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
-    CompilerShaders();
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
 
@@ -50,7 +52,7 @@ void UIButton::start() {
     glBindVertexArray(0);
 
     LoadTexture();
-    currentAnchor = AnchorUI::Bottom;
+    currentAnchor = AnchorUI::Center;
 }
 
 void UIButton::draw() {
@@ -79,6 +81,13 @@ void UIButton::draw() {
         float ScreenY = -AppSettings::RenderHeight + (heightTXT / 2);
         Matrix = glm::translate(Matrix, glm::vec3(Position.x, ScreenY, Position.z) + Offset);
     }
+    else if (currentAnchor == AnchorUI::Center)
+    {
+        float ScreenX = (AppSettings::RenderWidth / 2);
+
+        float ScreenY = (AppSettings::RenderHeight / 2);
+        Matrix = glm::translate(Matrix, glm::vec3(0, 0, Position.z) + Offset);
+    }
     
     glm::quat rotationZ = glm::angleAxis(glm::radians(Rotation.x), glm::vec3(0.0f, 0.0f, 1.0f));
     glm::quat rotationY = glm::angleAxis(glm::radians(Rotation.y), glm::vec3(0.0f, 1.0f, 0.0f));
@@ -96,10 +105,6 @@ void UIButton::draw() {
     glBindTexture(GL_TEXTURE_2D, texture);
     glUniform1i(glGetUniformLocation(ourShader->ID, "texture_diffuse1"), 0);
 
-    //SPECULAR MAP
-    glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, texture);
-    glUniform1i(glGetUniformLocation(ourShader->ID, "texture_specular1"), 0);
 
     float aspectRatio = 1920.0f / 1080.0f; // Calcula la relación de aspecto 1920x1080
 
@@ -118,11 +123,13 @@ void UIButton::draw() {
 }
 
 void UIButton::CompilerShaders() {
-    ourmodel = new GLD::Model(FileSystem::GetAsset("/models/Plane.fbx"));
     string newPathVERT = FileSystem::GetAsset(VertexPath);
     string newPathFRAG= FileSystem::GetAsset(FragmentPath);
     ourShader = new Shader(newPathVERT.c_str(), newPathFRAG.c_str());
+    ourmodel = new GLD::Model(FileSystem::GetAsset("/models/Plane.fbx"));
     ourShader->use();
+
+    std::cout << "UI BUTTON SETUP SHADER" << std::endl;
 }
 
 void UIButton::onClick() {

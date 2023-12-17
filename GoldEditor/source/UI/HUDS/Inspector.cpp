@@ -126,9 +126,6 @@ void InspectorUI::draw() {
         }*/
 
         ImGui::Spacing();
-        ImGui::Spacing();
-        ImGui::Spacing();
-        ImGui::Spacing();
         ImGui::Text("COMPONENTS");
         ImGui::Separator();
 
